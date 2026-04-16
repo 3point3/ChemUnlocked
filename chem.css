@@ -1260,7 +1260,7 @@ textarea {
 
 /* ===================== INDEX PAGE — HERO ===================== */
 h1 .chem     { font-weight: 900; }
-h1 .unlocked { font-weight: 800; letter-spacing: -0.01em; }
+h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
 
 .hero-subtitle {
   font-size: 1.08rem;
