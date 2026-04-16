@@ -1,0 +1,1714 @@
+/* ===================== CONTACT PAGE ===================== */
+.contact-wrap {
+  max-width: 760px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+}
+.contact-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.contact-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.contact-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+.form-row {
+  display: grid;
+  gap: 0.45rem;
+}
+.form-row label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111827;
+}
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  background: #fff;
+  color: #111827;
+  box-sizing: border-box;
+}
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+.form-row textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 170px;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.15rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.contact-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+.contact-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+.form-note {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: -0.25rem;
+}
+.status-box {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  display: none;
+}
+.status-success {
+  display: block;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.status-error {
+  display: block;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+/* Honeypot trap: hidden from humans, seen by bots */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+#problemContainer {
+  margin-top: 2.5rem;
+}
+#problemContainer {
+  margin-top: 2.5rem;
+}
+/* ── Inline chemistry fraction (for use in table cells, cards, etc.) ── */
+.chem-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.3;
+  margin: 0 0.2em;
+}
+
+.chem-frac .top {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.1em;
+  white-space: nowrap;
+}
+
+.chem-frac .bottom {
+  padding-top: 0.1em;
+  white-space: nowrap;
+}
+/* ============================================================
+   chem.css — ChemUnlocked Global Styles
+   Typography system: Lexend + readable heading scale
+   ============================================================ */
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface2: #f1f5f9;
+  --text: #0f172a;
+  --dim: #334155;
+  --muted: #64748b;
+  --border: #dbe4ee;
+  --accent: #2563eb;
+  --accent2: #1d4ed8;
+  --green: #059669;
+  --red: #dc2626;
+  --gold: #1e40af;
+
+  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --container: 1120px;
+}
+
+/* ===================== RESET ===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #f8fbff 0%, #f8fafc 45%, #eef4fb 100%);
+  color: var(--text);
+  font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p,
+li,
+td,
+th,
+.card,
+.conv-result,
+.solution,
+.feedback,
+.prob-q,
+.seo-lead {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ===================== TYPOGRAPHY ===================== */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-weight: 650;
+  line-height: 1.16;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+code,
+pre,
+.mono,
+.formula-box,
+.fl-chain,
+.fl-cancel,
+#dimAnalysis,
+#submissionBox,
+.conv-result {
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ===================== SHARED LAYOUT ===================== */
+.site-shell,
+.container {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.container {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.unit-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.77rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent2);
+  margin-bottom: 0.85rem;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.06) 0 1px, transparent 1px),
+    radial-gradient(circle at 78% 12%, rgba(37, 99, 235, 0.05) 0 1px, transparent 1px),
+    radial-gradient(circle at 32% 80%, rgba(5, 150, 105, 0.05) 0 1px, transparent 1px),
+    radial-gradient(circle at 88% 72%, rgba(180, 83, 9, 0.05) 0 1px, transparent 1px);
+  z-index: 0;
+}
+
+.site-header,
+.site-footer,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== HEADER / FOOTER ===================== */
+.site-header {
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(219, 228, 238, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header-inner {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 750;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
+.logo-chem {
+  color: #111827;
+}
+
+.logo-unlock {
+  color: var(--accent2);
+  font-style: italic;
+  margin-left: 0.04em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  color: var(--dim);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  transition: 0.18s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent2);
+  background: rgba(37, 99, 235, 0.08);
+  text-decoration: none;
+}
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 0.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-bottom: 0.55rem;
+}
+
+.footer-links a {
+  color: var(--accent2);
+}
+
+/* ===================== SHARED CARD / PANEL SYSTEM ===================== */
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(219, 228, 238, 0.92);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin: 0 0 1.25rem 0;
+}
+
+.card-title {
+  font-size: 1.18rem;
+  font-weight: 650;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
+}
+
+.card-title .num {
+  color: var(--accent2);
+  margin-right: 0.45rem;
+}
+
+.key-fact {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(37, 99, 235, 0.02));
+  border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+.key-fact .icon {
+  color: var(--accent2);
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+/* ===================== TABLES ===================== */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+thead {
+  background: #eff6ff;
+}
+
+th,
+td {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+th {
+  color: var(--accent2);
+  font-weight: 650;
+}
+
+/* ===================== FORMULA / STEPS ===================== */
+.formula-box {
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  color: #1e3a8a;
+  line-height: 1.75;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.formula-box .label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.45rem;
+}
+
+.steps {
+  margin-top: 1rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(219, 228, 238, 0.85);
+}
+
+.step:first-child {
+  border-top: 0;
+}
+
+.step-num {
+  width: 12px;
+  min-width: 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #60a5fa, #2563eb);
+  margin-top: 0.5rem;
+}
+
+.step-content p {
+  margin: 0.45rem 0 0 0;
+}
+
+.fl-label {
+  font-size: 0.8rem;
+  color: var(--accent2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0.7rem 0 0.45rem;
+}
+
+.fl-chain,
+.fl-cancel {
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  margin: 0.55rem 0 0.65rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.fl-cancel {
+  font-size: 0.9rem;
+  color: var(--dim);
+}
+
+.fl-frac {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 90px;
+}
+
+.fl-num {
+  display: block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+.fl-den {
+  display: block;
+  padding-top: 0.1rem;
+}
+
+.fl-result {
+  color: var(--green);
+  font-weight: 650;
+}
+
+/* ===================== TABS ===================== */
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1.25rem 0;
+}
+
+.tab-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--dim);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 550;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.tab-btn:hover {
+  border-color: #93c5fd;
+  color: var(--accent2);
+}
+
+.tab-btn.active {
+  background: #dbeafe;
+  color: var(--accent2);
+  border-color: #93c5fd;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* ===================== BUTTONS / INPUTS ===================== */
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.18s ease;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+}
+
+.btn-outline {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--accent2);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.btn-sm {
+  padding: 0.55rem 0.8rem;
+  font-size: 0.86rem;
+  border-radius: 10px;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ===================== PRACTICE ENGINE ===================== */
+.score-bar,
+.prob-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.score-bar {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.score-display {
+  font-weight: 650;
+  color: var(--text);
+}
+
+.progress-track {
+  flex: 1 1 220px;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.problem {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.prob-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.prob-num {
+  font-weight: 700;
+  color: var(--accent2);
+}
+
+.prob-tag {
+  font-size: 0.76rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.5rem;
+  border-radius: 999px;
+}
+
+.tag-calc {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.tag-concept {
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.tag-multi {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.prob-q {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
+.prob-answer-area {
+  margin-top: 0.4rem;
+}
+
+.prob-input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  padding: 0.78rem 0.9rem;
+  font-size: 0.98rem;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.prob-input:focus {
+  border-color: #93c5fd;
+}
+
+.prob-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.prob-choices {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.choice-btn {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.choice-btn:hover {
+  border-color: #93c5fd;
+  background: #f8fbff;
+}
+
+.choice-btn.correct,
+.choice-btn.reveal-correct {
+  border-color: #86efac;
+  background: #ecfdf5;
+  color: #166534;
+}
+
+.choice-btn.incorrect {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.feedback {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 12px;
+  font-weight: 550;
+}
+
+.feedback.correct {
+  background: #ecfdf5;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.feedback.incorrect {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.solution {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.95rem 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--dim);
+}
+
+.filter-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--dim);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #dbeafe;
+  color: var(--accent2);
+  border-color: #93c5fd;
+}
+
+/* ===================== UNIT PAGE — COMMON COMPONENTS ===================== */
+
+/* Subtitle paragraph that appears under every unit <h1> */
+.subtitle {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--dim);
+  max-width: 760px;
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* Small breadcrumb line at the bottom of every .container */
+.scroll-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 2rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Info callouts (Learning Objectives / Common Mistakes) ── */
+/* Two-block pattern per style guide: .info-callout + .info-callout.warn  */
+.info-callout {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-left: 4px solid var(--accent2);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.25rem 0;
+}
+
+.info-callout h4 {
+  color: var(--accent2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.6rem 0;
+}
+
+.info-callout ul,
+.info-callout ol {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.info-callout li {
+  font-size: 0.93rem;
+  color: var(--dim);
+  line-height: 1.7;
+  margin-bottom: 0.2rem;
+}
+
+.info-callout.warn {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.05), rgba(234, 88, 12, 0.02));
+  border-color: rgba(234, 88, 12, 0.2);
+  border-left-color: #ea580c;
+}
+
+.info-callout.warn h4 {
+  color: #c2410c;
+}
+
+/* ── Tool section wrapper + tool panel (Tools tab) ── */
+.tool-section {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(219, 228, 238, 0.92);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin: 0 0 1.25rem 0;
+}
+
+.tool-section h3 {
+  margin-bottom: 0.4rem;
+}
+
+.tool-desc {
+  font-size: 0.93rem;
+  color: var(--dim);
+  margin-bottom: 0.85rem;
+}
+
+/* ── Tool panel — interactive calculator UI inside .tool-section ── */
+/* Label above each input group */
+.tool-panel {
+  margin-top: 1rem;
+  padding: 1.1rem 1.15rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.tool-panel label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--accent2);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* Inputs and selects inside .tool-panel */
+.tool-select,
+.tool-panel input[type="text"],
+.tool-panel input[type="number"],
+.tool-panel select {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.93rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tool-select:focus,
+.tool-panel input:focus,
+.tool-panel select:focus {
+  border-color: #93c5fd;
+}
+
+/* Grid for side-by-side variable input groups */
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.calc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Monospaced result display below a tool */
+.calc-result {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  color: var(--dim);
+  line-height: 1.65;
+  min-height: 2.5rem;
+}
+
+/* ── Equipment / diagram row (lab diagrams, SVG figures) ── */
+/* Used when showing multiple instrument diagrams side-by-side */
+.equipment-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.equip-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 1 auto;
+}
+
+.eq-label {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--dim);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.eq-caption {
+  font-size: 0.82rem;
+  color: var(--dim);
+  text-align: center;
+  line-height: 1.55;
+  max-width: 130px;
+}
+
+.meniscus-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ── Safety / hazard symbol grid (GHS symbols) ── */
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+}
+
+.safety-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.sym {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.sym-name {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.sym-desc {
+  font-size: 0.71rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+/* Inline styles extracted from 00_Learn_Intro_to_Chemistry_and_Lab_Safety.html */
+
+.safety-ppe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.key-fact-row {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.margin-top-09 {
+  margin-top: 0.9rem;
+  font-weight: 600;
+}
+
+.margin-top-1 {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.equip-box-wide {
+  max-width: 320px;
+  flex: 0 1 320px;
+}
+
+.flex-min-180 {
+  flex: 1;
+  min-width: 180px;
+}
+
+.key-fact-margin {
+  margin-top: 1.25rem;
+}
+
+.tool-desc {
+  color: var(--dim);
+  font-size: 0.93rem;
+  margin-bottom: 0.85rem;
+}
+
+.cyl-tip {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: var(--dim);
+  max-width: 260px;
+}
+
+.balance-display-flex {
+  flex: 1;
+  min-width: 200px;
+}
+
+.slider-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--dim);
+}
+
+.add-sample-btn {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.balance-log {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: #0f172a;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.balance-log-comment {
+  color: #4ade80;
+}
+
+.tools-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.tool-card {
+  flex: 1;
+  min-width: 220px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+}
+
+.sigfig-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.sigfig-result {
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  color: var(--accent2);
+  min-height: 1.5em;
+}
+
+.sigfig-explain {
+  font-size: 0.83rem;
+  color: var(--dim);
+  margin-top: 0.35rem;
+  line-height: 1.5;
+}
+
+.conv-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.conv-selects {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.conv-select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.conv-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.conv-result {
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  color: var(--accent2);
+  min-height: 1.5em;
+}
+/* ── Card section headings (bold paragraph labels inside cards) ── */
+/* Use <p class="card-section-label"> instead of inline font-weight */
+.card-section-label {
+  font-weight: 650;
+  color: var(--text);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===================== INDEX PAGE — HERO ===================== */
+h1 .chem     { font-weight: 900; }
+h1 .unlocked { font-weight: 300; letter-spacing: -0.01em; }
+
+.hero-subtitle {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--dim);
+  max-width: 640px;
+  margin: 0 0 0.5rem;
+}
+
+/* ===================== INDEX PAGE — UNITS CARD ===================== */
+.units-card {
+  background: linear-gradient(160deg, rgba(37, 99, 235, 0.06) 0%, rgba(255, 255, 255, 0.95) 40%);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08), var(--shadow-sm);
+  margin: 0 0 1.25rem 0;
+}
+
+.units-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.units-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent2);
+  margin-bottom: 0.45rem;
+}
+
+.units-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.start-here-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #dbeafe;
+  color: var(--accent2);
+  border: 1px solid #bfdbfe;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.units-desc {
+  font-size: 0.95rem;
+  color: var(--dim);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+/* ===================== INDEX PAGE — UNIT GRID ===================== */
+.unit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+}
+
+.unit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.18s;
+  line-height: 1.3;
+}
+
+.unit-btn:hover {
+  border-color: var(--accent);
+  background: #eff6ff;
+  color: var(--accent2);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.unit-btn .unit-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  min-width: 2rem;
+  text-align: center;
+  transition: all 0.18s;
+}
+
+.unit-btn:hover .unit-num {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* ===================== INDEX PAGE — UNIT FEATURES STRIP ===================== */
+.unit-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.unit-feature {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 0.9rem;
+  text-align: center;
+}
+
+.unit-feature-icon {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.unit-feature-label {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.unit-feature-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ===================== INDEX PAGE — STUDY SKILLS CARD ===================== */
+.skills-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  margin: 0 0 1.25rem 0;
+}
+
+.skills-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.skills-card-header .unit-label {
+  margin-bottom: 0.4rem;
+}
+
+.view-all-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent2);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.view-all-link:hover { text-decoration: underline; }
+
+/* ===================== INDEX PAGE — GUIDE CARDS ===================== */
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  transition: all 0.18s;
+  color: inherit;
+}
+
+.guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  color: inherit;
+}
+
+.guide-card[data-color="blue"]   { border-top: 3px solid var(--accent2); }
+.guide-card[data-color="green"]  { border-top: 3px solid var(--green); }
+.guide-card[data-color="purple"] { border-top: 3px solid #7c3aed; }
+
+.guide-card-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.guide-card[data-color="blue"]   .guide-card-eyebrow { color: var(--accent2); }
+.guide-card[data-color="green"]  .guide-card-eyebrow { color: var(--green); }
+.guide-card[data-color="purple"] .guide-card-eyebrow { color: #7c3aed; }
+
+.guide-card-title {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.guide-card-desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--dim);
+  flex: 1;
+}
+
+.guide-card-cta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-top: 0.25rem;
+}
+
+.guide-card[data-color="green"]  .guide-card-cta { color: var(--green); }
+.guide-card[data-color="purple"] .guide-card-cta { color: #7c3aed; }
+
+/* ===================== INDEX PAGE — PRACTICE BANNER ===================== */
+.practice-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.practice-banner-left  { flex: 1 1 300px; }
+
+.practice-banner-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.4rem;
+}
+
+.practice-banner-headline {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.practice-banner-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.practice-banner-features span {
+  font-size: 0.88rem;
+  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+.practice-banner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.practice-banner-btn {
+  display: inline-block;
+  background: #fff;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.18s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.practice-banner-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.practice-banner-note {
+  font-size: 0.78rem;
+  opacity: 0.65;
+  text-align: center;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .site-header-inner {
+    min-height: 0;
+    padding: 0.8rem 0;
+  }
+
+  .site-nav {
+    gap: 0.3rem;
+  }
+
+  .guides-grid   { grid-template-columns: 1fr 1fr; }
+  .unit-features { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    font-size: 0.82rem;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 1rem));
+    padding-top: 1rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .step-num {
+    display: none;
+  }
+
+  .fl-chain {
+    font-size: 0.82rem;
+    line-height: 1.75;
+  }
+
+  .unit-grid        { grid-template-columns: 1fr; }
+  .guides-grid      { grid-template-columns: 1fr; }
+  .unit-features    { grid-template-columns: 1fr 1fr; }
+  .units-card       { padding: 1.25rem; }
+  .skills-card      { padding: 1.25rem; }
+  .units-card-header { flex-direction: column; align-items: flex-start; }
+  .practice-banner  { padding: 1.5rem; }
+
+  .equipment-row    { gap: 1rem; }
+  .equip-box        { flex: 0 1 calc(50% - 0.5rem); }
+  .safety-grid      { grid-template-columns: repeat(2, 1fr); }
+  .tool-section     { padding: 1.1rem; }
+}
+
+/* Practice page specific styles */
+#filterPanel {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#scoreBar {
+  display: none;
+}
+
+#timerDisplay {
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
+}
+
+#submissionBox {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+/* Unit 01 specific styles */
+#dInput {
+  display: none;
+}
+
+#densityResult {
+  display: none;
+  margin-top: 0.75rem;
+}

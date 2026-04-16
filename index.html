@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemUnlocked | Introductory General Chemistry Study Hub</title>
+<meta name="description" content="Free study guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry. Concept explanations, worked examples, and research-backed study strategies.">
+<link rel="canonical" href="https://chemunlocked.com/index.html">
+<meta property="og:title" content="ChemUnlocked | Introductory General Chemistry Study Hub">
+<meta property="og:description" content="Free study guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry. Concept explanations, worked examples, and research-backed study strategies.">
+<meta property="og:url" content="https://chemunlocked.com/index.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChemUnlocked | Introductory General Chemistry Study Hub">
+<meta name="twitter:description" content="Free study guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry. Concept explanations, worked examples, and research-backed study strategies.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ChemUnlocked",
+  "description": "Free study guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry. Concept explanations, worked examples, and research-backed study strategies.",
+  "url": "https://chemunlocked.com/index.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<style>
+
+  /* ── Hero ── */
+  h1 .chem     { font-weight: 900; color: #111827; }
+  h1 .unlocked { font-weight: 300; letter-spacing: -0.01em; color: var(--accent2); font-style: italic; }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin: 0.5rem 0 0;
+    max-width: 64ch;
+  }
+
+  /* ── Units card ── */
+  .units-card {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(219, 228, 238, 0.92);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    margin: 1.5rem 0 1.25rem;
+  }
+
+  .units-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .units-eyebrow {
+    font-size: 0.77rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent2);
+    margin-bottom: 0.3rem;
+  }
+
+  .units-card-title {
+    font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+    font-weight: 650;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+  }
+
+  .start-here-badge {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent2);
+    background: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+
+  .units-desc {
+    font-size: 0.92rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin: 0 0 0.5rem;
+  }
+
+  /* ── Unit grid ── */
+  .unit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .unit-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    line-height: 1.3;
+  }
+
+  .unit-btn:hover {
+    border-color: var(--accent);
+    background: #eff6ff;
+    color: var(--accent2);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  .unit-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-width: 2rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .unit-btn:hover .unit-num {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  /* ── Unit features strip ── */
+  .unit-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .unit-feature {
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .unit-feature-icon {
+    font-size: 1.3rem;
+    color: var(--accent2);
+    margin-bottom: 0.35rem;
+  }
+
+  .unit-feature-label {
+    font-size: 0.82rem;
+    font-weight: 650;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .unit-feature-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── Study skills card ── */
+  .skills-card {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(219, 228, 238, 0.92);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.25rem;
+  }
+
+  .skills-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .skills-card-title {
+    font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+    font-weight: 650;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+  }
+
+  .view-all-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent2);
+    text-decoration: none;
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+
+  .view-all-link:hover {
+    text-decoration: underline;
+  }
+
+  .skills-intro {
+    font-size: 0.92rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  /* ── Guide cards ── */
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-decoration: none;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1rem;
+    transition: all 0.2s;
+  }
+
+  .guide-card:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+  }
+
+  .guide-card[data-color="green"]:hover { border-color: #6ee7b7; background: #f0fdf4; }
+  .guide-card[data-color="purple"]:hover { border-color: #c4b5fd; background: #f5f3ff; }
+
+  .guide-card-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .guide-card-title {
+    font-size: 0.95rem;
+    font-weight: 650;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .guide-card-desc {
+    font-size: 0.83rem;
+    color: var(--dim);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .guide-card-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent2);
+    margin-top: 0.25rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .unit-features { grid-template-columns: repeat(2, 1fr); }
+    .guides-grid   { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .unit-grid     { grid-template-columns: 1fr; }
+    .unit-features { grid-template-columns: repeat(2, 1fr); }
+    .guides-grid   { grid-template-columns: 1fr; }
+    .units-card,
+    .skills-card   { padding: 1.25rem; }
+    .start-here-badge { display: none; }
+  }
+
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;background:#fff;color:#2563eb;padding:0.5em 1em;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">Skip to main content</a>
+
+<div class="starfield"></div>
+
+<main id="main-content">
+<div class="container">
+
+  <!-- ── PAGE HEADER ── -->
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Study Hub</div>
+    <h1><span class="chem">Chem</span><span class="unlocked">Unlocked</span></h1>
+    <p class="hero-subtitle">Clear concept guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry — designed for students who want to actually understand it.</p>
+  </header>
+
+  <!-- ── UNITS CARD ── -->
+  <div class="units-card" id="units">
+    <div class="units-card-header">
+      <div>
+        <div class="units-eyebrow">Chemistry Units</div>
+        <div class="units-card-title">Units Coming Soon</div>
+      </div>
+  
+  </div>
+
+  <!-- ── STUDY SKILLS CARD ── -->
+  <div class="skills-card">
+    <div class="skills-card-header">
+      <div>
+        <div class="unit-label">Study Skills</div>
+        <div class="skills-card-title">Learn How to Learn</div>
+      </div>
+      <a href="study_skills_blog.html" class="view-all-link">View all guides →</a>
+    </div>
+
+    <p class="skills-intro">Knowing the chemistry is only half the challenge. These research-backed guides cover the strategies cognitive science says actually work — so every hour you invest pays off on the test.</p>
+
+    <div class="guides-grid">
+
+      <a href="study_skills_smarter_not_longer.html" class="guide-card" data-color="blue">
+        <div class="guide-card-eyebrow">◈ Guide 01 · 6 min read</div>
+        <div class="guide-card-title">How to Study Smarter, Not Longer</div>
+        <div class="guide-card-desc">Interleaving, varied environments, and multimodal encoding — the strategies that feel harder but work far better than re-reading.</div>
+        <div class="guide-card-cta">Read Guide →</div>
+      </a>
+
+      <a href="study_skills_practice_tests.html" class="guide-card" data-color="green">
+        <div class="guide-card-eyebrow">◈ Guide 02 · 7 min read</div>
+        <div class="guide-card-title">Why Practice Tests Beat Rereading</div>
+        <div class="guide-card-desc">Retrieval practice is the highest-rated study strategy in cognitive science. Here's the research — and how ChemUnlocked's problem sets put it to work.</div>
+        <div class="guide-card-cta">Read Guide →</div>
+      </a>
+
+      <a href="study_skills_flashcards.html" class="guide-card" data-color="purple">
+        <div class="guide-card-eyebrow">◈ Guide 03 · 6 min read</div>
+        <div class="guide-card-title">The Flashcard Method That Works</div>
+        <div class="guide-card-desc">Active recall, not passive flipping. Includes how to make cards well and two partner games that dramatically improve retention.</div>
+        <div class="guide-card-cta">Read Guide →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Study Hub</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+</body>
+</html>

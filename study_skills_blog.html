@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Skills & Learning Strategies | ChemUnlocked</title>
+<meta name="description" content="Research-backed study skills guides for high school and college chemistry students. Interleaving, retrieval practice, flashcard methods, and more — from an expert science teacher.">
+<link rel="canonical" href="https://chemunlocked.com/study_skills_blog.html">
+<meta property="og:title" content="Study Skills & Learning Strategies | ChemUnlocked">
+<meta property="og:description" content="Research-backed study skills guides for high school and college chemistry students. Interleaving, retrieval practice, flashcard methods, and more — from an expert science teacher.">
+<meta property="og:url" content="https://chemunlocked.com/study_skills_blog.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Study Skills & Learning Strategies | ChemUnlocked">
+<meta name="twitter:description" content="Research-backed study skills guides for high school and college chemistry students. Interleaving, retrieval practice, flashcard methods, and more — from an expert science teacher.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Study Skills & Learning Strategies | ChemUnlocked",
+  "description": "Research-backed study skills guides for high school and college chemistry students. Interleaving, retrieval practice, flashcard methods, and more — from an expert science teacher.",
+  "url": "https://chemunlocked.com/study_skills_blog.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+.blog-hero {
+  background: linear-gradient(135deg, rgba(37,99,235,0.09) 0%, rgba(37,99,235,0.03) 100%);
+  border: 1px solid rgba(37,99,235,0.18);
+  border-radius: 18px;
+  padding: 2rem 2rem 1.75rem;
+  margin: 0 0 2rem 0;
+}
+.blog-hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent2);
+  margin-bottom: 0.75rem;
+}
+.blog-hero h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin-bottom: 0.75rem;
+  line-height: 1.12;
+}
+.blog-hero-sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--dim);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* Post cards */
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  align-items: start;
+}
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #93c5fd;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #dbeafe;
+  line-height: 1;
+  min-width: 2.5rem;
+  text-align: right;
+  margin-top: 0.2rem;
+  user-select: none;
+}
+
+.post-card-content {}
+
+.post-card-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent2);
+  margin-bottom: 0.45rem;
+}
+
+.post-card h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.55rem;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.post-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--dim);
+  margin: 0 0 0.85rem;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.post-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-top: 0.9rem;
+}
+
+/* Color accent per post */
+.post-card[data-color="blue"] { border-left: 3px solid var(--accent2); }
+.post-card[data-color="green"] { border-left: 3px solid var(--green); }
+.post-card[data-color="purple"] { border-left: 3px solid #7c3aed; }
+
+/* Coming soon card */
+.post-card-soon {
+  background: rgba(255,255,255,0.5);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.post-card-soon .soon-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* About the author */
+.author-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.author-card h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.author-card p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--dim);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .post-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+  .post-card-num { display: none; }
+  .blog-hero { padding: 1.25rem; }
+}
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;background:#fff;color:#2563eb;padding:0.5em 1em;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">Skip to main content</a>
+<div class="starfield"></div>
+<main id="main-content">
+<div class="container">
+
+  <div class="blog-hero">
+    <div class="blog-hero-eyebrow">✦ ChemUnlocked · Study Skills</div>
+    <h1>Study Skills &amp; Learning Strategies</h1>
+    <p class="blog-hero-sub">Research-backed guides on how to study more effectively — written for high school and college students who want to understand the science of learning, not just collect tips.</p>
+  </div>
+
+  <!-- Author note -->
+  <div class="author-card">
+    <h3>About These Guides</h3>
+    <p>These articles draw on peer-reviewed learning science research and are written by an experienced high school science teacher. The goal isn't to tell you to "study harder" — it's to explain what cognitive science actually says about how memory works, and to give you concrete strategies that change how you prepare for any class, not just chemistry.</p>
+  </div>
+
+  <div class="unit-label" style="margin-bottom:0.85rem;">Strategy Guides</div>
+
+  <div class="post-grid">
+
+    <a href="study_skills_smarter_not_longer.html" class="post-card" data-color="blue">
+      <div class="post-card-num">01</div>
+      <div class="post-card-content">
+        <div class="post-card-eyebrow">Study Strategy · 6 min read</div>
+        <h2>How to Study Smarter, Not Longer</h2>
+        <p class="post-card-desc">The strategies that feel most effective — re-reading, highlighting, blocking — are often the ones that work least well. Here's what the research actually says about interleaving, varied environments, and multimodal encoding.</p>
+        <div class="post-card-meta">
+          <span>✦ Interleaving</span>
+          <span>✦ Spaced Practice</span>
+          <span>✦ Feynman Technique</span>
+        </div>
+        <div class="post-card-cta">Read Guide →</div>
+      </div>
+    </a>
+
+    <a href="study_skills_practice_tests.html" class="post-card" data-color="green">
+      <div class="post-card-num">02</div>
+      <div class="post-card-content">
+        <div class="post-card-eyebrow">Study Strategy · 7 min read</div>
+        <h2>Why Practice Tests Beat Rereading Every Time</h2>
+        <p class="post-card-desc">Retrieval practice is the single most effective study strategy in cognitive science — rated high utility across virtually every subject and learner type. Here's the research, the mechanism, and how to apply it with ChemUnlocked's problem sets.</p>
+        <div class="post-card-meta">
+          <span>✦ Retrieval Practice</span>
+          <span>✦ Spacing Effect</span>
+          <span>✦ Testing Effect</span>
+        </div>
+        <div class="post-card-cta">Read Guide →</div>
+      </div>
+    </a>
+
+    <a href="study_skills_flashcards.html" class="post-card" data-color="purple">
+      <div class="post-card-num">03</div>
+      <div class="post-card-content">
+        <div class="post-card-eyebrow">Study Strategy · 6 min read</div>
+        <h2>The Flashcard Method That Actually Works</h2>
+        <p class="post-card-desc">Flashcards are one of the most powerful study tools available — but only when used for active retrieval, not passive flipping. Includes how to make them well, how to use them correctly, and two structured partner games that dramatically improve retention.</p>
+        <div class="post-card-meta">
+          <span>✦ Active Recall</span>
+          <span>✦ Partner Games</span>
+          <span>✦ Hypercorrection Effect</span>
+        </div>
+        <div class="post-card-cta">Read Guide →</div>
+      </div>
+    </a>
+
+    <div class="post-card-soon">
+      <span class="soon-label">Coming Soon</span>
+      What to Do the Week Before a Chemistry Test — a day-by-day preparation timeline
+    </div>
+
+    <div class="post-card-soon">
+      <span class="soon-label">Coming Soon</span>
+      How to Read a Textbook Chapter — active reading strategies that build real comprehension
+    </div>
+
+  </div>
+
+  <div class="key-fact">
+    <div class="icon">▸</div>
+    <p>All strategy guides on ChemUnlocked are grounded in published learning science research. Where specific studies are referenced, they are named and attributed. These are not opinions — they are findings that have been replicated across subjects, age groups, and institutions.</p>
+  </div>
+
+  <div class="scroll-hint">ChemUnlocked · Study Skills &amp; Learning Strategies</div>
+</div>
+</main>
+<script src="chem.js"></script>
+</body>
+</html>
