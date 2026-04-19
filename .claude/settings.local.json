@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -l \"practice-teaser.css\\\\|sampleContainer\\\\|renderSampleProblems\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/chemistry unlocked - chemunlocked.com/\"*_practice.html)",
+      "Bash(grep -l \"ALL_PROBLEMS\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/chemistry unlocked - chemunlocked.com/\"*_practice.html)"
+    ]
+  }
+}
