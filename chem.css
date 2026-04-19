@@ -118,9 +118,6 @@
 #problemContainer {
   margin-top: 2.5rem;
 }
-#problemContainer {
-  margin-top: 2.5rem;
-}
 /* ── Inline chemistry fraction (for use in table cells, cards, etc.) ── */
 .chem-frac {
   display: inline-flex;
@@ -354,7 +351,7 @@ pre,
 }
 
 .logo-unlock {
-  color: var(--accent2);
+  color: #111827;
   font-style: italic;
   margin-left: 0.04em;
 }
@@ -651,6 +648,9 @@ textarea {
 }
 
 /* ===================== PRACTICE ENGINE ===================== */
+#topControls {
+  scroll-margin-top: 140px;
+}
 .score-bar,
 .prob-header {
   display: flex;
@@ -1121,12 +1121,6 @@ textarea {
   margin-top: 1.25rem;
 }
 
-.tool-desc {
-  color: var(--dim);
-  font-size: 0.93rem;
-  margin-bottom: 0.85rem;
-}
-
 .cyl-tip {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -1260,13 +1254,13 @@ textarea {
 
 /* ===================== INDEX PAGE — HERO ===================== */
 h1 .chem     { font-weight: 900; }
-h1 .unlocked { font-weight: 800; letter-spacing: -0.05em;color: var(--accent2); font-style: italic; }
+h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
 
 .hero-subtitle {
   font-size: 1.08rem;
   line-height: 1.75;
   color: var(--dim);
-  max-width: 640px;
+  max-width: clamp(32ch, 82vw, 64ch);
   margin: 0 0 0.5rem;
 }
 

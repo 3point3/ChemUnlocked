@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 10 — Energy &amp; Thermochemistry | ChemUnlocked</title>
+<meta name="description" content="Learn about energy, heat, and thermochemistry: heat transfer, calorimetry, enthalpy, and phase changes. Includes worked examples and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/10_Learn_Chemistry_Energy_Thermochemistry.html">
+<meta property="og:title" content="Unit 10 — Energy & Thermochemistry | ChemUnlocked">
+<meta property="og:description" content="Learn about energy, heat, and thermochemistry: heat transfer, calorimetry, enthalpy, and phase changes. Includes worked examples and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/10_Learn_Chemistry_Energy_Thermochemistry.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 10 — Energy & Thermochemistry | ChemUnlocked">
+<meta name="twitter:description" content="Learn about energy, heat, and thermochemistry: heat transfer, calorimetry, enthalpy, and phase changes. Includes worked examples and interactive tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 10 — Energy & Thermochemistry",
+  "description": "Learn about energy, heat, and thermochemistry: heat transfer, calorimetry, enthalpy, and phase changes. Includes worked examples and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  },
+  "url": "https://chemunlocked.com/10_Learn_Chemistry_Energy_Thermochemistry.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+</head>
+<body>
+<div class="starfield"></div>
+<div class="container">
+
+<header>
+  <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 10</div>
+  <h1>Energy &amp; Thermochemistry</h1>
+  <p class="subtitle">In this unit you will learn how heat moves between matter, how to calculate energy changes during temperature changes and phase transitions, and how to use enthalpy in stoichiometric calculations.</p>
+</header>
+
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 10 tab navigation">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+
+<div class="practice-banner">
+  <div class="practice-banner-left">
+    <div class="practice-banner-eyebrow">&#10022; Practice Problems</div>
+    <div class="practice-banner-headline">Test yourself with randomized thermochemistry problem sets</div>
+    <div class="practice-banner-features">
+      <span>&#10003; 84-problem bank</span>
+      <span>&#10003; Instant answer checking</span>
+      <span>&#10003; Full worked solutions</span>
+    </div>
+  </div>
+  <div class="practice-banner-right">
+    <a href="10_practice.html" class="practice-banner-btn">Start Practicing &#8594;</a>
+    <div class="practice-banner-note">Subscription required</div>
+  </div>
+</div>
+
+<!-- CONCEPTS -->
+<div id="concepts" class="section active">
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.1</span>Heat vs. Temperature</div>
+    <p><strong>Heat</strong> is energy transferred because of a temperature difference. <strong>Temperature</strong> is a measure of the average kinetic energy of particles. They are related but not the same thing.</p>
+    <table>
+      <thead><tr><th>Idea</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Heat</td><td>Energy moving from hotter to colder matter</td><td>A hot metal block warms cooler water</td></tr>
+        <tr><td>Temperature</td><td>How energetic particles are on average</td><td>100&deg;C water and 100&deg;C steam have the same temperature but different total heat content</td></tr>
+      </tbody>
+    </table>
+    <div class="key-fact"><div class="icon">&#9658;</div>
+      <p>A large bucket of warm water can contain more total thermal energy than a tiny cup of hotter water. Temperature alone does not tell you total heat &mdash; mass matters too.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.2</span>Energy Units</div>
+    <p>Thermochemistry uses several related energy units. Make sure you can convert between them before solving problems.</p>
+    <div class="formula-box">1 cal = 4.184 J &nbsp;&nbsp;|&nbsp;&nbsp; 1 kcal = 1000 cal &nbsp;&nbsp;|&nbsp;&nbsp; 1 food Calorie = 1 kcal</div>
+    <table>
+      <thead><tr><th>Unit</th><th>Name</th><th>Common use</th></tr></thead>
+      <tbody>
+        <tr><td>J</td><td>joule</td><td>SI energy unit</td></tr>
+        <tr><td>kJ</td><td>kilojoule</td><td>Reaction enthalpy</td></tr>
+        <tr><td>cal</td><td>calorie</td><td>Older heat unit</td></tr>
+        <tr><td>kcal / Calorie</td><td>kilocalorie</td><td>Food energy labels</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.3</span>Specific Heat and Calorimetry</div>
+    <p>When a substance changes temperature <em>without</em> changing phase, use the specific heat equation:</p>
+    <div class="formula-box">
+      <span class="label">Temperature-change equation</span>
+      q = mc&Delta;T
+      <br>q = heat (J) &nbsp; m = mass (g) &nbsp; c = specific heat (J/g&deg;C) &nbsp; &Delta;T = T<sub>final</sub> &minus; T<sub>initial</sub>
+    </div>
+    <p>In a <strong>calorimetry</strong> experiment, energy is conserved: heat lost by one substance equals heat gained by the other.</p>
+    <div class="formula-box">q<sub>lost</sub> = &minus;q<sub>gained</sub></div>
+    <div class="key-fact"><div class="icon">&#9658;</div>
+      <p>Always calculate &Delta;T = final &minus; initial. A negative q means the substance released heat. Water&rsquo;s specific heat (4.184 J/g&deg;C) is unusually high, which is why lakes resist temperature swings.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.4</span>Phase Changes: Melting, Freezing, Boiling, Condensation</div>
+    <p>During a phase change, temperature stays <strong>constant</strong> while energy breaks or forms intermolecular forces. Use a different equation depending on which change is occurring.</p>
+    <div class="formula-box">
+      <span class="label">Phase-change equations</span>
+      q = m&Delta;H<sub>fus</sub> &nbsp;&nbsp; for melting or freezing<br>
+      q = m&Delta;H<sub>vap</sub> &nbsp;&nbsp; for boiling or condensation
+    </div>
+    <table>
+      <thead><tr><th>Process</th><th>Energy direction</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td>Melting</td><td>Absorbs heat</td><td>Endothermic</td></tr>
+        <tr><td>Freezing</td><td>Releases heat</td><td>Exothermic</td></tr>
+        <tr><td>Boiling / evaporation</td><td>Absorbs heat</td><td>Endothermic</td></tr>
+        <tr><td>Condensation</td><td>Releases heat</td><td>Exothermic</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.5</span>Heating Curves</div>
+    <p>A heating curve shows how temperature changes as heat is added. You must split every heating-curve problem into separate segments and apply the correct equation to each &mdash; never use a single equation for the whole problem.</p>
+    <div class="info-callout">
+      <strong>How to read each segment</strong>
+      <ul>
+        <li><strong>Sloped segment</strong> &mdash; temperature is rising &rarr; use q = mc&Delta;T (identify which phase is present to get the right c)</li>
+        <li><strong>Flat segment at 0&deg;C</strong> &mdash; melting or freezing &rarr; use q = m&Delta;H<sub>fus</sub></li>
+        <li><strong>Flat segment at 100&deg;C</strong> &mdash; boiling or condensing &rarr; use q = m&Delta;H<sub>vap</sub></li>
+        <li><strong>Total heat</strong> = sum of q from every step that applies to your problem</li>
+      </ul>
+    </div>
+    <div class="graph-wrapper">
+      <svg viewBox="0 0 700 360" role="img" aria-label="Water heating curve from ice to steam">
+        <path d="M60,30 V310 H660" stroke="#c7b8a2" fill="none"></path>
+        <text x="350" y="350" text-anchor="middle">Heat Added (J)</text>
+        <text x="20" y="180" text-anchor="start">Temperature (&deg;C)</text>
+        <line x1="54" x2="60" y1="296" y2="296" stroke="#c7b8a2"></line><text x="50" y="300" text-anchor="end">-40</text>
+        <line x1="54" x2="60" y1="240" y2="240" stroke="#c7b8a2"></line><text x="50" y="244" text-anchor="end">0</text>
+        <line x1="54" x2="60" y1="100" y2="100" stroke="#c7b8a2"></line><text x="50" y="104" text-anchor="end">100</text>
+        <line x1="54" x2="60" y1="44"  y2="44"  stroke="#c7b8a2"></line><text x="50" y="48"  text-anchor="end">140</text>
+        <path d="M60,268 L68,240"   fill="none" stroke-width="4" stroke-linecap="round" stroke="#4a90e2"></path>
+        <path d="M68,240 L133,240"  fill="none" stroke-width="4" stroke-linecap="round" stroke="#f5a623"></path>
+        <path d="M133,240 L214,100" fill="none" stroke-width="4" stroke-linecap="round" stroke="#1f8a70"></path>
+        <path d="M214,100 L652,100" fill="none" stroke-width="4" stroke-linecap="round" stroke="#d64550"></path>
+        <path d="M652,100 L660,72"  fill="none" stroke-width="4" stroke-linecap="round" stroke="#8e44ad"></path>
+      </svg>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><span class="dot ice"></span> Ice warming (q = mc&Delta;T)</span>
+      <span class="legend-item"><span class="dot melt"></span> Melting (q = m&Delta;H<sub>fus</sub>)</span>
+      <span class="legend-item"><span class="dot water"></span> Liquid warming (q = mc&Delta;T)</span>
+      <span class="legend-item"><span class="dot boil"></span> Boiling (q = m&Delta;H<sub>vap</sub>)</span>
+      <span class="legend-item"><span class="dot steam"></span> Steam warming (q = mc&Delta;T)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.6</span>Enthalpy, Endothermic, and Exothermic</div>
+    <p><strong>Enthalpy change (&Delta;H)</strong> measures the heat flow of a reaction at constant pressure. Its sign tells you which direction heat moves.</p>
+    <div class="formula-box">
+      &Delta;H = H<sub>products</sub> &minus; H<sub>reactants</sub><br>
+      &Delta;H &lt; 0 &rarr; exothermic (heat released to surroundings)<br>
+      &Delta;H &gt; 0 &rarr; endothermic (heat absorbed from surroundings)
+    </div>
+    <div class="diagram-grid">
+      <div class="diagram-card">
+        <h3>Endothermic Profile</h3>
+        <div class="graph-wrapper">
+          <svg viewBox="0 0 520 300" role="img" aria-label="Endothermic profile — products higher than reactants">
+            <path d="M60,25 V250 H490" stroke="#cbd5e1" fill="none"/>
+            <text x="18" y="150" transform="rotate(-90 18,150)" font-size="11">Potential Energy</text>
+            <text x="250" y="285" text-anchor="middle" font-size="11">Reaction Progress</text>
+            <line x1="72" y1="205" x2="140" y2="205" stroke="#2563eb" stroke-width="4"/>
+            <text x="72" y="198" font-size="11">Reactants</text>
+            <path d="M140,205 C195,140 210,72 265,72 C320,72 337,140 392,125" fill="none" stroke="#ef4444" stroke-width="4"/>
+            <line x1="392" y1="125" x2="460" y2="125" stroke="#16a34a" stroke-width="4"/>
+            <text x="395" y="118" font-size="11">Products</text>
+            <line x1="165" y1="205" x2="165" y2="72" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="172" y="145" font-size="10" fill="#92400e">Ea</text>
+            <line x1="430" y1="205" x2="430" y2="125" stroke="#7c3aed" stroke-width="2"/>
+            <text x="438" y="168" font-size="11">&Delta;H &gt; 0</text>
+          </svg>
+        </div>
+      </div>
+      <div class="diagram-card">
+        <h3>Exothermic Profile</h3>
+        <div class="graph-wrapper">
+          <svg viewBox="0 0 520 300" role="img" aria-label="Exothermic profile — products lower than reactants">
+            <path d="M60,25 V250 H490" stroke="#cbd5e1" fill="none"/>
+            <text x="18" y="150" transform="rotate(-90 18,150)" font-size="11">Potential Energy</text>
+            <text x="250" y="285" text-anchor="middle" font-size="11">Reaction Progress</text>
+            <line x1="72" y1="130" x2="140" y2="130" stroke="#2563eb" stroke-width="4"/>
+            <text x="72" y="123" font-size="11">Reactants</text>
+            <path d="M140,130 C195,90 210,52 265,52 C320,52 337,110 392,205" fill="none" stroke="#ef4444" stroke-width="4"/>
+            <line x1="392" y1="205" x2="460" y2="205" stroke="#16a34a" stroke-width="4"/>
+            <text x="395" y="198" font-size="11">Products</text>
+            <line x1="165" y1="130" x2="165" y2="52" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="172" y="90" font-size="10" fill="#92400e">Ea</text>
+            <line x1="430" y1="130" x2="430" y2="205" stroke="#7c3aed" stroke-width="2"/>
+            <text x="438" y="170" font-size="11">&Delta;H &lt; 0</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.7</span>Catalysts and Activation Energy</div>
+    <p>A <strong>catalyst</strong> lowers activation energy by providing an alternate reaction pathway. It does <em>not</em> change &Delta;H &mdash; the reactant and product energy levels stay exactly the same.</p>
+    <div class="graph-wrapper">
+      <svg viewBox="0 0 620 300" role="img" aria-label="Catalyzed versus uncatalyzed energy profile">
+        <path d="M60,25 V250 H590" stroke="#cbd5e1" fill="none"/>
+        <text x="18" y="150" transform="rotate(-90 18,150)" font-size="11">Potential Energy</text>
+        <text x="300" y="285" text-anchor="middle" font-size="11">Reaction Progress</text>
+        <line x1="75" y1="180" x2="135" y2="180" stroke="#2563eb" stroke-width="4"/>
+        <line x1="450" y1="120" x2="525" y2="120" stroke="#16a34a" stroke-width="4"/>
+        <text x="76" y="172" font-size="11">Reactants</text>
+        <text x="452" y="112" font-size="11">Products</text>
+        <path d="M135,180 C220,140 225,45 310,45 C395,45 395,120 450,120" fill="none" stroke="#ef4444" stroke-width="4"/>
+        <path d="M135,180 C210,150 235,92 300,92 C365,92 400,118 450,120" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="10 7"/>
+        <line x1="235" y1="180" x2="235" y2="45" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="243" y="105" fill="#ef4444" font-size="10">Uncatalyzed Ea</text>
+        <line x1="350" y1="180" x2="350" y2="92" stroke="#0891b2" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="358" y="140" fill="#0891b2" font-size="10">Catalyzed Ea</text>
+        <line x1="540" y1="180" x2="540" y2="120" stroke="#7c3aed" stroke-width="2"/>
+        <text x="548" y="155" font-size="11">Same &Delta;H</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><span class="dot" style="background:#ef4444;"></span> Uncatalyzed path</span>
+      <span class="legend-item"><span class="dot" style="background:#0891b2;"></span> Catalyzed path</span>
+      <span class="legend-item"><span class="dot" style="background:#7c3aed;"></span> Same &Delta;H</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.8</span>Hess&rsquo;s Law and Heats of Formation</div>
+    <p><strong>Hess&rsquo;s law:</strong> because enthalpy is a state function, the overall &Delta;H for a reaction equals the sum of &Delta;H values for any set of steps that add up to that reaction. You can manipulate thermochemical equations algebraically.</p>
+    <div class="formula-box">&Delta;H&deg;<sub>rxn</sub> = &Sigma; n&Delta;H&deg;<sub>f, products</sub> &minus; &Sigma; n&Delta;H&deg;<sub>f, reactants</sub></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Reverse a reaction when needed</strong>
+        <p>Flip the equation so a needed substance ends up on the correct side. Reverse the sign of &Delta;H.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Scale coefficients when needed</strong>
+        <p>Multiply an equation so substances cancel. Multiply &Delta;H by the same factor.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Add all equations and enthalpies</strong>
+        <p>Cancel substances on both sides. Sum all the &Delta;H values for the overall &Delta;H.</p>
+      </div></div>
+    </div>
+    <div class="key-fact"><div class="icon">&#9658;</div>
+      <p>Elements in their standard states (O<sub>2</sub>(g), Fe(s), C(graphite), etc.) have &Delta;H&deg;<sub>f</sub> = 0 by definition and contribute nothing to the sum.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="num">10.9</span>Thermochemical Stoichiometry</div>
+    <p>When a &Delta;H value is attached to a balanced equation, it applies to that reaction <strong>as written</strong> &mdash; for the exact molar amounts shown by the coefficients. Treat the enthalpy ratio like any other stoichiometric conversion factor.</p>
+    <div class="formula-box">
+      Example: 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l) &nbsp;&nbsp; &Delta;H = &minus;572 kJ<br>
+      &rarr; 2 mol H<sub>2</sub> releases 572 kJ &nbsp;&nbsp;|&nbsp;&nbsp; 1 mol H<sub>2</sub> releases 286 kJ
+    </div>
+    <div class="key-fact"><div class="icon">&#9658;</div>
+      <p>Always convert grams to moles first, then apply the mole ratio from the balanced equation to scale the enthalpy. Do not skip the mol conversion.</p>
+    </div>
+  </div>
+
+</div><!-- end #concepts -->
+
+<!-- TOOLS -->
+<div id="tools" class="section">
+
+  <div class="card">
+    <div class="card-title">Thermochemistry Quick Calculator</div>
+    <p class="tool-subtitle">Select a mode, enter your values, and the calculator applies the correct equation. For multi-step heating-curve problems, run each step separately and add the results.</p>
+    <div class="tool-grid">
+      <div class="calc-box">
+        <label>Mode</label>
+        <select id="mode" oninput="runHeatTool()">
+          <option value="temp">Temperature change &mdash; q = mc&Delta;T</option>
+          <option value="fus">Melting / freezing &mdash; q = m&Delta;Hfus</option>
+          <option value="vap">Boiling / condensation &mdash; q = m&Delta;Hvap</option>
+        </select>
+        <label>Mass (g)</label>
+        <input id="massInput" type="number" value="50" oninput="runHeatTool()">
+        <label id="cLabel">Specific heat c (J/g&deg;C)</label>
+        <input id="constInput" type="number" step="any" value="4.184" oninput="runHeatTool()">
+        <label id="deltaLabel">&Delta;T (&deg;C)</label>
+        <input id="deltaInput" type="number" value="25" oninput="runHeatTool()">
+        <div class="calc-result" id="toolResult">Enter values above to calculate heat.</div>
+      </div>
+      <div class="calc-box">
+        <div class="card-title" style="font-size:1rem;margin-bottom:0.6rem;">Reference values for water</div>
+        <table>
+          <thead><tr><th>Quantity</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>c (liquid)</td><td>4.184 J/g&deg;C</td></tr>
+            <tr><td>c (ice)</td><td>2.09 J/g&deg;C</td></tr>
+            <tr><td>c (steam)</td><td>2.01 J/g&deg;C</td></tr>
+            <tr><td>&Delta;H<sub>fus</sub></td><td>334 J/g</td></tr>
+            <tr><td>&Delta;H<sub>vap</sub></td><td>2260 J/g</td></tr>
+            <tr><td>Melting point</td><td>0&deg;C</td></tr>
+            <tr><td>Boiling point</td><td>100&deg;C</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Interactive Heating Curve Explorer</div>
+    <p class="tool-subtitle">Click each segment button to highlight it on the curve and see which equation applies, what is happening at the particle level, and whether temperature is changing or staying constant.</p>
+    <div class="graph-wrapper">
+      <svg id="interactiveCurveGraph" viewBox="0 0 700 360" role="img" aria-label="Interactive heating curve for water">
+        <path d="M60,30 V310 H660" stroke="#c7b8a2" fill="none"></path>
+        <text x="350" y="350" text-anchor="middle">Heat Added (J)</text>
+        <text x="20" y="180" text-anchor="start">Temperature (&deg;C)</text>
+        <line x1="54" x2="60" y1="296" y2="296" stroke="#c7b8a2"></line><text x="50" y="300" text-anchor="end">-40</text>
+        <line x1="54" x2="60" y1="268" y2="268" stroke="#c7b8a2"></line><text x="50" y="272" text-anchor="end">-20</text>
+        <line x1="54" x2="60" y1="240" y2="240" stroke="#c7b8a2"></line><text x="50" y="244" text-anchor="end">0</text>
+        <line x1="54" x2="60" y1="184" y2="184" stroke="#c7b8a2"></line><text x="50" y="188" text-anchor="end">40</text>
+        <line x1="54" x2="60" y1="100" y2="100" stroke="#c7b8a2"></line><text x="50" y="104" text-anchor="end">100</text>
+        <line x1="54" x2="60" y1="44"  y2="44"  stroke="#c7b8a2"></line><text x="50" y="48"  text-anchor="end">140</text>
+        <path id="seg-ice"   class="curve-segment" d="M60,268 L68,240"   fill="none" stroke="#4a90e2" stroke-width="4" stroke-linecap="round"></path>
+        <path id="seg-melt"  class="curve-segment" d="M68,240 L133,240"  fill="none" stroke="#f5a623" stroke-width="4" stroke-linecap="round"></path>
+        <path id="seg-water" class="curve-segment" d="M133,240 L214,100" fill="none" stroke="#1f8a70" stroke-width="4" stroke-linecap="round"></path>
+        <path id="seg-boil"  class="curve-segment" d="M214,100 L652,100" fill="none" stroke="#d64550" stroke-width="4" stroke-linecap="round"></path>
+        <path id="seg-steam" class="curve-segment" d="M652,100 L660,72"  fill="none" stroke="#8e44ad" stroke-width="4" stroke-linecap="round"></path>
+      </svg>
+    </div>
+    <div class="segment-controls">
+      <button class="segment-btn active" onclick="showCurveSegment('ice',this)">Ice warming</button>
+      <button class="segment-btn" onclick="showCurveSegment('melt',this)">Melting</button>
+      <button class="segment-btn" onclick="showCurveSegment('water',this)">Liquid warming</button>
+      <button class="segment-btn" onclick="showCurveSegment('boil',this)">Boiling</button>
+      <button class="segment-btn" onclick="showCurveSegment('steam',this)">Steam warming</button>
+    </div>
+    <div class="segment-readout" id="segmentReadout"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Interactive Reaction Energy Diagrams</div>
+    <p class="tool-subtitle">Switch between exothermic and endothermic reactions, then toggle the catalyst to see how activation energy changes while &Delta;H stays exactly the same.</p>
+    <div class="profile-controls">
+      <button class="profile-btn active" onclick="setReactionProfile('exo',this)">Exothermic</button>
+      <button class="profile-btn" onclick="setReactionProfile('endo',this)">Endothermic</button>
+      <button class="profile-btn" id="catalystToggle" onclick="toggleCatalyst(this)">Catalyst OFF</button>
+    </div>
+    <div class="graph-wrapper">
+      <svg id="reactionProfileSvg" class="profile-svg" viewBox="0 0 620 320" role="img" aria-label="Interactive reaction energy profile">
+        <defs>
+          <marker id="arrowHeadPE" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+            <path d="M0,6 L6,3 L0,0 Z" fill="#7c3aed"></path>
+          </marker>
+        </defs>
+        <path class="base-line" d="M60,28 V265 H585"></path>
+        <text x="20" y="160" transform="rotate(-90 20,160)" font-size="12" fill="#334155">Potential Energy</text>
+        <text x="285" y="302" text-anchor="middle" font-size="12" fill="#334155">Reaction Progress</text>
+        <line id="reactLine" x1="82"  y1="175" x2="148" y2="175" stroke="#2563eb" stroke-width="4"></line>
+        <line id="prodLine"  x1="435" y1="115" x2="520" y2="115" stroke="#16a34a" stroke-width="4"></line>
+        <text id="reactLabel" x="84"  y="167" fill="#2563eb" font-size="12">Reactants</text>
+        <text id="prodLabel"  x="438" y="107" fill="#16a34a" font-size="12">Products</text>
+        <path id="uncatPath" class="rxn-path" d="M148,175 C220,150 235,58 305,58 C380,58 392,110 435,115" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round"></path>
+        <path id="catPath" class="cat-path" d="M148,175 C215,150 245,108 305,108 C370,108 395,117 435,115" fill="none" stroke="#0891b2" stroke-width="5" stroke-linecap="round" stroke-dasharray="11 8"></path>
+        <line id="uncatEa" class="ea-line uncat-ea" x1="228" y1="175" x2="228" y2="58" stroke="#ef4444" stroke-width="2.2" stroke-dasharray="6 5"></line>
+        <text id="uncatEaLabel" class="ea-label uncat-ea" x="238" y="121" fill="#ef4444" font-size="11">Activation energy</text>
+        <line id="catEa" class="ea-line cat-ea" x1="345" y1="175" x2="345" y2="108" stroke="#0891b2" stroke-width="2.2" stroke-dasharray="6 5"></line>
+        <text id="catEaLabel" class="ea-label cat-ea" x="355" y="146" fill="#0891b2" font-size="11">Lower Ea</text>
+        <line id="dhLine" class="dh-line" x1="548" y1="175" x2="548" y2="115" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#arrowHeadPE)"></line>
+        <text id="dhLabel" x="556" y="148" fill="#7c3aed" font-size="12">&Delta;H</text>
+      </svg>
+    </div>
+    <div class="profile-readout" id="profileReadout"></div>
+    <div class="profile-note">A catalyst changes the pathway and lowers E<sub>a</sub>, but does not move the reactants or products on the energy diagram, so &Delta;H stays the same.</div>
+  </div>
+
+</div><!-- end #tools -->
+
+<!-- EXAMPLES -->
+<div id="examples" class="section">
+
+  <div class="card">
+    <div class="card-title">Example 1 &mdash; Specific Heat Calculation</div>
+    <p><strong>Problem:</strong> How much heat is needed to warm 125 g of water from 20.0&deg;C to 68.0&deg;C? (c = 4.184 J/g&deg;C)</p>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Identify the given values</strong>
+        <p>m = 125 g &nbsp;&nbsp; c = 4.184 J/g&deg;C &nbsp;&nbsp; &Delta;T = 68.0 &minus; 20.0 = 48.0&deg;C</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Apply q = mc&Delta;T</strong>
+        <div class="fl-chain">q = (125)(4.184)(48.0) = <span class="fl-result">25,104 J = 25.1 kJ</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Example 2 &mdash; Multi-step Heating Curve</div>
+    <p><strong>Problem:</strong> A 20.0 g sample of liquid water at 25.0&deg;C is heated to 100.0&deg;C, completely boiled, then the steam is warmed to 118.0&deg;C. Find the total heat. (c<sub>water</sub> = 4.184 J/g&deg;C, &Delta;H<sub>vap</sub> = 2260 J/g, c<sub>steam</sub> = 2.01 J/g&deg;C)</p>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 1 &mdash; Warm liquid water from 25.0&deg;C to 100.0&deg;C</strong>
+        <div class="fl-chain">q<sub>1</sub> = mc&Delta;T = (20.0)(4.184)(75.0) = <span class="fl-result">6276 J</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 2 &mdash; Boil at 100.0&deg;C (phase change &mdash; temperature does not change)</strong>
+        <div class="fl-chain">q<sub>2</sub> = m&Delta;H<sub>vap</sub> = (20.0)(2260) = <span class="fl-result">45,200 J</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 3 &mdash; Warm steam from 100.0&deg;C to 118.0&deg;C</strong>
+        <div class="fl-chain">q<sub>3</sub> = mc&Delta;T = (20.0)(2.01)(18.0) = <span class="fl-result">724 J</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Add all steps</strong>
+        <div class="fl-chain">q<sub>total</sub> = 6276 + 45,200 + 724 = <span class="fl-result">52,200 J &asymp; 52.2 kJ</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Example 3 &mdash; Thermochemical Stoichiometry</div>
+    <p><strong>Problem:</strong> For 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l), &Delta;H = &minus;572 kJ. How much heat is released when 5.00 mol H<sub>2</sub> reacts?</p>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Read the mole ratio from the balanced equation</strong>
+        <p>2 mol H<sub>2</sub> releases 572 kJ as written.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Scale using enthalpy as a conversion factor</strong>
+        <div class="fl-chain">5.00 mol H<sub>2</sub> &times; <span class="fl-frac"><span class="fl-num">572 kJ</span><span class="fl-den">2 mol H<sub>2</sub></span></span> = <span class="fl-result">1430 kJ released</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Example 4 &mdash; Hess&rsquo;s Law</div>
+    <p><strong>Problem:</strong> Find &Delta;H for C(s) + &frac12;O<sub>2</sub>(g) &rarr; CO(g), given:</p>
+    <div class="fl-chain">Reaction 1: C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;393.5 kJ</div>
+    <div class="fl-chain">Reaction 2: CO(g) + &frac12;O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;283.0 kJ</div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Reverse Reaction 2</strong>
+        <p>CO must be a product. In Reaction 2 it is a reactant, so reverse the equation and change the sign of &Delta;H.</p>
+        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + &frac12;O<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = <span class="fl-result">+283.0 kJ</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Add Reaction 1 and the reversed Reaction 2</strong>
+        <div class="fl-chain">C + O<sub>2</sub> &rarr; CO<sub>2</sub> &nbsp;&nbsp; (&minus;393.5 kJ)<br>CO<sub>2</sub> &rarr; CO + &frac12;O<sub>2</sub> &nbsp;&nbsp; (+283.0 kJ)</div>
+        <p>CO<sub>2</sub> cancels. Net: C(s) + &frac12;O<sub>2</sub>(g) &rarr; CO(g)</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Sum the enthalpies</strong>
+        <div class="fl-chain">&Delta;H = &minus;393.5 + 283.0 = <span class="fl-result">&minus;110.5 kJ</span></div>
+      </div></div>
+    </div>
+  </div>
+
+</div><!-- end #examples -->
+
+<div class="scroll-hint">Introductory General Chemistry &middot; Unit 10 &middot; Energy &amp; Thermochemistry</div>
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+// ── 1. HEAT CALCULATOR ────────────────────────────────────────
+function runHeatTool() {
+  const mode = document.getElementById('mode').value;
+  const m    = parseFloat(document.getElementById('massInput').value);
+  const k    = parseFloat(document.getElementById('constInput').value);
+  const out  = document.getElementById('toolResult');
+  const cLbl = document.getElementById('cLabel');
+  const dLbl = document.getElementById('deltaLabel');
+  const dIn  = document.getElementById('deltaInput');
+  if (mode === 'temp') {
+    cLbl.textContent = 'Specific heat c (J/g\u00B0C)';
+    dLbl.textContent = '\u0394T (\u00B0C)';
+    dIn.removeAttribute('readonly');
+  } else if (mode === 'fus') {
+    cLbl.innerHTML   = '\u0394H<sub>fus</sub> (J/g)';
+    dLbl.textContent = 'n/a \u2014 phase change at constant T';
+    dIn.value = 1; dIn.setAttribute('readonly', true);
+  } else {
+    cLbl.innerHTML   = '\u0394H<sub>vap</sub> (J/g)';
+    dLbl.textContent = 'n/a \u2014 phase change at constant T';
+    dIn.value = 1; dIn.setAttribute('readonly', true);
+  }
+  const d = parseFloat(document.getElementById('deltaInput').value);
+  if (isNaN(m) || isNaN(k) || isNaN(d)) { out.innerHTML = 'Enter valid numbers above.'; return; }
+  const q = m * k * d;
+  out.innerHTML = 'q = <strong>' + q.toLocaleString(undefined,{maximumFractionDigits:2}) + ' J</strong> &nbsp;=&nbsp; <strong>' + (q/1000).toLocaleString(undefined,{maximumFractionDigits:4}) + ' kJ</strong>';
+}
+
+// ── 2. HEATING CURVE EXPLORER ─────────────────────────────────
+let CURVE_DATA = {
+  ice:   { target:'seg-ice',   title:'Ice warming',    equation:'q = mc\u0394T',
+           detail:'The sample is solid ice. Temperature rises toward 0\u00B0C as particles vibrate faster in fixed lattice positions.',
+           temp:'Temperature is changing \u2014 sloped segment.',
+           particle:'Particles vibrate faster but stay in fixed positions.' },
+  melt:  { target:'seg-melt',  title:'Melting',        equation:'q = m\u0394H<sub>fus</sub>',
+           detail:'Temperature holds constant at 0\u00B0C. Added energy breaks intermolecular attractions instead of raising temperature.',
+           temp:'Temperature stays constant at 0\u00B0C \u2014 flat segment.',
+           particle:'Energy breaks bonds between molecules instead of speeding them up.' },
+  water: { target:'seg-water', title:'Liquid warming', equation:'q = mc\u0394T',
+           detail:'The sample is now liquid water. Temperature rises from 0\u00B0C toward 100\u00B0C.',
+           temp:'Temperature is changing \u2014 sloped segment.',
+           particle:'Liquid particles move faster and slide past each other more freely.' },
+  boil:  { target:'seg-boil',  title:'Boiling',        equation:'q = m\u0394H<sub>vap</sub>',
+           detail:'Temperature holds constant at 100\u00B0C. Added energy separates liquid particles into gas phase.',
+           temp:'Temperature stays constant at 100\u00B0C \u2014 flat segment.',
+           particle:'Energy fully separates particles from the liquid surface into gas.' },
+  steam: { target:'seg-steam', title:'Steam warming',  equation:'q = mc\u0394T',
+           detail:'All of the sample is now gas. Temperature rises above 100\u00B0C.',
+           temp:'Temperature is changing \u2014 sloped segment.',
+           particle:'Gas particles move faster and spread farther apart.' }
+};
+function showCurveSegment(key, btn) {
+  document.querySelectorAll('.curve-segment').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.segment-btn').forEach(function(el){el.classList.remove('active');});
+  let data = CURVE_DATA[key];
+  let seg  = document.getElementById(data.target);
+  if (seg) seg.classList.add('active');
+  if (btn) btn.classList.add('active');
+  document.getElementById('segmentReadout').innerHTML =
+    '<strong>' + data.title + '</strong><br>' +
+    'Use <strong>' + data.equation + '</strong>.<br>' +
+    data.detail + '<br>' +
+    '<strong>Temperature behavior:</strong> ' + data.temp + '<br>' +
+    '<strong>Particle picture:</strong> ' + data.particle;
+}
+
+// ── 3. REACTION PROFILE EXPLORER ─────────────────────────────
+let currentProfile = 'exo';
+let catalystOn     = false;
+function setReactionProfile(type, btn) {
+  currentProfile = type;
+  document.querySelectorAll('.profile-btn').forEach(function(el){
+    if (el.id !== 'catalystToggle') el.classList.remove('active');
+  });
+  if (btn) btn.classList.add('active');
+  let isExo = type === 'exo';
+  let rY = isExo ? 175 : 185, pY = isExo ? 115 : 110;
+  let uP = isExo ? 58  : 62,  cP = isExo ? 108 : 118;
+  document.getElementById('reactLine').setAttribute('y1', rY);
+  document.getElementById('reactLine').setAttribute('y2', rY);
+  document.getElementById('prodLine').setAttribute('y1', pY);
+  document.getElementById('prodLine').setAttribute('y2', pY);
+  document.getElementById('reactLabel').setAttribute('y', rY - 8);
+  document.getElementById('prodLabel').setAttribute('y', pY - 8);
+  document.getElementById('uncatPath').setAttribute('d','M148,'+rY+' C220,'+(rY-25)+' 235,'+uP+' 305,'+uP+' C380,'+uP+' 392,'+(pY+5)+' 435,'+pY);
+  document.getElementById('catPath').setAttribute('d',  'M148,'+rY+' C215,'+(rY-20)+' 245,'+cP+' 305,'+cP+' C370,'+cP+' 395,'+(pY+2)+' 435,'+pY);
+  document.getElementById('uncatEa').setAttribute('y1', rY);
+  document.getElementById('uncatEa').setAttribute('y2', uP);
+  document.getElementById('catEa').setAttribute('y1', rY);
+  document.getElementById('catEa').setAttribute('y2', cP);
+  document.getElementById('uncatEaLabel').setAttribute('y', Math.round((rY+uP)/2)+6);
+  document.getElementById('catEaLabel').setAttribute('y',   Math.round((rY+cP)/2)+6);
+  document.getElementById('dhLine').setAttribute('y1', rY);
+  document.getElementById('dhLine').setAttribute('y2', pY);
+  document.getElementById('dhLabel').setAttribute('y', Math.round((rY+pY)/2)+5);
+  document.getElementById('dhLabel').textContent = isExo ? '\u0394H < 0' : '\u0394H > 0';
+  updateProfileReadout();
+}
+function toggleCatalyst(btn) {
+  catalystOn = !catalystOn;
+  document.getElementById('reactionProfileSvg').classList.toggle('show-catalyst', catalystOn);
+  btn.textContent = catalystOn ? 'Catalyst ON' : 'Catalyst OFF';
+  btn.classList.toggle('active', catalystOn);
+  updateProfileReadout();
+}
+function updateProfileReadout() {
+  let rxnType = currentProfile === 'exo' ? 'Exothermic' : 'Endothermic';
+  let dhText  = currentProfile === 'exo'
+    ? 'Products are lower in potential energy than reactants, so \u0394H is negative and heat is released to the surroundings.'
+    : 'Products are higher in potential energy than reactants, so \u0394H is positive and heat is absorbed from the surroundings.';
+  let catText = catalystOn
+    ? 'The catalyst lowers activation energy by providing an alternate pathway. Reactant and product energy levels do not change, so \u0394H is unchanged.'
+    : 'Without a catalyst, reactants must climb the full activation energy barrier before forming products.';
+  document.getElementById('profileReadout').innerHTML =
+    '<strong>' + rxnType + ' profile</strong><br>' + dhText + '<br>' +
+    '<strong>Activation energy:</strong> the vertical rise from the reactant level to the peak of the curve.<br>' +
+    '<strong>Catalyst:</strong> ' + catText;
+}
+
+// ── 4. INITIALISE ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  runHeatTool();
+  showCurveSegment('ice', document.querySelector('.segment-btn'));
+  setReactionProfile('exo', document.querySelector('.profile-btn'));
+});
+</script>
+</body>
+</html>

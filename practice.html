@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Hub | ChemUnlocked</title>
+<meta name="description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+<link rel="stylesheet" href="chem.css">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://chemunlocked.com/practice.html">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Practice Hub | ChemUnlocked">
+  <meta property="og:description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chemunlocked.com/practice.html">
+  <meta property="og:site_name" content="ChemUnlocked">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Practice Hub | ChemUnlocked">
+  <meta name="twitter:description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+  <meta name="twitter:site" content="@ChemUnlocked">
+
+  <!-- JSON-LD Schema Markup for Course Catalog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CourseCatalog",
+    "name": "ChemUnlocked Practice Hub",
+    "description": "Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ChemUnlocked",
+      "url": "https://chemunlocked.com"
+    }
+  }
+  </script>
+<style>
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin: 0.5rem 0 0;
+    max-width: 64ch;
+  }
+
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0 1.25rem;
+  }
+
+  .stat-tile {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(219,228,238,0.92);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .stat-num {
+    font-size: 1.75rem;
+    font-weight: 750;
+    color: var(--accent2);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .how-it-works {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgba(37,99,235,0.06), rgba(37,99,235,0.02));
+    border: 1px solid rgba(37,99,235,0.16);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .how-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    flex: 1 1 180px;
+    min-width: 0;
+  }
+
+  .how-step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent2);
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .how-step-text {
+    font-size: 0.87rem;
+    color: var(--dim);
+    line-height: 1.55;
+  }
+
+  .section-eyebrow {
+    font-size: 0.77rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent2);
+    margin: 0 0 0.3rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+    font-weight: 650;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+    margin: 0 0 0.6rem;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+    max-width: 70ch;
+  }
+
+  .practice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .practice-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(219,228,238,0.92);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.15rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    gap: 0.45rem;
+  }
+
+  .practice-card:hover {
+    border-color: #93c5fd;
+    background: #f0f6ff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+  }
+
+  .practice-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .practice-unit-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .practice-card:hover .practice-unit-num {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .practice-problem-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  .practice-card-title {
+    font-size: 1rem;
+    font-weight: 650;
+    color: var(--text);
+    line-height: 1.25;
+  }
+
+  .practice-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.1rem;
+  }
+
+  .meta-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+  }
+
+  .pill-calc    { background: #dbeafe; color: #1d4ed8; }
+  .pill-concept { background: #ecfeff; color: #0f766e; }
+  .pill-multi   { background: #fef3c7; color: #92400e; }
+
+  .practice-card-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent2);
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
+
+  .bottom-cta {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(219,228,238,0.92);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .bottom-cta-text { flex: 1 1 300px; }
+
+  .bottom-cta-title {
+    font-size: 1.15rem;
+    font-weight: 650;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .bottom-cta-desc {
+    font-size: 0.88rem;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .practice-grid { grid-template-columns: 1fr; }
+    .how-it-works  { flex-direction: column; gap: 0.75rem; }
+    .bottom-cta    { flex-direction: column; align-items: flex-start; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Practice Hub</div>
+    <h1>Practice Problems</h1>
+    <p class="hero-subtitle">Jump straight into randomized problem sets for any unit — no re-reading required. Each set draws 12 problems from a bank of 81–84, with instant scoring and full worked solutions.</p>
+  </header>
+  <div class="locked-notice">
+    <h2>Subscriber Access Required</h2>
+    <p>
+      Full practice problems on ChemUnlocked are available to subscribers.
+      Access is provided through Patreon and requires an active subscription.
+    </p>
+    
+    <ul>
+      <li>Full problem sets</li>
+      <li>Step-by-step solutions</li>
+      <li>Premium practice tools</li>
+    </ul>
+    
+    <a href="YOUR_PATREON_LINK" class="btn btn-primary">
+      Unlock Full Practice
+    </a>
+    
+    <p style="font-size:0.8rem;">
+      Secure payments handled by Patreon • Cancel anytime
+    </p>
+  </div>
+  <div class="stats-strip" role="region" aria-label="Practice statistics">
+    <div class="stat-tile">
+      <div class="stat-num">13</div>
+      <div class="stat-label">Units available</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">1,068</div>
+      <div class="stat-label">Total problems</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Problems per set</div>
+    </div>
+  </div>
+
+  <div class="how-it-works" role="list" aria-label="How practice works">
+    <div class="how-step" role="listitem">
+      <span class="how-step-num">01</span>
+      <span class="how-step-text"><strong>Pick a unit</strong> below and click to open its practice page.</span>
+    </div>
+    <div class="how-step" role="listitem">
+      <span class="how-step-num">02</span>
+      <span class="how-step-text"><strong>Filter by type</strong> — Calculation, Concept, or Multi-step — or draw from all.</span>
+    </div>
+    <div class="how-step" role="listitem">
+      <span class="how-step-num">03</span>
+      <span class="how-step-text"><strong>Generate a set</strong> and answer all 12. Instant feedback after each one.</span>
+    </div>
+    <div class="how-step" role="listitem">
+      <span class="how-step-num">04</span>
+      <span class="how-step-text"><strong>Review solutions</strong> for every problem — including ones you got right.</span>
+    </div>
+  </div>
+
+  <div class="section-eyebrow">Available Now</div>
+  <div class="section-heading">Choose a Unit</div>
+  <p class="section-desc">Only units with a complete, verified problem bank are listed here. More units are added as they are built and checked.</p>
+
+  <div class="practice-grid">
+
+    <a href="00_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">00</span>
+          <span class="practice-problem-count">125 problems</span>
+      </div>
+      <div class="practice-card-title">Intro to Chemistry &amp; Lab Safety</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="01_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">01</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Matter</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="02_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">02</span>
+        <span class="practice-problem-count">84 problems</span>
+      </div>
+      <div class="practice-card-title">Atomic Structure</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="03_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">03</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Electron Configuration</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="04_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">04</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Periodic Table &amp; Trends</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="05_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">05</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Nomenclature</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="06_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">06</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Moles</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="07_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">07</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Chemical Reactions</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="08_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">08</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Stoichiometry</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="09_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">09</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Chemical Bonding</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="10_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">10</span>
+          <span class="practice-problem-count">84 problems</span>
+        </div>
+        <div class="practice-card-title">Energy and Thermochemistry</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="11_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">11</span>
+        <span class="practice-problem-count">84 problems</span>
+      </div>
+      <div class="practice-card-title">Gas Laws</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="12_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">12</span>
+        <span class="practice-problem-count">82 problems</span>
+      </div>
+      <div class="practice-card-title">Solutions</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="13_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">13</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Chemical Equilibrium</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+    <a href="14_practice.html" class="practice-card">
+      <div class="practice-card-top">
+        <span class="practice-unit-num">14</span>
+        <span class="practice-problem-count">81 problems</span>
+      </div>
+      <div class="practice-card-title">Acids &amp; Bases</div>
+      <div class="practice-card-meta">
+        <span class="meta-pill pill-calc">Calculation</span>
+        <span class="meta-pill pill-concept">Concept</span>
+        <span class="meta-pill pill-multi">Multi-step</span>
+      </div>
+      <div class="practice-card-cta">Start practicing →</div>
+    </a>
+
+  </div>
+
+  <div class="bottom-cta">
+    <div class="bottom-cta-text">
+      <div class="bottom-cta-title">Want the full study guide first?</div>
+      <div class="bottom-cta-desc">Each unit has a complete study guide with concept cards, interactive tools, and worked examples — open it before practicing if you're learning the material for the first time.</div>
+    </div>
+    <a href="index.html#units" class="btn btn-outline">Browse All Units →</a>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Practice Hub</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+</body>
+</html>

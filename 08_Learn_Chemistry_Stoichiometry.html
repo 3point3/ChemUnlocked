@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 08 — Stoichiometry | ChemUnlocked</title>
+<meta name="description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/08_Learn_Chemistry_Stoichiometry.html">
+<meta property="og:title" content="Unit 08 — Stoichiometry | ChemUnlocked">
+<meta property="og:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/08_Learn_Chemistry_Stoichiometry.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 08 — Stoichiometry | ChemUnlocked">
+<meta name="twitter:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 08 — Stoichiometry",
+  "description": "Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  },
+  "url": "https://chemunlocked.com/08_Learn_Chemistry_Stoichiometry.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<style>
+
+/* ── Hi-Lo specific helpers (no new classes, just semantic tweaks) ── */
+.vocab-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin-top: 0.75rem;
+}
+.vocab-term {
+  font-weight: 700;
+  color: var(--accent2);
+  white-space: nowrap;
+}
+.road-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.9rem 0 0.4rem;
+  font-size: 0.92rem;
+}
+.road-step {
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.road-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.highlight-box {
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.9rem;
+  color: #713f12;
+  font-size: 0.95rem;
+}
+.highlight-box strong { color: #92400e; }
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+.check-list li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed var(--border);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Tool UI ── */
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.tool-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dim);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.tool-output {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-family: 'DM Mono', monospace;
+  color: #1e3a8a;
+  min-height: 2.5rem;
+  font-size: 0.95rem;
+}
+.tool-divider {
+  grid-column: 1 / -1;
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 0.5rem 0;
+}
+@media (max-width: 640px) {
+  .tool-grid { grid-template-columns: 1fr; }
+  .practice-banner-right { align-items: flex-start; }
+  .practice-banner-note { text-align: left; }
+  .vocab-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 08</div>
+    <h1>Stoichiometry</h1>
+    <p class="subtitle">Stoichiometry is the math of chemical reactions. It lets you predict how much product you will make — and understand why you sometimes make less than expected. This unit covers two big ideas: using a balanced equation to calculate amounts, and figuring out which ingredient runs out first.</p>
+  </header>
+
+  <!-- ── TAB NAV ── -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       CONCEPTS TAB
+  ══════════════════════════════════════════════ -->
+  <div id="concepts" class="section active">
+
+    <!-- 8.1 What Is Stoichiometry? -->
+    <div class="card">
+      <div class="card-title"><span class="num">8.1</span> What Is Stoichiometry?</div>
+      <p>The word <strong>stoichiometry</strong> (stoy-key-AH-meh-tree) sounds hard, but the idea is simple: it is the math that tells you <em>how much</em> of each chemical is used or made in a reaction.</p>
+      <p>Think of a recipe. If a cookie recipe says "use 2 cups of flour for every 1 cup of sugar," you can scale it up or down. A balanced chemical equation works the same way — the <strong>coefficients</strong> (the big numbers in front of each formula) act like the amounts in a recipe.</p>
+
+      <div class="formula-box">
+        <span class="label">Example Equation</span>
+        2 H₂ + O₂ → 2 H₂O
+      </div>
+
+      <p style="margin-top:0.8rem;">This means: <strong>2 molecules</strong> of hydrogen gas react with <strong>1 molecule</strong> of oxygen gas to make <strong>2 molecules</strong> of water. The ratio 2 : 1 : 2 never changes — no matter how big or small the batch.</p>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p><strong>Big idea:</strong> The coefficients in a balanced equation tell you the <em>mole ratio</em> — the ratio of moles of every substance in the reaction. This ratio is the heart of all stoichiometry problems.</p>
+      </div>
+    </div>
+
+    <!-- 8.2 Mole Ratios and Stoichiometric Factors -->
+    <div class="card">
+      <div class="card-title"><span class="num">8.2</span> Mole Ratios — The Conversion Tool</div>
+      <p>A <strong>mole ratio</strong> (also called a <strong>stoichiometric factor</strong>) is a fraction you build from the coefficients in a balanced equation. You use it like a unit conversion — it lets you switch from moles of one substance to moles of another.</p>
+
+      <div class="formula-box">
+        <span class="label">General Stoichiometric Factor</span>
+        mol of substance A
+        ─────────────────── = mole ratio
+        mol of substance B
+      </div>
+
+      <p style="margin-top:0.8rem;">From the equation <strong>N₂ + 3 H₂ → 2 NH₃</strong>, you can write these mole ratios:</p>
+
+      <div class="vocab-row">
+        <span class="vocab-term">3 mol H₂ / 1 mol N₂</span>
+        <span>For every 1 mole of nitrogen used, 3 moles of hydrogen are used.</span>
+        <span class="vocab-term">2 mol NH₃ / 1 mol N₂</span>
+        <span>For every 1 mole of nitrogen used, 2 moles of ammonia are made.</span>
+        <span class="vocab-term">2 mol NH₃ / 3 mol H₂</span>
+        <span>For every 3 moles of hydrogen used, 2 moles of ammonia are made.</span>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>You can flip any mole ratio upside down. Pick the version that cancels the unit you want to get rid of. This is the same factor-label method you used in the Moles unit.</p>
+      </div>
+    </div>
+
+    <!-- 8.3 The Stoichiometry Roadmap -->
+    <div class="card">
+      <div class="card-title"><span class="num">8.3</span> The Stoichiometry Roadmap</div>
+      <p>Almost every stoichiometry problem follows the same three-step path. Memorize this road map and you can solve any problem.</p>
+
+      <div class="road-map">
+        <span class="road-step">1. Grams → Moles</span>
+        <span class="road-arrow">→</span>
+        <span class="road-step">2. Moles → Moles</span>
+        <span class="road-arrow">→</span>
+        <span class="road-step">3. Moles → Grams</span>
+      </div>
+
+      <ul class="check-list">
+        <li><strong>Step 1 — Convert to moles:</strong> Divide the grams given by the molar mass of that substance. Now you have moles.</li>
+        <li><strong>Step 2 — Use the mole ratio:</strong> Multiply by the stoichiometric factor from the balanced equation. This switches you from moles of the given substance to moles of the wanted substance.</li>
+        <li><strong>Step 3 — Convert to grams:</strong> Multiply by the molar mass of the wanted substance. Now you have grams of your answer.</li>
+      </ul>
+
+      <div class="formula-box">
+        <span class="label">The Full Factor-Label Chain</span>
+        g A × (1 mol A / MM_A) × (mol B / mol A) × (MM_B / 1 mol B) = g B
+      </div>
+
+      <p style="margin-top:0.75rem;">Where MM = molar mass in g/mol, and the middle fraction is the mole ratio from the balanced equation.</p>
+    </div>
+
+    <!-- 8.4 Limiting Reactant -->
+    <div class="card">
+      <div class="card-title"><span class="num">8.4</span> Limiting Reactant</div>
+      <p>What happens when you do not have exactly the right amounts of each reactant? One ingredient runs out first and stops the reaction. That ingredient is called the <strong>limiting reactant</strong> (or limiting reagent).</p>
+
+      <div class="highlight-box">
+        <strong>Sandwich analogy:</strong> You have 3 slices of bread and 5 slices of cheese. Each sandwich needs 2 bread + 1 cheese. You can only make 1 complete sandwich — bread runs out first. Bread is the limiting reactant. The extra cheese is the <strong>excess reactant</strong>.
+      </div>
+
+      <p style="margin-top:0.85rem;">In chemistry, the limiting reactant controls how much product you can make. Once it is used up, the reaction stops — even if other reactants are left over.</p>
+
+      <div class="formula-box">
+        <span class="label">How to Find the Limiting Reactant</span>
+        For each reactant, calculate how much product it would make.
+        The reactant that produces LESS product is the limiting reactant.
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Common mistake: Students pick the reactant with fewer grams. That is wrong — you must compare <em>moles</em> relative to the equation, not raw grams. Always convert to moles first.</p>
+      </div>
+    </div>
+
+    <!-- 8.5 Theoretical Yield, Actual Yield, and Percent Yield -->
+    <div class="card">
+      <div class="card-title"><span class="num">8.5</span> Theoretical Yield, Actual Yield, and Percent Yield</div>
+
+      <div class="vocab-row">
+        <span class="vocab-term">Theoretical yield</span>
+        <span>The maximum amount of product you could possibly make — calculated from the limiting reactant using stoichiometry. This is the "perfect world" answer.</span>
+        <span class="vocab-term">Actual yield</span>
+        <span>The amount of product you actually collect in the lab. It is almost always <em>less</em> than the theoretical yield because of spills, side reactions, incomplete reactions, and measurement errors.</span>
+        <span class="vocab-term">Percent yield</span>
+        <span>How efficient your reaction was — expressed as a percentage. A percent yield of 100% would mean no product was lost at all (rare in real labs).</span>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Percent Yield Formula</span>
+        Percent Yield = (Actual Yield ÷ Theoretical Yield) × 100%
+      </div>
+
+      <div class="highlight-box">
+        <strong>Example:</strong> If stoichiometry says you should make 10.0 g of product (theoretical yield), but you only collect 8.5 g in lab (actual yield), your percent yield = (8.5 ÷ 10.0) × 100% = <strong>85%</strong>.
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Percent yield is always between 0% and 100%. If your calculation gives more than 100%, something went wrong — recheck your math or your measurement.</p>
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+
+  <!-- ══════════════════════════════════════════════
+       TOOLS TAB
+  ══════════════════════════════════════════════ -->
+  <div id="tools" class="section">
+
+    <!-- Tool 1: Mole Ratio Builder -->
+    <div class="card">
+      <div class="card-title"><span class="num">Tool 1</span> Mole Ratio Helper</div>
+      <p>Enter the coefficients from your balanced equation. The tool will list every mole ratio you can write — ready to use as stoichiometric factors.</p>
+
+      <div class="tool-grid">
+        <div>
+          <div class="tool-label">Coefficient of Substance A</div>
+          <input class="prob-input" id="coefA" type="number" min="1" max="99" placeholder="e.g. 2" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Name / Formula of A</div>
+          <input class="prob-input" id="nameA" type="text" placeholder="e.g. H₂" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Coefficient of Substance B</div>
+          <input class="prob-input" id="coefB" type="number" min="1" max="99" placeholder="e.g. 1" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Name / Formula of B</div>
+          <input class="prob-input" id="nameB" type="text" placeholder="e.g. O₂" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Coefficient of Substance C</div>
+          <input class="prob-input" id="coefC" type="number" min="1" max="99" placeholder="e.g. 2 (optional)" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Name / Formula of C</div>
+          <input class="prob-input" id="nameC" type="text" placeholder="e.g. H₂O (optional)" style="margin-bottom:0;">
+        </div>
+        <hr class="tool-divider">
+        <div style="grid-column:1/-1;">
+          <button class="btn" id="buildRatiosBtn">Build Mole Ratios</button>
+        </div>
+        <div style="grid-column:1/-1;">
+          <div class="tool-label">Mole Ratios</div>
+          <div class="tool-output" id="ratioOutput" style="white-space:pre-line; line-height:1.9;">Enter coefficients and click Build.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool 2: Percent Yield Calculator -->
+    <div class="card">
+      <div class="card-title"><span class="num">Tool 2</span> Percent Yield Calculator</div>
+      <p>Enter your actual yield and theoretical yield (both in the same units — grams, moles, or any unit). The tool calculates your percent yield.</p>
+
+      <div class="tool-grid">
+        <div>
+          <div class="tool-label">Actual Yield (g or mol)</div>
+          <input class="prob-input" id="actualYield" type="number" min="0" step="any" placeholder="e.g. 8.5" style="margin-bottom:0;">
+        </div>
+        <div>
+          <div class="tool-label">Theoretical Yield (g or mol)</div>
+          <input class="prob-input" id="theorYield" type="number" min="0" step="any" placeholder="e.g. 10.0" style="margin-bottom:0;">
+        </div>
+        <hr class="tool-divider">
+        <div style="grid-column:1/-1;">
+          <div class="tool-label">Percent Yield</div>
+          <div class="tool-output" id="yieldOutput">—</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #tools -->
+
+
+  <!-- ══════════════════════════════════════════════
+       EXAMPLES TAB
+  ══════════════════════════════════════════════ -->
+  <div id="examples" class="section">
+
+    <!-- Ex 1: Grams of Reactant → Grams of Product -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Grams of Reactant → Grams of Product</div>
+      <p><strong>Given:</strong> 16.0 g of methane (CH₄) burns in excess oxygen: CH₄ + 2 O₂ → CO₂ + 2 H₂O &nbsp;&nbsp; <strong>Find:</strong> grams of CO₂ produced</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Find the molar mass of CH₄</strong>
+            <p>C = 12.01 g/mol &nbsp;|&nbsp; H₄ = 4 × 1.008 = 4.032 g/mol<br>
+            Molar mass of CH₄ = 12.01 + 4.032 = <strong>16.04 g/mol</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Find the molar mass of CO₂</strong>
+            <p>C = 12.01 g/mol &nbsp;|&nbsp; O₂ = 2 × 16.00 = 32.00 g/mol<br>
+            Molar mass of CO₂ = 12.01 + 32.00 = <strong>44.01 g/mol</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Write the mole ratio from the balanced equation</strong>
+            <p>Coefficients: 1 mol CH₄ produces 1 mol CO₂ → mole ratio = <strong>1 mol CO₂ / 1 mol CH₄</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Build the factor-label chain</strong>
+            <div class="fl-label">Factor-Label Chain</div>
+            <div class="fl-chain">
+              16.0 g CH₄ ×
+              <span class="fl-frac">
+                <span class="fl-num">1 mol CH₄</span>
+                <span class="fl-den">16.04 g CH₄</span>
+              </span>
+              ×
+              <span class="fl-frac">
+                <span class="fl-num">1 mol CO₂</span>
+                <span class="fl-den">1 mol CH₄</span>
+              </span>
+              ×
+              <span class="fl-frac">
+                <span class="fl-num">44.01 g CO₂</span>
+                <span class="fl-den">1 mol CO₂</span>
+              </span>
+              = <span class="fl-result">43.9 g CO₂</span>
+            </div>
+            <div class="fl-cancel">g CH₄ cancel → mol CH₄ cancel → mol CO₂ cancel → g CO₂ ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>Burning 16.0 g of methane produces <strong>43.9 g of CO₂</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 2: Moles of Reactant → Moles of Product -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Moles of Reactant → Moles of Product</div>
+      <p><strong>Given:</strong> 0.500 mol of N₂ reacts with excess H₂: N₂ + 3 H₂ → 2 NH₃ &nbsp;&nbsp; <strong>Find:</strong> moles of NH₃ produced</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Identify the mole ratio</strong>
+            <p>From the equation: 1 mol N₂ produces 2 mol NH₃<br>
+            Mole ratio = <strong>2 mol NH₃ / 1 mol N₂</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Multiply (no molar mass needed — we start in moles!)</strong>
+            <div class="fl-label">Factor-Label Chain</div>
+            <div class="fl-chain">
+              0.500 mol N₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol NH₃</span>
+                <span class="fl-den">1 mol N₂</span>
+              </span>
+              = <span class="fl-result">1.00 mol NH₃</span>
+            </div>
+            <div class="fl-cancel">mol N₂ cancel → mol NH₃ ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>0.500 mol of N₂ produces <strong>1.00 mol of NH₃</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 3: Finding the Limiting Reactant -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> Finding the Limiting Reactant</div>
+      <p><strong>Given:</strong> 5.00 g of H₂ and 24.0 g of O₂ react: 2 H₂ + O₂ → 2 H₂O &nbsp;&nbsp; <strong>Find:</strong> Which is the limiting reactant? How many grams of water form?</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Convert both reactants to moles</strong>
+            <p>Molar mass H₂ = 2.016 g/mol &nbsp;→&nbsp; 5.00 g ÷ 2.016 = <strong>2.48 mol H₂</strong><br>
+            Molar mass O₂ = 32.00 g/mol &nbsp;→&nbsp; 24.0 g ÷ 32.00 = <strong>0.750 mol O₂</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Calculate how much H₂O each reactant could make (separately)</strong>
+            <p><em>Using H₂:</em> mole ratio = 2 mol H₂O / 2 mol H₂ = 1:1</p>
+            <div class="fl-chain">
+              2.48 mol H₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol H₂O</span>
+                <span class="fl-den">2 mol H₂</span>
+              </span>
+              = <span class="fl-result">2.48 mol H₂O</span>
+            </div>
+            <p style="margin-top:0.7rem;"><em>Using O₂:</em> mole ratio = 2 mol H₂O / 1 mol O₂</p>
+            <div class="fl-chain">
+              0.750 mol O₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol H₂O</span>
+                <span class="fl-den">1 mol O₂</span>
+              </span>
+              = <span class="fl-result">1.50 mol H₂O</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Compare and identify the limiting reactant</strong>
+            <p>H₂ could make 2.48 mol H₂O. O₂ could only make 1.50 mol H₂O.<br>
+            <strong>O₂ produces less product → O₂ is the limiting reactant.</strong><br>
+            H₂ is in excess — some H₂ will be left over when O₂ runs out.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Convert the limiting reactant's moles of product to grams</strong>
+            <p>Molar mass H₂O = 18.02 g/mol</p>
+            <div class="fl-chain">
+              1.50 mol H₂O ×
+              <span class="fl-frac">
+                <span class="fl-num">18.02 g H₂O</span>
+                <span class="fl-den">1 mol H₂O</span>
+              </span>
+              = <span class="fl-result">27.0 g H₂O</span>
+            </div>
+            <div class="fl-cancel">mol H₂O cancel → g H₂O ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>O₂ is the limiting reactant. The reaction produces <strong>27.0 g of water</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 4: Percent Yield -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 4</span> Calculating Percent Yield</div>
+      <p><strong>Given:</strong> A student synthesizes aspirin (C₉H₈O₄, MM = 180.16 g/mol). The theoretical yield is 14.4 g. The student collects 11.2 g. <strong>Find:</strong> percent yield.</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Identify actual yield and theoretical yield</strong>
+            <p>Actual yield = <strong>11.2 g</strong> (what the student actually collected)<br>
+            Theoretical yield = <strong>14.4 g</strong> (maximum possible, from stoichiometry)</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Plug into the percent yield formula</strong>
+            <div class="fl-label">Percent Yield Formula</div>
+            <div class="fl-chain">
+              Percent Yield =
+              <span class="fl-frac">
+                <span class="fl-num">Actual Yield</span>
+                <span class="fl-den">Theoretical Yield</span>
+              </span>
+              × 100%
+              =
+              <span class="fl-frac">
+                <span class="fl-num">11.2 g</span>
+                <span class="fl-den">14.4 g</span>
+              </span>
+              × 100% = <span class="fl-result">77.8%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>The student's percent yield is <strong>77.8%</strong>. About 22% of the product was lost during the experiment.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ══════════════════════════════════════════════
+       PRACTICE BANNER (outside all tabs)
+  ══════════════════════════════════════════════ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized stoichiometry problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 08 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="08_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 08 · Stoichiometry</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+/* ── Tool 1: Mole Ratio Builder ── */
+document.addEventListener('DOMContentLoaded', function () {
+  const buildBtn = document.getElementById('buildRatiosBtn');
+  if (!buildBtn) return;
+
+  buildBtn.addEventListener('click', function () {
+    const cA = parseFloat(document.getElementById('coefA').value);
+    const cB = parseFloat(document.getElementById('coefB').value);
+    const cC = parseFloat(document.getElementById('coefC').value) || null;
+    const nA = document.getElementById('nameA').value.trim() || 'A';
+    const nB = document.getElementById('nameB').value.trim() || 'B';
+    const nC = document.getElementById('nameC').value.trim() || 'C';
+    const out = document.getElementById('ratioOutput');
+
+    if (isNaN(cA) || isNaN(cB) || cA <= 0 || cB <= 0) {
+      out.textContent = 'Please enter valid coefficients for at least A and B.';
+      return;
+    }
+
+    const substances = [[cA, nA], [cB, nB]];
+    if (cC && !isNaN(cC) && cC > 0) substances.push([cC, nC]);
+
+    const lines = [];
+    for (let i = 0; i < substances.length; i++) {
+      for (let j = 0; j < substances.length; j++) {
+        if (i === j) continue;
+        const [ci, ni] = substances[i];
+        const [cj, nj] = substances[j];
+        lines.push(`${ci} mol ${ni}  /  ${cj} mol ${nj}`);
+      }
+    }
+    out.textContent = lines.join('\n');
+  });
+});
+
+/* ── Tool 2: Percent Yield Calculator ── */
+document.addEventListener('DOMContentLoaded', function () {
+  const actualEl = document.getElementById('actualYield');
+  const theorEl  = document.getElementById('theorYield');
+  const outEl    = document.getElementById('yieldOutput');
+  if (!actualEl || !theorEl || !outEl) return;
+
+  function calcYield() {
+    const actual = parseFloat(actualEl.value);
+    const theor  = parseFloat(theorEl.value);
+    if (isNaN(actual) || isNaN(theor) || theor <= 0) {
+      outEl.textContent = '—';
+      return;
+    }
+    if (actual < 0) { outEl.textContent = 'Actual yield cannot be negative.'; return; }
+    const pct = (actual / theor) * 100;
+    if (pct > 100) {
+      outEl.textContent = `${pct.toFixed(2)}% — Check your values! Percent yield cannot exceed 100%.`;
+    } else {
+      outEl.textContent = `${pct.toFixed(2)}%`;
+    }
+  }
+
+  actualEl.addEventListener('input', calcYield);
+  theorEl.addEventListener('input', calcYield);
+});
+</script>
+</body>
+</html>

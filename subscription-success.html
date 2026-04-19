@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activating your subscription… | ChemUnlocked</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="chem.css">
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container" style="max-width:560px;text-align:center;padding-top:5rem">
+  <div id="state-loading">
+    <div style="font-size:2.5rem;margin-bottom:1rem">⚗️</div>
+    <h1 style="font-size:1.6rem;margin-bottom:0.5rem">Activating your subscription…</h1>
+    <p class="subtitle" style="margin:0 0 2rem">This takes a few seconds. Please don't close this tab.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.75rem;color:var(--muted);font-size:0.93rem">
+      <div id="spinner" style="width:18px;height:18px;border:2px solid #dbe4ee;border-top-color:#2563eb;border-radius:50%;animation:spin 0.8s linear infinite"></div>
+      <span id="status-msg">Waiting for confirmation from Stripe…</span>
+    </div>
+  </div>
+
+  <div id="state-error" style="display:none">
+    <div style="font-size:2.5rem;margin-bottom:1rem">⚠️</div>
+    <h2 style="margin-bottom:0.5rem">Taking longer than expected</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem">
+      Your payment was processed but the activation is delayed.
+      Check your email for a receipt, then try signing in below.
+    </p>
+    <a href="practice.html" class="btn">Go to Practice</a>
+  </div>
+</div>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+
+<script>
+(async function () {
+  const params = new URLSearchParams(window.location.search);
+  const email  = params.get('email') || '';
+  const unit   = (params.get('unit') || '04').padStart(2, '0');
+
+  /* Clear the URL so the email isn't sitting in browser history */
+  window.history.replaceState({}, '', window.location.pathname);
+
+  if (!email) {
+    window.location.replace('practice.html');
+    return;
+  }
+
+  const statusMsg = document.getElementById('status-msg');
+  const MAX_ATTEMPTS = 15;
+  let attempts = 0;
+
+  async function poll() {
+    attempts++;
+    statusMsg.textContent = `Confirming subscription… (${attempts}/${MAX_ATTEMPTS})`;
+
+    try {
+      const res  = await fetch(
+        `/.netlify/functions/get-access-token?email=${encodeURIComponent(email)}`
+      );
+      const data = await res.json();
+
+      if (res.ok && data.token) {
+        localStorage.setItem('cu_token', data.token);
+        localStorage.setItem('cu_email', email);
+        statusMsg.textContent = 'Subscription confirmed! Redirecting…';
+        setTimeout(() => window.location.replace(`${unit}_premium.html`), 600);
+        return;
+      }
+    } catch {
+      /* network hiccup — keep retrying */
+    }
+
+    if (attempts < MAX_ATTEMPTS) {
+      setTimeout(poll, 2000);
+    } else {
+      document.getElementById('state-loading').style.display = 'none';
+      document.getElementById('state-error').style.display   = 'block';
+    }
+  }
+
+  poll();
+})();
+</script>
+</body>
+</html>

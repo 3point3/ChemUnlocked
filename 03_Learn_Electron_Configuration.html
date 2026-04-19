@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 03 — Electron Configuration | ChemUnlocked</title>
+<meta name="description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 03 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/03_Learn_Electron_Configuration.html">
+<meta property="og:title" content="Unit 03 — Electron Configuration | ChemUnlocked">
+<meta property="og:description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 03 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chemunlocked.com/03_Learn_Electron_Configuration.html">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 03 — Electron Configuration | ChemUnlocked">
+<meta name="twitter:description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 03 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 03 — Electron Configuration",
+  "description": "Electron configuration, orbital diagrams, periodic trends, and light interactions for introductory chemistry.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  }
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<style>
+/* ── Orbital box diagrams ── */
+.orbital-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.orb-box {
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: #fff;
+  font-size: 1rem;
+}
+.orb-box.full { border-color: #93c5fd; background: #eff6ff; }
+.orb-box.up-only { border-color: #a7f3d0; background: #ecfdf5; }
+.orb-box.empty { border-color: var(--border); background: #f8fafc; }
+.arrow-up-el { color: #1d4ed8; font-size: 1rem; line-height: 1; }
+.arrow-down-el { color: #0f766e; font-size: 1rem; line-height: 1; }
+.sublevel-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--dim);
+  min-width: 2.2rem;
+  font-weight: 500;
+}
+
+/* ── Spectrum bar ── */
+.spectrum-bar {
+  height: 18px;
+  border-radius: 6px;
+  margin: 0.75rem 0 0.35rem;
+  background: linear-gradient(to right, #7c3aed, #2563eb, #0891b2, #059669, #ca8a04, #ea580c, #dc2626);
+}
+.spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Tools UI ── */
+.tool-panel {
+  margin-top: 1rem;
+  padding: 1.1rem 1.15rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.tool-panel label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--accent2);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.tool-select,
+.tool-panel input[type="text"],
+.tool-panel select {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.93rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.tool-select:focus,
+.tool-panel input:focus,
+.tool-panel select:focus { border-color: #93c5fd; }
+
+/* ── Config builder output ── */
+.config-result {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #1e3a8a;
+}
+.config-label {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Mini periodic table ── */
+.pt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  font-size: 0.83rem;
+  color: var(--dim);
+}
+.pt-swatch { display: flex; align-items: center; gap: 0.4rem; }
+.pt-color { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; }
+.mini-pt-wrap { position: relative; margin-top: 0.5rem; overflow-x: auto; }
+.mini-pt {
+  display: grid;
+  grid-template-columns: repeat(18, 34px);
+  grid-template-rows: repeat(7, 30px);
+  gap: 2px;
+  width: max-content;
+}
+.mini-pt-f-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 6px;
+  width: max-content;
+}
+.mini-pt-f-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mini-pt-f-label {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  padding-right: 2px;
+}
+.mini-pt-f {
+  display: grid;
+  grid-template-columns: repeat(15, 34px);
+  grid-template-rows: repeat(2, 30px);
+  gap: 2px;
+}
+.pt-cell {
+  width: 34px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: 0.15s ease;
+  user-select: none;
+}
+.pt-cell.empty { background: transparent; }
+.pt-cell.s-blk { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-cell.p-blk { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-cell.d-blk { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-cell.f-blk { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-cell:hover:not(.empty) { filter: brightness(0.92); transform: scale(1.1); z-index: 5; }
+.pt-cell.selected { outline: 2px solid var(--accent2); outline-offset: 1px; }
+.pt-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  pointer-events: none;
+  max-width: 240px;
+  white-space: normal;
+}
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 03</div>
+    <h1>Electron Configuration</h1>
+    <p class="subtitle">Where do electrons live inside an atom — and why does it matter? This unit builds from the basics of energy levels all the way to writing configurations, drawing orbital diagrams, and understanding why light is the key to everything electrons do.</p>
+  </header>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 03 tab navigation">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+  
+
+  <!-- ═══════════ CONCEPTS ═══════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+
+    <!-- NEW: HI-LO card 3.1 -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.1</span> What Is Electron Configuration?</div>
+      <p>Every atom has electrons. Those electrons are not just floating around randomly — they live in specific spots based on their energy. The <strong>electron configuration</strong> is a shorthand code that tells you exactly where every electron lives inside an atom.</p>
+      <p>Think of it like a school building. The building has floors (energy levels), and each floor has different rooms (sublevels). Electrons fill the lowest floors first before moving up.</p>
+      <div class="formula-box">
+        <span class="label">Example — Oxygen (8 electrons total)</span>
+        1s² 2s² 2p⁴
+      </div>
+      <p>Read this as: 2 electrons in the 1s sublevel, 2 electrons in the 2s sublevel, and 4 electrons in the 2p sublevel. Add them up: 2 + 2 + 4 = 8 total. ✓</p>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>The superscript number tells you <em>how many electrons</em> are in that sublevel — not which energy level it is. So 2p⁴ means: sublevel p, energy level 2, with 4 electrons in it.</p>
+      </div>
+    </div>
+
+    <!-- NEW: HI-LO card 3.2 -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.2</span> Energy Levels and Sublevels</div>
+      <p>The <strong>principal quantum number</strong> (written as <em>n</em>) names the main energy level, or shell. The larger n is, the higher the energy and the farther the electrons are from the nucleus.</p>
+      <p>Each energy level contains a set of <strong>sublevels</strong>: s, p, d, and f. The number of sublevels in a shell equals n. So shell 1 has only one sublevel (s), shell 2 has two (s and p), and so on.</p>
+      <table>
+        <caption>Electron sublevels with orbital counts, maximum electrons, and a memory hook for each.</caption>
+        <thead>
+          <tr><th>Sublevel</th><th>Number of Orbitals</th><th>Max Electrons</th><th>Memory Hook</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>s</strong></td><td>1</td><td>2</td><td>"s is solo — just 1 orbital"</td></tr>
+          <tr><td><strong>p</strong></td><td>3</td><td>6</td><td>"p has a pair of 3s"</td></tr>
+          <tr><td><strong>d</strong></td><td>5</td><td>10</td><td>"d has a dozen minus two"</td></tr>
+          <tr><td><strong>f</strong></td><td>7</td><td>14</td><td>"f is fourteen"</td></tr>
+        </tbody>
+      </table>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Each orbital holds exactly 2 electrons — no more, no less. Multiply the number of orbitals by 2 to get the max electrons for any sublevel. That's all the math you need for this table.</p>
+      </div>
+    </div>
+
+    <!-- EXISTING 3.1 → renumbered 3.3: Light as Waves -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.3</span> Light as Waves and Packets of Energy</div>
+      <p>Light is how we know what electrons are doing inside atoms. Understanding wavelength, frequency, and energy is the foundation of this entire unit.</p>
+      <p>Light travels as a wave and also comes in discrete packets called <strong>photons</strong>. Two properties describe any light wave:</p>
+      <ul>
+        <li><strong>Wavelength (λ, lambda)</strong> — the distance between two wave peaks, measured in meters (or nm). Longer λ = lower energy.</li>
+        <li><strong>Frequency (ν, nu)</strong> — how many wave cycles pass a point per second, measured in Hz (s⁻¹). Higher ν = higher energy.</li>
+      </ul>
+
+      <div class="spectrum-bar"></div>
+      <div class="spectrum-labels">
+        <span>↑ shorter λ, higher ν, more E</span>
+        <span>700 nm</span>
+        <span>longer λ, lower ν, less E ↑</span>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Wave Equation — connects wavelength and frequency</span>
+        c = λ × ν &nbsp;&nbsp; where c = 3.00 × 10⁸ m/s (speed of light)
+      </div>
+
+      <p>Rearranged: &nbsp; λ = c / ν &nbsp;&nbsp; and &nbsp;&nbsp; ν = c / λ</p>
+
+      <p>The energy of one photon of light is given by <strong>Planck's equation</strong>:</p>
+      <div class="formula-box">
+        <span class="label">Planck's Equation — photon energy</span>
+        E = h × ν &nbsp;&nbsp; where h = 6.626 × 10⁻³⁴ J·s (Planck's constant)
+      </div>
+
+      <p>Combining both equations: &nbsp; E = hc / λ</p>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Wavelength and frequency always move in <strong>opposite directions</strong>. As wavelength gets longer, frequency gets smaller — and energy gets smaller with it. Ultraviolet light (short λ) carries more energy per photon than infrared light (long λ). This is why UV damages skin and IR does not.</p>
+      </div>
+    </div>
+
+    <!-- EXISTING 3.2 → renumbered 3.4: Bohr Model -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.4</span> Atomic Emission Spectra and the Bohr Model</div>
+      <p>When a gas is heated or electrically excited, its atoms absorb energy and electrons jump to <strong>higher energy levels</strong> (excited states). When those electrons fall back to lower levels, they release that energy as light — but only at specific wavelengths. This produces a <strong>line emission spectrum</strong>, not a continuous rainbow.</p>
+      <p>Niels Bohr proposed that electrons orbit the nucleus only at specific fixed distances (energy levels, n = 1, 2, 3…). The energy of light emitted equals the difference in energy between the two levels:</p>
+
+      <div class="formula-box">
+        <span class="label">Energy of emitted/absorbed photon</span>
+        ΔE = E_final − E_initial = hν
+      </div>
+
+      <p>For hydrogen specifically, the energy of each level is:</p>
+      <div class="formula-box">
+        <span class="label">Bohr's hydrogen energy levels</span>
+        Eₙ = −2.18 × 10⁻¹⁸ J × (1/n²)
+      </div>
+
+      <table>
+        <caption>Hydrogen emission series with their final energy levels, spectral region, and visibility.</caption>
+        <thead><tr><th>Series Name</th><th>Electron falls to n =</th><th>Light emitted</th><th>Visible?</th></tr></thead>
+        <tbody>
+          <tr><td>Lyman</td><td>n = 1</td><td>Ultraviolet</td><td>No</td></tr>
+          <tr><td>Balmer</td><td>n = 2</td><td>Visible &amp; near-UV</td><td>Yes (4 lines)</td></tr>
+          <tr><td>Paschen</td><td>n = 3</td><td>Infrared</td><td>No</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>The four visible hydrogen lines (red at 656 nm, blue-green at 486 nm, indigo at 434 nm, violet at 410 nm) are all Balmer series transitions. Electrons falling from n = 3, 4, 5, and 6 down to n = 2 produce exactly these four colors.</p>
+      </div>
+    </div>
+
+    <!-- EXISTING 3.3 → renumbered 3.5: Sublevel Capacity -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.5</span> How Many Electrons Fit in Each Shell?</div>
+      <p>The total number of electrons that fit in each principal shell follows from adding the sublevels together. This is where 3.1 and 3.2 pay off:</p>
+      <ul>
+        <li>n = 1: only s → 2 electrons</li>
+        <li>n = 2: s + p → 2 + 6 = 8 electrons</li>
+        <li>n = 3: s + p + d → 2 + 6 + 10 = 18 electrons</li>
+        <li>n = 4: s + p + d + f → 2 + 6 + 10 + 14 = 32 electrons</li>
+      </ul>
+      <table>
+        <caption>Sublevel capacities showing how many orbitals and electrons each sublevel holds and where it first appears.</caption>
+        <thead><tr><th>Sublevel</th><th># Orbitals</th><th>Max electrons</th><th>First appears at</th></tr></thead>
+        <tbody>
+          <tr><td><strong>s</strong></td><td>1</td><td>2</td><td>n = 1 (1s)</td></tr>
+          <tr><td><strong>p</strong></td><td>3</td><td>6</td><td>n = 2 (2p)</td></tr>
+          <tr><td><strong>d</strong></td><td>5</td><td>10</td><td>n = 3 (3d)</td></tr>
+          <tr><td><strong>f</strong></td><td>7</td><td>14</td><td>n = 4 (4f)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- EXISTING 3.4 → renumbered 3.6: Three Rules -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.6</span> The Three Rules for Filling Electrons</div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Rule 1 — Aufbau Principle ("building up")</strong>
+            <p>Electrons always fill the lowest available energy sublevel first. The filling order does <em>not</em> follow the sublevel number perfectly — 4s fills before 3d because 4s has lower energy when the atom has few electrons.</p>
+            <div class="formula-box">
+              Filling order: 1s → 2s → 2p → 3s → 3p → <strong>4s → 3d</strong> → 4p → <strong>5s → 4d</strong> → 5p
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Rule 2 — Pauli Exclusion Principle</strong>
+            <p>Each orbital holds a maximum of <strong>2 electrons</strong>, and they must have <strong>opposite spins</strong> (one ↑, one ↓). You cannot place two spin-up electrons in the same orbital.</p>
+            <div class="orbital-row">
+              <span style="font-size:0.82rem; color:var(--muted);">Allowed:</span>
+              <div class="orb-box full"><span class="arrow-up-el">↑</span><span class="arrow-down-el">↓</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box empty"></div>
+              &nbsp;&nbsp;
+              <span style="font-size:0.82rem; color:var(--red);">Forbidden:</span>
+              <div class="orb-box" style="border-color:#fca5a5; background:#fef2f2;"><span class="arrow-up-el">↑</span><span class="arrow-up-el">↑</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Rule 3 — Hund's Rule ("bus seat rule")</strong>
+            <p>When filling a sublevel with multiple orbitals (p, d, or f), put <strong>one electron in each orbital first</strong> (all with the same spin, ↑) before doubling up in any orbital. Electrons prefer to spread out and stay unpaired when they can.</p>
+            <p><em>Why?</em> Electrons repel each other. Spreading out into separate orbitals reduces electron-electron repulsion and lowers the atom's energy.</p>
+            <div class="orbital-row">
+              <span class="sublevel-name">2p</span>
+              <span style="font-size:0.82rem; color:var(--green); margin-right:0.3rem;">✓ Hund's (N, 7e):</span>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+            </div>
+            <div class="orbital-row">
+              <span class="sublevel-name">2p</span>
+              <span style="font-size:0.82rem; color:var(--red); margin-right:0.3rem;">✗ Wrong:</span>
+              <div class="orb-box full"><span class="arrow-up-el">↑</span><span class="arrow-down-el">↓</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box empty"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXISTING 3.5 → renumbered 3.7: Writing Configurations -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.7</span> Writing Electron Configurations</div>
+      <p>An electron configuration lists each sublevel in Aufbau order followed by a superscript showing the number of electrons in that sublevel.</p>
+
+      <table>
+        <caption>Example full and noble-gas shorthand electron configurations for common elements.</caption>
+        <thead><tr><th>Element (Z)</th><th>Full configuration</th><th>Noble-gas shorthand</th></tr></thead>
+        <tbody>
+          <tr><td>H (1)</td><td>1s¹</td><td>—</td></tr>
+          <tr><td>He (2)</td><td>1s²</td><td>—</td></tr>
+          <tr><td>Li (3)</td><td>1s² 2s¹</td><td>[He] 2s¹</td></tr>
+          <tr><td>C (6)</td><td>1s² 2s² 2p²</td><td>[He] 2s² 2p²</td></tr>
+          <tr><td>Ne (10)</td><td>1s² 2s² 2p⁶</td><td>—</td></tr>
+          <tr><td>Na (11)</td><td>1s² 2s² 2p⁶ 3s¹</td><td>[Ne] 3s¹</td></tr>
+          <tr><td>Ar (18)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶</td><td>—</td></tr>
+          <tr><td>K (19)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹</td><td>[Ar] 4s¹</td></tr>
+          <tr><td>Fe (26)</td><td>…3p⁶ 4s² 3d⁶</td><td>[Ar] 4s² 3d⁶</td></tr>
+          <tr><td>Cr (24) ★</td><td>…3p⁶ 4s¹ 3d⁵</td><td>[Ar] 4s¹ 3d⁵</td></tr>
+          <tr><td>Cu (29) ★</td><td>…3p⁶ 4s¹ 3d¹⁰</td><td>[Ar] 4s¹ 3d¹⁰</td></tr>
+        </tbody>
+      </table>
+      <p>★ Exception: one electron moves from 4s to 3d to achieve a half-filled (Cr) or fully-filled (Cu) d sublevel — both are extra stable.</p>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Noble-gas shorthand replaces the inner electrons with the symbol of the noble gas that precedes your element on the periodic table. For example, K (Z=19) is written [Ar] 4s¹ because Ar (Z=18) is the noble gas just before K. The [Ar] accounts for all 18 inner electrons so you only have to write the outermost ones.</p>
+      </div>
+    </div>
+
+    <!-- EXISTING 3.6 → renumbered 3.8: Periodic Table Map -->
+    <div class="card">
+      <div class="card-title"><span class="num">3.8</span> The Periodic Table as an Electron Configuration Map</div>
+      <p>The periodic table is organized by the sublevel being filled. Each block corresponds directly to a sublevel type:</p>
+
+      <div class="pt-legend">
+        <div class="pt-swatch"><div class="pt-color" style="background:#dbeafe; border:1px solid #93c5fd;"></div> s-block (Groups 1–2 + He)</div>
+        <div class="pt-swatch"><div class="pt-color" style="background:#d1fae5; border:1px solid #6ee7b7;"></div> p-block (Groups 13–18)</div>
+        <div class="pt-swatch"><div class="pt-color" style="background:#fef3c7; border:1px solid #fcd34d;"></div> d-block (Groups 3–12, transition metals)</div>
+        <div class="pt-swatch"><div class="pt-color" style="background:#fce7f3; border:1px solid #f9a8d4;"></div> f-block (lanthanides &amp; actinides)</div>
+      </div>
+
+      <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 0.5rem;">Hover over any element to see its symbol and electron configuration.</p>
+      <div class="mini-pt-wrap">
+        <div id="miniPT" class="mini-pt"></div>
+        <div class="mini-pt-f-wrap">
+          <div class="mini-pt-f-labels">
+            <div class="mini-pt-f-label">Ln</div>
+            <div class="mini-pt-f-label">An</div>
+          </div>
+          <div id="miniPT_f" class="mini-pt-f"></div>
+        </div>
+        <div id="ptTooltip" class="pt-tooltip"></div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Your element's <strong>group number</strong> tells you how many electrons are in the outermost s or p sublevel. Your element's <strong>period number</strong> tells you the value of n for the outermost electrons. For transition metals, remember that the d sublevel number is always <em>one less</em> than the period.</p>
+      </div>
+    </div>
+
+  </div><!-- end concepts -->
+
+  <!-- ═══════════ TOOLS ═══════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <div class="card">
+      <div class="card-title">Electron Configuration Builder</div>
+      <p>Select any element (Z = 1 to 118) to instantly see its full electron configuration, noble-gas shorthand, orbital box diagram, and number of valence electrons. The tool applies Aufbau, Pauli, and Hund's rules automatically — including the Cr and Cu exceptions.</p>
+
+      <div class="tool-panel">
+        <label for="elemSelect">Choose an element</label>
+        <select id="elemSelect" class="tool-select">
+          <option value="">— select —</option>
+        </select>
+      </div>
+
+      <div id="configOutput" style="display:none;">
+        <div class="config-result" id="configFull"></div>
+
+        <div style="margin-top:1rem;">
+          <div class="config-label" style="margin-bottom:0.6rem;">Orbital Box Diagram</div>
+          <div id="orbBoxDiagram" style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:1rem; overflow-x:auto;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; gap:1.25rem; flex-wrap:wrap;">
+          <div class="formula-box" style="flex:1; min-width:160px;">
+            <span class="label">Valence electrons</span>
+            <span id="valenceCount" style="font-size:1.1rem; color:var(--gold);"></span>
+          </div>
+          <div class="formula-box" style="flex:1; min-width:160px;">
+            <span class="label">Block</span>
+            <span id="blockLabel" style="font-size:1.1rem; color:var(--gold);"></span>
+          </div>
+          <div class="formula-box" style="flex:1; min-width:160px;">
+            <span class="label">Unpaired electrons</span>
+            <span id="unpairedCount" style="font-size:1.1rem; color:var(--gold);"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Wavelength ↔ Frequency ↔ Energy Calculator</div>
+      <p>Enter any one of the three quantities — wavelength (in nm), frequency (in Hz), or photon energy (in J) — and the calculator will instantly compute the other two using c = λν and E = hν.</p>
+
+      <div class="tool-panel">
+        <div class="calc-grid">
+          <div class="calc-group">
+            <label>Wavelength λ (nanometers, nm)</label>
+            <input type="text" inputmode="decimal" id="wlInput" placeholder="e.g. 486">
+          </div>
+          <div class="calc-group">
+            <label>Frequency ν (Hz = s⁻¹)</label>
+            <input type="text" inputmode="decimal" id="freqInput" placeholder="e.g. 6.17e14">
+          </div>
+          <div class="calc-group">
+            <label>Photon energy E (Joules)</label>
+            <input type="text" inputmode="decimal" id="enInput" placeholder="e.g. 4.09e-19">
+          </div>
+          <div class="calc-group">
+            <label>Hydrogen emission series (optional preset)</label>
+            <select id="seriesSelect">
+              <option value="">— preset —</option>
+              <option value="656">Balmer H-alpha: 656 nm (red)</option>
+              <option value="486">Balmer H-beta: 486 nm (blue-green)</option>
+              <option value="434">Balmer H-gamma: 434 nm (indigo)</option>
+              <option value="410">Balmer H-delta: 410 nm (violet)</option>
+              <option value="121">Lyman alpha: 121 nm (UV)</option>
+              <option value="1876">Paschen alpha: 1876 nm (IR)</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result" id="lightResult">Enter any value above to calculate the others…</div>
+      </div>
+
+      <div class="key-fact" style="margin-top:0.75rem;">
+        <div class="icon">▸</div>
+        <p><strong>Constants used:</strong> c = 3.00 × 10⁸ m/s &nbsp;·&nbsp; h = 6.626 × 10⁻³⁴ J·s &nbsp;·&nbsp; 1 nm = 10⁻⁹ m<br>
+        Visible light is roughly 400–700 nm. UV is below 400 nm; IR is above 700 nm.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hydrogen Energy Level Calculator</div>
+      <p>Calculate the energy emitted or absorbed when an electron transitions between two levels in the hydrogen atom. A negative ΔE means light is emitted (electron falls down); a positive ΔE means light is absorbed (electron jumps up).</p>
+
+      <div class="tool-panel">
+        <div class="calc-grid">
+          <div class="calc-group">
+            <label>Initial level (n initial)</label>
+            <select id="niSelect">
+              <option value="1">n = 1</option>
+              <option value="2">n = 2</option>
+              <option value="3" selected>n = 3</option>
+              <option value="4">n = 4</option>
+              <option value="5">n = 5</option>
+              <option value="6">n = 6</option>
+              <option value="7">n = 7</option>
+            </select>
+          </div>
+          <div class="calc-group">
+            <label>Final level (n final)</label>
+            <select id="nfSelect">
+              <option value="1">n = 1</option>
+              <option value="2" selected>n = 2</option>
+              <option value="3">n = 3</option>
+              <option value="4">n = 4</option>
+              <option value="5">n = 5</option>
+              <option value="6">n = 6</option>
+              <option value="7">n = 7</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn" id="hydrogenCalcBtn" style="margin-top:0.75rem;">Calculate →</button>
+        <div class="calc-result" id="hydrogenResult" style="margin-top:0.75rem;">Select levels above and click Calculate.</div>
+      </div>
+    </div>
+
+  </div><!-- end tools -->
+
+  <!-- ═══════════ EXAMPLES ═══════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Wavelength ↔ Frequency ↔ Energy</div>
+      <p><strong>Given:</strong> A hydrogen atom emits blue-green light with a wavelength of 486.1 nm (the Hβ line, Balmer series). <strong>Find:</strong> (a) frequency and (b) energy of this photon.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Convert wavelength from nm to meters</strong>
+            <p>Always convert to SI base units (meters) before using the formula.</p>
+            <div class="fl-chain">
+              486.1 <strong>nm</strong> &nbsp;×&nbsp;
+              <span class="fl-frac"><span class="fl-num">1 × 10⁻⁹ m</span><span class="fl-den">1 <strong>nm</strong></span></span>
+              &nbsp;= 4.861 × 10⁻⁷ m
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Calculate frequency using ν = c/λ</strong>
+            <div class="fl-chain">
+              ν = (3.00 × 10⁸ m/s) ÷ (4.861 × 10⁻⁷ m) = <span class="fl-result">6.17 × 10¹⁴ Hz</span>
+            </div>
+            <div class="fl-cancel">Units: m/s ÷ m = 1/s = Hz ✓</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Calculate energy using E = hν</strong>
+            <div class="fl-chain">
+              E = (6.626 × 10⁻³⁴ J·s) × (6.17 × 10¹⁴ s⁻¹) = <span class="fl-result">4.09 × 10⁻¹⁹ J</span>
+            </div>
+            <div class="fl-cancel">Units: J·s × s⁻¹ = J ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Writing Full and Noble-Gas Configurations</div>
+      <p><strong>Given:</strong> Sulfur (Z = 16) and Iron (Z = 26). <strong>Find:</strong> Full configuration, noble-gas shorthand, and orbital box for the outermost unfilled sublevel of each.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Sulfur (Z = 16) — full configuration</strong>
+            <p>Fill in Aufbau order and count electrons: 2 + 2 + 6 + 2 + 4 = 16 ✓</p>
+            <div class="formula-box">1s² 2s² 2p⁶ 3s² 3p⁴</div>
+            <p>Noble-gas shorthand: The noble gas before S is Ne (Z=10).</p>
+            <div class="formula-box">[Ne] 3s² 3p⁴</div>
+            <p>Orbital box for 3p (4 electrons — Hund's rule: fill singly first):</p>
+            <div class="orbital-row">
+              <span class="sublevel-name">3p:</span>
+              <div class="orb-box full"><span class="arrow-up-el">↑</span><span class="arrow-down-el">↓</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <span style="font-size:0.83rem; color:var(--dim); margin-left:0.5rem;">2 unpaired electrons</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Iron (Z = 26) — full configuration</strong>
+            <p>Fe is a transition metal. After filling 4s (2 electrons), continue into 3d. Count: 2+2+6+2+6+2+6 = 26 ✓</p>
+            <div class="formula-box">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</div>
+            <p>Noble-gas shorthand: The noble gas before Fe is Ar (Z=18).</p>
+            <div class="formula-box">[Ar] 4s² 3d⁶</div>
+            <p>Orbital box for 3d (6 electrons — Hund's rule: 5 singly, then 1 pairs up):</p>
+            <div class="orbital-row">
+              <span class="sublevel-name">3d:</span>
+              <div class="orb-box full"><span class="arrow-up-el">↑</span><span class="arrow-down-el">↓</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <span style="font-size:0.83rem; color:var(--dim); margin-left:0.5rem;">4 unpaired electrons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> Hydrogen Energy Levels and Spectral Lines</div>
+      <p><strong>Given:</strong> An electron in hydrogen falls from n = 4 to n = 2. <strong>Find:</strong> (a) Energy and wavelength of the photon emitted. (b) Which series? Is it visible?</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Calculate the energy of each level</strong>
+            <div class="fl-chain">E₄ = −2.18 × 10⁻¹⁸ × (1/16) = −1.36 × 10⁻¹⁹ J</div>
+            <div class="fl-chain">E₂ = −2.18 × 10⁻¹⁸ × (1/4) = −5.45 × 10⁻¹⁹ J</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Calculate ΔE (final minus initial)</strong>
+            <div class="fl-chain">ΔE = E₂ − E₄ = −5.45 × 10⁻¹⁹ − (−1.36 × 10⁻¹⁹) = <span class="fl-result">−4.09 × 10⁻¹⁹ J</span></div>
+            <p>The negative sign confirms this is <strong>emission</strong> (energy released as a photon).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Find wavelength using λ = hc/|ΔE|</strong>
+            <div class="fl-chain">
+              λ = (6.626 × 10⁻³⁴ × 3.00 × 10⁸) ÷ (4.09 × 10⁻¹⁹) =
+              <span class="fl-result">4.86 × 10⁻⁷ m = 486 nm</span>
+            </div>
+            <p>This falls in the <strong>visible blue-green</strong> range — Balmer series (n_final = 2). This is the Hβ line!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 4</span> The Chromium Exception</div>
+      <p><strong>Given:</strong> Chromium (Z = 24) does not follow the Aufbau prediction. <strong>Find:</strong> What Aufbau predicts, the actual configuration, and why the exception occurs.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Aufbau prediction (incorrect for Cr)</strong>
+            <div class="formula-box">[Ar] 4s² 3d⁴</div>
+            <div class="orbital-row">
+              <span class="sublevel-name">3d:</span>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box empty"></div>
+              <span style="margin-left:0.5rem; font-size:0.83rem; color:var(--red);">3d is only 4/5 filled — not half-filled</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Actual configuration (verified experimentally)</strong>
+            <div class="formula-box">[Ar] 4s¹ 3d⁵</div>
+            <div class="orbital-row">
+              <span class="sublevel-name">4s:</span>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              &nbsp;&nbsp;
+              <span class="sublevel-name">3d:</span>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
+              <span style="margin-left:0.5rem; font-size:0.83rem; color:var(--green);">3d is exactly half-filled — extra stable!</span>
+            </div>
+            <p>One electron promotes from 4s to 3d because a <strong>half-filled d sublevel</strong> (all 5 orbitals singly occupied, symmetrical) is lower in energy than the Aufbau prediction. The same logic applies to Cu (Z=29), which goes to [Ar] 4s¹ 3d¹⁰ for a fully-filled d.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end examples -->
+
+  <!-- practice banner — direct child of .container, outside all section divs -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized electron configuration problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 03 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="03_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 03 · Electron Configuration</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+// ── TOOL LOGIC ────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Light calculator inputs
+  const wlInput   = document.getElementById('wlInput');
+  const freqInput = document.getElementById('freqInput');
+  const enInput   = document.getElementById('enInput');
+  const seriesSel = document.getElementById('seriesSelect');
+  const elemSel   = document.getElementById('elemSelect');
+  const hydroBtn  = document.getElementById('hydrogenCalcBtn');
+
+  if (wlInput)   wlInput.addEventListener('input',   function () { calcLight('wl'); });
+  if (freqInput) freqInput.addEventListener('input',  function () { calcLight('freq'); });
+  if (enInput)   enInput.addEventListener('input',   function () { calcLight('en'); });
+  if (seriesSel) seriesSel.addEventListener('change', loadSeries);
+  if (elemSel)   elemSel.addEventListener('change',   buildConfig);
+  if (hydroBtn)  hydroBtn.addEventListener('click',   calcHydrogen);
+
+  // Populate element dropdown
+  if (elemSel) {
+    for (let z = 1; z < ELEMENTS.length; z++) {
+      if (!ELEMENTS[z]) continue;
+      const opt = document.createElement('option');
+      opt.value = z;
+      opt.textContent = `${z}. ${ELEMENTS[z][0]} — ${ELEMENTS[z][1]}`;
+      elemSel.appendChild(opt);
+    }
+  }
+
+  // Build mini periodic table
+  buildMiniPT();
+
+  // Default hydrogen calc on load
+  calcHydrogen();
+});
+
+// ── ELEMENT DATA (Z=1–118) ────────────────────────────────────────────────
+// Format: [symbol, name, config_string, noble_gas_core, block, valence_e, unpaired_e]
+const ELEMENTS = [
+  null,
+  ['H',  'Hydrogen',     '1s¹',                                    '',      's', 1, 1],
+  ['He', 'Helium',       '1s²',                                    '',      's', 2, 0],
+  ['Li', 'Lithium',      '1s² 2s¹',                                '[He]',  's', 1, 1],
+  ['Be', 'Beryllium',    '1s² 2s²',                                '[He]',  's', 2, 0],
+  ['B',  'Boron',        '1s² 2s² 2p¹',                           '[He]',  'p', 3, 1],
+  ['C',  'Carbon',       '1s² 2s² 2p²',                           '[He]',  'p', 4, 2],
+  ['N',  'Nitrogen',     '1s² 2s² 2p³',                           '[He]',  'p', 5, 3],
+  ['O',  'Oxygen',       '1s² 2s² 2p⁴',                           '[He]',  'p', 6, 2],
+  ['F',  'Fluorine',     '1s² 2s² 2p⁵',                           '[He]',  'p', 7, 1],
+  ['Ne', 'Neon',         '1s² 2s² 2p⁶',                           '[He]',  'p', 8, 0],
+  ['Na', 'Sodium',       '1s² 2s² 2p⁶ 3s¹',                      '[Ne]',  's', 1, 1],
+  ['Mg', 'Magnesium',    '1s² 2s² 2p⁶ 3s²',                      '[Ne]',  's', 2, 0],
+  ['Al', 'Aluminum',     '1s² 2s² 2p⁶ 3s² 3p¹',                  '[Ne]',  'p', 3, 1],
+  ['Si', 'Silicon',      '1s² 2s² 2p⁶ 3s² 3p²',                  '[Ne]',  'p', 4, 2],
+  ['P',  'Phosphorus',   '1s² 2s² 2p⁶ 3s² 3p³',                  '[Ne]',  'p', 5, 3],
+  ['S',  'Sulfur',       '1s² 2s² 2p⁶ 3s² 3p⁴',                  '[Ne]',  'p', 6, 2],
+  ['Cl', 'Chlorine',     '1s² 2s² 2p⁶ 3s² 3p⁵',                  '[Ne]',  'p', 7, 1],
+  ['Ar', 'Argon',        '1s² 2s² 2p⁶ 3s² 3p⁶',                  '[Ne]',  'p', 8, 0],
+  ['K',  'Potassium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹',              '[Ar]',  's', 1, 1],
+  ['Ca', 'Calcium',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s²',              '[Ar]',  's', 2, 0],
+  ['Sc', 'Scandium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹',         '[Ar]',  'd', 2, 1],
+  ['Ti', 'Titanium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d²',         '[Ar]',  'd', 2, 2],
+  ['V',  'Vanadium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d³',         '[Ar]',  'd', 2, 3],
+  ['Cr', 'Chromium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ 3d⁵ ★',       '[Ar]',  'd', 1, 6],
+  ['Mn', 'Manganese',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁵',         '[Ar]',  'd', 2, 5],
+  ['Fe', 'Iron',         '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶',         '[Ar]',  'd', 2, 4],
+  ['Co', 'Cobalt',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁷',         '[Ar]',  'd', 2, 3],
+  ['Ni', 'Nickel',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁸',         '[Ar]',  'd', 2, 2],
+  ['Cu', 'Copper',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ 3d¹⁰ ★',      '[Ar]',  'd', 1, 1],
+  ['Zn', 'Zinc',         '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰',        '[Ar]',  'd', 2, 0],
+  ['Ga', 'Gallium',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p¹',    '[Ar]',  'p', 3, 1],
+  ['Ge', 'Germanium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p²',    '[Ar]',  'p', 4, 2],
+  ['As', 'Arsenic',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p³',    '[Ar]',  'p', 5, 3],
+  ['Se', 'Selenium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁴',    '[Ar]',  'p', 6, 2],
+  ['Br', 'Bromine',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵',    '[Ar]',  'p', 7, 1],
+  ['Kr', 'Krypton',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶',    '[Ar]',  'p', 8, 0],
+  ['Rb', 'Rubidium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s¹','[Kr]',  's', 1, 1],
+  ['Sr', 'Strontium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s²','[Kr]',  's', 2, 0],
+  ['Y',  'Yttrium',      '[Kr] 5s² 4d¹',                           '[Kr]',  'd', 2, 1],
+  ['Zr', 'Zirconium',    '[Kr] 5s² 4d²',                           '[Kr]',  'd', 2, 2],
+  ['Nb', 'Niobium',      '[Kr] 5s¹ 4d⁴ ★',                        '[Kr]',  'd', 1, 5],
+  ['Mo', 'Molybdenum',   '[Kr] 5s¹ 4d⁵ ★',                        '[Kr]',  'd', 1, 6],
+  ['Tc', 'Technetium',   '[Kr] 5s² 4d⁵',                           '[Kr]',  'd', 2, 5],
+  ['Ru', 'Ruthenium',    '[Kr] 5s¹ 4d⁷ ★',                        '[Kr]',  'd', 1, 7],
+  ['Rh', 'Rhodium',      '[Kr] 5s¹ 4d⁸ ★',                        '[Kr]',  'd', 1, 8],
+  ['Pd', 'Palladium',    '[Kr] 4d¹⁰ ★',                           '[Kr]',  'd', 0, 0],
+  ['Ag', 'Silver',       '[Kr] 5s¹ 4d¹⁰ ★',                       '[Kr]',  'd', 1, 1],
+  ['Cd', 'Cadmium',      '[Kr] 5s² 4d¹⁰',                         '[Kr]',  'd', 2, 0],
+  ['In', 'Indium',       '[Kr] 5s² 4d¹⁰ 5p¹',                     '[Kr]',  'p', 3, 1],
+  ['Sn', 'Tin',          '[Kr] 5s² 4d¹⁰ 5p²',                     '[Kr]',  'p', 4, 2],
+  ['Sb', 'Antimony',     '[Kr] 5s² 4d¹⁰ 5p³',                     '[Kr]',  'p', 5, 3],
+  ['Te', 'Tellurium',    '[Kr] 5s² 4d¹⁰ 5p⁴',                     '[Kr]',  'p', 6, 2],
+  ['I',  'Iodine',       '[Kr] 5s² 4d¹⁰ 5p⁵',                     '[Kr]',  'p', 7, 1],
+  ['Xe', 'Xenon',        '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶', '[Kr]', 'p', 8, 0],
+  ['Cs', 'Cesium',       '[Xe] 6s¹',                          '[Xe]', 's', 1, 1],
+  ['Ba', 'Barium',       '[Xe] 6s²',                          '[Xe]', 's', 2, 0],
+  ['La', 'Lanthanum',    '[Xe] 5d¹ 6s²',                      '[Xe]', 'f', 2, 1],
+  ['Ce', 'Cerium',       '[Xe] 4f¹ 5d¹ 6s²',                  '[Xe]', 'f', 2, 2],
+  ['Pr', 'Praseodymium', '[Xe] 4f³ 6s²',                      '[Xe]', 'f', 2, 3],
+  ['Nd', 'Neodymium',    '[Xe] 4f⁴ 6s²',                      '[Xe]', 'f', 2, 4],
+  ['Pm', 'Promethium',   '[Xe] 4f⁵ 6s²',                      '[Xe]', 'f', 2, 5],
+  ['Sm', 'Samarium',     '[Xe] 4f⁶ 6s²',                      '[Xe]', 'f', 2, 6],
+  ['Eu', 'Europium',     '[Xe] 4f⁷ 6s²',                      '[Xe]', 'f', 2, 7],
+  ['Gd', 'Gadolinium',   '[Xe] 4f⁷ 5d¹ 6s²',                  '[Xe]', 'f', 2, 8],
+  ['Tb', 'Terbium',      '[Xe] 4f⁹ 6s²',                      '[Xe]', 'f', 2, 3],
+  ['Dy', 'Dysprosium',   '[Xe] 4f¹⁰ 6s²',                     '[Xe]', 'f', 2, 4],
+  ['Ho', 'Holmium',      '[Xe] 4f¹¹ 6s²',                     '[Xe]', 'f', 2, 3],
+  ['Er', 'Erbium',       '[Xe] 4f¹² 6s²',                     '[Xe]', 'f', 2, 2],
+  ['Tm', 'Thulium',      '[Xe] 4f¹³ 6s²',                     '[Xe]', 'f', 2, 1],
+  ['Yb', 'Ytterbium',    '[Xe] 4f¹⁴ 6s²',                     '[Xe]', 'f', 2, 0],
+  ['Lu', 'Lutetium',     '[Xe] 4f¹⁴ 5d¹ 6s²',                 '[Xe]', 'd', 2, 1],
+  ['Hf', 'Hafnium',      '[Xe] 4f¹⁴ 5d² 6s²',                 '[Xe]', 'd', 2, 2],
+  ['Ta', 'Tantalum',     '[Xe] 4f¹⁴ 5d³ 6s²',                 '[Xe]', 'd', 2, 3],
+  ['W',  'Tungsten',     '[Xe] 4f¹⁴ 5d⁴ 6s²',                 '[Xe]', 'd', 2, 4],
+  ['Re', 'Rhenium',      '[Xe] 4f¹⁴ 5d⁵ 6s²',                 '[Xe]', 'd', 2, 5],
+  ['Os', 'Osmium',       '[Xe] 4f¹⁴ 5d⁶ 6s²',                 '[Xe]', 'd', 2, 4],
+  ['Ir', 'Iridium',      '[Xe] 4f¹⁴ 5d⁷ 6s²',                 '[Xe]', 'd', 2, 3],
+  ['Pt', 'Platinum',     '[Xe] 4f¹⁴ 5d⁹ 6s¹ ★',               '[Xe]', 'd', 1, 1],
+  ['Au', 'Gold',         '[Xe] 4f¹⁴ 5d¹⁰ 6s¹ ★',              '[Xe]', 'd', 1, 1],
+  ['Hg', 'Mercury',      '[Xe] 4f¹⁴ 5d¹⁰ 6s²',                '[Xe]', 'd', 2, 0],
+  ['Tl', 'Thallium',     '[Xe] 4f¹⁴ 5d¹⁰ 6p¹',                '[Xe]', 'p', 3, 1],
+  ['Pb', 'Lead',         '[Xe] 4f¹⁴ 5d¹⁰ 6p²',                '[Xe]', 'p', 4, 2],
+  ['Bi', 'Bismuth',      '[Xe] 4f¹⁴ 5d¹⁰ 6p³',                '[Xe]', 'p', 5, 3],
+  ['Po', 'Polonium',     '[Xe] 4f¹⁴ 5d¹⁰ 6p⁴',                '[Xe]', 'p', 6, 2],
+  ['At', 'Astatine',     '[Xe] 4f¹⁴ 5d¹⁰ 6p⁵',                '[Xe]', 'p', 7, 1],
+  ['Rn', 'Radon',        '[Xe] 4f¹⁴ 5d¹⁰ 6p⁶',                '[Xe]', 'p', 8, 0],
+  ['Fr', 'Francium',     '[Rn] 7s¹',                           '[Rn]', 's', 1, 1],
+  ['Ra', 'Radium',       '[Rn] 7s²',                           '[Rn]', 's', 2, 0],
+  ['Ac', 'Actinium',     '[Rn] 6d¹ 7s²',                       '[Rn]', 'f', 2, 1],
+  ['Th', 'Thorium',      '[Rn] 6d² 7s²',                       '[Rn]', 'f', 2, 2],
+  ['Pa', 'Protactinium', '[Rn] 5f² 6d¹ 7s²',                   '[Rn]', 'f', 2, 3],
+  ['U',  'Uranium',      '[Rn] 5f³ 6d¹ 7s²',                   '[Rn]', 'f', 2, 4],
+  ['Np', 'Neptunium',    '[Rn] 5f⁴ 6d¹ 7s²',                   '[Rn]', 'f', 2, 5],
+  ['Pu', 'Plutonium',    '[Rn] 5f⁶ 7s²',                       '[Rn]', 'f', 2, 6],
+  ['Am', 'Americium',    '[Rn] 5f⁷ 7s²',                       '[Rn]', 'f', 2, 7],
+  ['Cm', 'Curium',       '[Rn] 5f⁷ 6d¹ 7s²',                   '[Rn]', 'f', 2, 8],
+  ['Bk', 'Berkelium',    '[Rn] 5f⁹ 7s²',                       '[Rn]', 'f', 2, 3],
+  ['Cf', 'Californium',  '[Rn] 5f¹⁰ 7s²',                      '[Rn]', 'f', 2, 4],
+  ['Es', 'Einsteinium',  '[Rn] 5f¹¹ 7s²',                      '[Rn]', 'f', 2, 3],
+  ['Fm', 'Fermium',      '[Rn] 5f¹² 7s²',                      '[Rn]', 'f', 2, 2],
+  ['Md', 'Mendelevium',  '[Rn] 5f¹³ 7s²',                      '[Rn]', 'f', 2, 1],
+  ['No', 'Nobelium',     '[Rn] 5f¹⁴ 7s²',                      '[Rn]', 'f', 2, 0],
+  ['Lr', 'Lawrencium',   '[Rn] 5f¹⁴ 7s² 7p¹',                  '[Rn]', 'd', 2, 1],
+  ['Rf', 'Rutherfordium','[Rn] 5f¹⁴ 6d² 7s²',                  '[Rn]', 'd', 2, 2],
+  ['Db', 'Dubnium',      '[Rn] 5f¹⁴ 6d³ 7s²',                  '[Rn]', 'd', 2, 3],
+  ['Sg', 'Seaborgium',   '[Rn] 5f¹⁴ 6d⁴ 7s²',                  '[Rn]', 'd', 2, 4],
+  ['Bh', 'Bohrium',      '[Rn] 5f¹⁴ 6d⁵ 7s²',                  '[Rn]', 'd', 2, 5],
+  ['Hs', 'Hassium',      '[Rn] 5f¹⁴ 6d⁶ 7s²',                  '[Rn]', 'd', 2, 4],
+  ['Mt', 'Meitnerium',   '[Rn] 5f¹⁴ 6d⁷ 7s²',                  '[Rn]', 'd', 2, 3],
+  ['Ds', 'Darmstadtium', '[Rn] 5f¹⁴ 6d⁸ 7s²',                  '[Rn]', 'd', 2, 2],
+  ['Rg', 'Roentgenium',  '[Rn] 5f¹⁴ 6d⁹ 7s²',                  '[Rn]', 'd', 2, 1],
+  ['Cn', 'Copernicium',  '[Rn] 5f¹⁴ 6d¹⁰ 7s²',                 '[Rn]', 'd', 2, 0],
+  ['Nh', 'Nihonium',     '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹',             '[Rn]', 'p', 3, 1],
+  ['Fl', 'Flerovium',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²',             '[Rn]', 'p', 4, 2],
+  ['Mc', 'Moscovium',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³',             '[Rn]', 'p', 5, 3],
+  ['Lv', 'Livermorium',  '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴',             '[Rn]', 'p', 6, 2],
+  ['Ts', 'Tennessine',   '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵',             '[Rn]', 'p', 7, 1],
+  ['Og', 'Oganesson',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶',             '[Rn]', 'p', 8, 0],
+];
+
+// ── CONFIG BUILDER ────────────────────────────────────────────────────────
+function buildConfig() {
+  const z = parseInt(document.getElementById('elemSelect').value);
+  if (!z || !ELEMENTS[z]) { document.getElementById('configOutput').style.display = 'none'; return; }
+  const [sym, name, config, core, block, valence, unpaired] = ELEMENTS[z];
+
+  document.getElementById('configOutput').style.display = 'block';
+
+  const fullEl = document.getElementById('configFull');
+  const shorthand = core ? core + ' ' + config.replace(/^.*?\]\s*/, '') : config;
+  const isException = config.includes('★');
+  fullEl.innerHTML =
+    `<span class="config-label">Full configuration — ${sym} (Z = ${z})</span>` +
+    `<strong style="font-size:1.1rem;">${config}</strong><br>` +
+    (core ? `<span class="config-label" style="margin-top:0.5rem;">Noble-gas shorthand</span><strong>${shorthand.replace(' ★','')}</strong>` : '') +
+    (isException ? `<br><span style="color:#b45309; font-size:0.82rem; margin-top:0.45rem; display:block;">★ Exception to Aufbau — extra stability from ${config.includes('3d⁵') || config.includes('4d⁵') ? 'half-filled' : 'fully-filled'} d sublevel</span>` : '');
+
+  const blockNames = { s: 's-block', p: 'p-block', d: 'd-block (transition metal)', f: 'f-block' };
+  document.getElementById('valenceCount').textContent = valence;
+  document.getElementById('blockLabel').textContent = blockNames[block] || block;
+  document.getElementById('unpairedCount').textContent = unpaired;
+
+  buildOrbDiagram(z, config);
+}
+
+function buildOrbDiagram(z, config) {
+  const el = document.getElementById('orbBoxDiagram');
+  if (!el) return;
+  el.innerHTML = '';
+
+  const subUnicode = {'⁰':0,'¹':1,'²':2,'³':3,'⁴':4,'⁵':5,'⁶':6,'⁷':7,'⁸':8,'⁹':9};
+  const cleanConfig = config.replace(' ★','').replace(/\[.*?\]\s*/,'');
+  const sublevels = [];
+  const parts = cleanConfig.trim().split(/\s+/);
+  for (const part of parts) {
+    const match = part.match(/^(\d)([spdf])(.+)$/);
+    if (!match) continue;
+    const n = match[1], type = match[2], supStr = match[3];
+    let count = 0;
+    for (const ch of supStr) { if (subUnicode[ch] !== undefined) count = count * 10 + subUnicode[ch]; }
+    sublevels.push({ name: n + type, type, count });
+  }
+
+  const show = sublevels.slice(-Math.min(3, sublevels.length));
+  const wrapDiv = document.createElement('div');
+  wrapDiv.style.cssText = 'display:flex; flex-wrap:wrap; gap:1rem; align-items:center;';
+
+  for (const sub of show) {
+    const numOrbs = sub.type === 's' ? 1 : sub.type === 'p' ? 3 : sub.type === 'd' ? 5 : 7;
+    const row = document.createElement('div');
+    row.className = 'orbital-row';
+    row.style.marginBottom = '0';
+
+    const lbl = document.createElement('span');
+    lbl.className = 'sublevel-name';
+    lbl.textContent = sub.name + ':';
+    row.appendChild(lbl);
+
+    const fills = new Array(numOrbs).fill(0);
+    let rem = sub.count;
+    for (let pass = 0; pass < 2 && rem > 0; pass++)
+      for (let i = 0; i < numOrbs && rem > 0; i++)
+        if (fills[i] === pass) { fills[i]++; rem--; }
+
+    for (let i = 0; i < numOrbs; i++) {
+      const box = document.createElement('div');
+      box.className = fills[i] === 2 ? 'orb-box full' : fills[i] === 1 ? 'orb-box up-only' : 'orb-box empty';
+      if (fills[i] >= 1) box.innerHTML += '<span class="arrow-up-el">↑</span>';
+      if (fills[i] === 2) box.innerHTML += '<span class="arrow-down-el">↓</span>';
+      row.appendChild(box);
+    }
+    wrapDiv.appendChild(row);
+  }
+  el.appendChild(wrapDiv);
+}
+
+// ── LIGHT CALCULATOR ──────────────────────────────────────────────────────
+const C_LIGHT = 3.00e8;
+const H_PLANCK = 6.626e-34;
+
+function calcLight(source) {
+  const wlIn   = document.getElementById('wlInput');
+  const freqIn = document.getElementById('freqInput');
+  const enIn   = document.getElementById('enInput');
+  const out    = document.getElementById('lightResult');
+  if (!wlIn || !out) return;
+
+  let wl_nm, freq, energy;
+
+  if (source === 'wl') {
+    wl_nm = parseFloat(wlIn.value);
+    if (isNaN(wl_nm) || wl_nm <= 0) { out.textContent = 'Enter a valid wavelength.'; return; }
+    freq  = C_LIGHT / (wl_nm * 1e-9);
+    energy = H_PLANCK * freq;
+  } else if (source === 'freq') {
+    freq = parseFloat(freqIn.value);
+    if (isNaN(freq) || freq <= 0) { out.textContent = 'Enter a valid frequency.'; return; }
+    wl_nm  = (C_LIGHT / freq) / 1e-9;
+    energy = H_PLANCK * freq;
+  } else if (source === 'en') {
+    energy = parseFloat(enIn.value);
+    if (isNaN(energy) || energy <= 0) { out.textContent = 'Enter a valid energy.'; return; }
+    freq  = energy / H_PLANCK;
+    wl_nm = (C_LIGHT / freq) / 1e-9;
+  }
+
+  if (source !== 'wl')   wlIn.value   = wl_nm.toFixed(3);
+  if (source !== 'freq') freqIn.value = freq.toExponential(3);
+  if (source !== 'en')   enIn.value   = energy.toExponential(3);
+
+  const region = wl_nm < 10 ? 'X-ray / extreme UV' : wl_nm < 400 ? 'Ultraviolet (UV)' : wl_nm <= 700 ? 'Visible light' : wl_nm <= 2500 ? 'Near-infrared (IR)' : 'Infrared (IR)';
+  const colorHint = wl_nm >= 400 && wl_nm <= 700 ? ` — ${wl_nm < 450 ? 'violet' : wl_nm < 490 ? 'blue' : wl_nm < 540 ? 'blue-green/cyan' : wl_nm < 590 ? 'green/yellow' : wl_nm < 625 ? 'orange' : 'red'}` : '';
+
+  out.innerHTML =
+    `λ = <strong>${wl_nm.toFixed(2)} nm</strong> &nbsp;|&nbsp; ` +
+    `ν = <strong>${freq.toExponential(3)} Hz</strong> &nbsp;|&nbsp; ` +
+    `E = <strong>${energy.toExponential(3)} J/photon</strong><br>` +
+    `<span style="font-size:0.82rem; color:let(--dim); margin-top:0.3rem; display:block;">Region: ${region}${colorHint}</span>`;
+}
+
+function loadSeries() {
+  const val = document.getElementById('seriesSelect').value;
+  if (!val) return;
+  const wlInput = document.getElementById('wlInput');
+  if (!wlInput) return;
+  wlInput.value = val;
+  document.getElementById('freqInput').value = '';
+  document.getElementById('enInput').value = '';
+  calcLight('wl');
+}
+
+// ── HYDROGEN ENERGY LEVELS ────────────────────────────────────────────────
+function calcHydrogen() {
+  const niSel = document.getElementById('niSelect');
+  const nfSel = document.getElementById('nfSelect');
+  const out   = document.getElementById('hydrogenResult');
+  if (!niSel || !out) return;
+
+  const ni = parseInt(niSel.value);
+  const nf = parseInt(nfSel.value);
+
+  if (ni === nf) { out.textContent = 'Initial and final levels must be different.'; return; }
+
+  const E0 = -2.18e-18;
+  const Ei = E0 / (ni * ni);
+  const Ef = E0 / (nf * nf);
+  const dE = Ef - Ei;
+  const isEmission = dE < 0;
+  const absdE = Math.abs(dE);
+  const freq = absdE / H_PLANCK;
+  const wl_nm = (C_LIGHT / freq) / 1e-9;
+
+  let series = '';
+  if (nf === 1) series = 'Lyman (UV)';
+  else if (nf === 2) series = 'Balmer (visible/UV)';
+  else if (nf === 3) series = 'Paschen (IR)';
+  else series = `Series ending at n=${nf}`;
+
+  const region = wl_nm < 400 ? 'UV — not visible' : wl_nm <= 700
+    ? `visible — ${wl_nm < 450 ? 'violet' : wl_nm < 490 ? 'blue' : wl_nm < 540 ? 'blue-green' : wl_nm < 590 ? 'green/yellow' : wl_nm < 625 ? 'orange' : 'red'}`
+    : 'IR — not visible';
+
+  out.innerHTML =
+    `Transition: n = ${ni} → n = ${nf} &nbsp;(${isEmission ? '↓ emission' : '↑ absorption'})<br>` +
+    `ΔE = <strong>${dE.toExponential(3)} J</strong><br>` +
+    `λ = <strong>${wl_nm.toFixed(1)} nm</strong> &nbsp;|&nbsp; ν = <strong>${freq.toExponential(3)} Hz</strong><br>` +
+    `Series: <strong>${series}</strong> &nbsp;·&nbsp; ${region}`;
+}
+
+// ── MINI PERIODIC TABLE ───────────────────────────────────────────────────
+const PT_MAIN = [
+  [1,1,'H','s'],[1,18,'He','s'],
+  [2,1,'Li','s'],[2,2,'Be','s'],
+  [2,13,'B','p'],[2,14,'C','p'],[2,15,'N','p'],[2,16,'O','p'],[2,17,'F','p'],[2,18,'Ne','p'],
+  [3,1,'Na','s'],[3,2,'Mg','s'],
+  [3,13,'Al','p'],[3,14,'Si','p'],[3,15,'P','p'],[3,16,'S','p'],[3,17,'Cl','p'],[3,18,'Ar','p'],
+  [4,1,'K','s'],[4,2,'Ca','s'],
+  [4,3,'Sc','d'],[4,4,'Ti','d'],[4,5,'V','d'],[4,6,'Cr','d'],[4,7,'Mn','d'],
+  [4,8,'Fe','d'],[4,9,'Co','d'],[4,10,'Ni','d'],[4,11,'Cu','d'],[4,12,'Zn','d'],
+  [4,13,'Ga','p'],[4,14,'Ge','p'],[4,15,'As','p'],[4,16,'Se','p'],[4,17,'Br','p'],[4,18,'Kr','p'],
+  [5,1,'Rb','s'],[5,2,'Sr','s'],
+  [5,3,'Y','d'],[5,4,'Zr','d'],[5,5,'Nb','d'],[5,6,'Mo','d'],[5,7,'Tc','d'],
+  [5,8,'Ru','d'],[5,9,'Rh','d'],[5,10,'Pd','d'],[5,11,'Ag','d'],[5,12,'Cd','d'],
+  [5,13,'In','p'],[5,14,'Sn','p'],[5,15,'Sb','p'],[5,16,'Te','p'],[5,17,'I','p'],[5,18,'Xe','p'],
+  [6,1,'Cs','s'],[6,2,'Ba','s'],
+  [6,3,'*','f'],
+  [6,4,'Hf','d'],[6,5,'Ta','d'],[6,6,'W','d'],[6,7,'Re','d'],
+  [6,8,'Os','d'],[6,9,'Ir','d'],[6,10,'Pt','d'],[6,11,'Au','d'],[6,12,'Hg','d'],
+  [6,13,'Tl','p'],[6,14,'Pb','p'],[6,15,'Bi','p'],[6,16,'Po','p'],[6,17,'At','p'],[6,18,'Rn','p'],
+  [7,1,'Fr','s'],[7,2,'Ra','s'],
+  [7,3,'**','f'],
+  [7,4,'Rf','d'],[7,5,'Db','d'],[7,6,'Sg','d'],[7,7,'Bh','d'],
+  [7,8,'Hs','d'],[7,9,'Mt','d'],[7,10,'Ds','d'],[7,11,'Rg','d'],[7,12,'Cn','d'],
+  [7,13,'Nh','p'],[7,14,'Fl','p'],[7,15,'Mc','p'],[7,16,'Lv','p'],[7,17,'Ts','p'],[7,18,'Og','p'],
+];
+
+const PT_F = [
+  [1,1,'La'],[1,2,'Ce'],[1,3,'Pr'],[1,4,'Nd'],[1,5,'Pm'],
+  [1,6,'Sm'],[1,7,'Eu'],[1,8,'Gd'],[1,9,'Tb'],[1,10,'Dy'],
+  [1,11,'Ho'],[1,12,'Er'],[1,13,'Tm'],[1,14,'Yb'],[1,15,'Lu'],
+  [2,1,'Ac'],[2,2,'Th'],[2,3,'Pa'],[2,4,'U'],[2,5,'Np'],
+  [2,6,'Pu'],[2,7,'Am'],[2,8,'Cm'],[2,9,'Bk'],[2,10,'Cf'],
+  [2,11,'Es'],[2,12,'Fm'],[2,13,'Md'],[2,14,'No'],[2,15,'Lr'],
+];
+
+const SYM_TO_Z = {};
+for (let z = 1; z < ELEMENTS.length; z++) {
+  if (ELEMENTS[z]) SYM_TO_Z[ELEMENTS[z][0]] = z;
+}
+
+function makePTCell(sym, blkClass, z, isPlaceholder) {
+  const div = document.createElement('div');
+  div.className = `pt-cell ${blkClass}`;
+  div.textContent = sym;
+  if (isPlaceholder) {
+    div.style.fontSize = '0.55rem';
+    div.style.cursor = 'default';
+    return div;
+  }
+  if (z) {
+    const tooltip = document.getElementById('ptTooltip');
+    div.addEventListener('mouseenter', function (e) {
+      const data = ELEMENTS[z];
+      tooltip.innerHTML = `<strong>${z}. ${sym} — ${data[1]}</strong><br>${data[2].replace(' ★','')}`;
+      tooltip.style.display = 'block';
+      moveTip(e);
+    });
+    div.addEventListener('mousemove', moveTip);
+    div.addEventListener('mouseleave', function () { tooltip.style.display = 'none'; });
+    div.addEventListener('click', function () {
+      document.querySelectorAll('.pt-cell.selected').forEach(function (c) { c.classList.remove('selected'); });
+      div.classList.add('selected');
+      const sel = document.getElementById('elemSelect');
+      if (sel) { sel.value = z; buildConfig(); }
+    });
+    div.style.cursor = 'pointer';
+  }
+  return div;
+}
+
+function buildMiniPT() {
+  const grid = document.getElementById('miniPT');
+  if (!grid) return;
+  const cells = {};
+
+  for (let r = 1; r <= 7; r++) {
+    for (let c = 1; c <= 18; c++) {
+      const div = document.createElement('div');
+      div.className = 'pt-cell empty';
+      div.style.gridRow = r;
+      div.style.gridColumn = c;
+      grid.appendChild(div);
+      cells[`${r}-${c}`] = div;
+    }
+  }
+
+  for (const [row, col, sym, blk] of PT_MAIN) {
+    const key = `${row}-${col}`;
+    const old = cells[key];
+    const blkClass = { s:'s-blk', p:'p-blk', d:'d-blk', f:'f-blk' }[blk];
+    const isPlaceholder = sym === '*' || sym === '**';
+    const z = isPlaceholder ? null : SYM_TO_Z[sym];
+    const cell = makePTCell(sym, blkClass, z, isPlaceholder);
+    cell.style.gridRow = row;
+    cell.style.gridColumn = col;
+    grid.replaceChild(cell, old);
+    cells[key] = cell;
+  }
+
+  const fgrid = document.getElementById('miniPT_f');
+  if (!fgrid) return;
+  fgrid.innerHTML = '';
+  const fLookup = {};
+  for (const [row, col, sym] of PT_F) { fLookup[`${row}-${col}`] = sym; }
+
+  for (let r = 1; r <= 2; r++) {
+    for (let c = 1; c <= 15; c++) {
+      const sym = fLookup[`${r}-${c}`];
+      let cell;
+      if (sym) {
+        const z = SYM_TO_Z[sym];
+        cell = makePTCell(sym, 'f-blk', z, false);
+      } else {
+        cell = document.createElement('div');
+        cell.className = 'pt-cell empty';
+      }
+      cell.style.gridRow = r;
+      cell.style.gridColumn = c;
+      fgrid.appendChild(cell);
+    }
+  }
+}
+
+function moveTip(e) {
+  const tip = document.getElementById('ptTooltip');
+  if (!tip) return;
+  tip.style.left = (e.clientX + 14) + 'px';
+  tip.style.top  = (e.clientY + 14) + 'px';
+}
+</script>
+</body>
+</html>

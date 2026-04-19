@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 05 — Nomenclature | ChemUnlocked</title>
+<meta name="description" content="Learn chemistry nomenclature rules for ionic compounds, molecular compounds, and acids with examples and interactive naming tools.">
+<link rel="canonical" href="https://chemunlocked.com/05_Learn_Chemistry_Nomenclature.html">
+<meta property="og:title" content="Unit 05 — Nomenclature | ChemUnlocked">
+<meta property="og:description" content="Learn chemistry nomenclature rules for ionic compounds, molecular compounds, and acids with examples and interactive naming tools.">
+<meta property="og:url" content="https://chemunlocked.com/05_Learn_Chemistry_Nomenclature.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 05 — Nomenclature | ChemUnlocked">
+<meta name="twitter:description" content="Learn chemistry nomenclature rules for ionic compounds, molecular compounds, and acids with examples and interactive naming tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<link rel="stylesheet" href="chem.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 05 — Chemistry Nomenclature",
+  "description": "Naming ionic compounds, molecular compounds, and acids with interactive practice tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  },
+  "url": "https://chemunlocked.com/05_Learn_Chemistry_Nomenclature.html"
+}
+</script>
+<style>
+@media (max-width: 640px) {
+  .practice-banner { padding: 1.25rem; }
+  .practice-banner-right { align-items: flex-start; }
+}
+
+/* Nomenclature tool styles */
+.naming-tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 640px) { .naming-tool-grid { grid-template-columns: 1fr; } }
+
+.tool-section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin: 1rem 0 0.5rem;
+}
+
+.tool-result-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+}
+
+.tool-result-box.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+select.prob-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%2364748b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+/* Hi-Lo scaffolding aids */
+.scaffold-box {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.94rem;
+}
+.scaffold-box .scaffold-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #059669;
+  margin-bottom: 0.3rem;
+}
+
+.ion-table th { background: #eff6ff; }
+.ion-table td:first-child { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--accent2); }
+
+.mt-075 { margin-top: 0.75rem; }
+.mt-1 { margin-top: 1rem; }
+.comp-type-select { margin-bottom: 0.75rem; }
+.tool-hint { font-size: 0.88rem; color: var(--muted); }
+.roman-input-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.roman-input {
+  flex: 1;
+}
+.roman-input.w-140 { min-width: 140px; }
+.roman-input.w-100 { min-width: 100px; }
+.roman-input.w-160 { min-width: 160px; }
+.roman-btn,
+.roman-result { margin-top: 0.75rem; }
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 05</div>
+    <h1>Nomenclature</h1>
+    <p class="subtitle">Naming compounds is chemistry's shared language. Learn the rules chemists use to name ionic compounds, molecular compounds, and acids — so you can read and write chemical names with confidence.</p>
+  </header>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 05 content sections">
+    <button class="tab-btn active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+
+  <!-- ═══════════════════════════════ CONCEPTS ═══════════════════════════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+
+    <!-- 5.1 What Is Nomenclature? -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.1</span> What Is Nomenclature?</div>
+      <p><strong>Nomenclature</strong> means the rules for naming things. In chemistry, nomenclature rules let chemists name millions of compounds in a clear, organized way.</p>
+      <p>When you see a chemical name, you should be able to figure out what atoms are in the compound. When you see a formula, you should be able to write the name. Both skills matter.</p>
+      <div class="scaffold-box">
+        <div class="scaffold-label">🔑 Big Idea</div>
+        There are <strong>three main types</strong> of compounds with their own naming rules: <strong>ionic compounds</strong>, <strong>molecular compounds</strong>, and <strong>acids</strong>.
+      </div>
+    </div>
+
+    <!-- 5.2 Ionic Compounds: Metal + Nonmetal -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.2</span> Ionic Compounds — Metal + Nonmetal</div>
+      <p>An <strong>ionic compound</strong> is made of a metal and a nonmetal. The metal gives electrons to the nonmetal. This creates ions that attract each other.</p>
+      <p><strong>How to name them — two simple steps:</strong></p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write the metal name first.</strong>
+            <p>Write the name of the metal exactly as it appears on the periodic table. Do not change it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write the nonmetal name with "–ide" at the end.</strong>
+            <p>Drop the end of the nonmetal's name and add <strong>–ide</strong>. For example: chlorine → chloride, oxygen → oxide, sulfur → sulfide, nitrogen → nitride, fluorine → fluoride, bromine → bromide, iodine → iodide.</p>
+          </div>
+        </div>
+      </div>
+
+      <table class="ion-table">
+        <caption>Ionic Compound Naming Examples</caption>
+        <thead>
+          <tr><th>Formula</th><th>Metal Ion</th><th>Nonmetal Ion</th><th>Name</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>NaCl</td><td>sodium</td><td>chloride</td><td>sodium chloride</td></tr>
+          <tr><td>K₂O</td><td>potassium</td><td>oxide</td><td>potassium oxide</td></tr>
+          <tr><td>MgBr₂</td><td>magnesium</td><td>bromide</td><td>magnesium bromide</td></tr>
+          <tr><td>Al₂O₃</td><td>aluminum</td><td>oxide</td><td>aluminum oxide</td></tr>
+          <tr><td>CaF₂</td><td>calcium</td><td>fluoride</td><td>calcium fluoride</td></tr>
+          <tr><td>Li₃N</td><td>lithium</td><td>nitride</td><td>lithium nitride</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Do <strong>not</strong> use prefixes like "di-" or "tri-" for ionic compounds. The subscripts in the formula handle the ratios automatically.</p>
+      </div>
+    </div>
+
+    <!-- 5.3 Transition Metals — Roman Numerals -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.3</span> Transition Metals — Roman Numerals</div>
+      <p>Some metals can form more than one type of ion. These are mainly <strong>transition metals</strong> like iron (Fe), copper (Cu), and lead (Pb).</p>
+      <p>When a metal can form more than one charge, you must add a <strong>Roman numeral in parentheses</strong> after the metal name. The Roman numeral shows the charge of the metal ion in that compound.</p>
+
+      <div class="formula-box">
+        <span class="label">Pattern</span>
+        [Metal name](Roman numeral) [Nonmetal]-ide
+      </div>
+
+      <table class="ion-table">
+        <caption>Transition-Metal Compound Names with Roman Numerals</caption>
+        <thead>
+          <tr><th>Formula</th><th>Metal Charge</th><th>Name</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FeCl₂</td><td>Fe²⁺</td><td>iron(II) chloride</td></tr>
+          <tr><td>FeCl₃</td><td>Fe³⁺</td><td>iron(III) chloride</td></tr>
+          <tr><td>CuO</td><td>Cu²⁺</td><td>copper(II) oxide</td></tr>
+          <tr><td>Cu₂O</td><td>Cu⁺</td><td>copper(I) oxide</td></tr>
+          <tr><td>FeO</td><td>Fe²⁺</td><td>iron(II) oxide</td></tr>
+          <tr><td>Fe₂O₃</td><td>Fe³⁺</td><td>iron(III) oxide</td></tr>
+        </tbody>
+      </table>
+
+      <div class="scaffold-box">
+        <div class="scaffold-label">💡 How to Find the Roman Numeral</div>
+        Use the total charge of the nonmetal to figure out the metal charge. In FeCl₂: each Cl has a −1 charge. Two Cl⁻ ions = −2 total. The iron must be +2 to balance. So we write iron(II).
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Metals that <em>always</em> form one charge (like Na⁺, K⁺, Mg²⁺, Al³⁺, Ca²⁺) do <strong>not</strong> need Roman numerals. Only use them when the metal can have more than one charge.</p>
+      </div>
+    </div>
+
+    <!-- 5.4 Polyatomic Ions -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.4</span> Polyatomic Ions</div>
+      <p>A <strong>polyatomic ion</strong> is a group of atoms bonded together that carries a charge. It acts as one unit in a formula. You must <strong>memorize</strong> the names of common polyatomic ions.</p>
+
+      <table class="ion-table">
+        <caption>Common Polyatomic Ions</caption>
+        <thead>
+          <tr><th>Ion</th><th>Name</th><th>Charge</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>NH₄⁺</td><td>ammonium</td><td>1+</td></tr>
+          <tr><td>OH⁻</td><td>hydroxide</td><td>1−</td></tr>
+          <tr><td>NO₃⁻</td><td>nitrate</td><td>1−</td></tr>
+          <tr><td>NO₂⁻</td><td>nitrite</td><td>1−</td></tr>
+          <tr><td>SO₄²⁻</td><td>sulfate</td><td>2−</td></tr>
+          <tr><td>SO₃²⁻</td><td>sulfite</td><td>2−</td></tr>
+          <tr><td>CO₃²⁻</td><td>carbonate</td><td>2−</td></tr>
+          <tr><td>HCO₃⁻</td><td>hydrogen carbonate</td><td>1−</td></tr>
+          <tr><td>PO₄³⁻</td><td>phosphate</td><td>3−</td></tr>
+          <tr><td>ClO₄⁻</td><td>perchlorate</td><td>1−</td></tr>
+          <tr><td>ClO₃⁻</td><td>chlorate</td><td>1−</td></tr>
+          <tr><td>ClO₂⁻</td><td>chlorite</td><td>1−</td></tr>
+          <tr><td>ClO⁻</td><td>hypochlorite</td><td>1−</td></tr>
+          <tr><td>MnO₄⁻</td><td>permanganate</td><td>1−</td></tr>
+          <tr><td>CrO₄²⁻</td><td>chromate</td><td>2−</td></tr>
+          <tr><td>Cr₂O₇²⁻</td><td>dichromate</td><td>2−</td></tr>
+          <tr><td>C₂H₃O₂⁻</td><td>acetate</td><td>1−</td></tr>
+          <tr><td>CN⁻</td><td>cyanide</td><td>1−</td></tr>
+        </tbody>
+      </table>
+
+      <div class="scaffold-box">
+        <div class="scaffold-label">💡 Pattern Tip — -ate vs. -ite</div>
+        Ions ending in <strong>-ate</strong> have <em>more oxygen</em>. Ions ending in <strong>-ite</strong> have <em>fewer oxygen</em>. Example: nitrate (NO₃⁻) has 3 oxygens; nitrite (NO₂⁻) has 2 oxygens.
+      </div>
+
+      <p class="mt-075">When naming a compound with a polyatomic ion, use the name of the ion directly. Do <strong>not</strong> add "-ide."</p>
+      <p>Examples: Ca(OH)₂ = <strong>calcium hydroxide</strong> &nbsp;·&nbsp; NH₄NO₃ = <strong>ammonium nitrate</strong> &nbsp;·&nbsp; Na₂SO₄ = <strong>sodium sulfate</strong></p>
+    </div>
+
+    <!-- 5.5 Molecular Compounds -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.5</span> Molecular Compounds — Nonmetal + Nonmetal</div>
+      <p>A <strong>molecular compound</strong> is made of two nonmetals. Nonmetals can bond in many different ratios. So we use <strong>prefixes</strong> to show exactly how many atoms of each element are in the molecule.</p>
+
+      <table class="ion-table">
+        <caption>Molecular Prefixes for Compound Naming</caption>
+        <thead>
+          <tr><th>Number</th><th>Prefix</th><th>Number</th><th>Prefix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>mono-</td><td>6</td><td>hexa-</td></tr>
+          <tr><td>2</td><td>di-</td><td>7</td><td>hepta-</td></tr>
+          <tr><td>3</td><td>tri-</td><td>8</td><td>octa-</td></tr>
+          <tr><td>4</td><td>tetra-</td><td>9</td><td>nona-</td></tr>
+          <tr><td>5</td><td>penta-</td><td>10</td><td>deca-</td></tr>
+        </tbody>
+      </table>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Name the first element with a prefix (skip "mono" for the first element).</strong>
+            <p>Use the prefix that matches the subscript. If there is only 1 atom of the first element, skip "mono."</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Name the second element with a prefix + –ide ending.</strong>
+            <p>Always use a prefix for the second element. Change the ending to –ide. If the prefix ends in a or o and the element name starts with a vowel, drop the vowel from the prefix (e.g., tetra- + oxide = tetroxide, not tetraoxide).</p>
+          </div>
+        </div>
+      </div>
+
+      <table class="ion-table mt-1">
+        <caption>Molecular Compound Naming Examples</caption>
+        <thead>
+          <tr><th>Formula</th><th>Name</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CO₂</td><td>carbon dioxide</td></tr>
+          <tr><td>CO</td><td>carbon monoxide</td></tr>
+          <tr><td>N₂O₄</td><td>dinitrogen tetroxide</td></tr>
+          <tr><td>SF₆</td><td>sulfur hexafluoride</td></tr>
+          <tr><td>PCl₃</td><td>phosphorus trichloride</td></tr>
+          <tr><td>PCl₅</td><td>phosphorus pentachloride</td></tr>
+          <tr><td>N₂O</td><td>dinitrogen monoxide</td></tr>
+          <tr><td>NO₂</td><td>nitrogen dioxide</td></tr>
+          <tr><td>SO₃</td><td>sulfur trioxide</td></tr>
+          <tr><td>P₄O₁₀</td><td>tetraphosphorus decoxide</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>The biggest mistake: using prefixes for <em>ionic</em> compounds. Only use prefixes for <strong>molecular</strong> compounds (nonmetal + nonmetal). The subscripts in ionic compounds come from the ion charges — they are not a choice.</p>
+      </div>
+    </div>
+
+    <!-- 5.6 Binary Acids -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.6</span> Acids — Binary Acids</div>
+      <p>An <strong>acid</strong> is a compound that starts with hydrogen and dissolves in water to release H⁺ ions.</p>
+      <p>A <strong>binary acid</strong> contains only two elements: hydrogen and one other nonmetal (no oxygen).</p>
+
+      <div class="formula-box">
+        <span class="label">Binary Acid Naming Pattern</span>
+        hydro- + [element root] + -ic acid
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Add the prefix "hydro-"</strong>
+            <p>All binary acids start with "hydro-"</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write the root of the nonmetal's name</strong>
+            <p>For chlorine → chlor, bromine → brom, iodine → iod, sulfur → sulfur, fluorine → fluor</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Add "-ic acid" at the end</strong>
+          </div>
+        </div>
+      </div>
+
+      <table class="ion-table mt-075">
+        <caption>Binary Acid Naming Examples</caption>
+        <thead>
+          <tr><th>Formula</th><th>Name</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HCl</td><td>hydrochloric acid</td></tr>
+          <tr><td>HBr</td><td>hydrobromic acid</td></tr>
+          <tr><td>HI</td><td>hydroiodic acid</td></tr>
+          <tr><td>HF</td><td>hydrofluoric acid</td></tr>
+          <tr><td>H₂S</td><td>hydrosulfuric acid</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5.7 Oxyacids -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.7</span> Acids — Oxyacids</div>
+      <p>An <strong>oxyacid</strong> contains hydrogen, oxygen, and one other element. You name oxyacids based on the polyatomic ion inside the acid.</p>
+
+      <div class="scaffold-box">
+        <div class="scaffold-label">💡 The Rule</div>
+        If the ion ends in <strong>–ate</strong> → the acid ends in <strong>–ic acid</strong><br>
+        If the ion ends in <strong>–ite</strong> → the acid ends in <strong>–ous acid</strong>
+      </div>
+
+      <table class="ion-table mt-075">
+        <caption>Oxyacid Naming from Polyatomic Ions</caption>
+        <thead>
+          <tr><th>Ion Inside</th><th>Ion Name</th><th>Acid</th><th>Acid Name</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CO₃²⁻</td><td>carbonate (–ate)</td><td>H₂CO₃</td><td>carbonic acid (–ic)</td></tr>
+          <tr><td>SO₄²⁻</td><td>sulfate (–ate)</td><td>H₂SO₄</td><td>sulfuric acid (–ic)</td></tr>
+          <tr><td>SO₃²⁻</td><td>sulfite (–ite)</td><td>H₂SO₃</td><td>sulfurous acid (–ous)</td></tr>
+          <tr><td>NO₃⁻</td><td>nitrate (–ate)</td><td>HNO₃</td><td>nitric acid (–ic)</td></tr>
+          <tr><td>NO₂⁻</td><td>nitrite (–ite)</td><td>HNO₂</td><td>nitrous acid (–ous)</td></tr>
+          <tr><td>PO₄³⁻</td><td>phosphate (–ate)</td><td>H₃PO₄</td><td>phosphoric acid (–ic)</td></tr>
+          <tr><td>ClO₄⁻</td><td>perchlorate (–ate)</td><td>HClO₄</td><td>perchloric acid (–ic)</td></tr>
+          <tr><td>ClO₃⁻</td><td>chlorate (–ate)</td><td>HClO₃</td><td>chloric acid (–ic)</td></tr>
+          <tr><td>ClO₂⁻</td><td>chlorite (–ite)</td><td>HClO₂</td><td>chlorous acid (–ous)</td></tr>
+          <tr><td>ClO⁻</td><td>hypochlorite (–ite)</td><td>HClO</td><td>hypochlorous acid (–ous)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Drop the "hydro-" prefix for oxyacids. Only binary acids (no oxygen) use "hydro-". Oxyacids just use the ion name with the changed ending.</p>
+      </div>
+    </div>
+
+    <!-- 5.8 How to Tell Compound Types Apart -->
+    <div class="card">
+      <div class="card-title"><span class="num">5.8</span> How to Tell Compound Types Apart</div>
+      <p>The key to naming correctly is identifying the <strong>type of compound first</strong>. Use this decision guide:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Does the formula start with H?</strong>
+            <p>→ It is an <strong>acid</strong>. Does it contain oxygen? If no: binary acid (hydro-…-ic acid). If yes: oxyacid (use ion name, change ending).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Is the first element a metal?</strong>
+            <p>→ It is an <strong>ionic compound</strong>. Is the metal always one charge (like Na, K, Ca, Mg, Al)? If yes: just write the name + nonmetal-ide. If no (transition metal): add Roman numeral.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Are both elements nonmetals (and formula does not start with H)?</strong>
+            <p>→ It is a <strong>molecular compound</strong>. Use prefixes for both elements. Add -ide to the second element.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scaffold-box">
+        <div class="scaffold-label">🔑 Quick Checklist</div>
+        Metal + nonmetal = ionic (no prefixes) &nbsp;·&nbsp;
+        Nonmetal + nonmetal = molecular (use prefixes) &nbsp;·&nbsp;
+        Starts with H = acid (different rules)
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ═══════════════════════════════ TOOLS ═══════════════════════════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <div class="card">
+      <div class="card-title"><span class="num">Tool A</span> Compound Naming Assistant</div>
+      <p>Select a compound type and fill in the parts. The tool builds the name for you — then try to predict it before pressing Calculate.</p>
+
+      <div class="tool-section-label">Step 1 — What type of compound?</div>
+      <label class="tool-section-label" for="compType">Compound type</label>
+      <select class="prob-input comp-type-select" id="compType">
+        <option value="">-- Select type --</option>
+        <option value="ionic-simple">Ionic — Fixed-charge metal (Na, K, Ca, Mg, Al, etc.)</option>
+        <option value="ionic-roman">Ionic — Variable-charge metal (Fe, Cu, Pb, Mn, Ni, Co, Sn, etc.)</option>
+        <option value="polyatomic">Ionic — Contains a polyatomic ion</option>
+        <option value="molecular">Molecular (nonmetal + nonmetal)</option>
+        <option value="binary-acid">Binary Acid (H + one nonmetal, no oxygen)</option>
+        <option value="oxyacid">Oxyacid (H + oxygen + another element)</option>
+      </select>
+
+      <div id="toolInputArea"></div>
+
+      <div class="tool-section-label">Name</div>
+      <div class="tool-result-box" id="toolResult">Select a compound type above to begin.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Tool B</span> Roman Numeral Finder</div>
+      <p>Enter an ionic formula with a variable-charge metal. The tool calculates the metal's charge and tells you which Roman numeral to use.</p>
+      <p class="tool-hint">Use for formulas like FeO, FeCl₃, CuS, PbO₂, MnO₂, CrCl₃, etc.</p>
+      <div class="roman-input-row">
+        <input class="prob-input roman-input w-140" id="metalSymbol" placeholder="Metal symbol (e.g., Fe)" aria-label="Metal symbol">
+        <input class="prob-input roman-input w-100" id="metalCount" type="number" min="1" max="4" placeholder="# of metal atoms" aria-label="Number of metal atoms">
+        <input class="prob-input roman-input w-160" id="nonmetalCharge" type="number" placeholder="Nonmetal ion charge (e.g., -2 for oxide)" aria-label="Nonmetal ion charge">
+        <input class="prob-input roman-input w-100" id="nonmetalCount" type="number" min="1" max="6" placeholder="# of nonmetal ions" aria-label="Number of nonmetal ions">
+      </div>
+      <button class="btn roman-btn" id="calcRomanBtn">Find Roman Numeral</button>
+      <div class="tool-result-box roman-result" id="romanResult">Enter values above and click Find Roman Numeral.</div>
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ═══════════════════════════════ EXAMPLES ═══════════════════════════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <!-- Ex 1: Simple ionic -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Naming a Simple Ionic Compound</div>
+      <p><strong>Name:</strong> Na₂S</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the elements</strong>
+            <p>Na = sodium (a metal) &nbsp;·&nbsp; S = sulfur (a nonmetal)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the compound type</strong>
+            <p>Metal + nonmetal = ionic compound. Na always has a +1 charge — no Roman numeral needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the metal name, then the nonmetal with "-ide"</strong>
+            <p>Sodium → sodium (unchanged). Sulfur → sulfide (–ide added).</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">sodium sulfide</span></div>
+    </div>
+
+    <!-- Ex 2: Transition metal -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Naming an Ionic Compound with a Transition Metal</div>
+      <p><strong>Name:</strong> Fe₂O₃</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the elements</strong>
+            <p>Fe = iron (transition metal, variable charge) &nbsp;·&nbsp; O = oxygen (nonmetal, ion is O²⁻)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Find the iron charge using balance</strong>
+            <p>Total negative charge: 3 oxide ions × (−2) = −6. Two iron atoms must supply +6 total. +6 ÷ 2 = <strong>+3 per iron atom</strong>. Roman numeral = III.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the name with Roman numeral</strong>
+            <p>Iron(III) + oxide</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">iron(III) oxide</span></div>
+    </div>
+
+    <!-- Ex 3: Polyatomic -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> Naming a Compound with a Polyatomic Ion</div>
+      <p><strong>Name:</strong> Cr₂(SO₄)₃</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the ions</strong>
+            <p>SO₄²⁻ = sulfate (a polyatomic ion, charge = −2). Cr = chromium (transition metal, variable charge).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Find the chromium charge</strong>
+            <p>3 sulfate ions × (−2) = −6 total. 2 chromium atoms = +6 total. +6 ÷ 2 = <strong>+3</strong>. Roman numeral = III.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the name</strong>
+            <p>Use the polyatomic ion name directly — do <em>not</em> add "-ide."</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">chromium(III) sulfate</span></div>
+    </div>
+
+    <!-- Ex 4: Molecular -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 4</span> Naming a Molecular Compound</div>
+      <p><strong>Name:</strong> N₂O₄</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the elements and subscripts</strong>
+            <p>N (nitrogen) — subscript 2. O (oxygen) — subscript 4. Both are nonmetals = molecular compound.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>First element: use prefix, skip "mono"</strong>
+            <p>2 nitrogen atoms = <strong>di</strong>nitrogen</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Second element: prefix + "-ide", drop vowel clash</strong>
+            <p>4 oxygen atoms = tetra- + oxide. "Tetraoxide" → drop the "a" → <strong>tetroxide</strong>. Add to name.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">dinitrogen tetroxide</span></div>
+    </div>
+
+    <!-- Ex 5: Binary acid -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 5</span> Naming a Binary Acid</div>
+      <p><strong>Name:</strong> HBr (dissolved in water)</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the type</strong>
+            <p>Starts with H. No oxygen. = binary acid.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Apply the pattern: hydro- + element root + -ic acid</strong>
+            <p>Bromine → brom. Pattern gives: hydro + brom + ic acid = <strong>hydrobromic acid</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">hydrobromic acid</span></div>
+    </div>
+
+    <!-- Ex 6: Oxyacid -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 6</span> Naming an Oxyacid</div>
+      <p><strong>Name:</strong> H₂SO₃</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the type</strong>
+            <p>Starts with H. Contains oxygen. = oxyacid.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the polyatomic ion inside</strong>
+            <p>SO₃²⁻ = sulfite (ends in –ite).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Apply the rule: –ite → –ous acid</strong>
+            <p>Sulfite → sulfur + ous → sulfurous acid.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fl-label">Answer</div>
+      <div class="fl-chain"><span class="fl-result">sulfurous acid</span></div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ═══════════ PRACTICE BANNER ═══════════ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized nomenclature problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 05 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="05_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 05 · Nomenclature</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+
+/* ── TOOL LOGIC ── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Tool A: Compound Naming Assistant ── */
+  const compType = document.getElementById('compType');
+  if (!compType) return;
+
+  const toolInputArea = document.getElementById('toolInputArea');
+  const toolResult    = document.getElementById('toolResult');
+
+  const NONMETAL_IDE = {
+    'F':'fluoride','Cl':'chloride','Br':'bromide','I':'iodide',
+    'O':'oxide','S':'sulfide','N':'nitride','P':'phosphide',
+    'Se':'selenide','Te':'telluride','At':'astatide'
+  };
+  const NONMETAL_ROOT = {
+    'F':'fluor','Cl':'chlor','Br':'brom','I':'iod','S':'sulfur'
+  };
+  const PREFIXES = ['','mono','di','tri','tetra','penta','hexa','hepta','octa','nona','deca'];
+  const POLY_IONS = {
+    'NO3':'nitrate','NO2':'nitrite','SO4':'sulfate','SO3':'sulfite',
+    'CO3':'carbonate','HCO3':'hydrogen carbonate','PO4':'phosphate',
+    'OH':'hydroxide','NH4':'ammonium','ClO4':'perchlorate','ClO3':'chlorate',
+    'ClO2':'chlorite','ClO':'hypochlorite','MnO4':'permanganate',
+    'CrO4':'chromate','Cr2O7':'dichromate','C2H3O2':'acetate','CN':'cyanide'
+  };
+  const ROMAN = ['','I','II','III','IV','V','VI'];
+
+  function pfx(n, first) {
+    if (n < 1 || n > 10) return '';
+    if (n === 1 && first) return ''; // skip mono for first element
+    return PREFIXES[n];
+  }
+
+  function buildUI(type) {
+    let html = '';
+    if (type === 'ionic-simple') {
+      html = `
+        <div class="naming-tool-grid">
+          <div>
+            <div class="tool-section-label">Metal name</div>
+            <input class="prob-input" id="ta-metal" placeholder="e.g., sodium">
+          </div>
+          <div>
+            <div class="tool-section-label">Nonmetal symbol</div>
+            <select class="prob-input" id="ta-nonmetal">
+              <option value="">Select nonmetal</option>
+              <option value="F">F (fluorine)</option>
+              <option value="Cl">Cl (chlorine)</option>
+              <option value="Br">Br (bromine)</option>
+              <option value="I">I (iodine)</option>
+              <option value="O">O (oxygen)</option>
+              <option value="S">S (sulfur)</option>
+              <option value="N">N (nitrogen)</option>
+              <option value="P">P (phosphorus)</option>
+              <option value="Se">Se (selenium)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    } else if (type === 'ionic-roman') {
+      html = `
+        <div class="naming-tool-grid">
+          <div>
+            <div class="tool-section-label">Metal name</div>
+            <input class="prob-input" id="ta-metal" placeholder="e.g., iron">
+          </div>
+          <div>
+            <div class="tool-section-label">Metal charge (Roman numeral number)</div>
+            <select class="prob-input" id="ta-roman">
+              <option value="">Select charge</option>
+              <option value="1">+1 → (I)</option>
+              <option value="2">+2 → (II)</option>
+              <option value="3">+3 → (III)</option>
+              <option value="4">+4 → (IV)</option>
+            </select>
+          </div>
+          <div>
+            <div class="tool-section-label">Nonmetal symbol</div>
+            <select class="prob-input" id="ta-nonmetal">
+              <option value="">Select nonmetal</option>
+              <option value="F">F (fluoride)</option>
+              <option value="Cl">Cl (chloride)</option>
+              <option value="Br">Br (bromide)</option>
+              <option value="I">I (iodide)</option>
+              <option value="O">O (oxide)</option>
+              <option value="S">S (sulfide)</option>
+              <option value="N">N (nitride)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    } else if (type === 'polyatomic') {
+      html = `
+        <div class="naming-tool-grid">
+          <div>
+            <div class="tool-section-label">Cation name (metal or ammonium)</div>
+            <input class="prob-input" id="ta-metal" placeholder="e.g., sodium, iron(III)">
+          </div>
+          <div>
+            <div class="tool-section-label">Polyatomic anion</div>
+            <select class="prob-input" id="ta-poly">
+              <option value="">Select ion</option>
+              ${Object.entries(POLY_IONS).map(([k,v])=>`<option value="${v}">${k} = ${v}</option>`).join('')}
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    } else if (type === 'molecular') {
+      html = `
+        <div class="naming-tool-grid">
+          <div>
+            <div class="tool-section-label">First element name</div>
+            <input class="prob-input" id="ta-el1" placeholder="e.g., nitrogen">
+          </div>
+          <div>
+            <div class="tool-section-label">How many atoms of first element?</div>
+            <input class="prob-input" id="ta-n1" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+          <div>
+            <div class="tool-section-label">Second element name</div>
+            <input class="prob-input" id="ta-el2" placeholder="e.g., oxygen">
+          </div>
+          <div>
+            <div class="tool-section-label">How many atoms of second element?</div>
+            <input class="prob-input" id="ta-n2" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+        </div>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    } else if (type === 'binary-acid') {
+      html = `
+        <div class="tool-section-label">Nonmetal bonded to hydrogen</div>
+        <select class="prob-input comp-type-select" id="ta-nonmetal" aria-label="Binary acid nonmetal">
+          <option value="">Select nonmetal</option>
+          <option value="F">F (fluorine)</option>
+          <option value="Cl">Cl (chlorine)</option>
+          <option value="Br">Br (bromine)</option>
+          <option value="I">I (iodine)</option>
+          <option value="S">S (sulfur)</option>
+        </select>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    } else if (type === 'oxyacid') {
+      html = `
+        <div class="tool-section-label">Polyatomic ion inside the acid</div>
+        <select class="prob-input comp-type-select" id="ta-poly" aria-label="Oxyacid polyatomic ion">
+          <option value="">Select ion</option>
+          <option value="carbonate">carbonate (–ate)</option>
+          <option value="sulfate">sulfate (–ate)</option>
+          <option value="sulfite">sulfite (–ite)</option>
+          <option value="nitrate">nitrate (–ate)</option>
+          <option value="nitrite">nitrite (–ite)</option>
+          <option value="phosphate">phosphate (–ate)</option>
+          <option value="perchlorate">perchlorate (–ate)</option>
+          <option value="chlorate">chlorate (–ate)</option>
+          <option value="chlorite">chlorite (–ite)</option>
+          <option value="hypochlorite">hypochlorite (–ite)</option>
+          <option value="permanganate">permanganate (–ate)</option>
+          <option value="chromate">chromate (–ate)</option>
+          <option value="dichromate">dichromate (–ate)</option>
+          <option value="acetate">acetate (–ate)</option>
+        </select>
+        <button class="btn btn-sm" id="ta-calc">Build Name</button>`;
+    }
+    toolInputArea.innerHTML = html;
+    toolResult.textContent = 'Fill in the fields above, then click Build Name.';
+    toolResult.className = 'tool-result-box';
+
+    const calcBtn = document.getElementById('ta-calc');
+    if (calcBtn) calcBtn.addEventListener('click', computeName);
+  }
+
+  function computeName() {
+    const type = compType.value;
+    let name = '';
+    let error = '';
+
+    if (type === 'ionic-simple') {
+      const metal   = (document.getElementById('ta-metal')?.value || '').trim().toLowerCase();
+      const nm      = document.getElementById('ta-nonmetal')?.value || '';
+      if (!metal || !nm) { error = 'Please fill in all fields.'; }
+      else { name = `${metal} ${NONMETAL_IDE[nm] || nm}`; }
+
+    } else if (type === 'ionic-roman') {
+      const metal  = (document.getElementById('ta-metal')?.value || '').trim().toLowerCase();
+      const charge = parseInt(document.getElementById('ta-roman')?.value || '0');
+      const nm     = document.getElementById('ta-nonmetal')?.value || '';
+      if (!metal || !charge || !nm) { error = 'Please fill in all fields.'; }
+      else { name = `${metal}(${ROMAN[charge]}) ${NONMETAL_IDE[nm] || nm}`; }
+
+    } else if (type === 'polyatomic') {
+      const cation = (document.getElementById('ta-metal')?.value || '').trim().toLowerCase();
+      const anion  = document.getElementById('ta-poly')?.value || '';
+      if (!cation || !anion) { error = 'Please fill in all fields.'; }
+      else { name = `${cation} ${anion}`; }
+
+    } else if (type === 'molecular') {
+      const el1 = (document.getElementById('ta-el1')?.value || '').trim().toLowerCase();
+      const n1  = parseInt(document.getElementById('ta-n1')?.value || '0');
+      const el2 = (document.getElementById('ta-el2')?.value || '').trim().toLowerCase();
+      const n2  = parseInt(document.getElementById('ta-n2')?.value || '0');
+      if (!el1 || !n1 || !el2 || !n2) { error = 'Please fill in all fields.'; }
+      else {
+        const p1 = pfx(n1, true);
+        const p2 = pfx(n2, false);
+        // Drop vowel from prefix if element name starts with vowel
+        let el2ide = el2.replace(/e$/, '') + 'ide';
+        let part2 = p2 + el2ide;
+        // Handle vowel clash (tetra+oxide → tetroxide)
+        if (p2 && 'aeiou'.includes(el2ide[0])) {
+          part2 = p2.replace(/[aeiou]$/, '') + el2ide;
+        }
+        const part1 = p1 ? p1 + el1 : el1;
+        name = `${part1} ${part2}`;
+      }
+
+    } else if (type === 'binary-acid') {
+      const nm = document.getElementById('ta-nonmetal')?.value || '';
+      if (!nm) { error = 'Please select the nonmetal.'; }
+      else { name = `hydro${NONMETAL_ROOT[nm] || nm.toLowerCase()}ic acid`; }
+
+    } else if (type === 'oxyacid') {
+      const ion = document.getElementById('ta-poly')?.value || '';
+      if (!ion) { error = 'Please select the polyatomic ion.'; }
+      else {
+        if (ion.endsWith('ate')) {
+          name = ion.replace(/ate$/, 'ic acid');
+        } else if (ion.endsWith('ite')) {
+          name = ion.replace(/ite$/, 'ous acid');
+        } else {
+          name = ion + ' acid';
+        }
+      }
+    }
+
+    if (error) {
+      toolResult.textContent = error;
+      toolResult.className = 'tool-result-box error';
+    } else {
+      toolResult.textContent = name;
+      toolResult.className = 'tool-result-box';
+    }
+  }
+
+  compType.addEventListener('change', function () {
+    buildUI(this.value);
+  });
+
+  /* ── Tool B: Roman Numeral Finder ── */
+  const calcRomanBtn = document.getElementById('calcRomanBtn');
+  if (!calcRomanBtn) return;
+
+  calcRomanBtn.addEventListener('click', function () {
+    const metalSym   = (document.getElementById('metalSymbol')?.value || '').trim();
+    const metalCt    = parseInt(document.getElementById('metalCount')?.value || '0');
+    const nmCharge   = parseFloat(document.getElementById('nonmetalCharge')?.value || '0');
+    const nmCt       = parseInt(document.getElementById('nonmetalCount')?.value || '0');
+    const resultEl   = document.getElementById('romanResult');
+
+    if (!metalSym || !metalCt || !nmCharge || !nmCt) {
+      resultEl.textContent = 'Please fill in all four fields.';
+      resultEl.className = 'tool-result-box error';
+      return;
+    }
+    const totalNeg   = nmCharge * nmCt;       // e.g., -2 × 3 = -6
+    const totalPos   = -totalNeg;              // = 6
+    const metalCharge = totalPos / metalCt;    // = 3
+
+    if (!Number.isInteger(metalCharge) || metalCharge < 1 || metalCharge > 6) {
+      resultEl.textContent = `Metal charge = ${totalPos}/${metalCt} = ${metalCharge.toFixed(2)} — this doesn't give a clean Roman numeral. Check your values.`;
+      resultEl.className = 'tool-result-box error';
+      return;
+    }
+    resultEl.textContent = `Total nonmetal charge: ${nmCt} × (${nmCharge}) = ${totalNeg}. Metal must supply +${totalPos} over ${metalCt} atom(s). Charge per metal atom = +${metalCharge} → Roman numeral: ${ROMAN[metalCharge]}. Name: ${metalSym.toLowerCase()}(${ROMAN[metalCharge]}) …`;
+    resultEl.className = 'tool-result-box';
+  });
+
+});
+
+</script>
+</body>
+</html>

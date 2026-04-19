@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 07 — Chemical Reactions | ChemUnlocked</title>
+<meta name="description" content="Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/07_Learn_Chemical_Reactions.html">
+<meta property="og:title" content="Unit 07 — Chemical Reactions | ChemUnlocked">
+<meta property="og:description" content="Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/07_Learn_Chemical_Reactions.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 07 — Chemical Reactions | ChemUnlocked">
+<meta name="twitter:description" content="Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 07 — Chemical Reactions",
+  "description": "Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  },
+  "url": "https://chemunlocked.com/07_Learn_Chemical_Reactions.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<style>
+
+/* ── Reaction type badge colors ── */
+.rxn-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  margin-right: 0.35rem;
+}
+.badge-precip  { background: #fef3c7; color: #92400e; }
+.badge-acid    { background: #ecfdf5; color: #065f46; }
+.badge-redox   { background: #ede9fe; color: #5b21b6; }
+.badge-synth   { background: #dbeafe; color: #1e40af; }
+.badge-decomp  { background: #fee2e2; color: #991b1b; }
+.badge-single  { background: #fce7f3; color: #9d174d; }
+.badge-double  { background: #e0f2fe; color: #075985; }
+.badge-combustion { background: #ffedd5; color: #9a3412; }
+
+/* ── Oxidation number inline display ── */
+.ox-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+.ox-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.9rem;
+  min-width: 64px;
+}
+.ox-chip .ox-formula { font-family: 'DM Mono', monospace; font-size: 0.92rem; font-weight: 500; color: var(--text); }
+.ox-chip .ox-num { font-size: 0.78rem; font-weight: 700; color: var(--accent2); margin-top: 0.15rem; }
+
+/* ── Equation display ── */
+.eq-display {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.05rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  color: #1e3a8a;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.eq-coeff { color: var(--accent2); font-weight: 700; }
+.eq-arrow { color: var(--muted); margin: 0 0.4rem; }
+.eq-state { font-size: 0.82rem; color: var(--muted); }
+
+/* ── Tool layout ── */
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.tool-output {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  min-height: 2.5rem;
+  color: var(--dim);
+}
+
+/* ── Net ionic step layout ── */
+.ionic-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.ionic-step:last-child { border-bottom: none; }
+.ionic-label {
+  font-size: 0.75rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+  min-width: 80px;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .tool-grid { grid-template-columns: 1fr; }
+  .practice-banner { padding: 1.25rem; }
+  .ox-table { gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 07</div>
+    <h1>Chemical Reactions</h1>
+    <p class="subtitle">Chemical reactions happen when substances change into something new. In this unit, you will learn how to write and balance equations, and how to sort reactions into types. Understanding reaction types helps you predict what will form before you even run the experiment.</p>
+  </header>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 07 tab navigation">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       CONCEPTS TAB
+  ═══════════════════════════════════════════════ -->
+  <div id="concepts" class="section active">
+
+    <!-- 7.1 Chemical Equations -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.1</span> What Is a Chemical Equation?</div>
+      <p>A <strong>chemical equation</strong> is a shorthand way to show a chemical reaction. It uses formulas instead of words. The substances you start with are called <strong>reactants</strong>. The substances you end up with are called <strong>products</strong>. An arrow (→) separates the two sides — it means "produces."</p>
+      <div class="formula-box">
+        <span class="label">General Form</span>
+        Reactants → Products
+      </div>
+      <p style="margin-top:0.75rem;">Numbers in front of formulas are called <strong>coefficients</strong>. They tell you how many of each molecule is involved. The small numbers inside a formula (like the 2 in H₂O) are <strong>subscripts</strong> — they tell you how many atoms are in one molecule. <em>Never change subscripts to balance an equation. Only change coefficients.</em></p>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p><strong>State symbols</strong> show the physical state of each substance: (s) = solid, (l) = liquid, (g) = gas, (aq) = dissolved in water (aqueous).</p>
+      </div>
+    </div>
+
+    <!-- 7.2 Balancing Equations -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.2</span> Balancing Chemical Equations</div>
+      <p>A <strong>balanced equation</strong> has the same number of each type of atom on both sides. This follows the <strong>Law of Conservation of Mass</strong> — atoms are never created or destroyed in a chemical reaction, only rearranged.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write the unbalanced equation</strong>
+            <p>Put the correct formulas for reactants on the left and products on the right. Do not change any subscripts.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Count atoms on each side</strong>
+            <p>Make a tally of every element. Compare reactant count to product count. Identify which elements are unbalanced.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Add coefficients</strong>
+            <p>Place whole-number coefficients in front of formulas to make the atom counts equal. Balance one element at a time. Leave elements that appear in only one place on each side for last.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Check and simplify</strong>
+            <p>Recount every element on both sides. Make sure all coefficients are the smallest possible whole numbers (reduce if needed).</p>
+          </div>
+        </div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>A common strategy: balance metals first, then nonmetals, and save oxygen and hydrogen for last.</p>
+      </div>
+    </div>
+
+    <!-- 7.3 Types of Reactions -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.3</span> Types of Chemical Reactions</div>
+      <p>Most reactions fit into a small number of categories. Knowing the type helps you predict the products even before running the reaction.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Pattern</th>
+            <th>Simple Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rxn-badge badge-synth">Synthesis</span></td>
+            <td>A + B → AB</td>
+            <td>2Na + Cl₂ → 2NaCl</td>
+          </tr>
+          <tr>
+            <td><span class="rxn-badge badge-decomp">Decomposition</span></td>
+            <td>AB → A + B</td>
+            <td>2H₂O₂ → 2H₂O + O₂</td>
+          </tr>
+          <tr>
+            <td><span class="rxn-badge badge-single">Single Replacement</span></td>
+            <td>A + BC → AC + B</td>
+            <td>Zn + 2HCl → ZnCl₂ + H₂</td>
+          </tr>
+          <tr>
+            <td><span class="rxn-badge badge-double">Double Replacement</span></td>
+            <td>AB + CD → AD + CB</td>
+            <td>AgNO₃ + NaCl → AgCl + NaNO₃</td>
+          </tr>
+          <tr>
+            <td><span class="rxn-badge badge-combustion">Combustion</span></td>
+            <td>fuel + O₂ → CO₂ + H₂O</td>
+            <td>CH₄ + 2O₂ → CO₂ + 2H₂O</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.4 Precipitation Reactions -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.4</span> Precipitation Reactions</div>
+      <p>A <strong>precipitation reaction</strong> happens when two solutions are mixed and a solid forms. The solid that forms is called a <strong>precipitate</strong>. Precipitates form because two ions combine to make an insoluble compound — one that does not dissolve in water.</p>
+      <p>To predict whether a precipitate forms, use <strong>solubility rules</strong> — a set of guidelines that tell you which ionic compounds dissolve in water and which do not.</p>
+      <div class="formula-box">
+        <span class="label">Key Solubility Rules (simplified)</span>
+        • Most nitrate (NO₃⁻) compounds: SOLUBLE (no precipitate)<br>
+        • Most chloride (Cl⁻) compounds: SOLUBLE — except AgCl, PbCl₂, HgCl₂<br>
+        • Most sulfate (SO₄²⁻) compounds: SOLUBLE — except BaSO₄, PbSO₄<br>
+        • Most carbonate (CO₃²⁻) compounds: INSOLUBLE (precipitate forms)<br>
+        • Most hydroxide (OH⁻) compounds: INSOLUBLE — except group 1 metals + Ba, Sr
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>A <strong>net ionic equation</strong> shows only the ions that actually change — the ones that form the precipitate. Ions that do not change are called <strong>spectator ions</strong> and are left out of the net ionic equation.</p>
+      </div>
+    </div>
+
+    <!-- 7.5 Acid-Base Reactions -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.5</span> Acid-Base Reactions</div>
+      <p>An <strong>acid</strong> releases hydrogen ions (H⁺) in water. A <strong>base</strong> releases hydroxide ions (OH⁻) in water. When an acid and a base react, they <strong>neutralize</strong> each other. The products are water and a salt.</p>
+      <div class="formula-box">
+        <span class="label">Neutralization Pattern</span>
+        Acid + Base → Water + Salt<br>
+        HCl + NaOH → H₂O + NaCl
+      </div>
+      <p>The net ionic equation for any strong acid–strong base neutralization is always the same — only the H⁺ and OH⁻ ions react:</p>
+      <div class="formula-box">
+        <span class="label">Net Ionic Equation</span>
+        H⁺(aq) + OH⁻(aq) → H₂O(l)
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Acid-base reactions are a special type of double-replacement reaction. The "exchange" that happens is H⁺ moving from the acid to the base.</p>
+      </div>
+    </div>
+
+    <!-- 7.6 Oxidation-Reduction Reactions -->
+    <div class="card">
+      <div class="card-title"><span class="num">7.6</span> Oxidation-Reduction (Redox) Reactions</div>
+      <p>In a <strong>redox reaction</strong>, electrons are transferred from one substance to another. This changes the <strong>oxidation number</strong> (charge bookkeeping) of the atoms involved.</p>
+      <ul>
+        <li><strong>Oxidation</strong> = losing electrons → oxidation number <em>increases</em></li>
+        <li><strong>Reduction</strong> = gaining electrons → oxidation number <em>decreases</em></li>
+      </ul>
+      <p>Memory trick: <strong>OIL RIG</strong> — Oxidation Is Loss, Reduction Is Gain (of electrons).</p>
+      <p><strong>Oxidation number rules</strong> (in order of priority):</p>
+      <div class="formula-box">
+        <span class="label">Oxidation Number Rules</span>
+        1. Pure elements: oxidation number = 0 (e.g., Fe, O₂, Cl₂)<br>
+        2. Monatomic ions: oxidation number = ion charge (e.g., Na⁺ = +1)<br>
+        3. Oxygen in compounds: usually −2 (except peroxides: −1)<br>
+        4. Hydrogen in compounds: usually +1 (except metal hydrides: −1)<br>
+        5. All oxidation numbers in a compound must add to 0<br>
+        6. All oxidation numbers in a polyatomic ion must add to the ion charge
+      </div>
+      <div class="ox-table">
+        <div class="ox-chip"><span class="ox-formula">Fe in Fe₂O₃</span><span class="ox-num">+3</span></div>
+        <div class="ox-chip"><span class="ox-formula">S in SO₄²⁻</span><span class="ox-num">+6</span></div>
+        <div class="ox-chip"><span class="ox-formula">Mn in MnO₄⁻</span><span class="ox-num">+7</span></div>
+        <div class="ox-chip"><span class="ox-formula">N in NH₄⁺</span><span class="ox-num">−3</span></div>
+        <div class="ox-chip"><span class="ox-formula">Cl in ClO₃⁻</span><span class="ox-num">+5</span></div>
+        <div class="ox-chip"><span class="ox-formula">Cr in Cr₂O₇²⁻</span><span class="ox-num">+6</span></div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>The substance that gets oxidized is called the <strong>reducing agent</strong> (it gives away electrons). The substance that gets reduced is the <strong>oxidizing agent</strong> (it accepts electrons). They always work in pairs.</p>
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ═══════════════════════════════════════════════
+       TOOLS TAB
+  ═══════════════════════════════════════════════ -->
+  <div id="tools" class="section">
+
+    <!-- Tool 1: Reaction Type Identifier -->
+    <div class="card">
+      <div class="card-title"><span class="num">Tool A</span> Reaction Type Identifier</div>
+      <p>Enter the number of reactants and products, then answer the questions. The tool will identify the reaction type.</p>
+
+      <label style="display:block; margin-bottom:0.35rem; font-weight:600; font-size:0.92rem;">How many reactant formulas are there?</label>
+      <select class="prob-input" id="numReactants" style="margin-bottom:0.75rem; max-width:260px;">
+        <option value="">— choose —</option>
+        <option value="1">1 reactant</option>
+        <option value="2">2 reactants</option>
+        <option value="3+">3 or more reactants</option>
+      </select>
+
+      <label style="display:block; margin-bottom:0.35rem; font-weight:600; font-size:0.92rem;">How many product formulas are there?</label>
+      <select class="prob-input" id="numProducts" style="margin-bottom:0.75rem; max-width:260px;">
+        <option value="">— choose —</option>
+        <option value="1">1 product</option>
+        <option value="2">2 products</option>
+        <option value="3+">3 or more products</option>
+      </select>
+
+      <label style="display:block; margin-bottom:0.35rem; font-weight:600; font-size:0.92rem;">Does the reaction involve O₂ as a reactant and produce CO₂ and/or H₂O?</label>
+      <select class="prob-input" id="isCombustion" style="margin-bottom:0.75rem; max-width:260px;">
+        <option value="">— choose —</option>
+        <option value="yes">Yes</option>
+        <option value="no">No / not sure</option>
+      </select>
+
+      <label style="display:block; margin-bottom:0.35rem; font-weight:600; font-size:0.92rem;">Does a solid (precipitate) form in solution?</label>
+      <select class="prob-input" id="isPrecip" style="margin-bottom:0.75rem; max-width:260px;">
+        <option value="">— choose —</option>
+        <option value="yes">Yes — solid forms</option>
+        <option value="no">No</option>
+      </select>
+
+      <button class="btn" id="identifyBtn">Identify Reaction Type</button>
+
+      <div class="tool-output" id="typeOutput" style="display:none;"></div>
+    </div>
+
+    <!-- Tool 2: Oxidation Number Finder -->
+    <div class="card">
+      <div class="card-title"><span class="num">Tool B</span> Oxidation Number Finder</div>
+      <p>Select a compound or ion to see how oxidation numbers are calculated step by step.</p>
+      <select class="prob-input" id="oxSelect" style="max-width:300px; margin-bottom:0.75rem;">
+        <option value="">— choose a compound —</option>
+        <option value="Fe2O3">Fe₂O₃</option>
+        <option value="SO4">SO₄²⁻</option>
+        <option value="MnO4">MnO₄⁻</option>
+        <option value="NH4">NH₄⁺</option>
+        <option value="Cr2O7">Cr₂O₇²⁻</option>
+        <option value="NO3">NO₃⁻</option>
+        <option value="H2O">H₂O</option>
+        <option value="NaCl">NaCl</option>
+        <option value="ClO3">ClO₃⁻</option>
+        <option value="PO4">PO₄³⁻</option>
+      </select>
+      <div class="tool-output" id="oxOutput" style="display:none;"></div>
+    </div>
+
+    <!-- Tool 3: Atom Balancer Checker -->
+    <div class="card">
+      <div class="card-title"><span class="num">Tool C</span> Is This Equation Balanced?</div>
+      <p>Choose a sample equation. The tool counts atoms on both sides and tells you if it is balanced.</p>
+      <select class="prob-input" id="balanceSelect" style="max-width:400px; margin-bottom:0.75rem;">
+        <option value="">— choose an equation —</option>
+        <option value="H2O_unbal">H₂ + O₂ → H₂O (unbalanced?)</option>
+        <option value="H2O_bal">2H₂ + O₂ → 2H₂O (balanced?)</option>
+        <option value="Fe_unbal">Fe + O₂ → Fe₂O₃ (unbalanced?)</option>
+        <option value="Fe_bal">4Fe + 3O₂ → 2Fe₂O₃ (balanced?)</option>
+        <option value="CH4_bal">CH₄ + 2O₂ → CO₂ + 2H₂O (balanced?)</option>
+        <option value="Na_bal">2Na + Cl₂ → 2NaCl (balanced?)</option>
+        <option value="NH3_unbal">N₂ + H₂ → NH₃ (unbalanced?)</option>
+        <option value="NH3_bal">N₂ + 3H₂ → 2NH₃ (balanced?)</option>
+      </select>
+      <div class="tool-output" id="balanceOutput" style="display:none;"></div>
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ═══════════════════════════════════════════════
+       EXAMPLES TAB
+  ═══════════════════════════════════════════════ -->
+  <div id="examples" class="section">
+
+    <!-- Example 1: Balancing -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Balancing a Chemical Equation</div>
+      <p><strong>Given:</strong> Fe + O₂ → Fe₂O₃ &nbsp;&nbsp; <strong>Find:</strong> The balanced equation</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the unbalanced equation and count atoms</strong>
+            <p>Reactants: 1 Fe, 2 O &nbsp;|&nbsp; Products: 2 Fe, 3 O — neither side matches. Two elements are unbalanced.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Balance iron (Fe) first</strong>
+            <p>There are 2 Fe on the right (in Fe₂O₃). Put a coefficient of 4 in front of Fe on the left. Now Fe: left = 4, right = 2 × ? — we need a coefficient of 2 in front of Fe₂O₃. That gives: 4 Fe on left, 4 Fe on right. ✓</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Balance oxygen (O) next</strong>
+            <p>Right side now has 2 × 3 = 6 oxygen atoms (from 2 Fe₂O₃). Left side has O₂ — need 6 oxygen atoms, so put 3 in front of O₂. That gives 3 × 2 = 6 oxygen atoms on the left. ✓</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Check all atoms and write the final equation</strong>
+            <p>Fe: 4 = 4 ✓ &nbsp; O: 6 = 6 ✓ &nbsp; Coefficients are the smallest whole numbers. ✓</p>
+            <div class="fl-label">Balanced Equation</div>
+            <div class="fl-chain">
+              <span class="eq-coeff">4</span>Fe + <span class="eq-coeff">3</span>O₂ → <span class="eq-coeff">2</span>Fe₂O₃
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example 2: Identifying reaction type + net ionic -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Identifying a Precipitation Reaction &amp; Writing the Net Ionic Equation</div>
+      <p><strong>Given:</strong> AgNO₃(aq) + NaCl(aq) → ? &nbsp;&nbsp; <strong>Find:</strong> Products, balanced molecular equation, and net ionic equation</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the reaction type</strong>
+            <p>Two ionic compounds in aqueous solution react. Their ions exchange partners. This is a <span class="rxn-badge badge-double">Double Replacement</span> / <span class="rxn-badge badge-precip">Precipitation</span> reaction.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Predict the products by swapping ions</strong>
+            <p>AgNO₃ + NaCl → AgCl + NaNO₃ &nbsp; (Ag⁺ pairs with Cl⁻; Na⁺ pairs with NO₃⁻)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Use solubility rules to find the precipitate</strong>
+            <p>NaNO₃ — all nitrates are soluble → stays dissolved (aq). AgCl — chlorides are usually soluble, <em>except</em> AgCl → precipitate (s)!</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the balanced molecular equation</strong>
+            <div class="fl-chain">AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</div>
+            <p>Already balanced (1 of each ion on both sides). ✓</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the complete ionic equation</strong>
+            <p>Split all soluble ionic compounds into their individual ions:</p>
+            <div class="fl-chain">Ag⁺(aq) + NO₃⁻(aq) + Na⁺(aq) + Cl⁻(aq) → AgCl(s) + Na⁺(aq) + NO₃⁻(aq)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Cancel spectator ions → net ionic equation</strong>
+            <p>Na⁺ and NO₃⁻ appear on both sides unchanged — cancel them. What remains is the net ionic equation:</p>
+            <div class="fl-chain"><span class="fl-result">Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</span></div>
+            <p>This is the only change that actually happened in solution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example 3: Oxidation numbers + redox identification -->
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> Identifying a Redox Reaction Using Oxidation Numbers</div>
+      <p><strong>Given:</strong> 2Na + Cl₂ → 2NaCl &nbsp;&nbsp; <strong>Find:</strong> Which element is oxidized, which is reduced, and identify the oxidizing and reducing agents</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Assign oxidation numbers to reactants</strong>
+            <p>Na is a pure element → oxidation number = <strong>0</strong>. Cl₂ is a pure element → oxidation number = <strong>0</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Assign oxidation numbers to products</strong>
+            <p>In NaCl: Na is a group 1 metal → <strong>+1</strong>. For the compound to be neutral: Cl must be <strong>−1</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Compare — did any oxidation numbers change?</strong>
+            <div class="fl-chain">
+              Na: 0 → +1 &nbsp;(INCREASED) = <span class="fl-result">OXIDIZED</span><br>
+              Cl: 0 → −1 &nbsp;(DECREASED) = <span class="fl-result">REDUCED</span>
+            </div>
+            <p>Both changed → this is a redox reaction.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify oxidizing and reducing agents</strong>
+            <div class="fl-cancel">
+              Na was oxidized (lost e⁻) → Na is the REDUCING AGENT<br>
+              Cl₂ caused Na to be oxidized (accepted e⁻) → Cl₂ is the OXIDIZING AGENT
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ═══════════════════════════════════════════════
+       PRACTICE BANNER
+  ═══════════════════════════════════════════════ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized chemical reactions problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 07 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="07_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 07 · Chemical Reactions</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Tool A: Reaction Type Identifier ── */
+  const identifyBtn = document.getElementById('identifyBtn');
+  if (identifyBtn) {
+    identifyBtn.addEventListener('click', function () {
+      const nr = document.getElementById('numReactants').value;
+      const np = document.getElementById('numProducts').value;
+      const comb = document.getElementById('isCombustion').value;
+      const precip = document.getElementById('isPrecip').value;
+      const out = document.getElementById('typeOutput');
+
+      if (!nr || !np) {
+        out.style.display = 'block';
+        out.innerHTML = '<span style="color:let(--red)">Please answer all questions first.</span>';
+        return;
+      }
+
+      let type = '';
+      let explanation = '';
+      let badge = '';
+
+      if (comb === 'yes') {
+        type = 'Combustion';
+        badge = 'badge-combustion';
+        explanation = 'A fuel reacts with O₂ and produces CO₂ and/or H₂O. This is a combustion reaction.';
+      } else if (precip === 'yes') {
+        type = 'Precipitation (Double Replacement)';
+        badge = 'badge-precip';
+        explanation = 'Two aqueous ionic compounds react and form a solid precipitate. Ions swap partners. This is a double replacement / precipitation reaction.';
+      } else if (nr === '2' && np === '1') {
+        type = 'Synthesis';
+        badge = 'badge-synth';
+        explanation = 'Two reactants combine to form one product: A + B → AB. This is a synthesis reaction.';
+      } else if (nr === '1' && np === '2') {
+        type = 'Decomposition';
+        badge = 'badge-decomp';
+        explanation = 'One reactant breaks apart into two or more products: AB → A + B. This is a decomposition reaction.';
+      } else if (nr === '1' && np === '3+') {
+        type = 'Decomposition';
+        badge = 'badge-decomp';
+        explanation = 'One reactant breaks apart into multiple products. This is a decomposition reaction.';
+      } else if (nr === '2' && np === '2') {
+        type = 'Double Replacement or Single Replacement';
+        badge = 'badge-double';
+        explanation = 'With 2 reactants and 2 products, this could be a single replacement (A + BC → AC + B) or double replacement (AB + CD → AD + CB). Look at whether one element replaces another, or whether two ionic compounds swap ions.';
+      } else {
+        type = 'Cannot determine from this information alone';
+        badge = '';
+        explanation = 'More details are needed. Try looking at the formulas carefully — does one element replace another? Do two ionic compounds swap partners?';
+      }
+
+      out.style.display = 'block';
+      out.innerHTML = `<strong>Likely type:</strong> <span class="rxn-badge ${badge}" style="margin-left:0.3rem">${type}</span><br><br>${explanation}`;
+    });
+  }
+
+  /* ── Tool B: Oxidation Number Finder ── */
+  const oxSelect = document.getElementById('oxSelect');
+  if (oxSelect) {
+    const oxData = {
+      Fe2O3: {
+        label: 'Fe₂O₃',
+        charge: 0,
+        steps: [
+          'Compound Fe₂O₃ has overall charge = 0.',
+          'Rule: O in a compound = −2. There are 3 oxygens → total O contribution = 3 × (−2) = −6.',
+          'Total must be 0, so the 2 Fe atoms must add to +6.',
+          'Each Fe = +6 ÷ 2 = <strong>+3</strong>.'
+        ],
+        answer: 'Fe = +3, O = −2'
+      },
+      SO4: {
+        label: 'SO₄²⁻',
+        charge: -2,
+        steps: [
+          'Ion SO₄²⁻ has overall charge = −2.',
+          'Rule: O in a compound = −2. There are 4 oxygens → total O contribution = 4 × (−2) = −8.',
+          'Total must be −2, so S must satisfy: S + (−8) = −2 → S = +6.'
+        ],
+        answer: 'S = +6, O = −2'
+      },
+      MnO4: {
+        label: 'MnO₄⁻',
+        charge: -1,
+        steps: [
+          'Ion MnO₄⁻ has overall charge = −1.',
+          'Rule: O = −2. There are 4 oxygens → 4 × (−2) = −8.',
+          'Mn + (−8) = −1 → Mn = +7.'
+        ],
+        answer: 'Mn = +7, O = −2'
+      },
+      NH4: {
+        label: 'NH₄⁺',
+        charge: +1,
+        steps: [
+          'Ion NH₄⁺ has overall charge = +1.',
+          'Rule: H bonded to a nonmetal = +1. There are 4 H atoms → 4 × (+1) = +4.',
+          'N + (+4) = +1 → N = −3.'
+        ],
+        answer: 'N = −3, H = +1'
+      },
+      Cr2O7: {
+        label: 'Cr₂O₇²⁻',
+        charge: -2,
+        steps: [
+          'Ion Cr₂O₇²⁻ has overall charge = −2.',
+          'Rule: O = −2. There are 7 oxygens → 7 × (−2) = −14.',
+          '2 Cr + (−14) = −2 → 2 Cr = +12 → each Cr = +6.'
+        ],
+        answer: 'Cr = +6, O = −2'
+      },
+      NO3: {
+        label: 'NO₃⁻',
+        charge: -1,
+        steps: [
+          'Ion NO₃⁻ has overall charge = −1.',
+          'Rule: O = −2. There are 3 oxygens → 3 × (−2) = −6.',
+          'N + (−6) = −1 → N = +5.'
+        ],
+        answer: 'N = +5, O = −2'
+      },
+      H2O: {
+        label: 'H₂O',
+        charge: 0,
+        steps: [
+          'Compound H₂O has overall charge = 0.',
+          'Rule: O in a compound = −2.',
+          '2H + (−2) = 0 → 2H = +2 → each H = +1.'
+        ],
+        answer: 'H = +1, O = −2'
+      },
+      NaCl: {
+        label: 'NaCl',
+        charge: 0,
+        steps: [
+          'Ionic compound NaCl has overall charge = 0.',
+          'Rule: Na is a group 1 metal → Na = +1.',
+          'Na + Cl = 0 → Cl = −1.'
+        ],
+        answer: 'Na = +1, Cl = −1'
+      },
+      ClO3: {
+        label: 'ClO₃⁻',
+        charge: -1,
+        steps: [
+          'Ion ClO₃⁻ has overall charge = −1.',
+          'Rule: O = −2. There are 3 oxygens → 3 × (−2) = −6.',
+          'Cl + (−6) = −1 → Cl = +5.'
+        ],
+        answer: 'Cl = +5, O = −2'
+      },
+      PO4: {
+        label: 'PO₄³⁻',
+        charge: -3,
+        steps: [
+          'Ion PO₄³⁻ has overall charge = −3.',
+          'Rule: O = −2. There are 4 oxygens → 4 × (−2) = −8.',
+          'P + (−8) = −3 → P = +5.'
+        ],
+        answer: 'P = +5, O = −2'
+      }
+    };
+
+    oxSelect.addEventListener('change', function () {
+      const key = this.value;
+      const out = document.getElementById('oxOutput');
+      if (!key) { out.style.display = 'none'; return; }
+      const d = oxData[key];
+      if (!d) return;
+      const stepsHTML = d.steps.map((s, i) =>
+        `<div style="margin:0.4rem 0; padding-left:1rem; border-left:3px solid #bfdbfe;"><span style="color:let(--accent2); font-weight:700">${i + 1}.</span> ${s}</div>`
+      ).join('');
+      out.style.display = 'block';
+      out.innerHTML = `<strong>${d.label}</strong> (overall charge = ${d.charge >= 0 ? '+' + d.charge : d.charge})<br><br>${stepsHTML}<br><span style="color:let(--green); font-weight:650">Answer: ${d.answer}</span>`;
+    });
+  }
+
+  /* ── Tool C: Equation Balance Checker ── */
+  const balSelect = document.getElementById('balanceSelect');
+  if (balSelect) {
+    const equations = {
+      H2O_unbal: {
+        eq: 'H₂ + O₂ → H₂O',
+        balanced: false,
+        left: { H: 2, O: 2 },
+        right: { H: 2, O: 1 },
+        note: 'O is unbalanced: left has 2, right has 1. Add coefficient 2 in front of H₂O and 2 in front of H₂ → 2H₂ + O₂ → 2H₂O.'
+      },
+      H2O_bal: {
+        eq: '2H₂ + O₂ → 2H₂O',
+        balanced: true,
+        left: { H: 4, O: 2 },
+        right: { H: 4, O: 2 },
+        note: 'H: 4 = 4 ✓ &nbsp; O: 2 = 2 ✓'
+      },
+      Fe_unbal: {
+        eq: 'Fe + O₂ → Fe₂O₃',
+        balanced: false,
+        left: { Fe: 1, O: 2 },
+        right: { Fe: 2, O: 3 },
+        note: 'Both Fe and O are unbalanced. Correct balanced equation: 4Fe + 3O₂ → 2Fe₂O₃.'
+      },
+      Fe_bal: {
+        eq: '4Fe + 3O₂ → 2Fe₂O₃',
+        balanced: true,
+        left: { Fe: 4, O: 6 },
+        right: { Fe: 4, O: 6 },
+        note: 'Fe: 4 = 4 ✓ &nbsp; O: 6 = 6 ✓'
+      },
+      CH4_bal: {
+        eq: 'CH₄ + 2O₂ → CO₂ + 2H₂O',
+        balanced: true,
+        left: { C: 1, H: 4, O: 4 },
+        right: { C: 1, H: 4, O: 4 },
+        note: 'C: 1 = 1 ✓ &nbsp; H: 4 = 4 ✓ &nbsp; O: 4 = 4 ✓'
+      },
+      Na_bal: {
+        eq: '2Na + Cl₂ → 2NaCl',
+        balanced: true,
+        left: { Na: 2, Cl: 2 },
+        right: { Na: 2, Cl: 2 },
+        note: 'Na: 2 = 2 ✓ &nbsp; Cl: 2 = 2 ✓'
+      },
+      NH3_unbal: {
+        eq: 'N₂ + H₂ → NH₃',
+        balanced: false,
+        left: { N: 2, H: 2 },
+        right: { N: 1, H: 3 },
+        note: 'Both N and H are unbalanced. Correct balanced equation: N₂ + 3H₂ → 2NH₃.'
+      },
+      NH3_bal: {
+        eq: 'N₂ + 3H₂ → 2NH₃',
+        balanced: true,
+        left: { N: 2, H: 6 },
+        right: { N: 2, H: 6 },
+        note: 'N: 2 = 2 ✓ &nbsp; H: 6 = 6 ✓'
+      }
+    };
+
+    balSelect.addEventListener('change', function () {
+      const key = this.value;
+      const out = document.getElementById('balanceOutput');
+      if (!key) { out.style.display = 'none'; return; }
+      const d = equations[key];
+      if (!d) return;
+
+      const atomRows = Object.entries(d.left).map(([el, lc]) => {
+        const rc = d.right[el] || 0;
+        const match = lc === rc;
+        return `<tr>
+          <td>${el}</td>
+          <td>${lc}</td>
+          <td>${rc}</td>
+          <td style="color:${match ? 'let(--green)' : 'let(--red)'}">${match ? '✓' : '✗'}</td>
+        </tr>`;
+      }).join('');
+
+      const verdict = d.balanced
+        ? `<span style="color:let(--green); font-weight:700">✓ BALANCED</span>`
+        : `<span style="color:let(--red); font-weight:700">✗ NOT BALANCED</span>`;
+
+      out.style.display = 'block';
+      out.innerHTML = `
+        <div style="margin-bottom:0.5rem"><strong>${d.eq}</strong></div>
+        <table style="width:100%; font-size:0.9rem; font-family:inherit; margin:0.5rem 0">
+          <thead><tr>
+            <th style="text-align:left; color:let(--accent2)">Element</th>
+            <th style="text-align:left; color:let(--accent2)">Left (reactants)</th>
+            <th style="text-align:left; color:let(--accent2)">Right (products)</th>
+            <th></th>
+          </tr></thead>
+          <tbody>${atomRows}</tbody>
+        </table>
+        <div style="margin-top:0.5rem">${verdict}</div>
+        <div style="margin-top:0.4rem; font-size:0.88rem; color:let(--dim)">${d.note}</div>
+      `;
+    });
+  }
+
+});
+</script>
+</body>
+</html>

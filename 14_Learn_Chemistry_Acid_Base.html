@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 14 — Acids &amp; Bases | ChemUnlocked</title>
+<link rel="stylesheet" href="chem.css">
+
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Learn acids, bases, pH, buffers, titrations, and equilibrium in Unit 14 of ChemUnlocked. Interactive tools and examples for mastering acid-base chemistry.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://chemunlocked.com/14_Learn_Chemistry_Acid_Base.html">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Unit 14 — Acids &amp; Bases | ChemUnlocked">
+  <meta property="og:description" content="Learn acids, bases, pH, buffers, titrations, and equilibrium in Unit 14 of ChemUnlocked. Interactive tools and examples for mastering acid-base chemistry.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://chemunlocked.com/14_Learn_Chemistry_Acid_Base.html">
+  <meta property="og:site_name" content="ChemUnlocked">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit 14 — Acids &amp; Bases | ChemUnlocked">
+  <meta name="twitter:description" content="Learn acids, bases, pH, buffers, titrations, and equilibrium in Unit 14 of ChemUnlocked. Interactive tools and examples for mastering acid-base chemistry.">
+  <meta name="twitter:site" content="@ChemUnlocked">
+
+  <!-- JSON-LD Schema Markup for Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Unit 14 — Acids & Bases",
+    "description": "Learn acids, bases, pH, buffers, titrations, and equilibrium in Unit 14 of ChemUnlocked. Interactive tools and examples for mastering acid-base chemistry.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ChemUnlocked",
+      "url": "https://chemunlocked.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 14</div>
+    <h1>Acids &amp; Bases</h1>
+    <p class="subtitle">Acid-base chemistry governs everything from the pH of your blood to the sting of a lemon. This unit develops the Brønsted-Lowry framework, connects acid/base strength to equilibrium constants, and builds the quantitative tools — pH, pOH, buffers, and titrations — used throughout analytical chemistry.</p>
+  </header>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 14 tab navigation">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ CONCEPTS -->
+  <div id="concepts" class="section active">
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.1</span> Brønsted-Lowry Acids and Bases</div>
+      <p>A <strong>Brønsted-Lowry acid</strong> is any species that can donate a proton (H⁺) to another species. A <strong>Brønsted-Lowry base</strong> is any species that can accept that proton. Every acid-base reaction is simply a proton transfer — the acid loses H⁺ and becomes its <strong>conjugate base</strong>; the base gains H⁺ and becomes its <strong>conjugate acid</strong>.</p>
+
+      <div class="formula-box">
+        HA + B ⇌ A⁻ + BH⁺
+        <br>
+        <span class="formula-sublabel">acid + base ⇌ conjugate base + conjugate acid</span>
+      </div>
+
+      <p>A species is <strong>amphiprotic</strong> if it can either donate or accept a proton depending on conditions. Water is the most important amphiprotic species — it undergoes <strong>autoionization</strong>:</p>
+
+      <div class="formula-box">
+        2 H₂O(l) ⇌ H₃O⁺(aq) + OH⁻(aq)
+      </div>
+
+      <p>The equilibrium constant for autoionization is the <strong>ion-product of water</strong>, K<sub>w</sub>:</p>
+
+      <div class="formula-box">
+        K<sub>w</sub> = [H₃O⁺][OH⁻] = 1.0 × 10⁻¹⁴ &nbsp;(at 25 °C)
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Every conjugate acid-base pair is connected by exactly one proton. HCl donates H⁺ to become Cl⁻ — so HCl/Cl⁻ is a conjugate pair. The stronger the acid, the weaker its conjugate base, and vice versa.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.2</span> pH and pOH</div>
+      <p>Because hydronium and hydroxide concentrations are often tiny numbers (e.g., 1.0 × 10⁻⁷ M), chemists use a logarithmic scale. The <strong>pH</strong> and <strong>pOH</strong> compress these wide ranges into manageable values:</p>
+
+      <div class="formula-box">
+        pH = −log[H₃O⁺] &nbsp;&nbsp;&nbsp; pOH = −log[OH⁻]
+      </div>
+
+      <div class="formula-box">
+        pH + pOH = 14 &nbsp;(at 25 °C)
+      </div>
+
+      <table>
+        <caption>pH Scale — Solution Classification at 25 °C</caption>
+        <thead>
+          <tr><th>Condition</th><th>[H₃O⁺] vs [OH⁻]</th><th>pH</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Acidic</td><td>[H₃O⁺] &gt; [OH⁻]</td><td>&lt; 7</td><td>Stomach acid (pH ≈ 1.5)</td></tr>
+          <tr><td>Neutral</td><td>[H₃O⁺] = [OH⁻]</td><td>= 7</td><td>Pure water</td></tr>
+          <tr><td>Basic</td><td>[H₃O⁺] &lt; [OH⁻]</td><td>&gt; 7</td><td>Bleach (pH ≈ 12)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Each unit change in pH represents a <em>tenfold</em> change in [H₃O⁺]. A solution of pH 3 has 100 times the hydronium concentration of a pH 5 solution — not 2 times.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.3</span> Strong vs. Weak Acids and Bases</div>
+      <p>A <strong>strong acid</strong> ionizes completely in water — essentially 100% of the molecules donate their proton to water. A <strong>weak acid</strong> only partially ionizes, reaching an equilibrium described by the acid ionization constant K<sub>a</sub>. The larger K<sub>a</sub>, the stronger the acid.</p>
+
+      <div class="formula-box">
+        HA(aq) + H₂O(l) ⇌ H₃O⁺(aq) + A⁻(aq)
+        <br>
+        K<sub>a</sub> = <span class="chem-frac">[H₃O⁺][A⁻] / [HA]</span>
+      </div>
+
+      <p>For bases, the analogous constant is K<sub>b</sub>. A key relationship connects a conjugate pair:</p>
+
+      <div class="formula-box">
+          K<sub>a</sub> × K<sub>b</sub> = K<sub>w</sub> = 1.0 × 10⁻¹⁴
+      </div>
+
+      <table>
+        <caption>Common Strong Acids and Bases (memorize these)</caption>
+        <thead>
+          <tr><th>Strong Acids</th><th>Strong Bases</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HCl, HBr, HI</td><td>NaOH, KOH, LiOH</td></tr>
+          <tr><td>HNO₃, H₂SO₄, HClO₄</td><td>Ca(OH)₂, Ba(OH)₂, Sr(OH)₂</td></tr>
+        </tbody>
+      </table>
+
+      <p>For binary acids (H bonded directly to a nonmetal), acid strength increases going <em>down</em> a group (bond to H weakens) and going <em>left to right</em> across a period (electronegativity pulls electron density away from H). For oxyacids, more oxygen atoms bonded to the central element means a stronger acid because they pull electron density away from the O–H bond.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.4</span> pK<sub>a</sub> and pK<sub>b</sub></div>
+      <p>Just as pH is the negative log of a concentration, <strong>pK<sub>a</sub></strong> and <strong>pK<sub>b</sub></strong> are the negative logs of the ionization constants K<sub>a</sub> and K<sub>b</sub>. Compressing equilibrium constants onto a log scale makes them easier to compare and use directly in buffer calculations.</p>
+
+      <div class="formula-box">
+        pK<sub>a</sub> = −log(K<sub>a</sub>) &nbsp;&nbsp;&nbsp; pK<sub>b</sub> = −log(K<sub>b</sub>)
+      </div>
+
+      <p>Because a stronger acid has a larger K<sub>a</sub>, it has a <em>smaller</em> pK<sub>a</sub>. The direction flips on the log scale — low pK<sub>a</sub> means strong acid, high pK<sub>a</sub> means weak acid. The same logic applies to bases.</p>
+
+      <table>
+        <caption>pK<sub>a</sub> Values for Common Weak Acids at 25 °C</caption>
+        <thead>
+          <tr><th>Acid</th><th>K<sub>a</sub></th><th>pK<sub>a</sub></th><th>Relative strength</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hydrofluoric acid (HF)</td><td>6.8 × 10⁻⁴</td><td>3.17</td><td>Relatively strong weak acid</td></tr>
+          <tr><td>Acetic acid (CH₃COOH)</td><td>1.8 × 10⁻⁵</td><td>4.74</td><td>Moderate</td></tr>
+          <tr><td>Carbonic acid (H₂CO₃)</td><td>4.3 × 10⁻⁷</td><td>6.37</td><td>Moderate–weak</td></tr>
+          <tr><td>Ammonium ion (NH₄⁺)</td><td>5.6 × 10⁻¹⁰</td><td>9.25</td><td>Very weak acid</td></tr>
+          <tr><td>Hydrogen cyanide (HCN)</td><td>4.9 × 10⁻¹⁰</td><td>9.31</td><td>Very weak acid</td></tr>
+        </tbody>
+      </table>
+
+      <p>For a conjugate acid-base pair, pK<sub>a</sub> and pK<sub>b</sub> always sum to 14 at 25 °C — the same relationship as pH and pOH:</p>
+
+      <div class="formula-box">
+          pK<sub>a</sub> + pK<sub>b</sub> = 14 &nbsp;(at 25 °C)
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>pK<sub>a</sub> is the pH at which exactly half the weak acid has ionized — meaning [HA] = [A⁻]. At that point the Henderson-Hasselbalch log term equals zero, so pH = pK<sub>a</sub> exactly. This is also why the best buffers operate within ±1 pH unit of pK<sub>a</sub>.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.5</span> Polyprotic Acids</div>
+      <p>A <strong>polyprotic acid</strong> contains more than one ionizable proton and loses them one at a time in sequential steps. Each step has its own ionization constant, and these constants decrease dramatically with each step — because it is much harder to pull a positive proton away from an already-negative ion.</p>
+
+      <div class="formula-box">
+        H₂SO₃: K<sub>a1</sub> = 1.5 × 10⁻² &nbsp; (first proton — relatively easy)
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K<sub>a2</sub> = 6.3 × 10⁻⁸ &nbsp; (second proton — much harder)
+      </div>
+
+      <p>Because K<sub>a1</sub> ≫ K<sub>a2</sub>, the first dissociation dominates. For most purposes you can calculate the pH of a polyprotic acid using only the first ionization constant and treat each step separately.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.6</span> Buffers</div>
+      <p>A <strong>buffer</strong> is a solution that resists changes in pH when small amounts of strong acid or strong base are added. Buffers contain an appreciable amount of <em>both</em> members of a weak conjugate acid-base pair — the acid component neutralizes added base, and the base component neutralizes added acid.</p>
+
+      <p>The pH of a buffer is calculated using the <strong>Henderson-Hasselbalch equation</strong>:</p>
+
+      <div class="formula-box">
+        pH = pK<sub>a</sub> + log(<span class="chem-frac">[A⁻] / [HA]</span>)
+      </div>
+
+      <p>A buffer works best when [A⁻] ≈ [HA], meaning pH ≈ pK<sub>a</sub>. Adding too much acid or base exhausts one component and destroys the buffer — this limit is called the <strong>buffer capacity</strong>.</p>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Blood is buffered primarily by the carbonic acid / bicarbonate pair (H₂CO₃ / HCO₃⁻, pK<sub>a</sub> ≈ 6.1) and maintains a pH of 7.35–7.45. A shift outside this range is life-threatening.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">14.7</span> Acid-Base Titrations</div>
+      <p>A <strong>titration</strong> is a procedure for determining the concentration of an unknown acid or base by adding a standardized solution of the opposite until the reaction is complete. The <strong>equivalence point</strong> is where moles of acid exactly equal moles of base. A <strong>titration curve</strong> plots pH vs. volume of titrant and reveals the equivalence point as a steep vertical rise.</p>
+
+      <table>
+        <caption>Equivalence Point pH for Common Titration Types</caption>
+        <thead>
+          <tr><th>Titration Type</th><th>pH at Equivalence Point</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Strong acid + Strong base</td><td>= 7</td><td>Salt does not hydrolyze</td></tr>
+          <tr><td>Weak acid + Strong base</td><td>&gt; 7</td><td>Conjugate base hydrolyzes to give OH⁻</td></tr>
+          <tr><td>Strong acid + Weak base</td><td>&lt; 7</td><td>Conjugate acid hydrolyzes to give H₃O⁺</td></tr>
+        </tbody>
+      </table>
+
+      <p>An <strong>indicator</strong> is a weak acid or base that changes color near its own pK<sub>a</sub>. Choose an indicator whose color-change range overlaps with the steep portion of the titration curve.</p>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ═══════════════════════════════════════════════════════════ TOOLS -->
+  <div id="tools" class="section">
+
+    <div class="card">
+      <div class="card-title"><span class="num">⇄</span> pH / pOH / Concentration Converter</div>
+      <p>Enter any one value and the tool calculates the other three. Works for both acidic and basic solutions at 25 °C.</p>
+
+      <div class="tool-grid-2">
+        <div>
+          <label class="tool-label" for="tool-ph">pH</label>
+          <input id="tool-ph" type="number" step="any" placeholder="e.g. 3.00" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="tool-poh">pOH</label>
+          <input id="tool-poh" type="number" step="any" placeholder="e.g. 11.00" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="tool-h3o">&#91;H₃O⁺&#93; (mol/L)</label>
+          <input id="tool-h3o" type="number" step="any" placeholder="e.g. 0.001" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="tool-oh">&#91;OH⁻&#93; (mol/L)</label>
+          <input id="tool-oh" type="number" step="any" placeholder="e.g. 1e-11" class="prob-input tool-input-full">
+        </div>
+      </div>
+
+      <div id="toolResult" class="formula-box tool-result-box">Results will appear here…</div>
+      <button class="btn btn-outline btn-sm btn-tool-clear" id="toolClearBtn">Clear</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">⇄</span> Henderson-Hasselbalch Buffer Calculator</div>
+      <p>Enter the pK<sub>a</sub> of the weak acid and the ratio of conjugate base to acid. The tool computes the expected buffer pH.</p>
+
+      <div class="tool-grid-3">
+        <div>
+          <label class="tool-label" for="hh-pka">pKₐ</label>
+          <input id="hh-pka" type="number" step="any" placeholder="e.g. 4.74" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="hh-abase">&#91;A⁻&#93; (mol/L)</label>
+          <input id="hh-abase" type="number" step="any" placeholder="e.g. 0.10" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="hh-acid">&#91;HA&#93; (mol/L)</label>
+          <input id="hh-acid" type="number" step="any" placeholder="e.g. 0.10" class="prob-input tool-input-full">
+        </div>
+      </div>
+
+      <div id="hhResult" class="formula-box tool-result-box">Results will appear here…</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">⇄</span> Titration Curve Simulator</div>
+      <p>Configure the titration below. The tool plots pH vs. volume of titrant added and marks the equivalence point. Choose a titration type, then enter concentrations and (if applicable) K<sub>a</sub>.</p>
+
+      <div class="tool-grid-2">
+        <div>
+          <label class="tool-label" for="tit-type">Titration type</label>
+          <select class="prob-input tool-input-full" id="tit-type">
+            <option value="SA-SB">Strong acid → Strong base</option>
+            <option value="WA-SB">Weak acid → Strong base</option>
+            <option value="SA-WB">Strong acid → Weak base</option>
+          </select>
+        </div>
+        <div>
+          <label class="tool-label" for="tit-vol-sample">Your acid/base volume (mL)</label>
+          <input id="tit-vol-sample" type="number" step="any" placeholder="e.g. 25.0" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="tit-conc-sample">Your acid/base concentration (M)</label>
+          <input id="tit-conc-sample" type="number" step="any" placeholder="e.g. 0.100" class="prob-input tool-input-full">
+        </div>
+        <div>
+          <label class="tool-label" for="tit-conc-titrant">Titrant concentration (M)</label>
+          <input id="tit-conc-titrant" type="number" step="any" placeholder="e.g. 0.100" class="prob-input tool-input-full">
+        </div>
+        <div id="tit-ka-wrap">
+          <label class="tool-label" for="tit-ka">K<sub>a</sub> (weak acid) or K<sub>b</sub> (weak base)</label>
+          <input id="tit-ka" type="number" step="any" placeholder="e.g. 1.8e-5" class="prob-input tool-input-full">
+        </div>
+      </div>
+
+      <button class="btn btn-sm" id="tit-plot-btn">Plot Curve</button>
+
+      <div id="tit-result-box">
+        <svg id="tit-svg" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" aria-label="Titration curve"></svg>
+        <div id="tit-summary" class="formula-box tool-result-box"></div>
+      </div>
+
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ═══════════════════════════════════════════════════════════ EXAMPLES -->
+  <div id="examples" class="section">
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Identifying Conjugate Acid-Base Pairs</div>
+      <p><strong>Given:</strong> NH₃ + H₂O ⇌ NH₄⁺ + OH⁻ &nbsp;&nbsp; <strong>Find:</strong> Both conjugate pairs.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the proton donor (acid)</strong>
+            <p>H₂O donates one H⁺ to NH₃. So H₂O is the Brønsted-Lowry acid in this reaction.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Identify the proton acceptor (base)</strong>
+            <p>NH₃ accepts that H⁺ and becomes NH₄⁺. So NH₃ is the Brønsted-Lowry base.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Name both conjugate pairs</strong>
+            <p><strong>Pair 1:</strong> H₂O (acid) / OH⁻ (conjugate base) — they differ by one H⁺.<br>
+            <strong>Pair 2:</strong> NH₄⁺ (conjugate acid) / NH₃ (base) — they differ by one H⁺.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Calculating pH of a Strong Acid</div>
+      <p><strong>Given:</strong> 0.025 M HCl &nbsp;&nbsp; <strong>Find:</strong> pH and pOH</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Recognize complete ionization</strong>
+            <p>HCl is a strong acid — it ionizes 100% in water. Therefore [H₃O⁺] = 0.025 M exactly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Calculate pH</strong>
+            <div class="fl-label">Factor-Label Chain</div>
+            <div class="fl-chain">
+              pH = −log[H₃O⁺] = −log(0.025) = <span class="fl-result">1.60</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Find pOH</strong>
+            <div class="fl-chain">
+              pOH = 14 − pH = 14 − 1.60 = <span class="fl-result">12.40</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> pH of a Weak Acid Using K<sub>a</sub></div>
+      <p><strong>Given:</strong> 0.100 M acetic acid (CH₃COOH), K<sub>a</sub> = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pH</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Write the ionization equation and ICE table</strong>
+            <p>CH₃COOH + H₂O ⇌ H₃O⁺ + CH₃COO⁻</p>
+            <table>
+              <thead><tr><th></th><th>[CH₃COOH]</th><th>[H₃O⁺]</th><th>[CH₃COO⁻]</th></tr></thead>
+              <tbody>
+                <tr><td>I</td><td>0.100</td><td>≈ 0</td><td>0</td></tr>
+                <tr><td>C</td><td>−x</td><td>+x</td><td>+x</td></tr>
+                <tr><td>E</td><td>0.100 − x</td><td>x</td><td>x</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Set up the K<sub>a</sub> expression and solve for x</strong>
+            <div class="fl-chain">
+              1.8 × 10⁻⁵ = x² / (0.100 − x) ≈ x² / 0.100
+              <br>
+              x² = 1.8 × 10⁻⁶
+              <br>
+              x = [H₃O⁺] = <span class="fl-result">1.34 × 10⁻³ M</span>
+            </div>
+            <p class="step-note">The approximation is valid because x / 0.100 = 1.34% &lt; 5%.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Calculate pH</strong>
+            <div class="fl-chain">
+              pH = −log(1.34 × 10⁻³) = <span class="fl-result">2.87</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 4</span> Buffer pH Using Henderson-Hasselbalch</div>
+      <p><strong>Given:</strong> A buffer contains 0.100 M acetic acid and 0.150 M sodium acetate. K<sub>a</sub>(acetic acid) = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pH</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Calculate pK<sub>a</sub></strong>
+            <div class="fl-chain">
+              pK<sub>a</sub> = −log(1.8 × 10⁻⁵) = <span class="fl-result">4.74</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Apply Henderson-Hasselbalch</strong>
+            <div class="fl-chain">
+              pH = pK<sub>a</sub> + log([A⁻] / [HA])
+              <br>
+              pH = 4.74 + log(0.150 / 0.100)
+              <br>
+              pH = 4.74 + log(1.50)
+              <br>
+              pH = 4.74 + 0.176 = <span class="fl-result">4.92</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Interpret the result</strong>
+            <p>The pH (4.92) is slightly above pK<sub>a</sub> (4.74) because there is more conjugate base than acid — as expected from Henderson-Hasselbalch. The buffer favors slightly basic conditions within its operating range.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 5</span> Converting Between K<sub>a</sub>, pK<sub>a</sub>, K<sub>b</sub>, and pK<sub>b</sub></div>
+      <p><strong>Given:</strong> Acetic acid has K<sub>a</sub> = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pK<sub>a</sub>, K<sub>b</sub> of acetate, and pK<sub>b</sub> of acetate.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Calculate pK<sub>a</sub> from K<sub>a</sub></strong>
+            <div class="fl-chain">
+              pK<sub>a</sub> = −log(K<sub>a</sub>) = −log(1.8 × 10⁻⁵) = <span class="fl-result">4.74</span>
+            </div>
+            <p class="step-note">A pK<sub>a</sub> of 4.74 means acetic acid is a moderately weak acid — stronger than carbonic acid (pK<sub>a</sub> = 6.37) but weaker than HF (pK<sub>a</sub> = 3.17).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Find K<sub>b</sub> of the conjugate base (acetate, CH₃COO⁻)</strong>
+            <div class="fl-chain">
+              K<sub>a</sub> × K<sub>b</sub> = K<sub>w</sub> = 1.0 × 10⁻¹⁴
+              <br>
+              K<sub>b</sub> = K<sub>w</sub> / K<sub>a</sub> = (1.0 × 10⁻¹⁴) / (1.8 × 10⁻⁵) = <span class="fl-result">5.6 × 10⁻¹⁰</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Calculate pK<sub>b</sub> — and verify the sum rule</strong>
+            <div class="fl-chain">
+              pK<sub>b</sub> = −log(5.6 × 10⁻¹⁰) = <span class="fl-result">9.26</span>
+              <br>
+              pK<sub>a</sub> + pK<sub>b</sub> = 4.74 + 9.26 = <span class="fl-result">14.00 ✓</span>
+            </div>
+            <p class="step-note">The large pK<sub>b</sub> confirms that acetate is a very weak base — it barely reacts with water, which is why acetic acid solutions are only mildly acidic rather than strongly so.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ═══════════════════════════════════════════════════════════ PRACTICE BANNER -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized acid-base problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 14 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="14_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 14 · Acids &amp; Bases</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script>
+
+// ── 1. TOOL LOGIC ─────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── pH / pOH / Concentration Converter ──────────────────────────────────
+  const KW = 1.0e-14;
+  const phInput  = document.getElementById('tool-ph');
+  const pohInput = document.getElementById('tool-poh');
+  const h3oInput = document.getElementById('tool-h3o');
+  const ohInput  = document.getElementById('tool-oh');
+  const resultEl = document.getElementById('toolResult');
+  const clearBtn = document.getElementById('toolClearBtn');
+
+  if (!phInput) return;
+
+  let lastChanged = null;
+
+  function updateConverter(sourceId) {
+    if (lastChanged === sourceId) return; // prevent feedback loop
+    lastChanged = sourceId;
+
+    const phVal  = phInput.value.trim();
+    const pohVal = pohInput.value.trim();
+    const h3oVal = h3oInput.value.trim();
+    const ohVal  = ohInput.value.trim();
+
+    let pH, pOH, H, OH;
+
+    try {
+      if (sourceId === 'tool-ph' && phVal !== '') {
+        pH  = parseFloat(phVal);
+        pOH = 14 - pH;
+        H   = Math.pow(10, -pH);
+        OH  = Math.pow(10, -pOH);
+      } else if (sourceId === 'tool-poh' && pohVal !== '') {
+        pOH = parseFloat(pohVal);
+        pH  = 14 - pOH;
+        H   = Math.pow(10, -pH);
+        OH  = Math.pow(10, -pOH);
+      } else if (sourceId === 'tool-h3o' && h3oVal !== '') {
+        H   = parseFloat(h3oVal);
+        pH  = -Math.log10(H);
+        pOH = 14 - pH;
+        OH  = KW / H;
+      } else if (sourceId === 'tool-oh' && ohVal !== '') {
+        OH  = parseFloat(ohVal);
+        pOH = -Math.log10(OH);
+        pH  = 14 - pOH;
+        H   = KW / OH;
+      } else {
+        lastChanged = null;
+        return;
+      }
+
+      if (isNaN(pH) || !isFinite(pH)) throw new Error('Invalid input');
+      if (pH < 0 || pH > 14) {
+        resultEl.textContent = 'pH outside 0–14 range — check your input.';
+        lastChanged = null;
+        return;
+      }
+
+      // Fill other fields
+      phInput.value  = pH.toFixed(3);
+      pohInput.value = pOH.toFixed(3);
+      h3oInput.value = H.toExponential(3);
+      ohInput.value  = OH.toExponential(3);
+
+      const classification = pH < 7 ? 'Acidic' : pH > 7 ? 'Basic' : 'Neutral';
+      resultEl.innerHTML =
+        `<strong>pH = ${pH.toFixed(3)}</strong> &nbsp;|&nbsp; pOH = ${pOH.toFixed(3)}<br>` +
+        `[H₃O⁺] = ${H.toExponential(3)} M &nbsp;|&nbsp; [OH⁻] = ${OH.toExponential(3)} M<br>` +
+        `<span style="color:var(--accent2); font-weight:600;">Classification: ${classification}</span>`;
+
+    } catch (e) {
+      resultEl.textContent = 'Could not compute — check your input value.';
+    }
+    lastChanged = null;
+  }
+
+  phInput.addEventListener('input',  () => updateConverter('tool-ph'));
+  pohInput.addEventListener('input', () => updateConverter('tool-poh'));
+  h3oInput.addEventListener('input', () => updateConverter('tool-h3o'));
+  ohInput.addEventListener('input',  () => updateConverter('tool-oh'));
+
+  clearBtn.addEventListener('click', function () {
+    phInput.value = '';
+    pohInput.value = '';
+    h3oInput.value = '';
+    ohInput.value = '';
+    resultEl.textContent = 'Results will appear here…';
+  });
+
+  // ── Henderson-Hasselbalch Buffer Calculator ──────────────────────────────
+  const hhPka   = document.getElementById('hh-pka');
+  const hhAbase = document.getElementById('hh-abase');
+  const hhAcid  = document.getElementById('hh-acid');
+  const hhResult = document.getElementById('hhResult');
+
+  if (!hhPka) return;
+
+  function calcHH() {
+    const pka   = parseFloat(hhPka.value);
+    const abase = parseFloat(hhAbase.value);
+    const acid  = parseFloat(hhAcid.value);
+
+    if (isNaN(pka) || isNaN(abase) || isNaN(acid)) {
+      hhResult.textContent = 'Results will appear here…';
+      return;
+    }
+    if (abase <= 0 || acid <= 0) {
+      hhResult.textContent = 'Concentrations must be greater than zero.';
+      return;
+    }
+
+    const ratio = abase / acid;
+    const pH = pka + Math.log10(ratio);
+
+    hhResult.innerHTML =
+      `pH = pKₐ + log([A⁻]/[HA]) = ${pka.toFixed(2)} + log(${ratio.toFixed(3)})<br>` +
+      `<strong style="color:var(--accent2);">pH = ${pH.toFixed(2)}</strong> &nbsp;|&nbsp; ` +
+      `Buffer is ${ratio > 1 ? 'above' : ratio < 1 ? 'below' : 'at'} pKₐ — ` +
+      `${ratio > 1 ? 'more conjugate base than acid' : ratio < 1 ? 'more acid than conjugate base' : 'equal concentrations'}`;
+  }
+
+  hhPka.addEventListener('input',   calcHH);
+  hhAbase.addEventListener('input', calcHH);
+  hhAcid.addEventListener('input',  calcHH);
+
+  // ── Titration Curve Simulator ────────────────────────────────────────────
+  const titType       = document.getElementById('tit-type');
+  const titVolAna     = document.getElementById('tit-vol-sample');
+  const titConcAna    = document.getElementById('tit-conc-sample');
+  const titConcTit    = document.getElementById('tit-conc-titrant');
+  const titKa         = document.getElementById('tit-ka');
+  const titKaWrap     = document.getElementById('tit-ka-wrap');
+  const titPlotBtn    = document.getElementById('tit-plot-btn');
+  const titSvg        = document.getElementById('tit-svg');
+  const titSummary    = document.getElementById('tit-summary');
+
+  if (!titType) return;
+
+  // Show/hide Ka field based on titration type
+  function updateKaVisibility() {
+    const t = titType.value;
+    titKaWrap.style.display = (t === 'SA-SB') ? 'none' : '';
+  }
+  titType.addEventListener('change', updateKaVisibility);
+  updateKaVisibility();
+
+  // ── Core pH calculation functions ────────────────────────────────────────
+
+  // Solve x^2 + bx + c = 0, return positive root
+  function quadPos(b, c) {
+    return (-b + Math.sqrt(b * b - 4 * c)) / 2;
+  }
+
+  function calcTitrationPH(type, Va, Ca, Vb, Cb, Ka) {
+    // Va = volume sample (L), Ca = conc sample
+    // Vb = volume titrant added (L), Cb = conc titrant
+    const Vt = Va + Vb;
+    const KW = 1e-14;
+
+    if (type === 'SA-SB') {
+      const molesAcid = Ca * Va;
+      const molesBase = Cb * Vb;
+      const net = molesAcid - molesBase;
+      if (Math.abs(net) < 1e-15) return 7.00; // equivalence
+      if (net > 0) {
+        const H = net / Vt;
+        return -Math.log10(H);
+      } else {
+        const OH = (-net) / Vt;
+        return 14 + Math.log10(OH);
+      }
+    }
+
+    if (type === 'WA-SB') {
+      // Weak acid (HA) titrated with strong base (OH-)
+      const Kb = KW / Ka;
+      const molesHA  = Ca * Va;
+      const molesOH  = Cb * Vb;
+      const molesEq  = molesHA; // moles at equivalence
+
+      if (molesOH < molesEq - 1e-12) {
+        // Before equivalence: buffer region
+        const molesA  = molesOH;
+        const molesHAr = molesHA - molesOH;
+        if (molesHAr <= 0) return 14;
+        return -Math.log10(Ka) + Math.log10(molesA / molesHAr);
+      } else if (Math.abs(molesOH - molesEq) < 1e-12) {
+        // At equivalence: solution of conjugate base A-
+        const concA = molesEq / Vt;
+        const OH = quadPos(Kb, -Kb * concA);
+        return 14 + Math.log10(Math.min(OH, 1));
+      } else {
+        // Past equivalence: excess strong base
+        const excessOH = (molesOH - molesEq) / Vt;
+        return 14 + Math.log10(excessOH);
+      }
+    }
+
+    if (type === 'SA-WB') {
+      // Strong acid titrated into weak base (B)
+      // Here Ca = conc of weak base (sample), Cb = conc of strong acid (titrant)
+      const Kb = Ka; // user enters Kb for the weak base
+      const KaConj = KW / Kb;
+      const molesB   = Ca * Va;
+      const molesH   = Cb * Vb;
+      const molesEq  = molesB;
+
+      if (molesH < molesEq - 1e-12) {
+        // Buffer region: B + BH+
+        const molesBH = molesH;
+        const molesBr = molesB - molesH;
+        if (molesBr <= 0) return 0;
+        return -Math.log10(KaConj) + Math.log10(molesBr / molesBH);
+      } else if (Math.abs(molesH - molesEq) < 1e-12) {
+        // Equivalence: solution of weak acid BH+
+        const concBH = molesEq / Vt;
+        const H = quadPos(KaConj, -KaConj * concBH);
+        return -Math.log10(Math.min(H, 1));
+      } else {
+        // Past equivalence: excess strong acid
+        const excessH = (molesH - molesEq) / Vt;
+        return -Math.log10(excessH);
+      }
+    }
+
+    return 7;
+  }
+
+  // ── SVG rendering ────────────────────────────────────────────────────────
+
+  function drawCurve(points, eqVol, eqPH, type) {
+    const W = 520, H = 320;
+    const padL = 52, padR = 20, padT = 18, padB = 44;
+    const plotW = W - padL - padR;
+    const plotH = H - padT - padB;
+
+    const maxVol = points[points.length - 1].v;
+    const scaleX = v => padL + (v / maxVol) * plotW;
+    const scaleY = ph => padT + plotH - ((Math.min(Math.max(ph, 0), 14)) / 14) * plotH;
+
+    // Y grid lines + labels
+    let svg = `<rect x="0" y="0" width="${W}" height="${H}" fill="var(--surface2)" rx="10"/>`;
+    for (let ph = 0; ph <= 14; ph += 2) {
+      const y = scaleY(ph);
+      svg += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="var(--border)" stroke-width="1"/>`;
+      svg += `<text x="${padL - 6}" y="${y + 4}" text-anchor="end" font-size="11" fill="var(--dim)" font-family="'Lexend',sans-serif">${ph}</text>`;
+    }
+
+    // X grid lines + labels
+    const volStep = maxVol <= 30 ? 5 : maxVol <= 60 ? 10 : 20;
+    for (let v = 0; v <= maxVol; v += volStep) {
+      const x = scaleX(v);
+      svg += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="var(--border)" stroke-width="1"/>`;
+      svg += `<text x="${x}" y="${H - padB + 14}" text-anchor="middle" font-size="11" fill="var(--dim)" font-family="'Lexend',sans-serif">${v}</text>`;
+    }
+
+    // Axis labels
+    svg += `<text x="${padL + plotW / 2}" y="${H - 4}" text-anchor="middle" font-size="12" fill="var(--dim)" font-family="'Lexend',sans-serif">Volume of Titrant Added (mL)</text>`;
+    svg += `<text x="13" y="${padT + plotH / 2}" text-anchor="middle" font-size="12" fill="var(--dim)" font-family="'Lexend',sans-serif" transform="rotate(-90 13 ${padT + plotH / 2})">pH</text>`;
+
+    // pH = 7 dashed line
+    const y7 = scaleY(7);
+    svg += `<line x1="${padL}" y1="${y7}" x2="${W - padR}" y2="${y7}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>`;
+    svg += `<text x="${W - padR - 2}" y="${y7 - 4}" text-anchor="end" font-size="10" fill="var(--muted)" font-family="'Lexend',sans-serif">pH 7</text>`;
+
+    // Curve path
+    const pathPts = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${scaleX(p.v).toFixed(1)},${scaleY(p.pH).toFixed(1)}`).join(' ');
+    svg += `<path d="${pathPts}" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+
+    // Equivalence point vertical dashed line
+    const xEq = scaleX(eqVol);
+    svg += `<line x1="${xEq}" y1="${padT}" x2="${xEq}" y2="${H - padB}" stroke="var(--red)" stroke-width="1.5" stroke-dasharray="6,3"/>`;
+
+    // Equivalence point dot
+    const yEq = scaleY(eqPH);
+    svg += `<circle cx="${xEq}" cy="${yEq}" r="5" fill="var(--red)" stroke="var(--surface)" stroke-width="2"/>`;
+
+    // Equivalence point label — position smartly
+    const labelX = xEq > plotW * 0.65 ? xEq - 8 : xEq + 8;
+    const labelAnchor = xEq > plotW * 0.65 ? 'end' : 'start';
+    svg += `<text x="${labelX}" y="${yEq - 10}" text-anchor="${labelAnchor}" font-size="11" fill="var(--red)" font-family="'Lexend',sans-serif" font-weight="600">Eq. Pt.</text>`;
+    svg += `<text x="${labelX}" y="${yEq + 1}" text-anchor="${labelAnchor}" font-size="10" fill="var(--red)" font-family="'Lexend',sans-serif">${eqVol.toFixed(1)} mL, pH ${eqPH.toFixed(2)}</text>`;
+
+    titSvg.innerHTML = svg;
+  }
+
+  // ── Main plot function ───────────────────────────────────────────────────
+
+  function plotTitration() {
+    const type   = titType.value;
+    const Va_mL  = parseFloat(titVolAna.value);
+    const Ca     = parseFloat(titConcAna.value);
+    const Cb     = parseFloat(titConcTit.value);
+    const KaVal  = parseFloat(titKa.value);
+
+    if (isNaN(Va_mL) || isNaN(Ca) || isNaN(Cb) || Va_mL <= 0 || Ca <= 0 || Cb <= 0) {
+      titSummary.textContent = 'Fill in all required fields with positive values.';
+      return;
+    }
+    if (type !== 'SA-SB' && (isNaN(KaVal) || KaVal <= 0)) {
+      titSummary.textContent = 'Enter a valid Ka (or Kb) for the weak species.';
+      return;
+    }
+
+    const Va = Va_mL / 1000; // convert to L
+    const Ka = type !== 'SA-SB' ? KaVal : null;
+
+    // Equivalence point volume
+    const eqVol_mL = (Ca * Va_mL) / Cb; // moles sample / conc titrant * 1000
+    const eqVol_L  = eqVol_mL / 1000;
+
+    // Equivalence point pH
+    const eqPH = calcTitrationPH(type, Va, Ca, eqVol_L * (1 - 1e-9), Cb, Ka);
+
+    // Generate 200 points from 0 to 2× equivalence volume
+    const maxVol_mL = eqVol_mL * 2;
+    const points = [];
+    const N = 200;
+    for (let i = 0; i <= N; i++) {
+      const vb_mL = (i / N) * maxVol_mL;
+      const vb_L  = vb_mL / 1000;
+      // Avoid exact equivalence (singularity); shift by tiny epsilon
+      const vbCalc = Math.abs(vb_L - eqVol_L) < 1e-9 ? vb_L + 1e-9 : vb_L;
+      const pH = calcTitrationPH(type, Va, Ca, vbCalc, Cb, Ka);
+      points.push({ v: vb_mL, pH: Math.max(0, Math.min(14, pH)) });
+    }
+
+    // Compute actual eq pH at exactly the eq point
+    const actualEqPH = calcTitrationPH(type, Va, Ca, eqVol_L, Cb, Ka);
+
+    drawCurve(points, eqVol_mL, actualEqPH, type);
+
+    // Summary text
+    const typeLabels = {
+      'SA-SB': 'Strong acid / Strong base',
+      'WA-SB': 'Weak acid / Strong base',
+      'SA-WB': 'Strong acid / Weak base'
+    };
+    const eqClassification = type === 'SA-SB' ? 'Neutral (pH = 7)' :
+                             type === 'WA-SB' ? 'Basic (pH > 7) — conjugate base hydrolyzes' :
+                                                'Acidic (pH < 7) — conjugate acid hydrolyzes';
+
+    titSummary.innerHTML =
+      `<strong>Type:</strong> ${typeLabels[type]}<br>` +
+      `<strong>Equivalence point:</strong> ${eqVol_mL.toFixed(2)} mL of titrant &nbsp;|&nbsp; pH = ${actualEqPH.toFixed(2)}<br>` +
+      `<strong>At equivalence:</strong> ${eqClassification}`;
+  }
+
+  titPlotBtn.addEventListener('click', plotTitration);
+
+});
+
+</script>
+</body>
+</html>

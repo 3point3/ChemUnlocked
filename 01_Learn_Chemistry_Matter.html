@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 01 — Classification of Matter | ChemUnlocked</title>
+<meta name="description" content="Learn how to classify matter into elements, compounds, and mixtures. Understand pure substances vs. mixtures, elements vs. compounds, and physical vs. chemical properties and changes in this introductory chemistry unit.">
+<link rel="canonical" href="https://chemunlocked.com/01_Learn_Chemistry_Matter.html">
+<meta property="og:title" content="Unit 01 — Classification of Matter | ChemUnlocked">
+<meta property="og:description" content="Learn how to classify matter into elements, compounds, and mixtures. Understand pure substances vs. mixtures, elements vs. compounds, and physical vs. chemical properties and changes in this introductory chemistry unit.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chemunlocked.com/01_Learn_Chemistry_Matter.html">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 01 — Classification of Matter | ChemUnlocked">
+<meta name="twitter:description" content="Learn how to classify matter into elements, compounds, and mixtures. Understand pure substances vs. mixtures, elements vs. compounds, and physical vs. chemical properties and changes in this introductory chemistry unit.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 01 — Classification of Matter",
+  "description": "Introductory chemistry unit on matter classification, pure substances, mixtures, and physical vs. chemical properties.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked"
+  }
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+
+
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 01</div>
+    <h1>Classification of Matter</h1>
+    <p class="subtitle">Everything around you is made of matter. Learn how to classify matter into elements, compounds, and mixtures — and distinguish between physical and chemical changes and properties.</p>
+  </header>
+
+  <div class="nav-tabs">
+    <button id="concepts-tab" class="tab-btn active" onclick="showTab('concepts', this)" data-tab="concepts" aria-selected="true" tabindex="0" role="tab">◈ Concepts</button>
+    <button id="tools-tab" class="tab-btn" onclick="showTab('tools', this)" data-tab="tools" aria-selected="false" tabindex="0" role="tab">⇄ Tools</button>
+    <button id="examples-tab" class="tab-btn" onclick="showTab('examples', this)" data-tab="examples" aria-selected="false" tabindex="0" role="tab">◆ Examples</button>
+  </div>
+  <script>
+  // Accessibility: Keyboard navigation for tab buttons
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          const dir = e.key === 'ArrowRight' ? 1 : -1;
+          const idx = Array.from(tabBtns).indexOf(document.activeElement);
+          let nextIdx = (idx + dir + tabBtns.length) % tabBtns.length;
+          tabBtns[nextIdx].focus();
+        }
+        if (e.key === 'Enter' || e.key === ' ') {
+          this.click();
+        }
+      });
+    });
+  });
+  </script>
+
+  <!-- ============================================================ -->
+  <!-- TAB: CONCEPTS -->
+  <!-- ============================================================ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="concepts-tab">
+
+    <!-- Card 1.1 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.1</span> What Is Matter?</div>
+      <p>Matter is anything that has <strong>mass</strong> and takes up <strong>space (volume)</strong>. All matter is made of tiny particles called <strong>atoms</strong>. Everything you can see, touch, or weigh is matter — chairs, air, water, even you.</p>
+      <p>Matter can be organized using a classification tree. At the top level, matter is either a <strong>pure substance</strong> or a <strong>mixture</strong>.</p>
+      <div class="formula-box">
+        <span class="label">The Classification Roadmap</span>
+        <svg width="100%" viewBox="0 0 680 340" role="img">
+          <title>Classification of matter flowchart</title>
+          <desc>Matter splits into pure substance and mixture. Pure substance splits into element and compound. Mixture splits into homogeneous and heterogeneous.</desc>
+          <!-- ROOT: Matter -->
+          <rect x="250" y="10" width="160" height="44" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+          <text x="340" y="32" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">Matter</text>
+          <!-- Trunk to branch -->
+          <line x1="340" y1="54" x2="340" y2="84" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="170" y1="84" x2="510" y2="84" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="170" y1="84" x2="170" y2="106" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="510" y1="84" x2="510" y2="106" stroke="#94a3b8" stroke-width="1"/>
+          <!-- Pure Substance -->
+<rect x="50" y="106" width="240" height="50" rx="8"
+      fill="#ccfbf1" stroke="#5eead4" stroke-width="1"/>
+
+<text x="170" y="135"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Lexend, sans-serif">
+
+  <tspan x="170" dy="-8" font-size="14" font-weight="600" fill="#134e4a">
+    Pure Substance
+  </tspan>
+
+  <tspan x="170" dy="16" font-size="12" fill="#0f766e">
+    fixed, uniform composition
+  </tspan>
+
+</text>
+<!-- Mixture -->
+<rect x="390" y="106" width="240" height="50" rx="8"
+      fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+
+<text x="510" y="135"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Lexend, sans-serif">
+
+  <tspan x="510" dy="-8" font-size="14" font-weight="600" fill="#7f1d1d">
+    Mixture
+  </tspan>
+
+  <tspan x="510" dy="16" font-size="12" fill="#991b1b">
+    two or more substances, not bonded
+  </tspan>
+
+</text>
+          <!-- Pure Substance branches -->
+          <line x1="170" y1="156" x2="170" y2="188" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="90" y1="188" x2="250" y2="188" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="90" y1="188" x2="90" y2="210" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="250" y1="188" x2="250" y2="210" stroke="#94a3b8" stroke-width="1"/>
+          <!-- Element box -->
+          <rect x="30" y="210" width="120" height="54" rx="8" fill="#ccfbf1" stroke="#5eead4" stroke-width="1"/>
+          <text x="90" y="230" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="14" font-weight="600" fill="#134e4a">Element</text>
+          <text x="90" y="248" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="12" fill="#0f766e">one type of atom</text>
+          <text x="90" y="275" text-anchor="middle" font-family="Lexend, sans-serif" font-size="11" fill="#64748b">e.g. O&#x2082;, Au, Fe</text>
+          <!-- Compound box -->
+          <rect x="190" y="210" width="120" height="54" rx="8" fill="#ccfbf1" stroke="#5eead4" stroke-width="1"/>
+          <text x="250" y="230" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="14" font-weight="600" fill="#134e4a">Compound</text>
+          <text x="250" y="248" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="12" fill="#0f766e">2+ atoms, bonded</text>
+          <text x="250" y="275" text-anchor="middle" font-family="Lexend, sans-serif" font-size="11" fill="#64748b">e.g. H&#x2082;O, NaCl, CO&#x2082;</text>
+          <!-- Mixture branches -->
+          <line x1="510" y1="156" x2="510" y2="188" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="430" y1="188" x2="590" y2="188" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="430" y1="188" x2="430" y2="210" stroke="#94a3b8" stroke-width="1"/>
+          <line x1="590" y1="188" x2="590" y2="210" stroke="#94a3b8" stroke-width="1"/>
+          <!-- Homogeneous box -->
+          <rect x="362" y="210" width="136" height="54" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+          <text x="430" y="230" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="14" font-weight="600" fill="#7f1d1d">Homogeneous</text>
+          <text x="430" y="248" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="12" fill="#991b1b">same throughout</text>
+          <text x="430" y="275" text-anchor="middle" font-family="Lexend, sans-serif" font-size="11" fill="#64748b">e.g. saltwater, air</text>
+          <!-- Heterogeneous box -->
+          <rect x="522" y="210" width="136" height="54" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+          <text x="590" y="230" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="14" font-weight="600" fill="#7f1d1d">Heterogeneous</text>
+          <text x="590" y="248" text-anchor="middle" dominant-baseline="central" font-family="Lexend, sans-serif" font-size="12" fill="#991b1b">can see the parts</text>
+          <text x="590" y="275" text-anchor="middle" font-family="Lexend, sans-serif" font-size="11" fill="#64748b">e.g. sand + water</text>
+        </svg>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Use this tree as a roadmap. Ask: Is it pure or a mixture? If pure, is it one type of atom (element) or more than one chemically bonded (compound)?</p>
+      </div>
+    </div>
+
+    <!-- Card 1.2 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.2</span> Pure Substances — Elements &amp; Compounds</div>
+      <p>A <strong>pure substance</strong> has only one type of particle. Every sample has exactly the same composition and properties, including a definite melting point and boiling point.</p>
+
+      <div class="formula-box">
+        <span class="label">Element</span>
+        Made from <strong>only one type of atom</strong>. Cannot be broken down further by chemical processes. Every element is listed on the periodic table.<br><br>
+        Examples: Au (gold), O₂ (oxygen), Fe (iron), He (helium)
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Compound</span>
+        Made from <strong>two or more types of atoms chemically bonded</strong> in a fixed ratio. Has completely different properties from its component elements.<br><br>
+        Examples: H₂O (water), NaCl (table salt), CO₂ (carbon dioxide)
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>A compound can only be broken apart by a <strong>chemical</strong> process — not a physical one. This is different from a mixture, which can be separated physically.</p>
+      </div>
+    </div>
+
+    <!-- Card 1.3 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.3</span> Reading Chemical Formulas</div>
+      <p>Chemists use formulas to show what a substance is made of. Follow these rules:</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Capital letters start each element symbol.</strong> Symbols are 1 or 2 letters. The first is always capitalized: Na (sodium), Fe (iron), C (carbon).</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Subscript numbers show atom count.</strong> H₂O = 2 hydrogen + 1 oxygen. H₂O₂ = 2 hydrogen + 2 oxygen. No subscript means exactly 1.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Diatomic elements exist as bonded pairs.</strong> H₂, O₂, N₂, F₂, Cl₂, Br₂, I₂ are all elements — every atom is the same type, just bonded.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>State symbols go in parentheses.</strong> (s) = solid, (l) = liquid, (g) = gas, (aq) = dissolved in water.</p></div></div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Practice Reading: H₂O₂ (l)</span>
+        Hydrogen peroxide in the liquid state. Each molecule has 2 hydrogen atoms and 2 oxygen atoms bonded together. Two types of atoms bonded = <strong>compound</strong>.
+      </div>
+    </div>
+
+    <!-- Card 1.4 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.4</span> Mixtures</div>
+      <p>A <strong>mixture</strong> contains two or more substances physically combined — not chemically bonded. Each substance keeps its own properties and can be separated by physical methods. The ratio of components can vary.</p>
+
+      <div class="formula-box">
+        <span class="label">Homogeneous Mixture (Solution)</span>
+        Looks <strong>the same throughout</strong>. You cannot see individual parts — the substances mix evenly at the particle level.<br><br>
+        Examples: salt water, air, steel, orange Gatorade, black coffee, brass
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Heterogeneous Mixture</span>
+        You can <strong>see distinct parts</strong>, or composition differs from region to region.<br><br>
+        Examples: salad, sand &amp; water, chocolate chip cookies, granite, orange juice with pulp
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>A <strong>solution</strong> is another word for a homogeneous mixture. All solutions are homogeneous, but not all homogeneous mixtures are called solutions — steel and brass are called <em>alloys</em> (homogeneous mixtures of metals).</p>
+      </div>
+
+      <table>
+        <thead><tr><th>Alloy</th><th>Components</th><th>Common Use</th></tr></thead>
+        <tbody>
+          <tr><td>Brass</td><td>Cu + Zn</td><td>Musical instruments, plumbing</td></tr>
+          <tr><td>Bronze</td><td>Cu + Sn</td><td>Statues, bearings, coins</td></tr>
+          <tr><td>Steel</td><td>Fe + C</td><td>Construction, tools</td></tr>
+          <tr><td>14k Gold</td><td>Au ~58% + other metals</td><td>Jewelry</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Card 1.5 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.5</span> Quick Classification Reference</div>
+      <table>
+        <thead><tr><th>Substance</th><th>Formula</th><th>Classification</th><th>Why?</th></tr></thead>
+        <tbody>
+          <tr><td>Gold</td><td>Au</td><td>Element</td><td>One type of atom</td></tr>
+          <tr><td>Oxygen gas</td><td>O₂</td><td>Element</td><td>Only oxygen atoms (diatomic)</td></tr>
+          <tr><td>Water</td><td>H₂O</td><td>Compound</td><td>H and O chemically bonded</td></tr>
+          <tr><td>Table salt</td><td>NaCl</td><td>Compound</td><td>Na and Cl chemically bonded</td></tr>
+          <tr><td>Sugar</td><td>C₁₂H₂₂O₁₁</td><td>Compound</td><td>C, H, O chemically bonded</td></tr>
+          <tr><td>Salt water</td><td>NaCl + H₂O</td><td>Homogeneous Mixture</td><td>Uniform; NaCl dissolved in water</td></tr>
+          <tr><td>Air</td><td>N₂ + O₂ + …</td><td>Homogeneous Mixture</td><td>Gases evenly mixed</td></tr>
+          <tr><td>Sand on a beach</td><td>—</td><td>Heterogeneous Mixture</td><td>Can see different parts</td></tr>
+          <tr><td>Orange juice (pulp)</td><td>—</td><td>Heterogeneous Mixture</td><td>Pulp visible; not uniform</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Card 1.6 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.6</span> Physical vs. Chemical Properties</div>
+      <p>Every substance has properties — characteristics that help identify it. Properties fall into two categories:</p>
+
+      <div class="formula-box">
+        <span class="label">Physical Properties</span>
+        Observed or measured <em>without changing the substance into something new.</em><br><br>
+        Examples: color, odor, density, melting point, boiling point, hardness, malleability, ductility, solubility, state of matter
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Chemical Properties</span>
+        Describe how a substance <em>reacts to form a different substance.</em><br><br>
+        Examples: flammability, reactivity with oxygen (rusting), reactivity with acids or bases, ability to decompose, corrosiveness, toxicity
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>A <strong>physical property</strong> doesn't turn the substance into something new — you still have the same substance after you measure it. A <strong>chemical property</strong> describes what happens when a new substance forms.</p>
+      </div>
+    </div>
+
+    <!-- Card 1.7 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.7</span> Physical vs. Chemical Changes</div>
+
+      <div class="formula-box">
+        <span class="label">Physical Change</span>
+        Form or appearance changes, but the same substance remains. Usually reversible.<br><br>
+        Examples: melting ice, boiling water, cutting paper, dissolving sugar in water, bending a wire, evaporation
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Chemical Change</span>
+        New substances form with different properties. Usually not reversible.<br><br>
+        Examples: burning wood, iron rusting, baking a cake, cooking an egg, silver tarnishing, baking soda + vinegar
+      </div>
+
+      <table>
+        <thead><tr><th>Sign of Chemical Change</th><th>Example</th><th>Certainty?</th></tr></thead>
+        <tbody>
+          <tr><td>Color change</td><td>Copper turning green (patina)</td><td>Strong evidence</td></tr>
+          <tr><td>Gas produced (bubbles)</td><td>Baking soda + vinegar fizzing</td><td>Strong evidence</td></tr>
+          <tr><td>Temperature change (no heating)</td><td>CaCl₂ + water gets hot</td><td>Strong evidence</td></tr>
+          <tr><td>Light produced</td><td>A burning match</td><td>Strong evidence</td></tr>
+          <tr><td>Precipitate forms</td><td>Two solutions form a solid</td><td>Strong evidence</td></tr>
+          <tr><td>Irreversibility</td><td>Fried egg won't un-fry</td><td>Suggests chemical</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Dissolving sugar in water: no bubbles, no color change, no heat — this is a <strong>physical change</strong>. The sugar can be recovered by evaporating the water.</p>
+      </div>
+    </div>
+
+    <!-- Card 1.8 -->
+    <div class="card">
+      <div class="card-title"><span class="num">1.8</span> Separating Mixtures</div>
+      <p>Because mixtures are physically combined, they can be separated by <strong>physical methods</strong>. The method depends on the properties of the substances. Compounds cannot be separated physically — they require a chemical reaction.</p>
+      <table>
+        <thead><tr><th>Method</th><th>How It Works</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>Filtration</td><td>Filter catches large solids; liquid passes through</td><td>Solid + liquid (heterogeneous)</td></tr>
+          <tr><td>Evaporation</td><td>Heat drives off liquid; solid left behind</td><td>Dissolved solid in liquid</td></tr>
+          <tr><td>Distillation</td><td>Differences in boiling points separate liquids</td><td>Two liquids with different bp</td></tr>
+          <tr><td>Chromatography</td><td>Components move at different speeds through a material</td><td>Identifying pigments / inks</td></tr>
+          <tr><td>Magnetism</td><td>Magnet pulls out magnetic material</td><td>Iron in a mixture</td></tr>
+          <tr><td>Centrifugation</td><td>Spinning separates by density</td><td>Particles suspended in liquid</td></tr>
+        </tbody>
+      </table>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Chromatography shows that black ink is actually a <em>mixture</em> of many colored pigments — proving that substances that appear pure can be mixtures!</p>
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ============================================================ -->
+  <!-- TAB: TOOLS -->
+  <!-- ============================================================ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tools-tab" aria-hidden="true">
+
+    <div class="card">
+      <div class="card-title"><span class="num">2.1</span> How to Read Particle Diagrams</div>
+      <p>In chemistry, matter is drawn as small circles to represent atoms. The color indicates the atom type; touching circles indicate bonding. Once you know the rules, you can classify any diagram.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Count how many types of particles you see.</strong> Look at every particle. Are they all the same shape and color, or are there different kinds?</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>All identical → Pure Substance.</strong> One atom type only → Element. Two or more atom types bonded in identical groups → Compound.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>More than one type → Mixture.</strong> Evenly spread, no clumps → Homogeneous. Clumped in distinct regions → Heterogeneous.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Check spacing for phase.</strong> Packed tightly and orderly → solid. Close but random → liquid. Spread far apart → gas.</p></div></div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Color Key (by convention)</span>
+        Same-color circles = same atom type. Touching circles = bonded. Different-color circles NOT touching = mixture (not compound). Different-color circles touching = compound molecule.
+      </div>
+    </div>
+
+    <!-- Elements -->
+    <div class="card">
+      <div class="card-title"><span class="num">2.2</span> Pure Substances: Elements</div>
+      <p>An element contains <strong>only one type of atom</strong>. All particles look the same. The atom may appear alone (monatomic) or bonded to an identical atom (diatomic).</p>
+
+      <svg width="100%" viewBox="0 0 420 120" role="img">
+        <title>Element particle diagrams</title>
+        <!-- Monatomic gas (He/Ar) -->
+        <rect x="5" y="5" width="130" height="110" rx="6" fill="#f8faff" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="70" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Monatomic Element (He)</text>
+        <circle cx="30" cy="45" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="70" cy="38" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="110" cy="48" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="40" cy="82" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="90" cy="80" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <!-- Diatomic gas (N2) -->
+        <rect x="145" y="5" width="130" height="110" rx="6" fill="#f8faff" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="210" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Diatomic Element (N₂)</text>
+        <circle cx="166" cy="45" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="188" cy="45" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="216" cy="38" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="238" cy="38" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="170" cy="82" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="192" cy="82" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="220" cy="78" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="242" cy="78" r="11" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <!-- Solid element (Fe) -->
+        <rect x="285" y="5" width="130" height="110" rx="6" fill="#f8faff" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="350" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Solid Element (Fe)</text>
+        <circle cx="305" cy="40" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="330" cy="40" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="355" cy="40" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="380" cy="40" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="305" cy="65" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="330" cy="65" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="355" cy="65" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="380" cy="65" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="305" cy="90" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="330" cy="90" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="355" cy="90" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+        <circle cx="380" cy="90" r="10" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+      </svg>
+      <p>In all three diagrams: <strong>only one color of atom is present</strong> → element. Pairs of same-color atoms bonded = still an element (diatomic form).</p>
+    </div>
+
+    <!-- Compounds -->
+    <div class="card">
+      <div class="card-title"><span class="num">2.3</span> Pure Substances: Compounds</div>
+      <p>A compound contains <strong>two or more types of atoms chemically bonded</strong> together. Every molecule has the same ratio of atoms.</p>
+
+      <svg width="100%" viewBox="0 0 420 120" role="img">
+        <title>Compound particle diagrams</title>
+        <!-- HCl gas -->
+        <rect x="5" y="5" width="130" height="110" rx="6" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+        <text x="70" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Compound — HCl (g)</text>
+        <circle cx="30" cy="42" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="50" cy="42" r="10" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="80" cy="36" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="100" cy="36" r="10" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="28" cy="80" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="48" cy="80" r="10" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="80" cy="76" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="100" cy="76" r="10" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <!-- CO2 gas -->
+        <rect x="145" y="5" width="130" height="110" rx="6" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+        <text x="210" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Compound — CO₂ (g)</text>
+        <circle cx="160" cy="40" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="178" cy="40" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="196" cy="40" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="215" cy="35" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="233" cy="35" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="251" cy="35" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="160" cy="78" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="178" cy="78" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="196" cy="78" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="220" cy="74" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="238" cy="74" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="256" cy="74" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <!-- NaCl solid -->
+        <rect x="285" y="5" width="130" height="110" rx="6" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+        <text x="350" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#64748b">Compound — NaCl (s)</text>
+        <circle cx="305" cy="40" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="330" cy="40" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="355" cy="40" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="380" cy="40" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="305" cy="65" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="330" cy="65" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="355" cy="65" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="380" cy="65" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="305" cy="90" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="330" cy="90" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="355" cy="90" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="380" cy="90" r="10" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+      </svg>
+      <p>In all three diagrams: <strong>two (or more) colors of atoms are always bonded together in the same repeating pattern</strong> → compound. The fixed ratio and bonding are the defining features.</p>
+    </div>
+
+    <!-- Mixtures -->
+    <div class="card">
+      <div class="card-title"><span class="num">2.4</span> Homogeneous vs. Heterogeneous Mixtures</div>
+      <p>Both mixture types contain different particles that are <strong>not chemically bonded</strong>. The difference is how they are distributed.</p>
+
+      <svg width="100%" viewBox="0 0 280 120" role="img">
+        <title>Mixture particle diagrams</title>
+        <!-- Homogeneous -->
+        <rect x="5" y="5" width="130" height="110" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+        <text x="70" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#166534">Homogeneous (N₂ + Ar)</text>
+        <circle cx="20" cy="42" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="40" cy="42" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="80" cy="36" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="115" cy="44" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="25" cy="80" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="65" cy="76" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="85" cy="76" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="115" cy="82" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <!-- Heterogeneous -->
+        <rect x="145" y="5" width="130" height="110" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+        <text x="210" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" fill="#92400e">Heterogeneous (layered)</text>
+        <line x1="145" y1="58" x2="275" y2="58" stroke="#fcd34d" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="165" cy="35" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="185" cy="35" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="215" cy="30" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="235" cy="30" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="255" cy="38" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="168" cy="76" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="205" cy="74" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="244" cy="78" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="186" cy="96" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="225" cy="98" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+      </svg>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p><strong>Heterogeneous test:</strong> Scoop from one region — does it look the same as a sample from another region? If <em>no</em>, it is heterogeneous. The key visual cue is always <em>uneven distribution</em>.</p>
+      </div>
+    </div>
+
+    <!-- Side-by-side comparison -->
+    <div class="card">
+      <div class="card-title"><span class="num">2.5</span> Side-by-Side Comparison</div>
+      <p>Study all four types together. <strong>Color</strong> tells you atom type; <strong>touching</strong> tells you bonding; <strong>distribution</strong> tells you mixture type.</p>
+
+      <svg width="100%" viewBox="0 0 560 120" role="img">
+        <title>Four-way particle diagram comparison</title>
+        <!-- Pure Element -->
+        <rect x="5" y="5" width="125" height="110" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+        <text x="67" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" font-weight="600" fill="#1e3a8a">Pure Element (O₂)</text>
+        <circle cx="22" cy="42" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="44" cy="42" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="72" cy="36" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="94" cy="36" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="22" cy="80" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="44" cy="80" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="72" cy="76" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="94" cy="76" r="11" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <!-- Pure Compound -->
+        <rect x="140" y="5" width="125" height="110" rx="6" fill="#faf5ff" stroke="#c4b5fd" stroke-width="2"/>
+        <text x="202" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" font-weight="600" fill="#6d28d9">Pure Compound (CO₂)</text>
+        <circle cx="152" cy="42" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="170" cy="42" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="188" cy="42" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="208" cy="36" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="226" cy="36" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="244" cy="36" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="152" cy="80" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="170" cy="80" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="188" cy="80" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="210" cy="76" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <circle cx="228" cy="76" r="11" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="246" cy="76" r="9" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+        <!-- Homogeneous Mixture -->
+        <rect x="275" y="5" width="125" height="110" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+        <text x="337" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" font-weight="600" fill="#166534">Homogeneous Mix</text>
+        <circle cx="290" cy="42" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="310" cy="42" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="345" cy="36" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="385" cy="44" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="292" cy="80" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="330" cy="76" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="350" cy="76" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="385" cy="80" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <!-- Heterogeneous Mixture -->
+        <rect x="410" y="5" width="145" height="110" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+        <text x="482" y="18" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" font-weight="600" fill="#92400e">Heterogeneous Mix</text>
+        <line x1="410" y1="58" x2="555" y2="58" stroke="#fcd34d" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="428" cy="35" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="448" cy="35" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="475" cy="30" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="495" cy="30" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="520" cy="38" r="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+        <circle cx="430" cy="76" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="465" cy="74" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="503" cy="78" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="447" cy="98" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="485" cy="100" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+        <circle cx="524" cy="96" r="13" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+      </svg>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p>Quick visual checklist: <strong>One color?</strong> → Element. <strong>Different colors always in identical bonded groups?</strong> → Compound. <strong>Different colors spread evenly, not touching?</strong> → Homogeneous. <strong>Different colors in separate regions?</strong> → Heterogeneous.</p>
+      </div>
+    </div>
+
+    <!-- Density Calculator -->
+    <div class="card">
+      <div class="card-title"><span class="num">2.6</span> Density Calculator</div>
+      <p>Density is a key <strong>physical property</strong> used to identify pure substances. Use this calculator to solve for any variable in D = m ÷ V.</p>
+      <div class="formula-box">
+        <span class="label">Formula</span>
+        D = m ÷ V &nbsp;&nbsp;|&nbsp;&nbsp; m = D × V &nbsp;&nbsp;|&nbsp;&nbsp; V = m ÷ D
+      </div>
+
+      <div id="densityTool">
+        <p>Solve for: &nbsp;
+          <button class="filter-btn active" id="solveD">Density (D)</button>
+          <button class="filter-btn" id="solveM">Mass (m)</button>
+          <button class="filter-btn" id="solveV">Volume (V)</button>
+        </p>
+        <div id="densityInputs">
+          <input class="prob-input" id="dInput" placeholder="Density (g/mL)" type="number">
+          <input class="prob-input" id="mInput" placeholder="Mass (g)" type="number">
+          <input class="prob-input" id="vInput" placeholder="Volume (mL)" type="number">
+        </div>
+        <button class="btn btn-sm" id="calcDensityBtn">Calculate</button>
+        <div class="formula-box" id="densityResult">
+          <span class="label">Result</span>
+          <span id="densityAnswer"></span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ============================================================ -->
+  <!-- TAB: EXAMPLES -->
+  <!-- ============================================================ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="examples-tab" aria-hidden="true">
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 1</span> Classifying Three Beakers</div>
+      <p><strong>Given:</strong> Three unlabeled beakers in a lab. <strong>Find:</strong> Classify each and explain the reasoning.</p>
+      <ul>
+        <li>Beaker A: Clear, uniform liquid. Boils at exactly 100°C.</li>
+        <li>Beaker B: Clear liquid, but has a definite salty taste. Boils above 100°C.</li>
+        <li>Beaker C: A white solid floating in a clear liquid.</li>
+      </ul>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Beaker A → Pure Substance (H₂O)</strong>
+          <p>Uniform appearance and a single, fixed boiling point (100°C) indicate a pure substance. A definite boiling point is the key distinguishing feature of a pure substance vs. a mixture.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Beaker B → Homogeneous Mixture (salt water)</strong>
+          <p>Looks uniform — you cannot see separate parts — so it cannot be heterogeneous. But the elevated boiling point shows it is not a pure substance. Dissolved salt raises the boiling point above 100°C. Result: homogeneous mixture.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Beaker C → Heterogeneous Mixture</strong>
+          <p>You can see distinct parts — a solid phase and a liquid phase that are not uniformly mixed. The white solid could be undissolved salt, chalk, or any solid that does not dissolve. Visible non-uniform regions = heterogeneous.</p>
+        </div></div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <p><strong>Exam shortcut:</strong> A definite, fixed boiling or melting point → pure substance. A boiling or melting range → mixture.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 2</span> Identifying Physical vs. Chemical Changes</div>
+      <p><strong>Given:</strong> Four scenarios. <strong>Find:</strong> Identify the type of change and the key evidence.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Iron fence slowly turns orange-brown and flakes away → Chemical Change (rusting)</strong>
+          <p>Iron (Fe) reacts with oxygen and water to form iron oxide (Fe₂O₃) — a completely new substance with different properties (orange, brittle, flaky). The change is not reversible, and a new substance has formed.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>A student cuts a copper wire into small pieces → Physical Change</strong>
+          <p>Cutting changes the shape and size, but the copper is still copper — same formula (Cu), same color, same conductivity. No new substance was formed.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Table salt is added to water and stirred until it disappears → Physical Change (dissolving)</strong>
+          <p>The salt seems to disappear, but no chemical reaction occurred. The NaCl and H₂O molecules are still the same. Evaporate the water and you recover the salt crystals — proof it was physical.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Baking soda and vinegar are mixed; vigorous bubbling occurs → Chemical Change</strong>
+          <p>The bubbles are CO₂ gas produced in a chemical reaction between acetic acid and sodium bicarbonate. New substances (CO₂ and water) formed. The reaction is not easily reversible.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 3</span> Reading a Particle Diagram Step-by-Step</div>
+      <p><strong>Given:</strong> A closed container with: three pairs of touching blue circles, two groups of one large black circle bonded to two small red circles, and one lone orange circle. <strong>Find:</strong> Classify the contents.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Identify each particle type</strong>
+          <p>Blue-blue pairs = diatomic element (e.g., N₂). Red-black-red groups = compound (e.g., CO₂). Lone orange = monatomic element (e.g., Ar). Total: 3 different particle types.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Pure or mixture?</strong>
+          <p>There are 3 different types of particles → it is a <strong>mixture</strong>. A pure substance has only one type of particle.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Homogeneous or heterogeneous?</strong>
+          <p>The particles are described as spread throughout the container without distinct layers or clumps → <strong>Homogeneous mixture</strong>.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Final answer</strong>
+          <p>Homogeneous mixture of two elements (N₂ and Ar) and one compound (CO₂). This is a simplified model of air with a trace noble gas included.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="num">Ex 4</span> Choosing a Separation Method</div>
+      <p><strong>Given:</strong> Three different mixtures. <strong>Find:</strong> Select the best separation method for each and explain why.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Sand and water → Filtration</strong>
+          <p>Sand does not dissolve in water — it forms a heterogeneous mixture. A filter paper will trap the sand particles while water passes through (filtrate). The sand particles are too large to fit through the pores of the filter paper.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Salt water (recover the salt) → Evaporation</strong>
+          <p>The salt is dissolved and cannot be filtered. Heating drives off the water as steam, leaving solid NaCl behind in the evaporating dish. This works because salt does not evaporate at the temperatures used.</p>
+        </div></div>
+        <div class="step"><div class="step-num"></div><div class="step-content">
+          <strong>Black ink on filter paper (identify the pigments) → Paper Chromatography</strong>
+          <p>The ink is a homogeneous mixture of several colored pigments. Water (mobile phase) travels up the paper (stationary phase) and carries the pigments at different speeds based on their affinity for water. The result is a series of separated color bands.</p>
+        </div></div>
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ============================================================ -->
+  <!-- PRACTICE BANNER — direct child of .container, NOT inside any section -->
+  <!-- ============================================================ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Test yourself with randomized matter problem sets</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Instant answer checking</span>
+        <span>✓ Full worked solutions</span>
+        <span>✓ Linked to Unit 01 practice gate</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="01_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 01 · Classification of Matter</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script src="01_tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | ChemUnlocked</title>
+    <meta name="description" content="Contact ChemUnlocked with questions, suggestions, or partnership inquiries.">
+    <link rel="canonical" href="https://chemunlocked.com/Contact_ChemUnlocked.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact | ChemUnlocked" />
+    <meta property="og:description" content="Contact ChemUnlocked with questions, suggestions, or partnership inquiries." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chemunlocked.com/Contact_ChemUnlocked.html" />
+    <meta property="og:site_name" content="ChemUnlocked" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | ChemUnlocked" />
+    <meta name="twitter:description" content="Contact ChemUnlocked with questions, suggestions, or partnership inquiries." />
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact | ChemUnlocked","description":"Contact ChemUnlocked with questions, suggestions, or partnership inquiries.","url":"https://chemunlocked.com/Contact_ChemUnlocked.html"}</script>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Contact | ChemUnlocked</title>
+            <meta name="description" content="Contact ChemUnlocked with questions, suggestions, or partnership inquiries." />
+            <link rel="stylesheet" href="chem.css" />
+            
+    <!-- Contact page styles moved to chem.css -->
+        </head>
+        <body>
+            
+            <main class="contact-wrap">
+                <section class="contact-card">
+                    <h1>Contact ChemUnlocked</h1>
+                    <p>
+                        Have a question, suggestion, or partnership idea? Send a message below.
+                    </p>
+                    
+                    <form
+                        id="contactForm"
+                        class="contact-form"
+                        action="https://formspree.io/f/xdayojvj"
+                        method="POST"
+                        novalidate
+                    >
+                        <div class="form-row">
+                            <label for="name">Your name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required />
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="email">Your email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required />
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <!-- Honeypot field -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="company">Leave this field empty</label>
+                            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+                        </div>
+                        
+                        <!-- Extra hidden fields -->
+                        <input type="hidden" name="_subject" value="New ChemUnlocked Contact Form Message" />
+                        <input type="hidden" name="_gotcha_time" id="gotchaTime" value="" />
+                        
+                        <p class="form-note">
+                            Please do not submit links unrelated to chemistry learning or education.
+                        </p>
+                        
+                        <button type="submit" class="contact-btn" id="submitBtn">Send Message</button>
+                        
+                        <div id="formStatus" class="status-box" role="status" aria-live="polite"></div>
+                                            <!-- Accessibility improvement: allow keyboard focus -->
+                                            <script>document.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('formStatus');if(s)s.setAttribute('tabindex','0');});</script>
+                    </form>
+                </section>
+            </main>
+            
+            <script>
+            <script src="contact.js"></script>
+            </script>
+            
+        </body>
+    </html>
+</body>
+</html>

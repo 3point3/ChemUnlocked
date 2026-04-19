@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked</title>
+<meta name="description" content="Full premium Unit 04 chemistry practice on periodic table trends, atomic radius, ionization energy, electronegativity, ion size, and element classification.">
+<link rel="canonical" href="https://chemunlocked.com/04_premium.html">
+<meta property="og:title" content="Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked">
+<meta property="og:description" content="Full premium Unit 04 chemistry practice with randomized 12-problem sets and instant feedback.">
+<meta property="og:url" content="https://chemunlocked.com/04_premium.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked">
+<meta name="twitter:description" content="Full premium Unit 04 chemistry practice with randomized 12-problem sets and instant feedback.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<link rel="stylesheet" href="chem.css">
+
+</head>
+<body>
+<div id="top"></div>
+<div class="starfield"></div>
+
+<div class="container">
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 04 Premium Practice</div>
+    <h1>Periodic Table &amp; Trends</h1>
+    <h2>Full Premium Practice</h2>
+    <p class="subtitle">Full randomized 12-problem sets from the Unit 04 premium bank, with instant feedback and full solutions.</p>
+  </header>
+
+
+  <div id="topControls" style="margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
+    <label for="filterSelect">Filter:</label>
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="calc">Calc</option>
+      <option value="concept">Concept</option>
+      <option value="multi">Multi</option>
+    </select>
+
+    <button id="reloadBtn" class="btn btn-sm" type="button">Load New 12-Problem Set</button>
+    <button id="billingBtn" class="btn btn-sm btn-outline" type="button">Manage Billing</button>
+    <a href="04_practice.html" class="btn btn-sm btn-outline">Back to Free Teaser</a>
+  </div>
+
+  <div id="problemContainer"></div>
+  
+  <div style="margin-top:2rem; text-align:center;">
+    <a href="#top" class="btn btn-outline">Back to Top</a>
+  </div>
+  
+  <div class="scroll-hint">Introductory General Chemistry · Unit 04 · Periodic Table &amp; Trends Premium Practice</div>
+
+</div><!-- end .container -->
+
+<script src="chem.js"></script>
+<script src="practice-premium.js"></script>
+<script type="module">
+import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
+import { ALL_PROBLEMS } from './netlify/lib/data/unit04-problems.js';
+
+const filterSelect = document.getElementById('filterSelect');
+const reloadBtn = document.getElementById('reloadBtn');
+const billingBtn = document.getElementById('billingBtn');
+const problemContainer = document.getElementById('problemContainer');
+const loadPremiumSet = window.loadPremiumSet;
+const openCustomerPortal = window.openCustomerPortal;
+
+function pickProblems(pool, count = 12) {
+  const shuffled = [...pool];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+function getLocalProblems(filter, count) {
+  const pool = filter === 'all' ? ALL_PROBLEMS : ALL_PROBLEMS.filter(p => p.type === filter);
+  return pickProblems(pool, count);
+}
+
+/* ── Access gate: verify token before loading any problems ── */
+async function checkAccess() {
+  const token = localStorage.getItem('cu_token') || '';
+  if (!token) { redirectToGate('no_token'); return false; }
+
+  const res = await fetch(
+    '/.netlify/functions/get-premium-problem-set?unit=04&count=1',
+    { headers: { 'x-access-token': token } }
+  );
+  if (res.status === 403) {
+    localStorage.removeItem('cu_token');
+    redirectToGate('expired');
+    return false;
+  }
+  return true;
+}
+
+function redirectToGate(reason) {
+  window.location.replace(`04_practice.html?access=${reason}`);
+}
+
+async function loadSet() {
+  problemContainer.innerHTML = '<p style="color:var(--muted)">Loading your problem set…</p>';
+  try {
+    const data = await loadPremiumSet('04', filterSelect.value, 12);
+    renderPremiumProblemSet({ problems: data.problems, containerId: 'problemContainer' });
+  } catch (err) {
+    problemContainer.innerHTML = `<p style="color:red">Could not load problems: ${err.message}</p>`;
+  }
+}
+
+reloadBtn.addEventListener('click', () => { loadSet(); });
+filterSelect.addEventListener('change', () => { loadSet(); });
+billingBtn.addEventListener('click', () => {
+  if (typeof openCustomerPortal === 'function') {
+    openCustomerPortal();
+  } else {
+    alert('Billing portal is not available in this local test yet.');
+  }
+});
+
+/* Show verifying state, then load if access confirmed */
+problemContainer.innerHTML = '<p style="color:var(--muted)">Verifying subscription…</p>';
+checkAccess().then(ok => { if (ok) loadSet(); });
+</script>
+</body>
+</html>
