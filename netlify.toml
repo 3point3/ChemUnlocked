@@ -4,8 +4,5 @@
 [functions]
   node_bundler = "esbuild"
 
-[[functions]]
-  name = "stripe-webhook"
-
-  [functions.stripe-webhook]
-    raw_body = true
+[functions."stripe-webhook"]
+  raw_body = true
