@@ -41,11 +41,23 @@
 </header>
 
 
-	<div class="nav-tabs" role="tablist" aria-label="Unit 11 tab navigation">
-		<button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-		<button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-		<button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
-	</div>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 11 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
+  </div>
 
 
 <div class="practice-banner">
@@ -64,10 +76,10 @@
 </div>
 
 <!-- ════════════ CONCEPTS ════════════ -->
-<div id="concepts" class="section active">
+<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
 <div class="card">
-<div class="card-title"><span class="num">11.1</span> Properties of Gases &amp; Pressure</div>
+<h2 class="card-title"><span class="num">11.1</span> Properties of Gases &amp; Pressure</h2>
 <p>Gases are the most spread-out state of matter. Gas particles are widely separated, move rapidly in random directions, and exert force on every surface they collide with. <strong>Pressure</strong> is force per unit area (P = F/A). This is why a sharp knife cuts better — the same force over a smaller area creates greater pressure on the food.</p>
 <p><strong>Atmospheric pressure</strong> at sea level equals exactly <strong>1 atmosphere (atm)</strong>. A barometer measures this by the height of mercury it can support. The SI unit is the pascal (Pa = N/m²).</p>
 <div class="formula-box">
@@ -87,7 +99,7 @@
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.2</span> Boyle's Law — Pressure &amp; Volume</div>
+<h2 class="card-title"><span class="num">11.2</span> Boyle's Law — Pressure &amp; Volume</h2>
 <p>At <strong>constant temperature and constant amount of gas</strong>, pressure and volume are <em>inversely proportional</em>. Double the pressure → half the volume. The product P × V always stays constant.</p>
 <div class="formula-box">
 <span class="label">Boyle's Law (T and n constant)</span>
@@ -115,7 +127,7 @@ P₁V₁ = P₂V₂ &nbsp;&nbsp;&nbsp; or: &nbsp;&nbsp;&nbsp; P × V = k (consta
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.3</span> Charles's Law — Volume &amp; Temperature</div>
+<h2 class="card-title"><span class="num">11.3</span> Charles's Law — Volume &amp; Temperature</h2>
 <p>At <strong>constant pressure and constant amount of gas</strong>, volume is <em>directly proportional</em> to absolute temperature in Kelvin. Double the Kelvin temperature → double the volume. The V vs. T graph is a straight line through the origin when T is in Kelvin.</p>
 <div class="formula-box">
 <span class="label">Charles's Law (P and n constant) — T ALWAYS in Kelvin!</span>
@@ -140,7 +152,7 @@ V₁/T₁ = V₂/T₂ &nbsp;&nbsp;&nbsp;&nbsp; K = °C + 273.15
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.4</span> Gay-Lussac's Law — Pressure &amp; Temperature</div>
+<h2 class="card-title"><span class="num">11.4</span> Gay-Lussac's Law — Pressure &amp; Temperature</h2>
 <p>At <strong>constant volume and constant amount of gas</strong>, pressure is <em>directly proportional</em> to absolute temperature in Kelvin. This applies to any rigid container. Heating → higher pressure.</p>
 <div class="formula-box">
 <span class="label">Gay-Lussac's Law (V and n constant) — T ALWAYS in Kelvin!</span>
@@ -165,7 +177,7 @@ P₁/T₁ = P₂/T₂
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.5</span> Avogadro's Law &amp; Molar Volume at STP</div>
+<h2 class="card-title"><span class="num">11.5</span> Avogadro's Law &amp; Molar Volume at STP</h2>
 <p>At <strong>constant temperature and pressure</strong>, volume is directly proportional to moles. Equal volumes of different gases at the same T and P contain the same number of molecules — regardless of the type of gas.</p>
 <div class="formula-box">
 <span class="label">Avogadro's Law (T and P constant)</span>
@@ -178,7 +190,7 @@ Molar Volume at STP (0°C = 273.15 K, exactly 1 atm): &nbsp; 1 mol any ideal gas
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.6</span> The Combined Gas Law</div>
+<h2 class="card-title"><span class="num">11.6</span> The Combined Gas Law</h2>
 <p>When all three of P, V, and T change simultaneously for a <strong>fixed amount of gas</strong> (n constant), use the Combined Gas Law. Always list all six variables and label each before doing algebra.</p>
 <div class="formula-box">
 <span class="label">Combined Gas Law (n constant) — T in Kelvin, P in same units both sides</span>
@@ -197,7 +209,7 @@ Molar Volume at STP (0°C = 273.15 K, exactly 1 atm): &nbsp; 1 mol any ideal gas
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.7</span> The Ideal Gas Law: PV = nRT</div>
+<h2 class="card-title"><span class="num">11.7</span> The Ideal Gas Law: PV = nRT</h2>
 <p>Combines all four gas variables into one equation for one set of conditions. Unlike the Combined Gas Law, you do not need before-and-after conditions — just what is true right now. Solve for whichever variable is unknown.</p>
 <div class="formula-box">
 <span class="label">Ideal Gas Law — T in Kelvin; choose R to match your pressure unit</span>
@@ -217,7 +229,7 @@ Gas density: &nbsp; d = PM / RT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.8</span> Dalton's Law of Partial Pressures</div>
+<h2 class="card-title"><span class="num">11.8</span> Dalton's Law of Partial Pressures</h2>
 <p>In a mixture of non-reacting gases, each gas exerts its own pressure independently. The <strong>partial pressure</strong> of each gas equals the pressure it would exert alone at the same T and V. Total pressure is the sum of all partial pressures.</p>
 <div class="formula-box">
 <span class="label">Dalton's Law of Partial Pressures</span>
@@ -231,7 +243,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title"><span class="num">11.9</span> Kinetic Molecular Theory</div>
+<h2 class="card-title"><span class="num">11.9</span> Kinetic Molecular Theory</h2>
 <p>The gas laws arise from the behavior of molecules described by the <strong>Kinetic Molecular Theory (KMT)</strong>:</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -260,10 +272,10 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div><!-- end concepts -->
 
 <!-- ════════════ TOOLS ════════════ -->
-<div id="tools" class="section">
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
 <div class="card">
-<div class="card-title">Pressure Unit Converter</div>
+<h2 class="card-title">Pressure Unit Converter</h2>
 <p>Type any pressure into any field — all other units update instantly. Critical skill: your R value must match your pressure unit in the Ideal Gas Law.</p>
 <div class="unit-conv-grid">
 <div class="unit-conv-cell"><label>Atmospheres (atm)</label><input type="number" id="pu_atm" placeholder="e.g. 1.00" oninput="convP('atm')"></div>
@@ -278,7 +290,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Ideal Gas Law Solver — PV = nRT</div>
+<h2 class="card-title">Ideal Gas Law Solver — PV = nRT</h2>
 <p>Enter any three of the four variables and leave the fourth blank. The solver calculates the missing value. Make sure pressure unit matches your R selection, and temperature unit is specified.</p>
 <div class="tool-output">
 <div class="solver-grid">
@@ -294,7 +306,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Combined Gas Law Solver — P₁V₁/T₁ = P₂V₂/T₂</div>
+<h2 class="card-title">Combined Gas Law Solver — P₁V₁/T₁ = P₂V₂/T₂</h2>
 <p>Enter five values and leave one blank. Temperatures must be in Kelvin. Pressures must use the same unit on both sides.</p>
 <div class="tool-output">
 <div class="solver-grid">
@@ -310,7 +322,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Ideal Gas Isothermal Curves (n = 1 mol)</div>
+<h2 class="card-title">Ideal Gas Isothermal Curves (n = 1 mol)</h2>
 <p>Four curves are plotted for T = 200, 300, 500, and 700 K. Adjust the sliders to place the red dot at any point and see the corresponding pressure. Notice that hotter gases have higher pressure at the same volume — each isotherm is a separate hyperbola.</p>
 <div class="graph-wrap">
 <div class="graph-title">▶ Interactive: PV = nRT — Pressure vs. Volume at Four Temperatures</div>
@@ -332,10 +344,10 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div><!-- end tools -->
 
 <!-- ════════════ EXAMPLES ════════════ -->
-<div id="examples" class="section">
+<div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
 <div class="card">
-<div class="card-title">Example 1 · Boyle's Law — Syringe Compression</div>
+<h2 class="card-title">Example 1 · Boyle's Law — Syringe Compression</h2>
 <p><strong>Problem:</strong> A gas occupies 4.50 L at 1.20 atm. Pressure is increased to 3.00 atm at constant temperature. Find the new volume.</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -353,7 +365,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 2 · Charles's Law — Balloon Heating</div>
+<h2 class="card-title">Example 2 · Charles's Law — Balloon Heating</h2>
 <p><strong>Problem:</strong> A balloon has a volume of 2.50 L at 25.0°C. It is warmed to 100.0°C at constant pressure. Find the new volume.</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -369,7 +381,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 3 · Gay-Lussac's Law — Spray Can in Fire</div>
+<h2 class="card-title">Example 3 · Gay-Lussac's Law — Spray Can in Fire</h2>
 <p><strong>Problem:</strong> A spray can has propellant gas at 1.44 atm and 23°C. Thrown into a fire at 475°C, what is the new pressure? (Volume is constant.)</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -385,7 +397,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 4 · Combined Gas Law — Weather Balloon</div>
+<h2 class="card-title">Example 4 · Combined Gas Law — Weather Balloon</h2>
 <p><strong>Problem:</strong> A balloon holds 8.50 L at 750 mmHg and 22°C. It rises to 365 mmHg and −15°C. Find the new volume.</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -401,7 +413,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 5 · Ideal Gas Law — Finding Moles</div>
+<h2 class="card-title">Example 5 · Ideal Gas Law — Finding Moles</h2>
 <p><strong>Problem:</strong> A rigid 8.25 L container holds gas at 3.75 atm and 127°C. How many moles of gas are present?</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -417,7 +429,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 6 · Ideal Gas Law — Molar Mass of Unknown Gas</div>
+<h2 class="card-title">Example 6 · Ideal Gas Law — Molar Mass of Unknown Gas</h2>
 <p><strong>Problem:</strong> A 0.422 g sample of unknown gas occupies 0.250 L at 45°C and 740 mmHg. Find the molar mass.</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
@@ -436,7 +448,7 @@ Gas collected over water: &nbsp; P<sub>dry gas</sub> = P<sub>barometer</sub> −
 </div>
 
 <div class="card">
-<div class="card-title">Example 7 · Dalton's Law — Gas Collected Over Water</div>
+<h2 class="card-title">Example 7 · Dalton's Law — Gas Collected Over Water</h2>
 <p><strong>Problem:</strong> Hydrogen gas is collected by water displacement at 25°C, total pressure = 755 mmHg. Water vapor pressure at 25°C = 23.8 mmHg. Find the partial pressure and moles of dry H₂ if the flask volume is 0.380 L.</p>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">

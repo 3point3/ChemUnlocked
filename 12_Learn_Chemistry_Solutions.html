@@ -42,19 +42,31 @@
 </header>
 
 <!-- TAB BUTTONS -->
-  <div class="nav-tabs" role="tablist" aria-label="Unit 12 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 12 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
 
 <!-- ══════════════════ CONCEPTS ══════════════════ -->
-<div id="concepts" class="section active">
+<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
   <!-- 12.1 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.1</span>What Is a Solution?</div>
+    <h2 class="card-title"><span class="num">12.1</span>What Is a Solution?</h2>
     <p>A <strong>solution</strong> is a homogeneous mixture in which a <strong>solute</strong> (the substance dissolved) is uniformly dispersed throughout a <strong>solvent</strong> (the dissolving medium). "Like dissolves like" — polar solvents dissolve polar solutes; nonpolar solvents dissolve nonpolar solutes.</p>
     <table>
       <thead><tr><th>Term</th><th>Definition</th><th>Example</th></tr></thead>
@@ -74,7 +86,7 @@
 
   <!-- 12.2 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.2</span>Solubility: Saturated, Unsaturated, Supersaturated</div>
+    <h2 class="card-title"><span class="num">12.2</span>Solubility: Saturated, Unsaturated, Supersaturated</h2>
     <p><strong>Solubility</strong> is the maximum amount of solute that dissolves in a given amount of solvent at a specific temperature. Three states of a solution:</p>
     <div class="steps">
       <div class="step">
@@ -101,7 +113,7 @@
 
   <!-- 12.3 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.3</span>Molarity (M)</div>
+    <h2 class="card-title"><span class="num">12.3</span>Molarity (M)</h2>
     <p>The most common concentration unit in chemistry. Molarity expresses moles of solute per liter of <em>solution</em> (not solvent).</p>
     <div class="formula-box">
       <span class="label">Formula</span>
@@ -119,7 +131,7 @@
 
   <!-- 12.4 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.4</span>Dilution — C₁V₁ = C₂V₂</div>
+    <h2 class="card-title"><span class="num">12.4</span>Dilution — C₁V₁ = C₂V₂</h2>
     <p>Dilution is the process of adding solvent to reduce the concentration of a solution. The number of moles of solute stays constant — only the volume increases.</p>
     <div class="formula-box">
       <span class="label">Dilution Equation</span>
@@ -138,7 +150,7 @@
 
   <!-- 12.5 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.5</span>Percent Composition</div>
+    <h2 class="card-title"><span class="num">12.5</span>Percent Composition</h2>
     <p>Three common percent-based concentration expressions used in labs and industry:</p>
     <table>
       <thead><tr><th>Type</th><th>Formula</th><th>Units</th><th>Use</th></tr></thead>
@@ -156,7 +168,7 @@
 
   <!-- 12.6 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.6</span>Molality (m)</div>
+    <h2 class="card-title"><span class="num">12.6</span>Molality (m)</h2>
     <p>Molality is moles of solute per <em>kilogram of solvent</em> (not solution). It is temperature-independent because it is based on mass, not volume — making it essential for colligative property calculations.</p>
     <div class="formula-box">
       <span class="label">Formula</span>
@@ -174,7 +186,7 @@
 
   <!-- 12.7 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.7</span>Colligative Properties</div>
+    <h2 class="card-title"><span class="num">12.7</span>Colligative Properties</h2>
     <p>Colligative properties depend on the <em>number</em> of solute particles (moles), not their identity. Four main colligative properties:</p>
     <div class="steps">
       <div class="step">
@@ -217,7 +229,7 @@
 
   <!-- 12.8 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.8</span>Solution Stoichiometry</div>
+    <h2 class="card-title"><span class="num">12.8</span>Solution Stoichiometry</h2>
     <p>Solution stoichiometry uses the same mole-ratio logic as regular stoichiometry — the only difference is that <strong>moles = M × L</strong> converts concentration and volume into moles to enter the mole map.</p>
     <div class="steps">
       <div class="step">
@@ -250,7 +262,7 @@
 
   <!-- 12.9 -->
   <div class="card">
-    <div class="card-title"><span class="num">12.9</span>Particle Diagrams for Solutions</div>
+    <h2 class="card-title"><span class="num">12.9</span>Particle Diagrams for Solutions</h2>
     <p>Particle diagrams show solute and solvent particles at the microscopic level. Key features to represent accurately:</p>
     <ul style="margin:0.5rem 0 0.75rem 1.2rem; line-height:1.9;">
       <li><strong>Ionic solutes</strong> (NaCl): show separate Na⁺ and Cl⁻ ions dispersed through water molecules.</li>
@@ -287,9 +299,9 @@
 </div><!-- end concepts -->
 
 <!-- ══════════════════ TOOLS ══════════════════ -->
-<div id="tools" class="section">
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
   <div class="card">
-    <div class="card-title">Solubility Curves — Interactive Explorer</div>
+    <h2 class="card-title">Solubility Curves — Interactive Explorer</h2>
     <p>The chart shows solubility (g of solute per 100 g water) vs. temperature for common salts. Hover over the lines for exact values. Use the checkboxes to show or hide individual compounds. A horizontal reference line helps you read saturation states.</p>
 
     <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin:0.75rem 0; align-items:center;">
@@ -325,11 +337,11 @@
 </div>
 
 <!-- ══════════════════ EXAMPLES ══════════════════ -->
-<div id="examples" class="section">
+<div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
   <!-- Ex 1: Molarity -->
   <div class="card">
-    <div class="card-title">Example 1 — Calculating Molarity</div>
+    <h2 class="card-title">Example 1 — Calculating Molarity</h2>
     <p><strong>Problem:</strong> What is the molarity of a solution made by dissolving 11.7 g of NaCl (M = 58.44 g/mol) in enough water to make 500.0 mL of solution?</p>
     <div class="steps">
       <div class="step">
@@ -366,7 +378,7 @@
 
   <!-- Ex 2: Dilution -->
   <div class="card">
-    <div class="card-title">Example 2 — Dilution (C₁V₁ = C₂V₂)</div>
+    <h2 class="card-title">Example 2 — Dilution (C₁V₁ = C₂V₂)</h2>
     <p><strong>Problem:</strong> How many mL of 12.0 M HCl must be diluted to make 250.0 mL of 0.500 M HCl?</p>
     <div class="steps">
       <div class="step">
@@ -399,7 +411,7 @@
 
   <!-- Ex 3: Molality & Colligative -->
   <div class="card">
-    <div class="card-title">Example 3 — Freezing Point Depression</div>
+    <h2 class="card-title">Example 3 — Freezing Point Depression</h2>
     <p><strong>Problem:</strong> What is the freezing point of a solution made by dissolving 25.0 g NaCl in 200.0 g water? (Kf = 1.86 °C·kg/mol, NaCl → i = 2)</p>
     <div class="steps">
       <div class="step">
@@ -435,7 +447,7 @@
 
   <!-- Ex 4: Solution Stoich + Precipitation -->
   <div class="card">
-    <div class="card-title">Example 4 — Precipitation Stoichiometry</div>
+    <h2 class="card-title">Example 4 — Precipitation Stoichiometry</h2>
     <p><strong>Problem:</strong> How many grams of AgCl precipitate form when 50.0 mL of 0.200 M AgNO₃ is mixed with excess NaCl solution? (AgCl M = 143.32 g/mol)</p>
     <p style="margin-top:0.5rem;"><strong>Balanced equation:</strong> AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</p>
     <div class="steps">
@@ -465,7 +477,7 @@
 
   <!-- Ex 5: Solubility interpretation -->
   <div class="card">
-    <div class="card-title">Example 5 — Reading a Solubility Curve</div>
+    <h2 class="card-title">Example 5 — Reading a Solubility Curve</h2>
     <p><strong>Problem:</strong> At 40 °C, 80 g of KNO₃ is added to 100 g of water. The solubility of KNO₃ at 40 °C is about 63 g/100 g H₂O. Classify the solution and describe what you would observe.</p>
     <div class="steps">
       <div class="step">
@@ -807,7 +819,7 @@ function buildPicker() {
   if (!wrap) return;
   Object.entries(SOL_DATA).forEach(([name,dat])=>{
     const lbl = document.createElement('label');
-    lbl.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;cursor:pointer;padding:0.25rem 0.5rem;border:1px solid let(--border);border-radius:999px;';
+    lbl.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;cursor:pointer;padding:0.25rem 0.5rem;border:1px solid var(--border);border-radius:999px;';
     const cb = document.createElement('input');
     cb.type='checkbox'; cb.checked=true;
     cb.onchange=function(){ visibleCompounds[name]=this.checked; drawSolChart(); };
@@ -912,10 +924,6 @@ function initSolHover() {
   cv.addEventListener('mouseleave',()=>{ document.getElementById('solTooltip').textContent=''; });
 }
 
-/* ════════════════════════════════
-   PRACTICE ENGINE
-════════════════════════════════ */
-const
 </script>
 </body>
 </html>

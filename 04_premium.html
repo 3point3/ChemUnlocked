@@ -59,7 +59,6 @@
 <script src="practice-premium.js"></script>
 <script type="module">
 import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
-import { ALL_PROBLEMS } from './netlify/lib/data/unit04-problems.js';
 
 const filterSelect = document.getElementById('filterSelect');
 const reloadBtn = document.getElementById('reloadBtn');
@@ -68,35 +67,29 @@ const problemContainer = document.getElementById('problemContainer');
 const loadPremiumSet = window.loadPremiumSet;
 const openCustomerPortal = window.openCustomerPortal;
 
-function pickProblems(pool, count = 12) {
-  const shuffled = [...pool];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled.slice(0, Math.min(count, shuffled.length));
-}
-
-function getLocalProblems(filter, count) {
-  const pool = filter === 'all' ? ALL_PROBLEMS : ALL_PROBLEMS.filter(p => p.type === filter);
-  return pickProblems(pool, count);
-}
-
 /* ── Access gate: verify token before loading any problems ── */
 async function checkAccess() {
   const token = localStorage.getItem('cu_token') || '';
   if (!token) { redirectToGate('no_token'); return false; }
 
-  const res = await fetch(
-    '/.netlify/functions/get-premium-problem-set?unit=04&count=1',
-    { headers: { 'x-access-token': token } }
-  );
-  if (res.status === 403) {
-    localStorage.removeItem('cu_token');
-    redirectToGate('expired');
+  try {
+    const res = await fetch(
+      '/.netlify/functions/get-premium-problem-set?unit=04&count=1',
+      { headers: { 'x-access-token': token } }
+    );
+    if (res.status === 403) {
+      localStorage.removeItem('cu_token');
+      redirectToGate('expired');
+      return false;
+    }
+    if (!res.ok) {
+      throw new Error('Subscription check failed.');
+    }
+    return true;
+  } catch (err) {
+    problemContainer.innerHTML = `<p style="color:red">Could not verify subscription: ${err.message}</p>`;
     return false;
   }
-  return true;
 }
 
 function redirectToGate(reason) {

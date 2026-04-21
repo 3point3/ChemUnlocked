@@ -41,10 +41,22 @@
 </header>
 
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 10 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 10 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
 <div class="practice-banner">
@@ -64,10 +76,10 @@
 </div>
 
 <!-- CONCEPTS -->
-<div id="concepts" class="section active">
+<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
   <div class="card">
-    <div class="card-title"><span class="num">10.1</span>Heat vs. Temperature</div>
+    <h2 class="card-title"><span class="num">10.1</span>Heat vs. Temperature</h2>
     <p><strong>Heat</strong> is energy transferred because of a temperature difference. <strong>Temperature</strong> is a measure of the average kinetic energy of particles. They are related but not the same thing.</p>
     <table>
       <thead><tr><th>Idea</th><th>Meaning</th><th>Example</th></tr></thead>
@@ -82,7 +94,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.2</span>Energy Units</div>
+    <h2 class="card-title"><span class="num">10.2</span>Energy Units</h2>
     <p>Thermochemistry uses several related energy units. Make sure you can convert between them before solving problems.</p>
     <div class="formula-box">1 cal = 4.184 J &nbsp;&nbsp;|&nbsp;&nbsp; 1 kcal = 1000 cal &nbsp;&nbsp;|&nbsp;&nbsp; 1 food Calorie = 1 kcal</div>
     <table>
@@ -97,7 +109,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.3</span>Specific Heat and Calorimetry</div>
+    <h2 class="card-title"><span class="num">10.3</span>Specific Heat and Calorimetry</h2>
     <p>When a substance changes temperature <em>without</em> changing phase, use the specific heat equation:</p>
     <div class="formula-box">
       <span class="label">Temperature-change equation</span>
@@ -112,7 +124,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.4</span>Phase Changes: Melting, Freezing, Boiling, Condensation</div>
+    <h2 class="card-title"><span class="num">10.4</span>Phase Changes: Melting, Freezing, Boiling, Condensation</h2>
     <p>During a phase change, temperature stays <strong>constant</strong> while energy breaks or forms intermolecular forces. Use a different equation depending on which change is occurring.</p>
     <div class="formula-box">
       <span class="label">Phase-change equations</span>
@@ -131,7 +143,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.5</span>Heating Curves</div>
+    <h2 class="card-title"><span class="num">10.5</span>Heating Curves</h2>
     <p>A heating curve shows how temperature changes as heat is added. You must split every heating-curve problem into separate segments and apply the correct equation to each &mdash; never use a single equation for the whole problem.</p>
     <div class="info-callout">
       <strong>How to read each segment</strong>
@@ -168,7 +180,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.6</span>Enthalpy, Endothermic, and Exothermic</div>
+    <h2 class="card-title"><span class="num">10.6</span>Enthalpy, Endothermic, and Exothermic</h2>
     <p><strong>Enthalpy change (&Delta;H)</strong> measures the heat flow of a reaction at constant pressure. Its sign tells you which direction heat moves.</p>
     <div class="formula-box">
       &Delta;H = H<sub>products</sub> &minus; H<sub>reactants</sub><br>
@@ -218,7 +230,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.7</span>Catalysts and Activation Energy</div>
+    <h2 class="card-title"><span class="num">10.7</span>Catalysts and Activation Energy</h2>
     <p>A <strong>catalyst</strong> lowers activation energy by providing an alternate reaction pathway. It does <em>not</em> change &Delta;H &mdash; the reactant and product energy levels stay exactly the same.</p>
     <div class="graph-wrapper">
       <svg viewBox="0 0 620 300" role="img" aria-label="Catalyzed versus uncatalyzed energy profile">
@@ -247,7 +259,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.8</span>Hess&rsquo;s Law and Heats of Formation</div>
+    <h2 class="card-title"><span class="num">10.8</span>Hess&rsquo;s Law and Heats of Formation</h2>
     <p><strong>Hess&rsquo;s law:</strong> because enthalpy is a state function, the overall &Delta;H for a reaction equals the sum of &Delta;H values for any set of steps that add up to that reaction. You can manipulate thermochemical equations algebraically.</p>
     <div class="formula-box">&Delta;H&deg;<sub>rxn</sub> = &Sigma; n&Delta;H&deg;<sub>f, products</sub> &minus; &Sigma; n&Delta;H&deg;<sub>f, reactants</sub></div>
     <div class="steps">
@@ -270,7 +282,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="num">10.9</span>Thermochemical Stoichiometry</div>
+    <h2 class="card-title"><span class="num">10.9</span>Thermochemical Stoichiometry</h2>
     <p>When a &Delta;H value is attached to a balanced equation, it applies to that reaction <strong>as written</strong> &mdash; for the exact molar amounts shown by the coefficients. Treat the enthalpy ratio like any other stoichiometric conversion factor.</p>
     <div class="formula-box">
       Example: 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l) &nbsp;&nbsp; &Delta;H = &minus;572 kJ<br>
@@ -284,10 +296,10 @@
 </div><!-- end #concepts -->
 
 <!-- TOOLS -->
-<div id="tools" class="section">
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
   <div class="card">
-    <div class="card-title">Thermochemistry Quick Calculator</div>
+    <h2 class="card-title">Thermochemistry Quick Calculator</h2>
     <p class="tool-subtitle">Select a mode, enter your values, and the calculator applies the correct equation. For multi-step heating-curve problems, run each step separately and add the results.</p>
     <div class="tool-grid">
       <div class="calc-box">
@@ -306,7 +318,7 @@
         <div class="calc-result" id="toolResult">Enter values above to calculate heat.</div>
       </div>
       <div class="calc-box">
-        <div class="card-title" style="font-size:1rem;margin-bottom:0.6rem;">Reference values for water</div>
+        <h2 class="card-title" style="font-size:1rem;margin-bottom:0.6rem;">Reference values for water</h2>
         <table>
           <thead><tr><th>Quantity</th><th>Value</th></tr></thead>
           <tbody>
@@ -324,7 +336,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Interactive Heating Curve Explorer</div>
+    <h2 class="card-title">Interactive Heating Curve Explorer</h2>
     <p class="tool-subtitle">Click each segment button to highlight it on the curve and see which equation applies, what is happening at the particle level, and whether temperature is changing or staying constant.</p>
     <div class="graph-wrapper">
       <svg id="interactiveCurveGraph" viewBox="0 0 700 360" role="img" aria-label="Interactive heating curve for water">
@@ -355,7 +367,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Interactive Reaction Energy Diagrams</div>
+    <h2 class="card-title">Interactive Reaction Energy Diagrams</h2>
     <p class="tool-subtitle">Switch between exothermic and endothermic reactions, then toggle the catalyst to see how activation energy changes while &Delta;H stays exactly the same.</p>
     <div class="profile-controls">
       <button class="profile-btn active" onclick="setReactionProfile('exo',this)">Exothermic</button>
@@ -393,10 +405,10 @@
 </div><!-- end #tools -->
 
 <!-- EXAMPLES -->
-<div id="examples" class="section">
+<div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
   <div class="card">
-    <div class="card-title">Example 1 &mdash; Specific Heat Calculation</div>
+    <h2 class="card-title">Example 1 &mdash; Specific Heat Calculation</h2>
     <p><strong>Problem:</strong> How much heat is needed to warm 125 g of water from 20.0&deg;C to 68.0&deg;C? (c = 4.184 J/g&deg;C)</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
@@ -411,7 +423,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Example 2 &mdash; Multi-step Heating Curve</div>
+    <h2 class="card-title">Example 2 &mdash; Multi-step Heating Curve</h2>
     <p><strong>Problem:</strong> A 20.0 g sample of liquid water at 25.0&deg;C is heated to 100.0&deg;C, completely boiled, then the steam is warmed to 118.0&deg;C. Find the total heat. (c<sub>water</sub> = 4.184 J/g&deg;C, &Delta;H<sub>vap</sub> = 2260 J/g, c<sub>steam</sub> = 2.01 J/g&deg;C)</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
@@ -434,7 +446,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Example 3 &mdash; Thermochemical Stoichiometry</div>
+    <h2 class="card-title">Example 3 &mdash; Thermochemical Stoichiometry</h2>
     <p><strong>Problem:</strong> For 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l), &Delta;H = &minus;572 kJ. How much heat is released when 5.00 mol H<sub>2</sub> reacts?</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
@@ -449,7 +461,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Example 4 &mdash; Hess&rsquo;s Law</div>
+    <h2 class="card-title">Example 4 &mdash; Hess&rsquo;s Law</h2>
     <p><strong>Problem:</strong> Find &Delta;H for C(s) + &frac12;O<sub>2</sub>(g) &rarr; CO(g), given:</p>
     <div class="fl-chain">Reaction 1: C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;393.5 kJ</div>
     <div class="fl-chain">Reaction 2: CO(g) + &frac12;O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;283.0 kJ</div>

@@ -145,20 +145,32 @@
     <p class="subtitle">Chemical reactions happen when substances change into something new. In this unit, you will learn how to write and balance equations, and how to sort reactions into types. Understanding reaction types helps you predict what will form before you even run the experiment.</p>
   </header>
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 07 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 07 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
   <!-- ═══════════════════════════════════════════════
        CONCEPTS TAB
   ═══════════════════════════════════════════════ -->
-  <div id="concepts" class="section active">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <!-- 7.1 Chemical Equations -->
     <div class="card">
-      <div class="card-title"><span class="num">7.1</span> What Is a Chemical Equation?</div>
+      <h2 class="card-title"><span class="num">7.1</span> What Is a Chemical Equation?</h2>
       <p>A <strong>chemical equation</strong> is a shorthand way to show a chemical reaction. It uses formulas instead of words. The substances you start with are called <strong>reactants</strong>. The substances you end up with are called <strong>products</strong>. An arrow (→) separates the two sides — it means "produces."</p>
       <div class="formula-box">
         <span class="label">General Form</span>
@@ -173,7 +185,7 @@
 
     <!-- 7.2 Balancing Equations -->
     <div class="card">
-      <div class="card-title"><span class="num">7.2</span> Balancing Chemical Equations</div>
+      <h2 class="card-title"><span class="num">7.2</span> Balancing Chemical Equations</h2>
       <p>A <strong>balanced equation</strong> has the same number of each type of atom on both sides. This follows the <strong>Law of Conservation of Mass</strong> — atoms are never created or destroyed in a chemical reaction, only rearranged.</p>
       <div class="steps">
         <div class="step">
@@ -213,7 +225,7 @@
 
     <!-- 7.3 Types of Reactions -->
     <div class="card">
-      <div class="card-title"><span class="num">7.3</span> Types of Chemical Reactions</div>
+      <h2 class="card-title"><span class="num">7.3</span> Types of Chemical Reactions</h2>
       <p>Most reactions fit into a small number of categories. Knowing the type helps you predict the products even before running the reaction.</p>
       <table>
         <thead>
@@ -255,7 +267,7 @@
 
     <!-- 7.4 Precipitation Reactions -->
     <div class="card">
-      <div class="card-title"><span class="num">7.4</span> Precipitation Reactions</div>
+      <h2 class="card-title"><span class="num">7.4</span> Precipitation Reactions</h2>
       <p>A <strong>precipitation reaction</strong> happens when two solutions are mixed and a solid forms. The solid that forms is called a <strong>precipitate</strong>. Precipitates form because two ions combine to make an insoluble compound — one that does not dissolve in water.</p>
       <p>To predict whether a precipitate forms, use <strong>solubility rules</strong> — a set of guidelines that tell you which ionic compounds dissolve in water and which do not.</p>
       <div class="formula-box">
@@ -274,7 +286,7 @@
 
     <!-- 7.5 Acid-Base Reactions -->
     <div class="card">
-      <div class="card-title"><span class="num">7.5</span> Acid-Base Reactions</div>
+      <h2 class="card-title"><span class="num">7.5</span> Acid-Base Reactions</h2>
       <p>An <strong>acid</strong> releases hydrogen ions (H⁺) in water. A <strong>base</strong> releases hydroxide ions (OH⁻) in water. When an acid and a base react, they <strong>neutralize</strong> each other. The products are water and a salt.</p>
       <div class="formula-box">
         <span class="label">Neutralization Pattern</span>
@@ -294,7 +306,7 @@
 
     <!-- 7.6 Oxidation-Reduction Reactions -->
     <div class="card">
-      <div class="card-title"><span class="num">7.6</span> Oxidation-Reduction (Redox) Reactions</div>
+      <h2 class="card-title"><span class="num">7.6</span> Oxidation-Reduction (Redox) Reactions</h2>
       <p>In a <strong>redox reaction</strong>, electrons are transferred from one substance to another. This changes the <strong>oxidation number</strong> (charge bookkeeping) of the atoms involved.</p>
       <ul>
         <li><strong>Oxidation</strong> = losing electrons → oxidation number <em>increases</em></li>
@@ -330,11 +342,11 @@
   <!-- ═══════════════════════════════════════════════
        TOOLS TAB
   ═══════════════════════════════════════════════ -->
-  <div id="tools" class="section">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <!-- Tool 1: Reaction Type Identifier -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool A</span> Reaction Type Identifier</div>
+      <h2 class="card-title"><span class="num">Tool A</span> Reaction Type Identifier</h2>
       <p>Enter the number of reactants and products, then answer the questions. The tool will identify the reaction type.</p>
 
       <label style="display:block; margin-bottom:0.35rem; font-weight:600; font-size:0.92rem;">How many reactant formulas are there?</label>
@@ -374,7 +386,7 @@
 
     <!-- Tool 2: Oxidation Number Finder -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool B</span> Oxidation Number Finder</div>
+      <h2 class="card-title"><span class="num">Tool B</span> Oxidation Number Finder</h2>
       <p>Select a compound or ion to see how oxidation numbers are calculated step by step.</p>
       <select class="prob-input" id="oxSelect" style="max-width:300px; margin-bottom:0.75rem;">
         <option value="">— choose a compound —</option>
@@ -394,7 +406,7 @@
 
     <!-- Tool 3: Atom Balancer Checker -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool C</span> Is This Equation Balanced?</div>
+      <h2 class="card-title"><span class="num">Tool C</span> Is This Equation Balanced?</h2>
       <p>Choose a sample equation. The tool counts atoms on both sides and tells you if it is balanced.</p>
       <select class="prob-input" id="balanceSelect" style="max-width:400px; margin-bottom:0.75rem;">
         <option value="">— choose an equation —</option>
@@ -415,11 +427,11 @@
   <!-- ═══════════════════════════════════════════════
        EXAMPLES TAB
   ═══════════════════════════════════════════════ -->
-  <div id="examples" class="section">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <!-- Example 1: Balancing -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Balancing a Chemical Equation</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Balancing a Chemical Equation</h2>
       <p><strong>Given:</strong> Fe + O₂ → Fe₂O₃ &nbsp;&nbsp; <strong>Find:</strong> The balanced equation</p>
       <div class="steps">
         <div class="step">
@@ -459,7 +471,7 @@
 
     <!-- Example 2: Identifying reaction type + net ionic -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Identifying a Precipitation Reaction &amp; Writing the Net Ionic Equation</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Identifying a Precipitation Reaction &amp; Writing the Net Ionic Equation</h2>
       <p><strong>Given:</strong> AgNO₃(aq) + NaCl(aq) → ? &nbsp;&nbsp; <strong>Find:</strong> Products, balanced molecular equation, and net ionic equation</p>
       <div class="steps">
         <div class="step">
@@ -513,7 +525,7 @@
 
     <!-- Example 3: Oxidation numbers + redox identification -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Identifying a Redox Reaction Using Oxidation Numbers</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Identifying a Redox Reaction Using Oxidation Numbers</h2>
       <p><strong>Given:</strong> 2Na + Cl₂ → 2NaCl &nbsp;&nbsp; <strong>Find:</strong> Which element is oxidized, which is reduced, and identify the oxidizing and reducing agents</p>
       <div class="steps">
         <div class="step">
@@ -596,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!nr || !np) {
         out.style.display = 'block';
-        out.innerHTML = '<span style="color:let(--red)">Please answer all questions first.</span>';
+        out.innerHTML = '<span style="color:var(--red)">Please answer all questions first.</span>';
         return;
       }
 
@@ -753,10 +765,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const d = oxData[key];
       if (!d) return;
       const stepsHTML = d.steps.map((s, i) =>
-        `<div style="margin:0.4rem 0; padding-left:1rem; border-left:3px solid #bfdbfe;"><span style="color:let(--accent2); font-weight:700">${i + 1}.</span> ${s}</div>`
+        `<div style="margin:0.4rem 0; padding-left:1rem; border-left:3px solid #bfdbfe;"><span style="color:var(--accent2); font-weight:700">${i + 1}.</span> ${s}</div>`
       ).join('');
       out.style.display = 'block';
-      out.innerHTML = `<strong>${d.label}</strong> (overall charge = ${d.charge >= 0 ? '+' + d.charge : d.charge})<br><br>${stepsHTML}<br><span style="color:let(--green); font-weight:650">Answer: ${d.answer}</span>`;
+      out.innerHTML = `<strong>${d.label}</strong> (overall charge = ${d.charge >= 0 ? '+' + d.charge : d.charge})<br><br>${stepsHTML}<br><span style="color:var(--green); font-weight:650">Answer: ${d.answer}</span>`;
     });
   }
 
@@ -841,23 +853,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }).join('');
 
       const verdict = d.balanced
-        ? `<span style="color:let(--green); font-weight:700">✓ BALANCED</span>`
-        : `<span style="color:let(--red); font-weight:700">✗ NOT BALANCED</span>`;
+        ? `<span style="color:var(--green); font-weight:700">✓ BALANCED</span>`
+        : `<span style="color:var(--red); font-weight:700">✗ NOT BALANCED</span>`;
 
       out.style.display = 'block';
       out.innerHTML = `
         <div style="margin-bottom:0.5rem"><strong>${d.eq}</strong></div>
         <table style="width:100%; font-size:0.9rem; font-family:inherit; margin:0.5rem 0">
           <thead><tr>
-            <th style="text-align:left; color:let(--accent2)">Element</th>
-            <th style="text-align:left; color:let(--accent2)">Left (reactants)</th>
-            <th style="text-align:left; color:let(--accent2)">Right (products)</th>
+            <th style="text-align:left; color:var(--accent2)">Element</th>
+            <th style="text-align:left; color:var(--accent2)">Left (reactants)</th>
+            <th style="text-align:left; color:var(--accent2)">Right (products)</th>
             <th></th>
           </tr></thead>
           <tbody>${atomRows}</tbody>
         </table>
         <div style="margin-top:0.5rem">${verdict}</div>
-        <div style="margin-top:0.4rem; font-size:0.88rem; color:let(--dim)">${d.note}</div>
+        <div style="margin-top:0.4rem; font-size:0.88rem; color:var(--dim)">${d.note}</div>
       `;
     });
   }

@@ -146,21 +146,33 @@
   </header>
 
   <!-- ── TAB NAV ── -->
-  <div class="nav-tabs">
-    <button class="tab-btn active" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 08 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
 
   <!-- ══════════════════════════════════════════════
        CONCEPTS TAB
   ══════════════════════════════════════════════ -->
-  <div id="concepts" class="section active">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <!-- 8.1 What Is Stoichiometry? -->
     <div class="card">
-      <div class="card-title"><span class="num">8.1</span> What Is Stoichiometry?</div>
+      <h2 class="card-title"><span class="num">8.1</span> What Is Stoichiometry?</h2>
       <p>The word <strong>stoichiometry</strong> (stoy-key-AH-meh-tree) sounds hard, but the idea is simple: it is the math that tells you <em>how much</em> of each chemical is used or made in a reaction.</p>
       <p>Think of a recipe. If a cookie recipe says "use 2 cups of flour for every 1 cup of sugar," you can scale it up or down. A balanced chemical equation works the same way — the <strong>coefficients</strong> (the big numbers in front of each formula) act like the amounts in a recipe.</p>
 
@@ -179,7 +191,7 @@
 
     <!-- 8.2 Mole Ratios and Stoichiometric Factors -->
     <div class="card">
-      <div class="card-title"><span class="num">8.2</span> Mole Ratios — The Conversion Tool</div>
+      <h2 class="card-title"><span class="num">8.2</span> Mole Ratios — The Conversion Tool</h2>
       <p>A <strong>mole ratio</strong> (also called a <strong>stoichiometric factor</strong>) is a fraction you build from the coefficients in a balanced equation. You use it like a unit conversion — it lets you switch from moles of one substance to moles of another.</p>
 
       <div class="formula-box">
@@ -208,7 +220,7 @@
 
     <!-- 8.3 The Stoichiometry Roadmap -->
     <div class="card">
-      <div class="card-title"><span class="num">8.3</span> The Stoichiometry Roadmap</div>
+      <h2 class="card-title"><span class="num">8.3</span> The Stoichiometry Roadmap</h2>
       <p>Almost every stoichiometry problem follows the same three-step path. Memorize this road map and you can solve any problem.</p>
 
       <div class="road-map">
@@ -235,7 +247,7 @@
 
     <!-- 8.4 Limiting Reactant -->
     <div class="card">
-      <div class="card-title"><span class="num">8.4</span> Limiting Reactant</div>
+      <h2 class="card-title"><span class="num">8.4</span> Limiting Reactant</h2>
       <p>What happens when you do not have exactly the right amounts of each reactant? One ingredient runs out first and stops the reaction. That ingredient is called the <strong>limiting reactant</strong> (or limiting reagent).</p>
 
       <div class="highlight-box">
@@ -258,7 +270,7 @@
 
     <!-- 8.5 Theoretical Yield, Actual Yield, and Percent Yield -->
     <div class="card">
-      <div class="card-title"><span class="num">8.5</span> Theoretical Yield, Actual Yield, and Percent Yield</div>
+      <h2 class="card-title"><span class="num">8.5</span> Theoretical Yield, Actual Yield, and Percent Yield</h2>
 
       <div class="vocab-row">
         <span class="vocab-term">Theoretical yield</span>
@@ -290,11 +302,11 @@
   <!-- ══════════════════════════════════════════════
        TOOLS TAB
   ══════════════════════════════════════════════ -->
-  <div id="tools" class="section">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <!-- Tool 1: Mole Ratio Builder -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool 1</span> Mole Ratio Helper</div>
+      <h2 class="card-title"><span class="num">Tool 1</span> Mole Ratio Helper</h2>
       <p>Enter the coefficients from your balanced equation. The tool will list every mole ratio you can write — ready to use as stoichiometric factors.</p>
 
       <div class="tool-grid">
@@ -335,7 +347,7 @@
 
     <!-- Tool 2: Percent Yield Calculator -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool 2</span> Percent Yield Calculator</div>
+      <h2 class="card-title"><span class="num">Tool 2</span> Percent Yield Calculator</h2>
       <p>Enter your actual yield and theoretical yield (both in the same units — grams, moles, or any unit). The tool calculates your percent yield.</p>
 
       <div class="tool-grid">
@@ -361,11 +373,11 @@
   <!-- ══════════════════════════════════════════════
        EXAMPLES TAB
   ══════════════════════════════════════════════ -->
-  <div id="examples" class="section">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <!-- Ex 1: Grams of Reactant → Grams of Product -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Grams of Reactant → Grams of Product</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Grams of Reactant → Grams of Product</h2>
       <p><strong>Given:</strong> 16.0 g of methane (CH₄) burns in excess oxygen: CH₄ + 2 O₂ → CO₂ + 2 H₂O &nbsp;&nbsp; <strong>Find:</strong> grams of CO₂ produced</p>
 
       <div class="steps">
@@ -436,7 +448,7 @@
 
     <!-- Ex 2: Moles of Reactant → Moles of Product -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Moles of Reactant → Moles of Product</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Moles of Reactant → Moles of Product</h2>
       <p><strong>Given:</strong> 0.500 mol of N₂ reacts with excess H₂: N₂ + 3 H₂ → 2 NH₃ &nbsp;&nbsp; <strong>Find:</strong> moles of NH₃ produced</p>
 
       <div class="steps">
@@ -480,7 +492,7 @@
 
     <!-- Ex 3: Finding the Limiting Reactant -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Finding the Limiting Reactant</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Finding the Limiting Reactant</h2>
       <p><strong>Given:</strong> 5.00 g of H₂ and 24.0 g of O₂ react: 2 H₂ + O₂ → 2 H₂O &nbsp;&nbsp; <strong>Find:</strong> Which is the limiting reactant? How many grams of water form?</p>
 
       <div class="steps">
@@ -559,7 +571,7 @@
 
     <!-- Ex 4: Percent Yield -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Calculating Percent Yield</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Calculating Percent Yield</h2>
       <p><strong>Given:</strong> A student synthesizes aspirin (C₉H₈O₄, MM = 180.16 g/mol). The theoretical yield is 14.4 g. The student collects 11.2 g. <strong>Find:</strong> percent yield.</p>
 
       <div class="steps">

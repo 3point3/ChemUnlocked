@@ -233,7 +233,7 @@ export const ALL_PROBLEMS = [
   {id:'p56', type:'concept', tag:'Le Châtelier', q:'For 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), adding more O₂ will cause:',
     choices:['A forward shift (→), consuming O₂ and making more SO₃','A reverse shift (←), consuming SO₃','No change — only temperature affects K','K to increase'],
     correct:0,
-    solution:'<p>Adding a reactant increases Q's denominator... wait — adding O₂ increases the denominator of Q, making Q < K. The system shifts forward (→) to restore equilibrium.</p>'},
+    solution:'<p>Adding O₂ increases the denominator of Q, making Q &lt; K. The system shifts forward (→) to restore equilibrium by consuming some O₂ and producing more SO₃.</p>'},
 
   {id:'p57', type:'concept', tag:'K Relationships', q:'If a reaction is written in reverse, the new K (K_rev) is related to the original K by:',
     choices:['K_rev = K²','K_rev = 1/K','K_rev = −K','K_rev = K/2'],

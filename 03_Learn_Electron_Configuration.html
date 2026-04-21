@@ -225,10 +225,22 @@
     <p class="subtitle">Where do electrons live inside an atom — and why does it matter? This unit builds from the basics of energy levels all the way to writing configurations, drawing orbital diagrams, and understanding why light is the key to everything electrons do.</p>
   </header>
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 03 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 03 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
   
 
@@ -237,7 +249,7 @@
 
     <!-- NEW: HI-LO card 3.1 -->
     <div class="card">
-      <div class="card-title"><span class="num">3.1</span> What Is Electron Configuration?</div>
+      <h2 class="card-title"><span class="num">3.1</span> What Is Electron Configuration?</h2>
       <p>Every atom has electrons. Those electrons are not just floating around randomly — they live in specific spots based on their energy. The <strong>electron configuration</strong> is a shorthand code that tells you exactly where every electron lives inside an atom.</p>
       <p>Think of it like a school building. The building has floors (energy levels), and each floor has different rooms (sublevels). Electrons fill the lowest floors first before moving up.</p>
       <div class="formula-box">
@@ -253,7 +265,7 @@
 
     <!-- NEW: HI-LO card 3.2 -->
     <div class="card">
-      <div class="card-title"><span class="num">3.2</span> Energy Levels and Sublevels</div>
+      <h2 class="card-title"><span class="num">3.2</span> Energy Levels and Sublevels</h2>
       <p>The <strong>principal quantum number</strong> (written as <em>n</em>) names the main energy level, or shell. The larger n is, the higher the energy and the farther the electrons are from the nucleus.</p>
       <p>Each energy level contains a set of <strong>sublevels</strong>: s, p, d, and f. The number of sublevels in a shell equals n. So shell 1 has only one sublevel (s), shell 2 has two (s and p), and so on.</p>
       <table>
@@ -276,7 +288,7 @@
 
     <!-- EXISTING 3.1 → renumbered 3.3: Light as Waves -->
     <div class="card">
-      <div class="card-title"><span class="num">3.3</span> Light as Waves and Packets of Energy</div>
+      <h2 class="card-title"><span class="num">3.3</span> Light as Waves and Packets of Energy</h2>
       <p>Light is how we know what electrons are doing inside atoms. Understanding wavelength, frequency, and energy is the foundation of this entire unit.</p>
       <p>Light travels as a wave and also comes in discrete packets called <strong>photons</strong>. Two properties describe any light wave:</p>
       <ul>
@@ -314,7 +326,7 @@
 
     <!-- EXISTING 3.2 → renumbered 3.4: Bohr Model -->
     <div class="card">
-      <div class="card-title"><span class="num">3.4</span> Atomic Emission Spectra and the Bohr Model</div>
+      <h2 class="card-title"><span class="num">3.4</span> Atomic Emission Spectra and the Bohr Model</h2>
       <p>When a gas is heated or electrically excited, its atoms absorb energy and electrons jump to <strong>higher energy levels</strong> (excited states). When those electrons fall back to lower levels, they release that energy as light — but only at specific wavelengths. This produces a <strong>line emission spectrum</strong>, not a continuous rainbow.</p>
       <p>Niels Bohr proposed that electrons orbit the nucleus only at specific fixed distances (energy levels, n = 1, 2, 3…). The energy of light emitted equals the difference in energy between the two levels:</p>
 
@@ -347,7 +359,7 @@
 
     <!-- EXISTING 3.3 → renumbered 3.5: Sublevel Capacity -->
     <div class="card">
-      <div class="card-title"><span class="num">3.5</span> How Many Electrons Fit in Each Shell?</div>
+      <h2 class="card-title"><span class="num">3.5</span> How Many Electrons Fit in Each Shell?</h2>
       <p>The total number of electrons that fit in each principal shell follows from adding the sublevels together. This is where 3.1 and 3.2 pay off:</p>
       <ul>
         <li>n = 1: only s → 2 electrons</li>
@@ -369,7 +381,7 @@
 
     <!-- EXISTING 3.4 → renumbered 3.6: Three Rules -->
     <div class="card">
-      <div class="card-title"><span class="num">3.6</span> The Three Rules for Filling Electrons</div>
+      <h2 class="card-title"><span class="num">3.6</span> The Three Rules for Filling Electrons</h2>
 
       <div class="steps">
         <div class="step">
@@ -425,7 +437,7 @@
 
     <!-- EXISTING 3.5 → renumbered 3.7: Writing Configurations -->
     <div class="card">
-      <div class="card-title"><span class="num">3.7</span> Writing Electron Configurations</div>
+      <h2 class="card-title"><span class="num">3.7</span> Writing Electron Configurations</h2>
       <p>An electron configuration lists each sublevel in Aufbau order followed by a superscript showing the number of electrons in that sublevel.</p>
 
       <table>
@@ -455,7 +467,7 @@
 
     <!-- EXISTING 3.6 → renumbered 3.8: Periodic Table Map -->
     <div class="card">
-      <div class="card-title"><span class="num">3.8</span> The Periodic Table as an Electron Configuration Map</div>
+      <h2 class="card-title"><span class="num">3.8</span> The Periodic Table as an Electron Configuration Map</h2>
       <p>The periodic table is organized by the sublevel being filled. Each block corresponds directly to a sublevel type:</p>
 
       <div class="pt-legend">
@@ -490,7 +502,7 @@
   <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title">Electron Configuration Builder</div>
+      <h2 class="card-title">Electron Configuration Builder</h2>
       <p>Select any element (Z = 1 to 118) to instantly see its full electron configuration, noble-gas shorthand, orbital box diagram, and number of valence electrons. The tool applies Aufbau, Pauli, and Hund's rules automatically — including the Cr and Cu exceptions.</p>
 
       <div class="tool-panel">
@@ -526,7 +538,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Wavelength ↔ Frequency ↔ Energy Calculator</div>
+      <h2 class="card-title">Wavelength ↔ Frequency ↔ Energy Calculator</h2>
       <p>Enter any one of the three quantities — wavelength (in nm), frequency (in Hz), or photon energy (in J) — and the calculator will instantly compute the other two using c = λν and E = hν.</p>
 
       <div class="tool-panel">
@@ -567,7 +579,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Hydrogen Energy Level Calculator</div>
+      <h2 class="card-title">Hydrogen Energy Level Calculator</h2>
       <p>Calculate the energy emitted or absorbed when an electron transitions between two levels in the hydrogen atom. A negative ΔE means light is emitted (electron falls down); a positive ΔE means light is absorbed (electron jumps up).</p>
 
       <div class="tool-panel">
@@ -608,7 +620,7 @@
   <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Wavelength ↔ Frequency ↔ Energy</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Wavelength ↔ Frequency ↔ Energy</h2>
       <p><strong>Given:</strong> A hydrogen atom emits blue-green light with a wavelength of 486.1 nm (the Hβ line, Balmer series). <strong>Find:</strong> (a) frequency and (b) energy of this photon.</p>
 
       <div class="steps">
@@ -648,7 +660,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Writing Full and Noble-Gas Configurations</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Writing Full and Noble-Gas Configurations</h2>
       <p><strong>Given:</strong> Sulfur (Z = 16) and Iron (Z = 26). <strong>Find:</strong> Full configuration, noble-gas shorthand, and orbital box for the outermost unfilled sublevel of each.</p>
 
       <div class="steps">
@@ -694,7 +706,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Hydrogen Energy Levels and Spectral Lines</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Hydrogen Energy Levels and Spectral Lines</h2>
       <p><strong>Given:</strong> An electron in hydrogen falls from n = 4 to n = 2. <strong>Find:</strong> (a) Energy and wavelength of the photon emitted. (b) Which series? Is it visible?</p>
 
       <div class="steps">
@@ -729,7 +741,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> The Chromium Exception</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> The Chromium Exception</h2>
       <p><strong>Given:</strong> Chromium (Z = 24) does not follow the Aufbau prediction. <strong>Find:</strong> What Aufbau predicts, the actual configuration, and why the exception occurs.</p>
 
       <div class="steps">
@@ -1075,7 +1087,7 @@ function calcLight(source) {
     `λ = <strong>${wl_nm.toFixed(2)} nm</strong> &nbsp;|&nbsp; ` +
     `ν = <strong>${freq.toExponential(3)} Hz</strong> &nbsp;|&nbsp; ` +
     `E = <strong>${energy.toExponential(3)} J/photon</strong><br>` +
-    `<span style="font-size:0.82rem; color:let(--dim); margin-top:0.3rem; display:block;">Region: ${region}${colorHint}</span>`;
+    `<span style="font-size:0.82rem; color:var(--dim); margin-top:0.3rem; display:block;">Region: ${region}${colorHint}</span>`;
 }
 
 function loadSeries() {

@@ -42,10 +42,22 @@
     <p class="subtitle">Everything around you is made of matter. Learn how to classify matter into elements, compounds, and mixtures — and distinguish between physical and chemical changes and properties.</p>
   </header>
 
-  <div class="nav-tabs">
-    <button id="concepts-tab" class="tab-btn active" onclick="showTab('concepts', this)" data-tab="concepts" aria-selected="true" tabindex="0" role="tab">◈ Concepts</button>
-    <button id="tools-tab" class="tab-btn" onclick="showTab('tools', this)" data-tab="tools" aria-selected="false" tabindex="0" role="tab">⇄ Tools</button>
-    <button id="examples-tab" class="tab-btn" onclick="showTab('examples', this)" data-tab="examples" aria-selected="false" tabindex="0" role="tab">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 01 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
   <script>
   // Accessibility: Keyboard navigation for tab buttons
@@ -70,11 +82,11 @@
   <!-- ============================================================ -->
   <!-- TAB: CONCEPTS -->
   <!-- ============================================================ -->
-  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="concepts-tab">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <!-- Card 1.1 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.1</span> What Is Matter?</div>
+      <h2 class="card-title"><span class="num">1.1</span> What Is Matter?</h2>
       <p>Matter is anything that has <strong>mass</strong> and takes up <strong>space (volume)</strong>. All matter is made of tiny particles called <strong>atoms</strong>. Everything you can see, touch, or weigh is matter — chairs, air, water, even you.</p>
       <p>Matter can be organized using a classification tree. At the top level, matter is either a <strong>pure substance</strong> or a <strong>mixture</strong>.</p>
       <div class="formula-box">
@@ -166,7 +178,7 @@
 
     <!-- Card 1.2 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.2</span> Pure Substances — Elements &amp; Compounds</div>
+      <h2 class="card-title"><span class="num">1.2</span> Pure Substances — Elements &amp; Compounds</h2>
       <p>A <strong>pure substance</strong> has only one type of particle. Every sample has exactly the same composition and properties, including a definite melting point and boiling point.</p>
 
       <div class="formula-box">
@@ -189,7 +201,7 @@
 
     <!-- Card 1.3 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.3</span> Reading Chemical Formulas</div>
+      <h2 class="card-title"><span class="num">1.3</span> Reading Chemical Formulas</h2>
       <p>Chemists use formulas to show what a substance is made of. Follow these rules:</p>
       <div class="steps">
         <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Capital letters start each element symbol.</strong> Symbols are 1 or 2 letters. The first is always capitalized: Na (sodium), Fe (iron), C (carbon).</p></div></div>
@@ -205,7 +217,7 @@
 
     <!-- Card 1.4 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.4</span> Mixtures</div>
+      <h2 class="card-title"><span class="num">1.4</span> Mixtures</h2>
       <p>A <strong>mixture</strong> contains two or more substances physically combined — not chemically bonded. Each substance keeps its own properties and can be separated by physical methods. The ratio of components can vary.</p>
 
       <div class="formula-box">
@@ -238,7 +250,7 @@
 
     <!-- Card 1.5 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.5</span> Quick Classification Reference</div>
+      <h2 class="card-title"><span class="num">1.5</span> Quick Classification Reference</h2>
       <table>
         <thead><tr><th>Substance</th><th>Formula</th><th>Classification</th><th>Why?</th></tr></thead>
         <tbody>
@@ -257,7 +269,7 @@
 
     <!-- Card 1.6 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.6</span> Physical vs. Chemical Properties</div>
+      <h2 class="card-title"><span class="num">1.6</span> Physical vs. Chemical Properties</h2>
       <p>Every substance has properties — characteristics that help identify it. Properties fall into two categories:</p>
 
       <div class="formula-box">
@@ -280,7 +292,7 @@
 
     <!-- Card 1.7 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.7</span> Physical vs. Chemical Changes</div>
+      <h2 class="card-title"><span class="num">1.7</span> Physical vs. Chemical Changes</h2>
 
       <div class="formula-box">
         <span class="label">Physical Change</span>
@@ -314,7 +326,7 @@
 
     <!-- Card 1.8 -->
     <div class="card">
-      <div class="card-title"><span class="num">1.8</span> Separating Mixtures</div>
+      <h2 class="card-title"><span class="num">1.8</span> Separating Mixtures</h2>
       <p>Because mixtures are physically combined, they can be separated by <strong>physical methods</strong>. The method depends on the properties of the substances. Compounds cannot be separated physically — they require a chemical reaction.</p>
       <table>
         <thead><tr><th>Method</th><th>How It Works</th><th>Best For</th></tr></thead>
@@ -338,10 +350,10 @@
   <!-- ============================================================ -->
   <!-- TAB: TOOLS -->
   <!-- ============================================================ -->
-  <div id="tools" class="section" role="tabpanel" aria-labelledby="tools-tab" aria-hidden="true">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">2.1</span> How to Read Particle Diagrams</div>
+      <h2 class="card-title"><span class="num">2.1</span> How to Read Particle Diagrams</h2>
       <p>In chemistry, matter is drawn as small circles to represent atoms. The color indicates the atom type; touching circles indicate bonding. Once you know the rules, you can classify any diagram.</p>
       <div class="steps">
         <div class="step"><div class="step-num"></div><div class="step-content"><p><strong>Count how many types of particles you see.</strong> Look at every particle. Are they all the same shape and color, or are there different kinds?</p></div></div>
@@ -357,7 +369,7 @@
 
     <!-- Elements -->
     <div class="card">
-      <div class="card-title"><span class="num">2.2</span> Pure Substances: Elements</div>
+      <h2 class="card-title"><span class="num">2.2</span> Pure Substances: Elements</h2>
       <p>An element contains <strong>only one type of atom</strong>. All particles look the same. The atom may appear alone (monatomic) or bonded to an identical atom (diatomic).</p>
 
       <svg width="100%" viewBox="0 0 420 120" role="img">
@@ -402,7 +414,7 @@
 
     <!-- Compounds -->
     <div class="card">
-      <div class="card-title"><span class="num">2.3</span> Pure Substances: Compounds</div>
+      <h2 class="card-title"><span class="num">2.3</span> Pure Substances: Compounds</h2>
       <p>A compound contains <strong>two or more types of atoms chemically bonded</strong> together. Every molecule has the same ratio of atoms.</p>
 
       <svg width="100%" viewBox="0 0 420 120" role="img">
@@ -454,7 +466,7 @@
 
     <!-- Mixtures -->
     <div class="card">
-      <div class="card-title"><span class="num">2.4</span> Homogeneous vs. Heterogeneous Mixtures</div>
+      <h2 class="card-title"><span class="num">2.4</span> Homogeneous vs. Heterogeneous Mixtures</h2>
       <p>Both mixture types contain different particles that are <strong>not chemically bonded</strong>. The difference is how they are distributed.</p>
 
       <svg width="100%" viewBox="0 0 280 120" role="img">
@@ -494,7 +506,7 @@
 
     <!-- Side-by-side comparison -->
     <div class="card">
-      <div class="card-title"><span class="num">2.5</span> Side-by-Side Comparison</div>
+      <h2 class="card-title"><span class="num">2.5</span> Side-by-Side Comparison</h2>
       <p>Study all four types together. <strong>Color</strong> tells you atom type; <strong>touching</strong> tells you bonding; <strong>distribution</strong> tells you mixture type.</p>
 
       <svg width="100%" viewBox="0 0 560 120" role="img">
@@ -561,7 +573,7 @@
 
     <!-- Density Calculator -->
     <div class="card">
-      <div class="card-title"><span class="num">2.6</span> Density Calculator</div>
+      <h2 class="card-title"><span class="num">2.6</span> Density Calculator</h2>
       <p>Density is a key <strong>physical property</strong> used to identify pure substances. Use this calculator to solve for any variable in D = m ÷ V.</p>
       <div class="formula-box">
         <span class="label">Formula</span>
@@ -592,10 +604,10 @@
   <!-- ============================================================ -->
   <!-- TAB: EXAMPLES -->
   <!-- ============================================================ -->
-  <div id="examples" class="section" role="tabpanel" aria-labelledby="examples-tab" aria-hidden="true">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Classifying Three Beakers</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Classifying Three Beakers</h2>
       <p><strong>Given:</strong> Three unlabeled beakers in a lab. <strong>Find:</strong> Classify each and explain the reasoning.</p>
       <ul>
         <li>Beaker A: Clear, uniform liquid. Boils at exactly 100°C.</li>
@@ -623,7 +635,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Identifying Physical vs. Chemical Changes</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Identifying Physical vs. Chemical Changes</h2>
       <p><strong>Given:</strong> Four scenarios. <strong>Find:</strong> Identify the type of change and the key evidence.</p>
       <div class="steps">
         <div class="step"><div class="step-num"></div><div class="step-content">
@@ -646,7 +658,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Reading a Particle Diagram Step-by-Step</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Reading a Particle Diagram Step-by-Step</h2>
       <p><strong>Given:</strong> A closed container with: three pairs of touching blue circles, two groups of one large black circle bonded to two small red circles, and one lone orange circle. <strong>Find:</strong> Classify the contents.</p>
       <div class="steps">
         <div class="step"><div class="step-num"></div><div class="step-content">
@@ -669,7 +681,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Choosing a Separation Method</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Choosing a Separation Method</h2>
       <p><strong>Given:</strong> Three different mixtures. <strong>Find:</strong> Select the best separation method for each and explain why.</p>
       <div class="steps">
         <div class="step"><div class="step-num"></div><div class="step-content">

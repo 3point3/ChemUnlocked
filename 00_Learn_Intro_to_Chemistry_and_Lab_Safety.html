@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unit 00 — Intro to Chemistry &amp; Lab Safety | ChemUnlocked</title>
 <meta name="description" content="Learn chemistry basics and lab safety with this introductory unit on matter, measuring precision, significant figures, lab equipment, and safe lab procedures.">
-<link rel="canonical" href="https://chemunlocked.com/00_Learn_Intro_to_Chemistry_and_Lab_Safety_copy.html">
+<link rel="canonical" href="https://chemunlocked.com/00_Learn_Intro_to_Chemistry_and_Lab_Safety.html">
 <meta property="og:title" content="Unit 00 — Intro to Chemistry & Lab Safety | ChemUnlocked">
 <meta property="og:description" content="Learn chemistry basics and lab safety with this introductory unit on matter, measuring precision, significant figures, lab equipment, and safe lab procedures.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://chemunlocked.com/00_Learn_Intro_to_Chemistry_and_Lab_Safety_copy.html">
+<meta property="og:url" content="https://chemunlocked.com/00_Learn_Intro_to_Chemistry_and_Lab_Safety.html">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Unit 00 — Intro to Chemistry & Lab Safety | ChemUnlocked">
@@ -42,10 +42,22 @@
   <!-- ════════════════════════════════════
        TAB NAVIGATION
   ════════════════════════════════════ -->
-  <div class="nav-tabs" role="tablist" aria-label="Unit 00 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 00 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
   
   <!-- ════════════════════════════════════
@@ -55,13 +67,13 @@
 
     <!-- 0.1 What Is Chemistry? -->
     <div class="card">
-      <div class="card-title"><span class="num">0.1</span>What Is Chemistry?</div>
+      <h2 class="card-title"><span class="num">0.1</span>What Is Chemistry?</h2>
       <p>Chemistry is the study of <strong>matter</strong> — what it is made of, how it behaves, and how it changes. Because matter makes up everything, chemistry overlaps with every other science.</p>
       <table>
         <thead><tr><th>Branch</th><th>Studies…</th><th>Example careers</th></tr></thead>
         <tbody>
           <tr><td>Organic</td><td>Carbon-containing compounds</td><td>Pharmaceutical chemist, polymer scientist</td></tr>
-          <tr><td>Inorganic</td><td>Compounds not based on C–H bonds</td><td>Materials scientist, catalyst developer</td></tr>
+          <tr><td>Inorganic</td><td>Metals, minerals, salts, coordination compounds, and many non-carbon or non-C–H compounds</td><td>Materials scientist, catalyst developer</td></tr>
           <tr><td>Physical</td><td>Energy changes, kinetics, quantum behavior</td><td>Computational chemist, spectroscopist</td></tr>
           <tr><td>Analytical</td><td>Identifying and quantifying substances</td><td>Forensic chemist, quality-control analyst</td></tr>
           <tr><td>Biochemistry</td><td>Chemistry of living systems</td><td>Biochemist, nutritionist, pharmacologist</td></tr>
@@ -75,35 +87,35 @@
 
     <!-- 0.2 The Scientific Method -->
     <div class="card">
-      <div class="card-title"><span class="num">0.2</span>The Scientific Method</div>
+      <h2 class="card-title"><span class="num">0.2</span>The Scientific Method</h2>
       <p>The scientific method is a systematic process for investigating the natural world. It is <em>iterative</em> — results often send scientists back to an earlier step. Real science is rarely a straight line.</p>
 
       <div class="sci-method">
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">1</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Observation / Question</div>
+            <h3 class="sci-step-title">Observation / Question</h3>
             <p class="sci-step-desc">Notice something interesting in the natural world. Formulate a clear, testable question. <em>Example: "Does adding fertilizer increase plant height?"</em></p>
           </div>
         </div>
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">2</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Background Research</div>
+            <h3 class="sci-step-title">Background Research</h3>
             <p class="sci-step-desc">Review existing literature. Understanding prior work prevents reinventing the wheel and informs experimental design.</p>
           </div>
         </div>
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">3</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Hypothesis</div>
+            <h3 class="sci-step-title">Hypothesis</h3>
             <p class="sci-step-desc">Write a testable, falsifiable prediction in <em>if–then</em> form. <em>Example: "If plants receive 5 g of fertilizer per week, then they will grow taller than unfertilized plants."</em></p>
           </div>
         </div>
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">4</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Experiment</div>
+            <h3 class="sci-step-title">Experiment</h3>
             <p class="sci-step-desc">Design a controlled experiment. Change only the <strong>independent variable</strong>; measure the <strong>dependent variable</strong>; hold all other conditions (<strong>constants</strong>) the same. Always include a <strong>control group</strong> for comparison.</p>
             <table>
               <thead><tr><th>Variable type</th><th>Definition</th><th>In the example</th></tr></thead>
@@ -119,21 +131,21 @@
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">5</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Data Collection &amp; Analysis</div>
+            <h3 class="sci-step-title">Data Collection &amp; Analysis</h3>
             <p class="sci-step-desc">Record quantitative (numerical) and qualitative (descriptive) observations. Organize in data tables. Apply statistical analysis to determine if differences are meaningful.</p>
           </div>
         </div>
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">6</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Conclusion</div>
+            <h3 class="sci-step-title">Conclusion</h3>
             <p class="sci-step-desc">Compare results to your hypothesis. State whether your results support or refute it — and <em>why</em>. A rejected hypothesis is still a good result; it eliminates a wrong answer.</p>
           </div>
         </div>
         <div class="sci-step">
           <div class="sci-step-connector"><div class="sci-num">7</div><div class="sci-line"></div></div>
           <div class="sci-step-body">
-            <div class="sci-step-title">Communication &amp; Peer Review</div>
+            <h3 class="sci-step-title">Communication &amp; Peer Review</h3>
             <p class="sci-step-desc">Science is communicated publicly so others can replicate, critique, and build on the work. Peer review filters errors before results are widely accepted.</p>
           </div>
         </div>
@@ -147,7 +159,7 @@
 
     <!-- 0.3 Lab Safety -->
     <div class="card">
-      <div class="card-title"><span class="num">0.3</span>Lab Safety Rules</div>
+      <h2 class="card-title"><span class="num">0.3</span>Lab Safety Rules</h2>
       <p>Laboratories are safe when everyone follows established rules consistently. The most common lab accidents involve improper use of equipment, missing PPE, and failing to read hazard labels.</p>
 
       <p class="margin-top-09">Personal Protective Equipment (PPE)</p>
@@ -193,7 +205,7 @@
 
     <!-- 0.4 Common Lab Equipment -->
     <div class="card">
-      <div class="card-title"><span class="num">0.4</span>Common Laboratory Equipment</div>
+      <h2 class="card-title"><span class="num">0.4</span>Common Laboratory Equipment</h2>
       <p>Knowing the correct equipment prevents measurement errors and accidents. Always choose the <em>smallest</em> appropriate container for your measurement — larger vessels sacrifice precision.</p>
       <table>
         <thead><tr><th>Equipment</th><th>Purpose</th><th>Key notes</th></tr></thead>
@@ -216,10 +228,10 @@
 
     <!-- 0.5 SI Units & Metric Prefixes -->
     <div class="card">
-      <div class="card-title"><span class="num">0.5</span>Measurement &amp; SI Units</div>
+      <h2 class="card-title"><span class="num">0.5</span>Measurement &amp; SI Units</h2>
       <p>Science uses the <strong>International System of Units (SI)</strong> to ensure measurements are universal and reproducible. Every measurement has a <em>number</em> and a <em>unit</em>. Omitting the unit makes the number meaningless.</p>
 
-      <p class="card-section-label">>SI Base Units</p>
+      <p class="card-section-label">SI Base Units</p>
       <table class="si-table">
         <thead><tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr></thead>
         <tbody>
@@ -233,7 +245,7 @@
         </tbody>
       </table>
 
-      <p class="card-section-label">>Common Metric Prefixes</p>
+      <p class="card-section-label">Common Metric Prefixes</p>
       <table class="si-table">
         <thead><tr><th>Prefix</th><th>Symbol</th><th>Multiplier</th><th>Example</th></tr></thead>
         <tbody>
@@ -266,7 +278,7 @@
 
     <!-- 0.6 Significant Figures -->
     <div class="card">
-      <div class="card-title"><span class="num">0.6</span>Significant Figures</div>
+      <h2 class="card-title"><span class="num">0.6</span>Significant Figures</h2>
       <p>Significant figures (sig figs) communicate the <strong>precision</strong> of a measurement. The last digit of any measurement is always estimated — it reflects the limit of the instrument's readability.</p>
 
       <p class="margin-top-09">Rules for Counting Sig Figs</p>
@@ -282,7 +294,7 @@
         </tbody>
       </table>
 
-      <p class="card-section-label">>Sig Figs in Calculations</p>
+      <p class="card-section-label">Sig Figs in Calculations</p>
       <ul>
         <li><strong>Multiplication/Division:</strong> Answer has the same number of sig figs as the measurement with the <em>fewest</em> sig figs.</li>
         <li><strong>Addition/Subtraction:</strong> Answer is rounded to the same decimal place as the measurement with the fewest decimal places.</li>
@@ -303,7 +315,7 @@
 
     <!-- 0.7 Graduated Cylinder -->
     <div class="card">
-      <div class="card-title"><span class="num">0.7</span>Reading a Graduated Cylinder</div>
+      <h2 class="card-title"><span class="num">0.7</span>Reading a Graduated Cylinder</h2>
       <p>A graduated cylinder measures liquid volume. Liquids in glass form a curved surface called the <strong>meniscus</strong>. For most liquids (water, aqueous solutions), the meniscus curves <em>downward</em> (concave). Always read from the <strong>bottom</strong> of the meniscus at eye level. Reading from above or below introduces parallax error.</p>
 
       <div class="equipment-row">
@@ -433,7 +445,7 @@
 
     <!-- 0.8 Using a Balance -->
     <div class="card">
-      <div class="card-title"><span class="num">0.8</span>Using an Electronic Balance</div>
+      <h2 class="card-title"><span class="num">0.8</span>Using an Electronic Balance</h2>
       <p>An electronic balance measures <strong>mass</strong> in grams. The key feature is the <strong>TARE</strong> function, which zeroes out the mass of a container so you measure only the sample.</p>
 
       <div class="equipment-row">
@@ -634,7 +646,7 @@
 
     <!-- Example 1: Scientific Method -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span>Applying the Scientific Method</div>
+      <h2 class="card-title"><span class="num">Ex 1</span>Applying the Scientific Method</h2>
       <p><strong>Scenario:</strong> A student notices that plants near a south-facing window grow taller than plants near a north-facing window. She wants to investigate whether light intensity causes the difference.</p>
       <div class="steps">
         <div class="step">
@@ -677,7 +689,7 @@
 
     <!-- Example 2: Significant Figures -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span>Significant Figures in a Calculation</div>
+      <h2 class="card-title"><span class="num">Ex 2</span>Significant Figures in a Calculation</h2>
       <p><strong>Problem:</strong> A student measures the mass of a sample as 3.21 g and its volume as 1.5 mL. Calculate the density.</p>
       <div class="steps">
         <div class="step">
@@ -714,7 +726,7 @@
 
     <!-- Example 3: Reading a Graduated Cylinder -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span>Reading a Graduated Cylinder</div>
+      <h2 class="card-title"><span class="num">Ex 3</span>Reading a Graduated Cylinder</h2>
       <p><strong>Problem:</strong> A 50 mL graduated cylinder has major markings every 10 mL and minor markings every 1 mL. The bottom of the meniscus sits halfway between the 27 mL and 28 mL lines. What is the volume?</p>
       <div class="steps">
         <div class="step">
@@ -744,7 +756,7 @@
 
     <!-- Example 4: Balance / TARE -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span>Using the TARE Function</div>
+      <h2 class="card-title"><span class="num">Ex 4</span>Using the TARE Function</h2>
       <p><strong>Problem:</strong> A beaker has a mass of 87.45 g. A student places it on the balance, presses TARE, then adds salt until the display reads 14.230 g. What is the mass of the salt? What would the balance show if the student forgot to tare?</p>
       <div class="steps">
         <div class="step">

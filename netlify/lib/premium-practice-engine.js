@@ -25,11 +25,11 @@ export async function initPremiumPractice({ unit, containerId = 'problemContaine
 
   let problems;
   try {
-    const email = localStorage.getItem('cu_email') || '';
+    const token = localStorage.getItem('cu_token') || '';
     const res = await fetch(
       `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&count=${encodeURIComponent(count)}`,
       {
-        headers: email ? { 'x-customer-email': email } : {}
+        headers: token ? { 'x-access-token': token } : {}
       }
     );
     if (!res.ok) {

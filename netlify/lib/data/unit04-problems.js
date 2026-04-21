@@ -538,7 +538,7 @@ export const ALL_PROBLEMS = [
     q:'Classify the Ba–O bond. Ba EN = 0.89, O EN = 3.44. (A) Calculate ΔEN. (B) Classify as ionic, polar covalent, or nonpolar covalent. Enter ΔEN.',
     answer:2.55, tolerance:0.05, unit:'',
     solution:'<p><strong>A:</strong> ΔEN = |0.89 − 3.44| = <strong>2.55</strong>.<br><strong>B:</strong> 2.55 &gt; 1.7 → <strong>Ionic</strong>. BaO is barium oxide — a white ionic solid. Ba is a Group 2 metal (Period 6, EN = 0.89) and O is a reactive nonmetal (Period 2, EN = 3.44). Metal + nonmetal with large EN difference = ionic compound.</p>'
-  }
+  },
 
 
   /* ══════════════════════════════════════════════════

@@ -44,17 +44,29 @@
 
 
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 06 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 06 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
 
-  <div id="concepts" class="section active">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <div class="card">
-      <div class="card-title"><span class="num">6.1</span> What Is a Mole?</div>
+      <h2 class="card-title"><span class="num">6.1</span> What Is a Mole?</h2>
       <p style="color:var(--accent2); font-size:0.9rem; margin-top:0.35rem;">
         This section explains what a mole is, why chemists use it, and how Avogadro’s number connects particles to measurable amounts of matter.
       </p>
@@ -93,7 +105,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">6.2</span> Molar Mass</div>
+      <h2 class="card-title"><span class="num">6.2</span> Molar Mass</h2>
       <p>The <strong>molar mass</strong> (symbol: M) of a substance is the mass of exactly one mole of that substance, expressed in units of g/mol. For a single element, the molar mass is simply its atomic mass from the periodic table (in g/mol instead of amu). For a compound, you calculate the molar mass by multiplying each element's atomic mass by the number of times that element appears in the formula, then adding all the results together.</p>
 
       <div class="formula-box">
@@ -117,7 +129,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">6.3</span> The Mole Map</div>
+      <h2 class="card-title"><span class="num">6.3</span> The Mole Map</h2>
       <p>Every mole conversion you will ever do flows through the central unit of <strong>moles</strong>. You cannot go directly from a mass in grams to a number of particles — you must convert to moles first, and then to particles. Think of moles as the mandatory "hub" that connects all three forms of measurement. Master these three two-way pathways and you can solve any mole problem:</p>
 
       <div class="mole-map">
@@ -156,7 +168,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">6.4</span> Percent Composition</div>
+      <h2 class="card-title"><span class="num">6.4</span> Percent Composition</h2>
       <p>Percent composition by mass tells you what fraction of a compound's total mass comes from each element. It is expressed as a percentage. You can calculate it from a known formula using the molar mass, or you can determine it experimentally from laboratory data (such as combustion analysis). Either way, the formula is the same:</p>
 
       <div class="formula-box">
@@ -176,7 +188,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">6.5</span> Empirical &amp; Molecular Formulas</div>
+      <h2 class="card-title"><span class="num">6.5</span> Empirical &amp; Molecular Formulas</h2>
       <p>The <strong>empirical formula</strong> of a compound gives the simplest possible whole-number ratio of the atoms of each element present. For example, the empirical formula CH₂O means that for every 1 carbon atom there are 2 hydrogen atoms and 1 oxygen atom — but it does not tell you how many total atoms are in one actual molecule.</p>
       <p>The <strong>molecular formula</strong> gives the actual number of each type of atom in one molecule of the compound. The molecular formula is always a whole-number multiple of the empirical formula. That multiplier is called <strong>n</strong>.</p>
 
@@ -232,9 +244,9 @@
 
   </div><!-- end concepts -->
 
-  <div id="tools" class="section">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
     <div class="card">
-      <div class="card-title">Interactive Mole Converter</div>
+      <h2 class="card-title">Interactive Mole Converter</h2>
       <p>Use this tool to practice mole conversions in real time. Select the substance you are working with (or enter a custom molar mass), choose what type of quantity you are starting from, enter your value, and the calculator will immediately show you the equivalent mass, moles, and number of particles. If the substance is a gas at STP, it will also show the gas volume and write out the dimensional analysis setup so you can see exactly how the conversion works step by step.</p>
 
       <div class="converter">
@@ -322,7 +334,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Percent Composition Calculator</div>
+      <h2 class="card-title">Percent Composition Calculator</h2>
       <p>Type any chemical formula into the box below and the calculator will determine the molar mass of the entire compound, then show you the mass contribution and percent by mass of every element. This is useful for checking your hand calculations or quickly exploring how changing a formula affects composition. The calculator handles parentheses in formulas such as Ca₃(PO₄)₂.</p>
 
       <div class="converter">
@@ -337,10 +349,10 @@
     </div>
   </div><!-- end tools -->
 
-  <div id="examples" class="section">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title">Example 1 · Mole–Mass–Particle Chain</div>
+      <h2 class="card-title">Example 1 · Mole–Mass–Particle Chain</h2>
       <p><strong>Problem:</strong> How many molecules of glucose (C₆H₁₂O₆) are contained in a 25.0 g sample? And what is the total mass of only the oxygen atoms in that same sample?</p>
       <p style="color:var(--accent2); font-size:0.85rem; margin-bottom:0.5rem;">Road map: mass → moles → molecules (two conversion factors chained). Then a separate factor label setup for the oxygen mass question.</p>
 
@@ -379,7 +391,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Example 2 · Empirical Formula from Combustion Analysis</div>
+      <h2 class="card-title">Example 2 · Empirical Formula from Combustion Analysis</h2>
       <p><strong>Problem:</strong> A 1.000 g organic compound containing only C, H, and O is burned completely, producing 1.466 g CO₂ and 0.600 g H₂O. The compound's molar mass is ~88 g/mol. Find the molecular formula.</p>
       <p style="color:var(--accent2); font-size:0.85rem; margin-bottom:0.5rem;">Key idea: all C ends up in CO₂; all H ends up in H₂O. Use factor label chains to convert each product's mass to moles of the element. Find O by mass subtraction.</p>
 
@@ -433,7 +445,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Example 3 · Particles → Moles → Volume at STP</div>
+      <h2 class="card-title">Example 3 · Particles → Moles → Volume at STP</h2>
       <p><strong>Problem:</strong> A sample of CO₂ gas contains 3.50 × 10²⁴ molecules. What volume does this sample occupy at STP?</p>
       <p style="color:var(--accent2); font-size:0.85rem; margin-bottom:0.5rem;">Road map: molecules → moles → liters. Must pass through moles — no direct conversion exists.</p>
 
@@ -587,7 +599,7 @@ function recalc() {
     daLines.push(`${moles.toExponential(4)} mol × ${MM} g/mol = ${mass.toFixed(4)} g`);
   } else if (inputType === 'volume') {
     if (!isGas) {
-      resultEl.innerHTML = `<span style="color:let(--text);">${name}</span><br><br>STP volume conversion is only available for gases.`;
+      resultEl.innerHTML = `<span style="color:var(--text);">${name}</span><br><br>STP volume conversion is only available for gases.`;
       daEl.textContent = 'Select a gas to convert liters at STP to moles, mass, and particles.';
       showConverterWarning('STP gas volume does not apply to solids or liquids.');
       return;
@@ -611,15 +623,15 @@ function recalc() {
   }
 
   let html =
-    `<span style="color:let(--text);">${name}</span> &nbsp;|&nbsp; M = ${MM} g/mol<br><br>` +
-    `<span style="color:let(--gold);">Moles:</span> ${moles.toExponential(4)} mol &nbsp;&nbsp; ` +
-    `<span style="color:let(--gold);">Mass:</span> ${mass.toFixed(4)} g &nbsp;&nbsp; ` +
-    `<span style="color:let(--gold);">Particles:</span> ${particles.toExponential(4)}`;
+    `<span style="color:var(--text);">${name}</span> &nbsp;|&nbsp; M = ${MM} g/mol<br><br>` +
+    `<span style="color:var(--gold);">Moles:</span> ${moles.toExponential(4)} mol &nbsp;&nbsp; ` +
+    `<span style="color:var(--gold);">Mass:</span> ${mass.toFixed(4)} g &nbsp;&nbsp; ` +
+    `<span style="color:var(--gold);">Particles:</span> ${particles.toExponential(4)}`;
 
   if (isGas) {
-    html += ` &nbsp;&nbsp; <span style="color:let(--gold);">Vol@STP:</span> ${volume !== null ? volume.toFixed(3) : (moles * MOLAR_VOLUME_STP).toFixed(3)} L`;
+    html += ` &nbsp;&nbsp; <span style="color:var(--gold);">Vol@STP:</span> ${volume !== null ? volume.toFixed(3) : (moles * MOLAR_VOLUME_STP).toFixed(3)} L`;
   } else {
-    html += `<br><span style="color:let(--muted); font-size:0.85rem;">STP gas volume not shown because this substance is not marked as a gas.</span>`;
+    html += `<br><span style="color:var(--muted); font-size:0.85rem;">STP gas volume not shown because this substance is not marked as a gas.</span>`;
   }
 
   resultEl.innerHTML = html;
@@ -700,10 +712,10 @@ function calcComposition() {
       total += mass;
     }
 
-    let html = `<strong style="color:let(--text);">${f}</strong> — Molar mass: <span style="color:let(--gold);">${total.toFixed(3)} g/mol</span><br><br>`;
+    let html = `<strong style="color:var(--text);">${f}</strong> — Molar mass: <span style="color:var(--gold);">${total.toFixed(3)} g/mol</span><br><br>`;
     for (const el in contributions) {
       const pct = (contributions[el].mass / total * 100).toFixed(2);
-      html += `<span style="color:let(--accent2);">${el}</span>: ${contributions[el].count} × ${atomicMasses[el]} = ${contributions[el].mass.toFixed(3)} g/mol → <span style="color:let(--green);">${pct}%</span>&nbsp;&nbsp;&nbsp;`;
+      html += `<span style="color:var(--accent2);">${el}</span>: ${contributions[el].count} × ${atomicMasses[el]} = ${contributions[el].mass.toFixed(3)} g/mol → <span style="color:var(--green);">${pct}%</span>&nbsp;&nbsp;&nbsp;`;
     }
 
     document.getElementById('compResult').innerHTML = html;

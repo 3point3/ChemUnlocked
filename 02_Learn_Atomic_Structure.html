@@ -40,10 +40,22 @@
     <p class="subtitle">Atoms are the fundamental building blocks of all matter. This unit traces how scientists discovered the internal structure of the atom, defines the subatomic particles and how to count them, and introduces isotopes, chemical symbols, and chemical formulas — the notation system chemists use to describe matter at the atomic scale.</p>
   </header>
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 02 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 02 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
   <!-- ══════════════════════════════════════════════
@@ -53,7 +65,7 @@
 
     <!-- 2.1 Dalton's Atomic Theory -->
     <div class="card">
-      <div class="card-title"><span class="num">2.1</span> Dalton's Atomic Theory</div>
+      <h2 class="card-title"><span class="num">2.1</span> Dalton's Atomic Theory</h2>
       <p>In the early 1800s, John Dalton proposed the first modern atomic theory based on experimental evidence. His model made five key claims that still form the foundation of chemistry today:</p>
       <div class="steps">
         <div class="step">
@@ -93,7 +105,7 @@
 
     <!-- 2.2 Subatomic Particles -->
     <div class="card">
-      <div class="card-title"><span class="num">2.2</span> Subatomic Particles</div>
+      <h2 class="card-title"><span class="num">2.2</span> Subatomic Particles</h2>
       <p>Three key experiments in the late 1800s and early 1900s revealed that atoms are not actually indivisible — they contain smaller particles.</p>
       <table>
         <caption>Key experiments that revealed electrons, protons, neutrons, and the nuclear model of the atom.</caption>
@@ -135,7 +147,7 @@
 
     <!-- 2.3 The Nuclear Atom -->
     <div class="card">
-      <div class="card-title"><span class="num">2.3</span> The Nuclear Atom — Protons, Neutrons &amp; Electrons</div>
+      <h2 class="card-title"><span class="num">2.3</span> The Nuclear Atom — Protons, Neutrons &amp; Electrons</h2>
       <p>The modern atom has a tiny, dense nucleus containing protons and neutrons, surrounded by electrons in a much larger region of space. The nucleus diameter is about 1/100,000 the diameter of the whole atom.</p>
       <table>
         <caption>Comparison of the three main subatomic particles with their symbols, charges, masses, and locations.</caption>
@@ -183,7 +195,7 @@
 
     <!-- 2.4 Atomic Number, Mass Number, and Symbols -->
     <div class="card">
-      <div class="card-title"><span class="num">2.4</span> Atomic Number, Mass Number &amp; Nuclear Symbols</div>
+      <h2 class="card-title"><span class="num">2.4</span> Atomic Number, Mass Number &amp; Nuclear Symbols</h2>
       <p>Every element is defined by its <strong>atomic number (Z)</strong> — the number of protons. No two elements share the same Z. The <strong>mass number (A)</strong> is the total count of protons plus neutrons in the nucleus.</p>
       <p>We write nuclear symbols in the form:</p>
       <div class="formula-box">
@@ -200,7 +212,7 @@
 
     <!-- 2.5 Isotopes -->
     <div class="card">
-      <div class="card-title"><span class="num">2.5</span> Isotopes and Average Atomic Mass</div>
+      <h2 class="card-title"><span class="num">2.5</span> Isotopes and Average Atomic Mass</h2>
       <p>Isotopes are atoms of the <strong>same element</strong> (same Z, same number of protons) that differ in their <strong>number of neutrons</strong> and therefore their mass number. Most elements exist as a mixture of isotopes in nature.</p>
       <table>
         <caption>Natural isotopes for hydrogen, carbon, and chlorine with their proton, neutron, and abundance data.</caption>
@@ -272,7 +284,7 @@
 
     <!-- 2.6 Ions -->
     <div class="card">
-      <div class="card-title"><span class="num">2.6</span> Ions — Atoms with a Charge</div>
+      <h2 class="card-title"><span class="num">2.6</span> Ions — Atoms with a Charge</h2>
       <p>A neutral atom has equal numbers of protons and electrons. When electrons are gained or lost, the atom becomes an <strong>ion</strong> — a charged particle.</p>
       <table>
         <caption>How gaining or losing electrons changes a neutral atom into a cation or anion.</caption>
@@ -314,7 +326,7 @@
 
     <!-- 2.7 Chemical Formulas -->
     <div class="card">
-      <div class="card-title"><span class="num">2.7</span> Chemical Formulas</div>
+      <h2 class="card-title"><span class="num">2.7</span> Chemical Formulas</h2>
       <p>Chemical formulas use element symbols and subscripts to represent compounds. There are three main types:</p>
       <table>
         <caption>Different types of chemical formulas and what each one shows for glucose.</caption>
@@ -360,7 +372,7 @@
 
     <!-- 2.8 The Mole Connection -->
     <div class="card">
-      <div class="card-title"><span class="num">2.8</span> Connecting Atomic Mass to the Mole</div>
+      <h2 class="card-title"><span class="num">2.8</span> Connecting Atomic Mass to the Mole</h2>
       <p>One atomic mass unit (amu) is defined as exactly 1/12 the mass of a carbon-12 atom. This tiny unit bridges atomic and laboratory scales through Avogadro's number, the number of particles in one <a href="06_Learn_Chemistry_Moles.html">mole (mol)</a>.</p>
       <div class="formula-box">
         <span class="label">Key Constants</span>
@@ -384,7 +396,7 @@
 
     <!-- Tool 1: Atom Builder -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool 1</span> Atom Builder — Subatomic Particle Counter</div>
+      <h2 class="card-title"><span class="num">Tool 1</span> Atom Builder — Subatomic Particle Counter</h2>
       <p>Enter an element symbol (or atomic number) and mass number to instantly calculate the number of protons, neutrons, electrons, and the ion electron count for any charge.</p>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:0.75rem;">
@@ -410,7 +422,7 @@
 
     <!-- Tool 2: Average Atomic Mass Calculator -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool 2</span> Average Atomic Mass Calculator</div>
+      <h2 class="card-title"><span class="num">Tool 2</span> Average Atomic Mass Calculator</h2>
       <p>Calculate the weighted average atomic mass of an element from up to three isotopes. Enter each isotope's mass (in amu) and its natural abundance as a percentage.</p>
 
       <table id="isotopeTable" style="margin-top:0.75rem;">
@@ -450,7 +462,7 @@
 
     <!-- Tool 3: Formula Atom Counter -->
     <div class="card">
-      <div class="card-title"><span class="num">Tool 3</span> Chemical Formula Atom Counter</div>
+      <h2 class="card-title"><span class="num">Tool 3</span> Chemical Formula Atom Counter</h2>
       <p>Select a common compound to see its molecular and empirical formulas, and a full atom count breakdown.</p>
 
       <select class="prob-input" id="formulaSelect" style="max-width:340px; margin-top:0.5rem;">
@@ -482,7 +494,7 @@
 
     <!-- Ex 1: Protons, Neutrons, Electrons -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Finding Subatomic Particle Counts</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Finding Subatomic Particle Counts</h2>
       <p><strong>Given:</strong> Iron-56 (Fe-56) &nbsp;|&nbsp; <strong>Find:</strong> number of protons, neutrons, and electrons in the neutral atom</p>
       <div class="steps">
         <div class="step">
@@ -522,7 +534,7 @@
 
     <!-- Ex 2: Ion electron count -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Electrons in an Ion</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Electrons in an Ion</h2>
       <p><strong>Given:</strong> Ca²⁺ ion &nbsp;|&nbsp; <strong>Find:</strong> number of electrons</p>
       <div class="steps">
         <div class="step">
@@ -555,7 +567,7 @@
 
     <!-- Ex 3: Average Atomic Mass -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Calculating Average Atomic Mass</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Calculating Average Atomic Mass</h2>
       <p><strong>Given:</strong> Chlorine has two stable isotopes: Cl-35 (mass = 34.969 amu, abundance = 75.77%) and Cl-37 (mass = 36.966 amu, abundance = 24.23%) &nbsp;|&nbsp; <strong>Find:</strong> average atomic mass</p>
       <div class="steps">
         <div class="step">
@@ -591,7 +603,7 @@
 
     <!-- Ex 4: Molecular vs Empirical Formula -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Molecular vs. Empirical Formula</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Molecular vs. Empirical Formula</h2>
       <p><strong>Given:</strong> Glucose, C₆H₁₂O₆ &nbsp;|&nbsp; <strong>Find:</strong> empirical formula and total atom count</p>
       <div class="steps">
         <div class="step">
@@ -628,7 +640,7 @@
 
     <!-- Ex 5: Counting atoms in a formula with parentheses -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 5</span> Counting Atoms with Parentheses</div>
+      <h2 class="card-title"><span class="num">Ex 5</span> Counting Atoms with Parentheses</h2>
       <p><strong>Given:</strong> Ca₃(PO₄)₂ &nbsp;|&nbsp; <strong>Find:</strong> number of each type of atom</p>
       <div class="steps">
         <div class="step">

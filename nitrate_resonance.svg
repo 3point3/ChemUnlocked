@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 260" role="img" aria-label="Nitrate ion resonance structures">
+  <defs>
+    <style>
+      .bond { stroke: #0b6f63; stroke-width: 4.5; stroke-linecap: round; opacity: 0.82; }
+      .thin { stroke-width: 2.4; }
+      .atom { fill: #0b6f63; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 28px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; opacity: 0.92; }
+      .charge { fill: #0b6f63; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 18px; font-weight: 700; text-anchor: middle; opacity: 0.72; }
+      .pair { fill: #0f8a7a; opacity: 0.58; }
+      .bracket { fill: none; stroke: #0b6f63; stroke-width: 2.4; stroke-linecap: round; opacity: 0.34; }
+      .arrow { fill: none; stroke: #0b6f63; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.48; }
+    </style>
+  </defs>
+
+  <g id="structure-1" transform="translate(0 0)">
+    <path class="bracket" d="M20 72 Q20 42 50 32 M20 188 Q20 218 50 228 M244 32 Q274 42 274 72 M244 228 Q274 218 274 188"/>
+    <text class="charge" x="288" y="38">1-</text>
+
+    <text class="atom" x="145" y="130">N</text>
+    <text class="atom" x="92" y="46">O</text>
+    <text class="atom" x="232" y="130">O</text>
+    <text class="atom" x="92" y="214">O</text>
+
+    <line class="bond" x1="132" y1="110" x2="106" y2="68"/>
+    <line class="bond thin" x1="144" y1="104" x2="118" y2="62"/>
+    <line class="bond" x1="164" y1="130" x2="207" y2="130"/>
+    <line class="bond" x1="132" y1="150" x2="106" y2="192"/>
+
+    <g class="pair">
+      <circle cx="72" cy="34" r="3.5"/><circle cx="82" cy="28" r="3.5"/>
+      <circle cx="105" cy="24" r="3.5"/><circle cx="116" cy="30" r="3.5"/>
+      <circle cx="68" cy="55" r="3.5"/><circle cx="68" cy="66" r="3.5"/>
+
+      <circle cx="232" cy="98" r="3.5"/><circle cx="244" cy="98" r="3.5"/>
+      <circle cx="252" cy="126" r="3.5"/><circle cx="252" cy="138" r="3.5"/>
+      <circle cx="232" cy="162" r="3.5"/><circle cx="244" cy="162" r="3.5"/>
+
+      <circle cx="72" cy="202" r="3.5"/><circle cx="82" cy="196" r="3.5"/>
+      <circle cx="105" cy="236" r="3.5"/><circle cx="116" cy="230" r="3.5"/>
+      <circle cx="68" cy="219" r="3.5"/><circle cx="68" cy="230" r="3.5"/>
+    </g>
+  </g>
+
+  <g class="arrow" aria-label="resonance arrow">
+    <path d="M300 122h52 m-39-10-13 10 13 10"/>
+    <path d="M350 138h-52 m39 10 13-10-13-10"/>
+  </g>
+
+  <g id="structure-2" transform="translate(330 0)">
+    <path class="bracket" d="M20 72 Q20 42 50 32 M20 188 Q20 218 50 228 M244 32 Q274 42 274 72 M244 228 Q274 218 274 188"/>
+    <text class="charge" x="288" y="38">1-</text>
+
+    <text class="atom" x="145" y="130">N</text>
+    <text class="atom" x="92" y="46">O</text>
+    <text class="atom" x="232" y="130">O</text>
+    <text class="atom" x="92" y="214">O</text>
+
+    <line class="bond" x1="132" y1="110" x2="106" y2="68"/>
+    <line class="bond" x1="164" y1="130" x2="207" y2="130"/>
+    <line class="bond thin" x1="164" y1="142" x2="207" y2="142"/>
+    <line class="bond" x1="132" y1="150" x2="106" y2="192"/>
+
+    <g class="pair">
+      <circle cx="72" cy="34" r="3.5"/><circle cx="82" cy="28" r="3.5"/>
+      <circle cx="105" cy="24" r="3.5"/><circle cx="116" cy="30" r="3.5"/>
+      <circle cx="68" cy="55" r="3.5"/><circle cx="68" cy="66" r="3.5"/>
+
+      <circle cx="232" cy="98" r="3.5"/><circle cx="244" cy="98" r="3.5"/>
+      <circle cx="252" cy="126" r="3.5"/><circle cx="252" cy="138" r="3.5"/>
+
+      <circle cx="72" cy="202" r="3.5"/><circle cx="82" cy="196" r="3.5"/>
+      <circle cx="105" cy="236" r="3.5"/><circle cx="116" cy="230" r="3.5"/>
+      <circle cx="68" cy="219" r="3.5"/><circle cx="68" cy="230" r="3.5"/>
+    </g>
+  </g>
+
+  <g class="arrow" aria-label="resonance arrow">
+    <path d="M630 122h52 m-39-10-13 10 13 10"/>
+    <path d="M680 138h-52 m39 10 13-10-13-10"/>
+  </g>
+
+  <g id="structure-3" transform="translate(660 0)">
+    <path class="bracket" d="M20 72 Q20 42 50 32 M20 188 Q20 218 50 228 M244 32 Q274 42 274 72 M244 228 Q274 218 274 188"/>
+    <text class="charge" x="288" y="38">1-</text>
+
+    <text class="atom" x="145" y="130">N</text>
+    <text class="atom" x="92" y="46">O</text>
+    <text class="atom" x="232" y="130">O</text>
+    <text class="atom" x="92" y="214">O</text>
+
+    <line class="bond" x1="132" y1="110" x2="106" y2="68"/>
+    <line class="bond" x1="164" y1="130" x2="207" y2="130"/>
+    <line class="bond" x1="132" y1="150" x2="106" y2="192"/>
+    <line class="bond thin" x1="144" y1="156" x2="118" y2="198"/>
+
+    <g class="pair">
+      <circle cx="72" cy="34" r="3.5"/><circle cx="82" cy="28" r="3.5"/>
+      <circle cx="105" cy="24" r="3.5"/><circle cx="116" cy="30" r="3.5"/>
+      <circle cx="68" cy="55" r="3.5"/><circle cx="68" cy="66" r="3.5"/>
+
+      <circle cx="232" cy="98" r="3.5"/><circle cx="244" cy="98" r="3.5"/>
+      <circle cx="252" cy="126" r="3.5"/><circle cx="252" cy="138" r="3.5"/>
+      <circle cx="232" cy="162" r="3.5"/><circle cx="244" cy="162" r="3.5"/>
+
+      <circle cx="72" cy="202" r="3.5"/><circle cx="82" cy="196" r="3.5"/>
+      <circle cx="105" cy="236" r="3.5"/><circle cx="116" cy="230" r="3.5"/>
+      <circle cx="68" cy="219" r="3.5"/><circle cx="68" cy="230" r="3.5"/>
+    </g>
+  </g>
+</svg>

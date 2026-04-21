@@ -52,17 +52,29 @@
     <p class="subtitle">Acid-base chemistry governs everything from the pH of your blood to the sting of a lemon. This unit develops the Brønsted-Lowry framework, connects acid/base strength to equilibrium constants, and builds the quantitative tools — pH, pOH, buffers, and titrations — used throughout analytical chemistry.</p>
   </header>
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 14 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 14 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ CONCEPTS -->
-  <div id="concepts" class="section active">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <div class="card">
-      <div class="card-title"><span class="num">14.1</span> Brønsted-Lowry Acids and Bases</div>
+      <h2 class="card-title"><span class="num">14.1</span> Brønsted-Lowry Acids and Bases</h2>
       <p>A <strong>Brønsted-Lowry acid</strong> is any species that can donate a proton (H⁺) to another species. A <strong>Brønsted-Lowry base</strong> is any species that can accept that proton. Every acid-base reaction is simply a proton transfer — the acid loses H⁺ and becomes its <strong>conjugate base</strong>; the base gains H⁺ and becomes its <strong>conjugate acid</strong>.</p>
 
       <div class="formula-box">
@@ -90,7 +102,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.2</span> pH and pOH</div>
+      <h2 class="card-title"><span class="num">14.2</span> pH and pOH</h2>
       <p>Because hydronium and hydroxide concentrations are often tiny numbers (e.g., 1.0 × 10⁻⁷ M), chemists use a logarithmic scale. The <strong>pH</strong> and <strong>pOH</strong> compress these wide ranges into manageable values:</p>
 
       <div class="formula-box">
@@ -120,7 +132,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.3</span> Strong vs. Weak Acids and Bases</div>
+      <h2 class="card-title"><span class="num">14.3</span> Strong vs. Weak Acids and Bases</h2>
       <p>A <strong>strong acid</strong> ionizes completely in water — essentially 100% of the molecules donate their proton to water. A <strong>weak acid</strong> only partially ionizes, reaching an equilibrium described by the acid ionization constant K<sub>a</sub>. The larger K<sub>a</sub>, the stronger the acid.</p>
 
       <div class="formula-box">
@@ -150,7 +162,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.4</span> pK<sub>a</sub> and pK<sub>b</sub></div>
+      <h2 class="card-title"><span class="num">14.4</span> pK<sub>a</sub> and pK<sub>b</sub></h2>
       <p>Just as pH is the negative log of a concentration, <strong>pK<sub>a</sub></strong> and <strong>pK<sub>b</sub></strong> are the negative logs of the ionization constants K<sub>a</sub> and K<sub>b</sub>. Compressing equilibrium constants onto a log scale makes them easier to compare and use directly in buffer calculations.</p>
 
       <div class="formula-box">
@@ -186,7 +198,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.5</span> Polyprotic Acids</div>
+      <h2 class="card-title"><span class="num">14.5</span> Polyprotic Acids</h2>
       <p>A <strong>polyprotic acid</strong> contains more than one ionizable proton and loses them one at a time in sequential steps. Each step has its own ionization constant, and these constants decrease dramatically with each step — because it is much harder to pull a positive proton away from an already-negative ion.</p>
 
       <div class="formula-box">
@@ -199,7 +211,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.6</span> Buffers</div>
+      <h2 class="card-title"><span class="num">14.6</span> Buffers</h2>
       <p>A <strong>buffer</strong> is a solution that resists changes in pH when small amounts of strong acid or strong base are added. Buffers contain an appreciable amount of <em>both</em> members of a weak conjugate acid-base pair — the acid component neutralizes added base, and the base component neutralizes added acid.</p>
 
       <p>The pH of a buffer is calculated using the <strong>Henderson-Hasselbalch equation</strong>:</p>
@@ -217,7 +229,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">14.7</span> Acid-Base Titrations</div>
+      <h2 class="card-title"><span class="num">14.7</span> Acid-Base Titrations</h2>
       <p>A <strong>titration</strong> is a procedure for determining the concentration of an unknown acid or base by adding a standardized solution of the opposite until the reaction is complete. The <strong>equivalence point</strong> is where moles of acid exactly equal moles of base. A <strong>titration curve</strong> plots pH vs. volume of titrant and reveals the equivalence point as a steep vertical rise.</p>
 
       <table>
@@ -238,10 +250,10 @@
   </div><!-- end #concepts -->
 
   <!-- ═══════════════════════════════════════════════════════════ TOOLS -->
-  <div id="tools" class="section">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">⇄</span> pH / pOH / Concentration Converter</div>
+      <h2 class="card-title"><span class="num">⇄</span> pH / pOH / Concentration Converter</h2>
       <p>Enter any one value and the tool calculates the other three. Works for both acidic and basic solutions at 25 °C.</p>
 
       <div class="tool-grid-2">
@@ -268,7 +280,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">⇄</span> Henderson-Hasselbalch Buffer Calculator</div>
+      <h2 class="card-title"><span class="num">⇄</span> Henderson-Hasselbalch Buffer Calculator</h2>
       <p>Enter the pK<sub>a</sub> of the weak acid and the ratio of conjugate base to acid. The tool computes the expected buffer pH.</p>
 
       <div class="tool-grid-3">
@@ -290,7 +302,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">⇄</span> Titration Curve Simulator</div>
+      <h2 class="card-title"><span class="num">⇄</span> Titration Curve Simulator</h2>
       <p>Configure the titration below. The tool plots pH vs. volume of titrant added and marks the equivalence point. Choose a titration type, then enter concentrations and (if applicable) K<sub>a</sub>.</p>
 
       <div class="tool-grid-2">
@@ -332,10 +344,10 @@
   </div><!-- end #tools -->
 
   <!-- ═══════════════════════════════════════════════════════════ EXAMPLES -->
-  <div id="examples" class="section">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Identifying Conjugate Acid-Base Pairs</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Identifying Conjugate Acid-Base Pairs</h2>
       <p><strong>Given:</strong> NH₃ + H₂O ⇌ NH₄⁺ + OH⁻ &nbsp;&nbsp; <strong>Find:</strong> Both conjugate pairs.</p>
       <div class="steps">
         <div class="step">
@@ -364,7 +376,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Calculating pH of a Strong Acid</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Calculating pH of a Strong Acid</h2>
       <p><strong>Given:</strong> 0.025 M HCl &nbsp;&nbsp; <strong>Find:</strong> pH and pOH</p>
       <div class="steps">
         <div class="step">
@@ -397,7 +409,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> pH of a Weak Acid Using K<sub>a</sub></div>
+      <h2 class="card-title"><span class="num">Ex 3</span> pH of a Weak Acid Using K<sub>a</sub></h2>
       <p><strong>Given:</strong> 0.100 M acetic acid (CH₃COOH), K<sub>a</sub> = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pH</p>
       <div class="steps">
         <div class="step">
@@ -442,7 +454,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Buffer pH Using Henderson-Hasselbalch</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Buffer pH Using Henderson-Hasselbalch</h2>
       <p><strong>Given:</strong> A buffer contains 0.100 M acetic acid and 0.150 M sodium acetate. K<sub>a</sub>(acetic acid) = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pH</p>
       <div class="steps">
         <div class="step">
@@ -480,7 +492,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 5</span> Converting Between K<sub>a</sub>, pK<sub>a</sub>, K<sub>b</sub>, and pK<sub>b</sub></div>
+      <h2 class="card-title"><span class="num">Ex 5</span> Converting Between K<sub>a</sub>, pK<sub>a</sub>, K<sub>b</sub>, and pK<sub>b</sub></h2>
       <p><strong>Given:</strong> Acetic acid has K<sub>a</sub> = 1.8 × 10⁻⁵ &nbsp;&nbsp; <strong>Find:</strong> pK<sub>a</sub>, K<sub>b</sub> of acetate, and pK<sub>b</sub> of acetate.</p>
       <div class="steps">
         <div class="step">

@@ -60,19 +60,31 @@
     <p class="subtitle">Equilibrium describes the state where a reversible reaction's forward and reverse processes occur at equal rates — not a frozen state, but a dynamic balance. This unit develops the tools to describe, quantify, and predict how that balance shifts when conditions change.</p>
   </header>
 
-  <div class="nav-tabs" role="tablist" aria-label="Unit 13 tab navigation">
-    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="concepts" id="tab-concepts" data-tab="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tools" id="tab-tools" data-tab="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="examples" id="tab-examples" data-tab="examples" onclick="showTab('examples', this)">◆ Examples</button>
+  <div class="nav-tabs" role="tablist" aria-label="Unit 13 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
   <!-- ══════════════════════════════════════════════
        CONCEPTS TAB
   ══════════════════════════════════════════════ -->
-  <div id="concepts" class="section active">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <div class="card">
-      <div class="card-title"><span class="num">13.1</span> What Is Chemical Equilibrium?</div>
+      <h2 class="card-title"><span class="num">13.1</span> What Is Chemical Equilibrium?</h2>
       <p>Many chemical reactions are <strong>reversible</strong> — the products can react to re-form the reactants. We write reversible reactions with a double arrow (⇌). As the forward reaction proceeds, it slows (reactants are consumed); as products build up, the reverse reaction speeds up. Eventually both rates become equal, and <strong>equilibrium</strong> is reached.</p>
       <p>At equilibrium, <em>concentrations stop changing</em>, but molecules are still constantly reacting in both directions. This is called a <strong>dynamic equilibrium</strong> — it is not a static dead-end.</p>
       <div class="formula-box">
@@ -85,7 +97,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">13.2</span> The Reaction Quotient Q and Equilibrium Constant K</div>
+      <h2 class="card-title"><span class="num">13.2</span> The Reaction Quotient Q and Equilibrium Constant K</h2>
       <p>For the general reversible reaction aA + bB ⇌ cC + dD, we define a ratio of product concentrations to reactant concentrations, each raised to its stoichiometric coefficient:</p>
       <div class="formula-box">
         <span class="label">Reaction Quotient / Equilibrium Constant</span>
@@ -109,7 +121,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">13.3</span> Homogeneous vs. Heterogeneous Equilibria</div>
+      <h2 class="card-title"><span class="num">13.3</span> Homogeneous vs. Heterogeneous Equilibria</h2>
       <p>In a <strong>homogeneous equilibrium</strong>, all species are in the same phase — for example, all gases or all dissolved in water. In a <strong>heterogeneous equilibrium</strong>, species are in two or more phases (e.g., a solid and a gas, or a solid and an aqueous solution).</p>
       <p>The key rule for heterogeneous equilibria: <strong>pure solids and pure liquids are omitted from the K expression</strong>. Their concentrations are constant and are absorbed into the value of K.</p>
       <table>
@@ -154,7 +166,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">13.4</span> Le Châtelier's Principle</div>
+      <h2 class="card-title"><span class="num">13.4</span> Le Châtelier's Principle</h2>
       <p><strong>Le Châtelier's Principle:</strong> If an equilibrium system is disturbed (stressed), it will shift in the direction that partially counteracts the disturbance and re-establishes equilibrium.</p>
       <table>
         <thead>
@@ -179,7 +191,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">13.5</span> ICE Tables — Equilibrium Calculations</div>
+      <h2 class="card-title"><span class="num">13.5</span> ICE Tables — Equilibrium Calculations</h2>
       <p>When we know initial concentrations and K, we can find equilibrium concentrations using an <strong>ICE table</strong>: <strong>I</strong>nitial concentrations, <strong>C</strong>hange in concentrations (expressed as ±x), and <strong>E</strong>quilibrium concentrations (I + C).</p>
       <div class="steps">
         <div class="step">
@@ -218,7 +230,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">13.6</span> Catalysts and Equilibrium</div>
+      <h2 class="card-title"><span class="num">13.6</span> Catalysts and Equilibrium</h2>
       <p>A <strong>catalyst</strong> lowers the activation energy of both the forward and reverse reactions equally. This means equilibrium is reached faster, but the equilibrium position (the value of K and the final concentrations) is <em>not changed</em>.</p>
       <p>Think of it this way: the catalyst speeds up both lanes of a highway. Traffic gets to equilibrium faster, but the same number of cars ends up on each side.</p>
       <div class="formula-box">
@@ -232,10 +244,10 @@
   <!-- ══════════════════════════════════════════════
        TOOLS TAB — Le Châtelier's See-Saw
   ══════════════════════════════════════════════ -->
-  <div id="tools" class="section">
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">⇄</span> Le Châtelier's See-Saw</div>
+      <h2 class="card-title"><span class="num">⇄</span> Le Châtelier's See-Saw</h2>
       <p>Select a reaction and apply a disturbance. Watch the equilibrium see-saw tip to show which direction the reaction shifts to counteract the stress. Q is compared to K to explain the shift.</p>
 
       <!-- Reaction selector -->
@@ -340,10 +352,10 @@
   <!-- ══════════════════════════════════════════════
        EXAMPLES TAB
   ══════════════════════════════════════════════ -->
-  <div id="examples" class="section">
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Writing the K Expression</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Writing the K Expression</h2>
       <p><strong>Given:</strong> The reaction 2NO(g) + O₂(g) ⇌ 2NO₂(g) &nbsp; <strong>Find:</strong> The equilibrium constant expression K.</p>
       <div class="steps">
         <div class="step">
@@ -373,7 +385,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Comparing Q to K to Predict Shift Direction</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Comparing Q to K to Predict Shift Direction</h2>
       <p><strong>Given:</strong> For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), K = 6.0 × 10⁻² at 500°C. A reaction vessel contains [N₂] = 1.0 M, [H₂] = 2.0 M, [NH₃] = 3.0 M. &nbsp;<strong>Find:</strong> In which direction will the reaction shift?</p>
       <div class="steps">
         <div class="step">
@@ -405,7 +417,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> ICE Table — Finding Equilibrium Concentrations</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> ICE Table — Finding Equilibrium Concentrations</h2>
       <p><strong>Given:</strong> H₂(g) + I₂(g) ⇌ 2HI(g), K = 49.0 at 450°C. Initially: [H₂]₀ = 0.500 M, [I₂]₀ = 0.500 M, [HI]₀ = 0 M. &nbsp;<strong>Find:</strong> Equilibrium concentrations of all species.</p>
       <div class="steps">
         <div class="step">
@@ -454,7 +466,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Le Châtelier's Principle — Pressure Change</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Le Châtelier's Principle — Pressure Change</h2>
       <p><strong>Given:</strong> The Haber process: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;<strong>Find:</strong> Predict the effect of increasing the total pressure by decreasing the container volume.</p>
       <div class="steps">
         <div class="step">

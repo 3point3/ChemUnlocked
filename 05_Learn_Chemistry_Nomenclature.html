@@ -135,9 +135,21 @@ select.prob-input {
   </header>
 
   <div class="nav-tabs" role="tablist" aria-label="Unit 05 content sections">
-    <button class="tab-btn active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">◈ Concepts</button>
-    <button class="tab-btn" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">⇄ Tools</button>
-    <button class="tab-btn" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">◆ Examples</button>
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
   </div>
 
   <!-- ═══════════════════════════════ CONCEPTS ═══════════════════════════════ -->
@@ -145,7 +157,7 @@ select.prob-input {
 
     <!-- 5.1 What Is Nomenclature? -->
     <div class="card">
-      <div class="card-title"><span class="num">5.1</span> What Is Nomenclature?</div>
+      <h2 class="card-title"><span class="num">5.1</span> What Is Nomenclature?</h2>
       <p><strong>Nomenclature</strong> means the rules for naming things. In chemistry, nomenclature rules let chemists name millions of compounds in a clear, organized way.</p>
       <p>When you see a chemical name, you should be able to figure out what atoms are in the compound. When you see a formula, you should be able to write the name. Both skills matter.</p>
       <div class="scaffold-box">
@@ -156,7 +168,7 @@ select.prob-input {
 
     <!-- 5.2 Ionic Compounds: Metal + Nonmetal -->
     <div class="card">
-      <div class="card-title"><span class="num">5.2</span> Ionic Compounds — Metal + Nonmetal</div>
+      <h2 class="card-title"><span class="num">5.2</span> Ionic Compounds — Metal + Nonmetal</h2>
       <p>An <strong>ionic compound</strong> is made of a metal and a nonmetal. The metal gives electrons to the nonmetal. This creates ions that attract each other.</p>
       <p><strong>How to name them — two simple steps:</strong></p>
       <div class="steps">
@@ -199,7 +211,7 @@ select.prob-input {
 
     <!-- 5.3 Transition Metals — Roman Numerals -->
     <div class="card">
-      <div class="card-title"><span class="num">5.3</span> Transition Metals — Roman Numerals</div>
+      <h2 class="card-title"><span class="num">5.3</span> Transition Metals — Roman Numerals</h2>
       <p>Some metals can form more than one type of ion. These are mainly <strong>transition metals</strong> like iron (Fe), copper (Cu), and lead (Pb).</p>
       <p>When a metal can form more than one charge, you must add a <strong>Roman numeral in parentheses</strong> after the metal name. The Roman numeral shows the charge of the metal ion in that compound.</p>
 
@@ -236,7 +248,7 @@ select.prob-input {
 
     <!-- 5.4 Polyatomic Ions -->
     <div class="card">
-      <div class="card-title"><span class="num">5.4</span> Polyatomic Ions</div>
+      <h2 class="card-title"><span class="num">5.4</span> Polyatomic Ions</h2>
       <p>A <strong>polyatomic ion</strong> is a group of atoms bonded together that carries a charge. It acts as one unit in a formula. You must <strong>memorize</strong> the names of common polyatomic ions.</p>
 
       <table class="ion-table">
@@ -277,7 +289,7 @@ select.prob-input {
 
     <!-- 5.5 Molecular Compounds -->
     <div class="card">
-      <div class="card-title"><span class="num">5.5</span> Molecular Compounds — Nonmetal + Nonmetal</div>
+      <h2 class="card-title"><span class="num">5.5</span> Molecular Compounds — Nonmetal + Nonmetal</h2>
       <p>A <strong>molecular compound</strong> is made of two nonmetals. Nonmetals can bond in many different ratios. So we use <strong>prefixes</strong> to show exactly how many atoms of each element are in the molecule.</p>
 
       <table class="ion-table">
@@ -338,7 +350,7 @@ select.prob-input {
 
     <!-- 5.6 Binary Acids -->
     <div class="card">
-      <div class="card-title"><span class="num">5.6</span> Acids — Binary Acids</div>
+      <h2 class="card-title"><span class="num">5.6</span> Acids — Binary Acids</h2>
       <p>An <strong>acid</strong> is a compound that starts with hydrogen and dissolves in water to release H⁺ ions.</p>
       <p>A <strong>binary acid</strong> contains only two elements: hydrogen and one other nonmetal (no oxygen).</p>
 
@@ -387,7 +399,7 @@ select.prob-input {
 
     <!-- 5.7 Oxyacids -->
     <div class="card">
-      <div class="card-title"><span class="num">5.7</span> Acids — Oxyacids</div>
+      <h2 class="card-title"><span class="num">5.7</span> Acids — Oxyacids</h2>
       <p>An <strong>oxyacid</strong> contains hydrogen, oxygen, and one other element. You name oxyacids based on the polyatomic ion inside the acid.</p>
 
       <div class="scaffold-box">
@@ -423,7 +435,7 @@ select.prob-input {
 
     <!-- 5.8 How to Tell Compound Types Apart -->
     <div class="card">
-      <div class="card-title"><span class="num">5.8</span> How to Tell Compound Types Apart</div>
+      <h2 class="card-title"><span class="num">5.8</span> How to Tell Compound Types Apart</h2>
       <p>The key to naming correctly is identifying the <strong>type of compound first</strong>. Use this decision guide:</p>
 
       <div class="steps">
@@ -464,7 +476,7 @@ select.prob-input {
   <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
     <div class="card">
-      <div class="card-title"><span class="num">Tool A</span> Compound Naming Assistant</div>
+      <h2 class="card-title"><span class="num">Tool A</span> Compound Naming Assistant</h2>
       <p>Select a compound type and fill in the parts. The tool builds the name for you — then try to predict it before pressing Calculate.</p>
 
       <div class="tool-section-label">Step 1 — What type of compound?</div>
@@ -486,7 +498,7 @@ select.prob-input {
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="num">Tool B</span> Roman Numeral Finder</div>
+      <h2 class="card-title"><span class="num">Tool B</span> Roman Numeral Finder</h2>
       <p>Enter an ionic formula with a variable-charge metal. The tool calculates the metal's charge and tells you which Roman numeral to use.</p>
       <p class="tool-hint">Use for formulas like FeO, FeCl₃, CuS, PbO₂, MnO₂, CrCl₃, etc.</p>
       <div class="roman-input-row">
@@ -506,7 +518,7 @@ select.prob-input {
 
     <!-- Ex 1: Simple ionic -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 1</span> Naming a Simple Ionic Compound</div>
+      <h2 class="card-title"><span class="num">Ex 1</span> Naming a Simple Ionic Compound</h2>
       <p><strong>Name:</strong> Na₂S</p>
       <div class="steps">
         <div class="step">
@@ -537,7 +549,7 @@ select.prob-input {
 
     <!-- Ex 2: Transition metal -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 2</span> Naming an Ionic Compound with a Transition Metal</div>
+      <h2 class="card-title"><span class="num">Ex 2</span> Naming an Ionic Compound with a Transition Metal</h2>
       <p><strong>Name:</strong> Fe₂O₃</p>
       <div class="steps">
         <div class="step">
@@ -568,7 +580,7 @@ select.prob-input {
 
     <!-- Ex 3: Polyatomic -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 3</span> Naming a Compound with a Polyatomic Ion</div>
+      <h2 class="card-title"><span class="num">Ex 3</span> Naming a Compound with a Polyatomic Ion</h2>
       <p><strong>Name:</strong> Cr₂(SO₄)₃</p>
       <div class="steps">
         <div class="step">
@@ -599,7 +611,7 @@ select.prob-input {
 
     <!-- Ex 4: Molecular -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 4</span> Naming a Molecular Compound</div>
+      <h2 class="card-title"><span class="num">Ex 4</span> Naming a Molecular Compound</h2>
       <p><strong>Name:</strong> N₂O₄</p>
       <div class="steps">
         <div class="step">
@@ -630,7 +642,7 @@ select.prob-input {
 
     <!-- Ex 5: Binary acid -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 5</span> Naming a Binary Acid</div>
+      <h2 class="card-title"><span class="num">Ex 5</span> Naming a Binary Acid</h2>
       <p><strong>Name:</strong> HBr (dissolved in water)</p>
       <div class="steps">
         <div class="step">
@@ -654,7 +666,7 @@ select.prob-input {
 
     <!-- Ex 6: Oxyacid -->
     <div class="card">
-      <div class="card-title"><span class="num">Ex 6</span> Naming an Oxyacid</div>
+      <h2 class="card-title"><span class="num">Ex 6</span> Naming an Oxyacid</h2>
       <p><strong>Name:</strong> H₂SO₃</p>
       <div class="steps">
         <div class="step">
