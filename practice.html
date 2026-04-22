@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Practice Hub | ChemUnlocked</title>
-<meta name="description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+<meta name="description" content="Browse ChemUnlocked practice pages for introductory general chemistry units. Choose a unit, try sample problems, and build fluency with randomized chemistry practice.">
 <link rel="stylesheet" href="chem.css">
   <!-- Canonical URL -->
   <link rel="canonical" href="https://chemunlocked.com/practice.html">
 
   <!-- Open Graph Metadata -->
   <meta property="og:title" content="Practice Hub | ChemUnlocked">
-  <meta property="og:description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+  <meta property="og:description" content="Browse ChemUnlocked practice pages for introductory general chemistry units. Choose a unit, try sample problems, and build fluency with randomized chemistry practice.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://chemunlocked.com/practice.html">
   <meta property="og:site_name" content="ChemUnlocked">
@@ -19,7 +19,7 @@
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Practice Hub | ChemUnlocked">
-  <meta name="twitter:description" content="Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.">
+  <meta name="twitter:description" content="Browse ChemUnlocked practice pages for introductory general chemistry units. Choose a unit, try sample problems, and build fluency with randomized chemistry practice.">
   <meta name="twitter:site" content="@ChemUnlocked">
 
   <!-- JSON-LD Schema Markup for Course Catalog -->
@@ -28,7 +28,7 @@
     "@context": "https://schema.org",
     "@type": "CourseCatalog",
     "name": "ChemUnlocked Practice Hub",
-    "description": "Jump straight into randomized practice problem sets for any unit of introductory general chemistry. Instant feedback, full solutions, and a built-in timer.",
+    "description": "Browse ChemUnlocked practice pages for introductory general chemistry units. Choose a unit, try sample problems, and build fluency with randomized chemistry practice.",
     "provider": {
       "@type": "Organization",
       "name": "ChemUnlocked",
@@ -43,12 +43,12 @@
     color: var(--dim);
     line-height: 1.7;
     margin: 0.5rem 0 0;
-    max-width: 64ch;
+    max-width: min(100%, 88ch);
   }
 
   .stats-strip {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
     gap: 0.75rem;
     margin: 1.5rem 0 1.25rem;
   }
@@ -116,6 +116,49 @@
     line-height: 1.55;
   }
 
+  .access-summary {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(219,228,238,0.92);
+    border-radius: var(--radius-lg);
+    padding: 1.35rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin: 1.4rem 0 1.25rem;
+  }
+
+  .access-summary-text {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+
+  .access-summary-title {
+    font-size: 1.05rem;
+    font-weight: 650;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .access-summary-desc {
+    font-size: 0.9rem;
+    color: var(--dim);
+    line-height: 1.65;
+  }
+
+  .access-summary-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    white-space: nowrap;
+  }
+
   .section-eyebrow {
     font-size: 0.77rem;
     font-weight: 600;
@@ -144,7 +187,7 @@
 
   .practice-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 0.75rem;
     margin-bottom: 1.5rem;
   }
@@ -175,6 +218,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .practice-unit-num {
@@ -199,6 +243,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     color: var(--muted);
+    white-space: nowrap;
   }
 
   .practice-card-title {
@@ -265,8 +310,9 @@
   }
 
   @media (max-width: 640px) {
-    .practice-grid { grid-template-columns: 1fr; }
     .how-it-works  { flex-direction: column; gap: 0.75rem; }
+    .access-summary { align-items: flex-start; }
+    .access-summary-note { white-space: normal; }
     .bottom-cta    { flex-direction: column; align-items: flex-start; }
   }
 
@@ -281,36 +327,24 @@
   <header>
     <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Practice Hub</div>
     <h1>Practice Problems</h1>
-    <p class="hero-subtitle">Jump straight into randomized problem sets for any unit — no re-reading required. Each set draws 12 problems from a bank of 81–84, with instant scoring and full worked solutions.</p>
+    <p class="hero-subtitle">Use this page as the practice fast lane. Pick a unit, try representative problems, and jump into focused chemistry practice without digging back through the lessons.</p>
   </header>
-  <div class="locked-notice">
-    <h2>Subscriber Access Required</h2>
-    <p>
-      Full practice problems on ChemUnlocked are available to subscribers.
-      Access is provided through Patreon and requires an active subscription.
-    </p>
-    
-    <ul>
-      <li>Full problem sets</li>
-      <li>Step-by-step solutions</li>
-      <li>Premium practice tools</li>
-    </ul>
-    
-    <a href="YOUR_PATREON_LINK" class="btn btn-primary">
-      Unlock Full Practice
-    </a>
-    
-    <p style="font-size:0.8rem;">
-      Secure payments handled by Patreon • Cancel anytime
-    </p>
+
+  <div class="access-summary">
+    <div class="access-summary-text">
+      <div class="access-summary-title">For review mode, start here.</div>
+      <div class="access-summary-desc">The main course page is for learning units in order. This hub is for practice sessions: choose the topic you want, preview the problem style, and work from that unit's practice bank.</div>
+    </div>
+    <span class="access-summary-note">15 unit banks</span>
   </div>
+
   <div class="stats-strip" role="region" aria-label="Practice statistics">
     <div class="stat-tile">
-      <div class="stat-num">13</div>
+      <div class="stat-num">15</div>
       <div class="stat-label">Units available</div>
     </div>
     <div class="stat-tile">
-      <div class="stat-num">1,068</div>
+      <div class="stat-num">1,272</div>
       <div class="stat-label">Total problems</div>
     </div>
     <div class="stat-tile">
@@ -326,21 +360,21 @@
     </div>
     <div class="how-step" role="listitem">
       <span class="how-step-num">02</span>
-      <span class="how-step-text"><strong>Filter by type</strong> — Calculation, Concept, or Multi-step — or draw from all.</span>
+      <span class="how-step-text"><strong>Try the samples</strong> to preview the style before starting a full set.</span>
     </div>
     <div class="how-step" role="listitem">
       <span class="how-step-num">03</span>
-      <span class="how-step-text"><strong>Generate a set</strong> and answer all 12. Instant feedback after each one.</span>
+      <span class="how-step-text"><strong>Choose your focus</strong> — calculation, concept, or multi-step problems when available.</span>
     </div>
     <div class="how-step" role="listitem">
       <span class="how-step-num">04</span>
-      <span class="how-step-text"><strong>Review solutions</strong> for every problem — including ones you got right.</span>
+      <span class="how-step-text"><strong>Generate a set</strong> and review full solutions after each answer.</span>
     </div>
   </div>
 
   <div class="section-eyebrow">Available Now</div>
   <div class="section-heading">Choose a Unit</div>
-  <p class="section-desc">Only units with a complete, verified problem bank are listed here. More units are added as they are built and checked.</p>
+  <p class="section-desc">These links take you to the individual practice pages. Each page includes representative free samples plus details about the full problem bank for that unit.</p>
 
   <div class="practice-grid">
 
@@ -403,7 +437,7 @@
     <a href="04_practice.html" class="practice-card">
       <div class="practice-card-top">
         <span class="practice-unit-num">04</span>
-        <span class="practice-problem-count">81 problems</span>
+        <span class="practice-problem-count">84 problems</span>
       </div>
       <div class="practice-card-title">Periodic Table &amp; Trends</div>
       <div class="practice-card-meta">

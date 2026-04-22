@@ -391,10 +391,12 @@ pre,
 }
 
 .logo-chem {
+  font-weight: 900;
   color: #111827;
 }
 
 .logo-unlock {
+  font-weight: 600;
   color: #111827;
   font-style: italic;
   margin-left: 0.04em;

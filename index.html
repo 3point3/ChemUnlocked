@@ -25,79 +25,254 @@
 }
 </script>
 <link rel="stylesheet" href="chem.css">
-<style>
-
- 
-
-</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;background:#fff;color:#2563eb;padding:0.5em 1em;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="starfield"></div>
+  <div class="starfield"></div>
 
-<main id="main-content">
-<div class="container">
+  <main id="main-content">
+    <div class="container">
 
-  <!-- ── PAGE HEADER ── -->
-  <header>
-    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Study Hub</div>
-    <h1><span class="chem">Chem</span><span class="unlocked">Unlocked</span></h1>
-    <p class="hero-subtitle">Clear concept guides, interactive tools, and randomized practice problems for every unit of introductory general chemistry — designed for students who want to actually understand it.</p>
-  </header>
+      <header class="home-hero">
+        <div>
+          <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Chemistry Study Hub</div>
+          <div class="home-brand" aria-label="ChemUnlocked"><span class="chem">Chem</span><span class="unlocked">Unlocked</span></div>
+          <h1>Learn the concepts. Practice the problems. Feel ready for the exam.</h1>
+          <p class="hero-subtitle hero-subtitle-strong">ChemUnlocked helps students study for general chemistry with short explanations, worked examples, interactive tools, and practice questions.</p>
+          <p class="hero-subtitle">Learn a topic, check your understanding, and practice before your next quiz or exam.</p>
+          <div class="hero-actions">
+            <a href="#units" class="btn">Choose a unit</a>
+            <a href="practice.html" class="btn btn-outline">Go to practice hub</a>
+          </div>
+          <div class="hero-note" aria-label="What ChemUnlocked includes">
+            <span>Short explanations</span>
+            <span>Worked examples</span>
+            <span>Randomized practice</span>
+          </div>
+        </div>
 
-  <!-- ── UNITS CARD ── -->
-  <div class="units-card" id="units">
-    <div class="units-card-header">
-      <div>
-        <div class="units-eyebrow">Chemistry Units</div>
-        <div class="units-card-title">Units Coming Soon</div>
-      </div>
-  
-  </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="chalk-title">exam review</div>
+          <div class="chalk-card one medium">
+            <strong>moles</strong><br>
+            n = m / M<br>
+            n = 4.20 g / 58.44 g mol<sup>-1</sup><br>
+            <em>n = 0.0719 mol</em>
+          </div>
+          <div class="chalk-card two large">
+            <strong>gas law</strong><br>
+            PV = nRT<br>
+            V = nRT / P<br>
+            V = 2.46 L
+          </div>
+          <div class="chalk-card three small">
+            <strong>stoichiometry</strong><br>
+            2 H<sub>2</sub> + O<sub>2</sub> &rarr; 2 H<sub>2</sub>O<br>
+            3.0 mol H<sub>2</sub> x 2 mol H<sub>2</sub>O / 2 mol H<sub>2</sub><br>
+            <em>= 3.0 mol H<sub>2</sub>O</em>
+          </div>
+          <div class="chalk-card four medium">
+            <strong>solution</strong><br>
+            M = mol / L<br>
+            0.250 L x 0.400 mol L<sup>-1</sup><br>
+            <em>= 0.100 mol</em>
+          </div>
+          <div class="chalk-card five small">
+            q = mc&Delta;T<br>
+            q = 25.0 g x 4.184 J g<sup>-1</sup> &deg;C<sup>-1</sup> x 6.2 &deg;C<br>
+            q = 648 J
+          </div>
+          <div class="chalk-scribble one"></div>
+          <div class="chalk-scribble two"></div>
+          <div class="chalk-dust"></div>
+          <div class="chalk-reaction">CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub></div>
+          <div class="chalk-rail">
+            <div class="chalk-piece"></div>
+            <div class="chalk-eraser"></div>
+          </div>
+        </div>
+      </header>
 
-  <!-- ── STUDY SKILLS CARD ── -->
-  <div class="skills-card">
-    <div class="skills-card-header">
-      <div>
-        <div class="unit-label">Study Skills</div>
-        <div class="skills-card-title">Learn How to Learn</div>
-      </div>
-      <a href="study_skills_blog.html" class="view-all-link">View all guides →</a>
+      <section class="practice-panel" aria-labelledby="practice-title">
+        <div>
+          <div class="unit-label" style="color:#d1fae5;margin-bottom:0.45rem;">Practice Problems</div>
+          <h2 id="practice-title">Ready to try problems?</h2>
+          <p>Open the practice hub to choose a unit, generate randomized sets, check your answers, and review worked solutions. It is the fastest way to find out what is solid and what needs another pass.</p>
+          <div class="practice-actions">
+            <a href="practice.html" class="btn">Open practice hub</a>
+            <a href="#units" class="btn btn-outline">Review a unit first</a>
+          </div>
+        </div>
+        <div class="practice-stats" aria-label="Practice hub highlights">
+          <div class="practice-stat">
+            <strong>13+</strong>
+            <span>unit problem sets</span>
+          </div>
+          <div class="practice-stat">
+            <strong>12</strong>
+            <span>problems per set</span>
+          </div>
+          <div class="practice-stat">
+            <strong>1k+</strong>
+            <span>practice problems</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="units-card" id="units" aria-labelledby="units-title">
+        <div class="unit-card-topline">
+          <div>
+            <div class="units-eyebrow">Chemistry Units</div>
+            <div class="units-card-title" id="units-title">Start with the topic you are studying now</div>
+          </div>
+          <div class="unit-quick-links">
+            <a href="practice.html">All practice &rarr;</a>
+            <a href="study_skills_blog.html">Study skills &rarr;</a>
+          </div>
+        </div>
+
+        <p class="units-desc">Each unit opens to a study guide with concepts, examples, and tools. When you are ready to test yourself, use the practice hub link above or jump there from the top of the page.</p>
+
+        <div class="unit-grid">
+          <a href="00_Learn_Intro_to_Chemistry_and_Lab_Safety.html" class="unit-btn">
+            <span class="unit-num">00</span>
+            <span>Intro to Chemistry &amp; Lab Safety</span>
+          </a>
+          <a href="01_Learn_Chemistry_Matter.html" class="unit-btn">
+            <span class="unit-num">01</span>
+            <span>Matter</span>
+          </a>
+          <a href="02_Learn_Atomic_Structure.html" class="unit-btn">
+            <span class="unit-num">02</span>
+            <span>Atomic Structure</span>
+          </a>
+          <a href="03_Learn_Electron_Configuration.html" class="unit-btn">
+            <span class="unit-num">03</span>
+            <span>Electron Configuration</span>
+          </a>
+          <a href="04_Learn_Periodic_Table_and_Trends.html" class="unit-btn">
+            <span class="unit-num">04</span>
+            <span>Periodic Table &amp; Trends</span>
+          </a>
+          <a href="05_Learn_Chemistry_Nomenclature.html" class="unit-btn">
+            <span class="unit-num">05</span>
+            <span>Nomenclature</span>
+          </a>
+          <a href="06_Learn_Chemistry_Moles.html" class="unit-btn">
+            <span class="unit-num">06</span>
+            <span>Moles</span>
+          </a>
+          <a href="07_Learn_Chemical_Reactions.html" class="unit-btn">
+            <span class="unit-num">07</span>
+            <span>Chemical Reactions</span>
+          </a>
+          <a href="08_Learn_Chemistry_Stoichiometry.html" class="unit-btn">
+            <span class="unit-num">08</span>
+            <span>Stoichiometry</span>
+          </a>
+          <a href="09_Learn_Chemistry_Bonding.html" class="unit-btn">
+            <span class="unit-num">09</span>
+            <span>Chemical Bonding</span>
+          </a>
+          <a href="10_Learn_Chemistry_Energy_Thermochemistry.html" class="unit-btn">
+            <span class="unit-num">10</span>
+            <span>Energy &amp; Thermochemistry</span>
+          </a>
+          <a href="11_Learn_Chemistry_Gas.html" class="unit-btn">
+            <span class="unit-num">11</span>
+            <span>Gas Laws</span>
+          </a>
+          <a href="12_Learn_Chemistry_Solutions.html" class="unit-btn">
+            <span class="unit-num">12</span>
+            <span>Solutions</span>
+          </a>
+          <a href="13_Learn_Chemistry_Equilibrium.html" class="unit-btn">
+            <span class="unit-num">13</span>
+            <span>Chemical Equilibrium</span>
+          </a>
+          <a href="14_Learn_Chemistry_Acid_Base.html" class="unit-btn">
+            <span class="unit-num">14</span>
+            <span>Acids &amp; Bases</span>
+          </a>
+          <a href="15_Learn_Chemistry_General_Organic.html" class="unit-btn">
+            <span class="unit-num">15</span>
+            <span>General Organic Chemistry</span>
+          </a>
+          <a href="16_Learn_Chemistry_Nuclear.html" class="unit-btn">
+            <span class="unit-num">16</span>
+            <span>Nuclear Chemistry</span>
+          </a>
+          <a href="17_Learn_Chemistry_Redox_and_Electrochemistry.html" class="unit-btn">
+            <span class="unit-num">17</span>
+            <span>Redox &amp; Electrochemistry</span>
+          </a>
+        </div>
+
+        <div class="unit-features">
+          <div class="unit-feature">
+            <div class="unit-feature-icon">01</div>
+            <div class="unit-feature-label">Learn</div>
+            <div class="unit-feature-desc">Use the guide to make sense of the concept first.</div>
+          </div>
+          <div class="unit-feature">
+            <div class="unit-feature-icon">02</div>
+            <div class="unit-feature-label">Work Examples</div>
+            <div class="unit-feature-desc">See how problems are set up and solved.</div>
+          </div>
+          <div class="unit-feature">
+            <div class="unit-feature-icon">03</div>
+            <div class="unit-feature-label">Practice</div>
+            <div class="unit-feature-desc">Use randomized sets when you are ready.</div>
+          </div>
+          <div class="unit-feature">
+            <div class="unit-feature-icon">04</div>
+            <div class="unit-feature-label">Review</div>
+            <div class="unit-feature-desc">Turn mistakes into the next thing to study.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-card">
+        <div class="skills-card-header">
+          <div>
+            <div class="unit-label">Study Skills</div>
+            <div class="skills-card-title">Learn how to learn chemistry</div>
+          </div>
+          <a href="study_skills_blog.html" class="view-all-link">View all guides &rarr;</a>
+        </div>
+
+        <p class="skills-intro">Chemistry gets easier when practice is active, spaced out, and mixed. These guides translate cognitive science into study moves you can actually use before an exam.</p>
+
+        <div class="guides-grid">
+          <a href="study_skills_smarter_not_longer.html" class="guide-card" data-color="blue">
+            <div class="guide-card-eyebrow">Guide 01 · 6 min read</div>
+            <div class="guide-card-title">How to Study Smarter, Not Longer</div>
+            <div class="guide-card-desc">Interleaving, varied environments, and multimodal encoding: strategies that feel harder but work better than rereading.</div>
+            <div class="guide-card-cta">Read guide &rarr;</div>
+          </a>
+
+          <a href="study_skills_practice_tests.html" class="guide-card" data-color="green">
+            <div class="guide-card-eyebrow">Guide 02 · 7 min read</div>
+            <div class="guide-card-title">Why Practice Tests Beat Rereading</div>
+            <div class="guide-card-desc">Retrieval practice helps you remember and apply chemistry, especially when the test asks questions in a new way.</div>
+            <div class="guide-card-cta">Read guide &rarr;</div>
+          </a>
+
+          <a href="study_skills_flashcards.html" class="guide-card" data-color="purple">
+            <div class="guide-card-eyebrow">Guide 03 · 6 min read</div>
+            <div class="guide-card-title">The Flashcard Method That Works</div>
+            <div class="guide-card-desc">Make flashcards that force active recall instead of passive flipping, then use them with better timing.</div>
+            <div class="guide-card-cta">Read guide &rarr;</div>
+          </a>
+        </div>
+      </section>
+
+      <div class="scroll-hint">Introductory General Chemistry · Study Hub</div>
+
     </div>
+  </main>
 
-    <p class="skills-intro">Knowing the chemistry is only half the challenge. These research-backed guides cover the strategies cognitive science says actually work — so every hour you invest pays off on the test.</p>
-
-    <div class="guides-grid">
-
-      <a href="study_skills_smarter_not_longer.html" class="guide-card" data-color="blue">
-        <div class="guide-card-eyebrow">◈ Guide 01 · 6 min read</div>
-        <div class="guide-card-title">How to Study Smarter, Not Longer</div>
-        <div class="guide-card-desc">Interleaving, varied environments, and multimodal encoding — the strategies that feel harder but work far better than re-reading.</div>
-        <div class="guide-card-cta">Read Guide →</div>
-      </a>
-
-      <a href="study_skills_practice_tests.html" class="guide-card" data-color="green">
-        <div class="guide-card-eyebrow">◈ Guide 02 · 7 min read</div>
-        <div class="guide-card-title">Why Practice Tests Beat Rereading</div>
-        <div class="guide-card-desc">Retrieval practice is the highest-rated study strategy in cognitive science. Here's the research — and how ChemUnlocked's problem sets put it to work.</div>
-        <div class="guide-card-cta">Read Guide →</div>
-      </a>
-
-      <a href="study_skills_flashcards.html" class="guide-card" data-color="purple">
-        <div class="guide-card-eyebrow">◈ Guide 03 · 6 min read</div>
-        <div class="guide-card-title">The Flashcard Method That Works</div>
-        <div class="guide-card-desc">Active recall, not passive flipping. Includes how to make cards well and two partner games that dramatically improve retention.</div>
-        <div class="guide-card-cta">Read Guide →</div>
-      </a>
-
-    </div>
-  </div>
-
-  <div class="scroll-hint">Introductory General Chemistry · Study Hub</div>
-
-</div><!-- end .container -->
-
-<script src="chem.js"></script>
+  <script src="chem.js"></script>
 </body>
 </html>

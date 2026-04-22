@@ -19,14 +19,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Unit 04 — Periodic Table and Trends",
-  "description": "Periodic table organization and trend analysis for atomic radius, ionization energy, electronegativity, and ionic radius.",
-  "provider": {
-    "@type": "Organization",
-    "name": "ChemUnlocked"
-  },
-  "url": "https://chemunlocked.com/04_Learn_Periodic_Table_and_Trends.html"
+  "@graph": [
+    {
+      "@type": "Course",
+      "name": "Unit 04 — Periodic Table and Trends",
+      "description": "Periodic table organization and trend analysis for atomic radius, ionization energy, electronegativity, and ionic radius.",
+      "provider": {
+        "@type": "Organization",
+        "name": "ChemUnlocked"
+      },
+      "url": "https://chemunlocked.com/04_Learn_Periodic_Table_and_Trends.html"
+    },
+    {
+      "@type": "LearningResource",
+      "name": "Periodic Table and Trends Lesson",
+      "description": "An introductory chemistry lesson with explanations, worked examples, and interactive periodic table trend tools.",
+      "learningResourceType": ["lesson", "interactive activity", "worked example"],
+      "educationalLevel": "Introductory general chemistry",
+      "teaches": [
+        "periodic table organization",
+        "valence electrons",
+        "atomic radius trends",
+        "ionization energy trends",
+        "electronegativity trends",
+        "ionic radius"
+      ],
+      "url": "https://chemunlocked.com/04_Learn_Periodic_Table_and_Trends.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ChemUnlocked",
+          "item": "https://chemunlocked.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Introductory General Chemistry",
+          "item": "https://chemunlocked.com/#units"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Unit 04 — Periodic Table and Trends",
+          "item": "https://chemunlocked.com/04_Learn_Periodic_Table_and_Trends.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 <style>
@@ -39,11 +82,14 @@
 /* Periodic table mini-grid for the tool */
 .pt-tool-grid {
   display: grid;
-  grid-template-columns: repeat(18, minmax(42px, 1fr));
+  grid-template-columns: repeat(18, minmax(38px, 1fr));
   gap: 3px;
   margin-top: 1rem;
   font-size: 0.62rem;
   overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.35rem;
+  -webkit-overflow-scrolling: touch;
 }
 .pt-cell {
   background: var(--surface2);
@@ -69,6 +115,7 @@
 .pt-cell.metal-alkali   { border-left: 3px solid #ef4444; }
 .pt-cell.metal-alkaline { border-left: 3px solid #f97316; }
 .pt-cell.metal-trans    { border-left: 3px solid #eab308; }
+.pt-cell.post-transition { border-left: 3px solid #14b8a6; }
 .pt-cell.metalloid      { border-left: 3px solid #22c55e; }
 .pt-cell.nonmetal       { border-left: 3px solid #3b82f6; }
 .pt-cell.halogen        { border-left: 3px solid #8b5cf6; }
@@ -93,10 +140,13 @@
 .pt-legend-dot.alkali { background: #ef4444; }
 .pt-legend-dot.alkaline { background: #f97316; }
 .pt-legend-dot.transition { background: #eab308; }
+.pt-legend-dot.post-transition { background: #14b8a6; }
 .pt-legend-dot.metalloid { background: #22c55e; }
 .pt-legend-dot.nonmetal { background: #3b82f6; }
 .pt-legend-dot.halogen { background: #8b5cf6; }
 .pt-legend-dot.noble { background: #ec4899; }
+.pt-legend-dot.lanthanide { background: #94a3b8; }
+.pt-legend-dot.actinide { background: #78716c; }
 
 .trend-quiz-controls {
   display: flex;
@@ -112,7 +162,7 @@
   margin-bottom: 0.3rem;
 }
 .trend-quiz-select {
-  width: auto;
+  width: min(100%, 18rem);
   padding: 0.5rem 0.75rem;
 }
 .trend-result {
@@ -153,17 +203,17 @@
   </div>
 
   <div class="nav-tabs" role="tablist" aria-label="Unit 04 content sections">
-    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts">
       <span class="tab-icon">1</span>
       <span class="tab-label">Learn</span>
-      <span class="tab-hint">Core ideas and guided notes</span>
+      <span class="tab-hint">Organization, valence, trends</span>
     </button>
-    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools">
       <span class="tab-icon">2</span>
       <span class="tab-label">Explore</span>
-      <span class="tab-hint">Interactive tools and visual models</span>
+      <span class="tab-hint">Periodic table and trend quiz</span>
     </button>
-    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
       <span class="tab-icon">3</span>
       <span class="tab-label">Examples</span>
       <span class="tab-hint">Step-by-step worked problems</span>
@@ -175,19 +225,29 @@
   ══════════════════════════════════════════════════════════ -->
   <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
+    <nav class="concept-jump-nav" aria-label="Learn section jump links">
+      <a href="#organization">4.1 Organization</a>
+      <a href="#regions">4.2 Regions</a>
+      <a href="#valence-electrons">4.3 Valence</a>
+      <a href="#atomic-radius">4.4 Atomic Radius</a>
+      <a href="#ionization-energy">4.5 Ionization Energy</a>
+      <a href="#electronegativity">4.6 Electronegativity</a>
+      <a href="#ionic-radius">4.7 Ionic Radius</a>
+    </nav>
+
     <!-- 4.1 How the table is organized -->
-    <div class="card">
+    <div class="card" id="organization">
       <h2 class="card-title"><span class="num">4.1</span> How the Periodic Table Is Organized</h2>
       <p>The <strong>periodic table</strong> arranges all known elements in order of increasing <strong>atomic number</strong> (number of protons). It is set up so that elements with similar properties land in the same column.</p>
       <p>The table has two directions to know:</p>
-      <table>
+      <table class="concept-table">
         <caption>Periodic Table Organization: Periods and Groups</caption>
         <thead>
           <tr><th>Direction</th><th>Called</th><th>How many?</th><th>What changes as you move?</th></tr>
         </thead>
         <tbody>
-          <tr><td>↔ Horizontal row</td><td><strong>Period</strong></td><td>7 periods</td><td>Atomic number goes up by 1 each step. The outermost energy level stays the same.</td></tr>
-          <tr><td>↕ Vertical column</td><td><strong>Group</strong> (or Family)</td><td>18 groups</td><td>Each element has one more energy level. Valence electrons stay the same.</td></tr>
+          <tr><td>↔ Horizontal row</td><td><strong>Period</strong></td><td>7 periods</td><td>Elements in the same period have the same outermost energy level. Atomic number increases by 1 each step from left to right.</td></tr>
+          <tr><td>↕ Vertical column</td><td><strong>Group</strong> (or Family)</td><td>18 groups</td><td>Elements in the same group have similar valence electron patterns. Moving down a group adds one energy level each row.</td></tr>
         </tbody>
       </table>
       <div class="key-fact">
@@ -197,7 +257,7 @@
     </div>
 
     <!-- 4.2 Regions of the table -->
-    <div class="card">
+    <div class="card" id="regions">
       <h2 class="card-title"><span class="num">4.2</span> Regions of the Periodic Table</h2>
       <p>The table is divided into regions based on the type of element and which sublevel is being filled.</p>
       <table>
@@ -222,7 +282,7 @@
     </div>
 
     <!-- 4.3 Valence Electrons -->
-    <div class="card">
+    <div class="card" id="valence-electrons">
       <h2 class="card-title"><span class="num">4.3</span> Valence Electrons and the Group Number</h2>
       <p><strong>Valence electrons</strong> are the electrons in the outermost energy level. They are the only electrons that participate in chemical bonding. The group number tells you exactly how many valence electrons a main-group element has.</p>
       <div class="formula-box">
@@ -278,7 +338,7 @@
     </div>
 
     <!-- 4.4 Atomic Radius -->
-    <div class="card">
+    <div class="card" id="atomic-radius">
       <h2 class="card-title"><span class="num">4.4</span> Atomic Radius</h2>
       <p>The <strong>atomic radius</strong> is roughly half the distance between two bonded atoms of the same element. It tells us how big an atom is.</p>
       <div class="steps">
@@ -306,13 +366,13 @@
     </div>
 
     <!-- Inline practice CTA -->
-    <div style="margin:0.5rem 0 1.5rem;padding:0.9rem 1.2rem;background:#f3fbf7;border:1px solid #bee5db;border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
-      <span style="font-size:0.95rem;color:#174f47;font-weight:600;">Ready to test yourself on atomic radius?</span>
-      <a href="04_practice.html" style="font-size:0.9rem;font-weight:700;color:#0b6f63;text-decoration:none;white-space:nowrap;">Practice Unit 04 Problems →</a>
+    <div class="inline-practice-cta">
+      <span class="inline-practice-cta-text">Ready to test yourself on atomic radius?</span>
+      <a href="04_practice.html" class="inline-practice-cta-link">Practice Unit 04 Problems →</a>
     </div>
 
     <!-- 4.5 Ionization Energy -->
-    <div class="card">
+    <div class="card" id="ionization-energy">
       <h2 class="card-title"><span class="num">4.5</span> Ionization Energy</h2>
       <p><strong>Ionization energy (IE)</strong> is the energy needed to remove one electron from a neutral gas-phase atom. A high IE means the atom holds its electrons tightly. A low IE means electrons are easy to remove.</p>
       <div class="steps">
@@ -340,7 +400,7 @@
     </div>
 
     <!-- 4.6 Electronegativity -->
-    <div class="card">
+    <div class="card" id="electronegativity">
       <h2 class="card-title"><span class="num">4.6</span> Electronegativity</h2>
       <p><strong>Electronegativity (EN)</strong> is a measure of how strongly an atom pulls shared electrons toward itself in a chemical bond. The scale runs from 0 to 4. Fluorine (F) is the most electronegative element at 3.98.</p>
       <div class="steps">
@@ -386,7 +446,7 @@
     </div>
 
     <!-- 4.7 Ionic Radius -->
-    <div class="card">
+    <div class="card" id="ionic-radius">
       <h2 class="card-title"><span class="num">4.7</span> Ion Formation and Ionic Radius</h2>
       <p>When an atom gains or loses electrons to form an <strong>ion</strong>, its size changes significantly.</p>
       <div class="steps">
@@ -427,11 +487,14 @@
       <div class="pt-legend">
         <span class="pt-legend-item"><span class="pt-legend-dot alkali"></span>Alkali metal</span>
         <span class="pt-legend-item"><span class="pt-legend-dot alkaline"></span>Alkaline earth</span>
-        <span class="pt-legend-item"><span class="pt-legend-dot transition"></span>Transition / Post-transition metal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot transition"></span>Transition metal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot post-transition"></span>Post-transition metal</span>
         <span class="pt-legend-item"><span class="pt-legend-dot metalloid"></span>Metalloid</span>
         <span class="pt-legend-item"><span class="pt-legend-dot nonmetal"></span>Nonmetal</span>
         <span class="pt-legend-item"><span class="pt-legend-dot halogen"></span>Halogen</span>
         <span class="pt-legend-item"><span class="pt-legend-dot noble"></span>Noble gas</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot lanthanide"></span>Lanthanide</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot actinide"></span>Actinide</span>
       </div>
 
       <div class="pt-tool-grid" id="ptGrid">
@@ -661,17 +724,32 @@
       <div class="practice-banner-eyebrow">✦ Practice Problems</div>
       <div class="practice-banner-headline">Test yourself with randomized periodic trends problem sets</div>
       <div class="practice-banner-features">
-        <span>✓ Randomized trend practice</span>
+        <span>✓ 84 Unit 04 problems</span>
         <span>✓ Instant answer checking</span>
         <span>✓ Full worked solutions</span>
-        <span>✓ 84-problem bank for this unit</span>
+        <span>✓ Randomized trend practice</span>
       </div>
     </div>
     <div class="practice-banner-right">
       <a href="04_practice.html" class="practice-banner-btn">Start Practicing →</a>
-      <div class="practice-banner-note">Practice file is the gate page &nbsp;·&nbsp; subscription required</div>
+      <div class="practice-banner-note">Build speed and confidence with periodic trend questions</div>
     </div>
   </div>
+
+  <nav class="unit-link-grid" aria-label="Related chemistry units">
+    <a class="unit-link-card" href="03_Learn_Electron_Configuration.html">
+      <span class="unit-link-eyebrow">Previous Unit</span>
+      <span class="unit-link-title">Electron Configuration</span>
+    </a>
+    <a class="unit-link-card" href="04_practice.html">
+      <span class="unit-link-eyebrow">Practice</span>
+      <span class="unit-link-title">Unit 04 Problem Set</span>
+    </a>
+    <a class="unit-link-card" href="05_Learn_Chemistry_Nomenclature.html">
+      <span class="unit-link-eyebrow">Next Unit</span>
+      <span class="unit-link-title">Chemical Nomenclature</span>
+    </a>
+  </nav>
 
   <div class="scroll-hint">Introductory General Chemistry · Unit 04 · Periodic Table &amp; Trends</div>
 
@@ -684,77 +762,56 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── PERIODIC TABLE DATA ──────────────────────────────────────
   // Each element: [symbol, name, atomicNum, period, group, type, radius, IE, EN]
   // type codes: am=alkali metal, ae=alkaline earth, tm=transition metal,
-  //             ml=metalloid, nm=nonmetal, ha=halogen, ng=noble gas
+  //             ptm=post-transition metal, ml=metalloid, nm=nonmetal,
+  //             ha=halogen, ng=noble gas, la=lanthanide, ac=actinide
   const ELEMENTS = [
-    // Period 1
-    ['H',  'Hydrogen',    1,  1,  1, 'nm',  53, 1312, 2.20],
-    ['He', 'Helium',      2,  1, 18, 'ng',  31, 2372, null],
-    // Period 2
-    ['Li', 'Lithium',     3,  2,  1, 'am', 152,  520, 0.98],
-    ['Be', 'Beryllium',   4,  2,  2, 'ae', 112,  899, 1.57],
-    ['B',  'Boron',       5,  2, 13, 'ml',  87,  801, 2.04],
-    ['C',  'Carbon',      6,  2, 14, 'nm',  77, 1086, 2.55],
-    ['N',  'Nitrogen',    7,  2, 15, 'nm',  75, 1402, 3.04],
-    ['O',  'Oxygen',      8,  2, 16, 'nm',  73, 1314, 3.44],
-    ['F',  'Fluorine',    9,  2, 17, 'ha',  64, 1681, 3.98],
-    ['Ne', 'Neon',       10,  2, 18, 'ng',  38, 2081, null],
-    // Period 3
-    ['Na', 'Sodium',     11,  3,  1, 'am', 186,  496, 0.93],
-    ['Mg', 'Magnesium',  12,  3,  2, 'ae', 160,  738, 1.31],
-    ['Al', 'Aluminum',   13,  3, 13, 'ptm', 143,  578, 1.61],
-    ['Si', 'Silicon',    14,  3, 14, 'ml', 111,  786, 1.90],
-    ['P',  'Phosphorus', 15,  3, 15, 'nm', 106, 1012, 2.19],
-    ['S',  'Sulfur',     16,  3, 16, 'nm', 103, 1000, 2.58],
-    ['Cl', 'Chlorine',   17,  3, 17, 'ha',  99, 1251, 3.16],
-    ['Ar', 'Argon',      18,  3, 18, 'ng',  71, 1521, null],
-    // Period 4 (selected main-group + first few TM)
-    ['K',  'Potassium',  19,  4,  1, 'am', 227,  419, 0.82],
-    ['Ca', 'Calcium',    20,  4,  2, 'ae', 197,  590, 1.00],
-    ['Br', 'Bromine',    35,  4, 17, 'ha', 114, 1140, 2.96],
-    ['Kr', 'Krypton',    36,  4, 18, 'ng',  88, 1351, null],
-    // Period 5 (selected)
-    ['Rb', 'Rubidium',   37,  5,  1, 'am', 248,  403, 0.82],
-    ['Sr', 'Strontium',  38,  5,  2, 'ae', 215,  550, 0.95],
-    ['I',  'Iodine',     53,  5, 17, 'ha', 133, 1008, 2.66],
-    // Period 6 (selected)
-    ['Cs', 'Cesium',     55,  6,  1, 'am', 265,  376, 0.79],
-    ['Ba', 'Barium',     56,  6,  2, 'ae', 222,  503, 0.89],
+    ['H','Hydrogen',1,1,1,'nm',53,1312,2.20], ['He','Helium',2,1,18,'ng',31,2372,null],
+    ['Li','Lithium',3,2,1,'am',152,520,0.98], ['Be','Beryllium',4,2,2,'ae',112,899,1.57], ['B','Boron',5,2,13,'ml',87,801,2.04], ['C','Carbon',6,2,14,'nm',77,1086,2.55], ['N','Nitrogen',7,2,15,'nm',75,1402,3.04], ['O','Oxygen',8,2,16,'nm',73,1314,3.44], ['F','Fluorine',9,2,17,'ha',64,1681,3.98], ['Ne','Neon',10,2,18,'ng',38,2081,null],
+    ['Na','Sodium',11,3,1,'am',186,496,0.93], ['Mg','Magnesium',12,3,2,'ae',160,738,1.31], ['Al','Aluminum',13,3,13,'ptm',143,578,1.61], ['Si','Silicon',14,3,14,'ml',111,786,1.90], ['P','Phosphorus',15,3,15,'nm',106,1012,2.19], ['S','Sulfur',16,3,16,'nm',103,1000,2.58], ['Cl','Chlorine',17,3,17,'ha',99,1251,3.16], ['Ar','Argon',18,3,18,'ng',71,1521,null],
+    ['K','Potassium',19,4,1,'am',227,419,0.82], ['Ca','Calcium',20,4,2,'ae',197,590,1.00], ['Sc','Scandium',21,4,3,'tm',162,633,1.36], ['Ti','Titanium',22,4,4,'tm',147,659,1.54], ['V','Vanadium',23,4,5,'tm',134,651,1.63], ['Cr','Chromium',24,4,6,'tm',128,653,1.66], ['Mn','Manganese',25,4,7,'tm',127,717,1.55], ['Fe','Iron',26,4,8,'tm',126,763,1.83], ['Co','Cobalt',27,4,9,'tm',125,760,1.88], ['Ni','Nickel',28,4,10,'tm',124,737,1.91], ['Cu','Copper',29,4,11,'tm',128,746,1.90], ['Zn','Zinc',30,4,12,'tm',134,906,1.65], ['Ga','Gallium',31,4,13,'ptm',135,579,1.81], ['Ge','Germanium',32,4,14,'ml',122,762,2.01], ['As','Arsenic',33,4,15,'ml',119,947,2.18], ['Se','Selenium',34,4,16,'nm',116,941,2.55], ['Br','Bromine',35,4,17,'ha',114,1140,2.96], ['Kr','Krypton',36,4,18,'ng',88,1351,null],
+    ['Rb','Rubidium',37,5,1,'am',248,403,0.82], ['Sr','Strontium',38,5,2,'ae',215,550,0.95], ['Y','Yttrium',39,5,3,'tm',180,600,1.22], ['Zr','Zirconium',40,5,4,'tm',160,640,1.33], ['Nb','Niobium',41,5,5,'tm',146,652,1.60], ['Mo','Molybdenum',42,5,6,'tm',139,684,2.16], ['Tc','Technetium',43,5,7,'tm',136,702,1.90], ['Ru','Ruthenium',44,5,8,'tm',134,710,2.20], ['Rh','Rhodium',45,5,9,'tm',134,720,2.28], ['Pd','Palladium',46,5,10,'tm',137,804,2.20], ['Ag','Silver',47,5,11,'tm',144,731,1.93], ['Cd','Cadmium',48,5,12,'tm',151,868,1.69], ['In','Indium',49,5,13,'ptm',167,558,1.78], ['Sn','Tin',50,5,14,'ptm',140,709,1.96], ['Sb','Antimony',51,5,15,'ml',140,834,2.05], ['Te','Tellurium',52,5,16,'ml',136,869,2.10], ['I','Iodine',53,5,17,'ha',133,1008,2.66], ['Xe','Xenon',54,5,18,'ng',108,1170,null],
+    ['Cs','Cesium',55,6,1,'am',265,376,0.79], ['Ba','Barium',56,6,2,'ae',222,503,0.89], ['La','Lanthanum',57,6,3,'la',187,538,1.10], ['Ce','Cerium',58,6,3,'la',182,534,1.12], ['Pr','Praseodymium',59,6,3,'la',182,527,1.13], ['Nd','Neodymium',60,6,3,'la',181,533,1.14], ['Pm','Promethium',61,6,3,'la',183,540,null], ['Sm','Samarium',62,6,3,'la',180,545,1.17], ['Eu','Europium',63,6,3,'la',204,547,null], ['Gd','Gadolinium',64,6,3,'la',180,593,1.20], ['Tb','Terbium',65,6,3,'la',178,566,null], ['Dy','Dysprosium',66,6,3,'la',177,573,1.22], ['Ho','Holmium',67,6,3,'la',176,581,1.23], ['Er','Erbium',68,6,3,'la',176,589,1.24], ['Tm','Thulium',69,6,3,'la',176,597,1.25], ['Yb','Ytterbium',70,6,3,'la',176,603,null], ['Lu','Lutetium',71,6,3,'la',174,524,1.27], ['Hf','Hafnium',72,6,4,'tm',159,659,1.30], ['Ta','Tantalum',73,6,5,'tm',146,761,1.50], ['W','Tungsten',74,6,6,'tm',139,770,2.36], ['Re','Rhenium',75,6,7,'tm',137,760,1.90], ['Os','Osmium',76,6,8,'tm',135,840,2.20], ['Ir','Iridium',77,6,9,'tm',136,880,2.20], ['Pt','Platinum',78,6,10,'tm',139,870,2.28], ['Au','Gold',79,6,11,'tm',144,890,2.54], ['Hg','Mercury',80,6,12,'tm',151,1007,2.00], ['Tl','Thallium',81,6,13,'ptm',170,589,1.62], ['Pb','Lead',82,6,14,'ptm',175,716,2.33], ['Bi','Bismuth',83,6,15,'ptm',156,703,2.02], ['Po','Polonium',84,6,16,'ml',168,812,2.00], ['At','Astatine',85,6,17,'ha',150,920,2.20], ['Rn','Radon',86,6,18,'ng',120,1037,null],
+    ['Fr','Francium',87,7,1,'am',null,393,0.70], ['Ra','Radium',88,7,2,'ae',null,509,0.90], ['Ac','Actinium',89,7,3,'ac',null,499,1.10], ['Th','Thorium',90,7,3,'ac',179,587,1.30], ['Pa','Protactinium',91,7,3,'ac',163,568,1.50], ['U','Uranium',92,7,3,'ac',156,598,1.38], ['Np','Neptunium',93,7,3,'ac',155,605,1.36], ['Pu','Plutonium',94,7,3,'ac',159,585,1.28], ['Am','Americium',95,7,3,'ac',173,578,1.30], ['Cm','Curium',96,7,3,'ac',174,581,1.30], ['Bk','Berkelium',97,7,3,'ac',170,601,1.30], ['Cf','Californium',98,7,3,'ac',186,608,1.30], ['Es','Einsteinium',99,7,3,'ac',186,619,1.30], ['Fm','Fermium',100,7,3,'ac',null,627,1.30], ['Md','Mendelevium',101,7,3,'ac',null,635,1.30], ['No','Nobelium',102,7,3,'ac',null,642,1.30], ['Lr','Lawrencium',103,7,3,'ac',null,470,null], ['Rf','Rutherfordium',104,7,4,'tm',null,580,null], ['Db','Dubnium',105,7,5,'tm',null,null,null], ['Sg','Seaborgium',106,7,6,'tm',null,null,null], ['Bh','Bohrium',107,7,7,'tm',null,null,null], ['Hs','Hassium',108,7,8,'tm',null,null,null], ['Mt','Meitnerium',109,7,9,'tm',null,null,null], ['Ds','Darmstadtium',110,7,10,'tm',null,null,null], ['Rg','Roentgenium',111,7,11,'tm',null,null,null], ['Cn','Copernicium',112,7,12,'tm',null,null,null], ['Nh','Nihonium',113,7,13,'ptm',null,null,null], ['Fl','Flerovium',114,7,14,'ptm',null,null,null], ['Mc','Moscovium',115,7,15,'ptm',null,null,null], ['Lv','Livermorium',116,7,16,'ptm',null,null,null], ['Ts','Tennessine',117,7,17,'ha',null,null,null], ['Og','Oganesson',118,7,18,'ng',null,null,null]
   ];
 
   const TYPE_CLASS = {
-    am: 'metal-alkali', ae: 'metal-alkaline', tm: 'metal-trans', ptm: 'metal-trans',
-    ml: 'metalloid', nm: 'nonmetal', ha: 'halogen', ng: 'noble'
+    am: 'metal-alkali', ae: 'metal-alkaline', tm: 'metal-trans', ptm: 'post-transition',
+    ml: 'metalloid', nm: 'nonmetal', ha: 'halogen', ng: 'noble',
+    la: 'lanthanide', ac: 'actinide'
   };
   const TYPE_LABEL = {
     am: 'Alkali Metal', ae: 'Alkaline Earth Metal', tm: 'Transition Metal',
-    ptm: 'Post-transition Metal', ml: 'Metalloid', nm: 'Nonmetal', ha: 'Halogen', ng: 'Noble Gas'
+    ptm: 'Post-transition Metal', ml: 'Metalloid', nm: 'Nonmetal', ha: 'Halogen', ng: 'Noble Gas',
+    la: 'Lanthanide', ac: 'Actinide'
   };
 
-  // Build a flat grid: 7 rows × 18 cols
-  // Store placement: [period, col] for each element
+  // Store display placement: [visual row, visual column].
   const PLACEMENT = {
-    'H':1, 'He':18,
-    'Li':1,'Be':2,'B':13,'C':14,'N':15,'O':16,'F':17,'Ne':18,
-    'Na':1,'Mg':2,'Al':13,'Si':14,'P':15,'S':16,'Cl':17,'Ar':18,
-    'K':1,'Ca':2,'Br':17,'Kr':18,
-    'Rb':1,'Sr':2,'I':17,
-    'Cs':1,'Ba':2
+    H:[1,1],He:[1,18],
+    Li:[2,1],Be:[2,2],B:[2,13],C:[2,14],N:[2,15],O:[2,16],F:[2,17],Ne:[2,18],
+    Na:[3,1],Mg:[3,2],Al:[3,13],Si:[3,14],P:[3,15],S:[3,16],Cl:[3,17],Ar:[3,18],
+    K:[4,1],Ca:[4,2],Sc:[4,3],Ti:[4,4],V:[4,5],Cr:[4,6],Mn:[4,7],Fe:[4,8],Co:[4,9],Ni:[4,10],Cu:[4,11],Zn:[4,12],Ga:[4,13],Ge:[4,14],As:[4,15],Se:[4,16],Br:[4,17],Kr:[4,18],
+    Rb:[5,1],Sr:[5,2],Y:[5,3],Zr:[5,4],Nb:[5,5],Mo:[5,6],Tc:[5,7],Ru:[5,8],Rh:[5,9],Pd:[5,10],Ag:[5,11],Cd:[5,12],In:[5,13],Sn:[5,14],Sb:[5,15],Te:[5,16],I:[5,17],Xe:[5,18],
+    Cs:[6,1],Ba:[6,2],Hf:[6,4],Ta:[6,5],W:[6,6],Re:[6,7],Os:[6,8],Ir:[6,9],Pt:[6,10],Au:[6,11],Hg:[6,12],Tl:[6,13],Pb:[6,14],Bi:[6,15],Po:[6,16],At:[6,17],Rn:[6,18],
+    Fr:[7,1],Ra:[7,2],Rf:[7,4],Db:[7,5],Sg:[7,6],Bh:[7,7],Hs:[7,8],Mt:[7,9],Ds:[7,10],Rg:[7,11],Cn:[7,12],Nh:[7,13],Fl:[7,14],Mc:[7,15],Lv:[7,16],Ts:[7,17],Og:[7,18],
+    La:[8,4],Ce:[8,5],Pr:[8,6],Nd:[8,7],Pm:[8,8],Sm:[8,9],Eu:[8,10],Gd:[8,11],Tb:[8,12],Dy:[8,13],Ho:[8,14],Er:[8,15],Tm:[8,16],Yb:[8,17],Lu:[8,18],
+    Ac:[9,4],Th:[9,5],Pa:[9,6],U:[9,7],Np:[9,8],Pu:[9,9],Am:[9,10],Cm:[9,11],Bk:[9,12],Cf:[9,13],Es:[9,14],Fm:[9,15],Md:[9,16],No:[9,17],Lr:[9,18]
   };
 
   const grid = document.getElementById('ptGrid');
   if (!grid) return;
 
-  // Build element map by [period][col]
+  // Build element map by visual grid position.
   const byPos = {};
   ELEMENTS.forEach(el => {
-    const col = PLACEMENT[el[0]];
-    if (col === undefined) return;
-    const key = `${el[3]}-${col}`;
+    const pos = PLACEMENT[el[0]];
+    if (!pos) return;
+    const key = `${pos[0]}-${pos[1]}`;
     byPos[key] = el;
   });
 
-  // Render 6 rows × 18 cols (periods 1–6, skipping lanthanides/actinides)
-  for (let p = 1; p <= 6; p++) {
+  // Render 7 main rows plus lanthanide and actinide rows.
+  for (let p = 1; p <= 9; p++) {
     for (let c = 1; c <= 18; c++) {
       const cell = document.createElement('div');
       const key = `${p}-${c}`;
@@ -782,13 +839,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const metaEl = document.getElementById('ptMeta');
     const [sym, name, Z, period, group, type, radius, ie, en] = el;
     nameEl.textContent = `${name} (${sym}) — Atomic number ${Z}`;
-    const ve = group <= 2 ? group : (group >= 13 ? group - 10 : '—');
-    const enStr = en ? en.toFixed(2) : '—';
+    const ve = group <= 2 ? group : (group >= 13 ? group - 10 : 'varies');
+    const fmt = (value, unit = '') => value === null || value === undefined ? 'not listed' : `${value}${unit ? ' ' + unit : ''}`;
+    const enStr = en ? en.toFixed(2) : 'not listed';
     metaEl.innerHTML = `
       <strong>Period ${period}, Group ${group}</strong> &nbsp;|&nbsp; ${TYPE_LABEL[type]}<br>
       Valence electrons: <strong>${ve}</strong><br>
-      Atomic radius: <strong>${radius} pm</strong> &nbsp;|&nbsp;
-      1st Ionization Energy: <strong>${ie} kJ/mol</strong> &nbsp;|&nbsp;
+      Atomic radius: <strong>${fmt(radius, 'pm')}</strong> &nbsp;|&nbsp;
+      1st Ionization Energy: <strong>${fmt(ie, 'kJ/mol')}</strong> &nbsp;|&nbsp;
       Electronegativity: <strong>${enStr}</strong>
     `;
     panel.classList.add('visible');
