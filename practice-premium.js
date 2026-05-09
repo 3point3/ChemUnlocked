@@ -115,7 +115,7 @@
     }
   }
 
-  async function loadPremiumSet(unit, filter = 'all', count = 12) {
+  async function loadPremiumSet(unit, filter = 'all', count = 3) {
     const token = localStorage.getItem('cu_token') || '';
     const res = await fetch(
       `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&count=${encodeURIComponent(count)}`,

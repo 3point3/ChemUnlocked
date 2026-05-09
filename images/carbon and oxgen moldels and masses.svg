@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460">
+  <style>
+    .label { font-family: Arial, Helvetica, sans-serif; font-size: 24px; fill: #111; }
+    .cyl-text { font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: bold; fill: white; }
+    .display-text { font-family: 'Courier New', Courier, monospace; font-size: 19px; font-weight: bold; fill: #000; }
+    .panel-label { font-family: Arial; font-size: 6px; fill: #bbb; }
+  </style>
+
+  <!-- ITEM 1: SOLID CARBON (cx=160) -->
+
+  <!-- Carbon lumps -->
+  <path d="M 68,302 L 68,290 C 76,282 88,276 102,270 C 110,264 112,252 124,244 C 134,238 144,232 158,230 C 165,228 170,230 178,230 C 190,232 200,240 210,248 C 220,256 226,268 238,276 C 248,282 252,292 250,302 Z" fill="#1a1a1a"/>
+  <path d="M 118,258 C 122,248 132,238 148,234 C 158,230 168,232 178,236 C 190,242 196,254 192,264 L 125,264 Z" fill="#0f0f0f"/>
+  <path d="M 72,294 C 74,282 86,274 100,274 C 110,274 118,280 116,292 Z" fill="#222"/>
+  <path d="M 230,290 C 234,278 242,274 252,278 L 252,294 Z" fill="#1a1a1a"/>
+
+  <!-- Scale platform -->
+  <rect x="50" y="302" width="220" height="12" rx="3" fill="#8a8a8a"/>
+  <!-- Scale body -->
+  <rect x="60" y="314" width="200" height="56" rx="4" fill="#1c1c1c"/>
+  <!-- Feet -->
+  <rect x="65" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <rect x="233" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <!-- Panel labels -->
+  <text x="67" y="328" class="panel-label">on/off</text>
+  <text x="67" y="338" class="panel-label">mode</text>
+  <text x="67" y="348" class="panel-label">tare</text>
+  <!-- Indicator buttons -->
+  <rect x="91" y="323" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="91" y="333" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="91" y="343" width="11" height="7" rx="1" fill="#333"/>
+  <!-- Teal display -->
+  <rect x="108" y="322" width="146" height="38" rx="3" fill="#4dd0e1"/>
+  <text x="181" y="347" text-anchor="middle" class="display-text">12.011 g</text>
+
+  <!-- Label -->
+  <text x="160" y="415" text-anchor="middle" class="label">Solid Carbon</text>
+
+
+  <!-- PLUS SIGN (centered x=364, y=213) -->
+  <rect x="349" y="168" width="30" height="90" fill="#111"/>
+  <rect x="319" y="198" width="90" height="30" fill="#111"/>
+
+
+  <!-- ITEM 2: OXYGEN GAS (cx=575) -->
+
+  <!-- Valve (I-bar fitting) -->
+  <rect x="553" y="16" width="44" height="6" rx="2" fill="#212121"/>
+  <rect x="553" y="16" width="8" height="24" rx="2" fill="#212121"/>
+  <rect x="589" y="16" width="8" height="24" rx="2" fill="#212121"/>
+  <!-- Cap -->
+  <rect x="549" y="37" width="52" height="30" rx="3" fill="#424242"/>
+  <!-- Neck -->
+  <rect x="544" y="63" width="62" height="55" rx="5" fill="#6d6d6d"/>
+  <!-- Body (green) -->
+  <rect x="498" y="114" width="154" height="188" rx="58" fill="#4caf50"/>
+  <!-- Text on cylinder -->
+  <text x="575" y="190" text-anchor="middle" class="cyl-text">1 mole</text>
+  <text x="575" y="223" text-anchor="middle" class="cyl-text">O<tspan dy="8" font-size="17">2</tspan></text>
+
+  <!-- Scale platform -->
+  <rect x="465" y="302" width="220" height="12" rx="3" fill="#8a8a8a"/>
+  <!-- Scale body -->
+  <rect x="475" y="314" width="200" height="56" rx="4" fill="#1c1c1c"/>
+  <!-- Feet -->
+  <rect x="480" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <rect x="648" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <!-- Panel labels -->
+  <text x="482" y="328" class="panel-label">on/off</text>
+  <text x="482" y="338" class="panel-label">mode</text>
+  <text x="482" y="348" class="panel-label">tare</text>
+  <!-- Buttons -->
+  <rect x="506" y="323" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="506" y="333" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="506" y="343" width="11" height="7" rx="1" fill="#333"/>
+  <!-- Display -->
+  <rect x="523" y="322" width="146" height="38" rx="3" fill="#4dd0e1"/>
+  <text x="596" y="347" text-anchor="middle" class="display-text">31.999 g</text>
+
+  <!-- Label -->
+  <text x="575" y="415" text-anchor="middle" class="label">Oxygen Gas</text>
+
+
+  <!-- ARROW (shaft x=750-842, head tip x=895, centered y=213) -->
+  <polygon points="750,199 842,199 842,174 895,213 842,252 842,227 750,227" fill="#111"/>
+
+
+  <!-- ITEM 3: CARBON DIOXIDE GAS (cx=1040) -->
+
+  <!-- Valve -->
+  <rect x="1018" y="16" width="44" height="6" rx="2" fill="#212121"/>
+  <rect x="1018" y="16" width="8" height="24" rx="2" fill="#212121"/>
+  <rect x="1054" y="16" width="8" height="24" rx="2" fill="#212121"/>
+  <!-- Cap -->
+  <rect x="1014" y="37" width="52" height="30" rx="3" fill="#424242"/>
+  <!-- Neck -->
+  <rect x="1009" y="63" width="62" height="55" rx="5" fill="#6d6d6d"/>
+  <!-- Body (lavender) -->
+  <rect x="963" y="114" width="154" height="188" rx="58" fill="#ce93d8"/>
+  <!-- Text on cylinder -->
+  <text x="1040" y="190" text-anchor="middle" class="cyl-text">1 mole</text>
+  <text x="1040" y="223" text-anchor="middle" class="cyl-text">CO<tspan dy="8" font-size="17">2</tspan></text>
+
+  <!-- Scale platform -->
+  <rect x="930" y="302" width="220" height="12" rx="3" fill="#8a8a8a"/>
+  <!-- Scale body -->
+  <rect x="940" y="314" width="200" height="56" rx="4" fill="#1c1c1c"/>
+  <!-- Feet -->
+  <rect x="945" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <rect x="1113" y="370" width="22" height="8" rx="2" fill="#111"/>
+  <!-- Panel labels -->
+  <text x="947" y="328" class="panel-label">on/off</text>
+  <text x="947" y="338" class="panel-label">mode</text>
+  <text x="947" y="348" class="panel-label">tare</text>
+  <!-- Buttons -->
+  <rect x="971" y="323" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="971" y="333" width="11" height="7" rx="1" fill="#333"/>
+  <rect x="971" y="343" width="11" height="7" rx="1" fill="#333"/>
+  <!-- Display -->
+  <rect x="988" y="322" width="146" height="38" rx="3" fill="#4dd0e1"/>
+  <text x="1061" y="347" text-anchor="middle" class="display-text">44.010 g</text>
+
+  <!-- Label -->
+  <text x="1040" y="415" text-anchor="middle" class="label">Carbon Dioxide Gas</text>
+
+</svg>

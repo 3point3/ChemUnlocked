@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 10 — Chemical Bonding | ChemUnlocked</title>
+<meta name="description" content="Learn about chemical bonding, Lewis structures, VSEPR theory, and molecular geometry. Includes interactive SVG diagrams and step-by-step guides.">
+<link rel="canonical" href="https://chemunlocked.com/10_Learn_Chemistry_Bonding.html">
+<meta property="og:title" content="Unit 10 — Chemical Bonding | ChemUnlocked">
+<meta property="og:description" content="Learn about chemical bonding, Lewis structures, VSEPR theory, and molecular geometry. Includes interactive SVG diagrams and step-by-step guides.">
+<meta property="og:url" content="https://chemunlocked.com/10_Learn_Chemistry_Bonding.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 10 — Chemical Bonding | ChemUnlocked">
+<meta name="twitter:description" content="Learn about chemical bonding, Lewis structures, VSEPR theory, and molecular geometry. Includes interactive SVG diagrams and step-by-step guides.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:site" content="@ChemUnlocked">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 10 — Chemical Bonding",
+  "description": "Learn about chemical bonding, Lewis structures, VSEPR theory, and molecular geometry. Includes interactive SVG diagrams and step-by-step guides.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked",
+    "url": "https://chemunlocked.com"
+  },
+  "url": "https://chemunlocked.com/10_Learn_Chemistry_Bonding.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<meta name="theme-color" content="#2563eb">
+<style>
+:root {
+  --vsepr-b-fill: #eff6ff;
+  --vsepr-b-stroke: #3b82f6;
+  --vsepr-b-text: #2563eb;
+  --vsepr-a-fill: #fef2f2;
+  --vsepr-a-stroke: #ef4444;
+  --vsepr-a-text: #dc2626;
+  --vsepr-bond-color: #334155;
+  --vsepr-lp-stroke: #94a3b8;
+}
+
+.bond {
+  stroke: var(--vsepr-bond-color);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.bond-dash {
+  stroke: var(--vsepr-bond-color);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 4, 4;
+}
+
+.wedge {
+  fill: var(--vsepr-bond-color);
+}
+
+.atom-b {
+  fill: var(--vsepr-b-fill);
+  stroke: var(--vsepr-b-stroke);
+  stroke-width: 2;
+}
+
+.atom-a {
+  fill: var(--vsepr-a-fill);
+  stroke: var(--vsepr-a-stroke);
+  stroke-width: 2;
+}
+
+.text-b {
+  fill: var(--vsepr-b-text);
+  font-weight: 800;
+  font-size: 14px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.text-a {
+  fill: var(--vsepr-a-text);
+  font-weight: 800;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.lp {
+  fill: #ffffff;
+  stroke: var(--vsepr-lp-stroke);
+  stroke-width: 1.5;
+  stroke-dasharray: 3, 3;
+}
+
+.text-lp {
+  fill: var(--vsepr-lp-stroke);
+  font-weight: 700;
+  font-size: 9px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.vsepr-example-card {
+  max-width: 360px;
+  margin: 1rem auto 0;
+}
+
+.resonance-row--nitrate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem 0 0.6rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.5rem;
+}
+
+.resonance-structure {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.resonance-structure svg {
+  display: block;
+}
+
+.resonance-arrow {
+  flex: 0 0 auto;
+  color: #2563eb;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .resonance-row--nitrate {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-10-learn-chemistry-bonding .lewis-diagram {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px auto;
+  }
+
+  .page-10-learn-chemistry-bonding .lewis-box {
+    min-height: 0;
+    max-width: none;
+    padding: 12px 10px;
+  }
+
+  .page-10-learn-chemistry-bonding .lewis-box svg {
+    width: min(100%, 88px);
+  }
+
+  .page-10-learn-chemistry-bonding .lb-name {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .page-10-learn-chemistry-bonding .lb-formula {
+    margin-top: 8px;
+    font-size: 0.76rem;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram-shell {
+    max-width: 180px;
+    margin-inline: auto;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram {
+    min-height: 0;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram svg {
+    width: min(100%, 170px);
+    margin-inline: auto;
+  }
+
+  .page-10-learn-chemistry-bonding .geo-card svg,
+  .page-10-learn-chemistry-bonding .vsepr-example-card svg {
+    width: min(100%, 158px);
+  }
+
+  .page-10-learn-chemistry-bonding .diagram-card svg {
+    width: min(100%, 210px);
+    margin-inline: auto;
+    display: block;
+  }
+
+  .page-10-learn-chemistry-bonding .resonance-structure svg {
+    width: min(100%, 148px);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .resonance-row--nitrate {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: visible;
+  }
+
+  .resonance-arrow {
+    transform: rotate(90deg);
+  }
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+</head>
+<body class="page-unit page-10-learn-chemistry-bonding">
+
+<div class="starfield"></div>
+
+
+<main id="main-content" role="main" tabindex="-1">
+<div class="container">
+
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 10</div>
+    <h1>Chemical Bonding</h1>
+    <p class="subtitle">Bonding is what turns isolated atoms into the molecules and materials that make up the world.</p>
+  </header>
+
+  <p class="learning-objectives-intro">What you'll learn</p>
+  <div class="learning-objectives" aria-label="What you will learn">
+    <span>Distinguish ionic from covalent bonding using electronegativity differences.</span>
+    <span>Draw Lewis structures for molecules and polyatomic ions using the NASBU method.</span>
+    <span>Identify resonance structures and assign formal charges.</span>
+    <span>Predict molecular geometry, polarity, and intermolecular forces from structure.</span>
+  </div>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 10 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       CONCEPTS TAB
+       ════════════════════════════════════════════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+    <div class="card" id="bond-types">
+      <h2 class="card-title"><span class="num">10.1</span> Types of Chemical Bonds</h2>
+      <p>Atoms bond because bonding lowers their total energy. A bond forms when the bonded atoms are more stable together than they are apart.</p>
+      <p>In introductory chemistry, you should recognize four main bonding pictures: ionic, metallic, polar covalent, and nonpolar covalent.</p>
+      <p>Use this order when you classify bonding in introductory chemistry:</p>
+      <ol class="content-ordered-list">
+        <li>If both elements are metals, use the metallic bonding picture.</li>
+        <li>If one element is a metal and the other is a nonmetal, use the ionic bonding picture.</li>
+        <li>If both elements are nonmetals, use the covalent bonding picture.</li>
+      </ol>
+      <p>Then use the difference in <strong>electronegativity</strong> values (ΔEN) to decide whether a covalent bond is nonpolar or polar.</p>
+      <p><strong>Electronegativity</strong> measures how strongly an atom attracts shared electrons in a bond. Fluorine (EN = 4.0) is the most electronegative element, while cesium and francium are among the least electronegative metals.</p>
+      <p>For metallic bonding, the key idea is different. Metal atoms pool their valence electrons into a shared, mobile electron cloud rather than using ΔEN cutoffs.</p>
+
+      <div class="bond-compare">
+        <div class="bond-col ionic">
+          <div class="bc-title">⊕⊖ Ionic Bond</div>
+          <div class="bc-stat">ΔEN ≥ 1.7<br>Electrons <em>transferred</em><br>from metal to nonmetal<br>Forms crystal lattices<br>Conducts electricity when dissolved</div>
+          <div class="bc-example">Examples: NaCl, MgO, CaF₂</div>
+        </div>
+        <div class="bond-col polar">
+          <div class="bc-title">⟷ Polar Covalent</div>
+          <div class="bc-stat">ΔEN = 0.4–1.7<br>Electrons <em>shared unequally</em><br>δ+ and δ– partial charges<br>Forms discrete molecules<br>Usually does not conduct</div>
+          <div class="bc-example">Examples: H₂O, HCl, NH₃</div>
+        </div>
+        <div class="bond-col nonpolar">
+          <div class="bc-title">↔ Nonpolar Covalent</div>
+          <div class="bc-stat">ΔEN &lt; 0.4<br>Electrons <em>shared equally</em><br>No partial charges<br>Forms discrete molecules<br>Does not conduct</div>
+          <div class="bc-example">Examples: H₂, O₂, CH₄, CCl₄</div>
+        </div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Metallic bonding</p>
+          <ul class="key-fact-list">
+            <li>Valence electrons are <em>delocalized</em>, not trapped between one pair of atoms</li>
+            <li>Metals are pictured as positive ions in a mobile “sea of electrons”</li>
+            <li>This explains conductivity, heat transfer, and why metals can bend without shattering</li>
+            <li>Examples include Cu, Fe, Zn, and alloys such as brass</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <div class="label">Rule of Thumb — Use ΔEN as Support</div>
+        <div class="formula-rule-list">
+          <span class="formula-rule"><strong>ΔEN = |EN<sub>atom1</sub> − EN<sub>atom2</sub>|</strong></span>
+          <span class="formula-rule">For two nonmetals: small ΔEN usually means nonpolar covalent.</span>
+          <span class="formula-rule">For two nonmetals: larger ΔEN usually means polar covalent.</span>
+          <span class="formula-rule">Larger ΔEN means the bond has more ionic character.</span>
+          <span class="formula-rule">Treat the cutoffs as guides, not hard rules.</span>
+        </div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">About ΔEN cutoffs</p>
+          <ul class="key-fact-list">
+            <li>The cutoffs are guidelines, not hard rules</li>
+            <li>Some textbooks use slightly different boundaries such as 0.5 and 1.8</li>
+            <li>The key idea is the <em>trend</em>: larger ΔEN means more ionic character</li>
+            <li>Na-Cl has ΔEN = 2.23, so it is strongly ionic</li>
+            <li>O-H has ΔEN = 1.24, so it is polar covalent</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10.2 Lewis Symbols -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.2</span> Lewis Symbols for Atoms and Ions</h2>
+      <p>A <strong>Lewis symbol</strong>, or electron-dot symbol, shows an element's chemical symbol surrounded by dots. Each dot represents one valence electron.</p>
+      <p>Valence electrons are the electrons in the outermost energy level, and they are the ones that participate in bonding. For main-group elements, the number of valence electrons matches the group number.</p>
+      <p>Place the first four dots one at a time on the four sides of the symbol before you start pairing them. This mirrors Hund's rule for the valence shell.</p>
+
+      <div class="lewis-diagram">
+          <div class="lewis-box">
+            <div class="lb-name">Hydrogen</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="22" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+              <circle cx="11" cy="30" r="3.5" fill="#2563eb"></circle>
+            </svg>
+            <div class="lb-formula">Group 1<br>1 valence e⁻</div>
+          </div>
+          
+          <div class="lewis-box">
+            <div class="lb-name">Carbon</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="22" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+              <circle cx="30" cy="11" r="3.5" fill="#2563eb"></circle>
+              <circle cx="49" cy="30" r="3.5" fill="#2563eb"></circle>
+              <circle cx="30" cy="49" r="3.5" fill="#2563eb"></circle>
+              <circle cx="11" cy="30" r="3.5" fill="#2563eb"></circle>
+            </svg>
+            <div class="lb-formula">Group 14<br>4 valence e⁻</div>
+          </div>
+          
+          <div class="lewis-box">
+            <div class="lb-name">Nitrogen</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="22" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+              <circle cx="30" cy="11" r="3.5" fill="#2563eb"></circle>
+              <circle cx="49" cy="30" r="3.5" fill="#2563eb"></circle>
+              <circle cx="30" cy="49" r="3.5" fill="#2563eb"></circle>
+              <circle cx="11" cy="23" r="3.5" fill="#2563eb"></circle>
+              <circle cx="11" cy="37" r="3.5" fill="#2563eb"></circle>
+            </svg>
+            <div class="lb-formula">Group 15<br>5 valence e⁻</div>
+          </div>
+          
+          <div class="lewis-box">
+            <div class="lb-name">Oxygen</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="22" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+              <circle cx="23" cy="11" r="3.5" fill="#dc2626"></circle>
+              <circle cx="37" cy="11" r="3.5" fill="#dc2626"></circle>
+              <circle cx="11" cy="23" r="3.5" fill="#dc2626"></circle>
+              <circle cx="11" cy="37" r="3.5" fill="#dc2626"></circle>
+              <circle cx="49" cy="30" r="3.5" fill="#dc2626"></circle>
+              <circle cx="30" cy="49" r="3.5" fill="#dc2626"></circle>
+            </svg>
+            <div class="lb-formula">Group 16<br>6 valence e⁻</div>
+          </div>
+          
+          <div class="lewis-box">
+            <div class="lb-name">Fluorine</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="22" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
+              <circle cx="23" cy="11" r="3.5" fill="#059669"></circle>
+              <circle cx="37" cy="11" r="3.5" fill="#059669"></circle>
+              <circle cx="49" cy="23" r="3.5" fill="#059669"></circle>
+              <circle cx="49" cy="37" r="3.5" fill="#059669"></circle>
+              <circle cx="11" cy="23" r="3.5" fill="#059669"></circle>
+              <circle cx="11" cy="37" r="3.5" fill="#059669"></circle>
+              <circle cx="30" cy="49" r="3.5" fill="#059669"></circle>
+            </svg>
+            <div class="lb-formula">Group 17<br>7 valence e⁻</div>
+          </div>
+          
+          <div class="lewis-box">
+            <div class="lb-name">Neon</div>
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+              <text x="30" y="38" font-size="20" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">Ne</text>
+              <circle cx="23" cy="11" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="37" cy="11" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="49" cy="23" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="49" cy="37" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="23" cy="49" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="37" cy="49" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="11" cy="23" r="3.5" fill="#7c3aed"></circle>
+              <circle cx="11" cy="37" r="3.5" fill="#7c3aed"></circle>
+            </svg>
+            <div class="lb-formula">Group 18<br>8 valence e⁻</div>
+          </div>
+        </div>
+        
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Lewis symbols for ions</p>
+          <ul class="key-fact-list">
+            <li>Cations lose electrons, so their dot count goes down</li>
+            <li>Na⁺ has 0 dots because it lost its 1 valence electron</li>
+            <li>Anions gain electrons, so their dot count goes up</li>
+            <li>Cl⁻ has 8 dots and is shown in brackets with the charge outside</li>
+            <li>The ion charge tells you exactly how many electrons to add or remove</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10.3 NASBU Method -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.3</span> Drawing Lewis Structures — The NASBU Method</h2>
+      <p>NASBU helps you make one Lewis-structure decision at a time. First count how many electrons the atoms want. Then count how many valence electrons they actually have. From those two counts, you can find how many electrons must be shared in bonds and how many are left as lone pairs.</p>
+      <p>Quick example: for H₂O, <strong>A = 8</strong> valence electrons and <strong>S = 4</strong>, so the structure has 2 bonds and 4 unshared electrons.</p>
+
+      <div class="nasbu-steps">
+        <div class="nasbu-row">
+          <div class="nasbu-letter">N</div>
+          <div class="nasbu-content">
+            <strong>N — Needed electrons</strong>
+            <p>Count how many electrons are needed for every atom to have a full shell. Most atoms want 8 electrons, while hydrogen only needs 2. This gives the target total for a complete Lewis structure.</p>
+          </div>
+        </div>
+        <div class="nasbu-row">
+          <div class="nasbu-letter">A</div>
+          <div class="nasbu-content">
+            <strong>A — Available electrons</strong>
+            <p>Add the valence electrons the atoms actually bring. For ions, add electrons for a negative charge and subtract electrons for a positive charge. Think of A as your real electron budget.</p>
+          </div>
+        </div>
+        <div class="nasbu-row">
+          <div class="nasbu-letter">S</div>
+          <div class="nasbu-content">
+            <strong>S — Shared electrons</strong>
+            <p>Find how many electrons must be shared in bonds: <strong>S = N − A</strong>. These are the electrons that need to sit between atoms so everyone can get as close as possible to a full shell.</p>
+          </div>
+        </div>
+        <div class="nasbu-row">
+          <div class="nasbu-letter">B</div>
+          <div class="nasbu-content">
+            <strong>B — Bonds</strong>
+            <p>Convert shared electrons into bond lines: <strong>B = <span class="formula-frac"><span class="formula-frac-n">S</span><span class="formula-frac-d">2</span></span></strong>. This tells you the total number of covalent bonds to draw. After that, sketch the skeleton by choosing a sensible center atom: hydrogen is never central, carbon is usually central when present, and halogens usually stay terminal. Then use double or triple bonds if needed so the total number of bond lines matches B.</p>
+          </div>
+        </div>
+        <div class="nasbu-row">
+          <div class="nasbu-letter">U</div>
+          <div class="nasbu-content">
+            <strong>U — Unshared electrons</strong>
+            <p>Find the electrons left for lone pairs: <strong>U = A − S</strong>. Place these electrons on outer atoms first, then on the center if any remain. After that, check common exceptions such as hydrogen, boron, resonance, and expanded octets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <div class="label">NASBU Quick Reference</div>
+        <div class="formula-rule-list">
+          <span class="formula-rule"><strong>N</strong> = electrons Needed</span>
+          <span class="formula-rule"><strong>A</strong> = electrons Available</span>
+          <span class="formula-rule"><strong>S</strong> = N − A = electrons Shared</span>
+          <span class="formula-rule"><strong>B</strong> = <span class="formula-frac"><span class="formula-frac-n">S</span><span class="formula-frac-d">2</span></span> = total Bonds</span>
+          <span class="formula-rule"><strong>U</strong> = A − S = electrons Unshared</span>
+        </div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Exceptions to the octet rule</p>
+          <ul class="key-fact-list">
+            <li>Hydrogen is satisfied with only 2 electrons</li>
+            <li>Boron is often stable with 6 electrons</li>
+            <li>Period 3 and heavier central atoms can have expanded octets</li>
+            <li>P, S, and Cl are common examples with 10 or 12 electrons around the center</li>
+            <li>Never force an expanded octet on a Period 2 element</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10.4 Lewis Structures Illustrated -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.4</span> Lewis Structures — Worked Diagrams</h2>
+      <p>The diagrams below show the final Lewis structures for six common molecules, drawn correctly with lone pairs, bonding pairs, and multiple bonds where needed. Study each one and notice how NASBU predicts both the total number of bond lines and the electrons left over as lone pairs.</p>
+
+      <div class="lewis-diagram">
+        
+        <div class="lewis-box">
+          <div class="lb-name">Water</div>
+          <svg width="120" height="100" viewBox="0 0 120 100" overflow="visible">
+            <text x="60" y="58" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+            <circle cx="56" cy="36" r="2.5" fill="#0f172a"></circle>
+            <circle cx="64" cy="36" r="2.5" fill="#0f172a"></circle>
+            <circle cx="44" cy="48" r="2.5" fill="#0f172a"></circle>
+            <circle cx="44" cy="56" r="2.5" fill="#0f172a"></circle>
+            <line x1="48" y1="60" x2="18" y2="82" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="72" y1="60" x2="102" y2="82" stroke="#374151" stroke-width="2.2"></line>
+            <text x="13" y="92" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+            <text x="108" y="92" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+          </svg>
+          <div class="lb-formula">H₂O · 8 total e⁻</div>
+        </div>
+        
+        <div class="lewis-box">
+          <div class="lb-name">Ammonia</div>
+          <svg width="130" height="110" viewBox="0 0 130 110" overflow="visible">
+            <text x="65" y="60" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+            <circle cx="61" cy="38" r="2.5" fill="#0f172a"></circle>
+            <circle cx="69" cy="38" r="2.5" fill="#0f172a"></circle>
+            <line x1="53" y1="66" x2="18" y2="90" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="65" y1="68" x2="65" y2="97" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="77" y1="66" x2="112" y2="90" stroke="#374151" stroke-width="2.2"></line>
+            <text x="13" y="100" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+            <text x="65" y="108" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+            <text x="118" y="100" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+          </svg>
+          <div class="lb-formula">NH₃ · 8 total e⁻</div>
+        </div>
+        
+        <div class="lewis-box">
+          <div class="lb-name">Carbon Dioxide</div>
+          <svg width="200" height="80" viewBox="0 0 200 80" overflow="visible">
+            <text x="20" y="48" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+            <circle cx="16" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="24" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="16" cy="58" r="2.5" fill="#0f172a"></circle>
+            <circle cx="24" cy="58" r="2.5" fill="#0f172a"></circle>
+            <line x1="32" y1="42" x2="72" y2="42" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="32" y1="50" x2="72" y2="50" stroke="#374151" stroke-width="2.2"></line>
+            <text x="95" y="50" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+            <line x1="108" y1="42" x2="148" y2="42" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="108" y1="50" x2="148" y2="50" stroke="#374151" stroke-width="2.2"></line>
+            <text x="162" y="48" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+            <circle cx="158" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="166" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="158" cy="58" r="2.5" fill="#0f172a"></circle>
+            <circle cx="166" cy="58" r="2.5" fill="#0f172a"></circle>
+          </svg>
+          <div class="lb-formula">CO₂ · 16 total e⁻</div>
+        </div>
+        
+        <div class="lewis-box">
+          <div class="lb-name">Hydrogen Cyanide</div>
+          <svg width="190" height="80" viewBox="0 0 190 80" overflow="visible">
+            <text x="18" y="48" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
+            <line x1="28" y1="44" x2="55" y2="44" stroke="#374151" stroke-width="2.2"></line>
+            <text x="70" y="48" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+            <line x1="82" y1="38" x2="128" y2="38" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="82" y1="44" x2="128" y2="44" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="82" y1="50" x2="128" y2="50" stroke="#374151" stroke-width="2.2"></line>
+            <text x="143" y="48" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+            <circle cx="159" cy="38" r="2.5" fill="#0f172a"></circle>
+            <circle cx="159" cy="46" r="2.5" fill="#0f172a"></circle>
+          </svg>
+          <div class="lb-formula">HCN · 10 total e⁻</div>
+        </div>
+        
+        <div class="lewis-box">
+          <div class="lb-name">Sulfur Dioxide</div>
+          <svg width="200" height="110" viewBox="0 0 200 110" overflow="visible">
+            <line x1="44" y1="56" x2="84" y2="56" stroke="#374151" stroke-width="2.2"></line>
+            <line x1="44" y1="64" x2="84" y2="64" stroke="#374151" stroke-width="2.2"></line>
+            <text x="32" y="68" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+            <circle cx="28" cy="46" r="2.5" fill="#0f172a"></circle>
+            <circle cx="36" cy="46" r="2.5" fill="#0f172a"></circle>
+            <circle cx="16" cy="58" r="2.5" fill="#0f172a"></circle>
+            <circle cx="16" cy="66" r="2.5" fill="#0f172a"></circle>
+            
+            <text x="100" y="68" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">S</text>
+            <circle cx="96" cy="46" r="2.5" fill="#0f172a"></circle>
+            <circle cx="104" cy="46" r="2.5" fill="#0f172a"></circle>
+            
+            <line x1="116" y1="60" x2="152" y2="60" stroke="#374151" stroke-width="2.2"></line>
+            <text x="164" y="68" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
+            <circle cx="160" cy="46" r="2.5" fill="#0f172a"></circle>
+            <circle cx="168" cy="46" r="2.5" fill="#0f172a"></circle>
+            <circle cx="180" cy="58" r="2.5" fill="#0f172a"></circle>
+            <circle cx="180" cy="66" r="2.5" fill="#0f172a"></circle>
+            <circle cx="160" cy="78" r="2.5" fill="#0f172a"></circle>
+            <circle cx="168" cy="78" r="2.5" fill="#0f172a"></circle>
+            <text x="100" y="106" font-size="9" fill="#64748b" text-anchor="middle">resonance form</text>
+          </svg>
+          <div class="lb-formula">SO₂ · 18 total e⁻</div>
+        </div>
+        
+        <div class="lewis-box">
+          <div class="lb-name">Boron Trifluoride</div>
+          <svg width="180" height="155" viewBox="0 0 180 155" overflow="visible">
+            <text x="90" y="86" font-size="18" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">B</text>
+            <line x1="90" y1="72" x2="90" y2="42" stroke="#374151" stroke-width="2.2"></line>
+            <text x="90" y="36" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
+            <circle cx="86" cy="14" r="2.5" fill="#0f172a"></circle>
+            <circle cx="94" cy="14" r="2.5" fill="#0f172a"></circle>
+            <circle cx="74" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="74" cy="34" r="2.5" fill="#0f172a"></circle>
+            <circle cx="106" cy="26" r="2.5" fill="#0f172a"></circle>
+            <circle cx="106" cy="34" r="2.5" fill="#0f172a"></circle>
+            <line x1="82" y1="90" x2="54" y2="110" stroke="#374151" stroke-width="2.2"></line>
+            <text x="46" y="124" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
+            <circle cx="30" cy="114" r="2.5" fill="#0f172a"></circle>
+            <circle cx="30" cy="122" r="2.5" fill="#0f172a"></circle>
+            <circle cx="42" cy="134" r="2.5" fill="#0f172a"></circle>
+            <circle cx="50" cy="134" r="2.5" fill="#0f172a"></circle>
+            <circle cx="62" cy="122" r="2.5" fill="#0f172a"></circle>
+            <circle cx="62" cy="130" r="2.5" fill="#0f172a"></circle>
+            <line x1="98" y1="90" x2="126" y2="110" stroke="#374151" stroke-width="2.2"></line>
+            <text x="134" y="124" font-size="16" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
+            <circle cx="150" cy="114" r="2.5" fill="#0f172a"></circle>
+            <circle cx="150" cy="122" r="2.5" fill="#0f172a"></circle>
+            <circle cx="130" cy="134" r="2.5" fill="#0f172a"></circle>
+            <circle cx="138" cy="134" r="2.5" fill="#0f172a"></circle>
+            <circle cx="118" cy="122" r="2.5" fill="#0f172a"></circle>
+            <circle cx="118" cy="130" r="2.5" fill="#0f172a"></circle>
+          </svg>
+          <div class="lb-formula">BF₃ · 24 total e⁻</div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- 10.5 Resonance -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.5</span> Resonance Structures</h2>
+      <p>Some molecules cannot be accurately described by a single Lewis structure. When the electrons in a molecule can be arranged in two or more equally valid structures — differing only in where double bonds and lone pairs are placed, not in which atoms are connected — those structures are called <strong>resonance structures</strong>.</p>
+      <p>The real molecule is not one structure or the other. It is a <strong>resonance hybrid</strong> — a single blended structure where the electron density is spread out (delocalized) across all the relevant bonds. The double-headed arrow (⟺) between resonance structures is not a chemical equilibrium; it means the two drawings represent the same real molecule.</p>
+
+      <p><strong>The nitrate ion (NO₃⁻) — three equivalent resonance structures:</strong></p>
+      <div class="resonance-row resonance-row--nitrate">
+        <div class="resonance-structure">
+          <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="First nitrate resonance structure">
+            <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+
+            <line x1="84" y1="67" x2="84" y2="38" stroke="#374151" stroke-width="2.2"/>
+            <line x1="92" y1="67" x2="92" y2="38" stroke="#374151" stroke-width="2.2"/>
+            <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+
+            <line x1="80" y1="88" x2="53" y2="106" stroke="#374151" stroke-width="2.2"/>
+            <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="47" cy="126" r="3.5" fill="#dc2626"/>
+            <circle cx="55" cy="126" r="3.5" fill="#dc2626"/>
+
+            <line x1="96" y1="88" x2="123" y2="106" stroke="#374151" stroke-width="2.2"/>
+            <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="135" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="143" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="121" cy="126" r="3.5" fill="#dc2626"/>
+            <circle cx="129" cy="126" r="3.5" fill="#dc2626"/>
+
+            <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−1</text>
+          </svg>
+        </div>
+
+        <div class="resonance-arrow">⟺</div>
+
+        <div class="resonance-structure">
+          <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="Second nitrate resonance structure">
+            <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+
+            <line x1="88" y1="67" x2="88" y2="38" stroke="#374151" stroke-width="2.2"/>
+            <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+            <circle cx="84" cy="14" r="3.5" fill="#dc2626"/>
+            <circle cx="92" cy="14" r="3.5" fill="#dc2626"/>
+
+            <line x1="77" y1="90" x2="50" y2="108" stroke="#374151" stroke-width="2.2"/>
+            <line x1="83" y1="96" x2="56" y2="114" stroke="#374151" stroke-width="2.2"/>
+            <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+
+            <line x1="96" y1="88" x2="123" y2="106" stroke="#374151" stroke-width="2.2"/>
+            <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="135" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="143" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="121" cy="126" r="3.5" fill="#dc2626"/>
+            <circle cx="129" cy="126" r="3.5" fill="#dc2626"/>
+
+            <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−1</text>
+          </svg>
+        </div>
+
+        <div class="resonance-arrow">⟺</div>
+
+        <div class="resonance-structure">
+          <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="Third nitrate resonance structure">
+            <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
+
+            <line x1="88" y1="67" x2="88" y2="38" stroke="#374151" stroke-width="2.2"/>
+            <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+            <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+            <circle cx="84" cy="14" r="3.5" fill="#dc2626"/>
+            <circle cx="92" cy="14" r="3.5" fill="#dc2626"/>
+
+            <line x1="80" y1="88" x2="53" y2="106" stroke="#374151" stroke-width="2.2"/>
+            <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="47" cy="126" r="3.5" fill="#dc2626"/>
+            <circle cx="55" cy="126" r="3.5" fill="#dc2626"/>
+
+            <line x1="93" y1="90" x2="120" y2="108" stroke="#374151" stroke-width="2.2"/>
+            <line x1="99" y1="84" x2="126" y2="102" stroke="#374151" stroke-width="2.2"/>
+            <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+            <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+            <circle cx="131" cy="134" r="3.5" fill="#dc2626"/>
+            <circle cx="139" cy="134" r="3.5" fill="#dc2626"/>
+
+            <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−1</text>
+          </svg>
+        </div>
+      </div>
+      <p class="center-note">In the real NO₃⁻ ion, all three N–O bonds are identical — bond order ≈ 1.33. No single structure captures this; the hybrid does.</p>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">How to recognize resonance</p>
+          <ul class="key-fact-list">
+            <li>If a lone pair can move into a bond and create an equivalent structure, resonance is present</li>
+            <li>The atoms stay in the same places; only electrons move</li>
+            <li>Common examples include O₃, SO₂, NO₂⁻, CO₃²⁻, NO₃⁻, and benzene</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10.6 VSEPR -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.6</span> VSEPR Theory — Predicting Molecular Shape</h2>
+      <p><strong>VSEPR</strong> stands for Valence Shell Electron Pair Repulsion. The core idea is simple: electron pairs (both bonding pairs and lone pairs) around a central atom repel each other and spread out as far apart as possible. This repulsion determines the geometry around the central atom.</p>
+      <p>There are two different geometry labels for every molecule:</p>
+      <ul class="content-list">
+        <li><strong>Electron geometry</strong> — the shape described by all electron pairs, including lone pairs. This is what VSEPR theory predicts first.</li>
+        <li><strong>Molecular geometry</strong> — the shape described by only the <em>atoms</em>. Lone pairs are invisible in the molecular geometry name.</li>
+      </ul>
+
+      <div class="formula-box">
+        <div class="label">VSEPR Notation — What to Count</div>
+        <div class="formula-rule-list">
+          <span class="formula-rule"><strong>Steric number</strong> = (# of bonding groups around central atom) + (# of lone pairs on central atom)</span>
+          <span class="formula-rule">Each single bond, double bond, and triple bond each count as <strong>one</strong> bonding group.</span>
+        </div>
+      </div>
+
+      <p class="figure-heading">The Seven Fundamental Electron Geometries:</p>
+      <div class="geo-grid">
+
+        <!--
+          All geo-cards rebuilt with:
+          • viewBox="0 0 160 130" standard canvas — 16px margin on every side
+          • overflow="visible" so stroke widths never clip at edges
+          • B (central atom) r=14, A (terminal atom) r=11 — consistent sizing
+          • All cx/cy values ≥ 18 and ≤ 142 (well inside margins)
+          • Lone pairs: dashed ellipses labeled "LP", placed above B
+        -->
+
+        <!-- LINEAR: B at (80,65). A-left at (22,65). A-right at (138,65). -->
+        <div class="geo-card">
+          <div class="gc-name">Linear</div>
+          <div class="gc-formula">2 bonding + 0 LP</div>
+          <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+            <line x1="45" y1="60" x2="135" y2="60" class="bond"/>
+            <circle cx="45" cy="60" r="14" class="atom-a"/>
+            <text x="45" y="60" class="text-a">A</text>
+            <circle cx="135" cy="60" r="14" class="atom-a"/>
+            <text x="135" y="60" class="text-a">A</text>
+            <circle cx="90" cy="60" r="16" class="atom-b"/>
+            <text x="90" y="60" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: 180°</div>
+          <div class="gc-example">CO₂, HCN, BeCl₂</div>
+        </div>
+
+        <!-- TRIGONAL PLANAR: B at (80,68). A-top at (80,22). A-BL at (32,96). A-BR at (128,96). -->
+        <div class="geo-card">
+          <div class="gc-name">Trigonal Planar</div>
+          <div class="gc-formula">3 bonding + 0 LP</div>
+          <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+            <line x1="90" y1="65" x2="90" y2="20" class="bond"/>
+            <line x1="90" y1="65" x2="45" y2="100" class="bond"/>
+            <line x1="90" y1="65" x2="135" y2="100" class="bond"/>
+            <circle cx="90" cy="20" r="14" class="atom-a"/>
+            <text x="90" y="20" class="text-a">A</text>
+            <circle cx="45" cy="100" r="14" class="atom-a"/>
+            <text x="45" y="100" class="text-a">A</text>
+            <circle cx="135" cy="100" r="14" class="atom-a"/>
+            <text x="135" y="100" class="text-a">A</text>
+            <circle cx="90" cy="65" r="16" class="atom-b"/>
+            <text x="90" y="65" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: 120°</div>
+          <div class="gc-example">BF₃, SO₃, NO₃⁻</div>
+        </div>
+
+        <!-- TETRAHEDRAL: B at (80,62). A-top at (80,22). A-left at (28,90). A-right at (132,90). A-front wedge at (80,102). -->
+        <div class="geo-card">
+          <div class="gc-name">Tetrahedral</div>
+          <div class="gc-formula">4 bonding + 0 LP</div>
+          <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+            <line x1="90" y1="65" x2="90" y2="15" class="bond"/>
+            <line x1="90" y1="65" x2="40" y2="80" class="bond"/>
+            <line x1="90" y1="65" x2="135" y2="55" class="bond-dash"/>
+            <polygon points="90,65 115,115 132,105" class="wedge"/>
+            <circle cx="90" cy="15" r="14" class="atom-a"/>
+            <text x="90" y="15" class="text-a">A</text>
+            <circle cx="40" cy="80" r="14" class="atom-a"/>
+            <text x="40" y="80" class="text-a">A</text>
+            <circle cx="135" cy="55" r="14" class="atom-a"/>
+            <text x="135" y="55" class="text-a">A</text>
+            <circle cx="123" cy="110" r="14" class="atom-a"/>
+            <text x="123" y="110" class="text-a">A</text>
+            <circle cx="90" cy="65" r="16" class="atom-b"/>
+            <text x="90" y="65" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: 109.5°</div>
+          <div class="gc-example">CH₄, SiCl₄, CCl₄</div>
+        </div>
+
+        <!-- BENT (tetrahedral base): B at (80,58). 2 LP above. A-left at (28,96). A-right at (132,96). -->
+        <div class="geo-card">
+          <div class="gc-name">Bent (from tet.)</div>
+          <div class="gc-formula">2 bonding + 2 LP</div>
+          <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+            <g transform="translate(65, 35) rotate(-35)">
+              <ellipse cx="0" cy="0" rx="15" ry="9" class="lp"/>
+              <text x="0" y="0" class="text-lp">LP</text>
+            </g>
+            <g transform="translate(115, 35) rotate(35)">
+              <ellipse cx="0" cy="0" rx="15" ry="9" class="lp"/>
+              <text x="0" y="0" class="text-lp">LP</text>
+            </g>
+            <line x1="90" y1="65" x2="50" y2="105" class="bond"/>
+            <line x1="90" y1="65" x2="130" y2="105" class="bond"/>
+            <circle cx="50" cy="105" r="14" class="atom-a"/>
+            <text x="50" y="105" class="text-a">A</text>
+            <circle cx="130" cy="105" r="14" class="atom-a"/>
+            <text x="130" y="105" class="text-a">A</text>
+            <circle cx="90" cy="65" r="16" class="atom-b"/>
+            <text x="90" y="65" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: ~104.5°</div>
+          <div class="gc-example">H₂O, OF₂, H₂S</div>
+        </div>
+
+        <!-- TRIGONAL PYRAMIDAL: B at (80,52). 1 LP above. A-left at (28,96). A-bottom at (80,106). A-right at (132,96). -->
+        <div class="geo-card">
+          <div class="gc-name">Trigonal Pyramidal</div>
+          <div class="gc-formula">3 bonding + 1 LP</div>
+          <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+            <ellipse cx="90" cy="25" rx="16" ry="10" class="lp"/>
+            <text x="90" y="25" class="text-lp">LP</text>
+            <line x1="90" y1="65" x2="40" y2="90" class="bond"/>
+            <line x1="90" y1="65" x2="140" y2="80" class="bond-dash"/>
+            <polygon points="90,65 80,115 100,115" class="wedge"/>
+            <circle cx="40" cy="90" r="14" class="atom-a"/>
+            <text x="40" y="90" class="text-a">A</text>
+            <circle cx="140" cy="80" r="14" class="atom-a"/>
+            <text x="140" y="80" class="text-a">A</text>
+            <circle cx="90" cy="115" r="14" class="atom-a"/>
+            <text x="90" y="115" class="text-a">A</text>
+            <circle cx="90" cy="65" r="16" class="atom-b"/>
+            <text x="90" y="65" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: ~107°</div>
+          <div class="gc-example">NH₃, PCl₃, NF₃</div>
+        </div>
+
+        <!--
+          TRIGONAL BIPYRAMIDAL: B at (80,64).
+          Axial: A-top at (80,22), A-bottom at (80,106).
+          Equatorial: A-left at (28,64), A-upper-right at (122,30), A-lower-right at (122,98).
+        -->
+        <div class="geo-card">
+          <div class="gc-name">Trigonal Bipyramidal</div>
+          <div class="gc-formula">5 bonding + 0 LP</div>
+          <svg width="180" height="135" viewBox="0 0 180 135" overflow="visible">
+            <line x1="90" y1="67" x2="90" y2="15" class="bond"/>
+            <line x1="90" y1="67" x2="90" y2="120" class="bond"/>
+            <line x1="90" y1="67" x2="40" y2="67" class="bond"/>
+            <line x1="90" y1="67" x2="135" y2="40" class="bond-dash"/>
+            <polygon points="90,67 125,105 138,92" class="wedge"/>
+            <circle cx="90" cy="15" r="14" class="atom-a"/>
+            <text x="90" y="15" class="text-a">A</text>
+            <circle cx="90" cy="120" r="14" class="atom-a"/>
+            <text x="90" y="120" class="text-a">A</text>
+            <circle cx="40" cy="67" r="14" class="atom-a"/>
+            <text x="40" y="67" class="text-a">A</text>
+            <circle cx="135" cy="40" r="14" class="atom-a"/>
+            <text x="135" y="40" class="text-a">A</text>
+            <circle cx="130" cy="98" r="14" class="atom-a"/>
+            <text x="130" y="98" class="text-a">A</text>
+            <circle cx="90" cy="67" r="16" class="atom-b"/>
+            <text x="90" y="67" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">90° and 120°</div>
+          <div class="gc-example">PCl₅, PF₅, AsF₅</div>
+        </div>
+
+        <!--
+          OCTAHEDRAL: B at (80,64).
+          4 equatorial: left (28,64), right (132,64), upper-left (36,28), lower-right (124,100).
+          2 axial: top (80,22), bottom (80,106).
+        -->
+        <div class="geo-card">
+          <div class="gc-name">Octahedral</div>
+          <div class="gc-formula">6 bonding + 0 LP</div>
+          <svg width="180" height="135" viewBox="0 0 180 135" overflow="visible">
+            <line x1="90" y1="67" x2="90" y2="15" class="bond"/>
+            <line x1="90" y1="67" x2="90" y2="120" class="bond"/>
+            <line x1="90" y1="67" x2="45" y2="40" class="bond-dash"/>
+            <line x1="90" y1="67" x2="135" y2="40" class="bond-dash"/>
+            <polygon points="90,67 42,92 55,105" class="wedge"/>
+            <polygon points="90,67 138,92 125,105" class="wedge"/>
+            <circle cx="90" cy="15" r="14" class="atom-a"/>
+            <text x="90" y="15" class="text-a">A</text>
+            <circle cx="90" cy="120" r="14" class="atom-a"/>
+            <text x="90" y="120" class="text-a">A</text>
+            <circle cx="45" cy="40" r="14" class="atom-a"/>
+            <text x="45" y="40" class="text-a">A</text>
+            <circle cx="135" cy="40" r="14" class="atom-a"/>
+            <text x="135" y="40" class="text-a">A</text>
+            <circle cx="48" cy="98" r="14" class="atom-a"/>
+            <text x="48" y="98" class="text-a">A</text>
+            <circle cx="132" cy="98" r="14" class="atom-a"/>
+            <text x="132" y="98" class="text-a">A</text>
+            <circle cx="90" cy="67" r="16" class="atom-b"/>
+            <text x="90" y="67" class="text-b">B</text>
+          </svg>
+          <div class="gc-angle">Bond angle: 90°</div>
+          <div class="gc-example">SF₆, XeF₄ (eg.), Mo(CO)₆</div>
+        </div>
+
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Lone pairs compress bond angles</p>
+          <ul class="key-fact-list">
+            <li>Lone pairs repel more strongly than bonding pairs, so they push bonded atoms closer together.</li>
+            <li>4 bonding + 0 lone pairs: tetrahedral, 109.5°</li>
+            <li>3 bonding + 1 lone pair: trigonal pyramidal, about 107°</li>
+            <li>2 bonding + 2 lone pairs: bent, about 104.5°</li>
+            <li>That is why H₂O has a smaller bond angle than NH₃, and NH₃ has a smaller bond angle than CH₄.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 10.7 Molecular Polarity -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">10.7</span> Molecular Polarity and Dipole Moments</h2>
+      <p>A bond can be polar (unequal sharing) without the whole molecule being polar. For a molecule to have a <strong>net dipole moment</strong> (to be a polar molecule), two conditions must both be true:</p>
+      <ol class="content-ordered-list">
+        <li>The molecule must contain at least one polar bond (ΔEN ≥ 0.4).</li>
+        <li>The bond dipoles must not cancel each other out in the molecule's actual 3D shape.</li>
+      </ol>
+      <p>Ask the question this way: <strong>do the bond dipoles cancel in this shape?</strong> If they cancel, the molecule is nonpolar. If they do not cancel, the molecule is polar.</p>
+      <p>Bond dipoles are vectors. If a molecule's geometry makes the dipoles point in equal and opposite directions, the net dipole is zero — the molecule is <strong>nonpolar</strong> even though it has polar bonds.</p>
+      <p class="figure-heading">Dipole arrows: red arrows show bond dipoles; blue arrows show the overall molecular dipole.</p>
+      <div class="diagram-grid-2">
+        
+        <div class="diagram-card">
+          <div class="diagram-card-title">CO₂ — Linear — <span class="status-positive">NONPOLAR</span></div>
+          <svg width="240" height="120" viewBox="0 0 240 120" overflow="visible">
+            <defs>
+              <marker id="dp-co2-red" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+                <polygon points="0 0,6 3,0 6" fill="#dc2626"/>
+              </marker>
+            </defs>
+            <text x="120" y="18" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">bond dipoles</text>
+            <line x1="94" y1="26" x2="44" y2="26" stroke="#dc2626" stroke-width="2.2" marker-end="url(#dp-co2-red)"/>
+            <line x1="94" y1="22" x2="94" y2="30" stroke="#dc2626" stroke-width="1.5"/>
+            <line x1="146" y1="26" x2="196" y2="26" stroke="#dc2626" stroke-width="2.2" marker-end="url(#dp-co2-red)"/>
+            <line x1="146" y1="22" x2="146" y2="30" stroke="#dc2626" stroke-width="1.5"/>
+            <text x="38" y="70" font-size="20" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <text x="120" y="70" font-size="20" font-family="serif" font-weight="bold" fill="#374151" text-anchor="middle">C</text>
+            <text x="202" y="70" font-size="20" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <line x1="52" y1="62" x2="106" y2="62" stroke="#374151" stroke-width="2"/>
+            <line x1="52" y1="70" x2="106" y2="70" stroke="#374151" stroke-width="2"/>
+            <line x1="134" y1="62" x2="188" y2="62" stroke="#374151" stroke-width="2"/>
+            <line x1="134" y1="70" x2="188" y2="70" stroke="#374151" stroke-width="2"/>
+            <text x="38" y="90" font-size="12" fill="#dc2626" text-anchor="middle" font-style="italic">δ−</text>
+            <text x="120" y="90" font-size="12" fill="#64748b" text-anchor="middle" font-style="italic">δ+</text>
+            <text x="202" y="90" font-size="12" fill="#dc2626" text-anchor="middle" font-style="italic">δ−</text>
+            <text x="120" y="110" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">overall dipole: none</text>
+          </svg>
+        </div>
+
+        <div class="diagram-card">
+          <div class="diagram-card-title">H₂O — Bent — <span class="status-negative">POLAR</span></div>
+          <svg width="260" height="190" viewBox="0 0 260 190" overflow="visible">
+            <defs>
+              <marker id="dp-h2o-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,2 L8,5 L0,8 Z" fill="#dc2626"/>
+              </marker>
+            </defs>
+            <line x1="115" y1="56" x2="145" y2="56" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+            <line x1="130" y1="56" x2="130" y2="26" stroke="#2563eb" stroke-width="4"/>
+            <polygon points="118,26 142,26 130,6" fill="#2563eb"/>
+            <text x="80" y="17" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">overall dipole</text>
+            <text x="134" y="70" font-size="13" fill="#2563eb" font-style="italic" font-weight="700" text-anchor="middle">δ− δ−</text>
+            <text x="130" y="80" font-size="24" font-family="Georgia, serif" font-weight="bold" fill="#dc2626" text-anchor="middle" dominant-baseline="central">O</text>
+            <line x1="116" y1="92" x2="80" y2="132" stroke="#374151" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="144" y1="92" x2="180" y2="132" stroke="#374151" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="64" y1="130" x2="98" y2="92" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dp-h2o-red)"/>
+            <line x1="57" y1="123" x2="71" y2="137" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="196" y1="130" x2="162" y2="92" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dp-h2o-red)"/>
+            <line x1="203" y1="123" x2="189" y2="137" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="70" y="144" font-size="20" font-family="Georgia, serif" font-weight="bold" fill="#374151" text-anchor="middle" dominant-baseline="central">H</text>
+            <text x="190" y="144" font-size="20" font-family="Georgia, serif" font-weight="bold" fill="#374151" text-anchor="middle" dominant-baseline="central">H</text>
+            <text x="70" y="164" font-size="13" fill="#64748b" font-style="italic" font-weight="700" text-anchor="middle">δ+</text>
+            <text x="190" y="164" font-size="13" fill="#64748b" font-style="italic" font-weight="700" text-anchor="middle">δ+</text>
+          </svg>
+          <p class="diagram-card-note">Because the O-H bond dipoles point into a bent shape, they add together instead of cancelling, so water has a net dipole.</p>
+        </div>
+        
+        <div class="diagram-card">
+          <div class="diagram-card-title">BF₃ — Trigonal Planar — <span class="status-positive">NONPOLAR</span></div>
+          <svg width="240" height="180" viewBox="0 0 240 180" overflow="visible">
+  <defs>
+    <marker id="dp-bf3-red" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+      <polygon points="0 0,6 3,0 6" fill="#dc2626"></polygon>
+    </marker>
+  </defs>
+  <text x="120" y="10" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">bond dipoles</text>
+  
+  <text x="120" y="88" font-size="20" font-family="serif" font-weight="bold" fill="#374151" text-anchor="middle">B</text>
+  <text x="120" y="38" font-size="18" font-family="serif" font-weight="bold" fill="#059669" text-anchor="middle">F</text>
+  <text x="58" y="144" font-size="18" font-family="serif" font-weight="bold" fill="#059669" text-anchor="middle">F</text>
+  <text x="182" y="144" font-size="18" font-family="serif" font-weight="bold" fill="#059669" text-anchor="middle">F</text>
+  
+  <line x1="120" y1="76" x2="120" y2="48" stroke="#374151" stroke-width="2.2"></line>
+  <line x1="108" y1="96" x2="68" y2="130" stroke="#374151" stroke-width="2.2"></line>
+  <line x1="132" y1="96" x2="172" y2="130" stroke="#374151" stroke-width="2.2"></line>
+  
+  <text x="120" y="22" font-size="12" fill="#dc2626" text-anchor="middle" font-style="italic">δ−</text>
+  <text x="46" y="156" font-size="12" fill="#dc2626" text-anchor="middle" font-style="italic">δ−</text>
+  <text x="194" y="156" font-size="12" fill="#dc2626" text-anchor="middle" font-style="italic">δ−</text>
+  <text x="120" y="104" font-size="12" fill="#64748b" text-anchor="middle" font-style="italic">δ+</text>
+  
+  <line x1="128" y1="68" x2="128" y2="44" stroke="#dc2626" stroke-width="2.2" marker-end="url(#dp-bf3-red)"></line>
+  <line x1="122" y1="68" x2="134" y2="68" stroke="#dc2626" stroke-width="1.5"></line>
+  
+  <line x1="93" y1="101" x2="67" y2="123" stroke="#dc2626" stroke-width="2.2" marker-end="url(#dp-bf3-red)"></line>
+  <line x1="87" y1="96" x2="99" y2="106" stroke="#dc2626" stroke-width="1.5"></line>
+  
+  <line x1="147" y1="101" x2="173" y2="123" stroke="#dc2626" stroke-width="2.2" marker-end="url(#dp-bf3-red)"></line>
+  <line x1="141" y1="106" x2="153" y2="96" stroke="#dc2626" stroke-width="1.5"></line>
+  
+  <text x="120" y="170" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">overall dipole: none</text>
+</svg>
+        </div>
+        
+        <div class="diagram-card">
+          <div class="diagram-card-title">NH₃ — Trigonal Pyramidal — <span class="status-negative">POLAR</span></div>
+         <svg width="280" height="220" viewBox="0 0 320 260" overflow="visible">
+  <defs>
+    <marker id="dp-nh3-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,2 L8,5 L0,8 Z" fill="#dc2626"></path>
+    </marker>
+  </defs>
+  
+  <g id="overall-dipole">
+    <line x1="145" y1="65" x2="175" y2="65" stroke="#2563eb" stroke-width="3" stroke-linecap="round"></line>
+    <line x1="160" y1="65" x2="160" y2="30" stroke="#2563eb" stroke-width="4"></line>
+    <polygon points="148,30 172,30 160,8" fill="#2563eb"></polygon>
+  </g>
+  
+  <circle cx="154" cy="78" r="2.5" fill="#2563eb"></circle>
+  <circle cx="166" cy="78" r="2.5" fill="#2563eb"></circle>
+  <text x="140" y="80" font-size="12" fill="#2563eb" font-style="italic" font-weight="700" text-anchor="middle">δ−</text>
+  
+  <line x1="145" y1="95" x2="85" y2="135" stroke="#374151" stroke-width="2.5" stroke-linecap="round"></line>
+  <polygon points="160,105 152,155 168,155" fill="#374151"></polygon>
+  <line x1="175" y1="95" x2="235" y2="135" stroke="#374151" stroke-width="2.5" stroke-dasharray="5, 4" stroke-linecap="round"></line>
+  
+  <line x1="80" y1="115" x2="120" y2="88" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dp-nh3-red)"></line>
+  <line x1="76" y1="109" x2="84" y2="121" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"></line>
+  
+  <line x1="180" y1="145" x2="180" y2="110" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dp-nh3-red)"></line>
+  <line x1="174" y1="145" x2="186" y2="145" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"></line>
+  
+  <line x1="240" y1="115" x2="200" y2="88" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dp-nh3-red)"></line>
+  <line x1="236" y1="121" x2="244" y2="109" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"></line>
+  
+  <text x="160" y="96" font-size="24" font-family="Georgia, serif" font-weight="bold" fill="#2563eb" text-anchor="middle" dominant-baseline="central">N</text>
+  <text x="75" y="148" font-size="20" font-family="Georgia, serif" font-weight="bold" fill="#374151" text-anchor="middle" dominant-baseline="central">H</text>
+  <text x="160" y="172" font-size="20" font-family="Georgia, serif" font-weight="bold" fill="#374151" text-anchor="middle" dominant-baseline="central">H</text>
+  <text x="245" y="148" font-size="20" font-family="Georgia, serif" font-weight="bold" fill="#374151" text-anchor="middle" dominant-baseline="central">H</text>
+  <text x="75" y="168" font-size="13" fill="#64748b" font-style="italic" font-weight="700" text-anchor="middle">δ+</text>
+  <text x="160" y="192" font-size="13" fill="#64748b" font-style="italic" font-weight="700" text-anchor="middle">δ+</text>
+  <text x="245" y="168" font-size="13" fill="#64748b" font-style="italic" font-weight="700" text-anchor="middle">δ+</text>
+  
+</svg>
+          <p class="diagram-card-note">In NH₃, the N-H bond dipoles do not cancel. The lone pair changes the 3D shape, so the molecule has a net dipole.</p>
+        </div>
+        
+      </div>
+      
+      <table>
+        <thead><tr><th>Molecule</th><th>Bonds</th><th>Shape</th><th>Dipoles cancel?</th><th>Polar?</th></tr></thead>
+        <tbody>
+          <tr><td>CO₂</td><td>2 polar C=O</td><td>Linear</td><td>Yes — opposite, equal</td><td>No (nonpolar)</td></tr>
+          <tr><td>H₂O</td><td>2 polar O–H</td><td>Bent</td><td>No — the bent dipoles do not cancel</td><td>Yes (polar)</td></tr>
+          <tr><td>CCl₄</td><td>4 polar C–Cl</td><td>Tetrahedral</td><td>Yes — perfect symmetry</td><td>No (nonpolar)</td></tr>
+          <tr><td>CHCl₃</td><td>3 polar C–Cl; C–H is nearly nonpolar</td><td>Tetrahedral</td><td>No — H ≠ Cl</td><td>Yes (polar)</td></tr>
+          <tr><td>NH₃</td><td>3 polar N–H</td><td>Trigonal pyramidal</td><td>No — lone pair tilts net dipole up</td><td>Yes (polar)</td></tr>
+          <tr><td>BF₃</td><td>3 polar B–F</td><td>Trigonal planar</td><td>Yes — symmetric</td><td>No (nonpolar)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 10.8 Intermolecular Forces -->
+    <div class="card" id="imf">
+      <h2 class="card-title"><span class="num">10.8</span> Intermolecular Forces (IMFs)</h2>
+      <p><strong>Intermolecular forces</strong> are attractions <em>between</em> molecules — they are not the covalent or ionic bonds <em>within</em> a molecule. IMFs are much weaker than intramolecular bonds, but they govern physical properties: boiling point, melting point, viscosity, and solubility. The stronger the IMF, the more energy is needed to separate molecules, and the higher the boiling point.</p>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Quick ΔEN review for IMFs</p>
+          <ul class="key-fact-list">
+            <li>First decide the bonding picture from element types, then use ΔEN to judge bond polarity in covalent bonds.</li>
+            <li>Polar bonds can create a polar molecule if the bond dipoles do not cancel.</li>
+            <li>Polar molecules can have dipole-dipole forces, and molecules with H bonded to F, O, or N can have hydrogen bonding.</li>
+            <li>Nonpolar molecules do not have dipole-dipole forces, but they still have London dispersion forces.</li>
+          </ul>
+        </div>
+      </div>
+      <p>When you identify IMFs, use this order:</p>
+      <ol class="content-ordered-list">
+        <li>Every molecule has London dispersion forces.</li>
+        <li>Polar molecules also have dipole-dipole forces.</li>
+        <li>Molecules with H bonded to F, O, or N can also have hydrogen bonding.</li>
+      </ol>
+
+      <div class="formula-box">
+        <div class="label">IMF Strength Ranking for Similar-Sized Molecules</div>
+        <div class="formula-rule-list">
+          <span class="formula-rule">London Dispersion Forces &nbsp;‹&nbsp; Dipole-Dipole &nbsp;‹&nbsp; Hydrogen Bonding</span>
+        </div>
+        <div class="formula-rule-note">When molecules are not similar in size, a larger molecule can have stronger London dispersion forces than a smaller polar molecule.</div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Every molecule has London dispersion forces</p>
+          <ul class="key-fact-list">
+            <li>Polar molecules have LDFs too, not just dipole-based forces</li>
+            <li>When comparing molecules, add up <strong>all</strong> IMFs present</li>
+            <li>A large nonpolar molecule such as I₂ can have stronger LDFs than a small polar molecule</li>
+            <li>That is why some nonpolar molecules can still have surprisingly high boiling points</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── 10.8.1 London Dispersion Forces ── -->
+      <h3 class="section-mini-title">10.8.1 &nbsp;London Dispersion Forces</h3>
+      <p>London dispersion forces (LDFs) exist in <strong>all</strong> molecules — polar and nonpolar alike. They arise because electrons are always in motion. At any instant, electrons may be unevenly distributed, creating a fleeting <strong>instantaneous dipole</strong>. That temporary δ+/δ− on one molecule distorts the electron cloud of a nearby molecule, inducing an <strong>induced dipole</strong> in it. The two temporary dipoles attract each other momentarily.</p>
+      <p>LDF strength increases with:</p>
+      <ul class="content-list">
+        <li><strong>More electrons (larger molar mass)</strong> — bigger electron clouds are more easily distorted (more <em>polarizable</em>).</li>
+        <li><strong>Larger surface area</strong> — longer, flatter molecules have more surface contact and stronger LDFs than compact spherical ones of the same mass.</li>
+      </ul>
+
+      <div class="concept-panel">
+        <div class="concept-panel-title">How London Dispersion Forces Arise — Cl₂ molecules</div>
+        <svg width="100%" viewBox="0 0 580 210" overflow="visible">
+          <defs>
+            <marker id="ldf-arr-l" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <polygon points="0 0,7 3.5,0 7" fill="#7c3aed"/>
+            </marker>
+          </defs>
+
+          <!-- ═══ PANEL A: symmetric / no net dipole ═══ -->
+          <rect x="4" y="20" width="165" height="170" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+          <text x="86" y="14" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">A — at rest (avg.)</text>
+
+          <g transform="translate(86 105) scale(0.86) translate(-86 -105)">
+          <!-- electron cloud oval, symmetric -->
+          <ellipse cx="86" cy="105" rx="68" ry="32" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.75"/>
+
+          <!-- bond -->
+          <line x1="58" y1="105" x2="114" y2="105" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- Cl left -->
+          <circle cx="44" cy="105" r="20" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="44" y="105" font-size="12" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+
+          <!-- Cl right -->
+          <circle cx="128" cy="105" r="20" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="128" y="105" font-size="12" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+
+          <text x="44" y="136" font-size="11" font-style="italic" fill="#94a3b8" text-anchor="middle">—</text>
+          <text x="128" y="136" font-size="11" font-style="italic" fill="#94a3b8" text-anchor="middle">—</text>
+          </g>
+          <text x="86" y="170" font-size="10" fill="#64748b" text-anchor="middle">symmetric electron cloud</text>
+          <text x="86" y="183" font-size="10" fill="#64748b" text-anchor="middle">no net dipole</text>
+
+          <!-- ═══ PANEL B: instantaneous dipole ═══ -->
+          <rect x="185" y="20" width="165" height="170" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+          <text x="267" y="14" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">B — one instant</text>
+
+          <g transform="translate(267 105) scale(0.86) translate(-267 -105)">
+          <!-- electron cloud shifted left -->
+          <ellipse cx="247" cy="105" rx="68" ry="32" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.75"/>
+          <ellipse cx="225" cy="105" rx="30" ry="22" fill="#ddd6fe" stroke="none" opacity="0.55"/>
+
+          <line x1="237" y1="105" x2="293" y2="105" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- e- shift arrow -->
+          <line x1="280" y1="80" x2="240" y2="80" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#ldf-arr-l)"/>
+          <text x="260" y="74" font-size="9" fill="#7c3aed" text-anchor="middle" font-weight="700">e⁻ shift</text>
+
+          <circle cx="223" cy="105" r="20" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="223" y="105" font-size="12" font-weight="800" font-family="serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
+
+          <circle cx="311" cy="105" r="20" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="311" y="105" font-size="12" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+
+          <text x="223" y="148" font-size="12" font-style="italic" font-weight="700" fill="#dc2626" text-anchor="middle">δ−</text>
+          <text x="311" y="148" font-size="12" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+          </g>
+          <text x="267" y="170" font-size="10" fill="#64748b" text-anchor="middle">instantaneous dipole forms</text>
+
+          <!-- ═══ PANEL C: induced dipole + attraction ═══ -->
+          <rect x="366" y="20" width="208" height="170" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+          <text x="470" y="14" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">C — neighbor responds</text>
+
+          <g transform="translate(470 96) scale(0.86) translate(-453 -96)">
+          <!-- molecule 1 (left) -->
+          <ellipse cx="392" cy="90" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
+          <ellipse cx="382" cy="90" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
+          <line x1="414" y1="66" x2="386" y2="66" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l)"/>
+          <text x="400" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e⁻ shift</text>
+          <line x1="389" y1="90" x2="419" y2="90" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
+          <circle cx="379" cy="90" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+          <text x="379" y="90" font-size="10" font-weight="800" font-family="serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <circle cx="425" cy="90" r="15" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+          <text x="425" y="90" font-size="10" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <text x="379" y="124" font-size="11" font-style="italic" font-weight="700" fill="#dc2626" text-anchor="middle">δ−</text>
+          <text x="425" y="124" font-size="11" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+
+          <!-- attraction dots -->
+          <text x="454" y="93" font-size="18" fill="#059669" font-weight="900" text-anchor="middle" letter-spacing="2">···</text>
+
+          <!-- molecule 2 (right, induced) -->
+          <ellipse cx="494" cy="90" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
+          <ellipse cx="484" cy="90" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
+          <line x1="516" y1="66" x2="488" y2="66" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l)"/>
+          <text x="502" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e⁻ shift</text>
+          <line x1="491" y1="90" x2="521" y2="90" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
+          <circle cx="483" cy="90" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+          <text x="483" y="90" font-size="10" font-weight="800" font-family="serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <circle cx="527" cy="90" r="15" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+          <text x="527" y="90" font-size="10" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <text x="483" y="124" font-size="11" font-style="italic" font-weight="700" fill="#dc2626" text-anchor="middle">δ−</text>
+          <text x="527" y="124" font-size="11" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+          </g>
+
+          <text x="470" y="148" font-size="10" fill="#059669" font-weight="700" text-anchor="middle">induced dipole in neighbor</text>
+          <text x="470" y="162" font-size="10" fill="#059669" text-anchor="middle">δ+ ··· δ− attraction = LDF</text>
+        </svg>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Why I₂ is a solid but F₂ is a gas</p>
+          <ul class="key-fact-list">
+            <li>Both are nonpolar diatomic molecules, so both rely only on LDFs</li>
+            <li>I₂ has 106 electrons, while F₂ has only 18</li>
+            <li>The larger electron cloud in I₂ is more polarizable, so its LDFs are much stronger</li>
+            <li>That same idea explains why larger alkanes are liquids while very small ones are gases</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── 10.8.2 Dipole-Dipole Forces ── -->
+      <h3 class="section-mini-title">10.8.2 &nbsp;Dipole-Dipole Forces</h3>
+      <p>Polar molecules have a permanent, built-in dipole (δ+/δ−) from their asymmetric bond polarity. When polar molecules get close, they orient so that the δ+ end of one molecule aligns with the δ− end of a neighbor. This consistent attractive alignment is a <strong>dipole-dipole force</strong>. It is stronger than LDF for similarly sized molecules because the attraction is permanent — not just a fleeting fluctuation.</p>
+      <p>Only polar molecules experience dipole-dipole forces (in addition to LDFs).</p>
+
+      <div class="concept-panel">
+        <div class="concept-panel-title">Dipole-Dipole Attraction — HCl molecules</div>
+        <svg width="100%" viewBox="0 0 600 190" overflow="visible">
+          <defs>
+            <marker id="dd-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <polygon points="0 0,7 3.5,0 7" fill="#dc2626"/>
+            </marker>
+          </defs>
+
+          <!-- Top row: three HCl molecules side by side -->
+
+          <!-- HCl #1 -->
+          <!-- Bond dipole arrow -->
+          <line x1="88" y1="38" x2="138" y2="38" stroke="#dc2626" stroke-width="2" marker-end="url(#dd-arr)"/>
+          <line x1="88" y1="32" x2="88" y2="44" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="113" y="28" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">bond dipole</text>
+
+          <line x1="86" y1="80" x2="136" y2="80" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+          <circle cx="70" cy="80" r="20" fill="#f3f4f6" stroke="#111827" stroke-width="2"/>
+          <text x="70" y="80" font-size="13" font-weight="800" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+          <text x="70" y="130" font-size="12" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+
+          <circle cx="152" cy="80" r="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="152" y="80" font-size="13" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <text x="152" y="130" font-size="12" font-style="italic" font-weight="700" fill="#047857" text-anchor="middle">δ−</text>
+
+          <!-- lone pairs on Cl #1 -->
+          <circle cx="148" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="156" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="180" cy="76" r="2.5" fill="#94a3b8"/>
+          <circle cx="180" cy="84" r="2.5" fill="#94a3b8"/>
+          <circle cx="148" cy="110" r="2.5" fill="#94a3b8"/>
+          <circle cx="156" cy="110" r="2.5" fill="#94a3b8"/>
+
+          <!-- attraction dash between molecules -->
+          <line x1="192" y1="84" x2="238" y2="84" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,7"/>
+          <text x="215" y="143" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">dipole-dipole</text>
+          <text x="215" y="156" font-size="10" fill="#059669" text-anchor="middle">attraction</text>
+
+          <!-- HCl #2 -->
+          <!-- Bond dipole arrow -->
+          <line x1="288" y1="38" x2="338" y2="38" stroke="#dc2626" stroke-width="2" marker-end="url(#dd-arr)"/>
+          <line x1="288" y1="32" x2="288" y2="44" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="313" y="28" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">bond dipole</text>
+
+          <line x1="286" y1="80" x2="336" y2="80" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+          <circle cx="270" cy="80" r="20" fill="#f3f4f6" stroke="#111827" stroke-width="2"/>
+          <text x="270" y="80" font-size="13" font-weight="800" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+          <text x="270" y="130" font-size="12" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+
+          <circle cx="352" cy="80" r="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="352" y="80" font-size="13" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <text x="352" y="130" font-size="12" font-style="italic" font-weight="700" fill="#047857" text-anchor="middle">δ−</text>
+
+          <circle cx="348" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="356" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="380" cy="76" r="2.5" fill="#94a3b8"/>
+          <circle cx="380" cy="84" r="2.5" fill="#94a3b8"/>
+          <circle cx="348" cy="110" r="2.5" fill="#94a3b8"/>
+          <circle cx="356" cy="110" r="2.5" fill="#94a3b8"/>
+
+          <!-- attraction dash between #2 and #3 -->
+          <line x1="392" y1="84" x2="438" y2="84" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,7"/>
+
+          <!-- HCl #3 -->
+          <!-- Bond dipole arrow -->
+          <line x1="488" y1="38" x2="538" y2="38" stroke="#dc2626" stroke-width="2" marker-end="url(#dd-arr)"/>
+          <line x1="488" y1="32" x2="488" y2="44" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="513" y="28" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">bond dipole</text>
+
+          <line x1="486" y1="80" x2="536" y2="80" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+          <circle cx="470" cy="80" r="20" fill="#f3f4f6" stroke="#111827" stroke-width="2"/>
+          <text x="470" y="80" font-size="13" font-weight="800" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+          <text x="470" y="130" font-size="12" font-style="italic" font-weight="700" fill="#64748b" text-anchor="middle">δ+</text>
+
+          <circle cx="552" cy="80" r="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="552" y="80" font-size="13" font-weight="800" font-family="serif" fill="#047857" text-anchor="middle" dominant-baseline="central">Cl</text>
+          <text x="552" y="130" font-size="12" font-style="italic" font-weight="700" fill="#047857" text-anchor="middle">δ−</text>
+
+          <circle cx="548" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="556" cy="50" r="2.5" fill="#94a3b8"/>
+          <circle cx="580" cy="76" r="2.5" fill="#94a3b8"/>
+          <circle cx="580" cy="84" r="2.5" fill="#94a3b8"/>
+          <circle cx="548" cy="110" r="2.5" fill="#94a3b8"/>
+          <circle cx="556" cy="110" r="2.5" fill="#94a3b8"/>
+
+        </svg>
+        <p class="center-note">
+          In dipole-dipole attractions, the partially positive end of one polar molecule lines up with the partially negative end of a neighboring molecule.
+        </p>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Dipole-dipole vs. LDF</p>
+          <ul class="key-fact-list">
+            <li>For molecules of similar size, the polar one usually boils at a higher temperature</li>
+            <li>That is because it has both LDFs and dipole-dipole forces</li>
+            <li>Propane is nonpolar and boils at −42 °C</li>
+            <li>Dimethyl ether is polar, has similar mass, and boils at −24 °C</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── 10.8.3 Hydrogen Bonding ── -->
+      <h3 class="section-mini-title">10.8.3 &nbsp;Hydrogen Bonding</h3>
+      <p>A <strong>hydrogen bond</strong> is a special, extra-strong dipole-dipole interaction that forms when hydrogen is covalently bonded to one of three highly electronegative atoms: <strong>fluorine (F), oxygen (O), or nitrogen (N)</strong>. These atoms are so electronegative and so small that the bond is extremely polar, leaving H with a large partial positive charge (δ+). That exposed H is then powerfully attracted to a lone pair on an F, O, or N atom of a neighboring molecule.</p>
+
+      <div class="formula-box">
+        <div class="label">Hydrogen Bond Rule — "FON"</div>
+        <div class="formula-rule-list">
+          <span class="formula-rule">Hydrogen bonding requires H bonded to <strong>F, O, or N</strong> and a lone pair on an <strong>F, O, or N</strong> of a neighboring molecule.</span>
+        </div>
+        <div class="formula-rule-note">H–F, H–O, and H–N bonds qualify. H–Cl does not because Cl is larger and not electronegative enough relative to H.</div>
+      </div>
+
+      <div class="concept-panel">
+        <div class="concept-panel-title">Hydrogen Bonding in Water — H₂O network</div>
+        <svg width="100%" viewBox="0 0 620 340" overflow="visible">
+          <defs>
+            <marker id="hb-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <polygon points="0 0,7 3.5,0 7" fill="#111827"/>
+            </marker>
+          </defs>
+
+          <!-- left water molecule: accepts H-bond at O lone pair -->
+          <line x1="142" y1="168" x2="104" y2="100" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <line x1="142" y1="190" x2="104" y2="258" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="154" cy="180" r="30" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+          <text x="154" y="180" font-size="22" font-weight="900" font-family="serif" fill="#b91c1c" text-anchor="middle" dominant-baseline="central">O</text>
+          <circle cx="92" cy="78" r="22" fill="#f3f4f6" stroke="#111827" stroke-width="2.5"/>
+          <text x="92" y="78" font-size="21" font-weight="900" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+          <circle cx="92" cy="280" r="22" fill="#f3f4f6" stroke="#111827" stroke-width="2.5"/>
+          <text x="92" y="280" font-size="21" font-weight="900" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+
+          <!-- lone pairs on accepting O -->
+          <circle cx="188" cy="156" r="3.5" fill="#94a3b8"/>
+          <circle cx="199" cy="162" r="3.5" fill="#94a3b8"/>
+          <circle cx="188" cy="204" r="3.5" fill="#94a3b8"/>
+          <circle cx="199" cy="198" r="3.5" fill="#94a3b8"/>
+
+          <text x="168" y="226" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ−</text>
+          <text x="112" y="54" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ+</text>
+          <text x="112" y="310" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ+</text>
+
+          <!-- hydrogen bond between O lone pair and neighboring H -->
+          <line x1="198" y1="184" x2="310" y2="184" stroke="#111827" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="4,8"/>
+          <text x="254" y="154" font-size="13" font-weight="800" fill="#2563eb" text-anchor="middle">hydrogen bond</text>
+
+          <!-- right water molecule: donates H-bond through Hδ+ -->
+          <line x1="346" y1="184" x2="406" y2="184" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <line x1="428" y1="160" x2="456" y2="82" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="326" cy="184" r="22" fill="#f3f4f6" stroke="#111827" stroke-width="2.5"/>
+          <text x="326" y="184" font-size="21" font-weight="900" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+          <circle cx="426" cy="184" r="30" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+          <text x="426" y="184" font-size="22" font-weight="900" font-family="serif" fill="#b91c1c" text-anchor="middle" dominant-baseline="central">O</text>
+          <circle cx="464" cy="60" r="22" fill="#f3f4f6" stroke="#111827" stroke-width="2.5"/>
+          <text x="464" y="60" font-size="21" font-weight="900" font-family="serif" fill="#111827" text-anchor="middle" dominant-baseline="central">H</text>
+
+          <!-- lone pairs on donating molecule O -->
+          <circle cx="458" cy="160" r="3.5" fill="#94a3b8"/>
+          <circle cx="469" cy="166" r="3.5" fill="#94a3b8"/>
+          <circle cx="458" cy="208" r="3.5" fill="#94a3b8"/>
+          <circle cx="469" cy="202" r="3.5" fill="#94a3b8"/>
+
+          <text x="326" y="232" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ+</text>
+          <text x="444" y="225" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ−</text>
+          <text x="486" y="38" font-size="15" font-style="italic" font-weight="800" fill="#dc2626" text-anchor="middle">δ+</text>
+
+        </svg>
+        <p class="center-note" style="max-width:34rem;">
+          The dashed line marks a hydrogen bond: a strongly δ+ hydrogen on one water molecule is attracted to a lone pair on the δ− oxygen of a neighboring molecule.
+        </p>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Why water is so unusual</p>
+          <ul class="key-fact-list">
+            <li>Water’s hydrogen bonds are about 20 kJ/mol each, much stronger than typical LDFs</li>
+            <li>Each H₂O molecule can form up to four hydrogen bonds</li>
+            <li>This bonding network gives water a very high boiling point for such a small molecule</li>
+            <li>H₂S is heavier but cannot hydrogen-bond, so it boils at only −60 °C</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Comparison Table ── -->
+      <h3 class="section-mini-title">IMF Summary and Comparison</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Force</th>
+            <th>Present in</th>
+            <th>Relative strength</th>
+            <th>Key requirement</th>
+            <th>Example molecules</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>London Dispersion</strong></td>
+            <td>All molecules</td>
+            <td>Weakest (but largest for big molecules)</td>
+            <td>Any electrons (all molecules qualify)</td>
+            <td>He, N₂, CH₄, I₂, C₈H₁₈</td>
+          </tr>
+          <tr>
+            <td><strong>Dipole-Dipole</strong></td>
+            <td>Polar molecules only</td>
+            <td>Moderate</td>
+            <td>Permanent dipole (polar molecule)</td>
+            <td>HCl, SO₂, acetone, CHCl₃</td>
+          </tr>
+          <tr>
+            <td><strong>Hydrogen Bonding</strong></td>
+            <td>Molecules with H–F, H–O, or H–N</td>
+            <td>Strongest IMF</td>
+            <td>H bonded to F, O, or N; lone pair on F, O, or N nearby</td>
+            <td>H₂O, HF, NH₃, ethanol, DNA base pairs</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-fact">
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">IMFs and boiling point</p>
+          <ul class="key-fact-list">
+            <li>Stronger IMFs lead to higher boiling points</li>
+            <li>Ne has only weak LDFs, so its boiling point is very low at −246 °C</li>
+            <li>HCl has LDFs plus dipole-dipole forces, so it boils higher at −85 °C</li>
+            <li>H₂O has especially strong hydrogen bonding, so it boils much higher at 100 °C</li>
+            <li>The overall order is Ne &lt; HCl &lt; H₂O</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ════════════════════════════════════════════════
+       TOOLS TAB
+       ════════════════════════════════════════════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <p class="section-intro">Each tool below presents a bonding scenario — classify, predict, or choose before the reasoning is revealed. For full practice, use the Unit 10 Practice page.</p>
+
+    <div class="card">
+      <h2 class="card-title">Bonding Picture Sort</h2>
+      <div class="en-tool tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong>Choose the best bonding picture for the pair shown below.</strong></p>
+          <p class="tool-scenario-text">Use the element pair to decide whether the bonding should be ionic, covalent, or metallic before you answer.</p>
+        </div>
+        <div class="formula-box tool-context-box">
+          <div class="label">Pair</div>
+          <div id="bondPairPrompt" class="tool-context-value tool-context-value--lg">—</div>
+        </div>
+        <div class="segment-controls tool-choice-row tool-decision" id="bondChoiceButtons" role="group" aria-label="Bonding picture choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" onclick="checkBondTool()">Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="bondRevealBtn" onclick="revealBondTool()" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="bondNextBtn" onclick="nextBondTool()" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="bondFeedback" data-state="pending">Choose one bonding picture, then click Check.</div>
+        <div class="en-result tool-reveal" id="bondReveal" hidden></div>
+        <div class="formula-box tool-support">
+          <div class="label">Support note</div>
+          <div>Start with element types first. Use electronegativity only to sort covalent bonds into polar or nonpolar.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">VSEPR Shape Choice</h2>
+
+      <div class="vsepr-tool tool-visual-panel tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong>Count bonded atoms, then name the molecular shape.</strong></p>
+          <p class="tool-scenario-text">The diagram shows all electron groups, but molecular geometry only counts the bonded atoms around the center.</p>
+        </div>
+
+        <div id="vseprQuestion" class="vsepr-helper tool-context-box">—</div>
+
+        <div class="tool-context-box">
+          <div class="vsepr-visual-top">
+            <div>
+              <div class="vsepr-kicker">Diagram</div>
+              <h3 id="vDiagramTitle">Electron-group picture</h3>
+            </div>
+            <p class="vsepr-caption" id="vCaption">Choose the molecular shape before revealing the answer.</p>
+          </div>
+
+          <div class="vsepr-badges" id="vBadges"></div>
+
+          <div class="vsepr-diagram-shell">
+            <div class="vsepr-diagram" id="vDiagram"></div>
+          </div>
+        </div>
+
+        <div class="segment-controls tool-choice-row tool-decision" id="vseprChoiceButtons" role="group" aria-label="VSEPR molecular shape choices"></div>
+
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" onclick="checkVseprTool()">Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="vseprRevealBtn" onclick="revealVseprTool()" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="vseprNextBtn" onclick="nextVseprTool()" disabled>Try another</button>
+        </div>
+
+        <div class="vsepr-out tool-feedback" id="vseprOut" data-state="pending">
+          <div class="vsepr-shape-name" id="vMolGeo">Choose a molecular shape first.</div>
+          <div class="vsepr-eg-name" id="vElecGeo">The answer stays hidden until you commit.</div>
+          <div class="vsepr-details" id="vDetails">Use the diagram to count the bonded atoms and lone pairs.</div>
+        </div>
+
+        <div class="tool-reveal" id="vseprReveal" hidden></div>
+
+        <div class="formula-box tool-support">
+          <div class="label">Support note</div>
+          <div>Electron geometry counts all electron groups. Molecular geometry counts bonded atoms only.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">NASBU One-Step Check</h2>
+
+      <div class="en-tool tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong>Answer one NASBU step before you reveal the count.</strong></p>
+          <p class="tool-scenario-text">Focus on the displayed structure or count cue, then choose the best next step before you check.</p>
+        </div>
+        <div class="formula-box tool-context-box">
+          <div class="label">NASBU Prompt</div>
+          <div id="nasbuPrompt" class="tool-context-value">—</div>
+        </div>
+        <div class="segment-controls tool-choice-row tool-decision" id="nasbuChoiceButtons" role="group" aria-label="NASBU step choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" onclick="checkNasbuTool()">Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="nasbuRevealBtn" onclick="revealNasbuTool()" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="nasbuNextBtn" onclick="nextNasbuTool()" disabled>Try another</button>
+        </div>
+        <div id="nasbuOut" class="segment-readout tool-feedback" data-state="pending">
+          Choose one answer, then click Check.
+        </div>
+        <div id="nasbuReveal" class="en-result tool-reveal" hidden></div>
+        <div class="formula-box tool-support">
+          <div class="label">Support note</div>
+          <div><strong>S</strong> = N − A, <strong>B</strong> = <span class="formula-frac"><span class="formula-frac-n">S</span><span class="formula-frac-d">2</span></span>, and <strong>U</strong> = A − S.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ════════════════════════════════════════════════
+       EXAMPLES TAB
+       ════════════════════════════════════════════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <div class="card">
+      <h2 class="card-title">Example 1 · Drawing the Lewis Structure of SO₂ (NASBU)</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Draw the Lewis structure for sulfur dioxide using NASBU.</p>
+        <p><strong>Given:</strong> SO₂</p>
+        <p><strong>Find:</strong> correct Lewis structure and resonance picture</p>
+      </div>
+      <p class="example-note">Follow each NASBU step explicitly. SO₂ is a strong example because the count gives a mixed single/double-bond picture and leads naturally to resonance.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>N — Needed electrons</strong>
+            <p>S usually wants 8 electrons. Each O also wants 8. Needed total: 8 + 8 + 8 = <strong>24 electrons needed</strong>.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>A — Available electrons</strong>
+            <p>S contributes 6 valence electrons. Two O atoms contribute 2 × 6 = 12 more. Available total: 6 + 12 = <strong>18 electrons available</strong>.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>S — Shared electrons</strong>
+            <p>Use the formula <strong>S = N − A</strong>. So S = 24 − 18 = <strong>6 shared electrons</strong>.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>B — Bonds</strong>
+            <p>Convert shared electrons to bonds: <strong>B = <span class="formula-frac"><span class="formula-frac-n">S</span><span class="formula-frac-d">2</span></span> = <span class="formula-frac"><span class="formula-frac-n">6</span><span class="formula-frac-d">2</span></span> = 3 bonds</strong>.</p>
+            <p>Hydrogen is not present, so sulfur is the sensible center atom here. With 3 total bond lines, the skeleton must contain one double bond and one single bond: O=S−O.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>U — Unshared electrons</strong>
+            <p>Find the remaining lone-pair electrons: <strong>U = A − S = 18 − 6 = 12 electrons</strong>.</p>
+            <p>Place those 12 electrons as dots: 2 lone pairs on the double-bonded O, 3 lone pairs on the single-bonded O, and 1 lone pair on S.</p>
+            <p>The double bond can switch to the other oxygen, so SO₂ has two equivalent resonance structures. The real molecule is a resonance hybrid with an average S−O bond order of 1.5.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SO2 resonance diagram -->
+      <p class="figure-heading">The two SO₂ resonance structures:</p>
+      <div class="resonance-row resonance-row--nitrate">
+
+        <!--
+          SO2 resonance. S at center (100,65). Bent molecule, ~119° angle.
+          Left O at (32,65). Right O at (168,65). Lone pair on S at top.
+          Structure A: left O double-bonded. Structure B: right O double-bonded.
+          ViewBox: 0 0 200 115.
+        -->
+
+        <!-- Structure A: O=S–O -->
+        <div class="resonance-structure">
+          <svg width="220" height="130" viewBox="0 0 220 130" overflow="visible">
+            <!-- double bond left O=S -->
+            <line x1="54" y1="63" x2="96" y2="63" stroke="#374151" stroke-width="2.2"/>
+            <line x1="54" y1="71" x2="96" y2="71" stroke="#374151" stroke-width="2.2"/>
+            <!-- left O (double-bonded: 2 lone pairs — left vertical, bottom horizontal) -->
+            <text x="40" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="21" cy="62" r="3.5" fill="#dc2626"/>
+            <circle cx="21" cy="70" r="3.5" fill="#dc2626"/>
+            <circle cx="36" cy="87" r="3.5" fill="#dc2626"/>
+            <circle cx="44" cy="87" r="3.5" fill="#dc2626"/>
+            <!-- S center -->
+            <text x="110" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">S</text>
+            <!-- S lone pair: 8px spacing -->
+            <circle cx="106" cy="47" r="3.5" fill="#64748b"/>
+            <circle cx="114" cy="47" r="3.5" fill="#64748b"/>
+            <!-- single bond S–O right -->
+            <line x1="126" y1="67" x2="166" y2="67" stroke="#374151" stroke-width="2.2"/>
+            <!-- right O (single-bonded: 3 lone pairs — top, right vertical, bottom) -->
+            <text x="180" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="176" cy="52" r="3.5" fill="#dc2626"/>
+            <circle cx="184" cy="52" r="3.5" fill="#dc2626"/>
+            <circle cx="199" cy="62" r="3.5" fill="#dc2626"/>
+            <circle cx="199" cy="70" r="3.5" fill="#dc2626"/>
+            <circle cx="176" cy="87" r="3.5" fill="#dc2626"/>
+            <circle cx="184" cy="87" r="3.5" fill="#dc2626"/>
+          </svg>
+          <div class="resonance-label">Structure A</div>
+        </div>
+
+        <div class="resonance-arrow">⟺</div>
+
+        <!-- Structure B: O–S=O -->
+        <div class="resonance-structure">
+          <svg width="220" height="130" viewBox="0 0 220 130" overflow="visible">
+            <!-- single bond left O–S -->
+            <line x1="54" y1="67" x2="96" y2="67" stroke="#374151" stroke-width="2.2"/>
+            <!-- left O (single-bonded: 3 lone pairs — top, left vertical, bottom) -->
+            <text x="40" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="36" cy="52" r="3.5" fill="#dc2626"/>
+            <circle cx="44" cy="52" r="3.5" fill="#dc2626"/>
+            <circle cx="21" cy="62" r="3.5" fill="#dc2626"/>
+            <circle cx="21" cy="70" r="3.5" fill="#dc2626"/>
+            <circle cx="36" cy="87" r="3.5" fill="#dc2626"/>
+            <circle cx="44" cy="87" r="3.5" fill="#dc2626"/>
+            <!-- S center -->
+            <text x="110" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">S</text>
+            <!-- S lone pair: 8px spacing -->
+            <circle cx="106" cy="47" r="3.5" fill="#64748b"/>
+            <circle cx="114" cy="47" r="3.5" fill="#64748b"/>
+            <!-- double bond S=O right -->
+            <line x1="126" y1="63" x2="166" y2="63" stroke="#374151" stroke-width="2.2"/>
+            <line x1="126" y1="71" x2="166" y2="71" stroke="#374151" stroke-width="2.2"/>
+            <!-- right O (double-bonded: 2 lone pairs — right vertical, bottom horizontal) -->
+            <text x="180" y="75" font-size="17" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+            <circle cx="199" cy="62" r="3.5" fill="#dc2626"/>
+            <circle cx="199" cy="70" r="3.5" fill="#dc2626"/>
+            <circle cx="176" cy="87" r="3.5" fill="#dc2626"/>
+            <circle cx="184" cy="87" r="3.5" fill="#dc2626"/>
+          </svg>
+          <div class="resonance-label">Structure B</div>
+        </div>
+
+      </div>
+      <p class="figure-caption">The real SO₂ is a hybrid of both — bond order 1.5 for each S–O bond, bent shape, ~119° angle.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 2 · Predicting Shape of NH₃ using VSEPR</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Use VSEPR to predict the shape of ammonia.</p>
+        <p><strong>Given:</strong> NH₃</p>
+        <p><strong>Find:</strong> electron geometry, molecular geometry, and approximate bond angle</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Draw the Lewis structure first</strong>
+            <p>N contributes 5 valence e⁻. Three H atoms contribute 3 × 1 = 3 e⁻, so the total is 8 e⁻.</p>
+            <p>Place N in the center and form 3 N–H bonds, which uses 6 e⁻. The remaining 2 e⁻ become 1 lone pair on N.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Count electron groups (steric number)</strong>
+            <p>Steric number = bonding groups + lone pairs = 3 + 1 = <strong>4</strong>. Four electron groups → base geometry is tetrahedral.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Electron geometry vs. molecular geometry</strong>
+            <p>Electron geometry, counting all 4 groups, is <strong>tetrahedral</strong>.</p>
+            <p>Molecular geometry, counting only the bonded atoms, is <strong>trigonal pyramidal</strong>. The lone pair is not named in the molecular shape, but it still affects the bond angles.</p>
+            <p><strong>Reminder:</strong> count all electron groups for electron geometry, but count only bonded atoms for molecular geometry.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Predict bond angles</strong>
+            <p>A perfect tetrahedral angle is 109.5°.</p>
+            <p>The lone pair repels the bonding pairs more strongly, so the H–N–H angle is compressed to about <strong>107°</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="geo-card vsepr-example-card">
+        <div class="gc-name">NH₃ Geometry Snapshot</div>
+        <div class="gc-formula">3 bonding + 1 LP</div>
+        <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+          <ellipse cx="90" cy="25" rx="16" ry="10" class="lp"/>
+          <text x="90" y="25" class="text-lp">LP</text>
+          <line x1="90" y1="65" x2="40" y2="90" class="bond"/>
+          <line x1="90" y1="65" x2="140" y2="80" class="bond-dash"/>
+          <polygon points="90,65 80,115 100,115" class="wedge"/>
+          <circle cx="40" cy="90" r="14" class="atom-a"/>
+          <text x="40" y="90" class="text-a">A</text>
+          <circle cx="140" cy="80" r="14" class="atom-a"/>
+          <text x="140" y="80" class="text-a">A</text>
+          <circle cx="90" cy="115" r="14" class="atom-a"/>
+          <text x="90" y="115" class="text-a">A</text>
+          <circle cx="90" cy="65" r="16" class="atom-b"/>
+          <text x="90" y="65" class="text-b">B</text>
+        </svg>
+        <div class="gc-angle">Bond angle: ~107°</div>
+        <div class="gc-example">Electron geometry: tetrahedral · Molecular geometry: trigonal pyramidal</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 3 · Is PCl₃ Polar? (Full Analysis)</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Decide whether PCl₃ is polar.</p>
+        <p><strong>Given:</strong> PCl₃</p>
+        <p><strong>Find:</strong> whether the molecule is polar, with reasoning</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Are the bonds polar?</strong>
+            <p>EN of P = 2.19, EN of Cl = 3.16. ΔEN = 3.16 − 2.19 = 0.97. Since 0.97 is between 0.4 and 1.7, the P–Cl bonds are <strong>polar covalent</strong>. Each bond has a partial negative charge (δ–) on Cl and partial positive (δ+) on P.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Determine molecular geometry</strong>
+            <p>P has 5 valence electrons, and each Cl has 7, so the molecule has <strong>5 + 3(7) = 26</strong> valence electrons total. The Lewis structure has three P–Cl bonds and one lone pair on P. That gives 4 electron groups around P, so the electron geometry is tetrahedral and the molecular geometry is <strong>trigonal pyramidal</strong>.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Do the bond dipoles cancel?</strong>
+            <p>In a trigonal pyramidal molecule, the three P–Cl bond dipoles do <strong>not</strong> cancel. The lone pair changes the 3D shape, so the dipoles add to a net dipole.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Conclusion</strong>
+            <p>PCl₃ has polar bonds, and those bond dipoles do not cancel in its trigonal pyramidal shape. Therefore, PCl₃ is a <span class="fl-result">polar molecule</span>.</p>
+            <p>By contrast, PCl₅ is symmetric and is nonpolar even though its bonds are polar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="geo-card vsepr-example-card">
+        <div class="gc-name">PCl₃ Geometry Snapshot</div>
+        <div class="gc-formula">3 bonding + 1 LP</div>
+        <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible">
+          <ellipse cx="90" cy="25" rx="16" ry="10" class="lp"/>
+          <text x="90" y="25" class="text-lp">LP</text>
+          <line x1="90" y1="65" x2="40" y2="90" class="bond"/>
+          <line x1="90" y1="65" x2="140" y2="80" class="bond-dash"/>
+          <polygon points="90,65 80,115 100,115" class="wedge"/>
+          <circle cx="40" cy="90" r="14" class="atom-a"/>
+          <text x="40" y="90" class="text-a">A</text>
+          <circle cx="140" cy="80" r="14" class="atom-a"/>
+          <text x="140" y="80" class="text-a">A</text>
+          <circle cx="90" cy="115" r="14" class="atom-a"/>
+          <text x="90" y="115" class="text-a">A</text>
+          <circle cx="90" cy="65" r="16" class="atom-b"/>
+          <text x="90" y="65" class="text-b">B</text>
+        </svg>
+        <div class="gc-angle">Bond angle: ~107°</div>
+        <div class="gc-example">In this trigonal pyramidal shape, the bond dipoles do not cancel.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 4 · Resonance in Carbonate Ion (CO₃²⁻)</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Draw all resonance structures of the carbonate ion (CO₃²⁻) and explain what the real structure looks like.</p>
+        <p><strong>Given:</strong> CO₃²⁻</p>
+        <p><strong>Find:</strong> all resonance structures and the real bonding picture</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Count valence electrons (including ion charge)</strong>
+            <p>C = 4. Three O atoms = 3 × 6 = 18. Ion charge = 2− → add 2 electrons. Total = 4 + 18 + 2 = <strong>24 valence electrons</strong>.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Apply NASBU to get bond lines and lone pairs</strong>
+            <p>Needed: 4 atoms × 8 = 32 electrons. Available: 4 + 18 + 2 = 24 electrons. Shared: S = 32 − 24 = 8 electrons. Bonds: B = <span class="formula-frac"><span class="formula-frac-n">8</span><span class="formula-frac-d">2</span></span> = 4 bond lines total. Unshared: U = 24 − 8 = 16 electrons left as lone pairs. Put C in the center, use one double bond and two single bonds to make 4 bond lines total, then place the 16 unshared electrons as lone pairs on the oxygens.</p>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Draw all three resonance structures</strong>
+            <p>The double bond can be placed between C and any one of the three oxygens. This gives <strong>three equivalent resonance structures</strong>. They are connected by double-headed arrows (⟺), not equilibrium arrows.</p>
+
+            <!--
+              CO3 2- resonance. Same layout as NO3-:
+              C at center (75,70). Trigonal planar.
+              Top O at (75,18). Bottom-left O at (25,98). Bottom-right O at (125,98).
+              ViewBox: 0 0 150 143.
+              Lone pair counts identical to NO3- (same electron count, same structure type).
+              Double-bonded O: 2 lone pairs. Single-bonded O (with −1 charge): 3 lone pairs.
+              Ion charge brackets omitted for clarity at this intro level.
+            -->
+            <div class="resonance-row resonance-row--nitrate">
+              <div class="resonance-structure">
+                <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="First carbonate resonance structure">
+                  <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+                  <line x1="84" y1="67" x2="84" y2="38" stroke="#374151" stroke-width="2.2"/>
+                  <line x1="92" y1="67" x2="92" y2="38" stroke="#374151" stroke-width="2.2"/>
+                  <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+                  <line x1="80" y1="88" x2="53" y2="106" stroke="#374151" stroke-width="2.2"/>
+                  <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="47" cy="126" r="3.5" fill="#dc2626"/>
+                  <circle cx="55" cy="126" r="3.5" fill="#dc2626"/>
+                  <line x1="96" y1="88" x2="123" y2="106" stroke="#374151" stroke-width="2.2"/>
+                  <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="135" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="143" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="121" cy="126" r="3.5" fill="#dc2626"/>
+                  <circle cx="129" cy="126" r="3.5" fill="#dc2626"/>
+                  <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−2</text>
+                </svg>
+              </div>
+
+              <div class="resonance-arrow">⟺</div>
+
+              <div class="resonance-structure">
+                <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="Second carbonate resonance structure">
+                  <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+                  <line x1="88" y1="67" x2="88" y2="38" stroke="#374151" stroke-width="2.2"/>
+                  <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+                  <circle cx="84" cy="14" r="3.5" fill="#dc2626"/>
+                  <circle cx="92" cy="14" r="3.5" fill="#dc2626"/>
+                  <line x1="77" y1="90" x2="50" y2="108" stroke="#374151" stroke-width="2.2"/>
+                  <line x1="83" y1="96" x2="56" y2="114" stroke="#374151" stroke-width="2.2"/>
+                  <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+                  <line x1="96" y1="88" x2="123" y2="106" stroke="#374151" stroke-width="2.2"/>
+                  <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="135" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="143" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="121" cy="126" r="3.5" fill="#dc2626"/>
+                  <circle cx="129" cy="126" r="3.5" fill="#dc2626"/>
+                  <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−2</text>
+                </svg>
+              </div>
+
+              <div class="resonance-arrow">⟺</div>
+
+              <div class="resonance-structure">
+                <svg width="176" height="150" viewBox="0 0 176 150" overflow="visible" role="img" aria-label="Third carbonate resonance structure">
+                  <text x="88" y="82" font-size="17" font-family="serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
+                  <line x1="88" y1="67" x2="88" y2="38" stroke="#374151" stroke-width="2.2"/>
+                  <text x="88" y="32" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="69" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="69" cy="31" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="23" r="3.5" fill="#dc2626"/>
+                  <circle cx="107" cy="31" r="3.5" fill="#dc2626"/>
+                  <circle cx="84" cy="14" r="3.5" fill="#dc2626"/>
+                  <circle cx="92" cy="14" r="3.5" fill="#dc2626"/>
+                  <line x1="80" y1="88" x2="53" y2="106" stroke="#374151" stroke-width="2.2"/>
+                  <text x="41" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="22" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="22" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="33" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="41" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="47" cy="126" r="3.5" fill="#dc2626"/>
+                  <circle cx="55" cy="126" r="3.5" fill="#dc2626"/>
+                  <line x1="93" y1="90" x2="120" y2="108" stroke="#374151" stroke-width="2.2"/>
+                  <line x1="99" y1="84" x2="126" y2="102" stroke="#374151" stroke-width="2.2"/>
+                  <text x="135" y="120" font-size="16" font-family="serif" font-weight="bold" fill="#dc2626" text-anchor="middle">O</text>
+                  <circle cx="154" cy="111" r="3.5" fill="#dc2626"/>
+                  <circle cx="154" cy="119" r="3.5" fill="#dc2626"/>
+                  <circle cx="131" cy="134" r="3.5" fill="#dc2626"/>
+                  <circle cx="139" cy="134" r="3.5" fill="#dc2626"/>
+                  <path d="M14 10 V140 M14 10 h8 M14 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <path d="M162 10 V140 M154 10 h8 M154 140 h8" fill="none" stroke="#0f172a" stroke-width="2"/>
+                  <text x="167" y="20" font-size="15" font-family="serif" font-weight="bold" fill="#0f172a">−2</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step"><div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Describe the resonance hybrid</strong>
+            <p>The real CO₃²⁻ ion has all three C–O bonds of equal length (~136 pm) and equal bond order (~1.33). This is intermediate between a C–O single bond (143 pm) and a C=O double bond (123 pm). The negative charge is evenly delocalized across all three oxygen atoms — not concentrated on one. <span class="fl-result">Molecular geometry: trigonal planar, 120° bond angles.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- practice banner — direct child of .container, after all section divs -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Bite-sized Unit 10 practice: 3 randomized problems at a time.</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Thousands of unique review sets</span>
+        <span>✓ Instant feedback + worked solutions</span>
+        <span>✓ Unit 10 aligned</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="10_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Focused review sets &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <nav class="unit-bottom-nav" aria-label="Unit 10 navigation">
+    <a class="unit-bottom-link" href="09_Learn_Chemistry_Stoichiometry.html">
+      <span class="unit-bottom-kicker">Previous</span>
+      <span class="unit-bottom-title">Unit 09 · Stoichiometry</span>
+    </a>
+    <a class="unit-bottom-link is-practice" href="10_practice.html">
+      <span class="unit-bottom-kicker">Practice</span>
+      <span class="unit-bottom-title">Unit 10 · Chemical Bonding Practice</span>
+    </a>
+    <a class="unit-bottom-link" href="11_Learn_Chemistry_Energy_Thermochemistry.html">
+      <span class="unit-bottom-kicker">Next</span>
+      <span class="unit-bottom-title">Unit 11 · Energy &amp; Thermochemistry</span>
+    </a>
+  </nav>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 10 · Chemical Bonding</div>
+
+
+</div><!-- end .container -->
+</main>
+<script src="chem.js?v=20260422"></script>
+<script>
+// ===================== ELECTRONEGATIVITY DATA (Pauling scale) =====================
+const EN_DATA = [
+  {sym:'H',  name:'Hydrogen',    en:2.20, grp:1},
+  {sym:'Li', name:'Lithium',     en:0.98, grp:1},
+  {sym:'Na', name:'Sodium',      en:0.93, grp:1},
+  {sym:'K',  name:'Potassium',   en:0.82, grp:1},
+  {sym:'Mg', name:'Magnesium',   en:1.31, grp:2},
+  {sym:'Ca', name:'Calcium',     en:1.00, grp:2},
+  {sym:'Al', name:'Aluminum',    en:1.61, grp:13},
+  {sym:'C',  name:'Carbon',      en:2.55, grp:14},
+  {sym:'Si', name:'Silicon',     en:1.90, grp:14},
+  {sym:'N',  name:'Nitrogen',    en:3.04, grp:15},
+  {sym:'P',  name:'Phosphorus',  en:2.19, grp:15},
+  {sym:'As', name:'Arsenic',     en:2.18, grp:15},
+  {sym:'O',  name:'Oxygen',      en:3.44, grp:16},
+  {sym:'S',  name:'Sulfur',      en:2.58, grp:16},
+  {sym:'Se', name:'Selenium',    en:2.55, grp:16},
+  {sym:'F',  name:'Fluorine',    en:3.98, grp:17},
+  {sym:'Cl', name:'Chlorine',    en:3.16, grp:17},
+  {sym:'Br', name:'Bromine',     en:2.96, grp:17},
+  {sym:'I',  name:'Iodine',      en:2.66, grp:17},
+  {sym:'B',  name:'Boron',       en:2.04, grp:13},
+  {sym:'Ge', name:'Germanium',   en:2.01, grp:14},
+  {sym:'Fe', name:'Iron',        en:1.83, grp:8},
+  {sym:'Cu', name:'Copper',      en:1.90, grp:11},
+  {sym:'Zn', name:'Zinc',        en:1.65, grp:12},
+  {sym:'Cs', name:'Cesium',      en:0.79, grp:1},
+  {sym:'Ba', name:'Barium',      en:0.89, grp:2},
+  {sym:'Xe', name:'Xenon',       en:2.60, grp:18},
+];
+
+const EN_TYPES = {
+  Al: 'metal',
+  As: 'metalloid',
+  B: 'metalloid',
+  Ba: 'metal',
+  Br: 'nonmetal',
+  C: 'nonmetal',
+  Ca: 'metal',
+  Cl: 'nonmetal',
+  Cs: 'metal',
+  Cu: 'metal',
+  F: 'nonmetal',
+  Fe: 'metal',
+  Ge: 'metalloid',
+  H: 'nonmetal',
+  I: 'nonmetal',
+  K: 'metal',
+  Li: 'metal',
+  Mg: 'metal',
+  N: 'nonmetal',
+  Na: 'metal',
+  O: 'nonmetal',
+  P: 'nonmetal',
+  S: 'nonmetal',
+  Se: 'nonmetal',
+  Si: 'metalloid',
+  Xe: 'nonmetal',
+  Zn: 'metal'
+};
+
+const EN_LOOKUP = Object.fromEntries(EN_DATA.map(item => [item.sym, item]));
+
+const BOND_TOOL_DATA = [
+  {
+    pair: 'Na + Cl',
+    answer: 'Ionic',
+    correctFeedback: 'Right — Na is a metal and Cl is a nonmetal, so the beginner bonding picture is ionic.',
+    incorrectFeedback: 'Not quite — start with element types, not just shared electrons. A metal with a nonmetal is classified as ionic first. Check which atom would lose electrons and which would gain them.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel">
+          <h4>1. Element types</h4>
+          <p>Na is a metal and Cl is a nonmetal.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>2. Electron behavior</h4>
+          <p>Na tends to lose an electron, and Cl tends to gain one.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>3. ΔEN support</h4>
+          <p>ΔEN is large, which supports very uneven attraction and ionic character.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>Particle picture</h4>
+          <p>Picture ions in a crystal lattice, not separate molecules.</p>
+        </div>
+      </div>`
+  },
+  {
+    pair: 'H + Cl',
+    answer: 'Polar Covalent',
+    correctFeedback: 'Right — H and Cl are both nonmetals, so the bond is covalent, and Cl pulls the shared electrons closer.',
+    incorrectFeedback: 'Not quite — both atoms here are nonmetals, so start with a covalent picture. Then decide whether the electrons are shared equally or unequally.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel">
+          <h4>1. Element types</h4>
+          <p>H and Cl are both nonmetals, so this is a covalent bond.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>2. Electron behavior</h4>
+          <p>Cl attracts the shared electrons more strongly, so the bond has a dipole.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>3. ΔEN support</h4>
+          <p>The ΔEN value falls in the polar-covalent range.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>Particle picture</h4>
+          <p>Picture a molecule with a polar bond, not full ions in a lattice.</p>
+        </div>
+      </div>`
+  },
+  {
+    pair: 'Cl + Cl',
+    answer: 'Nonpolar Covalent',
+    correctFeedback: 'Right — the two atoms are the same, so the shared electrons stay centered and the bond is nonpolar covalent.',
+    incorrectFeedback: 'Not quite — both atoms are the same nonmetal, so neither side pulls harder. Think about equal sharing.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel">
+          <h4>1. Element types</h4>
+          <p>Both atoms are nonmetals, so this is a covalent bond.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>2. Electron behavior</h4>
+          <p>Because the atoms are identical, the shared electrons stay centered.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>3. ΔEN support</h4>
+          <p>ΔEN = 0, which matches nonpolar covalent bonding.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>Particle picture</h4>
+          <p>Picture a simple molecule with no bond dipole.</p>
+        </div>
+      </div>`
+  },
+  {
+    pair: 'Cu + Zn',
+    answer: 'Metallic',
+    correctFeedback: 'Right — both elements are metals, so the best introductory bonding picture is metallic.',
+    incorrectFeedback: 'Not quite — when both elements are metals, use the metallic bonding picture first. Do not force a covalent or ionic model here.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel">
+          <h4>1. Element types</h4>
+          <p>Cu and Zn are both metals.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>2. Electron behavior</h4>
+          <p>The valence electrons are delocalized across many atoms.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>3. ΔEN support</h4>
+          <p>For two metals, electronegativity is not the main decision tool.</p>
+        </div>
+        <div class="bond-tool-panel">
+          <h4>Particle picture</h4>
+          <p>Picture positive metal centers in a mobile sea of electrons.</p>
+        </div>
+      </div>`
+  }
+];
+
+let bondToolIndex = 0;
+let bondToolChoice = '';
+let bondToolChecked = false;
+let bondChoiceSignature = '';
+let vseprChoiceSignature = '';
+let nasbuChoiceSignature = '';
+
+function setToolFeedbackState(id, text, explicitState) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = text;
+  let state = explicitState || 'info';
+  if (explicitState) {
+    el.dataset.state = explicitState;
+    return;
+  }
+  if (/^Right\b/.test(text)) state = 'correct';
+  else if (/^Not quite\b/.test(text)) state = 'incorrect';
+  else if (/first\.?$/.test(text)) state = 'pending';
+  el.dataset.state = state;
+}
+
+function setVseprFeedbackState(state) {
+  const box = document.getElementById('vseprOut');
+  if (box) box.dataset.state = state;
+}
+
+function resetChoiceButtons(containerId) {
+  document.querySelectorAll(`#${containerId} [data-choice]`).forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed', 'false');
+  });
+}
+
+function selectChoice(containerId, value, assignFn) {
+  assignFn(value);
+  document.querySelectorAll(`#${containerId} [data-choice]`).forEach(btn => {
+    const active = btn.getAttribute('data-choice') === value;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function shuffleArray(items) {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function shuffleChoices(choices, previousSignature) {
+  if (choices.length < 2) {
+    return { choices: [...choices], signature: choices.join('|') };
+  }
+  let shuffled = [...choices];
+  let signature = shuffled.join('|');
+  let attempts = 0;
+  while (signature === previousSignature && attempts < 6) {
+    shuffled = shuffleArray(choices);
+    signature = shuffled.join('|');
+    attempts += 1;
+  }
+  return { choices: shuffled, signature };
+}
+
+function getNextRandomIndex(length, currentIndex) {
+  if (length <= 1) return 0;
+  let nextIndex = currentIndex;
+  while (nextIndex === currentIndex) {
+    nextIndex = Math.floor(Math.random() * length);
+  }
+  return nextIndex;
+}
+
+function renderChoiceButtons(containerId, choices, clickHandler, previousSignature) {
+  const { choices: shuffledChoices, signature } = shuffleChoices(choices, previousSignature);
+  const container = document.getElementById(containerId);
+  container.innerHTML = shuffledChoices
+    .map(choice => `<button type="button" class="segment-btn tool-choice-btn explore-choice" data-choice="${choice}" aria-pressed="false">${choice}</button>`)
+    .join('');
+  container.querySelectorAll('[data-choice]').forEach(btn => {
+    btn.addEventListener('click', () => clickHandler(btn.getAttribute('data-choice')));
+  });
+  return signature;
+}
+
+function renderBondTool() {
+  const card = BOND_TOOL_DATA[bondToolIndex];
+  document.getElementById('bondPairPrompt').textContent = card.pair;
+  bondToolChoice = '';
+  bondToolChecked = false;
+  bondChoiceSignature = renderChoiceButtons(
+    'bondChoiceButtons',
+    ['Ionic', 'Polar Covalent', 'Nonpolar Covalent', 'Metallic'],
+    value => selectChoice('bondChoiceButtons', value, selected => { bondToolChoice = selected; }),
+    bondChoiceSignature
+  );
+  setToolFeedbackState('bondFeedback', 'Choose one bonding picture, then click Check.', 'pending');
+  document.getElementById('bondReveal').hidden = true;
+  document.getElementById('bondReveal').innerHTML = '';
+  document.getElementById('bondRevealBtn').disabled = true;
+  document.getElementById('bondNextBtn').disabled = true;
+}
+
+function checkBondTool() {
+  const card = BOND_TOOL_DATA[bondToolIndex];
+  if (!bondToolChoice) {
+    setToolFeedbackState('bondFeedback', 'Choose one bonding picture, then click Check.', 'pending');
+    return;
+  }
+  bondToolChecked = true;
+  setToolFeedbackState('bondFeedback', bondToolChoice === card.answer ? card.correctFeedback : card.incorrectFeedback);
+  document.getElementById('bondRevealBtn').disabled = false;
+  document.getElementById('bondNextBtn').disabled = false;
+}
+
+function revealBondTool() {
+  const revealEl = document.getElementById('bondReveal');
+  if (!bondToolChecked) {
+    setToolFeedbackState('bondFeedback', 'Check your answer first.', 'pending');
+    return;
+  }
+  revealEl.hidden = false;
+  revealEl.innerHTML = `<strong class="tool-reveal-heading">Why this is the best bonding picture</strong>${BOND_TOOL_DATA[bondToolIndex].reveal}`;
+}
+
+function nextBondTool() {
+  bondToolIndex = getNextRandomIndex(BOND_TOOL_DATA.length, bondToolIndex);
+  renderBondTool();
+}
+
+// ===================== VSEPR LOOKUP TABLE =====================
+const VSEPR_TABLE = {
+  '2-0': {eg:'Linear',               mg:'Linear',                 angle:'180°',      polar:'No (if terminal atoms are the same)', ex:'CO₂, BeCl₂',  formula:'AX₂'},
+  '3-0': {eg:'Trigonal Planar',      mg:'Trigonal Planar',        angle:'120°',      polar:'No (if all same atoms)', ex:'BF₃, SO₃, NO₃⁻',   formula:'AX₃'},
+  '3-1': {eg:'Trigonal Planar',      mg:'Bent (trigonal planar)', angle:'~119°',     polar:'Yes',                     ex:'SO₂, O₃, NO₂⁻',    formula:'AX₂E'},
+  '4-0': {eg:'Tetrahedral',          mg:'Tetrahedral',            angle:'109.5°',    polar:'No (if all same)',       ex:'CH₄, CCl₄, SiH₄',  formula:'AX₄'},
+  '4-1': {eg:'Tetrahedral',          mg:'Trigonal Pyramidal',     angle:'~107°',     polar:'Yes',                     ex:'NH₃, PCl₃, NF₃',   formula:'AX₃E'},
+  '4-2': {eg:'Tetrahedral',          mg:'Bent (tetrahedral)',     angle:'~104.5°',   polar:'Yes',                     ex:'H₂O, OF₂, H₂S',    formula:'AX₂E₂'},
+  '5-0': {eg:'Trigonal Bipyramidal', mg:'Trigonal Bipyramidal',   angle:'90°/120°',  polar:'No (if all terminal atoms are the same)', ex:'PCl₅, PF₅, AsF₅',  formula:'AX₅'},
+  '5-1': {eg:'Trigonal Bipyramidal', mg:'See-Saw',                angle:'~90°/120°', polar:'Yes',                     ex:'SF₄, ClF₄⁺',       formula:'AX₄E'},
+  '5-2': {eg:'Trigonal Bipyramidal', mg:'T-Shaped',               angle:'~90°',      polar:'Yes',                     ex:'ClF₃, BrF₃',       formula:'AX₃E₂'},
+  '5-3': {eg:'Trigonal Bipyramidal', mg:'Linear',                 angle:'180°',      polar:'No (if terminal atoms are the same)', ex:'XeF₂, I₃⁻',        formula:'AX₂E₃'},
+  '6-0': {eg:'Octahedral',           mg:'Octahedral',             angle:'90°',       polar:'No (if all terminal atoms are the same)', ex:'SF₆, Mo(CO)₆',     formula:'AX₆'},
+  '6-1': {eg:'Octahedral',           mg:'Square Pyramidal',       angle:'~90°',      polar:'Yes',                     ex:'ClF₅, BrF₅, IF₅',  formula:'AX₅E'},
+  '6-2': {eg:'Octahedral',           mg:'Square Planar',          angle:'90°',       polar:'No (if all terminal atoms are the same)', ex:'XeF₄, ICl₄⁻',      formula:'AX₄E₂'},
+};
+
+const VSEPR_DIAGRAMS = {
+  '2-0': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Linear VSEPR diagram">
+      <line x1="45" y1="60" x2="135" y2="60" class="bond" />
+      <circle cx="45" cy="60" r="14" class="atom-a" />
+      <text x="45" y="60" class="text-a">A</text>
+      <circle cx="135" cy="60" r="14" class="atom-a" />
+      <text x="135" y="60" class="text-a">A</text>
+      <circle cx="90" cy="60" r="16" class="atom-b" />
+      <text x="90" y="60" class="text-b">B</text>
+    </svg>`,
+  '3-0': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Trigonal planar VSEPR diagram">
+      <line x1="90" y1="65" x2="90" y2="20" class="bond" />
+      <line x1="90" y1="65" x2="45" y2="100" class="bond" />
+      <line x1="90" y1="65" x2="135" y2="100" class="bond" />
+      <circle cx="90" cy="20" r="14" class="atom-a" />
+      <text x="90" y="20" class="text-a">A</text>
+      <circle cx="45" cy="100" r="14" class="atom-a" />
+      <text x="45" y="100" class="text-a">A</text>
+      <circle cx="135" cy="100" r="14" class="atom-a" />
+      <text x="135" y="100" class="text-a">A</text>
+      <circle cx="90" cy="65" r="16" class="atom-b" />
+      <text x="90" y="65" class="text-b">B</text>
+    </svg>`,
+  '3-1': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Bent trigonal planar VSEPR diagram">
+      <ellipse cx="90" cy="25" rx="16" ry="10" class="lp" />
+      <text x="90" y="25" class="text-lp">LP</text>
+      <line x1="90" y1="65" x2="50" y2="105" class="bond" />
+      <line x1="90" y1="65" x2="130" y2="105" class="bond" />
+      <circle cx="50" cy="105" r="14" class="atom-a" />
+      <text x="50" y="105" class="text-a">A</text>
+      <circle cx="130" cy="105" r="14" class="atom-a" />
+      <text x="130" y="105" class="text-a">A</text>
+      <circle cx="90" cy="65" r="16" class="atom-b" />
+      <text x="90" y="65" class="text-b">B</text>
+    </svg>`,
+  '4-0': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Tetrahedral VSEPR diagram">
+      <line x1="90" y1="65" x2="90" y2="15" class="bond" />
+      <line x1="90" y1="65" x2="40" y2="80" class="bond" />
+      <line x1="90" y1="65" x2="135" y2="55" class="bond-dash" />
+      <polygon points="90,65 115,115 132,105" class="wedge" />
+      <circle cx="90" cy="15" r="14" class="atom-a" />
+      <text x="90" y="15" class="text-a">A</text>
+      <circle cx="40" cy="80" r="14" class="atom-a" />
+      <text x="40" y="80" class="text-a">A</text>
+      <circle cx="135" cy="55" r="14" class="atom-a" />
+      <text x="135" y="55" class="text-a">A</text>
+      <circle cx="123" cy="110" r="14" class="atom-a" />
+      <text x="123" y="110" class="text-a">A</text>
+      <circle cx="90" cy="65" r="16" class="atom-b" />
+      <text x="90" y="65" class="text-b">B</text>
+    </svg>`,
+  '4-1': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Trigonal pyramidal VSEPR diagram">
+      <ellipse cx="90" cy="25" rx="16" ry="10" class="lp" />
+      <text x="90" y="25" class="text-lp">LP</text>
+      <line x1="90" y1="65" x2="40" y2="90" class="bond" />
+      <line x1="90" y1="65" x2="140" y2="80" class="bond-dash" />
+      <polygon points="90,65 80,115 100,115" class="wedge" />
+      <circle cx="40" cy="90" r="14" class="atom-a" />
+      <text x="40" y="90" class="text-a">A</text>
+      <circle cx="140" cy="80" r="14" class="atom-a" />
+      <text x="140" y="80" class="text-a">A</text>
+      <circle cx="90" cy="115" r="14" class="atom-a" />
+      <text x="90" y="115" class="text-a">A</text>
+      <circle cx="90" cy="65" r="16" class="atom-b" />
+      <text x="90" y="65" class="text-b">B</text>
+    </svg>`,
+  '4-2': `
+    <svg width="180" height="120" viewBox="0 0 180 120" overflow="visible" role="img" aria-label="Bent tetrahedral VSEPR diagram">
+      <g transform="translate(65, 35) rotate(-35)">
+        <ellipse cx="0" cy="0" rx="15" ry="9" class="lp" />
+        <text x="0" y="0" class="text-lp">LP</text>
+      </g>
+      <g transform="translate(115, 35) rotate(35)">
+        <ellipse cx="0" cy="0" rx="15" ry="9" class="lp" />
+        <text x="0" y="0" class="text-lp">LP</text>
+      </g>
+      <line x1="90" y1="65" x2="50" y2="105" class="bond" />
+      <line x1="90" y1="65" x2="130" y2="105" class="bond" />
+      <circle cx="50" cy="105" r="14" class="atom-a" />
+      <text x="50" y="105" class="text-a">A</text>
+      <circle cx="130" cy="105" r="14" class="atom-a" />
+      <text x="130" y="105" class="text-a">A</text>
+      <circle cx="90" cy="65" r="16" class="atom-b" />
+      <text x="90" y="65" class="text-b">B</text>
+    </svg>`,
+  '5-0': `
+    <svg width="180" height="135" viewBox="0 0 180 135" overflow="visible" role="img" aria-label="Trigonal bipyramidal VSEPR diagram">
+      <line x1="90" y1="67" x2="90" y2="15" class="bond" />
+      <line x1="90" y1="67" x2="90" y2="120" class="bond" />
+      <line x1="90" y1="67" x2="40" y2="67" class="bond" />
+      <line x1="90" y1="67" x2="135" y2="40" class="bond-dash" />
+      <polygon points="90,67 125,105 138,92" class="wedge" />
+      <circle cx="90" cy="15" r="14" class="atom-a" />
+      <text x="90" y="15" class="text-a">A</text>
+      <circle cx="90" cy="120" r="14" class="atom-a" />
+      <text x="90" y="120" class="text-a">A</text>
+      <circle cx="40" cy="67" r="14" class="atom-a" />
+      <text x="40" y="67" class="text-a">A</text>
+      <circle cx="135" cy="40" r="14" class="atom-a" />
+      <text x="135" y="40" class="text-a">A</text>
+      <circle cx="130" cy="98" r="14" class="atom-a" />
+      <text x="130" y="98" class="text-a">A</text>
+      <circle cx="90" cy="67" r="16" class="atom-b" />
+      <text x="90" y="67" class="text-b">B</text>
+    </svg>`,
+  '5-1': `
+    <svg width="160" height="128" viewBox="0 0 160 128" overflow="visible" role="img" aria-label="See-saw VSEPR diagram">
+      <ellipse cx="34" cy="64" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="34" y="67" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <line x1="80" y1="50" x2="80" y2="33" stroke="#374151" stroke-width="2"/>
+      <line x1="80" y1="78" x2="80" y2="95" stroke="#374151" stroke-width="2"/>
+      <line x1="88" y1="54" x2="112" y2="38" stroke="#374151" stroke-width="2"/>
+      <line x1="88" y1="74" x2="112" y2="90" stroke="#374151" stroke-width="2"/>
+      <circle cx="80" cy="64" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="80" y="69" font-size="12" font-family="serif" font-weight="bold" fill="#1d4ed8" text-anchor="middle">B</text>
+      <circle cx="80" cy="22" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="26" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="80" cy="106" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="110" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="122" cy="28" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="122" y="32" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="122" cy="100" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="122" y="104" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+    </svg>`,
+  '5-2': `
+    <svg width="160" height="128" viewBox="0 0 160 128" overflow="visible" role="img" aria-label="T-shaped VSEPR diagram">
+      <ellipse cx="30" cy="46" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="30" y="49" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <ellipse cx="30" cy="82" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="30" y="85" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <line x1="80" y1="50" x2="80" y2="33" stroke="#374151" stroke-width="2"/>
+      <line x1="80" y1="78" x2="80" y2="95" stroke="#374151" stroke-width="2"/>
+      <line x1="66" y1="64" x2="42" y2="64" stroke="#374151" stroke-width="2"/>
+      <circle cx="80" cy="64" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="80" y="69" font-size="12" font-family="serif" font-weight="bold" fill="#1d4ed8" text-anchor="middle">B</text>
+      <circle cx="80" cy="22" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="26" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="80" cy="106" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="110" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="28" cy="64" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="28" y="68" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+    </svg>`,
+  '5-3': `
+    <svg width="160" height="128" viewBox="0 0 160 128" overflow="visible" role="img" aria-label="Linear from trigonal bipyramidal VSEPR diagram">
+      <ellipse cx="34" cy="42" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="34" y="45" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <ellipse cx="34" cy="64" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="34" y="67" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <ellipse cx="34" cy="86" rx="14" ry="8" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="34" y="89" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <line x1="80" y1="50" x2="80" y2="33" stroke="#374151" stroke-width="2"/>
+      <line x1="80" y1="78" x2="80" y2="95" stroke="#374151" stroke-width="2"/>
+      <circle cx="80" cy="64" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="80" y="69" font-size="12" font-family="serif" font-weight="bold" fill="#1d4ed8" text-anchor="middle">B</text>
+      <circle cx="80" cy="22" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="26" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="80" cy="106" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="110" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+    </svg>`,
+  '6-0': `
+    <svg width="180" height="135" viewBox="0 0 180 135" overflow="visible" role="img" aria-label="Octahedral VSEPR diagram">
+      <line x1="90" y1="67" x2="90" y2="15" class="bond" />
+      <line x1="90" y1="67" x2="90" y2="120" class="bond" />
+      <line x1="90" y1="67" x2="45" y2="40" class="bond-dash" />
+      <line x1="90" y1="67" x2="135" y2="40" class="bond-dash" />
+      <polygon points="90,67 42,92 55,105" class="wedge" />
+      <polygon points="90,67 138,92 125,105" class="wedge" />
+      <circle cx="90" cy="15" r="14" class="atom-a" />
+      <text x="90" y="15" class="text-a">A</text>
+      <circle cx="90" cy="120" r="14" class="atom-a" />
+      <text x="90" y="120" class="text-a">A</text>
+      <circle cx="45" cy="40" r="14" class="atom-a" />
+      <text x="45" y="40" class="text-a">A</text>
+      <circle cx="135" cy="40" r="14" class="atom-a" />
+      <text x="135" y="40" class="text-a">A</text>
+      <circle cx="48" cy="98" r="14" class="atom-a" />
+      <text x="48" y="98" class="text-a">A</text>
+      <circle cx="132" cy="98" r="14" class="atom-a" />
+      <text x="132" y="98" class="text-a">A</text>
+      <circle cx="90" cy="67" r="16" class="atom-b" />
+      <text x="90" y="67" class="text-b">B</text>
+    </svg>`,
+  '6-1': `
+    <svg width="160" height="128" viewBox="0 0 160 128" overflow="visible" role="img" aria-label="Square pyramidal VSEPR diagram">
+      <ellipse cx="80" cy="114" rx="15" ry="9" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="80" y="117" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <line x1="80" y1="50" x2="80" y2="33" stroke="#374151" stroke-width="2"/>
+      <line x1="66" y1="64" x2="40" y2="64" stroke="#374151" stroke-width="2"/>
+      <line x1="94" y1="64" x2="120" y2="64" stroke="#374151" stroke-width="2"/>
+      <line x1="70" y1="52" x2="48" y2="36" stroke="#374151" stroke-width="2"/>
+      <line x1="90" y1="76" x2="112" y2="92" stroke="#374151" stroke-width="2"/>
+      <circle cx="80" cy="64" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="80" y="69" font-size="12" font-family="serif" font-weight="bold" fill="#1d4ed8" text-anchor="middle">B</text>
+      <circle cx="80" cy="22" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="80" y="26" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="28" cy="64" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="28" y="68" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="132" cy="64" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="132" y="68" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="36" cy="26" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="36" y="30" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="124" cy="102" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="124" y="106" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+    </svg>`,
+  '6-2': `
+    <svg width="160" height="128" viewBox="0 0 160 128" overflow="visible" role="img" aria-label="Square planar VSEPR diagram">
+      <ellipse cx="80" cy="22" rx="15" ry="9" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="80" y="25" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <ellipse cx="80" cy="106" rx="15" ry="9" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="80" y="109" font-size="7" fill="#64748b" text-anchor="middle">LP</text>
+      <line x1="66" y1="64" x2="40" y2="64" stroke="#374151" stroke-width="2"/>
+      <line x1="94" y1="64" x2="120" y2="64" stroke="#374151" stroke-width="2"/>
+      <line x1="70" y1="52" x2="48" y2="36" stroke="#374151" stroke-width="2"/>
+      <line x1="90" y1="76" x2="112" y2="92" stroke="#374151" stroke-width="2"/>
+      <circle cx="80" cy="64" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="80" y="69" font-size="12" font-family="serif" font-weight="bold" fill="#1d4ed8" text-anchor="middle">B</text>
+      <circle cx="28" cy="64" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="28" y="68" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="132" cy="64" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="132" y="68" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="36" cy="26" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="36" y="30" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+      <circle cx="124" cy="102" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="124" y="106" font-size="11" font-family="serif" font-weight="bold" fill="#991b1b" text-anchor="middle">A</text>
+    </svg>`,
+};
+
+const VSEPR_TOOL_DATA = [
+  { key:'4-1', correct:'Trigonal Pyramidal', choices:['Tetrahedral', 'Trigonal Pyramidal', 'Bent', 'Trigonal Planar'] },
+  { key:'4-2', correct:'Bent', choices:['Bent', 'Linear', 'Tetrahedral', 'Trigonal Pyramidal'] },
+  { key:'3-0', correct:'Trigonal Planar', choices:['Bent', 'Trigonal Planar', 'Tetrahedral', 'Linear'] },
+  { key:'2-0', correct:'Linear', choices:['Linear', 'Bent', 'Trigonal Planar', 'Tetrahedral'] }
+];
+
+let vseprToolIndex = 0;
+let vseprToolChoice = '';
+let vseprToolChecked = false;
+
+function renderVseprTool() {
+  const scenario = VSEPR_TOOL_DATA[vseprToolIndex];
+  const [groupsText, lonePairsText] = scenario.key.split('-').map(Number);
+  const data = VSEPR_TABLE[scenario.key];
+  const bondCount = groupsText - lonePairsText;
+
+  vseprToolChoice = '';
+  vseprToolChecked = false;
+  resetChoiceButtons('vseprChoiceButtons');
+
+  document.getElementById('vseprQuestion').innerHTML = `This picture shows <strong>${groupsText}</strong> electron groups and <strong>${lonePairsText}</strong> lone pair${lonePairsText === 1 ? '' : 's'} on the central atom.`;
+  document.getElementById('vDiagram').innerHTML = VSEPR_DIAGRAMS[scenario.key];
+  document.getElementById('vBadges').innerHTML =
+    `<span class="vsepr-badge">${groupsText} electron groups</span>` +
+    `<span class="vsepr-badge">${bondCount} bonded atoms</span>` +
+    `<span class="vsepr-badge">${lonePairsText} lone pair${lonePairsText === 1 ? '' : 's'}</span>`;
+  document.getElementById('vDiagramTitle').textContent = 'Electron-group picture';
+  document.getElementById('vCaption').textContent = 'Choose the molecular shape before revealing the answer.';
+  document.getElementById('vMolGeo').textContent = 'Choose a molecular shape first.';
+  document.getElementById('vElecGeo').textContent = 'The answer stays hidden until you commit.';
+  document.getElementById('vDetails').textContent = 'Use the diagram to count the bonded atoms and lone pairs.';
+  setVseprFeedbackState('pending');
+  document.getElementById('vseprReveal').hidden = true;
+  document.getElementById('vseprReveal').innerHTML = '';
+  document.getElementById('vseprRevealBtn').disabled = true;
+  document.getElementById('vseprNextBtn').disabled = true;
+
+  vseprChoiceSignature = renderChoiceButtons(
+    'vseprChoiceButtons',
+    scenario.choices,
+    value => selectChoice('vseprChoiceButtons', value, selected => { vseprToolChoice = selected; }),
+    vseprChoiceSignature
+  );
+}
+
+function checkVseprTool() {
+  const scenario = VSEPR_TOOL_DATA[vseprToolIndex];
+  const data = VSEPR_TABLE[scenario.key];
+  if (!vseprToolChoice) {
+    document.getElementById('vMolGeo').textContent = 'Choose a molecular shape, then click Check.';
+    document.getElementById('vElecGeo').textContent = 'The answer stays hidden until you commit.';
+    document.getElementById('vDetails').textContent = 'Use the diagram to count the bonded atoms and lone pairs.';
+    setVseprFeedbackState('pending');
+    return;
+  }
+  vseprToolChecked = true;
+  if (vseprToolChoice === scenario.correct) {
+    document.getElementById('vMolGeo').textContent = `Right — ${data.formula} gives a ${scenario.correct.toLowerCase()} molecular shape.`;
+    document.getElementById('vElecGeo').textContent = 'Molecular geometry counts bonded atoms, not lone pairs.';
+    document.getElementById('vDetails').textContent = '';
+    setVseprFeedbackState('correct');
+  } else {
+    document.getElementById('vMolGeo').textContent = 'Not quite — you may have named the wrong shape.';
+    document.getElementById('vElecGeo').textContent = 'Count all groups for electron geometry, then count only bonded atoms for molecular geometry.';
+    document.getElementById('vDetails').textContent = `Try the shape with ${Number(scenario.key.split('-')[0]) - Number(scenario.key.split('-')[1])} bonded atoms.`;
+    setVseprFeedbackState('incorrect');
+  }
+  document.getElementById('vseprRevealBtn').disabled = false;
+  document.getElementById('vseprNextBtn').disabled = false;
+}
+
+function revealVseprTool() {
+  const scenario = VSEPR_TOOL_DATA[vseprToolIndex];
+  const data = VSEPR_TABLE[scenario.key];
+  const [groupsText, lonePairsText] = scenario.key.split('-').map(Number);
+  const bondCount = groupsText - lonePairsText;
+  const revealEl = document.getElementById('vseprReveal');
+
+  if (!vseprToolChecked) {
+    document.getElementById('vMolGeo').textContent = 'Check your answer first.';
+    setVseprFeedbackState('pending');
+    return;
+  }
+
+  document.getElementById('vMolGeo').textContent = `Molecular geometry: ${data.mg}`;
+  document.getElementById('vElecGeo').textContent = `Electron geometry: ${data.eg}`;
+  document.getElementById('vDetails').textContent = 'Use the reveal panel below to compare the two geometry labels and the bond-angle clue.';
+  revealEl.hidden = false;
+  revealEl.innerHTML =
+    `<strong class="tool-reveal-heading">Why this shape fits</strong>` +
+    `Why: <strong>${groupsText}</strong> electron groups, but only <strong>${bondCount}</strong> bonded atoms and <strong>${lonePairsText}</strong> lone pair${lonePairsText === 1 ? '' : 's'}.<br>` +
+    `Approximate bond angle: <strong>${data.angle}</strong><br>` +
+    `Common example: ${data.ex}`;
+  setVseprFeedbackState('info');
+}
+
+function nextVseprTool() {
+  vseprToolIndex = getNextRandomIndex(VSEPR_TOOL_DATA.length, vseprToolIndex);
+  renderVseprTool();
+}
+
+// ===================== NASBU TOOL =====================
+const NASBU_TOOL_DATA = [
+  {
+    prompt: 'For CO₂, what is A, the number of available valence electrons?',
+    choices: ['12', '16', '24', '32'],
+    answer: '16',
+    correctFeedback: 'Right — A counts the valence electrons the atoms actually bring. In CO₂, that total is 16.',
+    incorrectFeedback: 'Not quite — you counted full shells instead of valence electrons. A means the electrons the atoms already have, not the electrons they want. Recount C and the two O atoms.',
+    reveal: 'C has 4 valence electrons. Each O has 6. So A = 4 + 6 + 6 = 16.'
+  },
+  {
+    prompt: 'For SO₂, what is B, the total number of bond lines?',
+    choices: ['2', '3', '4', '6'],
+    answer: '3',
+    correctFeedback: 'Right — B comes from shared electrons divided into pairs, so 6 shared electrons give 3 bond lines.',
+    incorrectFeedback: 'Not quite — use B = S divided by 2. Shared electrons make bonds in pairs. Start from S = 6, then divide by 2.',
+    reveal: 'For SO₂, N = 24 and A = 18, so S = 6. Then B = <span class="formula-frac"><span class="formula-frac-n">6</span><span class="formula-frac-d">2</span></span> = 3 bond lines.'
+  },
+  {
+    prompt: 'For NH₃, what is U, the number of unshared electrons?',
+    choices: ['0', '2', '6', '8'],
+    answer: '2',
+    correctFeedback: 'Right — U means the electrons left after the shared electrons are placed in bonds. NH₃ has 2 unshared electrons.',
+    incorrectFeedback: 'Not quite — use U = A − S. Find how many electrons are left after bonding, then decide where the lone pair goes.',
+    reveal: 'For NH₃, A = 8 and S = 6, so U = 8 − 6 = 2 unshared electrons. Those 2 electrons make 1 lone pair on N.'
+  },
+  {
+    prompt: 'For NO₃⁻, what must you do first when counting A?',
+    choices: ['Ignore the charge', 'Add 1 electron for the −1 charge', 'Subtract 1 electron for the −1 charge', 'Force N to have 8 electrons'],
+    answer: 'Add 1 electron for the −1 charge',
+    correctFeedback: 'Right — a negative charge means extra electrons, so you add 1 electron when counting A.',
+    incorrectFeedback: 'Not quite — A counts the electrons the ion actually has. A −1 charge means one extra electron. Add that electron before you continue.',
+    reveal: 'For NO₃⁻, start with N = 5 and O = 3 × 6 = 18, then add 1 more electron for the −1 charge.'
+  }
+];
+
+let nasbuToolIndex = 0;
+let nasbuToolChoice = '';
+let nasbuToolChecked = false;
+
+function renderNasbuTool() {
+  const card = NASBU_TOOL_DATA[nasbuToolIndex];
+  nasbuToolChoice = '';
+  nasbuToolChecked = false;
+  document.getElementById('nasbuPrompt').textContent = card.prompt;
+  setToolFeedbackState('nasbuOut', 'Choose one answer, then click Check.', 'pending');
+  document.getElementById('nasbuReveal').hidden = true;
+  document.getElementById('nasbuReveal').innerHTML = '';
+  document.getElementById('nasbuRevealBtn').disabled = true;
+  document.getElementById('nasbuNextBtn').disabled = true;
+
+  nasbuChoiceSignature = renderChoiceButtons(
+    'nasbuChoiceButtons',
+    card.choices,
+    value => selectChoice('nasbuChoiceButtons', value, selected => { nasbuToolChoice = selected; }),
+    nasbuChoiceSignature
+  );
+}
+
+function checkNasbuTool() {
+  const card = NASBU_TOOL_DATA[nasbuToolIndex];
+  if (!nasbuToolChoice) {
+    setToolFeedbackState('nasbuOut', 'Choose one answer, then click Check.', 'pending');
+    return;
+  }
+  nasbuToolChecked = true;
+  setToolFeedbackState('nasbuOut', nasbuToolChoice === card.answer ? card.correctFeedback : card.incorrectFeedback);
+  document.getElementById('nasbuRevealBtn').disabled = false;
+  document.getElementById('nasbuNextBtn').disabled = false;
+}
+
+function revealNasbuTool() {
+  const revealEl = document.getElementById('nasbuReveal');
+  if (!nasbuToolChecked) {
+    setToolFeedbackState('nasbuOut', 'Check your answer first.', 'pending');
+    return;
+  }
+  revealEl.hidden = false;
+  revealEl.innerHTML = `<strong class="tool-reveal-heading">Why this count is correct</strong>${NASBU_TOOL_DATA[nasbuToolIndex].reveal}`;
+}
+
+function nextNasbuTool() {
+  nasbuToolIndex = getNextRandomIndex(NASBU_TOOL_DATA.length, nasbuToolIndex);
+  renderNasbuTool();
+}
+
+// ===================== INIT =====================
+document.addEventListener('DOMContentLoaded', function () {
+  bondToolIndex = Math.floor(Math.random() * BOND_TOOL_DATA.length);
+  vseprToolIndex = Math.floor(Math.random() * VSEPR_TOOL_DATA.length);
+  nasbuToolIndex = Math.floor(Math.random() * NASBU_TOOL_DATA.length);
+  renderBondTool();
+  renderVseprTool();
+  renderNasbuTool();
+});
+</script>
+</body>
+</html>

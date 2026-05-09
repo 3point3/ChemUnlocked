@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 14 — Chemical Equilibrium | ChemUnlocked</title>
+<meta name="description" content="Learn about chemical equilibrium, the equilibrium constant K, Le Châtelier's Principle, and how to predict and calculate shifts in chemical systems. Practice with 81 randomized problems and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/14_Learn_Chemistry_Equilibrium.html">
+<link rel="stylesheet" href="chem.css">
+<meta name="theme-color" content="#2563eb">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta property="og:title" content="Unit 14 — Chemical Equilibrium | ChemUnlocked">
+<meta property="og:description" content="Learn about chemical equilibrium, the equilibrium constant K, Le Châtelier's Principle, and how to predict and calculate shifts in chemical systems. Practice with 81 randomized problems and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/14_Learn_Chemistry_Equilibrium.html">
+<meta property="og:image" content="https://chemunlocked.com/assets/og/chem-equilibrium.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 14 — Chemical Equilibrium | ChemUnlocked">
+<meta name="twitter:description" content="Learn about chemical equilibrium, the equilibrium constant K, Le Châtelier's Principle, and how to predict and calculate shifts in chemical systems. Practice with 81 randomized problems and interactive tools.">
+<meta name="twitter:site" content="@ChemUnlocked">
+<meta name="twitter:image" content="https://chemunlocked.com/assets/og/chem-equilibrium.png">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 14 — Chemical Equilibrium",
+  "description": "Learn about chemical equilibrium, the equilibrium constant K, Le Châtelier's Principle, and how to predict and calculate shifts in chemical systems. Practice with 81 randomized problems and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked",
+    "url": "https://chemunlocked.com"
+  },
+  "url": "https://chemunlocked.com/14_Learn_Chemistry_Equilibrium.html"
+}
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+</head>
+<body class="page-unit page-14-learn-chemistry-equilibrium">
+
+
+<div class="starfield"></div>
+
+
+  <main id="main-content" role="main" tabindex="-1">
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 14</div>
+    <h1>Chemical Equilibrium</h1>
+    <p class="subtitle">Equilibrium is not a frozen state but a dynamic balance — this unit gives you the tools to quantify it and predict how it shifts.</p>
+  </header>
+
+  <p class="learning-objectives-intro">What you'll learn</p>
+  <div class="learning-objectives" aria-label="What you will learn">
+    <span>Write equilibrium expressions (K) for homogeneous and heterogeneous reactions.</span>
+    <span>Use the reaction quotient Q to predict which direction a reaction will shift.</span>
+    <span>Apply Le Châtelier's Principle to changes in concentration, pressure, and temperature.</span>
+    <span>Set up and solve ICE tables to find equilibrium concentrations.</span>
+  </div>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 14 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CONCEPTS TAB
+  ══════════════════════════════════════════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.1</span> What Is Chemical Equilibrium?</h2>
+      <p>Many chemical reactions are <strong>reversible</strong>, which means the products can react to re-form the reactants. We show this with a double arrow (⇌).</p>
+      <p>As the forward reaction uses up reactants, it slows down. At the same time, the reverse reaction speeds up as more products accumulate.</p>
+      <p>When the forward and reverse rates become equal, the system reaches <strong>equilibrium</strong>.</p>
+      <p>At equilibrium, <em>concentrations stop changing</em>, but particles are still reacting in both directions. This is a <strong>dynamic equilibrium</strong>, not a static dead-end.</p>
+      <div class="formula-box">
+        <span class="label">General Reversible Reaction</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">aA + bB ⇌ cC + dD</div>
+        </div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>Equal rates ≠ equal concentrations.</li>
+          <li>At equilibrium the forward and reverse rates match, but the amounts of reactants and products can be very different from each other.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.2</span> The Reaction Quotient Q and Equilibrium Constant K</h2>
+      <p>For the general reversible reaction aA + bB ⇌ cC + dD, we define a ratio of product concentrations to reactant concentrations, each raised to its stoichiometric coefficient:</p>
+      <div class="formula-box">
+        <span class="label">Reaction Quotient and Equilibrium Constant</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">Q = <span class="formula-frac"><span class="formula-frac-n">[C]<sup>c</sup>[D]<sup>d</sup></span><span class="formula-frac-d">[A]<sup>a</sup>[B]<sup>b</sup></span></span></div>
+        </div>
+      </div>
+      <p>When this ratio is calculated using <em>equilibrium</em> concentrations, it equals the <strong>equilibrium constant K</strong>. K is a fixed number for a given reaction at a given temperature.</p>
+      <p><strong>Concrete read:</strong> if K = 4.0 × 10<sup>3</sup>, products are strongly favored at equilibrium. If K = 2.0 × 10<sup>−5</sup>, reactants are strongly favored.</p>
+      <table class="concept-table">
+        <thead>
+          <tr><th>Comparison</th><th>Meaning</th><th>Direction of Shift</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q &lt; K</td><td>Too many reactants relative to equilibrium</td><td>Forward (→) to make more products</td></tr>
+          <tr><td>Q = K</td><td>System is at equilibrium</td><td>No net shift</td></tr>
+          <tr><td>Q &gt; K</td><td>Too many products relative to equilibrium</td><td>Reverse (←) to make more reactants</td></tr>
+        </tbody>
+      </table>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>A large K (≫1) means products are favored at equilibrium.</li>
+          <li>A small K (≪1) means reactants are favored.</li>
+          <li>If K ≈ 1, significant amounts of both reactants and products are present.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.3</span> Homogeneous vs. Heterogeneous Equilibria</h2>
+      <p>In a <strong>homogeneous equilibrium</strong>, all species are in the same phase — for example, all gases or all dissolved in water. In a <strong>heterogeneous equilibrium</strong>, species are in two or more phases (e.g., a solid and a gas, or a solid and an aqueous solution).</p>
+      <p>The key rule for heterogeneous equilibria: <strong>pure solids and pure liquids are omitted from the K expression</strong>. Their concentrations are constant and are absorbed into the value of K.</p>
+      <p><strong>Concrete check:</strong> for CaCO₃(s) ⇌ CaO(s) + CO₂(g), both solids are omitted, so CO₂ is the only term that appears in K.</p>
+      <table class="concept-table">
+  <thead>
+    <tr>
+      <th>Example Reaction</th>
+      <th>K Expression</th>
+      <th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CaCO₃(s) ⇌ CaO(s) + CO₂(g)</td>
+      <td>K = [CO₂]</td>
+      <td>Both solids omitted</td>
+    </tr>
+    <tr>
+      <td>C(s) + O₂(g) ⇌ CO₂(g)</td>
+      <td>
+        K =
+        <span class="formula-frac">
+          <span class="formula-frac-n">[CO₂]</span>
+          <span class="formula-frac-d">[O₂]</span>
+        </span>
+      </td>
+      <td>Solid C omitted</td>
+    </tr>
+    <tr>
+      <td>N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</td>
+      <td>
+        K =
+        <span class="formula-frac">
+          <span class="formula-frac-n">[NH₃]²</span>
+          <span class="formula-frac-d">[N₂][H₂]³</span>
+        </span>
+      </td>
+      <td>All gases included</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.4</span> Le Châtelier's Principle</h2>
+      <p><strong>Le Châtelier's Principle:</strong> when a system at equilibrium is stressed, it shifts in the direction that partly reduces that stress.</p>
+      <p><strong>Concentration changes</strong></p>
+      <table class="concept-table">
+        <thead>
+          <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Add a reactant</td><td>Shift right to use some of the added reactant</td><td>K unchanged</td></tr>
+          <tr><td>Remove a reactant</td><td>Shift left to replace some of the reactant</td><td>K unchanged</td></tr>
+          <tr><td>Add a product</td><td>Shift left to use some of the added product</td><td>K unchanged</td></tr>
+          <tr><td>Remove a product</td><td>Shift right to replace some of the product</td><td>K unchanged</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Pressure or volume changes (gases only)</strong></p>
+      <table class="concept-table">
+        <thead>
+          <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Increase pressure by decreasing volume</td><td>Shift toward the side with fewer moles of gas</td><td>K unchanged</td></tr>
+          <tr><td>Decrease pressure by increasing volume</td><td>Shift toward the side with more moles of gas</td><td>K unchanged</td></tr>
+          <tr><td>Same total moles of gas on both sides</td><td>No shift</td><td>K unchanged</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Temperature changes</strong></p>
+      <table class="concept-table">
+        <thead>
+          <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Increase temperature</td><td>Shift in the endothermic direction</td><td>K changes</td></tr>
+          <tr><td>Decrease temperature</td><td>Shift in the exothermic direction</td><td>K changes</td></tr>
+        </tbody>
+      </table>
+      <p>Treat heat as part of the reaction. If the forward reaction is exothermic, heat acts like a product. If the forward reaction is endothermic, heat acts like a reactant.</p>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>Temperature is the only disturbance that changes K.</li>
+          <li>Concentration changes, pressure changes, and catalysts do not change K.</li>
+          <li>A catalyst speeds up both directions equally, so equilibrium is reached faster but the equilibrium position does not change.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.5</span> ICE Tables — Equilibrium Calculations</h2>
+      <p>Use an <strong>ICE table</strong> after you know which way the reaction must move. ICE stands for <strong>I</strong>nitial concentrations, <strong>C</strong>hange in concentrations, and <strong>E</strong>quilibrium concentrations.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write the balanced equation and the K expression</strong>
+            <p>Use the balanced equation to place the correct species and exponents into K.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Decide the direction of shift</strong>
+            <p>If Q &lt; K, the reaction shifts right. If Q &gt; K, the reaction shifts left. If the system starts with no products, then Q = 0, so it shifts right.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Fill in the I row</strong>
+            <p>Write the initial concentration of each species.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Fill in the C row with x</strong>
+            <p>If the reaction shifts right, reactants decrease and products increase. If the reaction shifts left, products decrease and reactants increase. Use the coefficients to scale each change.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 5 — Write the E row</strong>
+            <p>For each species, equilibrium concentration = initial + change.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 6 — Substitute into K and solve</strong>
+            <p>Substitute the equilibrium expressions into K and solve for x.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ice-table-example">
+        <p class="ice-table-intro"><strong>What a real ICE table looks like:</strong> here is a simple setup for the water-gas shift reaction starting with only reactants present.</p>
+        <div class="formula-box">
+          <span class="label">Worked ICE Setup</span>
+          <div class="formula-rule-list">
+            <div class="formula-rule">CO(g) + H<sub>2</sub>O(g) ⇌ CO<sub>2</sub>(g) + H<sub>2</sub>(g)</div>
+            <div class="formula-rule">K = <span class="formula-frac"><span class="formula-frac-n">[CO<sub>2</sub>][H<sub>2</sub>]</span><span class="formula-frac-d">[CO][H<sub>2</sub>O]</span></span></div>
+          </div>
+        </div>
+        <table class="concept-table ice-table">
+          <thead>
+            <tr>
+              <th>Row</th>
+              <th>CO(g)</th>
+              <th>H<sub>2</sub>O(g)</th>
+              <th>CO<sub>2</sub>(g)</th>
+              <th>H<sub>2</sub>(g)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Initial</strong></td>
+              <td>0.100 M</td>
+              <td>0.100 M</td>
+              <td>0 M</td>
+              <td>0 M</td>
+            </tr>
+            <tr>
+              <td><strong>Change</strong></td>
+              <td>−x</td>
+              <td>−x</td>
+              <td>+x</td>
+              <td>+x</td>
+            </tr>
+            <tr>
+              <td><strong>Equilibrium</strong></td>
+              <td>0.100 − x</td>
+              <td>0.100 − x</td>
+              <td>x</td>
+              <td>x</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="example-note">Because the reaction starts with no products, Q = 0, so the system must shift right. That is why the reactants get <strong>−x</strong> and both products get <strong>+x</strong>.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num"></div>
+            <div class="step-content">
+              <strong>Then substitute the equilibrium row into K</strong>
+              <p>Every concentration in the equilibrium expression must come from the <strong>E</strong> row of the ICE table.</p>
+              <div class="fl-chain">
+                K = <span class="formula-frac"><span class="formula-frac-n">[CO<sub>2</sub>][H<sub>2</sub>]</span><span class="formula-frac-d">[CO][H<sub>2</sub>O]</span></span>
+              </div>
+              <div class="fl-chain">
+                K = <span class="formula-frac"><span class="formula-frac-n">(x)(x)</span><span class="formula-frac-d">(0.100 − x)(0.100 − x)</span></span>
+              </div>
+              <div class="fl-chain">
+                K = <span class="formula-frac"><span class="formula-frac-n">x²</span><span class="formula-frac-d">(0.100 − x)²</span></span>
+              </div>
+              <p>This is the equation you would solve once the problem gives you a value for <strong>K</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Quick sign check</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">Shift right: reactants get −x, products get +x</div>
+          <div class="formula-rule">Shift left: reactants get +x, products get −x</div>
+        </div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+        <p class="key-fact-title">Simplification check</p>
+          <ul class="key-fact-list">
+          <li>If K is very small (&lt;10⁻⁴) and initial concentrations are not tiny, you can often assume x is negligible compared to the initial concentration.</li>
+          <li>Always verify: x must be &lt;5% of initial concentration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">14.6</span> Catalysts and Equilibrium</h2>
+      <p>A <strong>catalyst</strong> lowers the activation energy of both the forward and reverse reactions equally. This means equilibrium is reached faster, but the equilibrium position (the value of K and the final concentrations) is <em>not changed</em>.</p>
+      <p>Think of it this way: the catalyst speeds up both lanes of a highway. Traffic gets to equilibrium faster, but the same number of cars ends up on each side.</p>
+      <div class="formula-box">
+        <span class="label">Catalyst Effect Summary</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">Catalyst → faster rate, same K, same equilibrium concentrations</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end concepts -->
+
+
+  <!-- ══════════════════════════════════════════════
+       TOOLS TAB — Explore Tools
+  ══════════════════════════════════════════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <p class="section-intro">Each tool below presents an equilibrium scenario — identify the rule or predict the direction before the reasoning is revealed. For full calculation practice, use the Unit 14 Practice page.</p>
+
+    <div class="card">
+      <h2 class="card-title">Explore 1 — Dynamic Equilibrium: Rates or Amounts?</h2>
+      <div class="tool-output tool-flow">
+      <div class="tool-prompt tool-scenario-prompt">
+      <p class="tool-focus-label">Read This First</p>
+      <p class="tool-scenario-title"><strong id="equilibrium-prompt">At equilibrium, what must be true?</strong></p>
+      <p class="tool-hint">Focus on what must stay true at equilibrium, not on what only happens sometimes.</p>
+      <p class="tool-scenario-text"><strong>Scenario:</strong> You are looking at a reversible reaction that has settled into dynamic equilibrium. Choose the statement that must be true before you check.</p>
+      </div>
+      <div id="tool-equilibrium-choices" class="segment-controls tool-choice-row" role="group" aria-label="Dynamic equilibrium answer choices"></div>
+      <div class="segment-controls tool-action-row">
+        <button class="segment-btn tool-check-btn explore-check" id="equilibrium-check" type="button">Check</button>
+        <button class="segment-btn tool-reveal-btn explore-reveal" id="equilibrium-reveal" type="button" disabled>Reveal reasoning</button>
+        <button class="segment-btn tool-next-btn explore-next" id="equilibrium-next" type="button" disabled>Try another</button>
+      </div>
+      <div class="segment-readout tool-feedback" id="equilibrium-feedback" data-state="pending">Choose one statement, then click Check.</div>
+      <div class="key-fact tool-reveal" id="equilibrium-reveal-box" hidden>
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Why this is true</p>
+          <p id="equilibrium-reveal-text">At equilibrium, particles still react in both directions. The forward and reverse rates are equal, so the concentrations stop changing even when the amounts on the two sides are not equal.</p>
+          <div class="tool-visual-panel">
+            <div class="tool-balance-visual">
+            <div class="tool-balance-column">
+              <strong>Reactants</strong>
+              <div class="tool-balance-particles reactants">● ● ● ●</div>
+            </div>
+            <div class="tool-balance-arrow">
+              <div>⇌</div>
+              <div>same rate both ways</div>
+            </div>
+            <div class="tool-balance-column">
+              <strong>Products</strong>
+              <div class="tool-balance-particles products">● ●</div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="key-fact tool-support" id="equilibrium-support" hidden>
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">What to look for</p>
+          <p id="equilibrium-hint" class="tool-hint">Hint: Focus on rates, not on whether the amounts match.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Explore 2 — Q vs K: Which Way Will It Shift?</h2>
+      <div class="tool-output tool-flow">
+      <div class="tool-prompt tool-scenario-prompt">
+      <p class="tool-focus-label">Read This First</p>
+      <p class="tool-scenario-title"><strong>Choose the net shift.</strong></p>
+      <p class="tool-hint">Compare Q with K before you decide whether the system needs more products or more reactants.</p>
+      <p class="tool-scenario-text"><strong>Problem:</strong> Use the values below to decide which direction the reaction will shift.</p>
+      </div>
+      <div class="formula-box tool-context-box tool-context-grid">
+        <div><strong>Q =</strong> <span id="qk-q-value">0.20</span></div>
+        <div><strong>K =</strong> <span id="qk-k-value">5.0</span></div>
+      </div>
+      <div id="qk-choice-buttons" class="segment-controls tool-choice-row" role="group" aria-label="Q compared with K answer choices"></div>
+      <div class="segment-controls tool-action-row">
+        <button class="segment-btn tool-check-btn explore-check" id="qk-check" type="button">Check</button>
+        <button class="segment-btn tool-reveal-btn explore-reveal" id="qk-reveal" type="button" disabled>Reveal reasoning</button>
+        <button class="segment-btn tool-next-btn explore-next" id="qk-next" type="button" disabled>Try another</button>
+      </div>
+      <div class="segment-readout tool-feedback" id="qk-feedback" data-state="pending">Choose a shift, then click Check.</div>
+      <div class="key-fact tool-reveal" id="qk-reveal-box" hidden>
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Compare Q to K</p>
+          <div id="qk-reveal-text"></div>
+        </div>
+      </div>
+      <div class="key-fact tool-support" id="qk-support" hidden>
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">What to ask first</p>
+          <p class="tool-hint">Hint: Ask whether the system needs more products or more reactants to match K.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Explore 3 — Pressure Shift See-Saw</h2>
+      <div class="tool-output tool-flow">
+      <div class="tool-prompt tool-scenario-prompt">
+      <p class="tool-focus-label">Read This First</p>
+      <p class="tool-scenario-title"><strong>Choose the net shift.</strong></p>
+      <p class="tool-hint">Count gas moles on each side before deciding how a pressure change affects the system.</p>
+      <p class="tool-scenario-text"><strong>Scenario:</strong> Use the reaction and the pressure stress below to predict the net shift.</p>
+      </div>
+      <div class="formula-box tool-context-box tool-context-grid">
+        <div><strong>Reaction:</strong> <span id="pressure-reaction-label">N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</span></div>
+        <div><strong>Stress:</strong> <span id="pressure-stress-label">Pressure increases because volume decreases</span></div>
+      </div>
+      <div id="pressure-choice-buttons" class="segment-controls tool-choice-row" role="group" aria-label="Pressure shift answer choices"></div>
+      <div class="segment-controls tool-action-row">
+        <button class="segment-btn tool-check-btn explore-check" id="pressure-check" type="button">Check</button>
+        <button class="segment-btn tool-reveal-btn explore-reveal" id="pressure-reveal" type="button" disabled>Reveal reasoning</button>
+        <button class="segment-btn tool-next-btn explore-next" id="pressure-next" type="button" disabled>Try another</button>
+      </div>
+      <div class="segment-readout tool-feedback" id="pressure-feedback" data-state="pending">Choose a shift, then click Check.</div>
+      <div class="key-fact tool-reveal" id="pressure-reveal-box" hidden>
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">Count the gas moles</p>
+          <div id="pressure-reveal-text"></div>
+          <div class="tool-visual-panel">
+          <div class="tool-visual-svg-wrap">
+          <svg id="seesaw-svg" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="seesaw-bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f8fbff"/>
+              <stop offset="100%" stop-color="#eef6ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="638" height="298" rx="24" fill="url(#seesaw-bg)" stroke="#cbd5e1" stroke-width="1.5"/>
+
+          <!-- Fulcrum triangle -->
+          <polygon points="320,248 300,272 340,272" fill="#94a3b8" id="fulcrum-tri"/>
+          <rect x="290" y="272" width="60" height="11" rx="3" fill="#cbd5e1"/>
+
+          <!-- The beam (rotates around 320,248) -->
+          <g id="beam-group" style="transform-origin:320px 248px; transition:transform 0.8s cubic-bezier(0.34,1.56,0.64,1);">
+            <rect id="beam-rect" x="80" y="242" width="480" height="13" rx="6" fill="#1d4ed8"/>
+
+            <!-- LEFT SIDE — Reactants -->
+            <g id="left-pan">
+              <!-- pan -->
+              <rect id="left-pan-rect" x="82" y="230" width="120" height="13" rx="4" fill="#3b82f6"/>
+              <!-- label area (static text, positioned relative to left end of beam) -->
+            </g>
+
+            <!-- RIGHT SIDE — Products -->
+            <g id="right-pan">
+              <rect id="right-pan-rect" x="438" y="230" width="120" height="13" rx="4" fill="#059669"/>
+            </g>
+
+            <!-- Weight circles LEFT -->
+            <circle id="w-left-1" cx="122" cy="218" r="15" fill="#60a5fa" opacity="0.72"/>
+            <circle id="w-left-2" cx="152" cy="218" r="15" fill="#60a5fa" opacity="0.72"/>
+            <circle id="w-left-3" cx="137" cy="196" r="15" fill="#93c5fd" opacity="0.68"/>
+
+            <!-- Weight circles RIGHT -->
+            <circle id="w-right-1" cx="468" cy="218" r="15" fill="#34d399" opacity="0.72"/>
+            <circle id="w-right-2" cx="498" cy="218" r="15" fill="#34d399" opacity="0.72"/>
+            <circle id="w-right-3" cx="528" cy="218" r="15" fill="#6ee7b7" opacity="0.68"/>
+          </g>
+
+          <rect x="78" y="70" width="128" height="34" rx="10" fill="#ffffff" opacity="0.9"/>
+          <text x="142" y="92" text-anchor="middle" fill="#1d4ed8" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700" id="reactant-label">Reactants</text>
+          <rect x="434" y="70" width="128" height="34" rx="10" fill="#ffffff" opacity="0.9"/>
+          <text x="498" y="92" text-anchor="middle" fill="#047857" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700" id="product-label">Products</text>
+
+          <!-- Tilt arrow overlay (appears on shift) -->
+          <g id="shift-arrow" opacity="0" style="transition:opacity 0.4s;">
+            <text id="shift-arrow-text" x="320" y="140" text-anchor="middle" fill="#d97706" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700">⟶</text>
+          </g>
+
+          <!-- Ground line -->
+          <line x1="60" y1="282" x2="580" y2="282" stroke="#cbd5e1" stroke-width="2"/>
+
+          <!-- Equilibrium label -->
+          <text x="320" y="298" text-anchor="middle" fill="#475569" font-size="12" font-family="Arial, Helvetica, sans-serif" id="eq-state-label">Level until you check your answer</text>
+        </svg>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="key-fact tool-support" id="pressure-support" hidden>
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">What to count</p>
+          <p class="tool-hint">Hint: Count gas moles only.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Explore 4 — Temperature and K</h2>
+      <div class="tool-output tool-flow">
+      <div class="tool-prompt tool-scenario-prompt">
+      <p class="tool-focus-label">Read This First</p>
+      <p class="tool-scenario-title"><strong>What happens to K?</strong></p>
+      <p class="tool-hint">Treat heat like a reactant or a product before you decide how K changes.</p>
+      <p class="tool-scenario-text"><strong>Problem:</strong> Use the reaction type and temperature change below to predict what happens to the equilibrium constant.</p>
+      </div>
+      <div class="formula-box tool-context-box tool-context-grid">
+        <div><strong>Reaction:</strong> <span id="temp-reaction-label">2SO₂(g) + O₂(g) ⇌ 2SO₃(g)</span></div>
+        <div><strong>Forward reaction:</strong> <span id="temp-type-label">Exothermic</span></div>
+        <div><strong>Change:</strong> <span id="temp-change-label">Temperature increases</span></div>
+      </div>
+      <div id="temp-choice-buttons" class="segment-controls tool-choice-row" role="group" aria-label="Temperature effect on K answer choices"></div>
+      <div class="segment-controls tool-action-row">
+        <button class="segment-btn tool-check-btn explore-check" id="temp-check" type="button">Check</button>
+        <button class="segment-btn tool-reveal-btn explore-reveal" id="temp-reveal" type="button" disabled>Reveal reasoning</button>
+        <button class="segment-btn tool-next-btn explore-next" id="temp-next" type="button" disabled>Try another</button>
+      </div>
+      <div class="segment-readout tool-feedback" id="temp-feedback" data-state="pending">Choose what happens to K, then click Check.</div>
+      <div class="key-fact tool-reveal" id="temp-reveal-box" hidden>
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">How temperature affects K</p>
+          <div id="temp-reveal-text"></div>
+        </div>
+      </div>
+      <div class="key-fact tool-support" id="temp-support" hidden>
+        <div class="icon">◉</div>
+        <div class="key-fact-copy">
+          <p class="key-fact-title">What to decide first</p>
+          <p class="tool-hint">Hint: Decide whether heat acts like a reactant or a product.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div><!-- end tools -->
+
+
+  <!-- ══════════════════════════════════════════════
+       EXAMPLES TAB
+  ══════════════════════════════════════════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <div class="card">
+      <h2 class="card-title">Example 1 · Writing the K Expression</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Write the equilibrium-constant expression.</p>
+        <p><strong>Given:</strong> 2NO(g) + O₂(g) ⇌ 2NO₂(g)</p>
+        <p><strong>Find:</strong> K expression</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Identify products and reactants with coefficients</strong>
+            <p>Products: NO₂ with coefficient 2. Reactants: NO with coefficient 2, O₂ with coefficient 1.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write K as a fraction with products on top and reactants on the bottom, each raised to its coefficient</strong>
+            <div class="fl-chain">
+              K = <span class="fl-frac"><span class="fl-num">[NO₂]²</span><span class="fl-den">[NO]²[O₂]</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Check: all species are gaseous → homogeneous equilibrium → all included</strong>
+            <p>There are no pure solids or liquids to omit.</p>
+            <p>Final answer:</p>
+            <div class="fl-chain">
+              <span class="fl-result">K = <span class="fl-frac"><span class="fl-num">[NO₂]²</span><span class="fl-den">[NO]²[O₂]</span></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 2 · Comparing Q to K to Predict Shift Direction</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Compare Q to K to predict the shift direction.</p>
+        <p><strong>Given:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g), K = 6.0 × 10⁻², [N₂] = 1.0 M, [H₂] = 2.0 M, [NH₃] = 3.0 M</p>
+        <p><strong>Find:</strong> direction of shift</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write the Q expression (same form as K)</strong>
+            <div class="fl-chain">
+              Q = <span class="fl-frac"><span class="fl-num">[NH₃]²</span><span class="fl-den">[N₂][H₂]³</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Substitute current concentrations</strong>
+            <div class="fl-chain">
+              Q = <span class="fl-frac"><span class="fl-num">(3.0)²</span><span class="fl-den">(1.0)(2.0)³</span></span> = <span class="fl-frac"><span class="fl-num">9.0</span><span class="fl-den">8.0</span></span> = <span class="fl-result">1.125</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Compare Q to K</strong>
+            <p>Q = 1.125 and K = 0.060, so Q &gt; K.</p>
+            <p>That means the mixture has <strong>too many products compared with equilibrium</strong>, so the reaction shifts <span class="fl-result">in the reverse direction (←)</span> until the ratio drops back to K.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 3 · ICE Table — Finding Equilibrium Concentrations</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Use an ICE table to find equilibrium concentrations.</p>
+        <p><strong>Given:</strong> H₂(g) + I₂(g) ⇌ 2HI(g), K = 49.0, [H₂]₀ = 0.500 M, [I₂]₀ = 0.500 M, [HI]₀ = 0 M</p>
+        <p><strong>Find:</strong> equilibrium concentrations of all species</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write the K expression that matches the balanced equation</strong>
+            <div class="fl-chain">
+              K = <span class="fl-frac"><span class="fl-num">[HI]²</span><span class="fl-den">[H₂][I₂]</span></span>
+            </div>
+            <p>This tells you exactly which equilibrium-row expressions must be substituted later.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Decide the direction first</strong>
+            <p>At the start, [HI] = 0, so Q = 0.</p>
+            <p>Since Q &lt; K, the reaction shifts right to make more HI.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Set up the ICE table</strong>
+            <table class="concept-table">
+              <thead><tr><th></th><th>H₂</th><th>I₂</th><th>2HI</th></tr></thead>
+              <tbody>
+                <tr><td><strong>I</strong></td><td>0.500</td><td>0.500</td><td>0</td></tr>
+                <tr><td><strong>C</strong></td><td>−x</td><td>−x</td><td>+2x</td></tr>
+                <tr><td><strong>E</strong></td><td>0.500−x</td><td>0.500−x</td><td>2x</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Substitute E expressions into K</strong>
+            <div class="fl-chain">
+              K = <span class="fl-frac"><span class="fl-num">[HI]²</span><span class="fl-den">[H₂][I₂]</span></span>
+            </div>
+            <div class="fl-chain">
+              K = <span class="fl-frac"><span class="fl-num">(2x)²</span><span class="fl-den">(0.500−x)²</span></span> = 49.0
+            </div>
+            <p>Take the square root of both sides (both sides are perfect squares):</p>
+            <div class="fl-chain">
+              <span class="fl-frac"><span class="fl-num">2x</span><span class="fl-den">0.500 − x</span></span> = 7.00
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 5 — Solve for x</strong>
+            <p>2x = 7.00(0.500 − x) → 2x = 3.50 − 7.00x</p>
+            <p>9.00x = 3.50 → x = 0.389 M</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 6 — Calculate equilibrium concentrations</strong>
+            <p>[H₂] = 0.500 − 0.389 = <span class="fl-result">0.111 M</span></p>
+            <p>[I₂] = <span class="fl-result">0.111 M</span></p>
+            <p>[HI] = 2(0.389) = <span class="fl-result">0.778 M</span></p>
+            <p>Check:</p>
+            <div class="fl-chain">
+              K = <span class="fl-frac"><span class="fl-num">(0.778)²</span><span class="fl-den">(0.111)²</span></span>
+              = <span class="fl-frac"><span class="fl-num">0.6053</span><span class="fl-den">0.01232</span></span>
+              ≈ <span class="fl-result">49.1</span> ✓
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 4 · Le Châtelier's Principle — Pressure Change</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Predict the effect of a pressure increase using Le Châtelier's principle.</p>
+        <p><strong>Given:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g); total pressure increases because volume decreases</p>
+        <p><strong>Find:</strong> direction of shift</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Count moles of gas on each side</strong>
+            <p>Reactants: 1 mol N₂ + 3 mol H₂ = <strong>4 mol gas</strong>. Products: 2 mol NH₃ = <strong>2 mol gas</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Apply Le Châtelier's Principle</strong>
+            <p>Increasing pressure (by decreasing volume) stresses the system. To reduce this stress, the system shifts toward the side with <em>fewer moles of gas</em>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — State the result</strong>
+            <p>The reaction shifts <span class="fl-result">forward (→)</span>, producing more NH₃ and reducing the total number of gas molecules.</p>
+            <p>This is why the Haber process is run at high pressure: it improves NH₃ yield.</p>
+            <p>Important check: pressure only changes the equilibrium position if the two sides have different total moles of gas. If the gas moles are equal on both sides, there is no shift, and <strong>K still stays the same</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end examples -->
+
+  <!-- ── PRACTICE SUBSCRIPTION BANNER ── -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Bite-sized Unit 14 practice: 3 randomized problems at a time.</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Thousands of unique review sets</span>
+        <span>✓ Instant feedback + worked solutions</span>
+        <span>✓ Unit 14 aligned</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="14_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Focused review sets &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <nav class="unit-bottom-nav" aria-label="Unit 14 navigation">
+    <a class="unit-bottom-link" href="13_Learn_Chemistry_Solutions.html">
+      <span class="unit-bottom-kicker">Previous</span>
+      <span class="unit-bottom-title">Unit 13 · Solutions</span>
+    </a>
+    <a class="unit-bottom-link is-practice" href="14_practice.html">
+      <span class="unit-bottom-kicker">Practice</span>
+      <span class="unit-bottom-title">Unit 14 · Chemical Equilibrium Practice</span>
+    </a>
+    <a class="unit-bottom-link" href="15_Learn_Chemistry_Acid_Base.html">
+      <span class="unit-bottom-kicker">Next</span>
+      <span class="unit-bottom-title">Unit 15 · Acids &amp; Bases</span>
+    </a>
+  </nav>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 14 · Chemical Equilibrium</div>
+
+
+  </div><!-- end container -->
+</main>
+
+
+<script src="chem.js?v=20260422"></script>
+<script>
+// ── 1. TOOL LOGIC ─────────────────────────────────────────────────────────
+
+const equilibriumCards = [
+  {
+    prompt: 'At equilibrium, what must be true?',
+    hint: 'Hint: Focus on rates, not on whether the amounts match.',
+    choices: [
+      'Forward and reverse rates are equal.',
+      'Reactant and product amounts are equal.',
+      'The reaction has stopped.'
+    ],
+    correctIndex: 0,
+    revealText: 'At equilibrium, particles still react in both directions. The forward and reverse rates are equal, so the concentrations stop changing even when the amounts on the two sides are not equal.',
+    correctFeedback: 'Right — equilibrium means the forward and reverse reaction rates are equal. The amounts can still be different on the two sides.',
+    incorrectFeedback: 'Not quite — equal rates do not mean equal amounts. At equilibrium, both directions happen at the same rate, so the concentrations stop changing even if the amounts are different.'
+  },
+  {
+    prompt: 'A reaction mixture is at equilibrium. Which statement can still be true?',
+    hint: 'Hint: Equilibrium does not require equal amounts on both sides.',
+    choices: [
+      'There is more product than reactant.',
+      'The reaction has stopped.',
+      'Only the forward reaction is happening.'
+    ],
+    correctIndex: 0,
+    revealText: 'Equilibrium only requires equal forward and reverse rates. One side can still contain more particles or a higher concentration than the other.',
+    correctFeedback: 'Right — one side can have more particles at equilibrium. Equal rates do not require equal amounts.',
+    incorrectFeedback: 'Not quite — equilibrium does not mean the reaction stops or goes only one way. Check whether the statement keeps both directions running at equal rates.'
+  },
+  {
+    prompt: 'At equilibrium, why do the concentrations stop changing?',
+    hint: 'Hint: Ask what the forward and reverse reactions are doing at the same time.',
+    choices: [
+      'Because the forward and reverse rates are equal.',
+      'Because all reactants have been used up.',
+      'Because the reactant and product concentrations are equal.'
+    ],
+    correctIndex: 0,
+    revealText: 'The concentrations stay constant because each side is changing at the same rate in opposite directions. Particles still react, but the net change is zero.',
+    correctFeedback: 'Right — the rates match, so there is no net change in concentration. That is the rule for dynamic equilibrium.',
+    incorrectFeedback: 'Not quite — concentrations stop changing when the two reaction rates match. Focus on equal rates, not equal concentrations or running out of reactants.'
+  },
+  {
+    prompt: 'Which statement best describes dynamic equilibrium?',
+    hint: 'Hint: Dynamic means particles are still reacting.',
+    choices: [
+      'Particles keep reacting both ways at equal rates.',
+      'Particles stop moving once equilibrium is reached.',
+      'Products can no longer change back into reactants.'
+    ],
+    correctIndex: 0,
+    revealText: 'Dynamic equilibrium means the reaction is still active in both directions. The forward and reverse rates are equal, so the overall amounts stay constant.',
+    correctFeedback: 'Right — dynamic equilibrium means both directions continue at equal rates. The system is active, not frozen.',
+    incorrectFeedback: 'Not quite — dynamic equilibrium is not a stopped system. Look for the choice where both directions are still happening at equal rates.'
+  }
+];
+
+const qkCards = [
+  {
+    q: '0.20',
+    k: '5.0',
+    correct: 'Shift right',
+    reveal: 'Q &lt; K → too few products → shift right',
+    correctFeedback: 'Right — Q is smaller than K, so the system has too few products compared with equilibrium. It shifts right to make more products.',
+    incorrectFeedback: 'Not quite — compare Q to K first. If Q is smaller than K, the system must make more products, so the shift is right.'
+  },
+  {
+    q: '8.0',
+    k: '0.40',
+    correct: 'Shift left',
+    reveal: 'Q &gt; K → too many products → shift left',
+    correctFeedback: 'Right — Q is larger than K, so the system has too many products compared with equilibrium. It shifts left to make more reactants.',
+    incorrectFeedback: 'Not quite — compare Q to K first. If Q is larger than K, the system has too many products, so the shift is left.'
+  },
+  {
+    q: '1.5',
+    k: '1.5',
+    correct: 'No shift',
+    reveal: 'Q = K → the system is already at equilibrium → no shift',
+    correctFeedback: 'Right — when Q equals K, the system is already at equilibrium. There is no net shift.',
+    incorrectFeedback: 'Not quite — if Q equals K, the system already matches the equilibrium ratio. That means there is no net shift.'
+  }
+];
+
+const pressureCards = [
+  {
+    reaction: 'N₂(g) + 3H₂(g) ⇌ 2NH₃(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 4 mol gas | Right side: 2 mol gas<br>Higher pressure favors the side with fewer moles of gas.',
+    correctFeedback: 'Right — increasing pressure favors the side with fewer moles of gas. This reaction shifts right because 2 mol of gas is fewer than 4 mol.',
+    incorrectFeedback: 'Not quite — count the gas moles on each side first. Pressure favors the side with fewer moles of gas, so compare the two totals and then choose the shift.'
+  },
+  {
+    reaction: 'N₂(g) + O₂(g) ⇌ 2NO(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'No shift',
+    tilt: 0,
+    reveal: 'Left side: 2 mol gas | Right side: 2 mol gas<br>Both sides have the same total moles of gas, so changing pressure does not shift this equilibrium.',
+    correctFeedback: 'Right — both sides have the same total moles of gas. When the gas moles match, a pressure change does not shift equilibrium.',
+    incorrectFeedback: 'Not quite — pressure only changes the equilibrium position when the gas mole totals are different. Count both sides first, then compare them.'
+  },
+  {
+    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    stress: 'Pressure decreases because volume increases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 1 mol gas | Right side: 2 mol gas<br>Lower pressure favors the side with more moles of gas.',
+    correctFeedback: 'Right — decreasing pressure favors the side with more moles of gas. This reaction shifts right because 2 mol of gas is more than 1 mol.',
+    incorrectFeedback: 'Not quite — for a pressure decrease, look for the side with more gas moles. Count both sides, then choose the shift.'
+  }
+];
+
+const temperatureCards = [
+  {
+    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    type: 'Exothermic',
+    change: 'Temperature increases',
+    correct: 'K decreases',
+    reveal: 'Exothermic forward reaction: heat acts like a product.<br>Increasing temperature adds product-side heat, so equilibrium shifts left and K decreases.',
+    correctFeedback: 'Right — for an exothermic forward reaction, heat acts like a product. Increasing temperature adds product-side heat, so K decreases.',
+    incorrectFeedback: 'Not quite — temperature is the one common stress that changes K. First decide whether heat acts like a reactant or a product, then decide whether adding heat makes products more or less favored.'
+  },
+  {
+    reaction: 'N₂(g) + O₂(g) ⇌ 2NO(g)',
+    type: 'Endothermic',
+    change: 'Temperature increases',
+    correct: 'K increases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Increasing temperature adds reactant-side heat, so equilibrium shifts right and K increases.',
+    correctFeedback: 'Right — for an endothermic forward reaction, heat acts like a reactant. Increasing temperature makes products more favored, so K increases.',
+    incorrectFeedback: 'Not quite — temperature changes K. Decide whether heat is acting like a reactant or a product first, then ask which side is favored when heat is added.'
+  },
+  {
+    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    type: 'Endothermic',
+    change: 'Temperature decreases',
+    correct: 'K decreases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Decreasing temperature removes reactant-side heat, so equilibrium shifts left and K decreases.',
+    correctFeedback: 'Right — for an endothermic forward reaction, lowering temperature removes reactant-side heat. Products become less favored, so K decreases.',
+    incorrectFeedback: 'Not quite — when temperature changes, K changes too. Treat heat like a reactant or product first, then decide whether lowering temperature makes products more or less favored.'
+  }
+];
+
+document.addEventListener('DOMContentLoaded', function () {
+  function setFeedbackState(id, text) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = text;
+    let state = 'info';
+    if (/^Right\b/.test(text)) state = 'correct';
+    else if (/^Not quite\b/.test(text)) state = 'incorrect';
+    else if (/^Choose\b|before checking\.?$|first\.?$/.test(text)) state = 'pending';
+    el.dataset.state = state;
+  }
+
+  function shuffleList(items) {
+    const copy = items.slice();
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function sameOrder(a, b) {
+    return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((value, index) => value === b[index]);
+  }
+
+  function getShuffledLabels(labels, previousOrder) {
+    if (labels.length < 2) return labels.slice();
+    let nextOrder = labels.slice();
+    let attempts = 0;
+    do {
+      nextOrder = shuffleList(labels);
+      attempts += 1;
+    } while (sameOrder(nextOrder, previousOrder) && attempts < 12);
+    return nextOrder;
+  }
+
+  function buildCardOrder(length, previousOrder, currentIndex) {
+    const base = Array.from({ length }, (_, index) => index);
+    if (base.length < 2) return base;
+    let nextOrder = base.slice();
+    let attempts = 0;
+    do {
+      nextOrder = shuffleList(base);
+      attempts += 1;
+    } while ((sameOrder(nextOrder, previousOrder) || nextOrder[0] === currentIndex) && attempts < 16);
+    return nextOrder;
+  }
+
+  function getNextCardIndex(state, total) {
+    if (!state.order.length || state.pointer >= state.order.length) {
+      state.order = buildCardOrder(total, state.order, state.index);
+      state.pointer = 0;
+    }
+    const nextIndex = state.order[state.pointer];
+    state.pointer += 1;
+    return nextIndex;
+  }
+
+  function setChoiceButtons(containerId, labels, selectedLabel, previousOrder) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    const orderedLabels = getShuffledLabels(labels, previousOrder);
+    orderedLabels.forEach(label => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.textContent = label;
+      const isSelected = label === selectedLabel;
+      btn.classList.toggle('active', isSelected);
+      btn.setAttribute('aria-pressed', String(isSelected));
+      container.appendChild(btn);
+    });
+    return orderedLabels;
+  }
+
+  function bindChoiceGroup(containerId, stateObj, key, onSelect) {
+    document.getElementById(containerId).addEventListener('click', function (event) {
+      const target = event.target.closest('.tool-choice-btn');
+      if (!target) return;
+      this.querySelectorAll('.tool-choice-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      target.classList.add('active');
+      target.setAttribute('aria-pressed', 'true');
+      stateObj[key] = target.textContent;
+      if (typeof onSelect === 'function') onSelect();
+    });
+  }
+
+  function showToolBlock(id, show) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.hidden = !show;
+  }
+
+  function applyTilt(tilt) {
+    const beamGroup = document.getElementById('beam-group');
+    const shiftArrow = document.getElementById('shift-arrow');
+    const shiftArrowText = document.getElementById('shift-arrow-text');
+    const eqLabel = document.getElementById('eq-state-label');
+
+    if (tilt === -1) {
+      beamGroup.style.transform = 'rotate(-12deg)';
+      shiftArrow.setAttribute('opacity', '1');
+      shiftArrowText.textContent = 'Shift right';
+      shiftArrowText.setAttribute('fill', '#6ee7b7');
+      eqLabel.textContent = 'Shift right — the system makes more products';
+    } else if (tilt === 1) {
+      beamGroup.style.transform = 'rotate(12deg)';
+      shiftArrow.setAttribute('opacity', '1');
+      shiftArrowText.textContent = 'Shift left';
+      shiftArrowText.setAttribute('fill', '#fca5a5');
+      eqLabel.textContent = 'Shift left — the system makes more reactants';
+    } else {
+      beamGroup.style.transform = 'rotate(0deg)';
+      shiftArrow.setAttribute('opacity', '0');
+      eqLabel.textContent = 'No shift — both sides are balanced for this stress';
+    }
+  }
+
+  function resetSeesaw() {
+    applyTilt(0);
+    document.getElementById('shift-arrow-text').setAttribute('fill', '#d97706');
+    document.getElementById('eq-state-label').textContent = 'Level until you check your answer';
+  }
+
+  const equilibriumState = { index: null, order: [], pointer: 0, selected: null, checked: false, choiceOrder: [] };
+  function renderEquilibriumCard() {
+    if (equilibriumState.index === null) {
+      equilibriumState.index = getNextCardIndex(equilibriumState, equilibriumCards.length);
+    }
+    const card = equilibriumCards[equilibriumState.index];
+    document.getElementById('equilibrium-prompt').textContent = card.prompt;
+    document.getElementById('equilibrium-hint').textContent = card.hint;
+    document.getElementById('equilibrium-reveal-text').textContent = card.revealText;
+    equilibriumState.choiceOrder = setChoiceButtons('tool-equilibrium-choices', card.choices, null, equilibriumState.choiceOrder);
+    equilibriumState.selected = null;
+    equilibriumState.checked = false;
+    setFeedbackState('equilibrium-feedback', 'Choose one statement, then click Check.');
+    showToolBlock('equilibrium-reveal-box', false);
+    showToolBlock('equilibrium-support', false);
+    document.getElementById('equilibrium-reveal').disabled = true;
+    document.getElementById('equilibrium-next').disabled = true;
+  }
+  bindChoiceGroup('tool-equilibrium-choices', equilibriumState, 'selected', function () {
+    equilibriumState.checked = false;
+    setFeedbackState('equilibrium-feedback', 'Choose one statement, then click Check.');
+    showToolBlock('equilibrium-reveal-box', false);
+    showToolBlock('equilibrium-support', false);
+    document.getElementById('equilibrium-reveal').disabled = true;
+    document.getElementById('equilibrium-next').disabled = true;
+  });
+  document.getElementById('equilibrium-check').addEventListener('click', function () {
+    const card = equilibriumCards[equilibriumState.index];
+    if (!equilibriumState.selected) {
+      setFeedbackState('equilibrium-feedback', 'Choose one statement, then click Check.');
+      return;
+    }
+    equilibriumState.checked = true;
+    setFeedbackState('equilibrium-feedback',
+      equilibriumState.selected === card.choices[card.correctIndex] ? card.correctFeedback : card.incorrectFeedback
+    );
+    showToolBlock('equilibrium-support', true);
+    document.getElementById('equilibrium-reveal').disabled = false;
+    document.getElementById('equilibrium-next').disabled = false;
+  });
+  document.getElementById('equilibrium-reveal').addEventListener('click', function () {
+    if (!equilibriumState.checked) return;
+    showToolBlock('equilibrium-reveal-box', true);
+  });
+  document.getElementById('equilibrium-next').addEventListener('click', function () {
+    equilibriumState.index = getNextCardIndex(equilibriumState, equilibriumCards.length);
+    renderEquilibriumCard();
+  });
+
+  const qkChoices = ['Shift left', 'Shift right', 'No shift'];
+  const qkState = { index: null, order: [], pointer: 0, selected: null, checked: false, choiceOrder: [] };
+  function renderQkCard() {
+    if (qkState.index === null) {
+      qkState.index = getNextCardIndex(qkState, qkCards.length);
+    }
+    const card = qkCards[qkState.index];
+    document.getElementById('qk-q-value').textContent = card.q;
+    document.getElementById('qk-k-value').textContent = card.k;
+    qkState.choiceOrder = setChoiceButtons('qk-choice-buttons', qkChoices, null, qkState.choiceOrder);
+    qkState.selected = null;
+    qkState.checked = false;
+    setFeedbackState('qk-feedback', 'Choose a shift, then click Check.');
+    showToolBlock('qk-reveal-box', false);
+    showToolBlock('qk-support', false);
+    document.getElementById('qk-reveal-text').innerHTML = '';
+    document.getElementById('qk-reveal').disabled = true;
+    document.getElementById('qk-next').disabled = true;
+  }
+  bindChoiceGroup('qk-choice-buttons', qkState, 'selected', function () {
+    qkState.checked = false;
+    setFeedbackState('qk-feedback', 'Choose a shift, then click Check.');
+    showToolBlock('qk-reveal-box', false);
+    showToolBlock('qk-support', false);
+    document.getElementById('qk-reveal-text').innerHTML = '';
+    document.getElementById('qk-reveal').disabled = true;
+    document.getElementById('qk-next').disabled = true;
+  });
+  document.getElementById('qk-check').addEventListener('click', function () {
+    const card = qkCards[qkState.index];
+    if (!qkState.selected) {
+      setFeedbackState('qk-feedback', 'Choose a shift, then click Check.');
+      return;
+    }
+    qkState.checked = true;
+    setFeedbackState('qk-feedback', qkState.selected === card.correct ? card.correctFeedback : card.incorrectFeedback);
+    showToolBlock('qk-support', true);
+    document.getElementById('qk-reveal').disabled = false;
+    document.getElementById('qk-next').disabled = false;
+  });
+  document.getElementById('qk-reveal').addEventListener('click', function () {
+    if (!qkState.checked) return;
+    const card = qkCards[qkState.index];
+    showToolBlock('qk-reveal-box', true);
+    document.getElementById('qk-reveal-text').innerHTML = card.reveal;
+  });
+  document.getElementById('qk-next').addEventListener('click', function () {
+    qkState.index = getNextCardIndex(qkState, qkCards.length);
+    renderQkCard();
+  });
+
+  const pressureChoices = ['Shift left', 'Shift right', 'No shift'];
+  const pressureState = { index: null, order: [], pointer: 0, selected: null, checked: false, choiceOrder: [] };
+  function renderPressureCard() {
+    if (pressureState.index === null) {
+      pressureState.index = getNextCardIndex(pressureState, pressureCards.length);
+    }
+    const card = pressureCards[pressureState.index];
+    document.getElementById('pressure-reaction-label').textContent = card.reaction;
+    document.getElementById('pressure-stress-label').textContent = card.stress;
+    pressureState.choiceOrder = setChoiceButtons('pressure-choice-buttons', pressureChoices, null, pressureState.choiceOrder);
+    pressureState.selected = null;
+    pressureState.checked = false;
+    resetSeesaw();
+    setFeedbackState('pressure-feedback', 'Choose a shift, then click Check.');
+    showToolBlock('pressure-reveal-box', false);
+    showToolBlock('pressure-support', false);
+    document.getElementById('pressure-reveal-text').innerHTML = '';
+    document.getElementById('pressure-reveal').disabled = true;
+    document.getElementById('pressure-next').disabled = true;
+  }
+  bindChoiceGroup('pressure-choice-buttons', pressureState, 'selected', function () {
+    pressureState.checked = false;
+    resetSeesaw();
+    setFeedbackState('pressure-feedback', 'Choose a shift, then click Check.');
+    showToolBlock('pressure-reveal-box', false);
+    showToolBlock('pressure-support', false);
+    document.getElementById('pressure-reveal-text').innerHTML = '';
+    document.getElementById('pressure-reveal').disabled = true;
+    document.getElementById('pressure-next').disabled = true;
+  });
+  document.getElementById('pressure-check').addEventListener('click', function () {
+    const card = pressureCards[pressureState.index];
+    if (!pressureState.selected) {
+      setFeedbackState('pressure-feedback', 'Choose a shift, then click Check.');
+      return;
+    }
+    pressureState.checked = true;
+    setFeedbackState('pressure-feedback', pressureState.selected === card.correct ? card.correctFeedback : card.incorrectFeedback);
+    showToolBlock('pressure-support', true);
+    document.getElementById('pressure-reveal').disabled = false;
+    document.getElementById('pressure-next').disabled = false;
+  });
+  document.getElementById('pressure-reveal').addEventListener('click', function () {
+    if (!pressureState.checked) return;
+    const card = pressureCards[pressureState.index];
+    showToolBlock('pressure-reveal-box', true);
+    document.getElementById('pressure-reveal-text').innerHTML = card.reveal;
+    applyTilt(card.tilt);
+  });
+  document.getElementById('pressure-next').addEventListener('click', function () {
+    pressureState.index = getNextCardIndex(pressureState, pressureCards.length);
+    renderPressureCard();
+  });
+
+  const temperatureChoices = ['K increases', 'K decreases', 'K stays the same'];
+  const tempState = { index: null, order: [], pointer: 0, selected: null, checked: false, choiceOrder: [] };
+  function renderTempCard() {
+    if (tempState.index === null) {
+      tempState.index = getNextCardIndex(tempState, temperatureCards.length);
+    }
+    const card = temperatureCards[tempState.index];
+    document.getElementById('temp-reaction-label').textContent = card.reaction;
+    document.getElementById('temp-type-label').textContent = card.type;
+    document.getElementById('temp-change-label').textContent = card.change;
+    tempState.choiceOrder = setChoiceButtons('temp-choice-buttons', temperatureChoices, null, tempState.choiceOrder);
+    tempState.selected = null;
+    tempState.checked = false;
+    setFeedbackState('temp-feedback', 'Choose what happens to K, then click Check.');
+    showToolBlock('temp-reveal-box', false);
+    showToolBlock('temp-support', false);
+    document.getElementById('temp-reveal-text').innerHTML = '';
+    document.getElementById('temp-reveal').disabled = true;
+    document.getElementById('temp-next').disabled = true;
+  }
+  bindChoiceGroup('temp-choice-buttons', tempState, 'selected', function () {
+    tempState.checked = false;
+    setFeedbackState('temp-feedback', 'Choose what happens to K, then click Check.');
+    showToolBlock('temp-reveal-box', false);
+    showToolBlock('temp-support', false);
+    document.getElementById('temp-reveal-text').innerHTML = '';
+    document.getElementById('temp-reveal').disabled = true;
+    document.getElementById('temp-next').disabled = true;
+  });
+  document.getElementById('temp-check').addEventListener('click', function () {
+    const card = temperatureCards[tempState.index];
+    if (!tempState.selected) {
+      setFeedbackState('temp-feedback', 'Choose what happens to K, then click Check.');
+      return;
+    }
+    tempState.checked = true;
+    setFeedbackState('temp-feedback', tempState.selected === card.correct ? card.correctFeedback : card.incorrectFeedback);
+    showToolBlock('temp-support', true);
+    document.getElementById('temp-reveal').disabled = false;
+    document.getElementById('temp-next').disabled = false;
+  });
+  document.getElementById('temp-reveal').addEventListener('click', function () {
+    if (!tempState.checked) return;
+    const card = temperatureCards[tempState.index];
+    showToolBlock('temp-reveal-box', true);
+    document.getElementById('temp-reveal-text').innerHTML = card.reveal;
+  });
+  document.getElementById('temp-next').addEventListener('click', function () {
+    tempState.index = getNextCardIndex(tempState, temperatureCards.length);
+    renderTempCard();
+  });
+
+  renderEquilibriumCard();
+  renderQkCard();
+  renderPressureCard();
+  renderTempCard();
+});
+
+</script>
+</body>
+</html>

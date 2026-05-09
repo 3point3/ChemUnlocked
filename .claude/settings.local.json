@@ -2,7 +2,38 @@
   "permissions": {
     "allow": [
       "Bash(grep -l \"practice-teaser.css\\\\|sampleContainer\\\\|renderSampleProblems\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/chemistry unlocked - chemunlocked.com/\"*_practice.html)",
-      "Bash(grep -l \"ALL_PROBLEMS\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/chemistry unlocked - chemunlocked.com/\"*_practice.html)"
+      "Bash(grep -l \"ALL_PROBLEMS\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/chemistry unlocked - chemunlocked.com/\"*_practice.html)",
+      "Bash(brew upgrade:*)",
+      "Bash(grep -n \"chem.js\\\\|</body>\\\\|</div>$\\\\|class=\\\\\"container\\\\\"\" \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/study_skills_smarter_not_longer.html\")",
+      "Bash(python3 *)",
+      "Bash(ls *)",
+      "Bash(awk 'NR>=67 && NR<=1034' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/10_Learn_Chemistry_Bonding.html\")",
+      "Bash(awk 'NR>=274 && NR<=450' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/10_Learn_Chemistry_Bonding.html\")",
+      "Bash(grep *)",
+      "Bash(node *)",
+      "Bash(head -3 \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/images/carbon and oxgen moldels and masses.svg\")",
+      "Read(//tmp/**)",
+      "Bash(sed -n '808,835p' 02_Learn_Chemistry_Matter.html)",
+      "Bash(sed -n '524,550p' 03_Learn_Atomic_Structure.html)",
+      "Bash(sed -n '730,760p' 07_Learn_Chemistry_Moles.html)",
+      "Bash(sed -n '424,455p' 08_Learn_Chemical_Reactions.html)",
+      "Bash(sed -n '388,420p' 14_Learn_Chemistry_Equilibrium.html)",
+      "Bash(sed -n '647,668p' 06_Learn_Chemistry_Nomenclature.html)",
+      "Bash(sed -n '430,450p' 11_Learn_Chemistry_Energy_Thermochemistry.html)",
+      "Bash(sed -n '385,406p' 13_Learn_Chemistry_Solutions.html)",
+      "Bash(open *)",
+      "Bash(chmod +x \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/scripts/audit-learn.sh\")",
+      "Bash(\"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/scripts/audit-learn.sh\")",
+      "Bash(bash scripts/audit-learn.sh)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(echo \"Files checked: $\\(find . -maxdepth 1 -name \"[0-9][0-9]_Learn_*.html\")",
+      "Bash(sed -n '57,70p' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/01_premium.html\")",
+      "Bash(sed -n '57,70p' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/05_premium.html\")",
+      "Bash(sed -n '57,70p' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/06_premium.html\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git rm *)",
+      "Bash(git worktree *)",
+      "Bash(git add *)"
     ]
   }
 }

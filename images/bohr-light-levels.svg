@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" role="img" aria-labelledby="title desc">
+  <title id="title">Bohr energy levels and emitted light</title>
+  <desc id="desc">Minimal Bohr diagram showing quantized energy levels, an electron transition to a lower level, and emitted photon energy.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <radialGradient id="nucleusGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#94a3b8" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+
+  <rect width="280" height="220" rx="28" fill="url(#bgGrad)"/>
+  <g filter="url(#softShadow)">
+    <rect x="10" y="10" width="260" height="200" rx="24" fill="url(#panelGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+
+  <circle cx="96" cy="118" r="26" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+  <circle cx="96" cy="118" r="50" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+  <circle cx="96" cy="118" r="74" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+
+  <text x="64" y="97" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">n=1</text>
+  <text x="53" y="73" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">n=2</text>
+  <text x="42" y="47" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">n=3</text>
+
+  <circle cx="96" cy="118" r="10" fill="url(#nucleusGlow)"/>
+  <circle cx="96" cy="118" r="3" fill="#f8fafc" opacity="0.82"/>
+
+  <circle cx="149" cy="65" r="4.1" fill="#22c55e" stroke="#047857" stroke-width="0.9"/>
+  <circle cx="119" cy="104" r="4.1" fill="#22c55e" stroke="#047857" stroke-width="0.9"/>
+  <path d="M146 69 L122 101" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+
+  <path d="M176 111
+           C182 105 188 117 194 111
+           S206 105 212 111
+           S224 117 230 111" fill="none" stroke="#b91c1c" stroke-width="1.9" stroke-linecap="round"/>
+  <line x1="230" y1="111" x2="240" y2="111" stroke="#b91c1c" stroke-width="1.9" marker-end="url(#arrowRed)"/>
+
+  <rect x="168" y="128" width="74" height="30" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.2"/>
+  <text x="205" y="147" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#b91c1c">
+    ΔE = hν
+  </text>
+</svg>

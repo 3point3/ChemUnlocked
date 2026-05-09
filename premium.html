@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Practice | ChemUnlocked</title>
+<meta name="description" content="ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.">
+<link rel="canonical" href="https://chemunlocked.com/premium.html">
+<meta property="og:title" content="Premium Practice | ChemUnlocked">
+<meta property="og:description" content="ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.">
+<meta property="og:url" content="https://chemunlocked.com/premium.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Premium Practice | ChemUnlocked">
+<meta name="twitter:description" content="ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Premium Practice | ChemUnlocked",
+  "description": "ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.",
+  "url": "https://chemunlocked.com/premium.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="starfield"></div>
+  <main id="main-content">
+  <div class="container">
+  <header>
+    <div class="unit-label" id="unitLabel">Introductory General Chemistry &nbsp;&middot;&nbsp; Premium Practice</div>
+    <h1 id="unitTitle">Premium Practice</h1>
+    <p class="subtitle" id="unitSubtitle">Bite-sized practice: 3 randomized problems at a time with instant feedback and full worked solutions.</p>
+  </header>
+
+  <div class="premium-controls">
+    <label for="filterSelect">Filter:</label>
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="calc">Calc</option>
+      <option value="concept">Concept</option>
+      <option value="multi">Multi</option>
+    </select>
+
+    <button id="reloadBtn" class="btn btn-sm" type="button">Load 3 Fresh Problems</button>
+    <button id="billingBtn" class="btn btn-sm btn-outline" type="button">Manage Billing</button>
+    <a id="teaserLink" href="practice.html" class="btn btn-sm btn-outline">Back to Free Teaser</a>
+  </div>
+
+  <div id="problemContainer"></div>
+
+  <div class="page-end-actions">
+    <a href="#main-content" class="btn btn-outline">Back to Top</a>
+  </div>
+
+  <div class="scroll-hint" id="scrollHint">Introductory General Chemistry &middot; Premium Practice</div>
+  </div>
+  </main>
+
+<script src="chem.js?v=20260422"></script>
+<script src="practice-premium.js"></script>
+<script type="module">
+import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
+
+const UNIT_CONFIG = {
+  '01': { title: 'Intro to Chemistry & Lab Safety', problemCount: 125 },
+  '02': { title: 'Classification of Matter', problemCount: 86 },
+  '03': { title: 'Atomic Structure', problemCount: 84 },
+  '04': { title: 'Electron Configuration', problemCount: 81 },
+  '05': { title: 'Periodic Table & Trends', problemCount: 84 },
+  '06': { title: 'Chemical Nomenclature', problemCount: 81 },
+  '07': { title: 'The Mole', problemCount: 81 },
+  '08': { title: 'Chemical Reactions', problemCount: 81 },
+  '09': { title: 'Stoichiometry', problemCount: 81 },
+  '10': { title: 'Chemical Bonding', problemCount: 81 },
+  '11': { title: 'Energy & Thermochemistry', problemCount: 84 },
+  '12': { title: 'Gas Laws', problemCount: 84 },
+  '13': { title: 'Solutions', problemCount: 82 },
+  '14': { title: 'Chemical Equilibrium', problemCount: 81 },
+  '15': { title: 'Acids & Bases', problemCount: 81 }
+};
+
+const params = new URLSearchParams(window.location.search);
+const requestedUnit = (params.get('unit') || '').trim();
+const normalizedUnit = /^\d{1,2}$/.test(requestedUnit)
+  ? requestedUnit.padStart(2, '0')
+  : '';
+const unit = UNIT_CONFIG[normalizedUnit] ? normalizedUnit : '';
+
+if (!unit) {
+  window.location.replace('practice.html');
+} else {
+  const filterSelect = document.getElementById('filterSelect');
+  const reloadBtn = document.getElementById('reloadBtn');
+  const billingBtn = document.getElementById('billingBtn');
+  const problemContainer = document.getElementById('problemContainer');
+  const unitLabel = document.getElementById('unitLabel');
+  const unitTitle = document.getElementById('unitTitle');
+  const unitSubtitle = document.getElementById('unitSubtitle');
+  const teaserLink = document.getElementById('teaserLink');
+  const scrollHint = document.getElementById('scrollHint');
+  const loadPremiumSet = window.loadPremiumSet;
+  const openCustomerPortal = window.openCustomerPortal;
+  const unitMeta = UNIT_CONFIG[unit];
+
+  unitLabel.innerHTML = `Introductory General Chemistry &nbsp;&middot;&nbsp; Unit ${unit} Premium Practice`;
+  unitTitle.textContent = unitMeta.title;
+  unitSubtitle.textContent = `Bite-sized practice: 3 randomized problems at a time from the ${unitMeta.problemCount}-problem Unit ${unit} bank. Generate thousands of unique review sets with instant feedback and full worked solutions.`;
+  teaserLink.href = `${unit}_practice.html`;
+  scrollHint.textContent = `Introductory General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
+  document.title = `Unit ${unit} Premium Practice — ${unitMeta.title} | ChemUnlocked`;
+
+  async function checkAccess() {
+    const token = localStorage.getItem('cu_token') || '';
+    if (!token) {
+      redirectToGate('no_token');
+      return false;
+    }
+
+    try {
+      const res = await fetch(
+        `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&count=1`,
+        { headers: { 'x-access-token': token } }
+      );
+      if (res.status === 403) {
+        localStorage.removeItem('cu_token');
+        redirectToGate('expired');
+        return false;
+      }
+      if (!res.ok) {
+        throw new Error('Subscription check failed.');
+      }
+      return true;
+    } catch (err) {
+      problemContainer.innerHTML = `<p class="premium-status premium-status--error">Could not verify subscription: ${err.message}</p>`;
+      return false;
+    }
+  }
+
+  function redirectToGate(reason) {
+    window.location.replace(`${unit}_practice.html?access=${encodeURIComponent(reason)}`);
+  }
+
+  async function loadSet() {
+    problemContainer.innerHTML = '<p class="premium-status premium-status--muted">Loading your problem set...</p>';
+    try {
+      const data = await loadPremiumSet(unit, filterSelect.value, 3);
+      renderPremiumProblemSet({ problems: data.problems, containerId: 'problemContainer' });
+    } catch (err) {
+      problemContainer.innerHTML = `<p class="premium-status premium-status--error">Could not load problems: ${err.message}</p>`;
+    }
+  }
+
+  reloadBtn.addEventListener('click', () => { loadSet(); });
+  filterSelect.addEventListener('change', () => { loadSet(); });
+  billingBtn.addEventListener('click', () => {
+    if (typeof openCustomerPortal === 'function') {
+      openCustomerPortal();
+    } else {
+      alert('Billing portal is not available in this local test yet.');
+    }
+  });
+
+  problemContainer.innerHTML = '<p class="premium-status premium-status--muted">Verifying subscription...</p>';
+  checkAccess().then(ok => { if (ok) loadSet(); });
+}
+</script>
+</body>
+</html>

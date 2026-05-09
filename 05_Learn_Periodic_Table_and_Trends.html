@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 05 — Periodic Table &amp; Trends | ChemUnlocked</title>
+<meta name="description" content="Learn periodic table organization and periodic trends including atomic radius, ionization energy, electronegativity, and ionic radius with guided examples and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/05_Learn_Periodic_Table_and_Trends.html">
+<meta property="og:title" content="Unit 05 — Periodic Table &amp; Trends | ChemUnlocked">
+<meta property="og:description" content="Learn periodic table organization and periodic trends including atomic radius, ionization energy, electronegativity, and ionic radius with guided examples and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/05_Learn_Periodic_Table_and_Trends.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 05 — Periodic Table &amp; Trends | ChemUnlocked">
+<meta name="twitter:description" content="Learn periodic table organization and periodic trends including atomic radius, ionization energy, electronegativity, and ionic radius with guided examples and interactive tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:site" content="@ChemUnlocked">
+<link rel="stylesheet" href="chem.css">
+<meta name="theme-color" content="#2563eb">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 05 — Periodic Table & Trends",
+  "description": "Learn periodic table organization and periodic trends including atomic radius, ionization energy, electronegativity, and ionic radius with guided examples and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked",
+    "url": "https://chemunlocked.com"
+  },
+  "url": "https://chemunlocked.com/05_Learn_Periodic_Table_and_Trends.html"
+}
+</script>
+<style>
+
+
+/* Trend arrow SVG helper */
+.trend-table-wrap { overflow-x: auto; margin-top: 1rem; }
+.trend-note { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+.trend-summary {
+  margin-top: 1rem;
+  border: 1px solid #dbe4ee;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef8f4 100%);
+  padding: 1rem;
+}
+.trend-summary-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.trend-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.trend-summary-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+}
+.trend-summary-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.45rem;
+}
+.trend-summary-card p {
+  margin: 0.35rem 0;
+  font-size: 0.92rem;
+  color: var(--dim);
+}
+.trend-summary-card strong {
+  color: var(--text);
+}
+
+/* Periodic table mini-grid for the tool */
+.pt-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 28px);
+  gap: 2px;
+  margin-top: 0.5rem;
+  font-size: 0.62rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.35rem;
+  -webkit-overflow-scrolling: touch;
+}
+.pt-cell {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.15s ease;
+  line-height: 1;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pt-cell:hover { filter: brightness(0.93); border-color: rgba(15, 138, 122, 0.5); }
+.pt-cell.selected { outline: 2px solid var(--accent); outline-offset: -2px; filter: brightness(0.9); }
+.pt-cell .sym { font-weight: 700; font-size: 0.62rem; }
+.pt-cell.empty { background: transparent; border: none; cursor: default; }
+.pt-cell.metal-alkali   { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+.pt-cell.metal-alkaline { background: #ffedd5; color: #7c2d12; border-color: #fdba74; }
+.pt-cell.metal-trans    { background: #fef3c7; color: #78350f; border-color: #fcd34d; }
+.pt-cell.post-transition { background: #ede9fe; color: #4c1d95; border-color: #c4b5fd; }
+.pt-cell.metalloid      { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+.pt-cell.nonmetal       { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+.pt-cell.halogen        { background: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
+.pt-cell.noble          { background: #fae8ff; color: #701a75; border-color: #e879f9; }
+.pt-cell.lanthanide     { background: #fce7f3; color: #831843; border-color: #f9a8d4; }
+.pt-cell.actinide       { background: #fff1f2; color: #881337; border-color: #fda4af; }
+.pt-info-panel {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: #f3fbf7;
+  border: 1px solid #bee5db;
+  border-radius: var(--radius-sm);
+  min-height: 80px;
+  display: none;
+}
+.pt-info-panel.visible { display: block; }
+.pt-info-name { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.pt-info-meta { font-size: 0.85rem; color: var(--dim); margin-top: 0.25rem; }
+.pt-legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.pt-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--dim); }
+.pt-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; border: 1px solid; }
+.pt-legend-dot.alkali        { background: #fee2e2; border-color: #fca5a5; }
+.pt-legend-dot.alkaline      { background: #ffedd5; border-color: #fdba74; }
+.pt-legend-dot.transition    { background: #fef3c7; border-color: #fcd34d; }
+.pt-legend-dot.post-transition { background: #ede9fe; border-color: #c4b5fd; }
+.pt-legend-dot.metalloid     { background: #d1fae5; border-color: #6ee7b7; }
+.pt-legend-dot.nonmetal      { background: #dbeafe; border-color: #93c5fd; }
+.pt-legend-dot.halogen       { background: #e0e7ff; border-color: #a5b4fc; }
+.pt-legend-dot.noble         { background: #fae8ff; border-color: #e879f9; }
+.pt-legend-dot.lanthanide    { background: #fce7f3; border-color: #f9a8d4; }
+.pt-legend-dot.actinide      { background: #fff1f2; border-color: #fda4af; }
+
+.tool-card { display: flex; flex-direction: column; gap: 1rem; }
+.tool-prompt {
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+}
+.tool-prompt-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.tool-prompt-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.tool-compare-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+}
+.tool-value-toggle {
+  margin-top: 0.8rem;
+}
+.tool-values {
+  display: none;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.tool-values.visible { display: block; }
+.tool-property-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pt-cell.is-target {
+  outline: 3px solid #0f8a7a;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px rgba(15, 138, 122, 0.12);
+}
+.pt-cell.is-compare {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+.pt-tool-instruction {
+  font-size: 0.88rem;
+  color: var(--dim);
+}
+
+/* ── Static PT diagrams (5.1 groups/periods, 5.2 families) ── */
+.pt-diag-outer { overflow-x: auto; margin: 1.25rem 0 0.5rem; }
+.pt-diag-wrap  { width: max-content; }
+.pt-diag-hdr   { display: flex; align-items: center; height: 18px; margin-bottom: 2px; }
+.pt-diag-hdr-lbl  { width: 20px; flex-shrink: 0; }
+.pt-diag-hdr-grps { display: flex; gap: 2px; }
+.pt-diag-grp-num  { width: 30px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: var(--muted); font-weight: 700; }
+.pt-diag-main     { display: flex; flex-direction: column; gap: 2px; }
+.pt-diag-row      { display: flex; align-items: center; gap: 2px; }
+.pt-diag-period-lbl { width: 20px; flex-shrink: 0; font-size: 0.6rem; font-weight: 700; color: var(--muted); text-align: right; padding-right: 3px; }
+.pt-dc { width: 30px; height: 26px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.62rem; user-select: none; flex-shrink: 0; }
+.pt-dc.empty    { background: transparent; }
+.pt-dc.s-blk    { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-dc.p-blk    { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-dc.d-blk    { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-dc.f-blk    { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-dc.fblk-ph  { font-size: 0.48rem; }
+.pt-dc.fam-alkali   { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+.pt-dc.fam-alkaline { background: #ffedd5; color: #7c2d12; border: 1px solid #fdba74; }
+.pt-dc.fam-trans    { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-dc.fam-ptrans   { background: #ede9fe; color: #4c1d95; border: 1px solid #c4b5fd; }
+.pt-dc.fam-metalloid{ background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-dc.fam-nonmetal { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-dc.fam-halogen  { background: #e0e7ff; color: #3730a3; border: 1px solid #a5b4fc; }
+.pt-dc.fam-noble    { background: #fae8ff; color: #701a75; border: 1px solid #e879f9; }
+.pt-dc.fam-lant     { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-dc.fam-act      { background: #fff1f2; color: #881337; border: 1px solid #fda4af; }
+.pt-diag-f-section  { display: flex; gap: 2px; margin-top: 6px; }
+.pt-diag-f-offset   { width: 94px; flex-shrink: 0; }
+.pt-diag-f-main     { display: flex; flex-direction: column; gap: 2px; }
+.pt-diag-f-row      { display: flex; align-items: center; gap: 2px; }
+.pt-diag-f-lbl      { width: 20px; flex-shrink: 0; font-size: 0.58rem; color: var(--muted); font-weight: 700; text-align: right; padding-right: 3px; }
+.pt-diag-f-cells    { display: flex; gap: 2px; }
+.pt-diag-arrows { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.9rem; font-size: 0.8rem; color: var(--dim); }
+.pt-diag-arrow-badge { display: inline-flex; align-items: center; font-weight: 700; padding: 0.18rem 0.5rem; border-radius: 999px; font-size: 0.76rem; margin-right: 0.3rem; }
+.arrow-period { background: #dbeafe; color: #1d4ed8; }
+.arrow-group  { background: #d1fae5; color: #065f46; }
+.fam-legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.fam-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--dim); }
+.fam-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+/* org-mode axis label layout */
+.pt-diag-outer-flex { display: flex; gap: 0.75rem; align-items: flex-start; width: max-content; }
+.pt-diag-y-axis {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  min-width: 82px;
+  font-size: 0.7rem;
+  color: var(--dim);
+  text-align: center;
+  line-height: 1.55;
+  padding: 0.5rem 0.35rem;
+  gap: 0.45rem;
+  border-right: 2px solid #bfdbfe;
+}
+.pt-diag-y-axis .axis-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.71rem;
+  white-space: nowrap;
+}
+/* fam-mode: table + legend side by side */
+.pt-diag-fam-outer { display: flex; align-items: flex-start; width: max-content; }
+.fam-legend-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 1.1rem;
+  margin-left: 0.6rem;
+  border-left: 2px solid var(--border);
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+</head>
+<body class="page-unit page-05-learn-periodic-table-and-trends">
+
+<div class="starfield"></div>
+
+
+<main id="main-content" role="main" tabindex="-1">
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 05</div>
+    <h1>Periodic Table &amp; Trends</h1>
+    <p class="subtitle">The periodic table is one of science's greatest tools. Once you understand how it is organized, you can predict how any element will behave — without memorizing every fact. This unit shows you the patterns that make the table so powerful.</p>
+  </header>
+
+  <p class="learning-objectives-intro">What you'll learn</p>
+  <div class="learning-objectives" aria-label="What you will learn">
+    <span>Read periods, groups, regions, and valence electron patterns.</span>
+    <span>Predict atomic radius, ionization energy, and electronegativity trends.</span>
+    <span>Compare atom size with ion size for cations and anions.</span>
+    <span>Practice trend ranking with worked examples and interactive tools.</span>
+  </div>
+
+  <div class="nav-tabs" role="tablist" aria-label="Unit 05 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Organization, valence, trends</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Classify and predict first</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONCEPTS TAB
+  ══════════════════════════════════════════════════════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+
+    <nav class="concept-jump-nav" aria-label="Learn section jump links">
+      <a href="#organization">5.1 Organization</a>
+      <a href="#regions">5.2 Regions</a>
+      <a href="#valence-electrons">5.3 Valence</a>
+      <a href="#atomic-radius">5.4 Atomic Radius</a>
+      <a href="#ionization-energy">5.5 Ionization Energy</a>
+      <a href="#electronegativity">5.6 Electronegativity</a>
+      <a href="#ionic-radius">5.7 Ionic Radius</a>
+    </nav>
+
+    <!-- 5.1 How the table is organized -->
+    <div class="card" id="organization">
+      <h2 class="card-title"><span class="num">5.1</span> How the Periodic Table Is Organized</h2>
+      <p>The <strong>periodic table</strong> arranges all known elements in order of increasing <strong>atomic number</strong> (number of protons). It is set up so that elements with similar properties land in the same column.</p>
+      <p>The table has two directions to know:</p>
+      <table class="concept-table">
+        <caption>Periodic Table Organization: Periods and Groups</caption>
+        <thead>
+          <tr><th>Direction</th><th>Called</th><th>How many?</th><th>What changes as you move?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>↔ Horizontal row</td><td><strong>Period</strong></td><td>7 periods</td><td>Elements in the same period have the same outermost energy level. Atomic number increases by 1 each step from left to right.</td></tr>
+          <tr><td>↕ Vertical column</td><td><strong>Group</strong> (or Family)</td><td>18 groups</td><td>Elements in the same group have similar valence electron patterns. Moving down a group adds one energy level each row.</td></tr>
+        </tbody>
+      </table>
+      <div id="diag-org" class="pt-diag-outer" aria-label="Periodic table diagram showing numbered groups and periods"></div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+        <p class="key-fact-title">Memory hook</p>
+          <ul class="key-fact-list">
+          <li>"Period = row, Group = column." Period 2 elements all use the 2nd energy level as their outermost shell.</li>
+          <li>Group 1 elements all have 1 valence electron.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.2 Regions of the table -->
+    <div class="card" id="regions">
+      <h2 class="card-title"><span class="num">5.2</span> Regions of the Periodic Table</h2>
+      <p>For beginners, the most useful first pass is to read the table by visible regions: left-side metals, staircase metalloids, and right-side nonmetals, plus a few important named families.</p>
+      <table>
+        <caption>Periodic Table Regions and Element Types</caption>
+        <thead>
+          <tr><th>Region</th><th>Location</th><th>Examples</th><th>Key traits</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Alkali metals</strong> (Group 1)</td><td>Far left column</td><td>Li, Na, K</td><td>1 valence e⁻, very reactive, soft metals</td></tr>
+          <tr><td><strong>Alkaline earth metals</strong> (Group 2)</td><td>Second column</td><td>Be, Mg, Ca</td><td>2 valence e⁻, reactive metals</td></tr>
+          <tr><td><strong>Transition metals</strong></td><td>Middle block (Groups 3–12)</td><td>Fe, Cu, Zn</td><td>Typical metals that often form more than one ion charge</td></tr>
+          <tr><td><strong>Metalloids</strong></td><td>Staircase border</td><td>Si, Ge, As</td><td>Properties between metals and nonmetals</td></tr>
+          <tr><td><strong>Nonmetals</strong></td><td>Upper right</td><td>C, N, O, S</td><td>Poor conductors, gain electrons</td></tr>
+          <tr><td><strong>Halogens</strong> (Group 17)</td><td>Second to last column</td><td>F, Cl, Br</td><td>7 valence e⁻, very reactive nonmetals</td></tr>
+          <tr><td><strong>Noble gases</strong> (Group 18)</td><td>Far right column</td><td>He, Ne, Ar</td><td>8 valence e⁻ (He: 2), almost no reactivity</td></tr>
+        </tbody>
+      </table>
+      <div id="diag-families" class="pt-diag-outer" aria-label="Periodic table diagram showing element families"></div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>The <strong>staircase line</strong> separates metals (left) from nonmetals (right).</li>
+          <li>Elements touching the staircase are <strong>metalloids</strong> — they have mixed properties.</li>
+          <li>Silicon (Si) is the classic example: it conducts electricity, but only a little.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trend-summary">
+        <p class="trend-summary-title">One Map for the Three Big Trends</p>
+        <div class="trend-summary-grid">
+          <div class="trend-summary-card">
+            <h3>Atomic radius</h3>
+            <p><strong>Across a period:</strong> smaller to the right</p>
+            <p><strong>Down a group:</strong> larger downward</p>
+            <p><strong>Largest area:</strong> bottom-left</p>
+          </div>
+          <div class="trend-summary-card">
+            <h3>Ionization energy</h3>
+            <p><strong>Across a period:</strong> higher to the right</p>
+            <p><strong>Down a group:</strong> lower downward</p>
+            <p><strong>Highest area:</strong> top-right</p>
+          </div>
+          <div class="trend-summary-card">
+            <h3>Electronegativity</h3>
+            <p><strong>Across a period:</strong> higher to the right</p>
+            <p><strong>Down a group:</strong> lower downward</p>
+            <p><strong>Highest area:</strong> top-right, especially F</p>
+          </div>
+        </div>
+        <p class="trend-note">Quick anchor: radius points toward the bottom-left. Ionization energy and electronegativity point toward the top-right.</p>
+      </div>
+    </div>
+
+    <!-- 5.3 Valence Electrons -->
+    <div class="card" id="valence-electrons">
+      <h2 class="card-title"><span class="num">5.3</span> Valence Electrons and the Group Number</h2>
+      <p><strong>Valence electrons</strong> are the electrons in the outermost occupied energy level. They are the electrons most involved in chemical bonding. For <strong>main-group elements only</strong> (Groups 1, 2, and 13–18), the group number tells you the number of valence electrons.</p>
+      <div class="formula-box">
+        <span class="label">Shortcut for main-group elements</span>
+        Group 1 → 1 valence electron &nbsp;|&nbsp; Group 2 → 2 valence electrons<br>
+        Group 13 → 3 &nbsp; Group 14 → 4 &nbsp; Group 15 → 5 &nbsp; Group 16 → 6<br>
+        Group 17 → 7 &nbsp; Group 18 → 8 &nbsp;(He has 2)
+      </div>
+      <table>
+        <caption>Group Number and Valence Electron Examples</caption>
+        <thead>
+          <tr><th>Element</th><th>Group</th><th>Valence e⁻</th><th>Dot structure dots</th></tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>Na (sodium)</td><td>1</td><td>1</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="Na Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="currentColor">Na</text><circle cx="58" cy="40" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>Mg (magnesium)</td><td>2</td><td>2</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="Mg Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="currentColor">Mg</text><circle cx="58" cy="40" r="3" fill="currentColor"/><circle cx="22" cy="40" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>Al (aluminum)</td><td>13</td><td>3</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="Al Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="currentColor">Al</text><circle cx="58" cy="40" r="3" fill="currentColor"/><circle cx="22" cy="40" r="3" fill="currentColor"/><circle cx="40" cy="22" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>C (carbon)</td><td>14</td><td>4</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="C Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="currentColor">C</text><circle cx="58" cy="40" r="3" fill="currentColor"/><circle cx="22" cy="40" r="3" fill="currentColor"/><circle cx="40" cy="22" r="3" fill="currentColor"/><circle cx="40" cy="58" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>N (nitrogen)</td><td>15</td><td>5</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="N Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="currentColor">N</text><circle cx="58" cy="36" r="3" fill="currentColor"/><circle cx="58" cy="44" r="3" fill="currentColor"/><circle cx="22" cy="40" r="3" fill="currentColor"/><circle cx="40" cy="22" r="3" fill="currentColor"/><circle cx="40" cy="58" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>O (oxygen)</td><td>16</td><td>6</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="O Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="currentColor">O</text><circle cx="58" cy="36" r="3" fill="currentColor"/><circle cx="58" cy="44" r="3" fill="currentColor"/><circle cx="22" cy="36" r="3" fill="currentColor"/><circle cx="22" cy="44" r="3" fill="currentColor"/><circle cx="40" cy="22" r="3" fill="currentColor"/><circle cx="40" cy="58" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>Cl (chlorine)</td><td>17</td><td>7</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="Cl Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="currentColor">Cl</text><circle cx="58" cy="36" r="3" fill="currentColor"/><circle cx="58" cy="44" r="3" fill="currentColor"/><circle cx="22" cy="36" r="3" fill="currentColor"/><circle cx="22" cy="44" r="3" fill="currentColor"/><circle cx="36" cy="22" r="3" fill="currentColor"/><circle cx="44" cy="22" r="3" fill="currentColor"/><circle cx="40" cy="58" r="3" fill="currentColor"/></svg></td>
+    </tr>
+    <tr>
+      <td>Ar (argon)</td><td>18</td><td>8</td>
+      <td><svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="Ar Lewis dot symbol"><text x="40" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="currentColor">Ar</text><circle cx="58" cy="36" r="3" fill="currentColor"/><circle cx="58" cy="44" r="3" fill="currentColor"/><circle cx="22" cy="36" r="3" fill="currentColor"/><circle cx="22" cy="44" r="3" fill="currentColor"/><circle cx="36" cy="22" r="3" fill="currentColor"/><circle cx="44" cy="22" r="3" fill="currentColor"/><circle cx="36" cy="58" r="3" fill="currentColor"/><circle cx="44" cy="58" r="3" fill="currentColor"/></svg></td>
+    </tr>
+        </tbody>
+      </table>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>Elements in the same group have the <strong>same number of valence electrons</strong> — that is exactly why they have similar chemical behavior.</li>
+          <li>Do <strong>not</strong> use this shortcut for transition metals in Groups 3–12.</li>
+          <li>Sodium (Na) and potassium (K) are both in Group 1, both have 1 valence electron, and both react violently with water.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.4 Atomic Radius -->
+    <div class="card" id="atomic-radius">
+      <h2 class="card-title"><span class="num">5.4</span> Atomic Radius</h2>
+      <p>The <strong>atomic radius</strong> is roughly half the distance between two bonded atoms of the same element. It tells us how big an atom is.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Across a period (left → right): radius gets SMALLER</strong>
+            <p>As you move right across a period, the number of protons increases, but the electrons are all in the <em>same</em> energy level. More protons pull the electrons inward more strongly. The atom shrinks.</p>
+            <p>Example — Period 3: Na (186 pm) → Mg (160 pm) → Al (143 pm) → Si (111 pm) → P (106 pm) → Cl (99 pm)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Down a group (top → bottom): radius gets LARGER</strong>
+            <p>As you move down a group, each new period adds a whole new energy level. More energy levels mean electrons are farther from the nucleus. The atom grows.</p>
+            <p>Example — Group 1: Li (152 pm) → Na (186 pm) → K (227 pm) → Rb (248 pm) → Cs (265 pm)</p>
+          </div>
+        </div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li><strong>The biggest atoms are in the bottom-left corner</strong> (Cs, Fr).</li>
+          <li>The smallest atoms are in the top-right corner (He, F).</li>
+          <li>Picture the periodic table as a hillside — atoms get smaller as you climb toward the upper right.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inline practice CTA -->
+    <div class="inline-practice-cta">
+      <span class="inline-practice-cta-text">Ready to test yourself on atomic radius?</span>
+      <a href="05_practice.html" class="inline-practice-cta-link">Practice Unit 05 Problems →</a>
+    </div>
+
+    <!-- 5.5 Ionization Energy -->
+    <div class="card" id="ionization-energy">
+      <h2 class="card-title"><span class="num">5.5</span> Ionization Energy</h2>
+      <p><strong>Ionization energy (IE)</strong> is the energy needed to remove one electron from a neutral atom in the gas phase. A high IE means the atom holds that electron tightly. A low IE means the electron is easier to remove.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Across a period (left → right): ionization energy usually increases</strong>
+            <p>As the number of protons increases, the nucleus pulls electrons more strongly, so it takes more energy to remove one. Noble gases are usually the highest in their period.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Down a group (top → bottom): ionization energy usually decreases</strong>
+            <p>The outer electrons are farther from the nucleus and more shielded by inner electrons, so they are easier to remove.</p>
+            <p>Example — Group 1: Li (520 kJ/mol) → Na (496) → K (419) → Cs (376)</p>
+          </div>
+        </div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Advanced note</span>
+        There are a few small exceptions, especially near Groups 13 and 16. Learn the main trend first.
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>IE trends are exactly <strong>opposite</strong> to atomic radius trends.</li>
+          <li>Smaller atom = harder to remove an electron.</li>
+          <li>Larger atom = easier to remove an electron.</li>
+          <li>Ask: <strong>How tightly is this atom holding its electron?</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.6 Electronegativity -->
+    <div class="card" id="electronegativity">
+      <h2 class="card-title"><span class="num">5.6</span> Electronegativity</h2>
+      <p><strong>Electronegativity (EN)</strong> measures how strongly an atom pulls shared electrons toward itself in a bond. Fluorine (F) is the most electronegative element at 3.98.</p>
+      <p>Electronegativity is <strong>not</strong> the same as ionization energy. Ionization energy is about removing an electron; electronegativity is about pulling on shared electrons in a bond.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Across a period (left → right): EN increases</strong>
+            <p>More protons → stronger pull on shared electrons.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Down a group (top → bottom): EN decreases</strong>
+            <p>Larger atom → nucleus is farther from bonding electrons → weaker pull.</p>
+          </div>
+        </div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Using ΔEN as a classroom guideline for bond type</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">ΔEN = |EN of element A − EN of element B|</div>
+          <div class="formula-rule">About 0.0-0.4 → usually nonpolar covalent</div>
+          <div class="formula-rule">About 0.5-1.7 → usually polar covalent</div>
+          <div class="formula-rule">Greater than about 1.7 → usually ionic</div>
+        </div>
+      </div>
+      <table>
+        <caption>Electronegativity Difference and Bond Type Examples</caption>
+        <thead>
+          <tr><th>Bond</th><th>EN values</th><th>ΔEN</th><th>Bond type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>H–Cl</td><td>2.20 &amp; 3.16</td><td>0.96</td><td>Polar covalent</td></tr>
+          <tr><td>H–H</td><td>2.20 &amp; 2.20</td><td>0.00</td><td>Nonpolar covalent</td></tr>
+          <tr><td>Na–Cl</td><td>0.93 &amp; 3.16</td><td>2.23</td><td>Ionic</td></tr>
+          <tr><td>C–O</td><td>2.55 &amp; 3.44</td><td>0.89</td><td>Polar covalent</td></tr>
+          <tr><td>K–F</td><td>0.82 &amp; 3.98</td><td>3.16</td><td>Ionic</td></tr>
+        </tbody>
+      </table>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>EN follows the same direction as ionization energy — both increase toward the upper right of the table (excluding noble gases).</li>
+          <li><strong>F is highest, Fr and Cs are lowest.</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Where This Shows Up Next</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">In <a href="10_Learn_Chemistry_Bonding.html#bond-types">Unit 10 Bonding</a>, you will use ΔEN to classify bonds as nonpolar covalent, polar covalent, or ionic.</div>
+          <div class="formula-rule">In <a href="10_Learn_Chemistry_Bonding.html#imf">Unit 10 IMFs</a>, bond polarity helps determine molecular polarity, which then helps predict intermolecular forces.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.7 Ionic Radius -->
+    <div class="card" id="ionic-radius">
+      <h2 class="card-title"><span class="num">5.7</span> Ion Formation and Ionic Radius</h2>
+      <p>When an atom gains or loses electrons to form an <strong>ion</strong>, its size changes significantly.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Metals LOSE electrons → cations (positive ions) → SMALLER than the atom</strong>
+            <p>Na atom: 186 pm &nbsp;→&nbsp; Na⁺ ion: 102 pm &nbsp;(45% smaller!)</p>
+            <p>Reason: Fewer electrons, same number of protons. The remaining electrons are pulled in tighter.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Nonmetals GAIN electrons → anions (negative ions) → LARGER than the atom</strong>
+            <p>Cl atom: 99 pm &nbsp;→&nbsp; Cl⁻ ion: 181 pm &nbsp;(83% bigger!)</p>
+            <p>Reason: More electrons, same number of protons. Electrons repel each other and spread out.</p>
+          </div>
+        </div>
+      </div>
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+        <p class="key-fact-title">Isoelectronic series</p>
+          <ul class="key-fact-list">
+          <li>Ions with the same electron count can be compared by proton count.</li>
+          <li>More protons = smaller ion.</li>
+          <li>N³⁻, O²⁻, F⁻, Ne, Na⁺, Mg²⁺, Al³⁺ all have 10 electrons.</li>
+          <li>Al³⁺ (13 protons) is the smallest</li>
+          <li>N³⁻ (7 protons) is the largest.</li>
+          </ul>
+        </div>
+      </div>
+      <table>
+        <caption>Concrete Ion Size Comparisons</caption>
+        <thead>
+          <tr><th>Species</th><th>What changed?</th><th>Radius</th><th>What the size change tells you</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Na</td><td>Neutral atom</td><td>186 pm</td><td>Still has its 3rd energy level.</td></tr>
+          <tr><td>Na<sup>+</sup></td><td>Lost 1 electron</td><td>102 pm</td><td>Losing the 3s electron removes the outer level, so the ion gets much smaller.</td></tr>
+          <tr><td>Cl</td><td>Neutral atom</td><td>99 pm</td><td>Has 17 electrons balancing 17 protons.</td></tr>
+          <tr><td>Cl<sup>−</sup></td><td>Gained 1 electron</td><td>181 pm</td><td>Adding an electron increases repulsion in the valence shell, so the ion gets larger.</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-box">
+        <span class="label">Fast rule to remember</span>
+        Cation = lost electrons = usually smaller than the atom<br>
+        Anion = gained electrons = usually larger than the atom
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOOLS TAB
+  ══════════════════════════════════════════════════════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <p class="section-intro">Each tool below presents a periodic table scenario — identify the family or predict the trend before the reasoning is revealed. For full practice, use the Unit 5 Practice page.</p>
+
+    <div class="card">
+      <h2 class="card-title">Periodic Table Family Classifier</h2>
+      <div class="tool-output tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong id="familyPrompt">Which family does this highlighted element belong to?</strong></p>
+          <p class="tool-hint">Start with the highlighted element's column. Families are vertical groups on the periodic table.</p>
+          <p class="tool-scenario-text"><strong>Scenario:</strong> Use the highlighted element's position and choose the best family or region before you check.</p>
+        </div>
+
+        <div class="key-fact">
+          <div class="icon">◉</div>
+          <div class="key-fact-copy">
+            <p class="key-fact-title">Quick reminder</p>
+            <ul class="key-fact-list">
+              <li>Group 1 = alkali metals.</li>
+              <li>Group 2 = alkaline earth metals.</li>
+              <li>Group 17 = halogens.</li>
+              <li>Group 18 = noble gases.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-info-panel visible" id="ptInfoPanel">
+          <div class="pt-info-name" id="ptName">Highlighted element</div>
+          <div class="pt-info-meta" id="ptMeta">Choose one family or region before you check your answer.</div>
+        </div>
+
+        <div class="segment-controls tool-choice-row" id="familyAnswers" role="group" aria-label="Periodic table family choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" id="familyCheckBtn" disabled>Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="familyRevealBtn" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="familyNextBtn" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="familyFeedback" data-state="pending">Choose one answer, then click Check.</div>
+        <div class="key-fact tool-support" id="familySupport" hidden></div>
+        <div class="key-fact tool-reveal" id="familyReveal" hidden></div>
+      </div>
+
+      <div class="pt-legend">
+        <span class="pt-legend-item"><span class="pt-legend-dot alkali"></span>Alkali metal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot alkaline"></span>Alkaline earth</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot transition"></span>Transition metal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot post-transition"></span>Post-transition metal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot metalloid"></span>Metalloid</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot nonmetal"></span>Nonmetal</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot halogen"></span>Halogen</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot noble"></span>Noble gas</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot lanthanide"></span>Lanthanide</span>
+        <span class="pt-legend-item"><span class="pt-legend-dot actinide"></span>Actinide</span>
+      </div>
+
+      <div class="pt-tool-grid" id="ptGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Periodic Trend Predictor</h2>
+      <div class="tool-output tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p><span class="tool-property-chip" id="trendPropertyChip">Atomic Radius</span></p>
+          <p class="tool-scenario-title"><strong id="trendPrompt">Which atom has the larger atomic radius?</strong></p>
+          <p class="tool-hint">Decide whether this is an across-a-period comparison or a down-a-group comparison before you choose.</p>
+          <p class="tool-scenario-text"><strong>Compare:</strong> <span id="trendPairBadge">Na vs Cl</span></p>
+        </div>
+
+        <div class="key-fact">
+          <div class="icon">◉</div>
+          <div class="key-fact-copy">
+            <p class="key-fact-title">Quick reminder</p>
+            <ul class="key-fact-list">
+              <li>Atomic radius increases down and to the left.</li>
+              <li>Ionization energy and electronegativity increase up and to the right.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="segment-controls tool-choice-row" id="trendAnswers" role="group" aria-label="Periodic trend choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" id="trendCheckBtn" disabled>Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="trendRevealBtn" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="trendNextBtn" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="trendFeedback" data-state="pending">Choose one element, then click Check.</div>
+        <div class="key-fact tool-support" id="trendSupport" hidden></div>
+        <div class="key-fact tool-reveal" id="trendReveal" hidden></div>
+        <div class="tool-value-toggle">
+          <button type="button" class="segment-btn" id="trendValueToggleBtn" disabled>Show values</button>
+          <div class="tool-values" id="trendValues"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Ion Size Chooser</h2>
+      <div class="tool-output tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong id="ionPrompt">Which species is larger?</strong></p>
+          <p class="tool-hint">Start by asking whether the ion lost electrons to form a cation or gained electrons to form an anion.</p>
+          <p class="tool-scenario-text"><strong>Compare:</strong> <span id="ionPairBadge">Na vs Na<sup>+</sup></span></p>
+        </div>
+
+        <div class="key-fact">
+          <div class="icon">◉</div>
+          <div class="key-fact-copy">
+            <p class="key-fact-title">Quick reminder</p>
+            <ul class="key-fact-list">
+              <li>Cation = lost electrons = usually smaller.</li>
+              <li>Anion = gained electrons = usually larger.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="segment-controls tool-choice-row" id="ionAnswers" role="group" aria-label="Ion size choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" id="ionCheckBtn" disabled>Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="ionRevealBtn" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="ionNextBtn" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="ionFeedback" data-state="pending">Choose one species, then click Check.</div>
+        <div class="key-fact tool-support" id="ionSupport" hidden></div>
+        <div class="key-fact tool-reveal" id="ionReveal" hidden></div>
+      </div>
+    </div>
+
+  </div><!-- end #tools -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       EXAMPLES TAB
+  ══════════════════════════════════════════════════════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <div class="card">
+      <h2 class="card-title">Example 1 · Identifying Period, Group, and Region</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Use sulfur's position to identify its place and behavior on the periodic table.</p>
+        <p><strong>Given:</strong> Element sulfur (S), atomic number 16</p>
+        <p><strong>Find:</strong> period, group, number of valence electrons, and region of the periodic table</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Find sulfur on the periodic table</strong>
+            <p>Sulfur (S) is in <strong>Period 3</strong> and <strong>Group 16</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Use the group to find valence electrons</strong>
+            <p>Sulfur is a <strong>main-group</strong> element in Group 16, so it has <strong>6 valence electrons</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Identify the region</strong>
+            <p>Sulfur is on the right side of the table and is not on the staircase line. It is a <strong>nonmetal</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Check the answer with the electron configuration</strong>
+            <p>S: 1s² 2s² 2p⁶ 3s² 3p⁴. The outermost occupied energy level is 3, and it contains 6 electrons.</p>
+            <p>Sulfur: Period 3 · Group 16 · 6 valence electrons · Nonmetal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 2 · Ranking Atomic Radii</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Rank the atoms from smallest to largest atomic radius.</p>
+        <p><strong>Given:</strong> Na, Mg, K, Cl</p>
+        <p><strong>Find:</strong> smallest → largest radius</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Locate each element on the table</strong>
+            <table>
+              <caption>Example 2 Element Positions for Atomic Radius Ranking</caption>
+              <thead><tr><th>Element</th><th>Period</th><th>Group</th></tr></thead>
+              <tbody>
+                <tr><td>Na</td><td>3</td><td>1</td></tr>
+                <tr><td>Mg</td><td>3</td><td>2</td></tr>
+                <tr><td>K</td><td>4</td><td>1</td></tr>
+                <tr><td>Cl</td><td>3</td><td>17</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Apply the period trend</strong>
+            <p>Na, Mg, and Cl are all in Period 3. Across a period, atomic radius gets smaller from left to right, so the Period 3 order is <strong>Na &gt; Mg &gt; Cl</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Apply the group trend</strong>
+            <p>K is below Na in Group 1. Atomic radius gets larger as you move down a group, so K is larger than Na.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — State the final ranking</strong>
+            <p><strong>Cl &lt; Mg &lt; Na &lt; K</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 3 · Using Electronegativity to Classify a Bond</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Use electronegativity values to classify the bond type.</p>
+        <p><strong>Given:</strong> Bond between potassium (K) and fluorine (F)</p>
+        <p><strong>Find:</strong> bond type</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Look up the EN values</strong>
+            <p>K: 0.82 &nbsp;|&nbsp; F: 3.98 &nbsp;(F is the most electronegative element)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Calculate ΔEN</strong>
+            <div class="fl-chain">
+              ΔEN = |EN<sub>K</sub> − EN<sub>F</sub>| = |0.82 − 3.98| = <span class="fl-result">3.16</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Apply the bond-type guideline</strong>
+            <p>3.16 &gt; 1.7, so this falls in the <strong>ionic</strong> range of the classroom guideline.</p>
+            <p>This makes sense: K is a metal in the far bottom-left, F is a nonmetal in the top-right. Large EN differences always occur between metals and nonmetals.</p>
+            <p>In introductory chemistry, these ΔEN cutoffs are used as a guideline for classifying bond type.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — State the final answer</strong>
+            <p><strong>KF is classified as ionic</strong> because the electronegativity difference is very large.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 4 · Comparing Atom and Ion Size</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Decide whether the atom or ion is larger.</p>
+        <p><strong>Given:</strong> Sodium atom (Na) and sodium ion (Na<sup>+</sup>)</p>
+        <p><strong>Find:</strong> which species is larger</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Write out what changed</strong>
+            <p>Na is a Group 1 metal. It loses 1 electron to form Na⁺.</p>
+            <p>Na atom: 11 protons, 11 electrons &nbsp;→&nbsp; Na⁺ ion: 11 protons, 10 electrons</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Track what losing an electron does to size</strong>
+            <p>Na loses its entire outermost energy level (3s¹). The remaining 10 electrons are all in level 2, much closer to the nucleus.</p>
+            <p>Na atom: 186 pm &nbsp;→&nbsp; Na⁺ ion: 102 pm</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — State the conclusion</strong>
+            <p><strong>Na atom is larger than Na⁺</strong> because losing the outermost electron makes the ion smaller.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Example 5 · Finding Valence Electrons from Position</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Find valence electrons without writing a full electron configuration first.</p>
+        <p><strong>Given:</strong> Phosphorus (P), atomic number 15</p>
+        <p><strong>Find:</strong> number of valence electrons</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Find P on the periodic table</strong>
+            <p>P is in <strong>Period 3, Group 15</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Apply the main-group shortcut</strong>
+            <p>For main-group elements, the last digit of the group number gives the number of valence electrons.</p>
+            <p>Group 15 → <strong>5 valence electrons</strong></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Verify with the electron configuration</strong>
+            <p>P: 1s² 2s² 2p⁶ 3s² 3p³ → 3s² + 3p³ = 5 electrons in level 3 ✓</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       PRACTICE BANNER
+  ══════════════════════════════════════════════════════════ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Bite-sized Unit 05 practice: 3 randomized problems at a time.</div>
+      <div class="practice-banner-features">
+        <span>✓ 84-problem bank</span>
+        <span>✓ Thousands of unique review sets</span>
+        <span>✓ Instant feedback + worked solutions</span>
+        <span>✓ Unit 05 aligned</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="05_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Focused review sets &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <nav class="unit-bottom-nav" aria-label="Unit 05 navigation">
+    <a class="unit-bottom-link" href="04_Learn_Electron_Configuration.html">
+      <span class="unit-bottom-kicker">Previous</span>
+      <span class="unit-bottom-title">Unit 04 · Electron Configuration</span>
+    </a>
+    <a class="unit-bottom-link is-practice" href="05_practice.html">
+      <span class="unit-bottom-kicker">Practice</span>
+      <span class="unit-bottom-title">Unit 05 · Periodic Table &amp; Trends Practice</span>
+    </a>
+    <a class="unit-bottom-link" href="06_Learn_Chemistry_Nomenclature.html">
+      <span class="unit-bottom-kicker">Next</span>
+      <span class="unit-bottom-title">Unit 06 · Nomenclature</span>
+    </a>
+  </nav>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 05 · Periodic Table &amp; Trends</div>
+
+</div><!-- end .container -->
+</main>
+<script src="chem.js?v=20260422"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── PERIODIC TABLE DATA ──────────────────────────────────────
+  // Each element: [symbol, name, atomicNum, period, group, type, radius, IE, EN]
+  // type codes: am=alkali metal, ae=alkaline earth, tm=transition metal,
+  //             ptm=post-transition metal, ml=metalloid, nm=nonmetal,
+  //             ha=halogen, ng=noble gas, la=lanthanide, ac=actinide
+  const ELEMENTS = [
+    ['H','Hydrogen',1,1,1,'nm',53,1312,2.20], ['He','Helium',2,1,18,'ng',31,2372,null],
+    ['Li','Lithium',3,2,1,'am',152,520,0.98], ['Be','Beryllium',4,2,2,'ae',112,899,1.57], ['B','Boron',5,2,13,'ml',87,801,2.04], ['C','Carbon',6,2,14,'nm',77,1086,2.55], ['N','Nitrogen',7,2,15,'nm',75,1402,3.04], ['O','Oxygen',8,2,16,'nm',73,1314,3.44], ['F','Fluorine',9,2,17,'ha',64,1681,3.98], ['Ne','Neon',10,2,18,'ng',38,2081,null],
+    ['Na','Sodium',11,3,1,'am',186,496,0.93], ['Mg','Magnesium',12,3,2,'ae',160,738,1.31], ['Al','Aluminum',13,3,13,'ptm',143,578,1.61], ['Si','Silicon',14,3,14,'ml',111,786,1.90], ['P','Phosphorus',15,3,15,'nm',106,1012,2.19], ['S','Sulfur',16,3,16,'nm',103,1000,2.58], ['Cl','Chlorine',17,3,17,'ha',99,1251,3.16], ['Ar','Argon',18,3,18,'ng',71,1521,null],
+    ['K','Potassium',19,4,1,'am',227,419,0.82], ['Ca','Calcium',20,4,2,'ae',197,590,1.00], ['Sc','Scandium',21,4,3,'tm',162,633,1.36], ['Ti','Titanium',22,4,4,'tm',147,659,1.54], ['V','Vanadium',23,4,5,'tm',134,651,1.63], ['Cr','Chromium',24,4,6,'tm',128,653,1.66], ['Mn','Manganese',25,4,7,'tm',127,717,1.55], ['Fe','Iron',26,4,8,'tm',126,763,1.83], ['Co','Cobalt',27,4,9,'tm',125,760,1.88], ['Ni','Nickel',28,4,10,'tm',124,737,1.91], ['Cu','Copper',29,4,11,'tm',128,746,1.90], ['Zn','Zinc',30,4,12,'tm',134,906,1.65], ['Ga','Gallium',31,4,13,'ptm',135,579,1.81], ['Ge','Germanium',32,4,14,'ml',122,762,2.01], ['As','Arsenic',33,4,15,'ml',119,947,2.18], ['Se','Selenium',34,4,16,'nm',116,941,2.55], ['Br','Bromine',35,4,17,'ha',114,1140,2.96], ['Kr','Krypton',36,4,18,'ng',88,1351,null],
+    ['Rb','Rubidium',37,5,1,'am',248,403,0.82], ['Sr','Strontium',38,5,2,'ae',215,550,0.95], ['Y','Yttrium',39,5,3,'tm',180,600,1.22], ['Zr','Zirconium',40,5,4,'tm',160,640,1.33], ['Nb','Niobium',41,5,5,'tm',146,652,1.60], ['Mo','Molybdenum',42,5,6,'tm',139,684,2.16], ['Tc','Technetium',43,5,7,'tm',136,702,1.90], ['Ru','Ruthenium',44,5,8,'tm',134,710,2.20], ['Rh','Rhodium',45,5,9,'tm',134,720,2.28], ['Pd','Palladium',46,5,10,'tm',137,804,2.20], ['Ag','Silver',47,5,11,'tm',144,731,1.93], ['Cd','Cadmium',48,5,12,'tm',151,868,1.69], ['In','Indium',49,5,13,'ptm',167,558,1.78], ['Sn','Tin',50,5,14,'ptm',140,709,1.96], ['Sb','Antimony',51,5,15,'ml',140,834,2.05], ['Te','Tellurium',52,5,16,'ml',136,869,2.10], ['I','Iodine',53,5,17,'ha',133,1008,2.66], ['Xe','Xenon',54,5,18,'ng',108,1170,null],
+    ['Cs','Cesium',55,6,1,'am',265,376,0.79], ['Ba','Barium',56,6,2,'ae',222,503,0.89], ['La','Lanthanum',57,6,3,'la',187,538,1.10], ['Ce','Cerium',58,6,3,'la',182,534,1.12], ['Pr','Praseodymium',59,6,3,'la',182,527,1.13], ['Nd','Neodymium',60,6,3,'la',181,533,1.14], ['Pm','Promethium',61,6,3,'la',183,540,null], ['Sm','Samarium',62,6,3,'la',180,545,1.17], ['Eu','Europium',63,6,3,'la',204,547,null], ['Gd','Gadolinium',64,6,3,'la',180,593,1.20], ['Tb','Terbium',65,6,3,'la',178,566,null], ['Dy','Dysprosium',66,6,3,'la',177,573,1.22], ['Ho','Holmium',67,6,3,'la',176,581,1.23], ['Er','Erbium',68,6,3,'la',176,589,1.24], ['Tm','Thulium',69,6,3,'la',176,597,1.25], ['Yb','Ytterbium',70,6,3,'la',176,603,null], ['Lu','Lutetium',71,6,3,'la',174,524,1.27], ['Hf','Hafnium',72,6,4,'tm',159,659,1.30], ['Ta','Tantalum',73,6,5,'tm',146,761,1.50], ['W','Tungsten',74,6,6,'tm',139,770,2.36], ['Re','Rhenium',75,6,7,'tm',137,760,1.90], ['Os','Osmium',76,6,8,'tm',135,840,2.20], ['Ir','Iridium',77,6,9,'tm',136,880,2.20], ['Pt','Platinum',78,6,10,'tm',139,870,2.28], ['Au','Gold',79,6,11,'tm',144,890,2.54], ['Hg','Mercury',80,6,12,'tm',151,1007,2.00], ['Tl','Thallium',81,6,13,'ptm',170,589,1.62], ['Pb','Lead',82,6,14,'ptm',175,716,2.33], ['Bi','Bismuth',83,6,15,'ptm',156,703,2.02], ['Po','Polonium',84,6,16,'ml',168,812,2.00], ['At','Astatine',85,6,17,'ha',150,920,2.20], ['Rn','Radon',86,6,18,'ng',120,1037,null],
+    ['Fr','Francium',87,7,1,'am',null,393,0.70], ['Ra','Radium',88,7,2,'ae',null,509,0.90], ['Ac','Actinium',89,7,3,'ac',null,499,1.10], ['Th','Thorium',90,7,3,'ac',179,587,1.30], ['Pa','Protactinium',91,7,3,'ac',163,568,1.50], ['U','Uranium',92,7,3,'ac',156,598,1.38], ['Np','Neptunium',93,7,3,'ac',155,605,1.36], ['Pu','Plutonium',94,7,3,'ac',159,585,1.28], ['Am','Americium',95,7,3,'ac',173,578,1.30], ['Cm','Curium',96,7,3,'ac',174,581,1.30], ['Bk','Berkelium',97,7,3,'ac',170,601,1.30], ['Cf','Californium',98,7,3,'ac',186,608,1.30], ['Es','Einsteinium',99,7,3,'ac',186,619,1.30], ['Fm','Fermium',100,7,3,'ac',null,627,1.30], ['Md','Mendelevium',101,7,3,'ac',null,635,1.30], ['No','Nobelium',102,7,3,'ac',null,642,1.30], ['Lr','Lawrencium',103,7,3,'ac',null,470,null], ['Rf','Rutherfordium',104,7,4,'tm',null,580,null], ['Db','Dubnium',105,7,5,'tm',null,null,null], ['Sg','Seaborgium',106,7,6,'tm',null,null,null], ['Bh','Bohrium',107,7,7,'tm',null,null,null], ['Hs','Hassium',108,7,8,'tm',null,null,null], ['Mt','Meitnerium',109,7,9,'tm',null,null,null], ['Ds','Darmstadtium',110,7,10,'tm',null,null,null], ['Rg','Roentgenium',111,7,11,'tm',null,null,null], ['Cn','Copernicium',112,7,12,'tm',null,null,null], ['Nh','Nihonium',113,7,13,'ptm',null,null,null], ['Fl','Flerovium',114,7,14,'ptm',null,null,null], ['Mc','Moscovium',115,7,15,'ptm',null,null,null], ['Lv','Livermorium',116,7,16,'ptm',null,null,null], ['Ts','Tennessine',117,7,17,'ha',null,null,null], ['Og','Oganesson',118,7,18,'ng',null,null,null]
+  ];
+
+  const TYPE_CLASS = {
+    am: 'metal-alkali', ae: 'metal-alkaline', tm: 'metal-trans', ptm: 'post-transition',
+    ml: 'metalloid', nm: 'nonmetal', ha: 'halogen', ng: 'noble',
+    la: 'lanthanide', ac: 'actinide'
+  };
+  const TYPE_LABEL = {
+    am: 'Alkali Metal', ae: 'Alkaline Earth Metal', tm: 'Transition Metal',
+    ptm: 'Post-transition Metal', ml: 'Metalloid', nm: 'Nonmetal', ha: 'Halogen', ng: 'Noble Gas',
+    la: 'Lanthanide', ac: 'Actinide'
+  };
+
+  // Store display placement: [visual row, visual column].
+  const PLACEMENT = {
+    H:[1,1],He:[1,18],
+    Li:[2,1],Be:[2,2],B:[2,13],C:[2,14],N:[2,15],O:[2,16],F:[2,17],Ne:[2,18],
+    Na:[3,1],Mg:[3,2],Al:[3,13],Si:[3,14],P:[3,15],S:[3,16],Cl:[3,17],Ar:[3,18],
+    K:[4,1],Ca:[4,2],Sc:[4,3],Ti:[4,4],V:[4,5],Cr:[4,6],Mn:[4,7],Fe:[4,8],Co:[4,9],Ni:[4,10],Cu:[4,11],Zn:[4,12],Ga:[4,13],Ge:[4,14],As:[4,15],Se:[4,16],Br:[4,17],Kr:[4,18],
+    Rb:[5,1],Sr:[5,2],Y:[5,3],Zr:[5,4],Nb:[5,5],Mo:[5,6],Tc:[5,7],Ru:[5,8],Rh:[5,9],Pd:[5,10],Ag:[5,11],Cd:[5,12],In:[5,13],Sn:[5,14],Sb:[5,15],Te:[5,16],I:[5,17],Xe:[5,18],
+    Cs:[6,1],Ba:[6,2],Hf:[6,4],Ta:[6,5],W:[6,6],Re:[6,7],Os:[6,8],Ir:[6,9],Pt:[6,10],Au:[6,11],Hg:[6,12],Tl:[6,13],Pb:[6,14],Bi:[6,15],Po:[6,16],At:[6,17],Rn:[6,18],
+    Fr:[7,1],Ra:[7,2],Rf:[7,4],Db:[7,5],Sg:[7,6],Bh:[7,7],Hs:[7,8],Mt:[7,9],Ds:[7,10],Rg:[7,11],Cn:[7,12],Nh:[7,13],Fl:[7,14],Mc:[7,15],Lv:[7,16],Ts:[7,17],Og:[7,18],
+    La:[8,4],Ce:[8,5],Pr:[8,6],Nd:[8,7],Pm:[8,8],Sm:[8,9],Eu:[8,10],Gd:[8,11],Tb:[8,12],Dy:[8,13],Ho:[8,14],Er:[8,15],Tm:[8,16],Yb:[8,17],Lu:[8,18],
+    Ac:[9,4],Th:[9,5],Pa:[9,6],U:[9,7],Np:[9,8],Pu:[9,9],Am:[9,10],Cm:[9,11],Bk:[9,12],Cf:[9,13],Es:[9,14],Fm:[9,15],Md:[9,16],No:[9,17],Lr:[9,18]
+  };
+
+  const grid = document.getElementById('ptGrid');
+  if (!grid) return;
+
+  // Build element map by visual grid position.
+  const byPos = {};
+  ELEMENTS.forEach(el => {
+    const pos = PLACEMENT[el[0]];
+    if (!pos) return;
+    const key = `${pos[0]}-${pos[1]}`;
+    byPos[key] = el;
+  });
+
+  // Render 7 main rows plus lanthanide and actinide rows.
+  for (let p = 1; p <= 9; p++) {
+    for (let c = 1; c <= 18; c++) {
+      const cell = document.createElement('div');
+      const key = `${p}-${c}`;
+      const el = byPos[key];
+      if (!el) {
+        cell.className = 'pt-cell empty';
+      } else {
+        const typeClass = TYPE_CLASS[el[5]] || '';
+        cell.className = `pt-cell ${typeClass}`;
+        cell.innerHTML = `<span class="sym">${el[0]}</span>`;
+        cell.dataset.sym = el[0];
+      }
+      grid.appendChild(cell);
+    }
+  }
+
+  function updateFamilyInfoPanel(el, note) {
+    const panel = document.getElementById('ptInfoPanel');
+    const nameEl = document.getElementById('ptName');
+    const metaEl = document.getElementById('ptMeta');
+    const [sym, name] = el;
+    nameEl.textContent = `Highlighted element: ${name} (${sym})`;
+    metaEl.textContent = note;
+    panel.classList.add('visible');
+  }
+
+  function clearGridHighlights() {
+    document.querySelectorAll('.pt-cell').forEach(cell => {
+      cell.classList.remove('selected', 'is-target', 'is-compare');
+    });
+  }
+
+  function setToolFeedback(node, message, state) {
+    node.textContent = message;
+    node.dataset.state = state || 'pending';
+  }
+
+  function toggleToolPanel(node, show) {
+    node.hidden = !show;
+  }
+
+  function markTarget(sym) {
+    clearGridHighlights();
+    const cell = grid.querySelector(`[data-sym="${sym}"]`);
+    if (cell) cell.classList.add('is-target');
+  }
+
+  // ── FAMILY CLASSIFIER TOOL ────────────────────────────────────
+  const FAMILY_QUESTIONS = [
+    {
+      sym: 'Cl',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Halogen', 'Noble gas', 'Alkali metal', 'Metalloid'],
+      answer: 'Halogen',
+      correct: 'Right — chlorine is in Group 17, so it is a halogen.',
+      incorrect: 'Not quite — chlorine is not a noble gas. Group 17 elements are halogens, so check the column just left of Group 18.',
+      support: 'Why this family: chlorine is in Group 17, a vertical family near the upper right of the table.',
+      revealAnswer: 'Answer: Halogen',
+      revealWhy: 'Why: Chlorine is in Group 17, the column just left of the noble gases.',
+      revealExtra: 'Halogens are reactive nonmetals with 7 valence electrons.'
+    },
+    {
+      sym: 'Si',
+      prompt: 'Which region best fits this highlighted element?',
+      options: ['Metalloid', 'Transition metal', 'Halogen', 'Noble gas'],
+      answer: 'Metalloid',
+      correct: 'Right — silicon touches the staircase line, so it is a metalloid.',
+      incorrect: 'Not quite — silicon is not a transition metal. Check the staircase border: elements along it are metalloids.',
+      support: 'Why this region: silicon sits on the staircase line that separates metals from nonmetals.',
+      revealAnswer: 'Answer: Metalloid',
+      revealWhy: 'Why: Silicon is one of the elements on the staircase border.',
+      revealExtra: 'Metalloids have properties between metals and nonmetals.'
+    },
+    {
+      sym: 'Mg',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Alkaline earth metal', 'Alkali metal', 'Nonmetal', 'Halogen'],
+      answer: 'Alkaline earth metal',
+      correct: 'Right — magnesium is in Group 2, so it is an alkaline earth metal.',
+      incorrect: 'Not quite — magnesium is not in Group 1. Group 2 elements are alkaline earth metals, so check the second column.',
+      support: 'Why this family: magnesium is in Group 2, the second column on the periodic table.',
+      revealAnswer: 'Answer: Alkaline earth metal',
+      revealWhy: 'Why: Magnesium is in Group 2.',
+      revealExtra: 'Alkaline earth metals are reactive metals with 2 valence electrons.'
+    },
+    {
+      sym: 'Ne',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Noble gas', 'Halogen', 'Nonmetal', 'Metalloid'],
+      answer: 'Noble gas',
+      correct: 'Right — neon is in Group 18, so it is a noble gas.',
+      incorrect: 'Not quite — neon is not a halogen. Group 18 elements are noble gases, so check the far right column.',
+      support: 'Why this family: neon is in Group 18, the far right column of the table.',
+      revealAnswer: 'Answer: Noble gas',
+      revealWhy: 'Why: Neon is in the last column, Group 18.',
+      revealExtra: 'Noble gases have filled valence shells and are usually very unreactive.'
+    }
+  ];
+
+  let familyIndex = 0;
+  let familySelection = null;
+  let familyChecked = false;
+
+  const familyPrompt = document.getElementById('familyPrompt');
+  const familyAnswers = document.getElementById('familyAnswers');
+  const familyCheckBtn = document.getElementById('familyCheckBtn');
+  const familyRevealBtn = document.getElementById('familyRevealBtn');
+  const familyNextBtn = document.getElementById('familyNextBtn');
+  const familyFeedback = document.getElementById('familyFeedback');
+  const familyReveal = document.getElementById('familyReveal');
+  const familySupport = document.getElementById('familySupport');
+
+  function renderFamilyQuestion() {
+    const q = FAMILY_QUESTIONS[familyIndex];
+    familySelection = null;
+    familyChecked = false;
+    familyPrompt.textContent = q.prompt;
+    familyAnswers.innerHTML = '';
+    q.options.forEach(option => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.textContent = option;
+      btn.addEventListener('click', function () {
+        familySelection = option;
+        familyCheckBtn.disabled = false;
+        document.querySelectorAll('#familyAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        btn.classList.add('active');
+      });
+      familyAnswers.appendChild(btn);
+    });
+    familyCheckBtn.disabled = true;
+    familyRevealBtn.disabled = true;
+    familyNextBtn.disabled = true;
+    setToolFeedback(familyFeedback, 'Choose one answer, then click Check.', 'pending');
+    familyReveal.innerHTML = '';
+    familySupport.innerHTML = '';
+    toggleToolPanel(familyReveal, false);
+    toggleToolPanel(familySupport, false);
+    markTarget(q.sym);
+    updateFamilyInfoPanel(ELEMENTS.find(el => el[0] === q.sym), 'Use its column and location to classify it before you check.');
+  }
+
+  familyCheckBtn.addEventListener('click', function () {
+    const q = FAMILY_QUESTIONS[familyIndex];
+    if (!familySelection) {
+      setToolFeedback(familyFeedback, 'Choose one answer, then click Check.', 'pending');
+      return;
+    }
+    familyChecked = true;
+    familyRevealBtn.disabled = false;
+    familyNextBtn.disabled = false;
+    toggleToolPanel(familySupport, true);
+    familySupport.innerHTML = `
+      <div class="icon">◉</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Rule to use</p>
+        <ul class="key-fact-list">
+          <li>${q.support}</li>
+        </ul>
+      </div>
+    `;
+    if (familySelection === q.answer) {
+      setToolFeedback(familyFeedback, q.correct, 'correct');
+    } else {
+      setToolFeedback(familyFeedback, q.incorrect, 'incorrect');
+    }
+  });
+
+  familyRevealBtn.addEventListener('click', function () {
+    if (!familyChecked) return;
+    const q = FAMILY_QUESTIONS[familyIndex];
+    toggleToolPanel(familyReveal, true);
+    familyReveal.innerHTML = `
+      <div class="icon">▸</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Reveal reasoning</p>
+        <ul class="key-fact-list">
+          <li>${q.revealAnswer}</li>
+          <li>${q.revealWhy}</li>
+          <li>${q.revealExtra}</li>
+        </ul>
+      </div>
+    `;
+  });
+
+  familyNextBtn.addEventListener('click', function () {
+    familyIndex = (familyIndex + 1) % FAMILY_QUESTIONS.length;
+    renderFamilyQuestion();
+  });
+
+  renderFamilyQuestion();
+
+  // ── TREND PREDICTOR TOOL ─────────────────────────────────────
+  const TREND_DATA = {
+    Na: { radius:186, ie:496, en:0.93 },
+    K:  { radius:227, ie:419, en:0.82 },
+    Cl: { radius:99,  ie:1251, en:3.16 },
+    F:  { radius:64,  ie:1681, en:3.98 },
+    Li: { radius:152, ie:520, en:0.98 },
+    O:  { radius:73,  ie:1314, en:3.44 },
+    S:  { radius:103, ie:1000, en:2.58 },
+    Mg: { radius:160, ie:738, en:1.31 },
+    Ca: { radius:197, ie:590, en:1.00 }
+  };
+  const TREND_QUESTIONS = [
+    {
+      property: 'radius',
+      prompt: 'Which atom has the larger atomic radius?',
+      pair: ['Na', 'Cl'],
+      answer: 'Na',
+      correct: 'Right — Na is larger because atomic radius gets smaller from left to right across a period.',
+      incorrect: 'Not quite — these two elements are in the same period. Use the across-a-period rule: atomic radius gets smaller from left to right, so compare their positions again.',
+      support: 'Na and Cl are both in Period 3, so this is an across-a-period comparison.',
+      revealAnswer: 'Answer: Na',
+      revealWhy: 'Why: Na and Cl are in the same period. Atomic radius gets smaller from left to right, so Na is larger.',
+      valueText: 'Na: 186 pm | Cl: 99 pm'
+    },
+    {
+      property: 'ie',
+      prompt: 'Which atom has the higher ionization energy?',
+      pair: ['Li', 'F'],
+      answer: 'F',
+      correct: 'Right — F has the higher ionization energy because ionization energy usually increases from left to right and up the table.',
+      incorrect: 'Not quite — ionization energy does not follow the radius rule. Smaller atoms usually hold electrons more tightly, so check which atom is closer to the upper right.',
+      support: 'Li and F are both in Period 2, so compare them from left to right.',
+      revealAnswer: 'Answer: F',
+      revealWhy: 'Why: Ionization energy usually increases across a period because the nucleus pulls electrons more strongly.',
+      valueText: 'Li: 520 kJ/mol | F: 1681 kJ/mol'
+    },
+    {
+      property: 'en',
+      prompt: 'Which atom has the higher electronegativity?',
+      pair: ['F', 'Cl'],
+      answer: 'F',
+      correct: 'Right — F has the higher electronegativity because electronegativity increases toward the upper right of the table.',
+      incorrect: 'Not quite — electronegativity is about pull on shared electrons in a bond. Use the trend toward the upper right, then compare again.',
+      support: 'F and Cl are in the same group, so this is a down-a-group comparison.',
+      revealAnswer: 'Answer: F',
+      revealWhy: 'Why: Electronegativity decreases as you move down a group, so fluorine is higher than chlorine.',
+      valueText: 'F: 3.98 | Cl: 3.16'
+    },
+    {
+      property: 'radius',
+      prompt: 'Which atom has the larger atomic radius?',
+      pair: ['Mg', 'Ca'],
+      answer: 'Ca',
+      correct: 'Right — Ca is larger because atomic radius increases as you move down a group.',
+      incorrect: 'Not quite — these two elements are in the same group. Moving down adds an energy level, so compare their vertical positions again.',
+      support: 'Mg and Ca are both in Group 2, so this is a down-a-group comparison.',
+      revealAnswer: 'Answer: Ca',
+      revealWhy: 'Why: Atomic radius increases down a group because each step adds a new energy level.',
+      valueText: 'Mg: 160 pm | Ca: 197 pm'
+    }
+  ];
+  const trendPrompt = document.getElementById('trendPrompt');
+  const trendPropertyChip = document.getElementById('trendPropertyChip');
+  const trendPairBadge = document.getElementById('trendPairBadge');
+  const trendAnswers = document.getElementById('trendAnswers');
+  const trendCheckBtn = document.getElementById('trendCheckBtn');
+  const trendRevealBtn = document.getElementById('trendRevealBtn');
+  const trendNextBtn = document.getElementById('trendNextBtn');
+  const trendFeedback = document.getElementById('trendFeedback');
+  const trendSupport = document.getElementById('trendSupport');
+  const trendReveal = document.getElementById('trendReveal');
+  const trendValueToggleBtn = document.getElementById('trendValueToggleBtn');
+  const trendValues = document.getElementById('trendValues');
+
+  let trendIndex = 0;
+  let trendSelection = null;
+  let trendChecked = false;
+  let trendValuesVisible = false;
+
+  function renderTrendQuestion() {
+    const q = TREND_QUESTIONS[trendIndex];
+    trendSelection = null;
+    trendChecked = false;
+    trendValuesVisible = false;
+    trendPropertyChip.textContent =
+      q.property === 'radius' ? 'Atomic Radius' :
+      q.property === 'ie' ? 'Ionization Energy' :
+      'Electronegativity';
+    trendPrompt.textContent = q.prompt;
+    trendPairBadge.textContent = `${q.pair[0]} vs ${q.pair[1]}`;
+    trendAnswers.innerHTML = '';
+    q.pair.forEach(sym => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.textContent = sym;
+      btn.addEventListener('click', function () {
+        trendSelection = sym;
+        trendCheckBtn.disabled = false;
+        document.querySelectorAll('#trendAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        btn.classList.add('active');
+      });
+      trendAnswers.appendChild(btn);
+    });
+    trendCheckBtn.disabled = true;
+    trendRevealBtn.disabled = true;
+    trendNextBtn.disabled = true;
+    trendValueToggleBtn.disabled = true;
+    trendValueToggleBtn.textContent = 'Show values';
+    setToolFeedback(trendFeedback, 'Choose one element, then click Check.', 'pending');
+    trendSupport.innerHTML = '';
+    trendReveal.innerHTML = '';
+    trendValues.className = 'tool-values';
+    trendValues.innerHTML = '';
+    toggleToolPanel(trendSupport, false);
+    toggleToolPanel(trendReveal, false);
+  }
+
+  trendCheckBtn.addEventListener('click', function () {
+    const q = TREND_QUESTIONS[trendIndex];
+    if (!trendSelection) {
+      setToolFeedback(trendFeedback, 'Choose one element, then click Check.', 'pending');
+      return;
+    }
+    trendChecked = true;
+    trendRevealBtn.disabled = false;
+    trendNextBtn.disabled = false;
+    toggleToolPanel(trendSupport, true);
+    trendSupport.innerHTML = `
+      <div class="icon">◉</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Rule to use</p>
+        <ul class="key-fact-list">
+          <li>${q.support}</li>
+        </ul>
+      </div>
+    `;
+    if (trendSelection === q.answer) {
+      setToolFeedback(trendFeedback, q.correct, 'correct');
+    } else {
+      setToolFeedback(trendFeedback, q.incorrect, 'incorrect');
+    }
+  });
+
+  trendRevealBtn.addEventListener('click', function () {
+    if (!trendChecked) return;
+    const q = TREND_QUESTIONS[trendIndex];
+    toggleToolPanel(trendReveal, true);
+    trendReveal.innerHTML = `
+      <div class="icon">▸</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Reveal reasoning</p>
+        <ul class="key-fact-list">
+          <li>${q.revealAnswer}</li>
+          <li>${q.revealWhy}</li>
+        </ul>
+      </div>
+    `;
+    trendValueToggleBtn.disabled = false;
+    trendValues.innerHTML = q.valueText;
+  });
+
+  trendValueToggleBtn.addEventListener('click', function () {
+    if (trendValueToggleBtn.disabled) return;
+    trendValuesVisible = !trendValuesVisible;
+    trendValues.classList.toggle('visible', trendValuesVisible);
+    trendValueToggleBtn.textContent = trendValuesVisible ? 'Hide values' : 'Show values';
+  });
+
+  trendNextBtn.addEventListener('click', function () {
+    trendIndex = (trendIndex + 1) % TREND_QUESTIONS.length;
+    renderTrendQuestion();
+  });
+
+  renderTrendQuestion();
+
+  // ── ION SIZE CHOOSER ─────────────────────────────────────────
+  const ION_QUESTIONS = [
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Na vs Na<sup>+</sup>',
+      options: ['Na', 'Na+'],
+      answer: 'Na',
+      correct: 'Right — Na is larger. Losing an electron to form a cation makes the species smaller.',
+      incorrect: 'Not quite — Na+ is a cation. Cations form by losing electrons, so they are usually smaller than the neutral atom. Compare the pair again with that rule.',
+      support: 'Na loses its 3s electron to form Na+, so the ion is pulled into a smaller space.',
+      revealAnswer: 'Answer: Na',
+      revealWhy: 'Why: forming Na+ removes the outermost occupied energy level, so the ion becomes much smaller than the atom.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Cl vs Cl<sup>−</sup>',
+      options: ['Cl', 'Cl−'],
+      answer: 'Cl−',
+      correct: 'Right — Cl− is larger. Gaining an electron to form an anion makes the species larger.',
+      incorrect: 'Not quite — Cl− is an anion. Anions form by gaining electrons, so electron-electron repulsion increases and the ion becomes larger. Compare the pair again with that rule.',
+      support: 'Cl gains one electron to form Cl−, so the extra repulsion spreads the outer electrons farther out.',
+      revealAnswer: 'Answer: Cl−',
+      revealWhy: 'Why: adding an electron increases repulsion in the valence shell, so chloride is larger than neutral chlorine.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Mg vs Mg<sup>2+</sup>',
+      options: ['Mg', 'Mg2+'],
+      answer: 'Mg',
+      correct: 'Right — Mg is larger. Losing electrons to form Mg2+ makes the ion smaller.',
+      incorrect: 'Not quite — Mg2+ is a cation. Cations are usually smaller than their neutral atoms because they have fewer electrons and the remaining electrons feel a stronger pull.',
+      support: 'Mg loses its two 3s electrons to form Mg2+, leaving the ion with a smaller outer occupied level.',
+      revealAnswer: 'Answer: Mg',
+      revealWhy: 'Why: Mg2+ has lost two electrons, so the remaining electrons are held more tightly and the ion shrinks.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'O vs O<sup>2−</sup>',
+      options: ['O', 'O2−'],
+      answer: 'O2−',
+      correct: 'Right — O2− is larger. Gaining electrons to form an anion makes the species larger.',
+      incorrect: 'Not quite — O2− is an anion. Anions gain electrons, so extra repulsion makes them larger than the neutral atom.',
+      support: 'O gains two electrons to form oxide, so the added electron-electron repulsion expands the outer electron cloud.',
+      revealAnswer: 'Answer: O2−',
+      revealWhy: 'Why: oxygen gains electrons to form O2−, so the extra electrons increase repulsion and make the ion larger.'
+    }
+  ];
+
+  const ionPrompt = document.getElementById('ionPrompt');
+  const ionPairBadge = document.getElementById('ionPairBadge');
+  const ionAnswers = document.getElementById('ionAnswers');
+  const ionCheckBtn = document.getElementById('ionCheckBtn');
+  const ionRevealBtn = document.getElementById('ionRevealBtn');
+  const ionNextBtn = document.getElementById('ionNextBtn');
+  const ionFeedback = document.getElementById('ionFeedback');
+  const ionSupport = document.getElementById('ionSupport');
+  const ionReveal = document.getElementById('ionReveal');
+
+  let ionIndex = 0;
+  let ionSelection = null;
+  let ionChecked = false;
+
+  function renderIonQuestion() {
+    const q = ION_QUESTIONS[ionIndex];
+    ionSelection = null;
+    ionChecked = false;
+    ionPrompt.textContent = q.prompt;
+    ionPairBadge.innerHTML = q.pairHtml;
+    ionAnswers.innerHTML = '';
+    q.options.forEach(option => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.innerHTML = option.replace('2+', '<sup>2+</sup>').replace('2−', '<sup>2−</sup>').replace('+', '<sup>+</sup>').replace('−', '<sup>−</sup>');
+      btn.addEventListener('click', function () {
+        ionSelection = option;
+        ionCheckBtn.disabled = false;
+        document.querySelectorAll('#ionAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        btn.classList.add('active');
+      });
+      ionAnswers.appendChild(btn);
+    });
+    ionCheckBtn.disabled = true;
+    ionRevealBtn.disabled = true;
+    ionNextBtn.disabled = true;
+    setToolFeedback(ionFeedback, 'Choose one species, then click Check.', 'pending');
+    ionSupport.innerHTML = '';
+    ionReveal.innerHTML = '';
+    toggleToolPanel(ionSupport, false);
+    toggleToolPanel(ionReveal, false);
+  }
+
+  ionCheckBtn.addEventListener('click', function () {
+    const q = ION_QUESTIONS[ionIndex];
+    if (!ionSelection) {
+      setToolFeedback(ionFeedback, 'Choose one species, then click Check.', 'pending');
+      return;
+    }
+    ionChecked = true;
+    ionRevealBtn.disabled = false;
+    ionNextBtn.disabled = false;
+    toggleToolPanel(ionSupport, true);
+    ionSupport.innerHTML = `
+      <div class="icon">◉</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Rule to use</p>
+        <ul class="key-fact-list">
+          <li>${q.support}</li>
+        </ul>
+      </div>
+    `;
+    if (ionSelection === q.answer) {
+      setToolFeedback(ionFeedback, q.correct, 'correct');
+    } else {
+      setToolFeedback(ionFeedback, q.incorrect, 'incorrect');
+    }
+  });
+
+  ionRevealBtn.addEventListener('click', function () {
+    if (!ionChecked) return;
+    const q = ION_QUESTIONS[ionIndex];
+    toggleToolPanel(ionReveal, true);
+    ionReveal.innerHTML = `
+      <div class="icon">▸</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Reveal reasoning</p>
+        <ul class="key-fact-list">
+          <li>${q.revealAnswer}</li>
+          <li>${q.revealWhy}</li>
+        </ul>
+      </div>
+    `;
+  });
+
+  ionNextBtn.addEventListener('click', function () {
+    ionIndex = (ionIndex + 1) % ION_QUESTIONS.length;
+    renderIonQuestion();
+  });
+
+  renderIonQuestion();
+
+  // ── STATIC PT DIAGRAMS (5.1 groups/periods · 5.2 families) ──────────
+  (function () {
+    const BLOCK = { am:'s-blk', ae:'s-blk', tm:'d-blk', ptm:'p-blk', ml:'p-blk', nm:'p-blk', ha:'p-blk', ng:'p-blk', la:'f-blk', ac:'f-blk' };
+    const FAM   = { am:'fam-alkali', ae:'fam-alkaline', tm:'fam-trans', ptm:'fam-ptrans', ml:'fam-metalloid', nm:'fam-nonmetal', ha:'fam-halogen', ng:'fam-noble', la:'fam-lant', ac:'fam-act' };
+
+    function makeCell(cls, text, extraStyle) {
+      const d = document.createElement('div');
+      d.className = cls;
+      if (text) d.textContent = text;
+      if (extraStyle) d.style.cssText = extraStyle;
+      return d;
+    }
+
+    function buildPTDiagram(containerId, mode) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const isOrg = mode === 'org';
+      // Period label column width: wider in org mode to fit "Period X" text
+      const lblW = isOrg ? 58 : 20;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'pt-diag-wrap';
+
+      // Group number header row — corner width matches period label width
+      const hdr = document.createElement('div');
+      hdr.className = 'pt-diag-hdr';
+      const corner = makeCell('pt-diag-hdr-lbl', '');
+      corner.style.width = lblW + 'px';
+      hdr.appendChild(corner);
+      const grpsWrap = document.createElement('div');
+      grpsWrap.className = 'pt-diag-hdr-grps';
+      for (let g = 1; g <= 18; g++) grpsWrap.appendChild(makeCell('pt-diag-grp-num', g));
+      hdr.appendChild(grpsWrap);
+      wrap.appendChild(hdr);
+
+      // Main 7-period rows (extra top gap in org mode = "move down")
+      const main = document.createElement('div');
+      main.className = 'pt-diag-main';
+      if (isOrg) main.style.marginTop = '0.55rem';
+      for (let p = 1; p <= 7; p++) {
+        const row = document.createElement('div');
+        row.className = 'pt-diag-row';
+        const pl = makeCell('pt-diag-period-lbl', isOrg ? 'Period ' + p : p);
+        pl.style.width = lblW + 'px';
+        if (isOrg) pl.style.fontSize = '0.56rem';
+        row.appendChild(pl);
+        for (let g = 1; g <= 18; g++) {
+          const el = byPos[`${p}-${g}`];
+          if (!el) {
+            if (g === 3 && (p === 6 || p === 7)) {
+              row.appendChild(makeCell('pt-dc f-blk fblk-ph', p === 6 ? '*' : '**'));
+            } else {
+              row.appendChild(makeCell('pt-dc empty', ''));
+            }
+          } else {
+            const blk = FAM[el[5]] || 'fam-nonmetal';
+            row.appendChild(makeCell(`pt-dc ${blk}`, el[0]));
+          }
+        }
+        main.appendChild(row);
+      }
+      wrap.appendChild(main);
+
+      // f-block rows — offset = lblW + 3×col(30) + 2×gap(2) - f-lbl(20)
+      const fOffsetPx = lblW + 74;
+      const fSec = document.createElement('div');
+      fSec.className = 'pt-diag-f-section';
+      const fOffsetEl = makeCell('pt-diag-f-offset', '');
+      fOffsetEl.style.width = fOffsetPx + 'px';
+      fSec.appendChild(fOffsetEl);
+      const fMain = document.createElement('div');
+      fMain.className = 'pt-diag-f-main';
+      [['Ln', 8], ['An', 9]].forEach(([lbl, pr]) => {
+        const frow = document.createElement('div');
+        frow.className = 'pt-diag-f-row';
+        frow.appendChild(makeCell('pt-diag-f-lbl', lbl));
+        const fcells = document.createElement('div');
+        fcells.className = 'pt-diag-f-cells';
+        for (let c = 4; c <= 18; c++) {
+          const el = byPos[`${pr}-${c}`];
+          if (!el) { fcells.appendChild(makeCell('pt-dc empty', '')); }
+          else {
+            const blk = FAM[el[5]] || 'fam-lant';
+            fcells.appendChild(makeCell(`pt-dc ${blk}`, el[0]));
+          }
+        }
+        frow.appendChild(fcells);
+        fMain.appendChild(frow);
+      });
+      fSec.appendChild(fMain);
+      wrap.appendChild(fSec);
+
+      // Family legend (5.2 only) — built here, placed to the right of the table below
+      let famLegend = null;
+      if (!isOrg) {
+        famLegend = document.createElement('div');
+        famLegend.className = 'fam-legend-side';
+        [
+          ['#fee2e2','#fca5a5','Alkali Metals (Group 1)'],
+          ['#ffedd5','#fdba74','Alkaline Earth Metals (Group 2)'],
+          ['#fef3c7','#fcd34d','Transition Metals (Groups 3–12)'],
+          ['#ede9fe','#c4b5fd','Post-transition Metals'],
+          ['#d1fae5','#6ee7b7','Metalloids'],
+          ['#dbeafe','#93c5fd','Nonmetals'],
+          ['#e0e7ff','#a5b4fc','Halogens (Group 17)'],
+          ['#fae8ff','#e879f9','Noble Gases (Group 18)'],
+          ['#fce7f3','#f9a8d4','Lanthanides'],
+          ['#fff1f2','#fda4af','Actinides'],
+        ].forEach(([bg, border, name]) => {
+          const item = document.createElement('div');
+          item.className = 'fam-legend-item';
+          const dot = document.createElement('span');
+          dot.className = 'fam-dot';
+          dot.style.background = bg;
+          dot.style.border = `1px solid ${border}`;
+          item.appendChild(dot);
+          item.appendChild(document.createTextNode(name));
+          famLegend.appendChild(item);
+        });
+      }
+
+      // Org mode: group label above columns, period axis label on left
+      if (isOrg) {
+        // Insert group label row above the group-number header
+        const grpLblRow = document.createElement('div');
+        grpLblRow.style.cssText = 'display:flex;gap:2px;margin-bottom:4px;';
+        const grpSpacer = document.createElement('div');
+        grpSpacer.style.cssText = `width:${lblW}px;flex-shrink:0;`;
+        grpLblRow.appendChild(grpSpacer);
+        const grpLblText = document.createElement('div');
+        grpLblText.style.cssText = 'flex:1;text-align:center;font-size:0.7rem;color:var(--dim);';
+        grpLblText.innerHTML = '<span class="pt-diag-arrow-badge arrow-group">↕ Group (column)</span> &nbsp;18 groups · same valence electron count down each column';
+        grpLblRow.appendChild(grpLblText);
+        wrap.insertBefore(grpLblRow, hdr);
+
+        const axisLbl = document.createElement('div');
+        axisLbl.className = 'pt-diag-y-axis';
+        axisLbl.innerHTML =
+          '<span class="axis-badge">← Period (row) →</span>' +
+          '<span>7 periods</span>' +
+          '<span>All elements in a row share the same outermost energy level</span>';
+
+        const outerFlex = document.createElement('div');
+        outerFlex.className = 'pt-diag-outer-flex';
+        outerFlex.appendChild(axisLbl);
+        outerFlex.appendChild(wrap);
+        container.appendChild(outerFlex);
+      } else {
+        const famOuter = document.createElement('div');
+        famOuter.className = 'pt-diag-fam-outer';
+        famOuter.appendChild(wrap);
+        if (famLegend) famOuter.appendChild(famLegend);
+        container.appendChild(famOuter);
+      }
+    }
+
+    buildPTDiagram('diag-org', 'org');
+    buildPTDiagram('diag-families', 'fam');
+  })();
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>

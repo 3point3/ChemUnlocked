@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 09 — Stoichiometry | ChemUnlocked</title>
+<meta name="description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<link rel="canonical" href="https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html">
+<meta property="og:title" content="Unit 09 — Stoichiometry | ChemUnlocked">
+<meta property="og:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<meta property="og:url" content="https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ChemUnlocked">
+<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unit 09 — Stoichiometry | ChemUnlocked">
+<meta name="twitter:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
+<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:site" content="@ChemUnlocked">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Unit 09 — Stoichiometry",
+  "description": "Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ChemUnlocked",
+    "url": "https://chemunlocked.com"
+  },
+  "url": "https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html"
+}
+</script>
+<link rel="stylesheet" href="chem.css">
+<meta name="theme-color" content="#2563eb">
+<style>
+
+/* ── Hi-Lo specific helpers (no new classes, just semantic tweaks) ── */
+.vocab-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin-top: 0.75rem;
+}
+.vocab-term {
+  font-weight: 700;
+  color: var(--accent2);
+  white-space: nowrap;
+}
+.road-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.9rem 0 0.4rem;
+  font-size: 0.92rem;
+}
+.road-step {
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.road-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.highlight-box {
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.9rem;
+  color: #713f12;
+  font-size: 0.95rem;
+}
+.highlight-box strong { color: #92400e; }
+.mini-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.95rem;
+}
+.mini-visual-card {
+  padding: 0.9rem 0.95rem;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #ffffff, #eff6ff);
+}
+.mini-visual-card .mini-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mini-visual-card .mini-value {
+  font-family: 'DM Mono', monospace;
+  color: #1e3a8a;
+  font-size: 1.02rem;
+}
+.mini-visual-card .mini-copy {
+  margin: 0.45rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.95rem;
+}
+.compare-card {
+  padding: 0.9rem 0.95rem;
+  border: 1px solid #d9c8b4;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #ffffff, #fff8ed);
+}
+.compare-card strong {
+  color: var(--accent2);
+}
+.compare-card p {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+.check-list li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed var(--border);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Tool UI ── */
+.ratio-choice-fraction {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.2rem;
+  min-width: 120px;
+}
+.ratio-choice-frac-line {
+  width: 100%;
+  max-width: 180px;
+  height: 2px;
+  background: currentColor;
+}
+.ratio-choice-prefix,
+.ratio-choice-suffix {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.ratio-choice-num,
+.ratio-choice-den {
+  font-family: inherit;
+  text-align: center;
+  line-height: 1.3;
+}
+.inline-frac {
+  display: inline-grid;
+  justify-items: center;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+  min-width: 90px;
+}
+.inline-frac-num,
+.inline-frac-den {
+  font-family: 'DM Mono', monospace;
+  color: #1e3a8a;
+  text-align: center;
+  line-height: 1.25;
+}
+.inline-frac-bar {
+  width: 100%;
+  height: 2px;
+  background: #1e3a8a;
+  margin: 0.12rem 0;
+}
+@media (max-width: 640px) {
+  .vocab-row { grid-template-columns: 1fr; }
+  .mini-visual-grid,
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+</head>
+<body class="page-unit page-09-learn-chemistry-stoichiometry">
+
+<div class="starfield"></div>
+
+
+<main id="main-content" role="main" tabindex="-1">
+<div class="container">
+
+  <header>
+    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 09</div>
+    <h1>Stoichiometry</h1>
+    <p class="subtitle">Stoichiometry is the math of chemical reactions — it tells you exactly how much product to expect, and why you sometimes get less.</p>
+  </header>
+
+  <p class="learning-objectives-intro">What you'll learn</p>
+  <div class="learning-objectives" aria-label="What you will learn">
+    <span>Use mole ratios from a balanced equation to convert between reactants and products.</span>
+    <span>Identify the limiting reagent and calculate theoretical yield.</span>
+    <span>Calculate percent yield and explain common sources of experimental error.</span>
+    <span>Solve multi-step stoichiometry problems involving mass, moles, and gas volume.</span>
+  </div>
+
+  <!-- ── TAB NAV ── -->
+  <div class="nav-tabs" role="tablist" aria-label="Unit 09 content sections">
+    <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+      <span class="tab-icon">1</span>
+      <span class="tab-label">Learn</span>
+      <span class="tab-hint">Core ideas and guided notes</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Explore</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+      <span class="tab-icon">3</span>
+      <span class="tab-label">Examples</span>
+      <span class="tab-hint">Step-by-step worked problems</span>
+    </button>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       CONCEPTS TAB
+  ══════════════════════════════════════════════ -->
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+
+    <!-- 9.1 What Is Stoichiometry? -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">9.1</span> What Is Stoichiometry?</h2>
+      <p>The word <strong>stoichiometry</strong> (stoy-key-AH-meh-tree) sounds intimidating, but the idea is simple. It is the math that tells you <em>how much</em> of each chemical is used or made in a reaction.</p>
+      <p>Think of a recipe. If a cookie recipe says "use 2 cups of flour for every 1 cup of sugar," you can scale it up or down.</p>
+      <p>A balanced chemical equation works the same way. The <strong>coefficients</strong> act like the recipe amounts for the reaction.</p>
+
+      <div class="formula-box">
+        <span class="label">Example Equation</span>
+        2 H₂ + O₂ → 2 H₂O
+      </div>
+
+      <p style="margin-top:0.8rem;">This means: <strong>2 molecules</strong> of hydrogen gas react with <strong>1 molecule</strong> of oxygen gas to make <strong>2 molecules</strong> of water. The ratio 2 : 1 : 2 never changes — no matter how big or small the batch.</p>
+
+      <div class="mini-visual-grid" aria-label="Coefficient recipe visual">
+        <div class="mini-visual-card">
+          <span class="mini-label">Reactant 1</span>
+          <div class="mini-value">2 mol H₂</div>
+          <p class="mini-copy">The coefficient says each batch needs 2 moles of hydrogen.</p>
+        </div>
+        <div class="mini-visual-card">
+          <span class="mini-label">Reactant 2</span>
+          <div class="mini-value">1 mol O₂</div>
+          <p class="mini-copy">The same batch needs 1 mole of oxygen.</p>
+        </div>
+        <div class="mini-visual-card">
+          <span class="mini-label">Product</span>
+          <div class="mini-value">2 mol H₂O</div>
+          <p class="mini-copy">That batch makes 2 moles of water.</p>
+        </div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+        <p class="key-fact-title">Big idea</p>
+          <ul class="key-fact-list">
+          <li>The coefficients in a balanced equation tell you the <em>mole ratio</em> — the ratio of moles of every substance in the reaction.</li>
+          <li>This ratio is the heart of all stoichiometry problems.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9.2 Mole Ratios and Stoichiometric Factors -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">9.2</span> Mole Ratios — The Conversion Tool</h2>
+      <p>A <strong>mole ratio</strong> (also called a <strong>stoichiometric factor</strong>) is a fraction you build from the coefficients in a balanced equation. You use it like a unit conversion — it lets you switch from moles of one substance to moles of another.</p>
+      <p><strong>Important:</strong> the numbers in the mole ratio come from the <strong>balanced equation coefficients</strong>, not from molar masses and not from the subscripts inside one formula.</p>
+
+      <div class="formula-box">
+        <span class="label">General Stoichiometric Factor</span>
+        mol of substance A
+        ─────────────────── = mole ratio
+        mol of substance B
+      </div>
+
+      <p style="margin-top:0.8rem;">From the equation <strong>N₂ + 3 H₂ → 2 NH₃</strong>, you can write these mole ratios:</p>
+
+      <div class="vocab-row">
+        <span class="vocab-term"><span class="inline-frac"><span class="inline-frac-num">3 mol H₂</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol N₂</span></span></span>
+        <span>For every 1 mole of nitrogen used, 3 moles of hydrogen are used.</span>
+        <span class="vocab-term"><span class="inline-frac"><span class="inline-frac-num">2 mol NH₃</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol N₂</span></span></span>
+        <span>For every 1 mole of nitrogen used, 2 moles of ammonia are made.</span>
+        <span class="vocab-term"><span class="inline-frac"><span class="inline-frac-num">2 mol NH₃</span><span class="inline-frac-bar"></span><span class="inline-frac-den">3 mol H₂</span></span></span>
+        <span>For every 3 moles of hydrogen used, 2 moles of ammonia are made.</span>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>You can flip any mole ratio upside down.</li>
+          <li>Pick the version that cancels the unit you want to get rid of.</li>
+          <li>The substance you start with goes in the denominator. The substance you want goes in the numerator.</li>
+          <li>This is the same factor-label method you used in the Moles unit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9.3 The Stoichiometry Roadmap -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">9.3</span> The Stoichiometry Roadmap</h2>
+      <p>Many stoichiometry problems follow this path when you start with grams and need grams of a different substance. First identify what you are given and what you are asked to find. Then use only the steps you need.</p>
+      <p><strong>Always check that the equation is balanced before using any mole ratio.</strong> If the coefficients are wrong, every later conversion will also be wrong.</p>
+
+      <p><strong>Common grams-to-grams path:</strong></p>
+      <div class="road-map">
+        <span class="road-step">1. Grams → Moles</span>
+        <span class="road-arrow">→</span>
+        <span class="road-step">2. Moles → Moles</span>
+        <span class="road-arrow">→</span>
+        <span class="road-step">3. Moles → Grams</span>
+      </div>
+
+      <ul class="check-list">
+        <li><strong>Step 1 — Convert to moles:</strong> Divide the grams given by the molar mass of that substance. Now you have moles.</li>
+        <li><strong>Step 2 — Use the mole ratio:</strong> Multiply by the stoichiometric factor from the balanced equation. This switches you from moles of the given substance to moles of the wanted substance.</li>
+        <li><strong>Step 3 — Convert to grams:</strong> Multiply by the molar mass of the wanted substance. Now you have grams of your answer.</li>
+      </ul>
+
+      <div class="formula-box">
+        <span class="label">The Full Factor-Label Chain</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">g A × <span class="inline-frac"><span class="inline-frac-num">1 mol A</span><span class="inline-frac-bar"></span><span class="inline-frac-den">MM_A</span></span> × <span class="inline-frac"><span class="inline-frac-num">mol B</span><span class="inline-frac-bar"></span><span class="inline-frac-den">mol A</span></span> × <span class="inline-frac"><span class="inline-frac-num">MM_B</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol B</span></span> = g B</div>
+        </div>
+      </div>
+
+      <p style="margin-top:0.75rem;">Where MM = molar mass in g/mol, and the middle fraction is the mole ratio from the balanced equation.</p>
+      <p><strong>If you start with moles, skip Step 1. If your answer should be in moles, stop after Step 2.</strong></p>
+    </div>
+
+    <!-- 9.4 Limiting Reactant -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">9.4</span> Limiting Reactant</h2>
+      <p>What happens when you do not have exactly the right amounts of each reactant? One ingredient runs out first and stops the reaction. That ingredient is called the <strong>limiting reactant</strong> (or limiting reagent).</p>
+
+      <div class="highlight-box">
+        <strong>Sandwich analogy:</strong> You have 3 slices of bread and 5 slices of cheese. Each sandwich needs 2 bread + 1 cheese. You can only make 1 complete sandwich — bread runs out first. Bread is the limiting reactant. The extra cheese is the <strong>excess reactant</strong>.
+      </div>
+
+      <p style="margin-top:0.85rem;">In chemistry, the limiting reactant controls how much product you can make. Once it is used up, the reaction stops — even if other reactants are left over.</p>
+
+      <div class="compare-grid" aria-label="How to compare reactants">
+        <div class="compare-card">
+          <strong>Wrong comparison</strong>
+          <p>Compare raw grams and pick the smaller number.</p>
+          <p>That fails because different substances have different molar masses and different coefficients.</p>
+        </div>
+        <div class="compare-card">
+          <strong>Correct comparison</strong>
+          <p>Convert each reactant through the balanced equation and ask how much product each could make.</p>
+          <p>The reactant that makes less product is limiting.</p>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">How to Find the Limiting Reactant</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule">For each reactant, calculate how much product it would make.</div>
+          <div class="formula-rule">The reactant that produces less product is the limiting reactant.</div>
+        </div>
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+        <p class="key-fact-title">Common mistake</p>
+          <ul class="key-fact-list">
+          <li>Students pick the reactant with fewer grams.</li>
+          <li>That is wrong — you must compare <em>moles</em> relative to the equation, not raw grams.</li>
+          <li>Always convert to moles first.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9.5 Theoretical Yield, Actual Yield, and Percent Yield -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">9.5</span> Theoretical Yield, Actual Yield, and Percent Yield</h2>
+
+      <div class="vocab-row">
+        <span class="vocab-term">Theoretical yield</span>
+        <span>The maximum amount of product the reaction could make, based on stoichiometry and the limiting reactant.</span>
+        <span class="vocab-term">Actual yield</span>
+        <span>The amount of product you actually collect in the lab.</span>
+        <span class="vocab-term">Percent yield</span>
+        <span>Percent yield compares what you collected to the maximum you could have collected.</span>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Percent Yield Formula</span>
+        Percent Yield = (Actual Yield ÷ Theoretical Yield) × 100%
+      </div>
+
+      <p style="margin-top:0.8rem;">Actual yield goes on top because it is the amount you got. Theoretical yield goes on the bottom because it is the maximum predicted amount.</p>
+
+      <div class="highlight-box">
+        <strong>Example:</strong> If stoichiometry says you should make 10.0 g of product (theoretical yield), but you only collect 8.5 g in lab (actual yield), your percent yield = (8.5 ÷ 10.0) × 100% = <strong>85%</strong>.
+      </div>
+
+      <div class="key-fact">
+        <div class="icon">▸</div>
+        <div class="key-fact-copy">
+          <ul class="key-fact-list">
+          <li>True chemical yield should not exceed 100%, but a measured value above 100% can happen if the product is wet, impure, or measured incorrectly.</li>
+          <li>If your calculation gives more than 100%, something went wrong — recheck your math or your measurement.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #concepts -->
+
+
+  <!-- ══════════════════════════════════════════════
+       TOOLS TAB
+  ══════════════════════════════════════════════ -->
+  <div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+
+    <p class="section-intro">Each tool below presents a stoichiometry scenario — choose the mole ratio or identify the limiting reactant before the reasoning is revealed. For full calculation practice, use the Unit 9 Practice page.</p>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">Tool 1</span> Mole Ratio Direction Check</h2>
+      <div class="tool-output tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong>Choose the mole ratio that cancels the given substance and leaves the wanted substance.</strong></p>
+          <p class="tool-hint">Given goes on the bottom. Wanted goes on the top.</p>
+          <p class="tool-scenario-text"><strong>Balanced equation:</strong> <span id="stoichEquation">Loading question...</span></p>
+          <p class="tool-scenario-text"><strong>Task:</strong> <span id="stoichPrompt">Loading question...</span></p>
+        </div>
+        <div class="segment-controls tool-choice-row" id="ratioChoices" role="group" aria-label="Mole ratio choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" id="checkRatioBtn">Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="revealRatioBtn" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="nextRatioBtn" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="ratioOutput" data-state="pending">Choose one ratio, then click Check.</div>
+        <div class="key-fact tool-reveal" id="ratioReveal" hidden>
+          <div class="icon">▸</div>
+          <div class="key-fact-copy">
+            <p class="key-fact-title">Why this ratio works</p>
+            <ul class="key-fact-list" id="ratioRevealCopy"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><span class="num">Tool 2</span> Limiting Reactant Decision Check</h2>
+      <div class="tool-output tool-flow">
+        <div class="tool-prompt tool-scenario-prompt">
+          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-scenario-title"><strong>Choose the reactant that runs out first.</strong></p>
+          <p class="tool-hint">Do not compare the starting numbers directly. Compare how much product each reactant could make.</p>
+          <p class="tool-scenario-text"><strong>Balanced equation:</strong> <span id="limitEquation">Loading scenario...</span></p>
+          <p class="tool-scenario-text"><strong>Available amounts:</strong> <span id="limitAmounts">Loading scenario...</span></p>
+        </div>
+        <div class="segment-controls tool-choice-row" id="limitChoices" role="group" aria-label="Limiting reactant choices"></div>
+        <div class="segment-controls tool-action-row">
+          <button type="button" class="segment-btn tool-check-btn explore-check" id="checkLimitBtn">Check</button>
+          <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="revealLimitBtn" disabled>Reveal reasoning</button>
+          <button type="button" class="segment-btn tool-next-btn explore-next" id="nextLimitBtn" disabled>Try another</button>
+        </div>
+        <div class="segment-readout tool-feedback" id="limitOutput" data-state="pending">Choose one verdict, then click Check.</div>
+        <div class="key-fact tool-reveal" id="limitReveal" hidden>
+          <div class="icon">▸</div>
+          <div class="key-fact-copy">
+            <p class="key-fact-title">Why this reactant limits</p>
+            <ul class="key-fact-list" id="limitRevealCopy"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #tools -->
+
+
+  <!-- ══════════════════════════════════════════════
+       EXAMPLES TAB
+  ══════════════════════════════════════════════ -->
+  <div id="examples" class="section" role="tabpanel" aria-labelledby="tab-examples" aria-hidden="true">
+
+    <!-- Ex 1: Grams of Reactant → Grams of Product -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">Ex 1</span> Grams of Reactant → Grams of Product</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Convert grams of reactant to grams of product.</p>
+        <p><strong>Given:</strong> 16.0 g CH₄, excess O₂, CH₄ + 2 O₂ → CO₂ + 2 H₂O</p>
+        <p><strong>Find:</strong> grams of CO₂ produced</p>
+      </div>
+      <p class="example-note"><strong>Road map:</strong> balance/check the equation, then grams → moles → mole ratio → grams.</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Find the molar mass of CH₄</strong>
+            <p>C = 12.01 g/mol &nbsp;|&nbsp; H₄ = 4 × 1.008 = 4.032 g/mol</p>
+            <p>Molar mass of CH₄ = 12.01 + 4.032 = <strong>16.04 g/mol</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Find the molar mass of CO₂</strong>
+            <p>C = 12.01 g/mol &nbsp;|&nbsp; O₂ = 2 × 16.00 = 32.00 g/mol</p>
+            <p>Molar mass of CO₂ = 12.01 + 32.00 = <strong>44.01 g/mol</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Write the mole ratio from the balanced equation</strong>
+            <p>Coefficients: 1 mol CH₄ produces 1 mol CO₂ → mole ratio = <strong><span class="inline-frac"><span class="inline-frac-num">1 mol CO₂</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol CH₄</span></span></strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Build the factor-label chain</strong>
+            <div class="fl-label">Factor-Label Chain</div>
+            <div class="fl-chain">
+              16.0 g CH₄ ×
+              <span class="fl-frac">
+                <span class="fl-num">1 mol CH₄</span>
+                <span class="fl-den">16.04 g CH₄</span>
+              </span>
+              ×
+              <span class="fl-frac">
+                <span class="fl-num">1 mol CO₂</span>
+                <span class="fl-den">1 mol CH₄</span>
+              </span>
+              ×
+              <span class="fl-frac">
+                <span class="fl-num">44.01 g CO₂</span>
+                <span class="fl-den">1 mol CO₂</span>
+              </span>
+              = <span class="fl-result">43.9 g CO₂</span>
+            </div>
+            <div class="fl-cancel">g CH₄ cancel → mol CH₄ cancel → mol CO₂ cancel → g CO₂ ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>Burning 16.0 g of methane produces <strong>43.9 g of CO₂</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 2: Moles of Reactant → Moles of Product -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">Ex 2</span> Moles of Reactant → Moles of Product</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Convert moles of reactant to moles of product.</p>
+        <p><strong>Given:</strong> 0.500 mol N₂, excess H₂, N₂ + 3 H₂ → 2 NH₃</p>
+        <p><strong>Find:</strong> moles of NH₃ produced</p>
+      </div>
+      <p class="example-note"><strong>Road map:</strong> because the problem already starts in moles, skip molar-mass work and go straight to the mole ratio.</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Identify the mole ratio</strong>
+            <p>From the equation: 1 mol N₂ produces 2 mol NH₃<br>
+            Mole ratio = <strong><span class="inline-frac"><span class="inline-frac-num">2 mol NH₃</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol N₂</span></span></strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Multiply (no molar mass needed — we start in moles!)</strong>
+            <div class="fl-label">Factor-Label Chain</div>
+            <div class="fl-chain">
+              0.500 mol N₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol NH₃</span>
+                <span class="fl-den">1 mol N₂</span>
+              </span>
+              = <span class="fl-result">1.00 mol NH₃</span>
+            </div>
+            <div class="fl-cancel">mol N₂ cancel → mol NH₃ ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>0.500 mol of N₂ produces <strong>1.00 mol of NH₃</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 3: Finding the Limiting Reactant -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">Ex 3</span> Finding the Limiting Reactant</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Identify the limiting reactant and calculate the product mass.</p>
+        <p><strong>Given:</strong> 5.00 g H₂ and 24.0 g O₂, 2 H₂ + O₂ → 2 H₂O</p>
+        <p><strong>Find:</strong> limiting reactant and grams of H₂O formed</p>
+      </div>
+      <p class="example-note"><strong>Road map:</strong> convert both reactants to moles, test each one separately, then keep the smaller product amount.</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Convert both reactants to moles</strong>
+            <p>Molar mass H₂ = 2.016 g/mol &nbsp;→&nbsp; 5.00 g ÷ 2.016 = <strong>2.48 mol H₂</strong></p>
+            <p>Molar mass O₂ = 32.00 g/mol &nbsp;→&nbsp; 24.0 g ÷ 32.00 = <strong>0.750 mol O₂</strong></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Calculate how much H₂O each reactant could make (separately)</strong>
+            <p><em>Using H₂:</em> mole ratio = <span class="inline-frac"><span class="inline-frac-num">2 mol H₂O</span><span class="inline-frac-bar"></span><span class="inline-frac-den">2 mol H₂</span></span> = 1:1</p>
+            <div class="fl-chain">
+              2.48 mol H₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol H₂O</span>
+                <span class="fl-den">2 mol H₂</span>
+              </span>
+              = <span class="fl-result">2.48 mol H₂O</span>
+            </div>
+            <p style="margin-top:0.7rem;"><em>Using O₂:</em> mole ratio = <span class="inline-frac"><span class="inline-frac-num">2 mol H₂O</span><span class="inline-frac-bar"></span><span class="inline-frac-den">1 mol O₂</span></span></p>
+            <div class="fl-chain">
+              0.750 mol O₂ ×
+              <span class="fl-frac">
+                <span class="fl-num">2 mol H₂O</span>
+                <span class="fl-den">1 mol O₂</span>
+              </span>
+              = <span class="fl-result">1.50 mol H₂O</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Compare and identify the limiting reactant</strong>
+            <p><strong>Compare the possible product amounts, not the starting grams.</strong></p>
+            <p>H₂ could make 2.48 mol H₂O, but O₂ could make only 1.50 mol H₂O.</p>
+            <p><strong>O₂ produces less product, so O₂ is the limiting reactant.</strong></p>
+            <p>That means H₂ is in excess and some will be left over.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 4 — Convert the limiting reactant's moles of product to grams</strong>
+            <p>Molar mass H₂O = 18.02 g/mol</p>
+            <div class="fl-chain">
+              1.50 mol H₂O ×
+              <span class="fl-frac">
+                <span class="fl-num">18.02 g H₂O</span>
+                <span class="fl-den">1 mol H₂O</span>
+              </span>
+              = <span class="fl-result">27.0 g H₂O</span>
+            </div>
+            <div class="fl-cancel">mol H₂O cancel → g H₂O ✓</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>O₂ is the limiting reactant. The reaction produces <strong>27.0 g of water</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ex 4: Percent Yield -->
+    <div class="card">
+      <h2 class="card-title"><span class="num">Ex 4</span> Calculating Percent Yield</h2>
+      <div class="example-setup">
+        <p><strong>Problem:</strong> Calculate percent yield.</p>
+        <p><strong>Given:</strong> aspirin theoretical yield = 14.4 g, actual yield = 11.2 g</p>
+        <p><strong>Find:</strong> percent yield</p>
+      </div>
+      <p class="example-note"><strong>Road map:</strong> label which value is actual and which is theoretical, then place actual over theoretical.</p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 1 — Identify which value is actual and which value is theoretical</strong>
+            <p>Actual yield = <strong>11.2 g</strong> because this is the amount collected in the lab.</p>
+            <p>Theoretical yield = <strong>14.4 g</strong> because this is the maximum amount predicted by stoichiometry.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Put actual yield on top and theoretical yield on the bottom</strong>
+            <div class="fl-label">Percent Yield Formula</div>
+            <div class="fl-chain">
+              Percent Yield =
+              <span class="fl-frac">
+                <span class="fl-num">Actual Yield</span>
+                <span class="fl-den">Theoretical Yield</span>
+              </span>
+              × 100%
+              =
+              <span class="fl-frac">
+                <span class="fl-num">11.2 g</span>
+                <span class="fl-den">14.4 g</span>
+              </span>
+              × 100% = <span class="fl-result">77.8%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Answer</strong>
+            <p>The student's percent yield is <strong>77.8%</strong>. This means the student collected 77.8% of the amount the reaction was predicted to make.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end #examples -->
+
+  <!-- ══════════════════════════════════════════════
+       PRACTICE BANNER (outside all tabs)
+  ══════════════════════════════════════════════ -->
+  <div class="practice-banner">
+    <div class="practice-banner-left">
+      <div class="practice-banner-eyebrow">✦ Practice Problems</div>
+      <div class="practice-banner-headline">Bite-sized Unit 09 practice: 3 randomized problems at a time.</div>
+      <div class="practice-banner-features">
+        <span>✓ 81-problem bank</span>
+        <span>✓ Thousands of unique review sets</span>
+        <span>✓ Instant feedback + worked solutions</span>
+        <span>✓ Unit 09 aligned</span>
+      </div>
+    </div>
+    <div class="practice-banner-right">
+      <a href="09_practice.html" class="practice-banner-btn">Start Practicing →</a>
+      <div class="practice-banner-note">Focused review sets &nbsp;·&nbsp; subscription required</div>
+    </div>
+  </div>
+
+  <nav class="unit-bottom-nav" aria-label="Unit 09 navigation">
+    <a class="unit-bottom-link" href="08_Learn_Chemical_Reactions.html">
+      <span class="unit-bottom-kicker">Previous</span>
+      <span class="unit-bottom-title">Unit 08 · Chemical Reactions</span>
+    </a>
+    <a class="unit-bottom-link is-practice" href="09_practice.html">
+      <span class="unit-bottom-kicker">Practice</span>
+      <span class="unit-bottom-title">Unit 09 · Stoichiometry Practice</span>
+    </a>
+    <a class="unit-bottom-link" href="10_Learn_Chemistry_Bonding.html">
+      <span class="unit-bottom-kicker">Next</span>
+      <span class="unit-bottom-title">Unit 10 · Chemical Bonding</span>
+    </a>
+  </nav>
+
+  <div class="scroll-hint">Introductory General Chemistry · Unit 09 · Stoichiometry</div>
+
+</div><!-- end .container -->
+</main>
+<script src="chem.js?v=20260422"></script>
+<script>
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderStackedFraction(numerator, denominator, prefix, suffix) {
+  const prefixHtml = prefix ? `<span class="ratio-choice-prefix">${escapeHtml(prefix)}</span>` : '';
+  const suffixHtml = suffix ? `<span class="ratio-choice-suffix">${escapeHtml(suffix)}</span>` : '';
+  return `
+    <span class="ratio-choice-fraction" aria-hidden="true">
+      ${prefixHtml}
+      <span class="ratio-choice-num">${escapeHtml(numerator)}</span>
+      <span class="ratio-choice-frac-line"></span>
+      <span class="ratio-choice-den">${escapeHtml(denominator)}</span>
+      ${suffixHtml}
+    </span>
+  `;
+}
+
+function setFeedbackState(id, text) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = text;
+  let state = 'info';
+  if (/^Right\b/.test(text)) state = 'correct';
+  else if (/^Not quite\b/.test(text)) state = 'incorrect';
+  else if (/click Check\.?$|first\.?$/.test(text)) state = 'pending';
+  el.dataset.state = state;
+}
+
+function updateChoiceSelection(container, selectedId, datasetName) {
+  if (!container) return;
+  container.querySelectorAll('button').forEach(function (btn) {
+    const isSelected = btn.dataset[datasetName] === selectedId;
+    btn.classList.toggle('active', isSelected);
+    btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+  });
+}
+
+function clearChoiceFeedback(container) {
+  if (!container) return;
+  container.querySelectorAll('button').forEach(function (btn) {
+    btn.classList.remove('correct', 'incorrect');
+  });
+}
+
+/* ── Tool 1: Mole Ratio Direction Check ── */
+document.addEventListener('DOMContentLoaded', function () {
+  const checkBtn = document.getElementById('checkRatioBtn');
+  const revealBtn = document.getElementById('revealRatioBtn');
+  const nextBtn = document.getElementById('nextRatioBtn');
+  const eqEl = document.getElementById('stoichEquation');
+  const promptEl = document.getElementById('stoichPrompt');
+  const choicesEl = document.getElementById('ratioChoices');
+  const revealPanel = document.getElementById('ratioReveal');
+  const revealCopy = document.getElementById('ratioRevealCopy');
+  if (!checkBtn || !revealBtn || !nextBtn || !eqEl || !promptEl || !choicesEl || !revealPanel || !revealCopy) return;
+
+  const stoichQuestions = [
+    {
+      equation: '2H₂ + O₂ → 2H₂O',
+      prompt: 'Choose the mole ratio that cancels mol H₂ and leaves mol H₂O.',
+      given: 'H2',
+      target: 'H2O',
+      ratios: [
+        { id: 'correct', numerator: '2 mol H₂O', denominator: '2 mol H₂', correct: true },
+        { id: 'flip', numerator: '2 mol H₂', denominator: '2 mol H₂O', correct: false },
+        { id: 'other-reactant', numerator: '1 mol O₂', denominator: '2 mol H₂', correct: false },
+        { id: 'wrong-denominator', numerator: '2 mol H₂O', denominator: '1 mol O₂', correct: false }
+      ]
+    },
+    {
+      equation: 'CH₄ + 2O₂ → CO₂ + 2H₂O',
+      prompt: 'Choose the mole ratio that cancels mol CH₄ and leaves mol CO₂.',
+      given: 'CH4',
+      target: 'CO2',
+      ratios: [
+        { id: 'correct', numerator: '1 mol CO₂', denominator: '1 mol CH₄', correct: true },
+        { id: 'flip', numerator: '1 mol CH₄', denominator: '1 mol CO₂', correct: false },
+        { id: 'wrong-product', numerator: '2 mol H₂O', denominator: '1 mol CH₄', correct: false },
+        { id: 'wrong-denominator', numerator: '1 mol CO₂', denominator: '2 mol O₂', correct: false }
+      ]
+    },
+    {
+      equation: 'N₂ + 3H₂ → 2NH₃',
+      prompt: 'Choose the mole ratio that cancels mol H₂ and leaves mol NH₃.',
+      given: 'H2',
+      target: 'NH3',
+      ratios: [
+        { id: 'correct', numerator: '2 mol NH₃', denominator: '3 mol H₂', correct: true },
+        { id: 'flip', numerator: '3 mol H₂', denominator: '2 mol NH₃', correct: false },
+        { id: 'wrong-reactant', numerator: '1 mol N₂', denominator: '3 mol H₂', correct: false },
+        { id: 'wrong-denominator', numerator: '2 mol NH₃', denominator: '1 mol N₂', correct: false }
+      ]
+    },
+    {
+      equation: '2KClO₃ → 2KCl + 3O₂',
+      prompt: 'Choose the mole ratio that cancels mol KClO₃ and leaves mol O₂.',
+      given: 'KClO3',
+      target: 'O2',
+      ratios: [
+        { id: 'correct', numerator: '3 mol O₂', denominator: '2 mol KClO₃', correct: true },
+        { id: 'flip', numerator: '2 mol KClO₃', denominator: '3 mol O₂', correct: false },
+        { id: 'wrong-product', numerator: '2 mol KCl', denominator: '2 mol KClO₃', correct: false },
+        { id: 'wrong-denominator', numerator: '3 mol O₂', denominator: '2 mol KCl', correct: false }
+      ]
+    },
+    {
+      equation: 'CaCO₃ → CaO + CO₂',
+      prompt: 'Choose the mole ratio that cancels mol CaCO₃ and leaves mol CO₂.',
+      given: 'CaCO3',
+      target: 'CO2',
+      ratios: [
+        { id: 'correct', numerator: '1 mol CO₂', denominator: '1 mol CaCO₃', correct: true },
+        { id: 'flip', numerator: '1 mol CaCO₃', denominator: '1 mol CO₂', correct: false },
+        { id: 'wrong-product', numerator: '1 mol CaO', denominator: '1 mol CaCO₃', correct: false },
+        { id: 'wrong-denominator', numerator: '1 mol CO₂', denominator: '1 mol CaO', correct: false }
+      ]
+    }
+  ];
+
+  let currentIndex = -1;
+  let selectedRatioId = '';
+  let hasChecked = false;
+
+  function plainMolLabel(label) {
+    return label.replace(/^\d+\s+/, '');
+  }
+
+  function renderRatioChoices(question) {
+    choicesEl.innerHTML = question.ratios.map(function (ratio) {
+      return `<button type="button" class="segment-btn tool-choice-btn explore-choice" data-ratio-id="${escapeHtml(ratio.id)}" aria-pressed="false" aria-label="${escapeHtml(ratio.numerator)} over ${escapeHtml(ratio.denominator)}">${renderStackedFraction(ratio.numerator, ratio.denominator)}</button>`;
+    }).join('');
+
+    choicesEl.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectedRatioId = btn.dataset.ratioId || '';
+        hasChecked = false;
+        revealBtn.disabled = true;
+        nextBtn.disabled = true;
+        revealPanel.hidden = true;
+        clearChoiceFeedback(choicesEl);
+        updateChoiceSelection(choicesEl, selectedRatioId, 'ratioId');
+        setFeedbackState('ratioOutput', 'Choose one ratio, then click Check.');
+      });
+    });
+  }
+
+  function nextQuestion() {
+    let nextIndex = Math.floor(Math.random() * stoichQuestions.length);
+    if (stoichQuestions.length > 1) {
+      while (nextIndex === currentIndex) nextIndex = Math.floor(Math.random() * stoichQuestions.length);
+    }
+    currentIndex = nextIndex;
+    const q = stoichQuestions[currentIndex];
+    eqEl.textContent = q.equation;
+    promptEl.textContent = q.prompt;
+    renderRatioChoices(q);
+    selectedRatioId = '';
+    hasChecked = false;
+    revealBtn.disabled = true;
+    nextBtn.disabled = true;
+    revealPanel.hidden = true;
+    revealCopy.innerHTML = '';
+    setFeedbackState('ratioOutput', 'Choose one ratio, then click Check.');
+  }
+
+  checkBtn.addEventListener('click', function () {
+    const q = stoichQuestions[currentIndex];
+    if (!selectedRatioId) {
+      setFeedbackState('ratioOutput', 'Choose one ratio, then click Check.');
+      return;
+    }
+
+    const chosen = q.ratios.find(function (ratio) { return ratio.id === selectedRatioId; });
+    hasChecked = true;
+    revealBtn.disabled = false;
+    nextBtn.disabled = false;
+    clearChoiceFeedback(choicesEl);
+
+    if (chosen && chosen.correct) {
+      const selectedBtn = choicesEl.querySelector(`[data-ratio-id="${selectedRatioId}"]`);
+      if (selectedBtn) selectedBtn.classList.add('correct');
+      setFeedbackState('ratioOutput', 'Right — the given substance is in the denominator, so it cancels, and the wanted substance stays in the answer. That is the mole-ratio rule.');
+      return;
+    }
+
+    const selectedBtn = choicesEl.querySelector(`[data-ratio-id="${selectedRatioId}"]`);
+    const correctBtn = choicesEl.querySelector('[data-ratio-id="correct"]');
+    if (selectedBtn) selectedBtn.classList.add('incorrect');
+    if (correctBtn) correctBtn.classList.add('correct');
+    setFeedbackState('ratioOutput', 'Not quite — the error is flipping or mismatching the substances. Put the given substance in the denominator, put the wanted substance in the numerator, then try another.');
+  });
+
+  revealBtn.addEventListener('click', function () {
+    if (!hasChecked) return;
+    const q = stoichQuestions[currentIndex];
+    const correct = q.ratios.find(function (ratio) { return ratio.correct; });
+    const correctNumerator = plainMolLabel(correct.numerator);
+    const correctDenominator = plainMolLabel(correct.denominator);
+    revealCopy.innerHTML = `
+      <li><strong>Given substance:</strong> ${escapeHtml(correctDenominator)}</li>
+      <li><strong>Wanted substance:</strong> ${escapeHtml(correctNumerator)}</li>
+      <li><strong>Best ratio:</strong> ${renderStackedFraction(correct.numerator, correct.denominator)}</li>
+      <li><strong>Why it works:</strong> ${escapeHtml(correctDenominator)} cancels, and ${escapeHtml(correctNumerator)} stays in the answer.</li>
+    `;
+    revealPanel.hidden = false;
+  });
+
+  nextBtn.addEventListener('click', nextQuestion);
+  nextQuestion();
+});
+
+/* ── Tool 2: Limiting Reactant Decision Check ── */
+document.addEventListener('DOMContentLoaded', function () {
+  const eqEl = document.getElementById('limitEquation');
+  const amountsEl = document.getElementById('limitAmounts');
+  const choicesEl = document.getElementById('limitChoices');
+  const checkBtn = document.getElementById('checkLimitBtn');
+  const revealBtn = document.getElementById('revealLimitBtn');
+  const nextBtn = document.getElementById('nextLimitBtn');
+  const revealPanel = document.getElementById('limitReveal');
+  const revealCopy = document.getElementById('limitRevealCopy');
+  if (!eqEl || !amountsEl || !choicesEl || !checkBtn || !revealBtn || !nextBtn || !revealPanel || !revealCopy) return;
+
+  const scenarios = [
+    {
+      equation: '2H₂ + O₂ → 2H₂O',
+      amountsText: '3.0 mol H₂ and 2.0 mol O₂',
+      reactantA: 'H₂',
+      reactantB: 'O₂',
+      correct: 'A',
+      product: 'H₂O',
+      compareA: '3.0 mol H₂ × (2 mol H₂O / 2 mol H₂) = 3.0 mol H₂O',
+      compareB: '2.0 mol O₂ × (2 mol H₂O / 1 mol O₂) = 4.0 mol H₂O',
+      reason: 'H₂ makes less product, so H₂ runs out first and is the limiting reactant.'
+    },
+    {
+      equation: 'N₂ + 3H₂ → 2NH₃',
+      amountsText: '1.5 mol N₂ and 3.0 mol H₂',
+      reactantA: 'N₂',
+      reactantB: 'H₂',
+      correct: 'B',
+      product: 'NH₃',
+      compareA: '1.5 mol N₂ × (2 mol NH₃ / 1 mol N₂) = 3.0 mol NH₃',
+      compareB: '3.0 mol H₂ × (2 mol NH₃ / 3 mol H₂) = 2.0 mol NH₃',
+      reason: 'H₂ makes less product, so H₂ is limiting.'
+    },
+    {
+      equation: '2Al + 3Cl₂ → 2AlCl₃',
+      amountsText: '4.0 mol Al and 6.0 mol Cl₂',
+      reactantA: 'Al',
+      reactantB: 'Cl₂',
+      correct: 'none',
+      product: 'AlCl₃',
+      compareA: '4.0 mol Al × (2 mol AlCl₃ / 2 mol Al) = 4.0 mol AlCl₃',
+      compareB: '6.0 mol Cl₂ × (2 mol AlCl₃ / 3 mol Cl₂) = 4.0 mol AlCl₃',
+      reason: 'Both reactants make the same amount of product, so the amounts are exactly matched. Neither reactant is in excess.'
+    },
+    {
+      equation: 'CH₄ + 2O₂ → CO₂ + 2H₂O',
+      amountsText: '0.80 mol CH₄ and 1.20 mol O₂',
+      reactantA: 'CH₄',
+      reactantB: 'O₂',
+      correct: 'B',
+      product: 'CO₂',
+      compareA: '0.80 mol CH₄ × (1 mol CO₂ / 1 mol CH₄) = 0.80 mol CO₂',
+      compareB: '1.20 mol O₂ × (1 mol CO₂ / 2 mol O₂) = 0.60 mol CO₂',
+      reason: 'O₂ makes less product, so O₂ is the limiting reactant.'
+    }
+  ];
+
+  let currentIndex = -1;
+  let selectedOptionId = '';
+  let hasChecked = false;
+
+  function renderChoices(scenario) {
+    const options = [
+      { id: 'A', label: `${scenario.reactantA} is limiting` },
+      { id: 'B', label: `${scenario.reactantB} is limiting` },
+      { id: 'none', label: 'No limiting reactant' }
+    ];
+
+    choicesEl.innerHTML = options.map(function (option) {
+      return `<button type="button" class="segment-btn tool-choice-btn explore-choice" data-option-id="${escapeHtml(option.id)}" aria-pressed="false">${escapeHtml(option.label)}</button>`;
+    }).join('');
+
+    choicesEl.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectedOptionId = btn.dataset.optionId || '';
+        hasChecked = false;
+        revealBtn.disabled = true;
+        nextBtn.disabled = true;
+        revealPanel.hidden = true;
+        clearChoiceFeedback(choicesEl);
+        updateChoiceSelection(choicesEl, selectedOptionId, 'optionId');
+        setFeedbackState('limitOutput', 'Choose one verdict, then click Check.');
+      });
+    });
+  }
+
+  function nextScenario() {
+    let nextIndex = Math.floor(Math.random() * scenarios.length);
+    if (scenarios.length > 1) {
+      while (nextIndex === currentIndex) nextIndex = Math.floor(Math.random() * scenarios.length);
+    }
+    currentIndex = nextIndex;
+    const scenario = scenarios[currentIndex];
+    eqEl.textContent = scenario.equation;
+    amountsEl.textContent = scenario.amountsText;
+    renderChoices(scenario);
+    selectedOptionId = '';
+    hasChecked = false;
+    revealBtn.disabled = true;
+    nextBtn.disabled = true;
+    revealPanel.hidden = true;
+    revealCopy.innerHTML = '';
+    setFeedbackState('limitOutput', 'Choose one verdict, then click Check.');
+  }
+
+  checkBtn.addEventListener('click', function () {
+    const scenario = scenarios[currentIndex];
+    if (!selectedOptionId) {
+      setFeedbackState('limitOutput', 'Choose one verdict, then click Check.');
+      return;
+    }
+
+    hasChecked = true;
+    revealBtn.disabled = false;
+    nextBtn.disabled = false;
+    clearChoiceFeedback(choicesEl);
+
+    if (selectedOptionId === scenario.correct) {
+      const selectedBtn = choicesEl.querySelector(`[data-option-id="${selectedOptionId}"]`);
+      if (selectedBtn) selectedBtn.classList.add('correct');
+      setFeedbackState('limitOutput', 'Right — the limiting reactant is the one that could make less product. That comparison rule is what decides the answer.');
+      return;
+    }
+
+    const selectedBtn = choicesEl.querySelector(`[data-option-id="${selectedOptionId}"]`);
+    const correctBtn = choicesEl.querySelector(`[data-option-id="${scenario.correct}"]`);
+    if (selectedBtn) selectedBtn.classList.add('incorrect');
+    if (correctBtn) correctBtn.classList.add('correct');
+    setFeedbackState('limitOutput', 'Not quite — the error is comparing starting amounts directly instead of comparing product made. Convert each reactant through the balanced equation, then choose the one that makes less product.');
+  });
+
+  revealBtn.addEventListener('click', function () {
+    if (!hasChecked) return;
+    const scenario = scenarios[currentIndex];
+    revealCopy.innerHTML = `
+      <li><strong>Compare reactant ${escapeHtml(scenario.reactantA)}:</strong> ${escapeHtml(scenario.compareA)}</li>
+      <li><strong>Compare reactant ${escapeHtml(scenario.reactantB)}:</strong> ${escapeHtml(scenario.compareB)}</li>
+      <li><strong>Decision:</strong> ${escapeHtml(scenario.reason)}</li>
+      <li><strong>Rule:</strong> the reactant that makes less ${escapeHtml(scenario.product)} is limiting.</li>
+    `;
+    revealPanel.hidden = false;
+  });
+
+  nextBtn.addEventListener('click', nextScenario);
+  nextScenario();
+});
+</script>
+</body>
+</html>

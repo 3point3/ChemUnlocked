@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function usage() {
-  console.log('Usage: node extract-problem-bank.js path/to/04_practice.html 04');
+  console.log('Usage: node extract-problem-bank.js path/to/05_practice.html 04');
 }
 
 const input = process.argv[2];

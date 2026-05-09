@@ -1,546 +1,104 @@
-/* ── Unit 07 Problem Bank — Chemical Reactions
-   81 problems total: 25 calc | 40 concept | 16 multi
-   Served via netlify/functions/get-premium-problem-set.js
-   NOT imported by any public-facing page.
+/* ── Unit 07 Problem Bank — Moles
+   81 problems total: 47 calc | 19 concept | 15 multi
+   Updates: Applied Sig Fig rounding (3-4 places), refined p22, and p50.
 ─────────────────────────────────────────────────────── */
 
 export const ALL_PROBLEMS = [
 
-  /* ════════════════════ CONCEPT (40 problems) ════════════════════ */
-
-  {id:'p01', type:'concept', tag:'Equations',
-   q:'What does the arrow (→) mean in a chemical equation?',
-   choices:['The reactants and products are equal in mass','The reaction produces the substances on the right from those on the left','The substances are dissolved in water','The reaction is reversible'],
-   correct:1,
-   solution:'<p>The arrow means "produces" or "yields." It separates reactants (left) on the left from products (right) on the right. Mass is always conserved, but the arrow itself just shows direction of the reaction.</p>'},
-
-  {id:'p02', type:'concept', tag:'Equations',
-   q:'Which of the following is true about subscripts in a chemical formula?',
-   choices:['You can change them to balance an equation','They show how many molecules are present','They tell you how many of each atom are in one formula unit','They are always the same as the coefficients'],
-   correct:2,
-   solution:'<p>Subscripts are part of the formula and show how many atoms of each element are in one molecule or formula unit. You must NEVER change subscripts when balancing — only coefficients (the numbers in front of the formula) can be changed.</p>'},
-
-  {id:'p03', type:'concept', tag:'Conservation',
-   q:'Which law explains why chemical equations must be balanced?',
-   choices:['Law of Definite Proportions','Law of Conservation of Energy','Law of Conservation of Mass','Avogadro\'s Law'],
-   correct:2,
-   solution:'<p>The Law of Conservation of Mass states that atoms are neither created nor destroyed in a chemical reaction — they are only rearranged. So the total number of each type of atom must be the same on both sides of the equation.</p>'},
-
-  {id:'p04', type:'concept', tag:'Equations',
-   q:'What does the symbol (aq) after a substance mean?',
-   choices:['The substance is aqueous — dissolved in water','The substance is a gas','The substance is a solid that does not dissolve','The substance is in liquid form'],
-   correct:0,
-   solution:'<p>(aq) stands for "aqueous," meaning the substance is dissolved in water. The four state symbols are: (s) solid, (l) liquid, (g) gas, and (aq) aqueous.</p>'},
-
-  {id:'p05', type:'concept', tag:'Reaction Types',
-   q:'Which reaction type follows the pattern A + B → AB?',
-   choices:['Decomposition','Double replacement','Combustion','Synthesis'],
-   correct:3,
-   solution:'<p>Synthesis (also called combination) reactions combine two or more substances to form one new product. The pattern is A + B → AB. Example: 2H₂ + O₂ → 2H₂O.</p>'},
-
-  {id:'p06', type:'concept', tag:'Reaction Types',
-   q:'A single compound breaks apart into two simpler substances. What type of reaction is this?',
-   choices:['Synthesis','Decomposition','Single replacement','Combustion'],
-   correct:1,
-   solution:'<p>Decomposition reactions follow the pattern AB → A + B. One compound breaks down into two or more simpler substances. Example: 2H₂O₂ → 2H₂O + O₂.</p>'},
-
-  {id:'p07', type:'concept', tag:'Reaction Types',
-   q:'A strip of zinc metal is placed in hydrochloric acid (HCl). Zinc dissolves and hydrogen gas is produced. What reaction type is this?',
-   choices:['Synthesis','Decomposition','Single replacement','Double replacement'],
-   correct:2,
-   solution:'<p>Single replacement reactions follow the pattern A + BC → AC + B. Here, zinc (Zn) replaces hydrogen (H) in HCl. Equation: Zn + 2HCl → ZnCl₂ + H₂.</p>'},
-
-  {id:'p08', type:'concept', tag:'Reaction Types',
-   q:'Two aqueous ionic solutions are mixed and a solid forms. What is the solid called?',
-   choices:['Catalyst','Precipitate','Solvent','Electrolyte'],
-   correct:1,
-   solution:'<p>When ions from two solutions combine to form an insoluble compound, the solid that forms is called a precipitate. The reaction is a precipitation reaction, a type of double replacement.</p>'},
-
-  {id:'p09', type:'concept', tag:'Precipitation',
-   q:'Which compound is insoluble in water (forms a precipitate)?',
-   choices:['NaNO₃','KCl','AgCl','MgSO₄'],
-   correct:2,
-   solution:'<p>Most chlorides are soluble, EXCEPT for AgCl (silver chloride), PbCl₂, and HgCl₂. AgCl forms a white precipitate when Ag⁺ and Cl⁻ ions meet in solution. NaNO₃, KCl, and MgSO₄ are all soluble.</p>'},
-
-  {id:'p10', type:'concept', tag:'Precipitation',
-   q:'What are spectator ions?',
-   choices:['Ions that form the precipitate','Ions that gain or lose electrons','Ions that are present but do not change or react','Ions that are produced only on the product side'],
-   correct:2,
-   solution:'<p>Spectator ions appear on both sides of the complete ionic equation unchanged. They "watch" the reaction without participating. They are left out of the net ionic equation.</p>'},
-
-  {id:'p11', type:'concept', tag:'Net Ionic',
-   q:'What does a net ionic equation show?',
-   choices:['All atoms including spectator ions','Only the ions that actually change or react','Only the molecular formulas of all substances','The state symbols only'],
-   correct:1,
-   solution:'<p>A net ionic equation shows only the species that actually change during the reaction — the ions (or molecules) that form new bonds, precipitates, or transfer electrons. Spectator ions are removed.</p>'},
-
-  {id:'p12', type:'concept', tag:'Acid-Base',
-   q:'What type of ions do acids release in water?',
-   choices:['Hydroxide ions (OH⁻)','Chloride ions (Cl⁻)','Hydrogen ions (H⁺)','Sodium ions (Na⁺)'],
-   correct:2,
-   solution:'<p>Acids release hydrogen ions (H⁺) in water. Bases release hydroxide ions (OH⁻). When they react together, they neutralize each other: H⁺ + OH⁻ → H₂O.</p>'},
-
-  {id:'p13', type:'concept', tag:'Acid-Base',
-   q:'What are the products of a neutralization reaction between an acid and a base?',
-   choices:['An acid and a gas','A salt and water','An element and a compound','Two acids'],
-   correct:1,
-   solution:'<p>When an acid and base neutralize each other, they produce a salt and water. Example: HCl + NaOH → NaCl + H₂O. NaCl is the salt, H₂O is water.</p>'},
-
-  {id:'p14', type:'concept', tag:'Acid-Base',
-   q:'What is the net ionic equation for any strong acid reacting with a strong base?',
-   choices:['Na⁺ + Cl⁻ → NaCl','H⁺ + OH⁻ → H₂O','HCl + NaOH → NaCl + H₂O','H₂O → H⁺ + OH⁻'],
-   correct:1,
-   solution:'<p>For any strong acid–strong base neutralization, the spectator ions (the metal cation and non-reactive anion) cancel out. The only change is H⁺ + OH⁻ → H₂O. This net ionic equation is the same regardless of which strong acid and base you use.</p>'},
-
-  {id:'p15', type:'concept', tag:'Redox',
-   q:'What does OIL RIG stand for?',
-   choices:['Oxidation Increases Loss; Reduction Is Gain','Oxidation Is Loss; Reduction Is Gain (of electrons)','Oxygen Is Lost; Reduction Involves Gain','Only In Lab: Reactions Involve Gain'],
-   correct:1,
-   solution:'<p>OIL RIG is a memory trick: Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons). When a substance loses electrons, its oxidation number increases. When it gains electrons, its oxidation number decreases.</p>'},
-
-  {id:'p16', type:'concept', tag:'Redox',
-   q:'What happens to the oxidation number of an element that is oxidized?',
-   choices:['It stays the same','It decreases','It increases','It becomes zero'],
-   correct:2,
-   solution:'<p>When a substance is oxidized, it LOSES electrons. Losing electrons makes the oxidation number go UP (increase). Remember: more positive = more oxidized.</p>'},
-
-  {id:'p17', type:'concept', tag:'Redox',
-   q:'In the reaction 2Na + Cl₂ → 2NaCl, what happens to sodium (Na)?',
-   choices:['Na is reduced because it gains electrons','Na is oxidized because it loses electrons','Na is a spectator ion','Na\'s oxidation number decreases from 0 to −1'],
-   correct:1,
-   solution:'<p>Sodium starts as a pure element (oxidation number = 0) and becomes Na⁺ in NaCl (oxidation number = +1). The oxidation number INCREASES, so Na is oxidized — it loses electrons.</p>'},
-
-  {id:'p18', type:'concept', tag:'Redox',
-   q:'What is the oxidation number of any pure element (like Fe, O₂, or Cl₂)?',
-   choices:['+1','−1','0','It depends on the compound'],
-   correct:2,
-   solution:'<p>Pure elements always have an oxidation number of 0 — whether they are monatomic (Fe) or diatomic (O₂, Cl₂, H₂, N₂). This is a key rule for identifying redox reactions: if the oxidation number changes from 0, the element was either oxidized or reduced.</p>'},
-
-  {id:'p19', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the usual oxidation number of oxygen in a compound?',
-   choices:['+2','−1','−2','+1'],
-   correct:2,
-   solution:'<p>Oxygen in compounds is almost always −2. The main exception is in peroxides (like H₂O₂ or Na₂O₂), where oxygen is −1.</p>'},
-
-  {id:'p20', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the usual oxidation number of hydrogen in a compound?',
-   choices:['+1','−1','0','+2'],
-   correct:0,
-   solution:'<p>Hydrogen in compounds is almost always +1. The exception is in metal hydrides (like NaH or CaH₂), where hydrogen bonded to a metal is −1.</p>'},
-
-  {id:'p21', type:'concept', tag:'Oxidation Numbers',
-   q:'The oxidation numbers in a neutral compound must add up to:',
-   choices:['The atomic number of the element','The number of atoms in the formula','Zero','The charge of the most electronegative element'],
-   correct:2,
-   solution:'<p>For a neutral compound (no overall charge), all the oxidation numbers multiplied by the number of each atom must add to zero. For an ion, they must add to the ion charge.</p>'},
-
-  {id:'p22', type:'concept', tag:'Redox',
-   q:'What is a reducing agent?',
-   choices:['A substance that gains electrons','A substance that is reduced','A substance that loses electrons (and is itself oxidized)','A substance that does not change oxidation number'],
-   correct:2,
-   solution:'<p>A reducing agent is the substance that LOSES electrons — it REDUCES something else while being oxidized itself. In 2Na + Cl₂ → 2NaCl, Na is the reducing agent (it loses electrons to Cl₂).</p>'},
-
-  {id:'p23', type:'concept', tag:'Redox',
-   q:'What is an oxidizing agent?',
-   choices:['A substance that loses electrons','A substance that is oxidized','A substance that gains electrons (and causes oxidation in another)','A substance with an oxidation number of zero'],
-   correct:2,
-   solution:'<p>An oxidizing agent accepts electrons from another substance. By accepting electrons, it causes that substance to be oxidized. The oxidizing agent itself is reduced. In 2Na + Cl₂ → 2NaCl, Cl₂ is the oxidizing agent.</p>'},
-
-  {id:'p24', type:'concept', tag:'Combustion',
-   q:'What are the products of complete combustion of a hydrocarbon (a compound containing only C and H)?',
-   choices:['CO and H₂','CO₂ and H₂O','C and H₂O','CO₂ and O₂'],
-   correct:1,
-   solution:'<p>When a hydrocarbon burns completely in excess oxygen, the carbon becomes CO₂ and the hydrogen becomes H₂O. Example: CH₄ + 2O₂ → CO₂ + 2H₂O.</p>'},
-
-  {id:'p25', type:'concept', tag:'Precipitation',
-   q:'Are all nitrate compounds soluble in water?',
-   choices:['No — most are insoluble','No — only group 1 nitrates dissolve','Yes — all nitrate compounds are soluble','Only when heated'],
-   correct:2,
-   solution:'<p>YES — all nitrate (NO₃⁻) compounds are soluble in water. This is a key solubility rule. Because all nitrates dissolve, NO₃⁻ is frequently a spectator ion in precipitation reactions.</p>'},
-
-  {id:'p26', type:'concept', tag:'Equations',
-   q:'Which coefficient correctly balances the equation: _H₂ + _O₂ → _H₂O?',
-   choices:['1, 1, 1','2, 1, 2','1, 2, 1','2, 2, 2'],
-   correct:1,
-   solution:'<p>With coefficients 2, 1, 2: left side has 4 H and 2 O. Right side: 2 H₂O has 4 H and 2 O. Both sides match. ✓ 2H₂ + O₂ → 2H₂O.</p>'},
-
-  {id:'p27', type:'concept', tag:'Equations',
-   q:'Which equation is correctly balanced?',
-   choices:['H₂ + Cl₂ → HCl','H₂ + Cl₂ → 2HCl','2H₂ + Cl₂ → 2HCl','H₂ + 2Cl₂ → 2HCl'],
-   correct:1,
-   solution:'<p>H₂ + Cl₂ → 2HCl: Left has 2 H and 2 Cl. Right has 2 H and 2 Cl. ✓ The other options are unbalanced — choice A gives only 1 HCl (1 H, 1 Cl on right), choices C and D give wrong H or Cl counts.</p>'},
-
-  {id:'p28', type:'concept', tag:'Reaction Types',
-   q:'Methane (CH₄) burns in air to produce CO₂ and water. What type of reaction is this?',
-   choices:['Synthesis','Decomposition','Single replacement','Combustion'],
-   correct:3,
-   solution:'<p>Combustion is the reaction of a fuel with oxygen, producing CO₂ and H₂O (for hydrocarbon fuels). CH₄ + 2O₂ → CO₂ + 2H₂O is a classic combustion reaction.</p>'},
-
-  {id:'p29', type:'concept', tag:'Net Ionic',
-   q:'In the reaction AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq), which ions are spectators?',
-   choices:['Ag⁺ and Cl⁻','Na⁺ and NO₃⁻','Ag⁺ and Na⁺','Cl⁻ and NO₃⁻'],
-   correct:1,
-   solution:'<p>Na⁺ and NO₃⁻ appear on both sides of the complete ionic equation unchanged — they are spectator ions. The reaction that actually occurs is Ag⁺(aq) + Cl⁻(aq) → AgCl(s).</p>'},
-
-  {id:'p30', type:'concept', tag:'Acid-Base',
-   q:'HCl(aq) + NaOH(aq) → ? This is an example of which reaction type?',
-   choices:['Precipitation','Combustion','Neutralization (acid-base)','Decomposition'],
-   correct:2,
-   solution:'<p>HCl is an acid (releases H⁺) and NaOH is a base (releases OH⁻). They react in a neutralization (acid-base) reaction to produce water and a salt: HCl + NaOH → H₂O + NaCl.</p>'},
-
-  {id:'p31', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Cr in Cr₂O₇²⁻?',
-   choices:['+3','+6','+7','−2'],
-   correct:1,
-   solution:'<p>Ion charge = −2. O = −2 each, 7 oxygens total = −14. So 2 Cr + (−14) = −2 → 2 Cr = +12 → each Cr = +6.</p>'},
-
-  {id:'p32', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of S in SO₄²⁻?',
-   choices:['+2','+4','+6','−2'],
-   correct:2,
-   solution:'<p>Ion charge = −2. O = −2 each, 4 oxygens = −8. S + (−8) = −2 → S = +6.</p>'},
-
-  {id:'p33', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of N in NO₃⁻?',
-   choices:['+3','+5','−3','0'],
-   correct:1,
-   solution:'<p>Ion charge = −1. O = −2 each, 3 oxygens = −6. N + (−6) = −1 → N = +5.</p>'},
-
-  {id:'p34', type:'concept', tag:'Precipitation',
-   q:'Which compound would NOT form a precipitate when dissolved in water?',
-   choices:['AgCl','BaSO₄','PbI₂','KNO₃'],
-   correct:3,
-   solution:'<p>KNO₃ is soluble — all potassium compounds and all nitrates dissolve. AgCl, BaSO₄, and PbI₂ are all listed as insoluble compounds in the standard solubility rules.</p>'},
-
-  {id:'p35', type:'concept', tag:'Equations',
-   q:'What do coefficients in a balanced equation represent?',
-   choices:['The number of atoms in each molecule','The relative number of moles (or molecules) of each substance','The mass of each substance in grams','The charge on each ion'],
-   correct:1,
-   solution:'<p>Coefficients tell you the ratio of moles (or molecules) involved. In 2H₂ + O₂ → 2H₂O, the coefficients say: 2 moles of H₂ react with 1 mole of O₂ to produce 2 moles of H₂O.</p>'},
-
-  {id:'p36', type:'concept', tag:'Redox',
-   q:'Is the reaction 4Fe + 3O₂ → 2Fe₂O₃ a redox reaction?',
-   choices:['No — no ions are formed','Yes — Fe is oxidized and O is reduced','No — it is a synthesis reaction, not redox','Yes — but only because Fe is a metal'],
-   correct:1,
-   solution:'<p>Yes. Fe goes from 0 (pure element) to +3 (in Fe₂O₃) — Fe is oxidized. O goes from 0 (in O₂) to −2 (in Fe₂O₃) — O is reduced. Oxidation numbers change, so it is a redox reaction. (Note: reaction type categories are not mutually exclusive — this is BOTH a synthesis AND a redox reaction.)</p>'},
-
-  {id:'p37', type:'concept', tag:'Reaction Types',
-   q:'CaCO₃(s) → CaO(s) + CO₂(g) when heated. What type of reaction is this?',
-   choices:['Synthesis','Combustion','Decomposition','Single replacement'],
-   correct:2,
-   solution:'<p>One compound (CaCO₃) breaks apart into two simpler substances (CaO and CO₂). This matches the pattern AB → A + B: decomposition. Heating often drives decomposition reactions.</p>'},
-
-  {id:'p38', type:'concept', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Mn in MnO₄⁻?',
-   choices:['+4','+6','+7','−2'],
-   correct:2,
-   solution:'<p>Ion charge = −1. O = −2 each, 4 oxygens = −8. Mn + (−8) = −1 → Mn = +7. MnO₄⁻ (permanganate) is a strong oxidizing agent precisely because Mn is in its high +7 state.</p>'},
-
-  {id:'p39', type:'concept', tag:'Precipitation',
-   q:'When Pb(NO₃)₂(aq) is mixed with KI(aq), a yellow precipitate of PbI₂ forms. What does the net ionic equation look like?',
-   choices:['Pb²⁺ + 2I⁻ → PbI₂(s)','Pb(NO₃)₂ + 2KI → PbI₂ + 2KNO₃','K⁺ + NO₃⁻ → KNO₃','2K⁺ + Pb²⁺ → Pb + 2K⁺'],
-   correct:0,
-   solution:'<p>K⁺ and NO₃⁻ are spectator ions (both are soluble and unchanged). The actual reaction is Pb²⁺ meeting I⁻ to form insoluble PbI₂. Net ionic: Pb²⁺(aq) + 2I⁻(aq) → PbI₂(s).</p>'},
-
-  {id:'p40', type:'concept', tag:'Equations',
-   q:'Which statement best describes a balanced chemical equation?',
-   choices:['Reactant and product volumes are equal','The number of each type of atom is the same on both sides of the equation','The masses of all substances are listed','The temperature and pressure are specified'],
-   correct:1,
-   solution:'<p>A balanced equation has equal numbers of each type of atom on the reactant side and the product side. This reflects the Law of Conservation of Mass: atoms are rearranged, not created or destroyed.</p>'},
-
-  /* ════════════════════ CALCULATION (25 problems) ════════════════════ */
-
-  {id:'p41', type:'calc', tag:'Balancing',
-   q:'Balance this equation: _Fe + _O₂ → _Fe₂O₃. What is the coefficient in front of Fe?',
-   answer:4, tolerance:0,
-   solution:'<p>Balanced equation: 4Fe + 3O₂ → 2Fe₂O₃. Check: Fe left = 4, right = 2×2 = 4 ✓. O left = 3×2 = 6, right = 2×3 = 6 ✓. Coefficient of Fe = <strong>4</strong>.</p>'},
-
-  {id:'p42', type:'calc', tag:'Balancing',
-   q:'Balance: _N₂ + _H₂ → _NH₃. What is the coefficient in front of H₂?',
-   answer:3, tolerance:0,
-   solution:'<p>Balanced: N₂ + 3H₂ → 2NH₃. Right side has 2 NH₃ = 6 H atoms. Left needs 3 H₂ = 6 H atoms. ✓ Coefficient of H₂ = <strong>3</strong>.</p>'},
-
-  {id:'p43', type:'calc', tag:'Balancing',
-   q:'Balance: _Al + _Cl₂ → _AlCl₃. What is the sum of all coefficients in the balanced equation?',
-   answer:7, tolerance:0,
-   solution:'<p>Balanced: 2Al + 3Cl₂ → 2AlCl₃. Coefficients: 2 + 3 + 2 = <strong>7</strong>. Check: Al: 2=2 ✓, Cl: 6=6 ✓.</p>'},
-
-  {id:'p44', type:'calc', tag:'Balancing',
-   q:'Balance: _CH₄ + _O₂ → _CO₂ + _H₂O. What is the coefficient in front of O₂?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: CH₄ + 2O₂ → CO₂ + 2H₂O. Right side has 2 O (CO₂) + 2 O (2H₂O) = 4 O atoms, which needs 2 O₂ on the left. Coefficient of O₂ = <strong>2</strong>.</p>'},
-
-  {id:'p45', type:'calc', tag:'Balancing',
-   q:'Balance: _H₂O₂ → _H₂O + _O₂. What is the coefficient in front of H₂O₂?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: 2H₂O₂ → 2H₂O + O₂. This is decomposition of hydrogen peroxide. Check: H: 4=4 ✓, O: 4=4 ✓. Coefficient of H₂O₂ = <strong>2</strong>.</p>'},
-
-  {id:'p46', type:'calc', tag:'Balancing',
-   q:'Balance: _Na + _H₂O → _NaOH + _H₂. What is the coefficient in front of Na?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: 2Na + 2H₂O → 2NaOH + H₂. Check: Na: 2=2 ✓, H: 4=4 ✓, O: 2=2 ✓. Coefficient of Na = <strong>2</strong>.</p>'},
-
-  {id:'p47', type:'calc', tag:'Balancing',
-   q:'Balance: _C₃H₈ + _O₂ → _CO₂ + _H₂O (combustion of propane). What is the coefficient in front of O₂?',
-   answer:5, tolerance:0,
-   solution:'<p>Balanced: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. Products: 3 CO₂ gives 6 O, 4 H₂O gives 4 O → 10 O atoms total on right → 5 O₂ on left. Coefficient of O₂ = <strong>5</strong>.</p>'},
-
-  {id:'p48', type:'calc', tag:'Balancing',
-   q:'Balance: _Ca(OH)₂ + _HCl → _CaCl₂ + _H₂O. What is the coefficient in front of HCl?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: Ca(OH)₂ + 2HCl → CaCl₂ + 2H₂O. Right side needs 2 Cl for CaCl₂ → 2 HCl. Check: Ca:1=1✓, Cl:2=2✓, O:2=2✓, H:4=4✓. Coefficient of HCl = <strong>2</strong>.</p>'},
-
-  {id:'p49', type:'calc', tag:'Balancing',
-   q:'Balance: _Mg + _HCl → _MgCl₂ + _H₂. What is the sum of all coefficients?',
-   answer:5, tolerance:0,
-   solution:'<p>Balanced: Mg + 2HCl → MgCl₂ + H₂. Coefficients: 1 + 2 + 1 + 1 = <strong>5</strong>. Check: Mg:1=1✓, Cl:2=2✓, H:2=2✓.</p>'},
-
-  {id:'p50', type:'calc', tag:'Balancing',
-   q:'Balance: _P₄ + _O₂ → _P₄O₁₀. What is the coefficient in front of O₂?',
-   answer:5, tolerance:0,
-   solution:'<p>P₄ + 5O₂ → P₄O₁₀. Right side has 10 O atoms, needing 5 O₂. P is already balanced (4=4). Coefficient of O₂ = <strong>5</strong>.</p>'},
-
-  {id:'p51', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Fe in Fe₂O₃? (enter as a signed number, e.g. +3)',
-   isText:true, answer:'+3',
-   solution:'<p>O = −2 each, 3 oxygens = −6. Compound is neutral: 2 Fe + (−6) = 0 → 2 Fe = +6 → each Fe = <strong>+3</strong>.</p>'},
-
-  {id:'p52', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of S in H₂SO₄? (enter as a signed number)',
-   isText:true, answer:'+6',
-   solution:'<p>Neutral compound. H = +1 each × 2 = +2. O = −2 each × 4 = −8. S + 2 + (−8) = 0 → S = +6.</p>'},
-
-  {id:'p53', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of N in NH₃? (enter as a signed number)',
-   isText:true, answer:'-3',
-   solution:'<p>H = +1 each × 3 = +3. Neutral molecule: N + 3 = 0 → N = <strong>−3</strong>.</p>'},
-
-  {id:'p54', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Cl in HClO₃? (enter as a signed number)',
-   isText:true, answer:'+5',
-   solution:'<p>H = +1, O = −2 each × 3 = −6. Neutral: 1 + Cl + (−6) = 0 → Cl = +5.</p>'},
-
-  {id:'p55', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Mn in MnO₂? (enter as a signed number)',
-   isText:true, answer:'+4',
-   solution:'<p>O = −2 each × 2 = −4. Neutral: Mn + (−4) = 0 → Mn = <strong>+4</strong>.</p>'},
-
-  {id:'p56', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of P in PO₄³⁻? (enter as a signed number)',
-   isText:true, answer:'+5',
-   solution:'<p>Ion charge = −3. O = −2 × 4 = −8. P + (−8) = −3 → P = <strong>+5</strong>.</p>'},
-
-  {id:'p57', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Cr in CrO₄²⁻? (enter as a signed number)',
-   isText:true, answer:'+6',
-   solution:'<p>Ion charge = −2. O = −2 × 4 = −8. Cr + (−8) = −2 → Cr = <strong>+6</strong>.</p>'},
-
-  {id:'p58', type:'calc', tag:'Balancing',
-   q:'Balance: _KMnO₄ + _HCl → _KCl + _MnCl₂ + _H₂O + _Cl₂. What is the coefficient in front of KMnO₄?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: 2KMnO₄ + 16HCl → 2KCl + 2MnCl₂ + 8H₂O + 5Cl₂. Coefficient of KMnO₄ = <strong>2</strong>. (This is a more challenging redox balance — check Mn: 2=2, K: 2=2, O: 8=8.)</p>'},
-
-  {id:'p59', type:'calc', tag:'Balancing',
-   q:'Balance: _Fe + _CuSO₄ → _FeSO₄ + _Cu. What is the coefficient in front of Fe?',
-   answer:1, tolerance:0,
-   solution:'<p>This equation is already balanced with coefficient 1 in front of Fe: Fe + CuSO₄ → FeSO₄ + Cu. Check: Fe:1=1✓, Cu:1=1✓, S:1=1✓, O:4=4✓.</p>'},
-
-  {id:'p60', type:'calc', tag:'Balancing',
-   q:'Balance: _C₂H₆ + _O₂ → _CO₂ + _H₂O (combustion of ethane). What is the coefficient in front of O₂?',
-   answer:7, tolerance:0,
-   solution:'<p>Balanced: 2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O. Products: 8 O (from 4CO₂) + 6 O (from 6H₂O) = 14 O atoms → 7 O₂. Coefficient of O₂ = <strong>7</strong>.</p>'},
-
-  {id:'p61', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of N in HNO₃? (enter as a signed number)',
-   isText:true, answer:'+5',
-   solution:'<p>H = +1, O = −2 × 3 = −6. Neutral: +1 + N + (−6) = 0 → N = <strong>+5</strong>.</p>'},
-
-  {id:'p62', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of C in CO₂? (enter as a signed number)',
-   isText:true, answer:'+4',
-   solution:'<p>O = −2 × 2 = −4. Neutral: C + (−4) = 0 → C = <strong>+4</strong>.</p>'},
-
-  {id:'p63', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of I in IO₃⁻? (enter as a signed number)',
-   isText:true, answer:'+5',
-   solution:'<p>Ion charge = −1. O = −2 × 3 = −6. I + (−6) = −1 → I = <strong>+5</strong>.</p>'},
-
-  {id:'p64', type:'calc', tag:'Balancing',
-   q:'Balance: _Cu + _AgNO₃ → _Cu(NO₃)₂ + _Ag. What is the coefficient in front of AgNO₃?',
-   answer:2, tolerance:0,
-   solution:'<p>Balanced: Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag. Cu²⁺ needs 2 NO₃⁻ to form Cu(NO₃)₂, so 2 AgNO₃ are needed. Coefficient of AgNO₃ = <strong>2</strong>.</p>'},
-
-  {id:'p65', type:'calc', tag:'Oxidation Numbers',
-   q:'What is the oxidation number of Cl in Cl₂? (enter as a signed number)',
-   isText:true, answer:'0',
-   solution:'<p>Cl₂ is a pure element (diatomic molecule of the same element). Any pure element has an oxidation number of <strong>0</strong>.</p>'},
-
-  /* ════════════════════ MULTI-STEP (16 problems) ════════════════════ */
-
-  {id:'p66', type:'multi', tag:'Precipitation',
-   q:'Two solutions are mixed: Ba(NO₃)₂(aq) and Na₂SO₄(aq). Which product is a precipitate, and what is the net ionic equation?',
-   choices:[
-     'BaSO₄(s) is the precipitate; net ionic: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)',
-     'NaNO₃(s) is the precipitate; net ionic: Na⁺ + NO₃⁻ → NaNO₃',
-     'Ba(NO₃)₂ is the precipitate; net ionic: Ba²⁺ + 2NO₃⁻ → Ba(NO₃)₂',
-     'No precipitate forms; both products are soluble'
-   ],
-   correct:0,
-   solution:'<p>Swap ions: Ba²⁺ pairs with SO₄²⁻ → BaSO₄. Na⁺ pairs with NO₃⁻ → NaNO₃. Check solubility rules: BaSO₄ is INSOLUBLE (precipitate). NaNO₃ is soluble (all nitrates soluble). Spectators: Na⁺ and NO₃⁻. Net ionic: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s).</p>'},
-
-  {id:'p67', type:'multi', tag:'Redox Identification',
-   q:'In the reaction: Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g), identify what is oxidized and what is reduced.',
-   choices:[
-     'Zn is oxidized (0 to +2); H is reduced (+1 to 0)',
-     'Zn is reduced (0 to +2); H is oxidized (+1 to 0)',
-     'Cl is oxidized; Zn is reduced',
-     'No oxidation or reduction occurs — this is just a single replacement'
-   ],
-   correct:0,
-   solution:'<p>Assign oxidation numbers: Zn starts at 0, becomes +2 in ZnCl₂ → Zn is OXIDIZED (loses electrons). H starts at +1 in HCl, becomes 0 in H₂ → H is REDUCED (gains electrons). Cl stays at −1 throughout (spectator). Zn is the reducing agent; HCl/H⁺ is the oxidizing agent.</p>'},
-
-  {id:'p68', type:'multi', tag:'Net Ionic',
-   q:'Solutions of Pb(NO₃)₂(aq) and NaCl(aq) are mixed. Write the correct net ionic equation.',
-   choices:[
-     'Pb²⁺(aq) + 2Cl⁻(aq) → PbCl₂(s)',
-     'Pb(NO₃)₂ + NaCl → PbCl₂ + NaNO₃',
-     'Na⁺(aq) + NO₃⁻(aq) → NaNO₃(s)',
-     'No reaction occurs because all products are soluble'
-   ],
-   correct:0,
-   solution:'<p>Product of swapping ions: PbCl₂ and NaNO₃. Solubility: PbCl₂ is INSOLUBLE (PbCl₂ is one exception to the "chlorides soluble" rule). NaNO₃ is soluble. Spectators: Na⁺ and NO₃⁻. Net ionic: Pb²⁺(aq) + 2Cl⁻(aq) → PbCl₂(s).</p>'},
-
-  {id:'p69', type:'multi', tag:'Reaction Classification',
-   q:'Classify: 2HgO(s) → 2Hg(l) + O₂(g). Also identify if it is redox.',
-   choices:[
-     'Synthesis; not redox',
-     'Decomposition; redox (Hg goes from +2 to 0; O goes from −2 to 0)',
-     'Decomposition; not redox',
-     'Single replacement; redox'
-   ],
-   correct:1,
-   solution:'<p>One compound breaks apart → Decomposition. Check oxidation numbers: Hg in HgO = +2, Hg in pure Hg(l) = 0 (decreased → reduced). O in HgO = −2, O in O₂ = 0 (increased → oxidized). Oxidation numbers changed → it IS a redox reaction. So: Decomposition AND Redox.</p>'},
-
-  {id:'p70', type:'multi', tag:'Acid-Base',
-   q:'H₂SO₄(aq) + 2KOH(aq) → K₂SO₄(aq) + 2H₂O(l). What is the net ionic equation?',
-   choices:[
-     'H⁺(aq) + OH⁻(aq) → H₂O(l)',
-     'H₂SO₄ + 2KOH → K₂SO₄ + 2H₂O',
-     'SO₄²⁻ + 2K⁺ → K₂SO₄',
-     '2H⁺(aq) + 2OH⁻(aq) → 2H₂O(l) (simplified: H⁺ + OH⁻ → H₂O)'
-   ],
-   correct:3,
-   solution:'<p>H₂SO₄ provides 2H⁺, KOH provides 2OH⁻. K⁺ and SO₄²⁻ are spectator ions (both remain in solution). Full net ionic: 2H⁺ + 2OH⁻ → 2H₂O, which simplifies to H⁺ + OH⁻ → H₂O. This is the universal acid-base net ionic equation.</p>'},
-
-  {id:'p71', type:'multi', tag:'Redox Agents',
-   q:'In the reaction: Fe(s) + CuSO₄(aq) → FeSO₄(aq) + Cu(s), identify the oxidizing agent and reducing agent.',
-   choices:[
-     'Fe is the oxidizing agent; Cu²⁺ is the reducing agent',
-     'Cu²⁺ is the oxidizing agent; Fe is the reducing agent',
-     'SO₄²⁻ is the oxidizing agent; Fe is the reducing agent',
-     'Fe is both the oxidizing and reducing agent'
-   ],
-   correct:1,
-   solution:'<p>Fe goes from 0 (pure element) to +2 in FeSO₄ → Fe is OXIDIZED → Fe is the REDUCING AGENT. Cu goes from +2 in CuSO₄ to 0 (pure Cu metal) → Cu²⁺ is REDUCED → Cu²⁺ is the OXIDIZING AGENT. SO₄²⁻ stays at −2 throughout (spectator).</p>'},
-
-  {id:'p72', type:'multi', tag:'Precipitation',
-   q:'FeCl₃(aq) + 3NaOH(aq) → Fe(OH)₃(s) + 3NaCl(aq). What is the correct net ionic equation?',
-   choices:[
-     'Fe³⁺(aq) + 3OH⁻(aq) → Fe(OH)₃(s)',
-     'FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl',
-     'Na⁺ + Cl⁻ → NaCl(s)',
-     'Fe³⁺ + Na⁺ → FeNa³⁺'
-   ],
-   correct:0,
-   solution:'<p>Fe(OH)₃ is insoluble (most hydroxides are insoluble). NaCl is soluble. Spectators: Na⁺ and Cl⁻. The ions that actually react are Fe³⁺ and OH⁻. Net ionic: Fe³⁺(aq) + 3OH⁻(aq) → Fe(OH)₃(s).</p>'},
-
-  {id:'p73', type:'multi', tag:'Redox Identification',
-   q:'In 2H₂O₂(aq) → 2H₂O(l) + O₂(g), is this a redox reaction? If so, explain.',
-   choices:[
-     'No — H₂O₂ is a compound, so no redox can occur',
-     'Yes — H in H₂O₂ changes oxidation number',
-     'Yes — oxygen changes oxidation number: from −1 in H₂O₂ to −2 (in H₂O) and 0 (in O₂)',
-     'No — decomposition reactions are never redox reactions'
-   ],
-   correct:2,
-   solution:'<p>In H₂O₂, oxygen is −1 (peroxide exception). In the products: O in H₂O = −2 (decreased → reduced) and O in O₂ = 0 (increased → oxidized). Both oxidation AND reduction of oxygen occur — this is called a disproportionation redox reaction. H stays at +1 throughout.</p>'},
-
-  {id:'p74', type:'multi', tag:'Combustion',
-   q:'Balance the combustion of ethanol: C₂H₅OH + O₂ → CO₂ + H₂O. What is the balanced equation?',
-   choices:[
-     'C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O',
-     'C₂H₅OH + O₂ → 2CO₂ + 3H₂O',
-     'C₂H₅OH + 2O₂ → 2CO₂ + H₂O',
-     '2C₂H₅OH + 3O₂ → 4CO₂ + 6H₂O'
-   ],
-   correct:0,
-   solution:'<p>C₂H₅OH has 2 C, 6 H, 1 O. Products: 2 CO₂ (for 2C) and 3 H₂O (for 6H). Count O on right: 4 O (from 2CO₂) + 3 O (from 3H₂O) = 7 O. Left: 1 O in ethanol + 3 O₂ (6 O) = 7 O. ✓ Balanced: C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O.</p>'},
-
-  {id:'p75', type:'multi', tag:'Reaction Classification',
-   q:'Classify each reaction correctly: (i) 2K + Br₂ → 2KBr &nbsp; (ii) 2KBr → 2K + Br₂ &nbsp; (iii) Cl₂ + 2KBr → 2KCl + Br₂',
-   choices:[
-     '(i) Decomposition, (ii) Synthesis, (iii) Double replacement',
-     '(i) Synthesis, (ii) Decomposition, (iii) Single replacement',
-     '(i) Single replacement, (ii) Decomposition, (iii) Synthesis',
-     '(i) Combustion, (ii) Decomposition, (iii) Synthesis'
-   ],
-   correct:1,
-   solution:'<p>(i) Two elements combine to form one compound: Synthesis. (ii) One compound breaks into its elements: Decomposition. (iii) Cl₂ is a more reactive halogen that replaces Br from KBr — one element replaces another: Single Replacement.</p>'},
-
-  {id:'p76', type:'multi', tag:'Net Ionic',
-   q:'When HNO₃(aq) + NaOH(aq) react, what is the net ionic equation and reaction type?',
-   choices:[
-     'HNO₃ + NaOH → NaNO₃ + H₂O; double replacement',
-     'H⁺(aq) + OH⁻(aq) → H₂O(l); acid-base neutralization',
-     'Na⁺ + NO₃⁻ → NaNO₃; precipitation',
-     'H₂O → H⁺ + OH⁻; decomposition'
-   ],
-   correct:1,
-   solution:'<p>HNO₃ is a strong acid; NaOH is a strong base. Both fully dissociate. Na⁺ and NO₃⁻ are spectators. The only thing that changes is H⁺ + OH⁻ → H₂O. This is an acid-base neutralization. The net ionic equation is the same for ANY strong acid + strong base combination.</p>'},
-
-  {id:'p77', type:'multi', tag:'Redox Full Analysis',
-   q:'In the reaction Cl₂(g) + 2NaBr(aq) → 2NaCl(aq) + Br₂(l), which statement is correct?',
-   choices:[
-     'Cl is oxidized from 0 to −1; Br is reduced from −1 to 0',
-     'Br is oxidized from −1 to 0; Cl is reduced from 0 to −1; Cl₂ is the oxidizing agent',
-     'Na is oxidized; Cl is reduced',
-     'No redox occurs because chlorine and bromine are both halogens'
-   ],
-   correct:1,
-   solution:'<p>Cl₂: Cl starts at 0, ends at −1 in NaCl (DECREASED → reduced). Br: starts at −1 in NaBr, ends at 0 in Br₂ (INCREASED → oxidized). Cl₂ accepts electrons from Br → Cl₂ is the oxidizing agent. NaBr/Br⁻ is the reducing agent.</p>'},
-
-  {id:'p78', type:'multi', tag:'Precipitation',
-   q:'When CaCl₂(aq) and Na₂CO₃(aq) are mixed, a precipitate forms. What is the molecular equation and net ionic equation?',
-   choices:[
-     'CaCl₂ + Na₂CO₃ → CaCO₃(s) + 2NaCl; net ionic: Ca²⁺(aq) + CO₃²⁻(aq) → CaCO₃(s)',
-     'CaCl₂ + Na₂CO₃ → CaCl₂CO₃ + Na; net ionic: Cl⁻ + CO₃²⁻ → ClCO₃²⁻',
-     'CaCl₂ + Na₂CO₃ → NaCl(s) + CaCO₃; net ionic: Na⁺ + Cl⁻ → NaCl',
-     'No reaction occurs because carbonates are always soluble'
-   ],
-   correct:0,
-   solution:'<p>Swap ions: Ca²⁺ + CO₃²⁻ → CaCO₃ (insoluble — most carbonates precipitate). Na⁺ + Cl⁻ → NaCl (soluble). Molecular: CaCl₂ + Na₂CO₃ → CaCO₃(s) + 2NaCl. Net ionic: Ca²⁺(aq) + CO₃²⁻(aq) → CaCO₃(s). Spectators: Na⁺ and Cl⁻.</p>'},
-
-  {id:'p79', type:'multi', tag:'Redox Balancing',
-   q:'In this half-reaction for a redox in acidic solution: MnO₄⁻ → Mn²⁺, how many electrons are gained per MnO₄⁻ ion? (Mn changes from +7 to +2)',
-   choices:['2 electrons','3 electrons','5 electrons','7 electrons'],
-   correct:2,
-   solution:'<p>Mn starts at +7 and ends at +2. Change = +7 − (+2) = 5 units. Each unit represents one electron gained. So MnO₄⁻ gains 5 electrons per ion: MnO₄⁻ + 5e⁻ → Mn²⁺ (in acidic solution, after balancing O and H). The 5-electron gain makes permanganate a powerful oxidizing agent.</p>'},
-
-  {id:'p80', type:'multi', tag:'Reaction Classification',
-   q:'2Al(s) + 3Cl₂(g) → 2AlCl₃(s). This reaction is BEST described as:',
-   choices:[
-     'Combustion only',
-     'Synthesis only',
-     'Both synthesis AND redox: Al goes from 0 to +3; Cl goes from 0 to −1',
-     'Single replacement: Al replaces Cl'
-   ],
-   correct:2,
-   solution:'<p>Two elements combine to form one compound → Synthesis. Also check oxidation numbers: Al goes from 0 to +3 (oxidized) and Cl goes from 0 to −1 (reduced) → it is also a Redox reaction. Reaction categories are NOT mutually exclusive. Al is the reducing agent; Cl₂ is the oxidizing agent.</p>'},
-
-  {id:'p81', type:'multi', tag:'Full Analysis',
-   q:'For the reaction: Fe₂O₃(s) + 3CO(g) → 2Fe(l) + 3CO₂(g) — a key reaction in steel production — which element is oxidized?',
-   choices:['Fe (goes from +3 to 0)','C in CO (goes from +2 to +4)','O (goes from −2 to −2)','Fe (goes from 0 to +3)'],
-   correct:1,
-   solution:'<p>Fe in Fe₂O₃ = +3; Fe in pure Fe(l) = 0 → Fe DECREASES from +3 to 0 → Fe is REDUCED (gains electrons). C in CO: C + (−2) = 0 → C = +2. In CO₂: C + 2(−2) = 0 → C = +4. C INCREASES from +2 to +4 → C is OXIDIZED. So: Fe₂O₃ is the oxidizing agent; CO is the reducing agent. This is why CO is pumped into blast furnaces to reduce iron ore to iron metal.</p>'}
+  // ─── CALCULATION (47 problems) ────────────────────────────────
+
+  {id:'p01', type:'calc', tag:'Gram–Mol', q:'How many moles are in 45.0 g of water (H₂O)?', answer:2.50, unit:'mol', tolerance:0.02, solution:'<p>Find the molar mass first: M(H₂O) = 18.015 g/mol.</p><p>n = 45.0 ÷ 18.015 = <strong>2.50 mol</strong></p>'},
+  {id:'p02', type:'calc', tag:'Gram–Mol', q:'How many grams is 3.25 mol of NaCl?', answer:190., unit:'g', tolerance:0.5, solution:'<p>M(NaCl) = 58.44 g/mol.</p><p>m = 3.25 × 58.44 = 189.93 → <strong>190. g</strong> (3 sig figs)</p>'},
+  {id:'p03', type:'calc', tag:'Gram–Mol', q:'How many moles are in 85.0 g of ammonia (NH₃)?', answer:4.99, unit:'mol', tolerance:0.05, solution:'<p>M(NH₃) = 17.03 g/mol.</p><p>n = 85.0 ÷ 17.03 = <strong>4.99 mol</strong></p>'},
+  {id:'p04', type:'calc', tag:'Gram–Mol', q:'What is the mass of 0.750 mol of ethanol (C₂H₅OH)?', answer:34.6, unit:'g', tolerance:0.2, solution:'<p>M(C₂H₅OH) = 46.07 g/mol.</p><p>m = 0.750 × 46.07 = <strong>34.6 g</strong></p>'},
+  {id:'p05', type:'calc', tag:'Gram–Mol', q:'How many moles are in 72.0 g of sodium hydroxide (NaOH)?', answer:1.80, unit:'mol', tolerance:0.02, solution:'<p>M(NaOH) = 40.00 g/mol.</p><p>n = 72.0 ÷ 40.00 = <strong>1.80 mol</strong></p>'},
+  {id:'p06', type:'calc', tag:'Gram–Mol', q:'What is the mass of 4.50 mol of potassium hydroxide (KOH)?', answer:253, unit:'g', tolerance:1.0, solution:'<p>M(KOH) = 56.11 g/mol.</p><p>m = 4.50 × 56.11 = 252.495 → <strong>253 g</strong></p>'},
+  {id:'p07', type:'calc', tag:'Gram–Mol', q:'What is the mass of 0.500 mol of glucose (C₆H₁₂O₆)?', answer:90.1, unit:'g', tolerance:0.2, solution:'<p>M(C₆H₁₂O₆) = 180.16 g/mol.</p><p>m = 0.500 × 180.16 = <strong>90.1 g</strong></p>'},
+
+  {id:'p08', type:'calc', tag:'Mol–Particles', q:'How many molecules are in 2.00 mol of CO₂?', answer:1.20e24, unit:'molecules', tolerance:2e22, solution:'<p>N = 2.00 × 6.022×10²³ = <strong>1.20 × 10²⁴ molecules</strong></p>'},
+  {id:'p09', type:'calc', tag:'Mol–Particles', q:'How many moles are in 3.61 × 10²⁴ atoms of iron (Fe)?', answer:5.99, unit:'mol', tolerance:0.05, solution:'<p>n = 3.61×10²⁴ ÷ 6.022×10²³ = <strong>5.99 mol</strong></p>'},
+  {id:'p10', type:'calc', tag:'Mol–Particles', q:'How many molecules are in 11.5 g of water (H₂O)?', answer:3.84e23, unit:'molecules', tolerance:5e21, solution:'<p>mol H₂O = 11.5 ÷ 18.02 = 0.6382 mol.<br>N = 0.6382 × 6.022×10²³ = <strong>3.84 × 10²³ molecules</strong></p>'},
+  {id:'p11', type:'calc', tag:'Mol–Particles', q:'What is the mass of 6.022 × 10²² molecules of glucose (C₆H₁₂O₆)?', answer:18.02, unit:'g', tolerance:0.1, solution:'<p>mol = 0.1000 mol.<br>m = 0.1000 × 180.16 = <strong>18.02 g</strong></p>'},
+  {id:'p12', type:'calc', tag:'Mol–Particles', q:'How many moles of atoms are in 1.00 mol of H₂SO₄?', answer:7.00, unit:'mol atoms', tolerance:0.01, solution:'<p>H₂SO₄ has 7 atoms (2H, 1S, 4O).<br>1.00 mol × 7 = <strong>7.00 mol atoms</strong></p>'},
+  {id:'p13', type:'calc', tag:'Mol–Particles', q:'How many atoms of hydrogen are in 9.03 g of H₂O?', answer:6.04e23, unit:'H atoms', tolerance:5e21, solution:'<p>mol H₂O = 9.03 ÷ 18.02 = 0.501 mol.<br>mol H = 0.501 × 2 = 1.002 mol atoms.<br>N = 1.002 × 6.022×10²³ = <strong>6.04 × 10²³ atoms</strong></p>'},
+  {id:'p14', type:'calc', tag:'Mol–Particles', q:'How many molecules are in 5.00 g of hydrogen chloride (HCl)?', answer:8.26e22, unit:'molecules', tolerance:5e20, solution:'<p>mol = 5.00 ÷ 36.46 = 0.137 mol.<br>N = 0.137 × 6.022×10²³ = <strong>8.26 × 10²² molecules</strong></p>'},
+  {id:'p15', type:'calc', tag:'Gas at STP', q:'A gas sample has 8.00 × 10²³ molecules. What volume does it occupy at STP?', answer:29.8, unit:'L', tolerance:0.2, solution:'<p>mol = 8.00e23 ÷ 6.022e23 = 1.328 mol.<br>V = 1.328 × 22.41 = <strong>29.8 L</strong></p>'},
+  {id:'p16', type:'calc', tag:'Mol–Particles', q:'How many moles are represented by 9.03 × 10²³ molecules of N₂?', answer:1.50, unit:'mol', tolerance:0.015, solution:'<p>n = 9.03e23 ÷ 6.022e23 = <strong>1.50 mol</strong></p>'},
+  {id:'p17', type:'calc', tag:'Mol–Particles', q:'How many moles are in 4.215 × 10²⁴ molecules?', answer:7.000, unit:'mol', tolerance:0.05, solution:'<p>n = 4.215e24 ÷ 6.022e23 = <strong>7.000 mol</strong></p>'},
+  {id:'p18', type:'calc', tag:'Mol–Particles', q:'What is the mass of 3.011 × 10²³ molecules of NH₃?', answer:8.516, unit:'g', tolerance:0.1, solution:'<p>mol = 0.5000 mol.<br>m = 0.5000 × 17.031 = <strong>8.516 g</strong></p>'},
+
+  {id:'p19', type:'calc', tag:'Molar Mass', q:'What is the molar mass of Ca₃(PO₄)₂?', answer:310.18, unit:'g/mol', tolerance:0.3, solution:'<p>3(40.08) + 2(30.97) + 8(16.00) = <strong>310.18 g/mol</strong></p>'},
+  {id:'p20', type:'calc', tag:'Molar Mass', q:'What is the molar mass of C₁₂H₂₂O₁₁ (sucrose)?', answer:342.30, unit:'g/mol', tolerance:0.3, solution:'<p>12(12.01) + 22(1.01) + 11(16.00) = <strong>342.30 g/mol</strong></p>'},
+  {id:'p21', type:'calc', tag:'Molar Mass', q:'What is the molar mass of magnesium nitrate, Mg(NO₃)₂?', answer:148.32, unit:'g/mol', tolerance:0.2, solution:'<p>24.31 + 2(14.01) + 6(16.00) = <strong>148.32 g/mol</strong></p>'},
+  {id:'p22', type:'calc', tag:'Molar Mass', q:'What is the molar mass of barium chloride (BaCl₂)?', answer:208.23, unit:'g/mol', tolerance:0.3, solution:'<p>137.33 + 2(35.45) = <strong>208.23 g/mol</strong></p>'},
+  {id:'p23', type:'calc', tag:'Molar Mass', q:'What is the molar mass of (NH₄)₂SO₄?', answer:132.14, unit:'g/mol', tolerance:0.2, solution:'<p>2(14.01) + 8(1.01) + 32.06 + 4(16.00) = <strong>132.14 g/mol</strong></p>'},
+  {id:'p24', type:'calc', tag:'Molar Mass', q:'What is the molar mass of silver nitrate (AgNO₃)?', answer:169.87, unit:'g/mol', tolerance:0.2, solution:'<p>107.87 + 14.01 + 48.00 = <strong>169.87 g/mol</strong></p>'},
+  {id:'p25', type:'calc', tag:'Molar Mass', q:'What is the molar mass of iron(II,III) oxide, Fe₃O₄?', answer:231.54, unit:'g/mol', tolerance:0.3, solution:'<p>3(55.85) + 4(16.00) = <strong>231.54 g/mol</strong></p>'},
+
+  {id:'p26', type:'calc', tag:'Percent Composition', q:'How many grams of O are in 25.0 g of H₂SO₄?', answer:16.3, unit:'g', tolerance:0.1, solution:'<p>%O in H₂SO₄ is 65.25%.<br>0.6525 × 25.0 = 16.31 → <strong>16.3 g</strong></p>'},
+  {id:'p27', type:'calc', tag:'Percent Composition', q:'What is the percent by mass of nitrogen in NH₄NO₃?', answer:35.0, unit:'%', tolerance:0.3, solution:'<p>2(14.01) / 80.05 × 100 = <strong>35.0%</strong></p>'},
+  {id:'p28', type:'calc', tag:'Percent Composition', q:'Find the percent by mass of sulfur in SO₃.', answer:40.0, unit:'%', tolerance:0.2, solution:'<p>32.06 / 80.06 × 100 = <strong>40.0%</strong></p>'},
+  {id:'p29', type:'calc', tag:'Percent Composition', q:'What is the percent by mass of chlorine in calcium chloride (CaCl₂)?', answer:63.9, unit:'%', tolerance:0.3, solution:'<p>70.90 / 110.98 × 100 = <strong>63.9%</strong></p>'},
+  {id:'p30', type:'calc', tag:'Percent Composition', q:'What is the percent by mass of oxygen in KMnO₄?', answer:40.5, unit:'%', tolerance:0.3, solution:'<p>64.00 / 158.03 × 100 = <strong>40.5%</strong></p>'},
+  {id:'p31', type:'calc', tag:'Percent Composition', q:'What is the percent by mass of nitrogen in urea, (NH₂)₂CO?', answer:46.7, unit:'%', tolerance:0.3, solution:'<p>28.02 / 60.06 × 100 = <strong>46.7%</strong></p>'},
+  {id:'p32', type:'calc', tag:'Percent Composition', q:'What is the percent by mass of manganese in MnO₂?', answer:63.2, unit:'%', tolerance:0.3, solution:'<p>54.94 / 86.94 × 100 = <strong>63.2%</strong></p>'},
+
+  {id:'p33', type:'calc', tag:'Gas at STP', q:'What volume does 4.50 mol of O₂ occupy at STP?', answer:101, unit:'L', tolerance:0.5, solution:'<p>V = 4.50 × 22.41 = 100.8 → <strong>101 L</strong></p>'},
+  {id:'p34', type:'calc', tag:'Gas at STP', q:'A sample of CH₄ occupies 11.2 L at STP. How many molecules is this?', answer:3.01e23, unit:'molecules', tolerance:5e21, solution:'<p>mol = 11.2 ÷ 22.41 = 0.500 mol.<br>N = 0.500 × 6.022e23 = <strong>3.01 × 10²³ molecules</strong></p>'},
+  {id:'p35', type:'calc', tag:'Gas at STP', q:'What volume at STP does 4.40 g of propane (C₃H₈) occupy?', answer:2.24, unit:'L', tolerance:0.05, solution:'<p>mol = 4.40 ÷ 44.11 = 0.0998 mol.<br>V = 0.0998 × 22.41 = <strong>2.24 L</strong></p>'},
+  {id:'p36', type:'calc', tag:'Gas at STP', q:'How many moles of gas are in 3.20 L at STP?', answer:0.143, unit:'mol', tolerance:0.003, solution:'<p>n = 3.20 ÷ 22.41 = <strong>0.143 mol</strong></p>'},
+  {id:'p37', type:'calc', tag:'Gas at STP', q:'What volume at STP does 88.0 g of CO₂ occupy?', answer:44.8, unit:'L', tolerance:0.3, solution:'<p>mol = 88.0 ÷ 44.01 = 2.00 mol.<br>V = 2.00 × 22.41 = <strong>44.8 L</strong></p>'},
+  {id:'p38', type:'calc', tag:'Gas at STP', q:'How many argon atoms are in a 3.00 L sample of Ar gas at STP?', answer:8.06e22, unit:'Ar atoms', tolerance:5e20, solution:'<p>mol = 3.00 ÷ 22.41 = 0.1339 mol.<br>N = 0.1339 × 6.022e23 = <strong>8.06 × 10²² atoms</strong></p>'},
+  {id:'p39', type:'calc', tag:'Gas at STP', q:'What volume does 0.350 mol of Cl₂ gas occupy at STP?', answer:7.84, unit:'L', tolerance:0.05, solution:'<p>V = 0.350 × 22.41 = <strong>7.84 L</strong></p>'},
+
+  {id:'p40', type:'calc', tag:'Empirical Formula', q:'A compound is 40.0% C, 6.71% H, and 53.3% O by mass. What is the empirical formula?', answer:'CH₂O', unit:'', tolerance:0, isText:true, solution:'<p>Ratio of C:H:O is 1:2:1. Empirical formula = <strong>CH₂O</strong></p>'},
+  {id:'p41', type:'calc', tag:'Empirical Formula', q:'A compound is 52.2% C, 13.0% H, and 34.8% O by mass. What is the empirical formula?', answer:'C₂H₆O', unit:'', tolerance:0, isText:true, solution:'<p>Ratio of C:H:O is 2:6:1. Empirical formula = <strong>C₂H₆O</strong></p>'},
+  {id:'p42', type:'calc', tag:'Empirical Formula', q:'A compound contains 75.0% C and 25.0% H. What is the empirical formula?', answer:'CH₄', unit:'', tolerance:0, isText:true, solution:'<p>Ratio of C:H is 1:4. Empirical formula = <strong>CH₄</strong></p>'},
+
+  {id:'p43', type:'calc', tag:'Counting Atoms', q:'How many moles of carbon atoms are in 1.00 mol of citric acid (C₆H₈O₇)?', answer:6.00, unit:'mol C', tolerance:0.01, solution:'<p>1 mol molecule × 6 C atoms = <strong>6.00 mol C</strong></p>'},
+  {id:'p44', type:'calc', tag:'Counting Atoms', q:'How many sodium ions (Na⁺) are present in 58.44 g of sodium chloride (NaCl)?', answer:6.022e23, unit:'Na⁺ ions', tolerance:5e21, solution:'<p>58.44 g is exactly 1.000 mol of NaCl. Therefore, <strong>6.022 × 10²³ ions</strong>.</p>'},
+  {id:'p45', type:'calc', tag:'Counting Atoms', q:'How many moles of oxygen atoms are in 2.50 mol of Al₂(SO₄)₃?', answer:30.0, unit:'mol O', tolerance:0.1, solution:'<p>Each unit has 12 O atoms. 2.50 × 12 = <strong>30.0 mol O</strong></p>'},
+  {id:'p46', type:'calc', tag:'Counting Atoms', q:'How many atoms of hydrogen are in 1.00 mol of glucose (C₆H₁₂O₆)?', answer:7.23e24, unit:'H atoms', tolerance:5e22, solution:'<p>1 mol × 12 H atoms × 6.022e23 = <strong>7.23 × 10²⁴ atoms</strong></p>'},
+  {id:'p47', type:'calc', tag:'Counting Atoms', q:'How many aluminum atoms are in 10.0 g of pure aluminum (Al)?', answer:2.23e23, unit:'Al atoms', tolerance:5e21, solution:'<p>mol = 10.0 ÷ 26.98 = 0.3706 mol.<br>N = 0.3706 × 6.022e23 = <strong>2.23 × 10²³ atoms</strong></p>'},
+
+  // ─── CONCEPTUAL (19 problems) ─────────────────────────────────
+
+  {id:'p48', type:'concept', tag:'Mole Concept', q:'Why is the mole defined using carbon-12 specifically?', choices:['Hydrogen is too reactive','Carbon-12 allows the most precise mass comparisons via mass spectrometry','Carbon is the most abundant element','Hydrogen-1 does not have any neutrons'], correct:1, solution:'<p>Carbon-12 is the IUPAC standard for the atomic mass unit.</p>'},
+  {id:'p49', type:'concept', tag:'Mole Concept', q:'Two samples each contain 1.00 mol of substance. Sample A is NaCl; Sample B is H₂O. Which statement is TRUE?', choices:['Sample A has more molecules','Both contain the same number of formula units','Sample B has more atoms','Sample A has more formula units'], correct:1, solution:'<p>The mole is a counting unit. 1 mol always = 6.022×10²³ units.</p>'},
+  {id:'p50', type:'concept', tag:'Molar Mass', q:'A student calculates a molar mass of 35.5 g/mol for a compound. The actual molar mass is 71.0 g/mol. What is the most likely error?', choices:['They used the atomic number instead of atomic mass','They found the empirical formula mass instead of molecular formula mass','They used the wrong periodic table','They measured volume instead of mass'], correct:1, solution:'<p>The empirical mass (35.5) is half the molecular mass (71.0).</p>'},
+  {id:'p51', type:'concept', tag:'Counting Atoms', q:'Which sample contains the greatest number of oxygen ATOMS?', choices:['1.00 mol O₂','1.00 mol SO₃','1.00 mol H₂O','1.00 mol CO₂'], correct:1, solution:'<p>SO₃ has 3 oxygen atoms per molecule (3.00 mol total).</p>'},
+  {id:'p52', type:'concept', tag:'Molecular Formula', q:'The empirical formula is CH₂O and the molar mass is ~180 g/mol. Which is correct?', choices:['CH₂O','C₃H₆O₃','C₆H₁₂O₆','C₂H₄O₂'], correct:2, solution:'<p>180 / 30 = 6. C₆H₁₂O₆.</p>'},
+  {id:'p53', type:'concept', tag:'Molar Mass', q:'Why is the molar mass of carbon 12.011 g/mol rather than exactly 12.000 g/mol?', choices:['Measurement was imprecise','Natural carbon contains a mix of isotopes','Carbon atoms are not identical','12.000 g/mol refers to diamond'], correct:1, solution:'<p>Masses are weighted averages of natural isotopes.</p>'},
+  {id:'p54', type:'concept', tag:'Gas at STP', q:'A gas at STP occupies 44.8 L. How many moles is this?', choices:['1.00 mol','2.00 mol','22.4 mol','4.00 mol'], correct:1, solution:'<p>44.8 / 22.4 = 2.00 mol.</p>'},
+  {id:'p55', type:'concept', tag:'Percent Composition', q:'Compound X and Y have the same empirical formula (CH₂) but different molecular formulas. What is different?', choices:['% Carbon','% Hydrogen','Molar mass','All of the above'], correct:2, solution:'<p>Different molecular formulas mean different molar masses.</p>'},
+  {id:'p56', type:'concept', tag:'Mole Concept', q:'3.011 × 10²³ molecules is closest to:', choices:['1/4 mole','1/2 mole','1 mole','2 moles'], correct:1, solution:'<p>3.011e23 / 6.022e23 = 0.500 mol.</p>'},
+  {id:'p57', type:'concept', tag:'Mole Concept', q:'Best definition of molar mass?', choices:['Mass of 6.022×10²³ particles in grams','Protons plus neutrons in one atom','Ratio of atomic mass to Avogadro','Mass listed in amu'], correct:0, solution:'<p>Molar mass = grams per 1 mole.</p>'},
+  {id:'p58', type:'concept', tag:'Counting Atoms', q:'1.00 mol NaCl vs 1.00 mol MgCl₂. Which has more Cl⁻ ions?', choices:['NaCl','Same number','MgCl₂','Depends on volume'], correct:2, solution:'<p>MgCl₂ provides 2 Cl⁻ per unit; NaCl only 1.</p>'},
+  {id:'p59', type:'concept', tag:'Molar Mass', q:'Which 1.00-gram sample contains the most atoms?', choices:['Iron (Fe)','Carbon (C)','Lead (Pb)','Calcium (Ca)'], correct:1, solution:'<p>Carbon has the smallest molar mass, so it has more atoms per gram.</p>'},
+  {id:'p60', type:'concept', tag:'Gas at STP', q:'He and O₂ occupy 22.4 L at STP. Which is correct?', choices:['Same molecules, same mass','Same molecules, different mass','Different molecules, same mass','Different molecules, different mass'], correct:1, solution:'<p>Equal volumes at STP have equal moles, but different molar masses.</p>'},
+  {id:'p61', type:'concept', tag:'Molar Mass', q:'Which 1.00-mol sample has the GREATEST mass?', choices:['H₂O','NaCl','Fe','Pb'], correct:3, solution:'<p>Lead (Pb) has the highest molar mass (207.2 g/mol).</p>'},
+  {id:'p62', type:'concept', tag:'Molecular Formula', q:'Empirical formula CH₃O, molar mass 62 g/mol. What is it?', choices:['CH₃O','C₂H₆O₂','C₃H₉O₃','Impossible'], correct:1, solution:'<p>62 / 31 = 2. C₂H₆O₂.</p>'},
+  {id:'p63', type:'concept', tag:'Molar Mass', q:'Which sample contains the fewest molecules?', choices:['1.00 g H₂O','1.00 g O₂','1.00 g CO₂','1.00 g C₆H₁₂O₆'], correct:3, solution:'<p>Highest molar mass (Glucose) = fewest moles in 1 gram.</p>'},
+  {id:'p64', type:'concept', tag:'Counting Atoms', q:'2 mol H₂O vs 1 mol H₂O₂. Which has more hydrogen atoms?', choices:['2 mol H₂O','1 mol H₂O₂','Same','Depends on temp'], correct:0, solution:'<p>2×2 = 4 mol H; 1×2 = 2 mol H.</p>'},
+  {id:'p65', type:'concept', tag:'Mole Concept', q:'Why can you NOT convert directly from grams to particles?', choices:['You can','Must use moles as the intermediate bridge','Avogadro only for gases','PT is insufficient'], correct:1, solution:'<p>You must go through moles (the bridge).</p>'},
+  {id:'p66', type:'concept', tag:'Mole Concept', q:'Which about Avogadro\'s number is FALSE?', choices:['Approx 6.022e23','Atoms in 12g C-12','Units are mol⁻¹','Changes depending on substance'], correct:3, solution:'<p>Avogadro\'s number is a universal constant.</p>'},
+
+  // ─── MULTI-STEP (15 problems) ─────────────────────────────────
+
+  {id:'p67', type:'multi', tag:'Empirical Formula', q:'0.500 g hydrocarbon gives 1.572 g CO₂ and 0.644 g H₂O. Empirical formula?', answer:'CH₂', unit:'', isText:true, tolerance:0, solution:'<p>C: 0.0357 mol; H: 0.0715 mol. Ratio 1:2. <strong>CH₂</strong></p>'},
+  {id:'p68', type:'multi', tag:'Counting Atoms', q:'Hydrogen atoms in 50.0 g sucrose (M = 342.3)?', answer:1.94e24, unit:'H atoms', tolerance:5e22, solution:'<p>mol = 0.146. H = 0.146×22×6.022e23 = <strong>1.94 × 10²⁴</strong></p>'},
+  {id:'p69', type:'multi', tag:'Counting Atoms', q:'Iron atoms in 50.0 g Fe₂O₃ (M = 159.7)?', answer:3.77e23, unit:'Fe atoms', tolerance:5e21, solution:'<p>mol = 0.313. Fe = 0.313×2×6.022e23 = <strong>3.77 × 10²³</strong></p>'},
+  {id:'p70', type:'multi', tag:'Gas at STP', q:'4.00e23 N₂ and 2.00e23 O₂. Total volume at STP?', answer:22.3, unit:'L', tolerance:0.2, solution:'<p>Total mol = 0.996. V = 0.996 × 22.41 = <strong>22.3 L</strong></p>'},
+  {id:'p71', type:'multi', tag:'Percent Composition', q:'% elements in aspirin (C₉H₈O₄, M=180.16)?', answer:'%C=60.0, %H=4.48, %O=35.5', unit:'', isText:true, tolerance:0, solution:'<p>Calculated percentages based on 180.16 g/mol.</p>'},
+  {id:'p72', type:'multi', tag:'Molecular Formula', q:'38.7% C, 9.68% H, 51.6% O. M=~62. Formula?', answer:'C₂H₆O₂', unit:'', isText:true, tolerance:0, solution:'<p>Empirical CH₃O. 62 / 31 = 2. <strong>C₂H₆O₂</strong></p>'},
+  {id:'p73', type:'multi', tag:'Mol–Particles', q:'2.50 mol H₂SO₄ dissociates (H₂SO₄ → 2H⁺ + SO₄²⁻). Total ions?', answer:4.52e24, unit:'ions', tolerance:1e23, solution:'<p>2.50 mol × 3 ions/unit × 6.022e23 = <strong>4.52 × 10²⁴ ions</strong></p>'},
+  {id:'p74', type:'multi', tag:'Molecular Formula', q:'Empirical CH₂O, molar mass 60.05. Formula?', answer:'C₂H₄O₂', unit:'', isText:true, tolerance:0, solution:'<p>60.05 / 30.03 = 2. <strong>C₂H₄O₂</strong></p>'},
+  {id:'p75', type:'multi', tag:'Empirical Formula', q:'4.976 g CuSO₄ hydrate heated to 3.184 g anhydrous. Find x in CuSO₄·xH₂O.', answer:'5', unit:'', isText:true, tolerance:0, solution:'<p>mol water = 0.0995; mol salt = 0.0199. Ratio = 5. <strong>x = 5</strong></p>'},
+  {id:'p76', type:'multi', tag:'Molar Mass', q:'5.00 g sample contains 1.327 × 10²³ atoms. Identify element.', answer:'Sodium', unit:'', isText:true, tolerance:0, solution:'<p>mol = 0.2203. M = 5.00 / 0.2203 = 22.7 g/mol (Sodium).</p>'},
+  {id:'p77', type:'multi', tag:'Mol–Particles', q:'3.60 g Mg to MgO. How many formula units MgO?', answer:8.92e22, unit:'units', tolerance:5e20, solution:'<p>mol Mg = 0.148 = mol MgO. N = 0.148 × 6.022e23 = <strong>8.92 × 10²²</strong></p>'},
+  {id:'p78', type:'multi', tag:'Counting Atoms', q:'Oxygen atoms in 34.0 g H₂O₂?', answer:1.20e24, unit:'O atoms', tolerance:5e22, solution:'<p>mol = 1.00. O atoms = 1.00 × 2 × 6.022e23 = <strong>1.20 × 10²⁴</strong></p>'},
+  {id:'p79', type:'multi', tag:'Counting Atoms', q:'Mass of chlorine in 25.0 g AlCl₃?', answer:19.9, unit:'g Cl', tolerance:0.15, solution:'<p>%Cl = 79.76%. 0.7976 × 25.0 = <strong>19.9 g</strong></p>'},
+  {id:'p80', type:'multi', tag:'Molecular Formula', q:'85.6% C, 14.4% H. M=~42. Formula?', answer:'C₃H₆', unit:'', isText:true, tolerance:0, solution:'<p>Empirical CH₂. 42 / 14 = 3. <strong>C₃H₆</strong></p>'},
+  {id:'p81', type:'multi', tag:'Counting Atoms', q:'Total atoms in 10.0 g Ca₃(PO₄)₂?', answer:2.52e23, unit:'atoms', tolerance:5e21, solution:'<p>mol = 0.0322. Atoms = 0.0322 × 13 × 6.022e23 = <strong>2.52 × 10²³</strong></p>'}
 
 ];

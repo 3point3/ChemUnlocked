@@ -4,9 +4,9 @@
    then returns a randomized problem set.
 
    Expected query params:
-     unit   — e.g. "04"
+     unit   — e.g. "05"
      filter — "all" | "calc" | "concept" | "multi"
-     count  — number of problems to return (default 12)
+     count  — number of problems to return (default 3)
 
    Required headers:
      x-access-token — opaque token stored in localStorage
@@ -24,7 +24,6 @@ const supabase = createClient(
 );
 
 const UNIT_MODULES = {
-  '00': () => import('../lib/data/unit00-problems.js'),
   '01': () => import('../lib/data/unit01-problems.js'),
   '02': () => import('../lib/data/unit02-problems.js'),
   '03': () => import('../lib/data/unit03-problems.js'),
@@ -39,6 +38,7 @@ const UNIT_MODULES = {
   '12': () => import('../lib/data/unit12-problems.js'),
   '13': () => import('../lib/data/unit13-problems.js'),
   '14': () => import('../lib/data/unit14-problems.js'),
+  '15': () => import('../lib/data/unit15-problems.js'),
 };
 
 async function isAuthorized(token) {
@@ -76,7 +76,7 @@ exports.handler = async function (event) {
   }
 
   /* ── Validate params ── */
-  const { unit = '', filter = 'all', count = '12' } = event.queryStringParameters || {};
+  const { unit = '', filter = 'all', count = '3' } = event.queryStringParameters || {};
 
   const loader = UNIT_MODULES[unit];
   if (!loader) {
@@ -100,7 +100,7 @@ exports.handler = async function (event) {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
-    const drawCount = Math.min(parseInt(count, 10) || 12, shuffled.length);
+    const drawCount = Math.min(parseInt(count, 10) || 3, shuffled.length);
 
     return {
       statusCode: 200,

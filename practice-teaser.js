@@ -17,10 +17,12 @@ function renderSampleProblems(problems, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = '';
+  const solutionRenderer = window.ChemUnlockedSolutionRenderer;
 
   problems.forEach((p, i) => {
     const tagClass = p.type === 'calc' ? 'tag-calc' : p.type === 'multi' ? 'tag-multi' : 'tag-concept';
     let answerHTML = '';
+    const solutionHTML = solutionRenderer ? solutionRenderer.format(p) : p.solution;
 
     if (p.choices) {
       answerHTML = `<div class="prob-choices">${p.choices.map((c, ci) =>
@@ -50,7 +52,7 @@ function renderSampleProblems(problems, containerId) {
         <div class="prob-q">${p.q}</div>
         ${answerHTML}
         <div class="feedback" id="fb-${p.id}"></div>
-        <div class="solution" id="sol-${p.id}">${p.solution}</div>
+        <div class="solution" id="sol-${p.id}">${solutionHTML}</div>
       </div>`);
   });
 

@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local Netlify folder
+.netlify
+
+# Claude worktrees
+.claude/worktrees/
+
+# Archives / scratch files
+*.zip
+--

@@ -17,14 +17,6 @@
   margin-bottom: 1rem;
 }
 
-/* ── Filter panel (same as full practice pages) ── */
-.filter-panel {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .unit-label-inline {
   color: var(--muted);
   font-size: 0.9rem;

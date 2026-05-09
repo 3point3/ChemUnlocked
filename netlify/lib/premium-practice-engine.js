@@ -6,7 +6,7 @@
 
    Usage (from a premium-gated page):
      import { initPremiumPractice } from './premium-practice-engine.js';
-     initPremiumPractice({ unit: '04', containerId: 'problemContainer' });
+     initPremiumPractice({ unit: '05', containerId: 'problemContainer' });
    ===================================================== */
 
 function normalize(s) {
@@ -17,11 +17,38 @@ function normalize(s) {
     .trim();
 }
 
-export async function initPremiumPractice({ unit, containerId = 'problemContainer', filter = 'all', count = 12 } = {}) {
+function isEquivalentTextAnswer(raw, answer) {
+  const normalizedRaw = normalize(raw);
+  const normalizedAnswer = normalize(String(answer));
+  if (normalizedRaw === normalizedAnswer) return true;
+
+  // Accept either "+1" or "1+" style charge notation for simple signed values.
+  const chargeMatch = normalizedRaw.match(/^([+-]?)(\d+)([+-]?)$/);
+  const answerChargeMatch = normalizedAnswer.match(/^([+-]?)(\d+)([+-]?)$/);
+  if (chargeMatch && answerChargeMatch) {
+    const rawSign = chargeMatch[1] || chargeMatch[3];
+    const answerSign = answerChargeMatch[1] || answerChargeMatch[3];
+    if (chargeMatch[2] === answerChargeMatch[2] && rawSign && rawSign === answerSign) {
+      return true;
+    }
+  }
+
+  // For ordered text answers, ignore common separator differences while preserving order.
+  const splitTokens = (value) => normalize(value).split(/[;,><-]+/).filter(Boolean);
+  const rawTokens = splitTokens(raw);
+  const answerTokens = splitTokens(answer);
+  if (rawTokens.length > 1 && rawTokens.length === answerTokens.length) {
+    return rawTokens.every((token, index) => token === answerTokens[index]);
+  }
+
+  return false;
+}
+
+export async function initPremiumPractice({ unit, containerId = 'problemContainer', filter = 'all', count = 3 } = {}) {
   const container = document.getElementById(containerId);
   if (!container) throw new Error(`Container #${containerId} not found`);
 
-  container.innerHTML = '<p style="color:var(--muted)">Loading your problem set…</p>';
+  container.innerHTML = '<p class="premium-status premium-status--muted">Loading your problem set…</p>';
 
   let problems;
   try {
@@ -42,7 +69,7 @@ export async function initPremiumPractice({ unit, containerId = 'problemContaine
     }
     ({ problems } = await res.json());
   } catch (err) {
-    container.innerHTML = `<p style="color:red">Could not load problems: ${err.message}</p>`;
+    container.innerHTML = `<p class="premium-status premium-status--error">Could not load problems: ${err.message}</p>`;
     return;
   }
 
@@ -57,10 +84,18 @@ export function renderPremiumProblemSet({ problems, containerId = 'problemContai
 
 function renderProblems(problems, container) {
   container.innerHTML = '';
+  const solutionRenderer = window.ChemUnlockedSolutionRenderer;
 
   problems.forEach((p, i) => {
     const tagClass = p.type === 'calc' ? 'tag-calc' : p.type === 'multi' ? 'tag-multi' : 'tag-concept';
     let answerHTML = '';
+    const solutionHTML = solutionRenderer ? solutionRenderer.format(p) : p.solution;
+    const diagramHTML = p.diagram
+      ? `<figure class="prob-diagram-wrap">
+          <img class="prob-diagram" src="${p.diagram}" alt="${p.diagramAlt || ''}" loading="lazy">
+          ${p.diagramCaption ? `<figcaption class="prob-diagram-caption">${p.diagramCaption}</figcaption>` : ''}
+        </figure>`
+      : '';
 
     if (p.choices) {
       answerHTML = `<div class="prob-choices">${p.choices.map((c, ci) =>
@@ -88,9 +123,10 @@ function renderProblems(problems, container) {
           <span class="prob-tag ${tagClass}">${p.tag}</span>
         </div>
         <div class="prob-q">${p.q}</div>
+        ${diagramHTML}
         ${answerHTML}
         <div class="feedback" id="fb-${p.id}"></div>
-        <div class="solution" id="sol-${p.id}">${p.solution}</div>
+        <div class="solution" id="sol-${p.id}">${solutionHTML}</div>
       </div>`);
   });
 
@@ -126,7 +162,7 @@ function renderProblems(problems, container) {
       const raw = inputEl.value.trim();
       let isCorrect;
       if (isText) {
-        isCorrect = normalize(raw) === normalize(String(answer));
+        isCorrect = isEquivalentTextAnswer(raw, answer);
       } else {
         const val = parseFloat(raw);
         isCorrect = !isNaN(val) && Math.abs(val - answer) <= tolerance;

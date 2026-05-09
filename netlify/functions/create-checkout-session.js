@@ -4,7 +4,7 @@
 
    Expected POST body (JSON):
      plan  — "monthly" | "yearly"
-     unit  — e.g. "04"  (used to build the success redirect URL)
+     unit  — e.g. "05"  (used to build the success redirect URL)
      email — customer email address
 
    Required environment variables:

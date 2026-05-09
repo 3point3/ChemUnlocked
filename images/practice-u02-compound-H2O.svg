@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
+  <title id="title">Water molecule compound diagram</title>
+  <desc id="desc">A container showing identical bent three-atom molecules, each with one large red atom bonded to two smaller gray atoms.</desc>
+  <rect x="18" y="18" width="324" height="144" rx="20" fill="#fff1f2" stroke="#fca5a5" stroke-width="3"/>
+  <!-- Molecule 1: O at (80,52) -->
+  <line x1="80" y1="52" x2="58" y2="74" stroke="#64748b" stroke-width="2.5"/>
+  <line x1="80" y1="52" x2="102" y2="74" stroke="#64748b" stroke-width="2.5"/>
+  <circle cx="80"  cy="52" r="16" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="58"  cy="74" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="102" cy="74" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Molecule 2: O at (225,48) -->
+  <line x1="225" y1="48" x2="203" y2="70" stroke="#64748b" stroke-width="2.5"/>
+  <line x1="225" y1="48" x2="247" y2="70" stroke="#64748b" stroke-width="2.5"/>
+  <circle cx="225" cy="48" r="16" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="203" cy="70" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="247" cy="70" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Molecule 3: O at (130,120) -->
+  <line x1="130" y1="120" x2="108" y2="142" stroke="#64748b" stroke-width="2.5"/>
+  <line x1="130" y1="120" x2="152" y2="142" stroke="#64748b" stroke-width="2.5"/>
+  <circle cx="130" cy="120" r="16" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="108" cy="142" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="152" cy="142" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Molecule 4: O at (290,118) -->
+  <line x1="290" y1="118" x2="268" y2="140" stroke="#64748b" stroke-width="2.5"/>
+  <line x1="290" y1="118" x2="312" y2="140" stroke="#64748b" stroke-width="2.5"/>
+  <circle cx="290" cy="118" r="16" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="268" cy="140" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="312" cy="140" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+</svg>

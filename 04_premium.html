@@ -3,122 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked</title>
-<meta name="description" content="Full premium Unit 04 chemistry practice on periodic table trends, atomic radius, ionization energy, electronegativity, ion size, and element classification.">
-<link rel="canonical" href="https://chemunlocked.com/04_premium.html">
-<meta property="og:title" content="Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked">
-<meta property="og:description" content="Full premium Unit 04 chemistry practice with randomized 12-problem sets and instant feedback.">
-<meta property="og:url" content="https://chemunlocked.com/04_premium.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Unit 04 Premium Practice — Periodic Table &amp; Trends | ChemUnlocked">
-<meta name="twitter:description" content="Full premium Unit 04 chemistry practice with randomized 12-problem sets and instant feedback.">
-<meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<title>Redirecting to Unit 04 Premium Practice | ChemUnlocked</title>
+<meta name="description" content="Redirecting to the Unit 04 premium practice page for Electron Configuration.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://chemunlocked.com/premium.html?unit=04">
+<meta http-equiv="refresh" content="0; url=premium.html?unit=04">
 <link rel="stylesheet" href="chem.css">
-
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body>
-<div id="top"></div>
-<div class="starfield"></div>
-
-<div class="container">
-  <header>
-    <div class="unit-label">Introductory General Chemistry &nbsp;·&nbsp; Unit 04 Premium Practice</div>
-    <h1>Periodic Table &amp; Trends</h1>
-    <h2>Full Premium Practice</h2>
-    <p class="subtitle">Full randomized 12-problem sets from the Unit 04 premium bank, with instant feedback and full solutions.</p>
-  </header>
-
-
-  <div id="topControls" class="premium-controls">
-    <label for="filterSelect">Filter:</label>
-    <select id="filterSelect">
-      <option value="all">All</option>
-      <option value="calc">Calc</option>
-      <option value="concept">Concept</option>
-      <option value="multi">Multi</option>
-    </select>
-
-    <button id="reloadBtn" class="btn btn-sm" type="button">Load New 12-Problem Set</button>
-    <button id="billingBtn" class="btn btn-sm btn-outline" type="button">Manage Billing</button>
-    <a href="04_practice.html" class="btn btn-sm btn-outline">Back to Free Teaser</a>
-  </div>
-
-  <div id="problemContainer"></div>
-  
-  <div class="page-end-actions">
-    <a href="#top" class="btn btn-outline">Back to Top</a>
-  </div>
-  
-  <div class="scroll-hint">Introductory General Chemistry · Unit 04 · Periodic Table &amp; Trends Premium Practice</div>
-
-</div><!-- end .container -->
-
-<script src="chem.js"></script>
-<script src="practice-premium.js"></script>
-<script type="module">
-import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
-
-const filterSelect = document.getElementById('filterSelect');
-const reloadBtn = document.getElementById('reloadBtn');
-const billingBtn = document.getElementById('billingBtn');
-const problemContainer = document.getElementById('problemContainer');
-const loadPremiumSet = window.loadPremiumSet;
-const openCustomerPortal = window.openCustomerPortal;
-
-/* ── Access gate: verify token before loading any problems ── */
-async function checkAccess() {
-  const token = localStorage.getItem('cu_token') || '';
-  if (!token) { redirectToGate('no_token'); return false; }
-
-  try {
-    const res = await fetch(
-      '/.netlify/functions/get-premium-problem-set?unit=04&count=1',
-      { headers: { 'x-access-token': token } }
-    );
-    if (res.status === 403) {
-      localStorage.removeItem('cu_token');
-      redirectToGate('expired');
-      return false;
-    }
-    if (!res.ok) {
-      throw new Error('Subscription check failed.');
-    }
-    return true;
-  } catch (err) {
-    problemContainer.innerHTML = `<p style="color:red">Could not verify subscription: ${err.message}</p>`;
-    return false;
-  }
-}
-
-function redirectToGate(reason) {
-  window.location.replace(`04_practice.html?access=${reason}`);
-}
-
-async function loadSet() {
-  problemContainer.innerHTML = '<p style="color:var(--muted)">Loading your problem set…</p>';
-  try {
-    const data = await loadPremiumSet('04', filterSelect.value, 12);
-    renderPremiumProblemSet({ problems: data.problems, containerId: 'problemContainer' });
-  } catch (err) {
-    problemContainer.innerHTML = `<p style="color:red">Could not load problems: ${err.message}</p>`;
-  }
-}
-
-reloadBtn.addEventListener('click', () => { loadSet(); });
-filterSelect.addEventListener('change', () => { loadSet(); });
-billingBtn.addEventListener('click', () => {
-  if (typeof openCustomerPortal === 'function') {
-    openCustomerPortal();
-  } else {
-    alert('Billing portal is not available in this local test yet.');
-  }
-});
-
-/* Show verifying state, then load if access confirmed */
-problemContainer.innerHTML = '<p style="color:var(--muted)">Verifying subscription…</p>';
-checkAccess().then(ok => { if (ok) loadSet(); });
+  <main id="main-content">
+    <div class="container">
+      <header>
+        <div class="unit-label">Introductory General Chemistry &nbsp;&middot;&nbsp; Unit 04 Premium Practice</div>
+        <h1>Redirecting…</h1>
+        <p class="subtitle">Opening the new Unit 04 premium practice page.</p>
+      </header>
+      <p><a href="premium.html?unit=04" class="btn">Continue to Unit 04 Premium Practice</a></p>
+    </div>
+  </main>
+<script>
+window.location.replace('premium.html?unit=04');
 </script>
 </body>
 </html>

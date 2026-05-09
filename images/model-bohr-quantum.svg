@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" role="img" aria-labelledby="title desc">
+  <title id="title">Bohr and quantum atomic model</title>
+  <desc id="desc">Circular energy levels and a soft probability cloud represent later atomic models.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef6ff"/>
+    </linearGradient>
+    <radialGradient id="cloudBlue" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#1d4ed8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.02"/>
+    </radialGradient>
+    <radialGradient id="cloudGreen" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#047857" stop-opacity="0.14"/>
+      <stop offset="70%" stop-color="#047857" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#94a3b8" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="280" height="220" rx="28" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="14" y="14" width="252" height="192" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+  <ellipse cx="140" cy="110" rx="92" ry="68" fill="url(#cloudBlue)"/>
+  <ellipse cx="140" cy="110" rx="62" ry="96" fill="url(#cloudGreen)"/>
+  <circle cx="140" cy="110" r="12" fill="#b91c1c"/>
+  <circle cx="140" cy="110" r="44" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="140" cy="110" r="70" fill="none" stroke="#93c5fd" stroke-width="2"/>
+  <circle cx="210" cy="110" r="8" fill="#1d4ed8"/>
+  <circle cx="140" cy="40" r="8" fill="#1d4ed8"/>
+</svg>

@@ -1,0 +1,114 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Teaching mole road map with moles in the center</title>
+  <desc id="desc">A chemistry conversion map with moles at the center connected to grams, representative particles, and liters at STP. Each connection shows the conversion factor in both directions.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#F8FFFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12V0Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12V0Z" fill="#059669"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12V0Z" fill="#EA580C"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Inter, Arial, sans-serif; fill: #0F172A; }
+      .subtitle { font: 500 18px Inter, Arial, sans-serif; fill: #475569; }
+      .node-title { font: 700 28px Inter, Arial, sans-serif; fill: #0F172A; }
+      .node-body { font: 500 18px Inter, Arial, sans-serif; fill: #334155; }
+      .small { font: 600 16px Inter, Arial, sans-serif; fill: #475569; }
+      .factor { font: 700 17px 'DM Mono', Menlo, monospace; }
+      .factor-blue { fill: #1D4ED8; }
+      .factor-green { fill: #047857; }
+      .factor-orange { fill: #C2410C; }
+      .label { font: 700 15px Inter, Arial, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="36" fill="url(#bg)"/>
+
+  <text x="60" y="72" class="title">Always route mole conversions through moles</text>
+  <text x="60" y="104" class="subtitle">Pick the path first. Then flip the fraction so the unit you already have lands on the bottom and cancels.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="434" y="250" width="332" height="228" rx="34" fill="#FFFFFF" stroke="#99F6E4" stroke-width="3"/>
+  </g>
+  <text x="600" y="316" text-anchor="middle" class="label" fill="#0F766E">Hub</text>
+  <text x="600" y="362" text-anchor="middle" class="node-title">Moles</text>
+  <text x="600" y="396" text-anchor="middle" class="node-body">mol</text>
+  <text x="600" y="434" text-anchor="middle" class="small">Most multi-step problems pass here first.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="270" width="256" height="188" rx="28" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="3"/>
+  </g>
+  <text x="198" y="327" text-anchor="middle" class="node-title">Grams</text>
+  <text x="198" y="361" text-anchor="middle" class="node-body">mass of the substance</text>
+  <text x="198" y="399" text-anchor="middle" class="small">Use molar mass</text>
+
+  <g filter="url(#shadow)">
+    <rect x="874" y="270" width="256" height="188" rx="28" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="3"/>
+  </g>
+  <text x="1002" y="322" text-anchor="middle" class="node-title">Particles</text>
+  <text x="1002" y="356" text-anchor="middle" class="node-body">atoms, molecules,</text>
+  <text x="1002" y="384" text-anchor="middle" class="node-body">or formula units</text>
+  <text x="1002" y="422" text-anchor="middle" class="small">Use Avogadro’s number</text>
+
+  <g filter="url(#shadow)">
+    <rect x="422" y="544" width="356" height="152" rx="28" fill="#FFFFFF" stroke="#FED7AA" stroke-width="3"/>
+  </g>
+  <text x="600" y="596" text-anchor="middle" class="node-title">Liters at STP</text>
+  <text x="600" y="630" text-anchor="middle" class="node-body">gas volume only</text>
+  <text x="600" y="666" text-anchor="middle" class="small">Use 22.4 L/mol</text>
+
+  <line x1="326" y1="364" x2="434" y2="364" stroke="#2563EB" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <line x1="434" y1="398" x2="326" y2="398" stroke="#2563EB" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <text x="380" y="340" text-anchor="middle" class="factor factor-blue">1 mol / molar mass (g)</text>
+  <text x="380" y="430" text-anchor="middle" class="factor factor-blue">molar mass (g) / 1 mol</text>
+
+  <line x1="766" y1="364" x2="874" y2="364" stroke="#059669" stroke-width="5" marker-end="url(#arrowGreen)"/>
+  <line x1="874" y1="398" x2="766" y2="398" stroke="#059669" stroke-width="5" marker-end="url(#arrowGreen)"/>
+  <text x="820" y="340" text-anchor="middle" class="factor factor-green">6.022 × 10²³ particles / 1 mol</text>
+  <text x="820" y="430" text-anchor="middle" class="factor factor-green">1 mol / 6.022 × 10²³ particles</text>
+
+  <line x1="564" y1="478" x2="564" y2="544" stroke="#EA580C" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <line x1="636" y1="544" x2="636" y2="478" stroke="#EA580C" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <text x="452" y="510" class="factor factor-orange">22.4 L / 1 mol</text>
+  <text x="666" y="510" class="factor factor-orange">1 mol / 22.4 L</text>
+
+  <g>
+    <rect x="64" y="144" width="408" height="88" rx="20" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
+    <text x="88" y="178" class="label" fill="#1D4ED8">Mass path</text>
+    <text x="88" y="208" class="small">If you start with grams, your first fraction usually has</text>
+    <text x="88" y="228" class="factor factor-blue">1 mol</text>
+    <text x="146" y="228" class="small">on top and</text>
+    <text x="236" y="228" class="factor factor-blue">grams</text>
+    <text x="305" y="228" class="small">on the bottom.</text>
+  </g>
+
+  <g>
+    <rect x="516" y="144" width="620" height="88" rx="20" fill="#ECFDF5" stroke="#BBF7D0" stroke-width="2"/>
+    <text x="540" y="178" class="label" fill="#047857">Count path</text>
+    <text x="540" y="208" class="small">If you start with particles, your first fraction usually has</text>
+    <text x="953" y="208" class="factor factor-green">1 mol</text>
+    <text x="1011" y="208" class="small">on top and</text>
+    <text x="1101" y="208" class="factor factor-green">particles</text>
+    <text x="540" y="228" class="small">on the bottom.</text>
+  </g>
+
+  <g>
+    <rect x="760" y="544" width="350" height="152" rx="24" fill="#FFF7ED" stroke="#FED7AA" stroke-width="2"/>
+    <text x="785" y="584" class="label" fill="#C2410C">Gas only</text>
+    <text x="785" y="616" class="small">Use the liters branch only for gases at STP.</text>
+    <text x="785" y="644" class="small">Solids and liquids do not use</text>
+    <text x="1044" y="644" class="factor factor-orange">22.4 L/mol</text>
+    <text x="785" y="672" class="small">as a conversion factor.</text>
+  </g>
+</svg>

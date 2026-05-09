@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" role="img" aria-labelledby="title desc">
+  <title id="title">Homogeneous particle diagram with N2, CO2, and Ar</title>
+  <desc id="desc">A closed container holding several bonded N2 pairs, several CO2 molecules, and several Ar atoms spread evenly throughout to show a homogeneous mixture.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef6ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="22" y="18" width="476" height="204" rx="24" fill="url(#bg)" stroke="#93c5fd" stroke-width="3"/>
+  <text x="260" y="42" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8">Closed Container</text>
+
+  <!-- N2 pairs -->
+  <circle cx="88" cy="82" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="118" cy="82" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="88" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+  <text x="118" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+
+  <circle cx="360" cy="76" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="390" cy="76" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="360" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+  <text x="390" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+
+  <circle cx="164" cy="152" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="194" cy="152" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="164" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+  <text x="194" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+
+  <circle cx="384" cy="152" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="414" cy="152" r="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="384" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+  <text x="414" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+
+  <circle cx="242" cy="86" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="268" cy="86" r="17" fill="#111827" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="298" cy="86" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <text x="242" y="91" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+  <text x="268" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">C</text>
+  <text x="298" y="91" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+
+  <circle cx="422" cy="132" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="448" cy="132" r="17" fill="#111827" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="478" cy="132" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <text x="422" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+  <text x="448" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">C</text>
+  <text x="478" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+
+  <circle cx="150" cy="116" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="176" cy="116" r="17" fill="#111827" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="206" cy="116" r="12" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <text x="150" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+  <text x="176" y="122" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">C</text>
+  <text x="206" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O</text>
+
+  <circle cx="82" cy="170" r="18" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+  <text x="82" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Ar</text>
+
+  <circle cx="248" cy="188" r="18" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+  <text x="248" y="194" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Ar</text>
+
+  <circle cx="428" cy="88" r="18" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+  <text x="428" y="94" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Ar</text>
+</svg>
