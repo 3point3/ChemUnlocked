@@ -4023,76 +4023,6 @@ th {
   }
 }
 
-@media (max-width: 640px) {
-  .cyl-tool {
-    gap: 0.8rem;
-  }
-
-  .cyl-controls,
-  .cyl-display {
-    padding: 0.85rem;
-  }
-
-  .cyl-controls {
-    gap: 0.75rem;
-  }
-
-  .cyl-controls .tool-choice-row[role="group"] > .tool-choice-btn,
-  .cyl-controls .tool-choice-row[role="group"] > .segment-btn.tool-choice-btn,
-  .cyl-controls .tool-choice-row[role="group"] > .segment-btn.explore-choice {
-    flex: 1 1 calc(50% - 0.4rem);
-    min-height: 3rem;
-    padding: 0.65rem 0.75rem;
-    border-radius: 14px;
-    font-size: 0.9rem;
-  }
-
-  .cyl-controls .tool-action-row {
-    flex-direction: row;
-    gap: 0.5rem;
-    margin-top: 0;
-  }
-
-  .cyl-controls .tool-action-row .segment-btn,
-  .cyl-controls .tool-action-row .tool-check-btn,
-  .cyl-controls .tool-action-row .tool-reveal-btn,
-  .cyl-controls .tool-action-row .tool-next-btn {
-    flex: 1 1 calc(50% - 0.25rem);
-    width: auto;
-    min-height: 2.85rem;
-    padding: 0.62rem 0.8rem;
-    border-radius: 14px;
-    font-size: 0.9rem;
-  }
-
-  .cyl-display {
-    grid-template-columns: 120px minmax(0, 1fr);
-    gap: 0.75rem;
-    align-items: start;
-  }
-
-  .cyl-figure-card {
-    min-height: 0;
-    padding: 0.45rem;
-    border-radius: 16px;
-  }
-
-  #cylSVG {
-    max-width: 108px;
-  }
-
-  .cyl-reading {
-    gap: 0.6rem;
-    align-content: start;
-  }
-
-  .reading-hint,
-  .cyl-tip,
-  .cyl-reading .tool-feedback {
-    padding: 0.72rem 0.8rem;
-  }
-}
-
 @media (max-width: 420px) {
   .cyl-controls .tool-choice-row[role="group"] > .tool-choice-btn,
   .cyl-controls .tool-choice-row[role="group"] > .segment-btn.tool-choice-btn,
@@ -4738,131 +4668,6 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
   .guides-grid   { grid-template-columns: 1fr 1fr; }
   .unit-features { grid-template-columns: 1fr 1fr; }
   .unit-feature:not(:last-child)::after { display: none; }
-}
-
-@media (max-width: 640px) {
-  html {
-    font-size: 17px;
-  }
-
-  .site-header-inner {
-    position: relative;
-    min-height: 64px;
-    padding: 0.65rem 0;
-  }
-
-  .site-logo {
-    font-size: 1.2rem;
-  }
-
-  .site-menu-toggle {
-    display: inline-flex;
-    margin-left: auto;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0.35rem);
-    left: 0;
-    right: 0;
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-    padding: 0.7rem;
-    border: 1px solid rgba(217, 200, 180, 0.92);
-    border-radius: 20px;
-    background: rgba(255, 252, 246, 0.98);
-    box-shadow: 0 18px 36px rgba(69, 54, 35, 0.12);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-  }
-
-  .site-header.menu-open .site-nav {
-    display: grid;
-  }
-
-  .site-nav a {
-    justify-content: flex-start;
-    text-align: left;
-    padding: 0.8rem 0.95rem;
-    line-height: 1.15;
-    min-height: 48px;
-  }
-
-  .nav-tabs {
-    gap: 0.35rem;
-  }
-
-  .tab-btn {
-    font-size: 0.82rem;
-    padding: 0.6rem 0.75rem;
-  }
-
-  .container {
-    width: min(var(--container), calc(100% - 1rem));
-    padding-top: 1rem;
-  }
-
-  .card {
-    padding: 1.1rem;
-  }
-
-  .step {
-    grid-template-columns: 1fr;
-    gap: 0.45rem;
-  }
-
-  .step-num {
-    display: none;
-  }
-
-  .fl-chain {
-    font-size: 0.82rem;
-    line-height: 1.75;
-  }
-
-  .solved-display-chainline .fl-frac,
-  .solved-display-chainline .chem-frac {
-    min-width: 118px;
-  }
-
-  .solved-display-answerline {
-    font-size: 0.96rem;
-  }
-
-  .unit-grid        { grid-template-columns: 1fr 1fr; }
-  .guides-grid      { grid-template-columns: 1fr; }
-  .unit-features    { display: none; }
-  .unit-features--full { display: grid; grid-template-columns: 1fr 1fr; }
-  .units-card       { padding: 1.25rem; }
-  .skills-card      { padding: 1.25rem; }
-  .units-card-header { flex-direction: column; align-items: flex-start; }
-  .practice-banner  { padding: 1.5rem; }
-  .practice-banner-right { align-items: flex-start; }
-  .practice-banner-note { text-align: left; }
-  .unit-bottom-nav  { grid-template-columns: 1fr; }
-
-  .thermochemistry-tool-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .equipment-row    { gap: 1rem; }
-  .equip-box        { flex: 0 1 calc(50% - 0.5rem); }
-  .safety-grid      { grid-template-columns: repeat(2, 1fr); }
-  .tool-section     { padding: 1.1rem; }
-
-  /* Tighter table cells on mobile — min-width forces horizontal scroll on
-     multi-column tables instead of squishing every cell to ~100px */
-  th, td {
-    padding: 0.55rem 0.65rem;
-    font-size: 0.875rem;
-  }
-
-  table:not(.concept-table) th,
-  table:not(.concept-table) td {
-    min-width: 120px;
-  }
 }
 
 /* Practice page specific styles */
@@ -6064,10 +5869,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   margin-bottom: 0.45rem;
   display: block;
 }
-@media (max-width: 640px) {
-  .connection-pair { flex-direction: column; }
-  .connection-arrow { transform: rotate(90deg); }
-}
 
 /* ── Prev / Next post navigation (shared) ── */
 .prev-post,
@@ -6133,18 +5934,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 .effect-high .label { color: #166534; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
 .effect-low ul, .effect-high ul { margin: 0.3rem 0 0 1.1rem; padding: 0; color: var(--dim); }
 .effect-low li, .effect-high li { margin-bottom: 0.25rem; }
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .making-grid,
-  .fc-inner,
-  .effect-comparison { grid-template-columns: 1fr; }
-  .post-hero { padding: 1.25rem; }
-  .prev-post,
-  .next-post { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .prev-post-btn,
-  .next-post-btn { width: 100%; text-align: center; }
-}
 
 /* ── Subscription success page ── */
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -6337,22 +6126,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 }
 .lb-name    { font-weight: 600; color: #334155; margin-bottom: 12px; }
 .lb-formula { font-size: 0.8rem; color: #64748b; margin-top: 12px; line-height: 1.4; }
-
-@media (max-width: 640px) {
-  .lewis-diagram {
-    gap: 16px;
-    margin: 24px auto;
-  }
-
-  .lewis-box {
-    max-width: 100%;
-    min-height: 0;
-  }
-
-  .lewis-box svg {
-    width: min(100%, calc(100% - 4px));
-  }
-}
 
 /* NASBU steps (modeled after .steps / .step / .step-num / .step-content) */
 .nasbu-steps {
@@ -7503,7 +7276,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   gap: 1rem;
   margin-top: 1rem;
 }
-@media (max-width: 640px) { .naming-tool-grid { grid-template-columns: 1fr; } }
 
 .tool-section-label {
   font-size: 0.78rem;
@@ -8106,10 +7878,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   flex-shrink: 0;
 }
 
-@media (max-width: 640px) {
-  .ox-table { gap: 0.4rem; }
-}
-
 /* ── 09_Learn_Chemistry_Stoichiometry.html ── */
 /* ── Hi-Lo specific helpers (no new classes, just semantic tweaks) ── */
 .vocab-row {
@@ -8268,13 +8036,6 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   height: 2px;
   background: #1e3a8a;
   margin: 0.12rem 0;
-}
-@media (max-width: 640px) {
-  .vocab-row { grid-template-columns: 1fr; }
-  .mini-visual-grid,
-  .compare-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ── 10_Learn_Chemistry_Bonding.html ── */
