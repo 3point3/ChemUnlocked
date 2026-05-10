@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /netlify/
+Disallow: /footer.html
+Disallow: /header.html
+Disallow: /*.zip
+
+Sitemap: https://chemunlocked.com/sitemap.xml

@@ -8,7 +8,10 @@
   "description": "",
   "main": "01_tools.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "audit:html": "bash ./scripts/audit-learn.sh",
+    "audit:seo": "node ./scripts/seo-audit.js",
+    "audit:site": "npm run audit:html && npm run audit:seo",
+    "test": "npm run audit:site"
   },
   "keywords": [],
   "author": "",
