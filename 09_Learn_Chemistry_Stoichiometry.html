@@ -10,6 +10,7 @@
 <meta property="og:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
 <meta property="og:url" content="https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html">
 <meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,6 +18,7 @@
 <meta name="twitter:description" content="Learn stoichiometry: mole ratios, limiting reactants, percent yield, and more. Includes step-by-step guides, examples, and interactive tools.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:site" content="@ChemUnlocked">
+<meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,179 +30,14 @@
     "name": "ChemUnlocked",
     "url": "https://chemunlocked.com"
   },
-  "url": "https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html"
+  "url": "https://chemunlocked.com/09_Learn_Chemistry_Stoichiometry.html",
+  "educationalLevel": "High School",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css">
-<meta name="theme-color" content="#2563eb">
-<style>
-
-/* ── Hi-Lo specific helpers (no new classes, just semantic tweaks) ── */
-.vocab-row {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 1rem;
-  align-items: baseline;
-  margin-top: 0.75rem;
-}
-.vocab-term {
-  font-weight: 700;
-  color: var(--accent2);
-  white-space: nowrap;
-}
-.road-map {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 0.9rem 0 0.4rem;
-  font-size: 0.92rem;
-}
-.road-step {
-  background: #dbeafe;
-  color: #1e40af;
-  border-radius: 999px;
-  padding: 0.3rem 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.road-arrow {
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-.highlight-box {
-  background: #fef9c3;
-  border: 1px solid #fde047;
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  margin-top: 0.9rem;
-  color: #713f12;
-  font-size: 0.95rem;
-}
-.highlight-box strong { color: #92400e; }
-.mini-visual-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.95rem;
-}
-.mini-visual-card {
-  padding: 0.9rem 0.95rem;
-  border: 1px solid #bfdbfe;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, #ffffff, #eff6ff);
-}
-.mini-visual-card .mini-label {
-  display: block;
-  margin-bottom: 0.35rem;
-  color: var(--accent2);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.mini-visual-card .mini-value {
-  font-family: 'DM Mono', monospace;
-  color: #1e3a8a;
-  font-size: 1.02rem;
-}
-.mini-visual-card .mini-copy {
-  margin: 0.45rem 0 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--ink);
-}
-.compare-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.95rem;
-}
-.compare-card {
-  padding: 0.9rem 0.95rem;
-  border: 1px solid #d9c8b4;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, #ffffff, #fff8ed);
-}
-.compare-card strong {
-  color: var(--accent2);
-}
-.compare-card p {
-  margin: 0.35rem 0 0;
-  line-height: 1.5;
-}
-.check-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
-}
-.check-list li {
-  padding: 0.35rem 0 0.35rem 1.6rem;
-  position: relative;
-  font-size: 0.95rem;
-  border-bottom: 1px dashed var(--border);
-}
-.check-list li:last-child { border-bottom: none; }
-.check-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-weight: 700;
-}
-
-/* ── Tool UI ── */
-.ratio-choice-fraction {
-  display: inline-grid;
-  justify-items: center;
-  gap: 0.2rem;
-  min-width: 120px;
-}
-.ratio-choice-frac-line {
-  width: 100%;
-  max-width: 180px;
-  height: 2px;
-  background: currentColor;
-}
-.ratio-choice-prefix,
-.ratio-choice-suffix {
-  font-family: inherit;
-  font-size: 0.95rem;
-}
-.ratio-choice-num,
-.ratio-choice-den {
-  font-family: inherit;
-  text-align: center;
-  line-height: 1.3;
-}
-.inline-frac {
-  display: inline-grid;
-  justify-items: center;
-  vertical-align: middle;
-  margin: 0 0.15rem;
-  min-width: 90px;
-}
-.inline-frac-num,
-.inline-frac-den {
-  font-family: 'DM Mono', monospace;
-  color: #1e3a8a;
-  text-align: center;
-  line-height: 1.25;
-}
-.inline-frac-bar {
-  width: 100%;
-  height: 2px;
-  background: #1e3a8a;
-  margin: 0.12rem 0;
-}
-@media (max-width: 640px) {
-  .vocab-row { grid-template-columns: 1fr; }
-  .mini-visual-grid,
-  .compare-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+<link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -830,7 +667,7 @@
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260422"></script>
+<script src="chem.js?v=20260509"></script>
 <script>
 function escapeHtml(text) {
   return String(text)

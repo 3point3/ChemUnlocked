@@ -10,6 +10,7 @@
 <meta property="og:description" content="Learn chemistry nomenclature rules for ionic compounds, molecular compounds, and acids with examples and interactive naming tools.">
 <meta property="og:url" content="https://chemunlocked.com/06_Learn_Chemistry_Nomenclature.html">
 <meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,8 +18,9 @@
 <meta name="twitter:description" content="Learn chemistry nomenclature rules for ionic compounds, molecular compounds, and acids with examples and interactive naming tools.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:site" content="@ChemUnlocked">
-<link rel="stylesheet" href="chem.css">
-<meta name="theme-color" content="#2563eb">
+<meta name="twitter:creator" content="@ChemUnlocked">
+<link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,201 +32,12 @@
     "name": "ChemUnlocked",
     "url": "https://chemunlocked.com"
   },
-  "url": "https://chemunlocked.com/06_Learn_Chemistry_Nomenclature.html"
+  "url": "https://chemunlocked.com/06_Learn_Chemistry_Nomenclature.html",
+  "educationalLevel": "High School",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<style>
-/* Nomenclature tool styles */
-.naming-tool-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-@media (max-width: 640px) { .naming-tool-grid { grid-template-columns: 1fr; } }
-
-.tool-section-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent2);
-  margin: 1rem 0 0.5rem;
-}
-
-.tool-result-box {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: var(--radius-sm);
-  padding: 0.9rem 1rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #1e3a8a;
-  min-height: 2.8rem;
-  display: block;
-  line-height: 1.55;
-  font-family: inherit;
-}
-
-.tool-result-box.error {
-  background: #fef2f2;
-  border-color: #fecaca;
-  color: #991b1b;
-}
-
-select.prob-input {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%2364748b'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  padding-right: 2rem;
-}
-
-/* Hi-Lo scaffolding aids */
-.scaffold-box {
-  background: #f0fdf4;
-  border: 1px solid #86efac;
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  margin-top: 0.85rem;
-  font-size: 0.94rem;
-}
-.scaffold-box .scaffold-label {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #059669;
-  margin-bottom: 0.3rem;
-}
-
-.ion-table th { background: #eff6ff; }
-.ion-table td:first-child { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--accent2); }
-.polyatomic-ion-table {
-  display: block;
-  overflow: visible;
-}
-.polyatomic-ion-table caption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.polyatomic-ion-table thead {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.polyatomic-ion-table tbody {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
-  gap: 0.55rem 0.8rem;
-}
-.polyatomic-ion-table tr {
-  display: grid;
-  grid-template-columns: minmax(5.5rem, 0.85fr) minmax(8rem, 1.25fr) minmax(4rem, 0.55fr);
-  align-items: stretch;
-  overflow: hidden;
-  border: 1px solid rgba(217, 200, 180, 0.82);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.82);
-}
-.polyatomic-ion-table td {
-  display: flex;
-  align-items: center;
-  border-bottom: 0;
-  border-right: 1px solid rgba(217, 200, 180, 0.72);
-  padding: 0.62rem 0.75rem;
-}
-.polyatomic-ion-table td:last-child {
-  border-right: 0;
-  justify-content: center;
-  font-weight: 700;
-  color: var(--accent2);
-}
-@media (max-width: 520px) {
-  .polyatomic-ion-table tr {
-    grid-template-columns: minmax(4.9rem, 0.8fr) minmax(7rem, 1.3fr) minmax(3.4rem, 0.55fr);
-  }
-
-  .polyatomic-ion-table td {
-    padding: 0.56rem 0.58rem;
-    font-size: 0.88rem;
-  }
-}
-
-.mt-075 { margin-top: 0.75rem; }
-.mt-1 { margin-top: 1rem; }
-.comp-type-select { margin-bottom: 0.75rem; }
-.tool-hint { font-size: 0.88rem; color: var(--muted); }
-.roman-input-row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-.roman-input {
-  flex: 1;
-}
-.roman-input.w-140 { min-width: 140px; }
-.roman-input.w-100 { min-width: 100px; }
-.roman-input.w-160 { min-width: 160px; }
-.roman-btn,
-.roman-result { margin-top: 0.75rem; }
-.roman-result {
-  font-family: 'DM Mono', monospace;
-}
-.quiz-formula {
-  margin-top: 0.35rem;
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: 0.01em;
-  font-family: 'DM Mono', monospace;
-}
-.quiz-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-.tool-result-box.success {
-  background: #ecfdf5;
-  border-color: #86efac;
-  color: #166534;
-}
-.tool-reveal h3 {
-  margin: 0 0 0.55rem;
-  font-size: 1rem;
-}
-.tool-reveal ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-.tool-reveal p + p,
-.tool-reveal p + ul,
-.tool-reveal ul + p {
-  margin-top: 0.55rem;
-}
-.tool-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-.tool-actions .btn[disabled] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-</style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1107,7 +920,7 @@ select.prob-input {
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260422"></script>
+<script src="chem.js?v=20260509"></script>
 <script>
 
 /* ── TOOL LOGIC ── */

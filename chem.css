@@ -75,6 +75,8 @@
   border: none;
   border-radius: 12px;
   padding: 0.9rem 1.15rem;
+  background: linear-gradient(180deg, #14a590, #0b7569);
+  box-shadow: 0 10px 22px rgba(15, 138, 122, 0.18);
   color: #fff;
   cursor: pointer;
   font: inherit;
@@ -84,6 +86,7 @@
 
 .contact-btn:hover {
   transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 138, 122, 0.22);
   opacity: 0.96;
 }
 
@@ -101,28 +104,6 @@
 
 .form-note {
   margin: -0.25rem 0 0;
-}
-
-.status-box {
-  display: none;
-  margin-top: 1rem;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm, 10px);
-  font-weight: 600;
-}
-
-.status-success {
-  display: block;
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
-}
-
-.status-error {
-  display: block;
-  background: #fef2f2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
 }
 
 .hp-field {
@@ -344,21 +325,25 @@
    ============================================================ */
 
 :root {
-  --bg: #f8fafc;
+  --bg: #fffaf3;
   --surface: #ffffff;
-  --surface2: #f1f5f9;
-  --text: #0f172a;
-  --dim: #334155;
-  --muted: #64748b;
-  --border: #dbe4ee;
-  --accent: #0f766e;
+  --surface2: #fff4e6;
+  --surface-soft: #fff9f0;
+  --surface-alt: #f3fbf7;
+  --text: #1f2933;
+  --dim: #506173;
+  --muted: #718096;
+  --border: #eadfce;
+  --border-strong: #d9c8b4;
+  --accent: #0f8a7a;
   --accent2: #0b6f63;
-  --green: #059669;
+  --green: #21865f;
   --red: #dc2626;
-  --gold: #065f54;
+  --gold: #b7791f;
+  --violet: #7c5cc4;
 
-  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-sm: 0 8px 24px rgba(69, 54, 35, 0.07);
+  --shadow-md: 0 16px 34px rgba(69, 54, 35, 0.1);
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -367,6 +352,122 @@
   --container: 1120px;
   --site-menu-open-height: 0px;
   --sticky-offset: 160px;
+}
+
+/* ===================== CONSOLIDATED BASE STYLES ===================== */
+/* These base classes reduce duplication across 50+ components */
+
+/* Buttons: Core primary button styles */
+._btn-primary-base {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background: linear-gradient(180deg, #14a590, #0b7569);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.18s ease;
+  box-shadow: 0 10px 22px rgba(15, 138, 122, 0.18);
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+._btn-primary-hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 138, 122, 0.22);
+}
+
+/* State colors: Correct/Success */
+._state-correct {
+  border-color: #86efac;
+  background: #ecfdf5;
+  color: #166534;
+}
+
+._state-correct-shadow {
+  box-shadow: 0 14px 28px rgba(22, 163, 74, 0.14);
+}
+
+/* State colors: Incorrect/Error */
+._state-incorrect {
+  border-color: #fdba74;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+._state-incorrect-shadow {
+  box-shadow: 0 14px 28px rgba(234, 88, 12, 0.14);
+}
+
+/* State colors: Feedback box shared */
+._feedback-base {
+  min-height: 3.5rem;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+/* Grid base: Auto-fit with minmax */
+._grid-auto-fit-220 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+._grid-auto-fit-190 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+}
+
+._grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+._grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+/* Card/Panel base */
+._card-base {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(217, 200, 180, 0.88);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin: 0 0 1.25rem 0;
+  min-width: 0;
+}
+
+/* Form input base */
+._input-base {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.93rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+._input-base:focus {
+  border-color: #5eead4;
 }
 
 /* ===================== RESET ===================== */
@@ -383,11 +484,14 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #f8fbff 0%, #f8fafc 45%, #eef4fb 100%);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 210, 122, 0.22) 0 18rem, transparent 18.2rem),
+    radial-gradient(circle at 92% 4%, rgba(109, 196, 178, 0.18) 0 16rem, transparent 16.2rem),
+    linear-gradient(180deg, #fffaf3 0%, #f8fbf7 46%, #eef8f5 100%);
   color: var(--text);
   font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.65;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -488,7 +592,7 @@ pre,
 }
 
 .container {
-  padding: 1.5rem 0 2.5rem;
+  padding: 0.75rem 0 2.5rem;
 }
 
 .unit-label {
@@ -507,11 +611,13 @@ pre,
   position: fixed;
   inset: 0;
   pointer-events: none;
+  overflow: hidden;
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(15, 118, 110, 0.06) 0 1px, transparent 1px),
-    radial-gradient(circle at 78% 12%, rgba(15, 118, 110, 0.05) 0 1px, transparent 1px),
-    radial-gradient(circle at 32% 80%, rgba(5, 150, 105, 0.05) 0 1px, transparent 1px),
-    radial-gradient(circle at 88% 72%, rgba(180, 83, 9, 0.05) 0 1px, transparent 1px);
+    radial-gradient(circle at 14% 20%, rgba(15, 138, 122, 0.08) 0 1px, transparent 1px),
+    radial-gradient(circle at 68% 16%, rgba(183, 121, 31, 0.08) 0 1px, transparent 1px),
+    radial-gradient(circle at 34% 78%, rgba(124, 92, 196, 0.06) 0 1px, transparent 1px),
+    radial-gradient(circle at 86% 70%, rgba(15, 138, 122, 0.06) 0 1px, transparent 1px);
+  opacity: 0.75;
   z-index: 0;
 }
 
@@ -524,10 +630,11 @@ pre,
 
 /* ===================== HEADER / FOOTER ===================== */
 .site-header {
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 252, 246, 0.88);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(219, 228, 238, 0.8);
+  border-bottom: 1px solid rgba(217, 200, 180, 0.78);
+  box-shadow: 0 8px 24px rgba(69, 54, 35, 0.04);
   margin-bottom: var(--site-menu-open-height, 0px);
   position: sticky;
   top: 0;
@@ -567,9 +674,9 @@ pre,
 .site-nav a {
   display: inline-flex;
   align-items: center;
-  color: var(--dim);
+  color: #465869;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 650;
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
   transition: 0.18s ease;
@@ -577,8 +684,8 @@ pre,
 
 .site-nav a:hover,
 .site-nav a.active {
+  background: #e8f7f2;
   color: var(--accent2);
-  background: rgba(15, 118, 110, 0.08);
   text-decoration: none;
 }
 
@@ -637,13 +744,17 @@ pre,
 }
 
 /* ===================== SHARED CARD / PANEL SYSTEM ===================== */
-.card {
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(219, 228, 238, 0.92);
+.card,
+.tool-section {
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   margin: 0 0 1.25rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(217, 200, 180, 0.88);
   min-width: 0;
 }
 
@@ -821,8 +932,8 @@ pre,
   margin-top: 1rem;
   padding: 1rem 1.05rem;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.06), rgba(15, 118, 110, 0.02));
-  border: 1px solid rgba(15, 118, 110, 0.16);
+  background: linear-gradient(135deg, rgba(15, 138, 122, 0.08), rgba(183, 121, 31, 0.04));
+  border: 1px solid rgba(15, 138, 122, 0.18);
 }
 
 .key-fact .icon {
@@ -876,29 +987,12 @@ pre,
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.tool-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 0.75rem;
-  margin-top: 0.9rem;
-}
-
 .tool-primary-action {
   margin-top: 0.9rem;
 }
 
-.tool-primary-action .btn {
-  min-width: 8.5rem;
-  min-height: 3.15rem;
-}
-
 .tool-actions-secondary {
   margin-top: 0.9rem;
-}
-
-.tool-actions .btn {
-  min-height: 3.15rem;
 }
 
 .tool-result-box {
@@ -914,13 +1008,6 @@ pre,
 .tool-grid-2[role="group"] .btn[aria-pressed="true"] {
   border-color: var(--accent2);
   background: #f3fbf7;
-}
-
-.tool-label {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-weight: 600;
-  color: var(--accent2);
 }
 
 .tool-flow {
@@ -1251,6 +1338,13 @@ pre,
   padding: 1rem 1rem 0.5rem;
   margin: 1rem 0;
 }
+.concept-panel svg {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
+}
 
 .concept-panel-title {
   font-size: 0.85rem;
@@ -1313,7 +1407,9 @@ table {
 }
 
 thead {
-  background: #ccfbf1;
+  background: #f3fbf7;
+  border-color: #bee5db;
+  color: #174f47;
 }
 
 th,
@@ -1348,10 +1444,10 @@ th {
 .formula-box {
   margin-top: 1rem;
   padding: 1rem 1.1rem;
-  background: #f0fdfa;
-  border: 1px solid #99f6e4;
+  background: #f3fbf7;
+  border: 1px solid #bee5db;
   border-radius: var(--radius-sm);
-  color: #064e3b;
+  color: #174f47;
   font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(1rem, 1.4vw, 1.16rem);
   font-weight: 500;
@@ -1477,7 +1573,7 @@ th {
   min-width: 28px;
   flex-shrink: 0;
   border-radius: 999px;
-  background: linear-gradient(160deg, #2dd4bf, #0f766e);
+  background: linear-gradient(180deg, #14a590, #0b7569);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
@@ -1542,7 +1638,7 @@ th {
 .fl-cancel {
   padding: 0.85rem 0.95rem;
   border-radius: var(--radius-sm);
-  background: var(--surface2);
+  background: linear-gradient(180deg, #ffffff, #fff8ed);
   border: 1px solid var(--border);
   margin: 0.55rem 0 0.65rem;
   white-space: normal;
@@ -1648,7 +1744,8 @@ th {
   top: var(--site-header-height, 72px);
   z-index: 40;
   padding: 0.65rem var(--tab-shell-pad);
-  background: rgba(248, 250, 252, 0.88);
+  background: rgba(255, 252, 246, 0.9);
+  border: 1px solid rgba(217, 200, 180, 0.88);
   border-radius: 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -1660,8 +1757,8 @@ th {
 
 .tab-btn {
   appearance: none;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(217, 200, 180, 0.9);
+  background: rgba(255, 255, 255, 0.74);
   color: var(--dim);
   border-radius: 999px;
   padding: 0.7rem 1rem;
@@ -1677,14 +1774,15 @@ th {
 }
 
 .tab-btn:hover {
-  border-color: #5eead4;
+  border-color: rgba(15, 138, 122, 0.38);
   color: var(--accent2);
 }
 
 .tab-btn.active {
-  background: #ccfbf1;
-  color: var(--accent2);
-  border-color: #5eead4;
+  background: #e8f7f2;
+  color: #0b5c51;
+  border-color: #9fd5c8;
+  box-shadow: inset 0 -3px 0 #0b6f63;
 }
 
 .section {
@@ -1726,7 +1824,7 @@ th {
 }
 
 .concept-jump-nav a:hover {
-  border-color: #5eead4;
+  border-color: rgba(15, 138, 122, 0.38);
   color: var(--accent2);
   background: #f0f7ff;
   text-decoration: none;
@@ -1751,7 +1849,8 @@ th {
 }
 
 .unit-bottom-link:hover {
-  border-color: #5eead4;
+  border-color: rgba(15, 138, 122, 0.38);
+  color: var(--accent2);
   text-decoration: none;
 }
 
@@ -1795,7 +1894,7 @@ th {
   justify-content: center;
   max-width: 100%;
   border: 1px solid transparent;
-  background: linear-gradient(180deg, #0f766e, #0b6f63);
+  background: linear-gradient(180deg, #14a590, #0b7569);
   color: #fff;
   border-radius: 12px;
   padding: 0.8rem 1rem;
@@ -1803,7 +1902,7 @@ th {
   font-weight: 600;
   cursor: pointer;
   transition: 0.18s ease;
-  box-shadow: 0 6px 18px rgba(15, 118, 110, 0.18);
+  box-shadow: 0 10px 22px rgba(15, 138, 122, 0.18);
   text-align: center;
   white-space: normal;
   overflow-wrap: anywhere;
@@ -1811,7 +1910,7 @@ th {
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.22);
+  box-shadow: 0 14px 26px rgba(15, 138, 122, 0.22);
 }
 
 .btn-outline {
@@ -1830,28 +1929,6 @@ th {
   padding: 0.55rem 0.8rem;
   font-size: 0.86rem;
   border-radius: 10px;
-}
-
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-/* ===================== PRACTICE ENGINE ===================== */
-#topControls,
-.card[id] {
-  scroll-margin-top: var(--sticky-offset);
-}
-
-.problem {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.2rem;
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow-sm);
-  min-width: 0;
 }
 
 .prob-top {
@@ -1981,16 +2058,25 @@ textarea {
 }
 
 .choice-btn.correct,
-.choice-btn.reveal-correct {
-  border-color: #86efac;
+.choice-btn.reveal-correct,
+.feedback.correct {
   background: #ecfdf5;
   color: #166534;
 }
 
-.choice-btn.incorrect {
-  border-color: #fecaca;
+.choice-btn.correct,
+.choice-btn.reveal-correct {
+  border-color: #86efac;
+}
+
+.choice-btn.incorrect,
+.feedback.incorrect {
   background: #fef2f2;
   color: #991b1b;
+}
+
+.choice-btn.incorrect {
+  border-color: #fecaca;
 }
 
 .feedback {
@@ -2002,14 +2088,10 @@ textarea {
 }
 
 .feedback.correct {
-  background: #ecfdf5;
-  color: #166534;
   border: 1px solid #bbf7d0;
 }
 
 .feedback.incorrect {
-  background: #fef2f2;
-  color: #991b1b;
   border: 1px solid #fecaca;
 }
 
@@ -2101,22 +2183,40 @@ textarea {
 
 .learning-objectives {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.75rem;
-  margin: 0 0 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 0 0.95rem;
+  padding: 0.7rem;
+  border: 1px solid rgba(217, 200, 180, 0.52);
+  border-radius: calc(var(--radius-sm) + 4px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 250, 242, 0.58));
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .learning-objectives span {
   display: flex;
+  gap: 0.55rem;
   align-items: flex-start;
-  gap: 0.5rem;
-  padding: 0.75rem 0.85rem;
-  border: 1px solid rgba(15, 118, 110, 0.16);
+  min-height: 0;
+  padding: 0.7rem 0.82rem;
+  border: 1px solid rgba(217, 200, 180, 0.58);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.74);
   color: var(--dim);
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 0.84rem;
+  font-weight: 520;
+  line-height: 1.34;
+}
+
+.learning-objectives span::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.48rem;
+  height: 0.48rem;
+  margin-top: 0.3rem;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 .unit-link-grid {
@@ -2341,10 +2441,6 @@ textarea {
 .tool-section {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(219, 228, 238, 0.92);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  margin: 0 0 1.25rem 0;
 }
 
 .tool-section h3 {
@@ -2759,18 +2855,6 @@ textarea {
   height: 0.72rem;
   border-radius: 999px;
   flex: 0 0 auto;
-}
-
-.dot.ice {
-  background: #4a90e2;
-}
-
-.dot.melt {
-  background: #f5a623;
-}
-
-.dot.water {
-  background: #1f8a70;
 }
 
 .dot.boil {
@@ -3983,13 +4067,17 @@ textarea {
   }
 }
 
-.sigfig-input {
+.sigfig-input,
+.conv-input {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   font: inherit;
   font-size: 0.95rem;
+}
+
+.sigfig-input {
   margin-bottom: 0.6rem;
 }
 
@@ -4008,12 +4096,6 @@ textarea {
 }
 
 .conv-input {
-  width: 100%;
-  padding: 0.65rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font: inherit;
-  font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
@@ -4057,14 +4139,14 @@ textarea {
 
 /* ===================== INDEX PAGE — HERO ===================== */
 h1 .chem     { font-weight: 900; }
-h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
+h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
 
 .hero-subtitle {
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: clamp(1.02rem, 2vw, 1.2rem);
   color: var(--dim);
-  max-width: clamp(32ch, 82vw, 64ch);
-  margin: 0 0 0.5rem;
+  line-height: 1.75;
+  max-width: 62ch;
+  margin: 0 0 1.2rem;
 }
 
 /* ===================== BOND COMPARISON TABLE (Unit 10) ===================== */
@@ -4193,7 +4275,7 @@ h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
 /* ===================== INDEX PAGE — UNIT GRID ===================== */
 .unit-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 0.55rem;
   margin-bottom: 1.25rem;
 }
@@ -4319,7 +4401,7 @@ h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
   border-radius: var(--radius-lg);
   padding: 1.5rem 1.75rem;
   box-shadow: var(--shadow-sm);
-  margin: 0 0 1.25rem 0;
+  margin: 1.25rem 0 1.25rem 0;
 }
 
 .skills-card-header {
@@ -4428,7 +4510,7 @@ h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  background: linear-gradient(135deg, #064e3b 0%, #0b6f63 100%);
+  background: linear-gradient(135deg, #0b6f63 0%, #0f8a7a 56%, #b7791f 135%);
   border-radius: var(--radius-lg);
   padding: 2rem 2.5rem;
   color: #fff;
@@ -4480,7 +4562,7 @@ h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
 .practice-banner-btn {
   display: inline-block;
   background: #fff;
-  color: #0b6f63;
+  color: var(--accent2);
   font-weight: 700;
   font-size: 1rem;
   padding: 0.85rem 1.75rem;
@@ -4738,46 +4820,7 @@ h1 .unlocked { font-weight: 80; letter-spacing: -0.05em; }
   margin-top: 0.75rem;
 }
 
-/* ===== Warm tutoring visual refresh from the Unit 05 tryout ===== */
-:root {
-  --bg: #fffaf3;
-  --surface: #ffffff;
-  --surface2: #fff4e6;
-  --surface-soft: #fff9f0;
-  --surface-alt: #f3fbf7;
-  --text: #1f2933;
-  --dim: #506173;
-  --muted: #718096;
-  --border: #eadfce;
-  --border-strong: #d9c8b4;
-  --accent: #0f8a7a;
-  --accent2: #0b6f63;
-  --green: #21865f;
-  --gold: #b7791f;
-  --violet: #7c5cc4;
-  --shadow-sm: 0 8px 24px rgba(69, 54, 35, 0.07);
-  --shadow-md: 0 16px 34px rgba(69, 54, 35, 0.1);
-}
-
-body {
-  background:
-    radial-gradient(circle at 8% 8%, rgba(255, 210, 122, 0.22) 0 18rem, transparent 18.2rem),
-    radial-gradient(circle at 92% 4%, rgba(109, 196, 178, 0.18) 0 16rem, transparent 16.2rem),
-    linear-gradient(180deg, #fffaf3 0%, #f8fbf7 46%, #eef8f5 100%);
-  color: var(--text);
-  letter-spacing: 0;
-}
-
-.starfield {
-  overflow: hidden;
-  background-image:
-    radial-gradient(circle at 14% 20%, rgba(15, 138, 122, 0.08) 0 1px, transparent 1px),
-    radial-gradient(circle at 68% 16%, rgba(183, 121, 31, 0.08) 0 1px, transparent 1px),
-    radial-gradient(circle at 34% 78%, rgba(124, 92, 196, 0.06) 0 1px, transparent 1px),
-    radial-gradient(circle at 86% 70%, rgba(15, 138, 122, 0.06) 0 1px, transparent 1px);
-  opacity: 0.75;
-}
-
+/* ===== Warm tutoring visual refresh — non-duplicate rules retained below ===== */
 .starfield::before,
 .starfield::after {
   content: "";
@@ -4821,14 +4864,6 @@ body {
   opacity: 0.04;
 }
 
-a {
-  color: var(--accent2);
-}
-
-.container {
-  padding-top: 0.75rem;
-}
-
 .unit-label,
 .units-eyebrow,
 .start-eyebrow {
@@ -4844,12 +4879,6 @@ a {
   color: var(--dim);
 }
 
-.site-header {
-  background: rgba(255, 252, 246, 0.88);
-  border-bottom-color: rgba(217, 200, 180, 0.78);
-  box-shadow: 0 8px 24px rgba(69, 54, 35, 0.04);
-}
-
 .site-logo,
 .logo-chem {
   color: var(--text);
@@ -4857,20 +4886,9 @@ a {
 
 .logo-unlock {
   color: var(--accent2);
+  font-style: italic;
 }
 
-.site-nav a {
-  color: #465869;
-  font-weight: 650;
-}
-
-.site-nav a:hover,
-.site-nav a.active {
-  background: #e8f7f2;
-  color: var(--accent2);
-}
-
-.card,
 .problem,
 .start-here,
 .units-card,
@@ -4893,17 +4911,10 @@ a {
     radial-gradient(circle at top right, rgba(255, 204, 128, 0.2), transparent 18rem);
 }
 
-.formula-box,
-thead,
 .pt-info-panel {
   background: #f3fbf7;
   border-color: #bee5db;
   color: #174f47;
-}
-
-.key-fact {
-  background: linear-gradient(135deg, rgba(15, 138, 122, 0.08), rgba(183, 121, 31, 0.04));
-  border-color: rgba(15, 138, 122, 0.18);
 }
 
 .key-fact .icon,
@@ -4912,18 +4923,6 @@ th,
 .fl-label,
 .unit-bottom-title {
   color: var(--accent2);
-}
-
-.btn,
-.contact-btn {
-  background: linear-gradient(180deg, #14a590, #0b7569);
-  border-radius: 12px;
-  box-shadow: 0 10px 22px rgba(15, 138, 122, 0.18);
-}
-
-.btn:hover,
-.contact-btn:hover {
-  box-shadow: 0 14px 26px rgba(15, 138, 122, 0.22);
 }
 
 .btn.btn-outline,
@@ -4938,17 +4937,6 @@ th,
 .start-cta .btn-outline:hover {
   background: #f3fbf7;
   border-color: rgba(15, 138, 122, 0.32);
-}
-
-.nav-tabs {
-  background: rgba(255, 252, 246, 0.9);
-  border-color: rgba(217, 200, 180, 0.88);
-}
-
-.tab-btn {
-  background: rgba(255, 255, 255, 0.74);
-  border-color: rgba(217, 200, 180, 0.9);
-  color: var(--dim);
 }
 
 .tab-btn.tab-rich {
@@ -5003,20 +4991,6 @@ th,
   color: #0b6f63;
 }
 
-.tab-btn:hover,
-.concept-jump-nav a:hover,
-.unit-bottom-link:hover {
-  border-color: rgba(15, 138, 122, 0.38);
-  color: var(--accent2);
-}
-
-.tab-btn.active {
-  background: #e8f7f2;
-  color: #0b5c51;
-  border-color: #9fd5c8;
-  box-shadow: inset 0 -3px 0 #0b6f63;
-}
-
 .tab-btn.active .tab-hint {
   color: rgba(11, 111, 99, 0.78);
 }
@@ -5032,44 +5006,6 @@ th,
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.learning-objectives {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-  margin: 0 0 0.95rem;
-  padding: 0.7rem;
-  border: 1px solid rgba(217, 200, 180, 0.52);
-  border-radius: calc(var(--radius-sm) + 4px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 250, 242, 0.58));
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-}
-
-.learning-objectives span {
-  display: flex;
-  gap: 0.55rem;
-  align-items: flex-start;
-  min-height: 0;
-  padding: 0.7rem 0.82rem;
-  border: 1px solid rgba(217, 200, 180, 0.58);
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.74);
-  color: var(--dim);
-  font-size: 0.84rem;
-  font-weight: 520;
-  line-height: 1.34;
-}
-
-.learning-objectives span::before {
-  content: "";
-  flex: 0 0 auto;
-  width: 0.48rem;
-  height: 0.48rem;
-  margin-top: 0.3rem;
-  border-radius: 999px;
-  background: var(--accent);
 }
 
 .page-unit .nav-tabs {
@@ -5093,24 +5029,10 @@ th,
   border-color: rgba(217, 200, 180, 0.88);
 }
 
-.step-num {
-  background: linear-gradient(180deg, #14a590, #0b7569);
-}
-
-.fl-chain,
-.fl-cancel,
 .start-features div,
 .unit-feature {
   background: linear-gradient(180deg, #ffffff, #fff8ed);
   border-color: var(--border);
-}
-
-.practice-banner {
-  background: linear-gradient(135deg, #0b6f63 0%, #0f8a7a 56%, #b7791f 135%);
-}
-
-.practice-banner-btn {
-  color: var(--accent2);
 }
 
 .scroll-hint,
@@ -5226,7 +5148,7 @@ textarea:focus-visible {
   max-width: 100%;
   font-size: clamp(1.8rem, 4vw, 3.5rem);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.06em;
   margin-bottom: 0.85rem;
 }
 
@@ -5259,14 +5181,6 @@ textarea:focus-visible {
   font-size: clamp(2.5rem, 5.4vw, 5.25rem);
   line-height: 1.05;
   margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.02rem, 2vw, 1.2rem);
-  color: var(--dim);
-  line-height: 1.75;
-  max-width: 62ch;
-  margin: 0 0 1.2rem;
 }
 
 .hero-actions,
@@ -5687,14 +5601,6 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-.unit-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-}
-
-.skills-card {
-  margin-top: 1.25rem;
-}
-
 @media (max-width: 780px) {
   .home-hero,
   .practice-panel {
@@ -6051,6 +5957,62 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 .fc-front .fc-label { color: var(--accent2); }
 .fc-back .fc-label { color: var(--green); }
 
+/* ── Flashcard Connection example ── */
+.ce-intro {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.connection-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.pulled-card {
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 0;
+}
+.connection-arrow {
+  font-size: 1.1rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  user-select: none;
+}
+.connection-written {
+  background: #faf9ff;
+  border: 1.5px dashed #c4b5fd;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #374151;
+}
+.connection-written .cw-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7c3aed;
+  margin-bottom: 0.45rem;
+  display: block;
+}
+@media (max-width: 640px) {
+  .connection-pair { flex-direction: column; }
+  .connection-arrow { transform: rotate(90deg); }
+}
+
 /* ── Prev / Next post navigation (shared) ── */
 .prev-post,
 .next-post {
@@ -6240,8 +6202,10 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
     radial-gradient(circle at top, rgba(219, 234, 254, 0.85), rgba(239, 246, 255, 0.65) 38%, rgba(248, 250, 252, 0.95) 100%);
   border: 1px solid rgba(148, 163, 184, 0.22);
   padding: 0.85rem;
+  max-width: 260px;
+  margin-inline: auto;
 }
-.vsepr-diagram { min-height: 270px; }
+.vsepr-diagram { min-height: 0; }
 .vsepr-diagram svg { width: 100%; height: auto; display: block; }
 .vsepr-out {
   margin-top: 0;
@@ -6276,7 +6240,7 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 }
 .gc-name    { color: #0f172a; font-size: 1rem; font-weight: 800; }
 .gc-formula { margin-top: 0.22rem; color: #0b6f63; font-size: 0.84rem; font-weight: 700; }
-.geo-card svg { width: min(100%, 220px); height: auto; margin: 0.7rem auto 0.25rem; display: block; }
+.geo-card svg { width: min(100%, 160px); height: auto; margin: 0.7rem auto 0.25rem; display: block; }
 .gc-angle   { color: #0f172a; font-weight: 700; }
 .gc-example { margin-top: 0.3rem; color: #475569; font-size: 0.92rem; line-height: 1.5; }
 
@@ -6298,8 +6262,8 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
   width: 100%;
-  max-width: 250px;
-  min-height: 300px;
+  max-width: 210px;
+  min-height: 200px;
   height: auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -6310,7 +6274,7 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 }
 .lewis-box svg {
   display: block;
-  width: min(100%, calc(100% - 8px));
+  width: min(100%, 160px);
   height: auto;
   margin-inline: auto;
   overflow: visible;
@@ -6888,4 +6852,1577 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 }
 .home-brand {
   margin-bottom: 1.25rem;
+}
+
+
+/* ═══════════════════════════════════════════
+   Per-page inline styles (moved from HTML)
+═══════════════════════════════════════════ */
+
+/* ── 04_Learn_Electron_Configuration.html ── */
+/* ── Orbital box diagrams ── */
+.orbital-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.page-04-learn-electron-configuration .orb-box {
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: #fff;
+  font-size: 1rem;
+}
+.page-04-learn-electron-configuration .orb-box.full { border-color: #93c5fd; background: #eff6ff; }
+.page-04-learn-electron-configuration .orb-box.up-only { border-color: #a7f3d0; background: #ecfdf5; }
+.page-04-learn-electron-configuration .orb-box.empty { border-color: var(--border); background: #f8fafc; }
+.arrow-up-el { color: #1d4ed8; font-size: 1rem; line-height: 1; }
+.arrow-down-el { color: #0f766e; font-size: 1rem; line-height: 1; }
+.sublevel-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--dim);
+  min-width: 2.2rem;
+  font-weight: 500;
+}
+
+/* ── Spectrum bar ── */
+.spectrum-bar {
+  height: 18px;
+  border-radius: 6px;
+  margin: 0.75rem 0 0.35rem;
+  background: linear-gradient(to right, #7c3aed, #2563eb, #0891b2, #059669, #ca8a04, #ea580c, #dc2626);
+}
+.spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Config builder output ── */
+.config-result {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #1e3a8a;
+}
+.config-label {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Mini periodic table ── */
+.pt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  font-size: 0.83rem;
+  color: var(--dim);
+}
+.pt-swatch { display: flex; align-items: center; gap: 0.4rem; }
+.pt-color { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; }
+.mini-pt-wrap { position: relative; margin-top: 0.5rem; overflow-x: auto; }
+.mini-pt {
+  display: grid;
+  grid-template-columns: repeat(18, 34px);
+  grid-template-rows: repeat(7, 30px);
+  gap: 2px;
+  width: max-content;
+}
+.mini-pt-f-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 6px;
+  width: max-content;
+}
+.mini-pt-f-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mini-pt-f-label {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  padding-right: 2px;
+}
+.mini-pt-f {
+  display: grid;
+  grid-template-columns: repeat(15, 34px);
+  grid-template-rows: repeat(2, 30px);
+  gap: 2px;
+}
+.pt-cell {
+  width: 34px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: 0.15s ease;
+  user-select: none;
+}
+.pt-cell.empty { background: transparent; }
+.pt-cell.s-blk { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-cell.p-blk { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-cell.d-blk { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-cell.f-blk { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-cell:hover:not(.empty) { filter: brightness(0.92); transform: scale(1.1); z-index: 5; }
+.page-04-learn-electron-configuration .pt-cell.selected { outline: 2px solid var(--accent2); outline-offset: 1px; }
+.pt-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  pointer-events: none;
+  max-width: 240px;
+  white-space: normal;
+}
+
+.challenge-prompt {
+  padding: 1.15rem 1.15rem 1.2rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 38%),
+    linear-gradient(135deg, rgba(29, 78, 216, 0.18), rgba(14, 165, 233, 0.12));
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.challenge-prompt::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, #1d4ed8, #0ea5e9);
+}
+.challenge-prompt strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.45rem;
+  font-size: 1.05rem;
+}
+.challenge-prompt p {
+  margin: 0.25rem 0 0;
+  color: #1e3a8a;
+}
+.challenge-prompt ol {
+  margin: 0.7rem 0 0 1.1rem;
+  padding: 0;
+  color: var(--dim);
+}
+.challenge-prompt li {
+  margin: 0.2rem 0;
+}
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem 1rem;
+}
+.challenge-field {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.85rem 0.9rem;
+}
+.challenge-field h4,
+.challenge-field .mini-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+}
+.challenge-field p {
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.challenge-note {
+  margin-top: 0.75rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+.orbital-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+.page-04-learn-electron-configuration .orb-box.clickable {
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+.page-04-learn-electron-configuration .orb-box.clickable:hover {
+  border-color: #60a5fa;
+  transform: translateY(-1px);
+}
+.page-04-learn-electron-configuration .orb-box.orb-error {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+.mini-workline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.85rem;
+}
+.spectrum-track {
+  position: relative;
+  margin-top: 0.75rem;
+}
+.spectrum-marker {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  transform: translateX(-50%);
+}
+.spectrum-marker.predicted { background: rgba(29, 78, 216, 0.82); }
+.spectrum-marker.actual { background: rgba(5, 150, 105, 0.82); top: -1px; height: 20px; }
+.hydrogen-diagram {
+  position: relative;
+  height: 260px;
+  background: linear-gradient(180deg, rgba(219, 234, 254, 0.48), rgba(255, 255, 255, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.hydrogen-level {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  border-top: 2px solid #94a3b8;
+}
+.hydrogen-level span {
+  position: absolute;
+  top: -0.8rem;
+  left: -3.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--dim);
+}
+.hydrogen-arrow {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  border-left: 3px solid #1d4ed8;
+  transform: translateX(-50%);
+}
+.hydrogen-arrow::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+.hydrogen-arrow.down::after {
+  bottom: -1px;
+  border-top: 11px solid #1d4ed8;
+}
+.hydrogen-arrow.up::after {
+  top: -1px;
+  border-bottom: 11px solid #1d4ed8;
+}
+.compare-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--dim);
+  font-size: 0.86rem;
+}
+.challenge-step-copy {
+  margin-top: 0.35rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+/* ── 05_Learn_Periodic_Table_and_Trends.html ── */
+/* Trend arrow SVG helper */
+.trend-table-wrap { overflow-x: auto; margin-top: 1rem; }
+.trend-note { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+.trend-summary {
+  margin-top: 1rem;
+  border: 1px solid #dbe4ee;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef8f4 100%);
+  padding: 1rem;
+}
+.trend-summary-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.trend-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.trend-summary-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+}
+.trend-summary-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.45rem;
+}
+.trend-summary-card p {
+  margin: 0.35rem 0;
+  font-size: 0.92rem;
+  color: var(--dim);
+}
+.trend-summary-card strong {
+  color: var(--text);
+}
+
+/* Periodic table mini-grid for the tool */
+.pt-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 28px);
+  gap: 2px;
+  margin-top: 0.5rem;
+  font-size: 0.62rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.35rem;
+  -webkit-overflow-scrolling: touch;
+}
+.pt-cell {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.15s ease;
+  line-height: 1;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pt-cell:hover { filter: brightness(0.93); border-color: rgba(15, 138, 122, 0.5); }
+.page-05-learn-periodic-table-and-trends .pt-cell.selected { outline: 2px solid var(--accent); outline-offset: -2px; filter: brightness(0.9); }
+.page-05-learn-periodic-table-and-trends .pt-cell .sym { font-weight: 700; font-size: 0.62rem; }
+.pt-cell.empty { background: transparent; border: none; cursor: default; }
+.pt-cell.metal-alkali   { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+.pt-cell.metal-alkaline { background: #ffedd5; color: #7c2d12; border-color: #fdba74; }
+.pt-cell.metal-trans    { background: #fef3c7; color: #78350f; border-color: #fcd34d; }
+.pt-cell.post-transition { background: #ede9fe; color: #4c1d95; border-color: #c4b5fd; }
+.pt-cell.metalloid      { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+.pt-cell.nonmetal       { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+.pt-cell.halogen        { background: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
+.pt-cell.noble          { background: #fae8ff; color: #701a75; border-color: #e879f9; }
+.pt-cell.lanthanide     { background: #fce7f3; color: #831843; border-color: #f9a8d4; }
+.pt-cell.actinide       { background: #fff1f2; color: #881337; border-color: #fda4af; }
+.page-05-learn-periodic-table-and-trends .pt-info-panel {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: #f3fbf7;
+  border: 1px solid #bee5db;
+  border-radius: var(--radius-sm);
+  min-height: 80px;
+  display: none;
+}
+.page-05-learn-periodic-table-and-trends .pt-info-panel.visible { display: block; }
+.page-05-learn-periodic-table-and-trends .pt-info-name { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.page-05-learn-periodic-table-and-trends .pt-info-meta { font-size: 0.85rem; color: var(--dim); margin-top: 0.25rem; }
+.pt-legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.pt-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--dim); }
+.pt-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; border: 1px solid; }
+.pt-legend-dot.alkali        { background: #fee2e2; border-color: #fca5a5; }
+.pt-legend-dot.alkaline      { background: #ffedd5; border-color: #fdba74; }
+.pt-legend-dot.transition    { background: #fef3c7; border-color: #fcd34d; }
+.pt-legend-dot.post-transition { background: #ede9fe; border-color: #c4b5fd; }
+.pt-legend-dot.metalloid     { background: #d1fae5; border-color: #6ee7b7; }
+.pt-legend-dot.nonmetal      { background: #dbeafe; border-color: #93c5fd; }
+.pt-legend-dot.halogen       { background: #e0e7ff; border-color: #a5b4fc; }
+.pt-legend-dot.noble         { background: #fae8ff; border-color: #e879f9; }
+.pt-legend-dot.lanthanide    { background: #fce7f3; border-color: #f9a8d4; }
+.pt-legend-dot.actinide      { background: #fff1f2; border-color: #fda4af; }
+
+.page-05-learn-periodic-table-and-trends .tool-card { display: flex; flex-direction: column; gap: 1rem; }
+.tool-card-prompt {
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+}
+.tool-card-prompt-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.tool-card-prompt-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.tool-compare-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+}
+.tool-value-toggle {
+  margin-top: 0.8rem;
+}
+.tool-values {
+  display: none;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.tool-values.visible { display: block; }
+.tool-property-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pt-cell.is-target {
+  outline: 3px solid #0f8a7a;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px rgba(15, 138, 122, 0.12);
+}
+.pt-cell.is-compare {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+.pt-tool-instruction {
+  font-size: 0.88rem;
+  color: var(--dim);
+}
+
+/* ── Static PT diagrams (5.1 groups/periods, 5.2 families) ── */
+.pt-diag-outer { overflow-x: auto; margin: 1.25rem 0 0.5rem; }
+.pt-diag-wrap  { width: max-content; }
+.pt-diag-hdr   { display: flex; align-items: center; height: 18px; margin-bottom: 2px; }
+.pt-diag-hdr-lbl  { width: 20px; flex-shrink: 0; }
+.pt-diag-hdr-grps { display: flex; gap: 2px; }
+.pt-diag-grp-num  { width: 30px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: var(--muted); font-weight: 700; }
+.pt-diag-main     { display: flex; flex-direction: column; gap: 2px; }
+.pt-diag-row      { display: flex; align-items: center; gap: 2px; }
+.pt-diag-period-lbl { width: 20px; flex-shrink: 0; font-size: 0.6rem; font-weight: 700; color: var(--muted); text-align: right; padding-right: 3px; }
+.pt-dc { width: 30px; height: 26px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.62rem; user-select: none; flex-shrink: 0; }
+.pt-dc.empty    { background: transparent; }
+.pt-dc.s-blk    { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-dc.p-blk    { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-dc.d-blk    { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-dc.f-blk    { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-dc.fblk-ph  { font-size: 0.48rem; }
+.pt-dc.fam-alkali   { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+.pt-dc.fam-alkaline { background: #ffedd5; color: #7c2d12; border: 1px solid #fdba74; }
+.pt-dc.fam-trans    { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+.pt-dc.fam-ptrans   { background: #ede9fe; color: #4c1d95; border: 1px solid #c4b5fd; }
+.pt-dc.fam-metalloid{ background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.pt-dc.fam-nonmetal { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+.pt-dc.fam-halogen  { background: #e0e7ff; color: #3730a3; border: 1px solid #a5b4fc; }
+.pt-dc.fam-noble    { background: #fae8ff; color: #701a75; border: 1px solid #e879f9; }
+.pt-dc.fam-lant     { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
+.pt-dc.fam-act      { background: #fff1f2; color: #881337; border: 1px solid #fda4af; }
+.pt-diag-f-section  { display: flex; gap: 2px; margin-top: 6px; }
+.pt-diag-f-offset   { width: 94px; flex-shrink: 0; }
+.pt-diag-f-main     { display: flex; flex-direction: column; gap: 2px; }
+.pt-diag-f-row      { display: flex; align-items: center; gap: 2px; }
+.pt-diag-f-lbl      { width: 20px; flex-shrink: 0; font-size: 0.58rem; color: var(--muted); font-weight: 700; text-align: right; padding-right: 3px; }
+.pt-diag-f-cells    { display: flex; gap: 2px; }
+.pt-diag-arrows { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.9rem; font-size: 0.8rem; color: var(--dim); }
+.pt-diag-arrow-badge { display: inline-flex; align-items: center; font-weight: 700; padding: 0.18rem 0.5rem; border-radius: 999px; font-size: 0.76rem; margin-right: 0.3rem; }
+.arrow-period { background: #dbeafe; color: #1d4ed8; }
+.arrow-group  { background: #d1fae5; color: #065f46; }
+.fam-legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.fam-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--dim); }
+.fam-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+/* org-mode axis label layout */
+.pt-diag-outer-flex { display: flex; gap: 0.75rem; align-items: flex-start; width: max-content; }
+.pt-diag-y-axis {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  min-width: 82px;
+  font-size: 0.7rem;
+  color: var(--dim);
+  text-align: center;
+  line-height: 1.55;
+  padding: 0.5rem 0.35rem;
+  gap: 0.45rem;
+  border-right: 2px solid #bfdbfe;
+}
+.pt-diag-y-axis .axis-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.71rem;
+  white-space: nowrap;
+}
+/* fam-mode: table + legend side by side */
+.pt-diag-fam-outer { display: flex; align-items: flex-start; width: max-content; }
+.fam-legend-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 1.1rem;
+  margin-left: 0.6rem;
+  border-left: 2px solid var(--border);
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+
+/* ── 06_Learn_Chemistry_Nomenclature.html ── */
+/* Nomenclature tool styles */
+.naming-tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 640px) { .naming-tool-grid { grid-template-columns: 1fr; } }
+
+.tool-section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin: 1rem 0 0.5rem;
+}
+
+.page-06-learn-chemistry-nomenclature .tool-result-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  min-height: 2.8rem;
+  display: block;
+  line-height: 1.55;
+  font-family: inherit;
+}
+
+.page-06-learn-chemistry-nomenclature .tool-result-box.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.page-06-learn-chemistry-nomenclature select.prob-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%2364748b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+/* Hi-Lo scaffolding aids */
+.scaffold-box {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.94rem;
+}
+.scaffold-box .scaffold-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #059669;
+  margin-bottom: 0.3rem;
+}
+
+.ion-table th { background: #eff6ff; }
+.ion-table td:first-child { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--accent2); }
+.polyatomic-ion-table {
+  display: block;
+  overflow: visible;
+}
+.polyatomic-ion-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.polyatomic-ion-table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.polyatomic-ion-table tbody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+  gap: 0.55rem 0.8rem;
+}
+.polyatomic-ion-table tr {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 0.85fr) minmax(8rem, 1.25fr) minmax(4rem, 0.55fr);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid rgba(217, 200, 180, 0.82);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
+}
+.polyatomic-ion-table td {
+  display: flex;
+  align-items: center;
+  border-bottom: 0;
+  border-right: 1px solid rgba(217, 200, 180, 0.72);
+  padding: 0.62rem 0.75rem;
+}
+.polyatomic-ion-table td:last-child {
+  border-right: 0;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent2);
+}
+@media (max-width: 520px) {
+  .polyatomic-ion-table tr {
+    grid-template-columns: minmax(4.9rem, 0.8fr) minmax(7rem, 1.3fr) minmax(3.4rem, 0.55fr);
+  }
+
+  .polyatomic-ion-table td {
+    padding: 0.56rem 0.58rem;
+    font-size: 0.88rem;
+  }
+}
+
+.mt-075 { margin-top: 0.75rem; }
+.mt-1 { margin-top: 1rem; }
+.comp-type-select { margin-bottom: 0.75rem; }
+.page-06-learn-chemistry-nomenclature .tool-hint { font-size: 0.88rem; color: var(--muted); }
+.roman-input-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.roman-input {
+  flex: 1;
+}
+.roman-input.w-140 { min-width: 140px; }
+.roman-input.w-100 { min-width: 100px; }
+.roman-input.w-160 { min-width: 160px; }
+.roman-btn,
+.roman-result { margin-top: 0.75rem; }
+.roman-result {
+  font-family: 'DM Mono', monospace;
+}
+.quiz-formula {
+  margin-top: 0.35rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  font-family: 'DM Mono', monospace;
+}
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.page-06-learn-chemistry-nomenclature .tool-result-box.success {
+  background: #ecfdf5;
+  border-color: #86efac;
+  color: #166534;
+}
+.page-06-learn-chemistry-nomenclature .tool-reveal h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+}
+.page-06-learn-chemistry-nomenclature .tool-reveal ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.page-06-learn-chemistry-nomenclature .tool-reveal p + p,
+.page-06-learn-chemistry-nomenclature .tool-reveal p + ul,
+.page-06-learn-chemistry-nomenclature .tool-reveal ul + p {
+  margin-top: 0.55rem;
+}
+.page-06-learn-chemistry-nomenclature .tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.page-06-learn-chemistry-nomenclature .tool-actions .btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── 07_Learn_Chemistry_Moles.html ── */
+.mole-spotlight {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,248,255,0.96));
+}
+.molar-mass-table-mobile th,
+.molar-mass-table-mobile td {
+  font-size: 0.95rem;
+}
+.mole-figure {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+.mole-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mole-figure figcaption {
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.particle-model-figure {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+.particle-model-crop {
+  overflow: hidden;
+  aspect-ratio: 1678 / 315;
+  border-radius: calc(var(--radius-sm) - 4px);
+  background: linear-gradient(180deg, #f8fbff, #eef4ff);
+}
+.particle-model-crop img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translateY(-0.5%);
+}
+.particle-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+.particle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.particle-summary-box {
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1rem;
+  min-width: 0;
+  text-align: center;
+  line-height: 1.6;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.05);
+}
+.particle-summary-box strong {
+  display: block;
+  color: var(--accent2);
+  margin-bottom: 0.35rem;
+}
+.particle-summary-box svg {
+  display: block;
+  width: auto;
+  height: 80px;
+  margin: 0 auto 0.9rem;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.mole-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+.mole-summary-box {
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+}
+.mole-summary-box strong {
+  display: block;
+  color: var(--accent2);
+  margin-bottom: 0.35rem;
+}
+.page-07-learn-chemistry-moles .tool-choice-btn.reveal-correct,
+.page-07-learn-chemistry-moles .explore-choice.reveal-correct {
+  border-color: #86efac;
+  background: #ecfdf5;
+  color: #166534;
+}
+.reaction-band {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.05rem;
+  text-align: center;
+  color: #1e3a8a;
+}
+.setup-preview-note {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.setup-preview-box {
+  margin-top: 1rem;
+}
+.page-07-learn-chemistry-moles .setup-preview-box .fl-chain {
+  margin-top: 0.5rem;
+}
+.setup-preview-top,
+.setup-preview-bottom {
+  min-width: 12ch;
+  display: inline-block;
+}
+.setup-roadmap {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+}
+.setup-roadmap strong {
+  color: var(--accent2);
+}
+.setup-coach-stage {
+  grid-template-columns: 1fr;
+}
+.setup-coach-media-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+.setup-coach-media-support {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.85fr) minmax(240px, 1.15fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+.setup-coach-panel {
+  padding: 1.15rem;
+}
+.tool-support-panel {
+  margin-top: 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+}
+.tool-support-panel strong {
+  color: var(--accent2);
+}
+.tool-checker-note {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.coach-solved-work {
+  display: grid;
+  gap: 0.7rem;
+}
+.coach-solved-chainline,
+.coach-solved-answerline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1.7;
+}
+.page-07-learn-chemistry-moles .coach-solved-chainline .fl-frac {
+  min-width: 148px;
+}
+.coach-solved-answerline {
+  padding-top: 0.2rem;
+  border-top: 1px dashed rgba(15, 110, 86, 0.2);
+  color: var(--text);
+  font-size: 1.02rem;
+}
+.page-07-learn-chemistry-moles .coach-solved-answerline .equals-mark {
+  font-weight: 700;
+  color: var(--accent2);
+}
+.mole-wheel-shell {
+  margin-top: 1rem;
+}
+.mole-wheel-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.mole-wheel-svg {
+  width: 100%;
+  max-width: 340px;
+  overflow: visible;
+}
+.mole-wheel-node {
+  cursor: pointer;
+}
+.mole-wheel-panel {
+  width: 100%;
+  max-width: 500px;
+  min-height: 120px;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.mole-wheel-title {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.mole-wheel-body {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--dim);
+}
+.conv-group-full {
+  grid-column: 1 / -1;
+}
+.conv-result-tall {
+  min-height: 3rem;
+}
+.mole-wheel-direction {
+  margin-right: 4px;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.mole-wheel-rule {
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.mole-wheel-note {
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+  color: var(--dim);
+}
+.composition-result-start {
+  color: var(--text);
+}
+.composition-result-molar-mass {
+  color: var(--gold);
+}
+.composition-result-element {
+  color: var(--accent2);
+}
+.composition-result-percent {
+  color: var(--green);
+}
+.example-roadmap {
+  margin-top: 0.85rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #dbeafe;
+  border-radius: var(--radius-sm);
+  background: #f8fbff;
+}
+.example-roadmap-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+.example-roadmap-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  color: var(--text);
+}
+.example-roadmap-step {
+  padding: 0.38rem 0.6rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(147, 197, 253, 0.7);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.example-roadmap-arrow {
+  color: var(--muted);
+  font-weight: 700;
+}
+@media (max-width: 720px) {
+  .molar-mass-table-mobile th,
+  .molar-mass-table-mobile td {
+    font-size: 0.82rem;
+    padding: 0.58rem 0.55rem;
+  }
+}
+@media (max-width: 760px) {
+  .particle-summary-grid,
+  .particle-wrapper,
+  .mole-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .setup-coach-media-support {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 08_Learn_Chemical_Reactions.html ── */
+/* ── Reaction type badge colors ── */
+.rxn-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  margin-right: 0.35rem;
+}
+.badge-precip  { background: #fef3c7; color: #92400e; }
+.badge-acid    { background: #ecfdf5; color: #065f46; }
+.badge-redox   { background: #ede9fe; color: #5b21b6; }
+.badge-synth   { background: #dbeafe; color: #1e40af; }
+.badge-decomp  { background: #fee2e2; color: #991b1b; }
+.badge-single  { background: #fce7f3; color: #9d174d; }
+.badge-double  { background: #e0f2fe; color: #075985; }
+.badge-combustion { background: #ffedd5; color: #9a3412; }
+
+/* ── Oxidation number inline display ── */
+.ox-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+.ox-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.9rem;
+  min-width: 64px;
+}
+.ox-chip .ox-formula { font-family: 'DM Mono', monospace; font-size: 0.92rem; font-weight: 500; color: var(--text); }
+.ox-chip .ox-num { font-size: 0.78rem; font-weight: 700; color: var(--accent2); margin-top: 0.15rem; }
+
+/* ── Equation display ── */
+.eq-display {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.05rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  color: #1e3a8a;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.eq-coeff { color: var(--accent2); font-weight: 700; }
+.eq-arrow { color: var(--muted); margin: 0 0.4rem; }
+.eq-state { font-size: 0.82rem; color: var(--muted); }
+
+.tool-subhead {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.tool-steps {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+}
+.tool-steps li {
+  margin: 0.35rem 0;
+}
+
+/* ── Net ionic step layout ── */
+.ionic-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.ionic-step:last-child { border-bottom: none; }
+.ionic-label {
+  font-size: 0.75rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+  min-width: 80px;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .ox-table { gap: 0.4rem; }
+}
+
+/* ── 09_Learn_Chemistry_Stoichiometry.html ── */
+/* ── Hi-Lo specific helpers (no new classes, just semantic tweaks) ── */
+.vocab-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin-top: 0.75rem;
+}
+.vocab-term {
+  font-weight: 700;
+  color: var(--accent2);
+  white-space: nowrap;
+}
+.road-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.9rem 0 0.4rem;
+  font-size: 0.92rem;
+}
+.road-step {
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.road-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.highlight-box {
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.9rem;
+  color: #713f12;
+  font-size: 0.95rem;
+}
+.highlight-box strong { color: #92400e; }
+.mini-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.95rem;
+}
+.mini-visual-card {
+  padding: 0.9rem 0.95rem;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #ffffff, #eff6ff);
+}
+.mini-visual-card .mini-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mini-visual-card .mini-value {
+  font-family: 'DM Mono', monospace;
+  color: #1e3a8a;
+  font-size: 1.02rem;
+}
+.mini-visual-card .mini-copy {
+  margin: 0.45rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.95rem;
+}
+.compare-card {
+  padding: 0.9rem 0.95rem;
+  border: 1px solid #d9c8b4;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #ffffff, #fff8ed);
+}
+.compare-card strong {
+  color: var(--accent2);
+}
+.compare-card p {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+.check-list li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed var(--border);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Tool UI ── */
+.ratio-choice-fraction {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.2rem;
+  min-width: 120px;
+}
+.ratio-choice-frac-line {
+  width: 100%;
+  max-width: 180px;
+  height: 2px;
+  background: currentColor;
+}
+.ratio-choice-prefix,
+.ratio-choice-suffix {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.ratio-choice-num,
+.ratio-choice-den {
+  font-family: inherit;
+  text-align: center;
+  line-height: 1.3;
+}
+.inline-frac {
+  display: inline-grid;
+  justify-items: center;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+  min-width: 90px;
+}
+.inline-frac-num,
+.inline-frac-den {
+  font-family: 'DM Mono', monospace;
+  color: #1e3a8a;
+  text-align: center;
+  line-height: 1.25;
+}
+.inline-frac-bar {
+  width: 100%;
+  height: 2px;
+  background: #1e3a8a;
+  margin: 0.12rem 0;
+}
+@media (max-width: 640px) {
+  .vocab-row { grid-template-columns: 1fr; }
+  .mini-visual-grid,
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 10_Learn_Chemistry_Bonding.html ── */
+.page-10-learn-chemistry-bonding {
+  --vsepr-b-fill: #eff6ff;
+  --vsepr-b-stroke: #3b82f6;
+  --vsepr-b-text: #2563eb;
+  --vsepr-a-fill: #fef2f2;
+  --vsepr-a-stroke: #ef4444;
+  --vsepr-a-text: #dc2626;
+  --vsepr-bond-color: #334155;
+  --vsepr-lp-stroke: #94a3b8;
+}
+
+.bond {
+  stroke: var(--vsepr-bond-color);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.bond-dash {
+  stroke: var(--vsepr-bond-color);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 4, 4;
+}
+
+.wedge {
+  fill: var(--vsepr-bond-color);
+}
+
+.atom-b {
+  fill: var(--vsepr-b-fill);
+  stroke: var(--vsepr-b-stroke);
+  stroke-width: 2;
+}
+
+.atom-a {
+  fill: var(--vsepr-a-fill);
+  stroke: var(--vsepr-a-stroke);
+  stroke-width: 2;
+}
+
+.text-b {
+  fill: var(--vsepr-b-text);
+  font-weight: 800;
+  font-size: 14px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.text-a {
+  fill: var(--vsepr-a-text);
+  font-weight: 800;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.lp {
+  fill: #ffffff;
+  stroke: var(--vsepr-lp-stroke);
+  stroke-width: 1.5;
+  stroke-dasharray: 3, 3;
+}
+
+.text-lp {
+  fill: var(--vsepr-lp-stroke);
+  font-weight: 700;
+  font-size: 9px;
+  font-family: sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+/* ── Unit 10: all-screen SVG baseline ──────────────────────────────── */
+
+/* Every SVG on this page scales down gracefully and never overflows */
+.page-10-learn-chemistry-bonding svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.vsepr-example-card {
+  max-width: 360px;
+  margin: 1rem auto 0;
+}
+
+/* Resonance structure SVGs: intrinsic pixel size on desktop, centred */
+.resonance-structure svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* Polarity / dipole diagram SVGs: intrinsic size, centred in card */
+.page-10-learn-chemistry-bonding .diagram-card svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.resonance-row--nitrate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem 0 0.6rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.5rem;
+}
+
+.resonance-structure {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.resonance-structure svg {
+  display: block;
+}
+
+.resonance-arrow {
+  flex: 0 0 auto;
+  color: #2563eb;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .resonance-row--nitrate {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-10-learn-chemistry-bonding .lewis-diagram {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px auto;
+  }
+
+  .page-10-learn-chemistry-bonding .lewis-box {
+    min-height: 0;
+    max-width: none;
+    padding: 12px 10px;
+  }
+
+  .page-10-learn-chemistry-bonding .lewis-box svg {
+    width: min(100%, 88px);
+  }
+
+  .page-10-learn-chemistry-bonding .lb-name {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .page-10-learn-chemistry-bonding .lb-formula {
+    margin-top: 8px;
+    font-size: 0.76rem;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram-shell {
+    max-width: 180px;
+    margin-inline: auto;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram {
+    min-height: 0;
+  }
+
+  .page-10-learn-chemistry-bonding .vsepr-diagram svg {
+    width: min(100%, 170px);
+    margin-inline: auto;
+  }
+
+  .page-10-learn-chemistry-bonding .geo-card svg,
+  .page-10-learn-chemistry-bonding .vsepr-example-card svg {
+    width: min(100%, 158px);
+  }
+
+  .page-10-learn-chemistry-bonding .diagram-card svg {
+    width: min(100%, 210px);
+    margin-inline: auto;
+    display: block;
+  }
+
+  .page-10-learn-chemistry-bonding .resonance-structure svg {
+    width: min(100%, 148px);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .resonance-row--nitrate {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: visible;
+  }
+
+  .resonance-arrow {
+    transform: rotate(90deg);
+  }
 }

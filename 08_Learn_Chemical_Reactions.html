@@ -10,6 +10,7 @@
 <meta property="og:description" content="Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.">
 <meta property="og:url" content="https://chemunlocked.com/08_Learn_Chemical_Reactions.html">
 <meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,6 +18,7 @@
 <meta name="twitter:description" content="Learn about chemical reactions, reaction types, balancing equations, and net ionic equations. Includes worked examples and interactive tools.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:site" content="@ChemUnlocked">
+<meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,110 +30,14 @@
     "name": "ChemUnlocked",
     "url": "https://chemunlocked.com"
   },
-  "url": "https://chemunlocked.com/08_Learn_Chemical_Reactions.html"
+  "url": "https://chemunlocked.com/08_Learn_Chemical_Reactions.html",
+  "educationalLevel": "High School",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css">
-<meta name="theme-color" content="#2563eb">
-<style>
-
-/* ── Reaction type badge colors ── */
-.rxn-badge {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 650;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  padding: 0.22rem 0.6rem;
-  border-radius: 999px;
-  margin-right: 0.35rem;
-}
-.badge-precip  { background: #fef3c7; color: #92400e; }
-.badge-acid    { background: #ecfdf5; color: #065f46; }
-.badge-redox   { background: #ede9fe; color: #5b21b6; }
-.badge-synth   { background: #dbeafe; color: #1e40af; }
-.badge-decomp  { background: #fee2e2; color: #991b1b; }
-.badge-single  { background: #fce7f3; color: #9d174d; }
-.badge-double  { background: #e0f2fe; color: #075985; }
-.badge-combustion { background: #ffedd5; color: #9a3412; }
-
-/* ── Oxidation number inline display ── */
-.ox-table {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.85rem;
-}
-.ox-chip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 0.9rem;
-  min-width: 64px;
-}
-.ox-chip .ox-formula { font-family: 'DM Mono', monospace; font-size: 0.92rem; font-weight: 500; color: var(--text); }
-.ox-chip .ox-num { font-size: 0.78rem; font-weight: 700; color: var(--accent2); margin-top: 0.15rem; }
-
-/* ── Equation display ── */
-.eq-display {
-  font-family: 'DM Mono', monospace;
-  font-size: 1.05rem;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  color: #1e3a8a;
-  margin: 0.75rem 0;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.eq-coeff { color: var(--accent2); font-weight: 700; }
-.eq-arrow { color: var(--muted); margin: 0 0.4rem; }
-.eq-state { font-size: 0.82rem; color: var(--muted); }
-
-.tool-subhead {
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 0.35rem;
-}
-.tool-steps {
-  margin: 0.55rem 0 0;
-  padding-left: 1.1rem;
-}
-.tool-steps li {
-  margin: 0.35rem 0;
-}
-
-/* ── Net ionic step layout ── */
-.ionic-step {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  padding: 0.6rem 0;
-  border-bottom: 1px dashed var(--border);
-}
-.ionic-step:last-child { border-bottom: none; }
-.ionic-label {
-  font-size: 0.75rem;
-  font-weight: 650;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent2);
-  min-width: 80px;
-  padding-top: 0.15rem;
-  flex-shrink: 0;
-}
-
-@media (max-width: 640px) {
-  .ox-table { gap: 0.4rem; }
-}
-</style>
+<link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -770,7 +676,7 @@
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260422"></script>
+<script src="chem.js?v=20260509"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const typeScenarios = [

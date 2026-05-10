@@ -10,6 +10,7 @@
 <meta property="og:description" content="Learn how to calculate moles, convert between mass, moles, and particles, and determine empirical formulas. Includes worked examples and tables.">
 <meta property="og:url" content="https://chemunlocked.com/07_Learn_Chemistry_Moles.html">
 <meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,6 +18,7 @@
 <meta name="twitter:description" content="Learn how to calculate moles, convert between mass, moles, and particles, and determine empirical formulas. Includes worked examples and tables.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:site" content="@ChemUnlocked">
+<meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,339 +30,14 @@
     "name": "ChemUnlocked",
     "url": "https://chemunlocked.com"
   },
-  "url": "https://chemunlocked.com/07_Learn_Chemistry_Moles.html"
+  "url": "https://chemunlocked.com/07_Learn_Chemistry_Moles.html",
+  "educationalLevel": "High School",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css">
-<meta name="theme-color" content="#2563eb">
-<style>
-.mole-spotlight {
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,248,255,0.96));
-}
-.molar-mass-table-mobile th,
-.molar-mass-table-mobile td {
-  font-size: 0.95rem;
-}
-.mole-figure {
-  margin: 1rem 0 0;
-  padding: 1rem;
-  border: 1px solid rgba(191, 219, 254, 0.9);
-  border-radius: var(--radius-sm);
-  background: #fff;
-}
-.mole-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.mole-figure figcaption {
-  margin-top: 0.8rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-.particle-model-figure {
-  margin: 1rem 0 0;
-  padding: 1rem;
-  border: 1px solid rgba(191, 219, 254, 0.9);
-  border-radius: var(--radius-sm);
-  background: #fff;
-}
-.particle-model-crop {
-  overflow: hidden;
-  aspect-ratio: 1678 / 315;
-  border-radius: calc(var(--radius-sm) - 4px);
-  background: linear-gradient(180deg, #f8fbff, #eef4ff);
-}
-.particle-model-crop img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: translateY(-0.5%);
-}
-.particle-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-top: 1rem;
-}
-.particle-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.particle-summary-box {
-  background: #f8fafc;
-  border: 1px solid #dbeafe;
-  border-radius: var(--radius-sm);
-  padding: 0.95rem 1rem;
-  min-width: 0;
-  text-align: center;
-  line-height: 1.6;
-  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.05);
-}
-.particle-summary-box strong {
-  display: block;
-  color: var(--accent2);
-  margin-bottom: 0.35rem;
-}
-.particle-summary-box svg {
-  display: block;
-  width: auto;
-  height: 80px;
-  margin: 0 auto 0.9rem;
-}
-.nowrap {
-  white-space: nowrap;
-}
-.mole-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-top: 1rem;
-}
-.mole-summary-box {
-  background: #f8fafc;
-  border: 1px solid #dbeafe;
-  border-radius: var(--radius-sm);
-  padding: 0.9rem 1rem;
-}
-.mole-summary-box strong {
-  display: block;
-  color: var(--accent2);
-  margin-bottom: 0.35rem;
-}
-.tool-choice-btn.reveal-correct,
-.explore-choice.reveal-correct {
-  border-color: #86efac;
-  background: #ecfdf5;
-  color: #166534;
-}
-.reaction-band {
-  margin-top: 1rem;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm);
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  font-family: 'DM Mono', monospace;
-  font-size: 1.05rem;
-  text-align: center;
-  color: #1e3a8a;
-}
-.setup-preview-note {
-  margin-top: 0.75rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-.setup-preview-box {
-  margin-top: 1rem;
-}
-.setup-preview-box .fl-chain {
-  margin-top: 0.5rem;
-}
-.setup-preview-top,
-.setup-preview-bottom {
-  min-width: 12ch;
-  display: inline-block;
-}
-.setup-roadmap {
-  margin-top: 1rem;
-  padding: 0.95rem 1rem;
-  border-radius: var(--radius-sm);
-  background: #f8fafc;
-  border: 1px solid #dbeafe;
-}
-.setup-roadmap strong {
-  color: var(--accent2);
-}
-.setup-coach-stage {
-  grid-template-columns: 1fr;
-}
-.setup-coach-media-grid {
-  display: grid;
-  gap: 0.85rem;
-}
-.setup-coach-media-support {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.85fr) minmax(240px, 1.15fr);
-  gap: 0.85rem;
-  align-items: start;
-}
-.setup-coach-panel {
-  padding: 1.15rem;
-}
-.tool-support-panel {
-  margin-top: 0.85rem;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm);
-  background: #f8fafc;
-  border: 1px solid #dbeafe;
-}
-.tool-support-panel strong {
-  color: var(--accent2);
-}
-.tool-checker-note {
-  margin-top: 0.75rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-.coach-solved-work {
-  display: grid;
-  gap: 0.7rem;
-}
-.coach-solved-chainline,
-.coach-solved-answerline {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem;
-  line-height: 1.7;
-}
-.coach-solved-chainline .fl-frac {
-  min-width: 148px;
-}
-.coach-solved-answerline {
-  padding-top: 0.2rem;
-  border-top: 1px dashed rgba(15, 110, 86, 0.2);
-  color: var(--text);
-  font-size: 1.02rem;
-}
-.coach-solved-answerline .equals-mark {
-  font-weight: 700;
-  color: var(--accent2);
-}
-.mole-wheel-shell {
-  margin-top: 1rem;
-}
-.mole-wheel-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-.mole-wheel-svg {
-  width: 100%;
-  max-width: 340px;
-  overflow: visible;
-}
-.mole-wheel-node {
-  cursor: pointer;
-}
-.mole-wheel-panel {
-  width: 100%;
-  max-width: 500px;
-  min-height: 120px;
-  margin-top: 0.5rem;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-}
-.mole-wheel-title {
-  margin-bottom: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--muted);
-}
-.mole-wheel-body {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--dim);
-}
-.conv-group-full {
-  grid-column: 1 / -1;
-}
-.conv-result-tall {
-  min-height: 3rem;
-}
-.mole-wheel-direction {
-  margin-right: 4px;
-  padding: 3px 9px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-.mole-wheel-rule {
-  margin-bottom: 6px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text);
-}
-.mole-wheel-note {
-  margin-bottom: 6px;
-  font-size: 0.78rem;
-  color: var(--dim);
-}
-.composition-result-start {
-  color: var(--text);
-}
-.composition-result-molar-mass {
-  color: var(--gold);
-}
-.composition-result-element {
-  color: var(--accent2);
-}
-.composition-result-percent {
-  color: var(--green);
-}
-.example-roadmap {
-  margin-top: 0.85rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid #dbeafe;
-  border-radius: var(--radius-sm);
-  background: #f8fbff;
-}
-.example-roadmap-title {
-  margin: 0 0 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent2);
-}
-.example-roadmap-steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  align-items: center;
-  color: var(--text);
-}
-.example-roadmap-step {
-  padding: 0.38rem 0.6rem;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid rgba(147, 197, 253, 0.7);
-  font-size: 0.92rem;
-  line-height: 1.4;
-}
-.example-roadmap-arrow {
-  color: var(--muted);
-  font-weight: 700;
-}
-.mt-075 { margin-top: 0.75rem; }
-.mt-1 { margin-top: 1rem; }
-@media (max-width: 720px) {
-  .molar-mass-table-mobile th,
-  .molar-mass-table-mobile td {
-    font-size: 0.82rem;
-    padding: 0.58rem 0.55rem;
-  }
-}
-@media (max-width: 760px) {
-  .particle-summary-grid,
-  .particle-wrapper,
-  .mole-summary-grid {
-    grid-template-columns: 1fr;
-  }
-  .setup-coach-media-support {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+<link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1156,7 +833,7 @@
 </div><!-- end container -->
 </main>
 
-<script src="chem.js?v=20260422"></script>
+<script src="chem.js?v=20260509"></script>
 <script>
 // ===================== LOCAL TAB NAV =====================
 

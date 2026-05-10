@@ -4,355 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unit 04 — Electron Configuration | ChemUnlocked</title>
-<meta name="description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 04 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<meta name="description" content="Learn electron configuration, orbital diagrams, filling rules, periodic trends, and spectral lines with guided notes, worked examples, and interactive tools.">
 <link rel="canonical" href="https://chemunlocked.com/04_Learn_Electron_Configuration.html">
 <meta property="og:title" content="Unit 04 — Electron Configuration | ChemUnlocked">
-<meta property="og:description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 04 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<meta property="og:description" content="Learn electron configuration, orbital diagrams, filling rules, periodic trends, and spectral lines with guided notes, worked examples, and interactive tools.">
 <meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://chemunlocked.com/04_Learn_Electron_Configuration.html">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Unit 04 — Electron Configuration | ChemUnlocked">
-<meta name="twitter:description" content="Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 04 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.">
+<meta name="twitter:description" content="Learn electron configuration, orbital diagrams, filling rules, periodic trends, and spectral lines with guided notes, worked examples, and interactive tools.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
 <meta name="twitter:site" content="@ChemUnlocked">
+<meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Unit 04 — Electron Configuration",
-  "description": "Learn electron configuration, orbital diagrams, periodic trends, and light interactions in Unit 04 of ChemUnlocked. Study energy levels, filling rules, and spectral lines with interactive tools.",
+  "description": "Learn electron configuration, orbital diagrams, filling rules, periodic trends, and spectral lines with guided notes, worked examples, and interactive tools.",
   "provider": {
     "@type": "Organization",
     "name": "ChemUnlocked",
     "url": "https://chemunlocked.com"
   },
-  "url": "https://chemunlocked.com/04_Learn_Electron_Configuration.html"
+  "url": "https://chemunlocked.com/04_Learn_Electron_Configuration.html",
+  "educationalLevel": "High School",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css">
-<meta name="theme-color" content="#2563eb">
-<style>
-/* ── Orbital box diagrams ── */
-.orbital-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  margin: 0.5rem 0;
-}
-.orb-box {
-  width: 38px;
-  height: 38px;
-  border: 2px solid var(--border);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  background: #fff;
-  font-size: 1rem;
-}
-.orb-box.full { border-color: #93c5fd; background: #eff6ff; }
-.orb-box.up-only { border-color: #a7f3d0; background: #ecfdf5; }
-.orb-box.empty { border-color: var(--border); background: #f8fafc; }
-.arrow-up-el { color: #1d4ed8; font-size: 1rem; line-height: 1; }
-.arrow-down-el { color: #0f766e; font-size: 1rem; line-height: 1; }
-.sublevel-name {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.82rem;
-  color: var(--dim);
-  min-width: 2.2rem;
-  font-weight: 500;
-}
-
-/* ── Spectrum bar ── */
-.spectrum-bar {
-  height: 18px;
-  border-radius: 6px;
-  margin: 0.75rem 0 0.35rem;
-  background: linear-gradient(to right, #7c3aed, #2563eb, #0891b2, #059669, #ca8a04, #ea580c, #dc2626);
-}
-.spectrum-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-/* ── Config builder output ── */
-.config-result {
-  margin-top: 1rem;
-  padding: 1rem 1.1rem;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: var(--radius-sm);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.92rem;
-  line-height: 1.75;
-  color: #1e3a8a;
-}
-.config-label {
-  display: block;
-  font-size: 0.76rem;
-  color: var(--accent2);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.3rem;
-  font-family: 'DM Mono', monospace;
-}
-
-/* ── Mini periodic table ── */
-.pt-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 0.75rem 0;
-  font-size: 0.83rem;
-  color: var(--dim);
-}
-.pt-swatch { display: flex; align-items: center; gap: 0.4rem; }
-.pt-color { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; }
-.mini-pt-wrap { position: relative; margin-top: 0.5rem; overflow-x: auto; }
-.mini-pt {
-  display: grid;
-  grid-template-columns: repeat(18, 34px);
-  grid-template-rows: repeat(7, 30px);
-  gap: 2px;
-  width: max-content;
-}
-.mini-pt-f-wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.4rem;
-  margin-top: 6px;
-  width: max-content;
-}
-.mini-pt-f-labels {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.mini-pt-f-label {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  font-size: 0.6rem;
-  color: var(--muted);
-  padding-right: 2px;
-}
-.mini-pt-f {
-  display: grid;
-  grid-template-columns: repeat(15, 34px);
-  grid-template-rows: repeat(2, 30px);
-  gap: 2px;
-}
-.pt-cell {
-  width: 34px;
-  height: 30px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.68rem;
-  font-weight: 600;
-  transition: 0.15s ease;
-  user-select: none;
-}
-.pt-cell.empty { background: transparent; }
-.pt-cell.s-blk { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
-.pt-cell.p-blk { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
-.pt-cell.d-blk { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
-.pt-cell.f-blk { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
-.pt-cell:hover:not(.empty) { filter: brightness(0.92); transform: scale(1.1); z-index: 5; }
-.pt-cell.selected { outline: 2px solid var(--accent2); outline-offset: 1px; }
-.pt-tooltip {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  background: #1e293b;
-  color: #f1f5f9;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  pointer-events: none;
-  max-width: 240px;
-  white-space: normal;
-}
-
-.challenge-prompt {
-  padding: 1.15rem 1.15rem 1.2rem;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 38%),
-    linear-gradient(135deg, rgba(29, 78, 216, 0.18), rgba(14, 165, 233, 0.12));
-  border: 1px solid rgba(37, 99, 235, 0.22);
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
-  margin-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-.challenge-prompt::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 6px;
-  background: linear-gradient(180deg, #1d4ed8, #0ea5e9);
-}
-.challenge-prompt strong {
-  display: block;
-  color: var(--text);
-  margin-bottom: 0.45rem;
-  font-size: 1.05rem;
-}
-.challenge-prompt p {
-  margin: 0.25rem 0 0;
-  color: #1e3a8a;
-}
-.challenge-prompt ol {
-  margin: 0.7rem 0 0 1.1rem;
-  padding: 0;
-  color: var(--dim);
-}
-.challenge-prompt li {
-  margin: 0.2rem 0;
-}
-.challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.9rem 1rem;
-}
-.challenge-field {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 0.85rem 0.9rem;
-}
-.challenge-field h4,
-.challenge-field .mini-label {
-  margin: 0 0 0.45rem;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent2);
-}
-.challenge-field p {
-  margin: 0.25rem 0 0;
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-.challenge-note {
-  margin-top: 0.75rem;
-  font-size: 0.86rem;
-  color: var(--muted);
-}
-.orbital-input-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem;
-}
-.orb-box.clickable {
-  cursor: pointer;
-  transition: 0.18s ease;
-}
-.orb-box.clickable:hover {
-  border-color: #60a5fa;
-  transform: translateY(-1px);
-}
-.orb-box.orb-error {
-  border-color: #fca5a5;
-  background: #fef2f2;
-}
-.mini-workline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.7rem;
-  margin-top: 0.85rem;
-}
-.spectrum-track {
-  position: relative;
-  margin-top: 0.75rem;
-}
-.spectrum-marker {
-  position: absolute;
-  top: -6px;
-  width: 14px;
-  height: 30px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.78);
-  border: 2px solid #fff;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
-  transform: translateX(-50%);
-}
-.spectrum-marker.predicted { background: rgba(29, 78, 216, 0.82); }
-.spectrum-marker.actual { background: rgba(5, 150, 105, 0.82); top: -1px; height: 20px; }
-.hydrogen-diagram {
-  position: relative;
-  height: 260px;
-  background: linear-gradient(180deg, rgba(219, 234, 254, 0.48), rgba(255, 255, 255, 0.95));
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  overflow: hidden;
-}
-.hydrogen-level {
-  position: absolute;
-  left: 18%;
-  right: 18%;
-  border-top: 2px solid #94a3b8;
-}
-.hydrogen-level span {
-  position: absolute;
-  top: -0.8rem;
-  left: -3.2rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.84rem;
-  color: var(--dim);
-}
-.hydrogen-arrow {
-  position: absolute;
-  left: 50%;
-  width: 0;
-  border-left: 3px solid #1d4ed8;
-  transform: translateX(-50%);
-}
-.hydrogen-arrow::after {
-  content: "";
-  position: absolute;
-  left: -8px;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-}
-.hydrogen-arrow.down::after {
-  bottom: -1px;
-  border-top: 11px solid #1d4ed8;
-}
-.hydrogen-arrow.up::after {
-  top: -1px;
-  border-bottom: 11px solid #1d4ed8;
-}
-.compare-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.55rem;
-  padding: 0.42rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.06);
-  color: var(--dim);
-  font-size: 0.86rem;
-}
-.challenge-step-copy {
-  margin-top: 0.35rem;
-  font-size: 0.84rem;
-  color: var(--muted);
-}
-</style>
+<link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1207,7 +892,7 @@
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260422"></script>
+<script src="chem.js?v=20260509"></script>
 <script>
 // ── TOOL LOGIC ────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
