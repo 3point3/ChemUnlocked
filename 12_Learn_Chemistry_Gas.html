@@ -134,12 +134,12 @@
 <div class="graph-title">▶ Interactive: Boyle's Law — P vs. V (hyperbola shape)</div>
 <canvas class="graph-canvas" id="boyleCanvas"></canvas>
 <div class="slider-row">
-<label>Set Pressure (atm):</label>
+<label for="boyleP">Set Pressure (atm):</label>
 <input type="range" min="0.2" max="5" step="0.05" value="1" id="boyleP" oninput="updateBoyle()">
 <span class="slider-val" id="boylePVal">1.00 atm</span>
 </div>
 <div class="slider-row">
-<label>PV constant k (L·atm):</label>
+<label for="boyleK">PV constant k (L·atm):</label>
 <input type="range" min="1" max="11" step="0.5" value="4" id="boyleK" oninput="updateBoyle()">
 <span class="slider-val" id="boyleKVal">k = 4.0</span>
 </div>
@@ -173,12 +173,12 @@
 <div class="graph-title">▶ Interactive: Charles's Law — V vs. T (straight line)</div>
 <canvas class="graph-canvas" id="charlesCanvas"></canvas>
 <div class="slider-row">
-<label>Temperature (K):</label>
+<label for="charlesT">Temperature (K):</label>
 <input type="range" min="50" max="700" step="5" value="300" id="charlesT" oninput="updateCharles()">
 <span class="slider-val" id="charlesTVal">300 K</span>
 </div>
 <div class="slider-row">
-<label>V/T ratio k (L/K):</label>
+<label for="charlesK">V/T ratio k (L/K):</label>
 <input type="range" min="0.02" max="0.15" step="0.005" value="0.08" id="charlesK" oninput="updateCharles()">
 <span class="slider-val" id="charlesKVal">k = 0.080</span>
 </div>
@@ -200,12 +200,12 @@
 <div class="graph-title">▶ Interactive: Gay-Lussac's Law — P vs. T (straight line)</div>
 <canvas class="graph-canvas" id="gayCanvas"></canvas>
 <div class="slider-row">
-<label>Temperature (K):</label>
+<label for="gayT">Temperature (K):</label>
 <input type="range" min="50" max="700" step="5" value="300" id="gayT" oninput="updateGay()">
 <span class="slider-val" id="gayTVal">300 K</span>
 </div>
 <div class="slider-row">
-<label>P/T ratio k (atm/K):</label>
+<label for="gayK">P/T ratio k (atm/K):</label>
 <input type="range" min="0.001" max="0.010" step="0.0005" value="0.003" id="gayK" oninput="updateGay()">
 <span class="slider-val" id="gayKVal">k = 0.0030</span>
 </div>
@@ -562,15 +562,15 @@
 <button type="button" class="segment-btn tool-next-btn explore-next" id="idealNextBtn" onclick="nextIdealTool()" disabled>Try another</button>
 </div>
 <div class="segment-readout tool-feedback" id="idealReadout" data-state="pending">Choose Point A or Point B, then click Check.</div>
-<div id="idealSliderPanel" style="display:none;">
+<div id="idealSliderPanel" hidden>
 <p><strong>Now try the sliders.</strong></p>
 <div class="slider-row">
-<label>Volume V (L):</label>
+<label for="idealV">Volume V (L):</label>
 <input type="range" min="0.5" max="30" step="0.5" value="11" id="idealV" oninput="updateIdealSlider()">
 <span class="slider-val" id="idealVVal">11.0 L</span>
 </div>
 <div class="slider-row">
-<label>Temperature T (K):</label>
+<label for="idealT">Temperature T (K):</label>
 <input type="range" min="100" max="800" step="5" value="300" id="idealT" oninput="updateIdealSlider()">
 <span class="slider-val" id="idealTVal">300 K</span>
 </div>

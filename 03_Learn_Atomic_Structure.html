@@ -551,7 +551,7 @@
       <p class="tool-scenario-text">Decide which set matches the notation shown below.</p>
       </div>
 
-      <div class="formula-box tool-context-box" id="tool1Prompt" style="min-height:5.25rem;">
+      <div class="formula-box tool-context-box tool1-prompt-min" id="tool1Prompt">
         <span class="label">Given</span>
         Loading a nuclear notation prompt...
       </div>
@@ -601,7 +601,7 @@
       <p class="tool-scenario-text">Read the isotope masses and abundances below, then commit to the one estimate that makes chemical sense.</p>
       </div>
 
-      <div class="tool-context-control" style="margin-top:0.85rem; max-width:360px;">
+      <div class="tool-context-control tool2-scenario-control">
         <label for="tool2Scenario">Choose an example</label>
         <select class="prob-input" id="tool2Scenario">
           <option value="chlorine">Chlorine</option>
@@ -610,7 +610,7 @@
         </select>
       </div>
 
-      <div class="formula-box tool-context-box" id="tool2Prompt" style="min-height:4rem;">
+      <div class="formula-box tool-context-box tool2-prompt-min" id="tool2Prompt">
         <span class="label">Example</span>
       </div>
 
@@ -659,7 +659,7 @@
       </div>
 
       <label class="sr-only" for="formulaSelect">Choose a compound</label>
-      <select class="prob-input tool-context-control" id="formulaSelect" style="max-width:340px; margin-top:0.5rem;">
+      <select class="prob-input tool-context-control tool3-formula-select" id="formulaSelect">
         <option value="">— Choose a compound —</option>
         <option value="H2O">Water — H₂O</option>
         <option value="CO2">Carbon dioxide — CO₂</option>

@@ -33,7 +33,11 @@
       "Bash(echo \"exit: $?\")",
       "Bash(git rm *)",
       "Bash(git worktree *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(sort -t: -k2 -rn)",
+      "Bash(awk -F: '$2 <= 8461 && $2 >= 8400')",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }

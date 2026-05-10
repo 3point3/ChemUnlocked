@@ -125,7 +125,7 @@
     const nav = header.querySelector('.site-nav');
     if (!toggle || !nav || header.dataset.menuReady === 'true') return;
 
-    const mobileQuery = window.matchMedia('(max-width: 640px)');
+    const mobileQuery = window.matchMedia('(max-width: 980px)');
 
     function setMenuState(isOpen) {
       header.classList.toggle('menu-open', isOpen);
@@ -172,7 +172,7 @@
   }
 
   function getHeaderMenuExtraHeight(header) {
-    if (!header || !header.classList.contains('menu-open') || !window.matchMedia('(max-width: 640px)').matches) {
+    if (!header || !header.classList.contains('menu-open') || !window.matchMedia('(max-width: 980px)').matches) {
       return 0;
     }
 
