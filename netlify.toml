@@ -6,3 +6,15 @@
 
 [functions."stripe-webhook"]
   raw_body = true
+
+[[redirects]]
+  from = "/netlify/lib/data/*"
+  to = "/404"
+  status = 404
+  force = true
+
+
+[[redirects]]
+  from = "/netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

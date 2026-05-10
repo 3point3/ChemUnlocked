@@ -3,6 +3,39 @@
     return localStorage.getItem('cu_email') || '';
   }
 
+  function showError(message) {
+    const existing = document.getElementById('cu-error-modal');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'cu-error-modal';
+    overlay.style.cssText = [
+      'position:fixed', 'inset:0', 'background:rgba(15,23,42,0.45)',
+      'z-index:9999', 'display:flex', 'align-items:center',
+      'justify-content:center', 'padding:1rem',
+    ].join(';');
+
+    overlay.innerHTML = `
+      <div style="background:#fff;border-radius:18px;padding:2rem 1.75rem;
+                  width:min(420px,100%);box-shadow:0 20px 60px rgba(15,23,42,0.2);
+                  font-family:inherit">
+        <p style="margin:0 0 1.25rem;font-size:0.97rem;color:#991b1b;
+                  line-height:1.55;font-weight:600">${message}</p>
+        <div style="display:flex;justify-content:flex-end">
+          <button id="cu-error-dismiss"
+            style="padding:0.7rem 1.2rem;background:#f1f5f9;color:#334155;
+                   border:none;border-radius:10px;font:inherit;
+                   font-size:0.93rem;font-weight:600;cursor:pointer">OK</button>
+        </div>
+      </div>`;
+
+    document.body.appendChild(overlay);
+
+    const dismiss = () => overlay.remove();
+    overlay.querySelector('#cu-error-dismiss').addEventListener('click', dismiss);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) dismiss(); });
+  }
+
   async function safeJson(res) {
     try {
       return await res.json();
@@ -72,8 +105,6 @@
     const email = await requestEmailFromUser();
     if (!email) return;
 
-    localStorage.setItem('cu_email', email);
-
     const res = await fetch('/.netlify/functions/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -82,7 +113,7 @@
 
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || 'Could not start checkout.');
+      showError(data.error || 'Could not start checkout. Please try again.');
       return;
     }
 
@@ -94,7 +125,7 @@
   async function openCustomerPortal() {
     const email = getStoredEmail();
     if (!email) {
-      alert('No subscription email is saved on this browser yet.');
+      showError('No subscription email is saved on this browser. Subscribe first, or open this page on the same browser you used to subscribe.');
       return;
     }
 
@@ -106,7 +137,7 @@
 
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || 'Could not open billing portal.');
+      showError(data.error || 'Could not open billing portal. Please try again.');
       return;
     }
 

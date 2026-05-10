@@ -78,7 +78,7 @@
       return;
     }
 
-    fetch('header.html')
+    fetch('/header.html')
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.text();
@@ -187,7 +187,7 @@
   function injectFooter() {
     if (document.querySelector('.site-footer')) return;
 
-    fetch('footer.html')
+    fetch('/footer.html')
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.text();
@@ -527,12 +527,12 @@
               name: `Unit ${unitInfo.unit} — ${unit.title}`,
               item: `https://chemunlocked.com/${unit.learn}`
             },
-            {
+            ...(unitInfo.isPractice ? [{
               '@type': 'ListItem',
               position: 3,
-              name: unitInfo.isPractice ? 'Practice' : 'Lesson',
+              name: 'Practice',
               item: url
-            }
+            }] : [])
           ]
         }
       ]
