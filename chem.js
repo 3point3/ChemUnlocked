@@ -614,6 +614,40 @@
     if (document.querySelector('.fl-chain')) {
       solutionRenderer.enhanceExisting();
     }
+
+    wrapTables();
+  }
+
+  function wrapTables() {
+    document.querySelectorAll('table').forEach(function (table) {
+      if (table.parentElement.classList.contains('table-scroll-wrap')) return;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'table-scroll-wrap';
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+
+      const hint = document.createElement('p');
+      hint.className = 'table-scroll-hint';
+      hint.setAttribute('aria-hidden', 'true');
+      hint.textContent = '← swipe to see more →';
+      wrap.parentNode.insertBefore(hint, wrap.nextSibling);
+
+      function checkOverflow() {
+        const overflows = wrap.scrollWidth > wrap.clientWidth + 2;
+        wrap.classList.toggle('has-overflow', overflows);
+        hint.classList.toggle('visible', overflows);
+      }
+
+      wrap.addEventListener('scroll', function () {
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 4;
+        wrap.classList.toggle('has-overflow', !atEnd);
+        hint.classList.toggle('visible', wrap.scrollLeft < wrap.scrollWidth - wrap.clientWidth - 4);
+      }, { passive: true });
+
+      checkOverflow();
+      window.addEventListener('resize', checkOverflow, { passive: true });
+    });
   }
 
   function createSolutionRenderer() {

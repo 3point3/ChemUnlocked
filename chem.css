@@ -1486,12 +1486,45 @@ pre,
 }
 
 /* ===================== TABLES ===================== */
-table {
-  display: block;
-  width: 100%;
+/* ── Scrollable table wrapper (injected by chem.js) ── */
+.table-scroll-wrap {
+  position: relative;
   overflow-x: auto;
-  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
   margin-top: 1rem;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Inset shadow paints over scrollable content — stays fixed on right edge */
+.table-scroll-wrap.has-overflow {
+  box-shadow: inset -56px 0 30px -20px rgba(255, 255, 255, 0.96);
+}
+
+/* Hint line below the table — only shown when overflow detected */
+.table-scroll-hint {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--dim, #888);
+  text-align: center;
+  margin: 0.3rem 0 0.6rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.table-scroll-hint.visible {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  margin-top: 1rem;
+}
+
+/* When inside the JS-injected wrapper, let the wrapper own the margin */
+.table-scroll-wrap table {
+  margin-top: 0;
 }
 
 thead {
@@ -1506,14 +1539,19 @@ td {
   border-bottom: 1px solid var(--border);
   text-align: left;
   font-size: 0.95rem;
-  white-space: normal;
-  overflow-wrap: break-word;
   vertical-align: top;
+  min-width: 90px;
 }
 
 th {
   color: var(--accent2);
   font-weight: 650;
+  white-space: nowrap;
+}
+
+td {
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .concept-table {
