@@ -39,7 +39,9 @@
         <a href="practice.html">Practice Hub</a> &nbsp;·&nbsp;
         <a href="study_skills_blog.html">Study Skills</a> &nbsp;·&nbsp;
         <a href="how-it-works.html">How It Works</a> &nbsp;·&nbsp;
-        <a href="Contact_ChemUnlocked.html">Contact</a> &nbsp;·&nbsp;
+        <a href="Contact_ChemUnlocked.html">Contact</a>
+      </div>
+      <div class="footer-links-legal">
         <a href="Privacy-Policy.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="Terms-of-Service.html">Terms of Service</a>
       </div>
@@ -621,6 +623,16 @@
   function wrapTables() {
     document.querySelectorAll('table').forEach(function (table) {
       if (table.parentElement.classList.contains('table-scroll-wrap')) return;
+
+      // Pull <caption> out before wrapping so it stays visible above the scroll area
+      const caption = table.querySelector('caption');
+      if (caption) {
+        const captionEl = document.createElement('p');
+        captionEl.className = 'table-caption';
+        captionEl.textContent = caption.textContent;
+        table.parentNode.insertBefore(captionEl, table);
+        caption.remove();
+      }
 
       const wrap = document.createElement('div');
       wrap.className = 'table-scroll-wrap';

@@ -782,11 +782,21 @@ pre,
 }
 
 .footer-links {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.35rem;
 }
 
 .footer-links a {
   color: var(--accent2);
+}
+
+.footer-links-legal {
+  font-size: 0.72rem;
+  color: var(--dim, #aaa);
+  margin-bottom: 0.5rem;
+}
+
+.footer-links-legal a {
+  color: var(--dim, #aaa);
 }
 
 @media (max-width: 980px) {
@@ -1501,6 +1511,15 @@ pre,
   box-shadow: inset -56px 0 30px -20px rgba(255, 255, 255, 0.96);
 }
 
+/* Caption extracted above the scroll wrapper */
+.table-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 1rem 0 0.4rem;
+  line-height: 1.4;
+}
+
 /* Hint line below the table — only shown when overflow detected */
 .table-scroll-hint {
   display: none;
@@ -2010,6 +2029,32 @@ td {
   font-weight: 700;
   line-height: 1.25;
   margin-top: 0.2rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .unit-bottom-nav {
+    gap: 0.5rem;
+  }
+
+  .unit-bottom-link {
+    padding: 0.6rem 0.65rem;
+  }
+
+  .unit-bottom-kicker {
+    font-size: 0.62rem;
+  }
+
+  .unit-bottom-title {
+    font-size: 0.72rem;
+  }
+
+  th,
+  td {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.88rem;
+  }
 }
 
 /* ===================== BUTTONS / INPUTS ===================== */
