@@ -11,7 +11,7 @@
       "Bash(awk 'NR>=274 && NR<=450' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/10_Learn_Chemistry_Bonding.html\")",
       "Bash(grep *)",
       "Bash(node *)",
-      "Bash(head -3 \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/images/carbon and oxgen moldels and masses.svg\")",
+      "Bash(head -3 \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/images/carbon-and-oxygen-models-and-masses.svg\")",
       "Read(//tmp/**)",
       "Bash(sed -n '808,835p' 02_Learn_Chemistry_Matter.html)",
       "Bash(sed -n '524,550p' 03_Learn_Atomic_Structure.html)",
