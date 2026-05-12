@@ -385,25 +385,38 @@
         <li><strong>Method 2: Standard heats of formation</strong> &mdash; use this when you are given a table of &Delta;H&deg;<sub>f</sub> values.</li>
       </ul>
     </div>
+    <p><strong>Both methods are Hess&rsquo;s law.</strong> Method 1 adds known thermochemical equations. Method 2 uses a table of formation reactions so the addition is built into one shortcut formula.</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Method 1: Reverse a reaction when needed</strong>
-        <p>Flip the equation so a needed substance ends up on the correct side. Reverse the sign of &Delta;H.</p>
+        <strong>Method 1 example: Find &Delta;H for C(graphite) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO(g)</strong>
+        <p><strong>Given equations:</strong></p>
+        <div class="fl-chain">1. C(graphite) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
+        <div class="fl-chain">2. CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;283.0 kJ</div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Method 1: Scale coefficients when needed</strong>
-        <p>Multiply an equation so substances cancel. Multiply &Delta;H by the same factor.</p>
+        <strong>Step 1: Reverse the equation that has CO on the wrong side</strong>
+        <p>The target reaction needs <strong>CO as a product</strong>, but equation 2 has CO as a reactant. Reverse equation 2 and reverse the sign of &Delta;H.</p>
+        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = <span class="fl-result">+283.0 kJ</span></div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Method 1: Add all equations and enthalpies</strong>
-        <p>Cancel substances on both sides. Sum all the &Delta;H values for the overall &Delta;H.</p>
+        <strong>Step 2: Add the equations</strong>
+        <p>Now add equation 1 and the reversed equation 2. CO<sub>2</sub> cancels because it appears once on each side.</p>
+        <div class="fl-chain">C(graphite) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
+        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = +283.0 kJ</div>
+        <div class="fl-chain fl-cancel-demo">
+          <strong>Visual cancellation:</strong><br>
+          C(graphite) + O<sub>2</sub>(g) &rarr; <span class="cancel-mark cancel-blue">CO<sub>2</sub>(g)</span><br>
+          <span class="cancel-mark cancel-blue">CO<sub>2</sub>(g)</span> &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g)
+        </div>
+        <div class="fl-chain"><strong>Overall:</strong> C(graphite) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO(g)</div>
+        <div class="fl-chain">&Delta;H = &minus;393.5 kJ + 283.0 kJ = <span class="fl-result">&minus;110.5 kJ</span></div>
       </div></div>
     </div>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Quick cancellation picture</strong>
-        <p>If the target reaction needs CO as a product, reverse any given equation that has CO as a reactant, then cancel matching substances when you add the equations.</p>
-        <div class="fl-chain">CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&rarr;&nbsp; reverse it to make <strong>CO</strong> appear on the product side.</div>
+        <strong>Method 1 checklist</strong>
+        <p>For equation problems, always ask three questions in order: <strong>reverse?</strong> <strong>scale?</strong> <strong>cancel?</strong> Then add the &Delta;H values only after the equations are in the correct form.</p>
+        <div class="fl-chain">Reverse equation &rarr; change the sign of &Delta;H &nbsp;&nbsp;|&nbsp;&nbsp; multiply coefficients &rarr; multiply &Delta;H by the same factor</div>
       </div></div>
     </div>
     <div class="formula-box">
@@ -412,13 +425,47 @@
         <div class="formula-rule">&Delta;H&deg;<sub>rxn</sub> = &Sigma; n&Delta;H&deg;<sub>f, products</sub> &minus; &Sigma; n&Delta;H&deg;<sub>f, reactants</sub></div>
       </div>
     </div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Method 2 example: Find &Delta;H&deg;<sub>rxn</sub> for CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)</strong>
+        <p>Use standard heats of formation at 25&deg;C from a data table.</p>
+        <table>
+          <thead><tr><th>Substance</th><th>&Delta;H&deg;<sub>f</sub> (kJ/mol)</th></tr></thead>
+          <tbody>
+            <tr><td>CH<sub>4</sub>(g)</td><td>&minus;74.8</td></tr>
+            <tr><td>O<sub>2</sub>(g)</td><td>0</td></tr>
+            <tr><td>CO<sub>2</sub>(g)</td><td>&minus;393.5</td></tr>
+            <tr><td>H<sub>2</sub>O(l)</td><td>&minus;285.8</td></tr>
+          </tbody>
+        </table>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 1: Add the products side</strong>
+        <p>Multiply each formation enthalpy by its coefficient in the balanced equation.</p>
+        <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, products</sub> = [1(&minus;393.5)] + [2(&minus;285.8)]</div>
+        <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, products</sub> = <span class="fl-result">&minus;965.1 kJ</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 2: Add the reactants side</strong>
+        <p>Remember that O<sub>2</sub>(g) is an element in its standard state, so its &Delta;H&deg;<sub>f</sub> is zero.</p>
+        <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, reactants</sub> = [1(&minus;74.8)] + [2(0)]</div>
+        <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, reactants</sub> = <span class="fl-result">&minus;74.8 kJ</span></div>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-content">
+        <strong>Step 3: Products minus reactants</strong>
+        <div class="fl-chain">&Delta;H&deg;<sub>rxn</sub> = (&minus;965.1) &minus; (&minus;74.8)</div>
+        <div class="fl-chain">&Delta;H&deg;<sub>rxn</sub> = <span class="fl-result">&minus;890.3 kJ</span></div>
+        <p>The negative sign means the combustion of methane is <strong>exothermic</strong>.</p>
+      </div></div>
+    </div>
     <div class="key-fact">
         <div class="icon">&#9658;</div>
         <div class="key-fact-copy">
           <ul class="key-fact-list">
           <li>Elements in their standard states have &Delta;H&deg;<sub>f</sub> = 0 by definition.</li>
           <li>Examples include O<sub>2</sub>(g), Fe(s), and C(graphite).</li>
-          <li>That means they contribute nothing to the Hess's law sum.</li>
+          <li>That means they contribute nothing to the Hess&rsquo;s law sum in a formation-enthalpy calculation.</li>
+          <li>If a problem gives full equations, use reverse-scale-add. If it gives a &Delta;H&deg;<sub>f</sub> table, use products minus reactants.</li>
           </ul>
         </div>
       </div>
@@ -888,6 +935,83 @@ const EQUATION_CASES = [
     feedbackCorrect: 'Right &mdash; the sample is boiling at constant temperature, so q = m&Delta;H<sub>vap</sub> applies.',
     feedbackIncorrect: 'Not quite &mdash; boiling is a phase change, so the temperature does not rise during that step. Use q = m&Delta;H<sub>vap</sub>. Next, look for boiling, evaporation, or condensation.',
     reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> The sample changes from liquid to gas.<br><strong>What stays the same?</strong> The temperature stays at 100.0&deg;C during boiling.<br><strong>Why this equation fits:</strong> Boiling is a phase change, so use <strong>q = m&Delta;H<sub>vap</sub></strong>.<br><strong>Now calculate q:</strong> q = (10.0 g)(2260 J/g) = <strong>22,600 J</strong>.'
+  },
+  {
+    prompt: 'A 35.0 g sample of steam cools from 140.0&deg;C to 110.0&deg;C without condensing.',
+    answer: 'temp',
+    feedbackCorrect: 'Right &mdash; the sample stays in the gas phase while its temperature changes, so q = mc&Delta;T applies.',
+    feedbackIncorrect: 'Not quite &mdash; this is not a phase-change step. The steam stays gas the whole time, so use q = mc&Delta;T.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> The temperature of the gas changes.<br><strong>What stays the same?</strong> The sample remains steam, so the phase does not change.<br><strong>Why this equation fits:</strong> A temperature change within one phase uses <strong>q = mc&Delta;T</strong>.'
+  },
+  {
+    prompt: 'A 20.0 g sample of liquid water freezes completely at 0.0&deg;C.',
+    answer: 'fus',
+    feedbackCorrect: 'Right &mdash; freezing is the reverse of melting, so q = m&Delta;H<sub>fus</sub> applies at constant temperature.',
+    feedbackIncorrect: 'Not quite &mdash; the sample is changing phase at constant temperature. Freezing uses the fusion enthalpy value too.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Liquid water becomes solid ice.<br><strong>What stays the same?</strong> The temperature stays constant during freezing.<br><strong>Why this equation fits:</strong> Freezing and melting use <strong>q = m&Delta;H<sub>fus</sub></strong> because they are solid-liquid phase changes.'
+  },
+  {
+    prompt: 'A 12.0 g sample of water vapor condenses completely at 100.0&deg;C.',
+    answer: 'vap',
+    feedbackCorrect: 'Right &mdash; condensation is the reverse of boiling, so q = m&Delta;H<sub>vap</sub> applies at constant temperature.',
+    feedbackIncorrect: 'Not quite &mdash; the temperature stays constant during condensation, so this is a phase-change step. Use the vaporization enthalpy value.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Gas becomes liquid.<br><strong>What stays the same?</strong> The temperature stays constant during condensation.<br><strong>Why this equation fits:</strong> Condensation is a liquid-gas phase change, so use <strong>q = m&Delta;H<sub>vap</sub></strong>.'
+  },
+  {
+    prompt: 'A block of aluminum warms from 18.0&deg;C to 75.0&deg;C with no melting.',
+    answer: 'temp',
+    feedbackCorrect: 'Right &mdash; the metal stays solid while its temperature changes, so q = mc&Delta;T applies.',
+    feedbackIncorrect: 'Not quite &mdash; the sample stays in one phase and only its temperature changes. Use q = mc&Delta;T.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Temperature increases.<br><strong>What stays the same?</strong> The aluminum remains solid.<br><strong>Why this equation fits:</strong> When a sample stays in one phase, use <strong>q = mc&Delta;T</strong>.'
+  },
+  {
+    prompt: 'A 9.0 g sample of ice submerges in a process where only melting at 0.0&deg;C is described.',
+    answer: 'fus',
+    feedbackCorrect: 'Right &mdash; the key clue is melting at constant temperature, so q = m&Delta;H<sub>fus</sub> applies.',
+    feedbackIncorrect: 'Not quite &mdash; ignore the wording distraction and focus on the phase change. Melting at 0.0&deg;C uses q = m&Delta;H<sub>fus</sub>.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Ice becomes liquid water.<br><strong>What stays the same?</strong> Temperature remains at the melting point.<br><strong>Why this equation fits:</strong> A solid-liquid phase change uses <strong>q = m&Delta;H<sub>fus</sub></strong>.'
+  },
+  {
+    prompt: 'A 25.0 g sample of ethanol warms from 10.0&deg;C to 32.0&deg;C and stays liquid.',
+    answer: 'temp',
+    feedbackCorrect: 'Right &mdash; the sample stays liquid while the temperature changes, so q = mc&Delta;T applies.',
+    feedbackIncorrect: 'Not quite &mdash; no phase change is described here. A one-phase temperature change uses q = mc&Delta;T.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> The liquid temperature rises.<br><strong>What stays the same?</strong> The ethanol remains liquid.<br><strong>Why this equation fits:</strong> For a temperature change in one phase, use <strong>q = mc&Delta;T</strong>.'
+  },
+  {
+    prompt: 'A 30.0 g sample of water at 100.0&deg;C is described only as vaporizing completely.',
+    answer: 'vap',
+    feedbackCorrect: 'Right &mdash; vaporizing at constant temperature is a phase change, so q = m&Delta;H<sub>vap</sub> applies.',
+    feedbackIncorrect: 'Not quite &mdash; the sample is boiling or vaporizing, so the temperature stays constant during that step. Use q = m&Delta;H<sub>vap</sub>.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Liquid becomes gas.<br><strong>What stays the same?</strong> Temperature remains constant during the phase change.<br><strong>Why this equation fits:</strong> Liquid-gas phase changes use <strong>q = m&Delta;H<sub>vap</sub></strong>.'
+  },
+  {
+    prompt: 'A 40.0 g sample of liquid water cools from 85.0&deg;C to 25.0&deg;C and remains liquid.',
+    answer: 'temp',
+    feedbackCorrect: 'Right &mdash; the sample remains in one phase while the temperature changes, so q = mc&Delta;T applies.',
+    feedbackIncorrect: 'Not quite &mdash; cooling within one phase still uses q = mc&Delta;T. No phase change is happening here.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Temperature decreases.<br><strong>What stays the same?</strong> The sample remains liquid water.<br><strong>Why this equation fits:</strong> Temperature changes within a single phase use <strong>q = mc&Delta;T</strong>.'
+  },
+  {
+    prompt: 'A sample of solid paraffin wax melts completely at its melting point with no temperature change.',
+    answer: 'fus',
+    feedbackCorrect: 'Right &mdash; melting at constant temperature uses q = m&Delta;H<sub>fus</sub>.',
+    feedbackIncorrect: 'Not quite &mdash; because this is melting, the energy goes into the phase change rather than changing temperature. Use q = m&Delta;H<sub>fus</sub>.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Solid wax becomes liquid wax.<br><strong>What stays the same?</strong> Temperature stays constant during melting.<br><strong>Why this equation fits:</strong> Melting is a phase change, so use <strong>q = m&Delta;H<sub>fus</sub></strong>.'
+  },
+  {
+    prompt: 'A sample of refrigerant gas condenses back to liquid while staying at its condensation temperature.',
+    answer: 'vap',
+    feedbackCorrect: 'Right &mdash; condensation is a liquid-gas phase change at constant temperature, so q = m&Delta;H<sub>vap</sub> applies.',
+    feedbackIncorrect: 'Not quite &mdash; this is not a sloped temperature-change step. Condensation uses the vaporization enthalpy value because it is the reverse of boiling.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> Gas becomes liquid.<br><strong>What stays the same?</strong> Temperature stays constant during condensation.<br><strong>Why this equation fits:</strong> Gas-liquid phase changes use <strong>q = m&Delta;H<sub>vap</sub></strong>.'
+  },
+  {
+    prompt: 'A copper sample is heated from 22.0&deg;C to 120.0&deg;C and stays solid throughout.',
+    answer: 'temp',
+    feedbackCorrect: 'Right &mdash; the copper remains solid while its temperature changes, so q = mc&Delta;T applies.',
+    feedbackIncorrect: 'Not quite &mdash; this is a one-phase temperature change, not a phase change. Use q = mc&Delta;T.',
+    reveal: '<strong>Why this equation fits</strong><br><strong>What is changing?</strong> The solid temperature rises.<br><strong>What stays the same?</strong> The copper remains in the solid phase.<br><strong>Why this equation fits:</strong> One-phase temperature changes use <strong>q = mc&Delta;T</strong>.'
   }
 ];
 
@@ -1281,6 +1405,83 @@ const THERMO_CLASSIFY_CASES = [
     feedbackCorrect: 'Right &mdash; heat is written on the reactant side, so the reaction absorbs heat and is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; when heat appears on the reactant side, the reaction takes in heat. Next, check whether the energy is written with the reactants or the products.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Reaction:</strong> thermal decomposition of calcium carbonate<br><strong>Clue:</strong> 178 kJ is written on the <strong>reactant</strong> side.<br><strong>Rule:</strong> Heat on the reactant side means the reaction absorbs heat, so it is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: '2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l) + 572 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; heat is written on the product side, so the reaction releases energy and is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; the energy is written with the products, which means heat is being released.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 572 kJ appears on the product side.<br><strong>Rule:</strong> Heat written as a product means the reaction is <strong>exothermic</strong>.'
+  },
+  {
+    prompt: '2KClO<sub>3</sub>(s) + heat &rarr; 2KCl(s) + 3O<sub>2</sub>(g)',
+    answer: 'endo',
+    feedbackCorrect: 'Right &mdash; heat is a reactant, so the reaction must absorb energy and is endothermic.',
+    feedbackIncorrect: 'Not quite &mdash; heat is on the reactant side, so the system takes in energy.',
+    reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Heat is written with the reactants.<br><strong>Rule:</strong> If heat is a reactant, the reaction is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: 'H<sub>2</sub>(g) + Cl<sub>2</sub>(g) &rarr; 2HCl(g), &Delta;H<sub>rxn</sub> = &minus;184.6 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; the enthalpy change is negative, so the reaction releases heat and is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; a negative &Delta;H means the system releases energy.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is negative.<br><strong>Rule:</strong> Negative enthalpy change means the reaction is <strong>exothermic</strong>.'
+  },
+  {
+    prompt: 'NH<sub>4</sub>NO<sub>3</sub>(s) &rarr; NH<sub>4</sub><sup>+</sup>(aq) + NO<sub>3</sub><sup>&minus;</sup>(aq), &Delta;H<sub>soln</sub> = +25.7 kJ',
+    answer: 'endo',
+    feedbackCorrect: 'Right &mdash; the positive enthalpy change means heat is absorbed, so the process is endothermic.',
+    feedbackIncorrect: 'Not quite &mdash; positive &Delta;H means the system absorbs heat.',
+    reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> &Delta;H is positive.<br><strong>Rule:</strong> Positive enthalpy change means the process is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: '2SO<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2SO<sub>3</sub>(g) + 198 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; heat appears on the product side, so the reaction gives off energy and is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; energy written as a product means the reaction releases heat.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 198 kJ is shown as a product.<br><strong>Rule:</strong> Heat on the product side means the reaction is <strong>exothermic</strong>.'
+  },
+  {
+    prompt: 'N<sub>2</sub>O<sub>4</sub>(g) + 57.2 kJ &rarr; 2NO<sub>2</sub>(g)',
+    answer: 'endo',
+    feedbackCorrect: 'Right &mdash; heat is a reactant, so the process absorbs energy and is endothermic.',
+    feedbackIncorrect: 'Not quite &mdash; because the energy is on the left side, the system is taking in heat.',
+    reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> 57.2 kJ is written on the reactant side.<br><strong>Rule:</strong> Heat as a reactant means the process is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: 'C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g), &Delta;H<sub>rxn</sub> = &minus;393.5 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; the negative &Delta;H shows the reaction releases heat and is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; the sign of &Delta;H is negative, which means energy leaves the system.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is below zero.<br><strong>Rule:</strong> Negative enthalpy change means the reaction is <strong>exothermic</strong>.'
+  },
+  {
+    prompt: '6CO<sub>2</sub>(g) + 6H<sub>2</sub>O(l) + light energy &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(s) + 6O<sub>2</sub>(g)',
+    answer: 'endo',
+    feedbackCorrect: 'Right &mdash; energy is required on the reactant side, so the process is endothermic.',
+    feedbackIncorrect: 'Not quite &mdash; when energy is needed as a reactant, the process absorbs heat or energy.',
+    reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Light energy is listed with the reactants.<br><strong>Rule:</strong> Required energy on the reactant side means the process is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: '2Al(s) + Fe<sub>2</sub>O<sub>3</sub>(s) &rarr; Al<sub>2</sub>O<sub>3</sub>(s) + 2Fe(l) + 851 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; heat is on the product side, so the thermite reaction is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; the energy is written as a product, which means the reaction releases heat.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 851 kJ appears on the product side.<br><strong>Rule:</strong> Heat as a product means the reaction is <strong>exothermic</strong>.'
+  },
+  {
+    prompt: '2HgO(s) + heat &rarr; 2Hg(l) + O<sub>2</sub>(g)',
+    answer: 'endo',
+    feedbackCorrect: 'Right &mdash; because heat is a reactant, the decomposition absorbs energy and is endothermic.',
+    feedbackIncorrect: 'Not quite &mdash; energy appears with the reactants here, so the process is endothermic.',
+    reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Heat is placed on the reactant side.<br><strong>Rule:</strong> That means the reaction absorbs energy and is <strong>endothermic</strong>.'
+  },
+  {
+    prompt: 'HCl(aq) + NaOH(aq) &rarr; NaCl(aq) + H<sub>2</sub>O(l), &Delta;H<sub>rxn</sub> = &minus;57.3 kJ',
+    answer: 'exo',
+    feedbackCorrect: 'Right &mdash; a negative enthalpy change means the neutralization releases heat and is exothermic.',
+    feedbackIncorrect: 'Not quite &mdash; this &Delta;H value is negative, so energy is released.',
+    reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is negative.<br><strong>Rule:</strong> Negative enthalpy change means the process is <strong>exothermic</strong>.'
   }
 ];
 

@@ -2152,6 +2152,123 @@ const BOND_TOOL_DATA = [
           <p>Picture positive metal centers in a mobile sea of electrons.</p>
         </div>
       </div>`
+  },
+  {
+    pair: 'Mg + O',
+    answer: 'Ionic',
+    correctFeedback: 'Right — Mg is a metal and O is a nonmetal, so the beginner bonding picture is ionic.',
+    incorrectFeedback: 'Not quite — start with element types. A metal paired with a nonmetal is classified as ionic first.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Mg is a metal and O is a nonmetal.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Mg tends to lose electrons and O tends to gain them.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>The electronegativity difference is large enough to support ionic character.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture ions held together in a lattice.</p></div>
+      </div>`
+  },
+  {
+    pair: 'C + O',
+    answer: 'Polar Covalent',
+    correctFeedback: 'Right — both are nonmetals, but oxygen pulls the shared electrons more strongly, so the bond is polar covalent.',
+    incorrectFeedback: 'Not quite — this is not a metal/nonmetal pair, so start from a covalent model and then decide whether the sharing is equal or unequal.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>C and O are both nonmetals.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>O attracts the shared electrons more strongly than C.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>The ΔEN falls in the polar-covalent range.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture a molecule with unequal sharing, not full ions.</p></div>
+      </div>`
+  },
+  {
+    pair: 'N + N',
+    answer: 'Nonpolar Covalent',
+    correctFeedback: 'Right — identical nonmetal atoms share electrons equally, so the bond is nonpolar covalent.',
+    incorrectFeedback: 'Not quite — when the atoms are identical, neither side pulls harder. Think equal sharing.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Both atoms are nonmetals.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>The shared electrons stay centered because the atoms are identical.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>ΔEN = 0, which matches nonpolar covalent bonding.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture a molecule with no bond dipole.</p></div>
+      </div>`
+  },
+  {
+    pair: 'Al + Cu',
+    answer: 'Metallic',
+    correctFeedback: 'Right — both atoms are metals, so the best introductory bonding picture is metallic.',
+    incorrectFeedback: 'Not quite — when both elements are metals, use the metallic bonding picture first.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Al and Cu are both metals.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Valence electrons are delocalized over many metal atoms.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>Electronegativity difference is not the main decision tool for two metals.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture positive metal centers in a mobile electron sea.</p></div>
+      </div>`
+  },
+  {
+    pair: 'Ca + F',
+    answer: 'Ionic',
+    correctFeedback: 'Right — calcium is a metal and fluorine is a nonmetal, so the bond picture is ionic.',
+    incorrectFeedback: 'Not quite — begin with the element types. Metal plus nonmetal points to ionic bonding.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Ca is a metal and F is a nonmetal.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Calcium loses electrons and fluorine gains them.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>The electronegativity gap is very large.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture ions, not a shared-electron molecule.</p></div>
+      </div>`
+  },
+  {
+    pair: 'S + H',
+    answer: 'Polar Covalent',
+    correctFeedback: 'Right — sulfur and hydrogen are both nonmetals, but sulfur pulls the shared electrons a bit more strongly.',
+    incorrectFeedback: 'Not quite — this pair stays covalent because both atoms are nonmetals. Then decide whether the sharing is equal or unequal.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>S and H are both nonmetals.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>S pulls the shared electrons somewhat more strongly than H.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>The difference supports a polar covalent bond.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture a polar molecule rather than separate ions.</p></div>
+      </div>`
+  },
+  {
+    pair: 'O + O',
+    answer: 'Nonpolar Covalent',
+    correctFeedback: 'Right — the two oxygen atoms are identical, so the shared electrons stay centered.',
+    incorrectFeedback: 'Not quite — identical nonmetal atoms make a nonpolar covalent bond because the sharing is equal.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Both atoms are oxygen, a nonmetal.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Neither atom pulls harder because they are identical.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>ΔEN = 0 for O–O.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture a molecule with equal sharing and no bond dipole.</p></div>
+      </div>`
+  },
+  {
+    pair: 'Fe + Fe',
+    answer: 'Metallic',
+    correctFeedback: 'Right — two iron atoms point to metallic bonding, not ionic or covalent.',
+    incorrectFeedback: 'Not quite — iron is a metal, and metal-metal bonding is described with the metallic model.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>Both atoms are metals.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Electrons are delocalized rather than shared in one fixed pair.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>ΔEN is not the main classifier for a metal-metal pair.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture a metallic lattice with mobile electrons.</p></div>
+      </div>`
+  },
+  {
+    pair: 'K + Br',
+    answer: 'Ionic',
+    correctFeedback: 'Right — potassium is a metal and bromine is a nonmetal, so the introductory bonding picture is ionic.',
+    incorrectFeedback: 'Not quite — use the element types first. Metal plus nonmetal points to ionic bonding.',
+    reveal: `
+      <div class="bond-tool-grid">
+        <div class="bond-tool-panel"><h4>1. Element types</h4><p>K is a metal and Br is a nonmetal.</p></div>
+        <div class="bond-tool-panel"><h4>2. Electron behavior</h4><p>Potassium tends to lose an electron and bromine tends to gain one.</p></div>
+        <div class="bond-tool-panel"><h4>3. ΔEN support</h4><p>The large ΔEN supports ionic character.</p></div>
+        <div class="bond-tool-panel"><h4>Particle picture</h4><p>Picture ions arranged in a crystal lattice.</p></div>
+      </div>`
   }
 ];
 
@@ -2541,7 +2658,16 @@ const VSEPR_TOOL_DATA = [
   { key:'4-1', correct:'Trigonal Pyramidal', choices:['Tetrahedral', 'Trigonal Pyramidal', 'Bent', 'Trigonal Planar'] },
   { key:'4-2', correct:'Bent', choices:['Bent', 'Linear', 'Tetrahedral', 'Trigonal Pyramidal'] },
   { key:'3-0', correct:'Trigonal Planar', choices:['Bent', 'Trigonal Planar', 'Tetrahedral', 'Linear'] },
-  { key:'2-0', correct:'Linear', choices:['Linear', 'Bent', 'Trigonal Planar', 'Tetrahedral'] }
+  { key:'2-0', correct:'Linear', choices:['Linear', 'Bent', 'Trigonal Planar', 'Tetrahedral'] },
+  { key:'3-1', correct:'Bent', choices:['Bent', 'Trigonal Planar', 'Linear', 'Trigonal Pyramidal'] },
+  { key:'4-0', correct:'Tetrahedral', choices:['Trigonal Planar', 'Bent', 'Tetrahedral', 'Linear'] },
+  { key:'5-0', correct:'Trigonal Bipyramidal', choices:['Trigonal Bipyramidal', 'Octahedral', 'See-Saw', 'Tetrahedral'] },
+  { key:'5-1', correct:'See-Saw', choices:['T-Shaped', 'Trigonal Bipyramidal', 'See-Saw', 'Square Pyramidal'] },
+  { key:'5-2', correct:'T-Shaped', choices:['Bent', 'T-Shaped', 'Linear', 'Trigonal Pyramidal'] },
+  { key:'5-3', correct:'Linear', choices:['Linear', 'See-Saw', 'Square Planar', 'T-Shaped'] },
+  { key:'6-0', correct:'Octahedral', choices:['Octahedral', 'Square Planar', 'Trigonal Bipyramidal', 'Tetrahedral'] },
+  { key:'6-1', correct:'Square Pyramidal', choices:['Square Pyramidal', 'Octahedral', 'See-Saw', 'T-Shaped'] },
+  { key:'6-2', correct:'Square Planar', choices:['Square Planar', 'Tetrahedral', 'Bent', 'Trigonal Planar'] }
 ];
 
 let vseprToolIndex = 0;
@@ -2672,6 +2798,94 @@ const NASBU_TOOL_DATA = [
     correctFeedback: 'Right — a negative charge means extra electrons, so you add 1 electron when counting A.',
     incorrectFeedback: 'Not quite — A counts the electrons the ion actually has. A −1 charge means one extra electron. Add that electron before you continue.',
     reveal: 'For NO₃⁻, start with N = 5 and O = 3 × 6 = 18, then add 1 more electron for the −1 charge.'
+  },
+  {
+    prompt: 'For H₂O, what is A, the number of available valence electrons?',
+    choices: ['6', '8', '10', '12'],
+    answer: '8',
+    correctFeedback: 'Right — oxygen contributes 6 and the two hydrogens contribute 2 more, so A = 8.',
+    incorrectFeedback: 'Not quite — A is the total valence electrons the atoms bring. Count oxygen and both hydrogens again.',
+    reveal: 'O has 6 valence electrons and each H has 1. So A = 6 + 1 + 1 = 8.'
+  },
+  {
+    prompt: 'For CO₂, what is N, the number of electrons needed for full shells in this course model?',
+    choices: ['8', '16', '24', '32'],
+    answer: '24',
+    correctFeedback: 'Right — carbon wants 8 and each oxygen wants 8, so N = 24.',
+    incorrectFeedback: 'Not quite — N is the total electrons needed for all atoms to reach stable shells. Add 8 for each non-hydrogen atom here.',
+    reveal: 'Carbon needs 8 electrons and each oxygen needs 8. So N = 8 + 8 + 8 = 24.'
+  },
+  {
+    prompt: 'For NH₃, what is B, the total number of bond lines?',
+    choices: ['1', '2', '3', '4'],
+    answer: '3',
+    correctFeedback: 'Right — NH₃ has 6 shared electrons, which makes 3 bond lines.',
+    incorrectFeedback: 'Not quite — use B = S ÷ 2. Shared electrons come in pairs when you count bond lines.',
+    reveal: 'For NH₃, N = 14 and A = 8, so S = 6. Then B = 6 ÷ 2 = 3 bond lines.'
+  },
+  {
+    prompt: 'For H₂O, what is U, the number of unshared electrons?',
+    choices: ['0', '2', '4', '6'],
+    answer: '4',
+    correctFeedback: 'Right — H₂O leaves 4 electrons unshared after the bonding electrons are counted.',
+    incorrectFeedback: 'Not quite — use U = A − S. Count what is left after the shared electrons are placed in bonds.',
+    reveal: 'For H₂O, N = 12 and A = 8, so S = 4. Then U = 8 − 4 = 4 unshared electrons.'
+  },
+  {
+    prompt: 'For CO₂, what is B, the total number of bond lines?',
+    choices: ['2', '3', '4', '6'],
+    answer: '4',
+    correctFeedback: 'Right — CO₂ has 8 shared electrons, so it uses 4 bond lines total.',
+    incorrectFeedback: 'Not quite — once you find S, divide by 2 to convert shared electrons into bond lines.',
+    reveal: 'For CO₂, N = 24 and A = 16, so S = 8. Then B = 8 ÷ 2 = 4 bond lines.'
+  },
+  {
+    prompt: 'For NH₄⁺, what must you do first when counting A?',
+    choices: ['Add 1 electron for the +1 charge', 'Subtract 1 electron for the +1 charge', 'Ignore the charge', 'Give nitrogen 10 electrons'],
+    answer: 'Subtract 1 electron for the +1 charge',
+    correctFeedback: 'Right — a positive charge means one fewer electron, so you subtract 1 when counting A.',
+    incorrectFeedback: 'Not quite — A counts the electrons the ion actually has. A +1 charge means one electron has been removed.',
+    reveal: 'For NH₄⁺, start with N = 5 and H = 4 × 1 = 4, then subtract 1 electron for the +1 charge.'
+  },
+  {
+    prompt: 'For BF₃, what is A, the number of available valence electrons?',
+    choices: ['18', '24', '30', '36'],
+    answer: '24',
+    correctFeedback: 'Right — boron contributes 3 valence electrons and the three fluorines contribute 21 more, for a total of 24.',
+    incorrectFeedback: 'Not quite — count the actual valence electrons each atom brings before applying any octet ideas.',
+    reveal: 'B has 3 valence electrons and each F has 7. So A = 3 + 7 + 7 + 7 = 24.'
+  },
+  {
+    prompt: 'For HCl, what is N, the total number of electrons needed for full shells in this course model?',
+    choices: ['8', '10', '12', '16'],
+    answer: '10',
+    correctFeedback: 'Right — hydrogen needs 2 and chlorine needs 8, so N = 10.',
+    incorrectFeedback: 'Not quite — H follows the duet rule while chlorine follows the octet rule. Add those target counts together.',
+    reveal: 'H needs 2 electrons for a duet and Cl needs 8 for an octet. So N = 2 + 8 = 10.'
+  },
+  {
+    prompt: 'For HCN, what is B, the total number of bond lines?',
+    choices: ['2', '3', '4', '5'],
+    answer: '4',
+    correctFeedback: 'Right — HCN has 8 shared electrons total, which makes 4 bond lines.',
+    incorrectFeedback: 'Not quite — after you find S, divide by 2 because each bond line represents a pair of shared electrons.',
+    reveal: 'For HCN, N = 18 and A = 10, so S = 8. Then B = 8 ÷ 2 = 4 bond lines.'
+  },
+  {
+    prompt: 'For ClO₃⁻, what must you do first when counting A?',
+    choices: ['Subtract 1 electron for the −1 charge', 'Add 1 electron for the −1 charge', 'Ignore the charge', 'Give chlorine 12 electrons first'],
+    answer: 'Add 1 electron for the −1 charge',
+    correctFeedback: 'Right — a negative charge adds electrons to the total A count.',
+    incorrectFeedback: 'Not quite — A counts the electrons the ion actually has, so a −1 charge means one extra electron is included.',
+    reveal: 'For ClO₃⁻, count chlorine and the three oxygens, then add 1 more electron because of the −1 charge.'
+  },
+  {
+    prompt: 'For CH₄, what is U, the number of unshared electrons?',
+    choices: ['0', '2', '4', '8'],
+    answer: '0',
+    correctFeedback: 'Right — methane uses all of its available valence electrons in shared pairs, so no unshared electrons remain.',
+    incorrectFeedback: 'Not quite — use U = A − S. In methane, all the valence electrons are used in bonds.',
+    reveal: 'For CH₄, N = 16 and A = 8, so S = 8. Then U = 8 − 8 = 0 unshared electrons.'
   }
 ];
 

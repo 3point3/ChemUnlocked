@@ -1106,6 +1106,71 @@ const SOLUBILITY_SCENARIOS = [
     answer: 'supersaturated',
     promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
     reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 80 g.<br>Because more than the usual 40 °C limit is still dissolved, this is a supersaturated solution. It is unstable and can crystallize if disturbed.'
+  },
+  {
+    compound: 'NaCl',
+    temperature: 40,
+    amountAdded: 20,
+    answer: 'unsaturated',
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 20 g.<br>Because 20 g is below the solubility limit, more could still dissolve. The solution is unsaturated.'
+  },
+  {
+    compound: 'NaCl',
+    temperature: 40,
+    amountAdded: 40,
+    answer: 'saturated',
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 40 g.<br>Because the amount added is above the limit, some stays undissolved and the mixture is saturated.'
+  },
+  {
+    compound: 'NaCl',
+    temperature: 40,
+    amountAdded: 40,
+    answer: 'supersaturated',
+    promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 40 g.<br>Because more than the normal 40 °C limit remains dissolved, this is supersaturated.'
+  },
+  {
+    compound: 'KCl',
+    temperature: 40,
+    amountAdded: 55,
+    answer: 'saturated',
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount added: 55 g.<br>Because the amount added is above the limit, the mixture is saturated with extra solid present.'
+  },
+  {
+    compound: 'KCl',
+    temperature: 40,
+    amountAdded: 55,
+    answer: 'supersaturated',
+    promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 55 g.<br>Because more than the usual limit remains dissolved, the solution is supersaturated.'
+  },
+  {
+    compound: 'KNO₃',
+    temperature: 40,
+    amountAdded: 40,
+    answer: 'unsaturated',
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount added: 40 g.<br>Since 40 g is below 63 g, more KNO₃ could still dissolve. The solution is unsaturated.'
+  },
+  {
+    compound: 'KCl',
+    temperature: 40,
+    amountAdded: 40,
+    answer: 'saturated',
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount added: 40 g.<br>Because the amount added is right at the limit, the solution is saturated.'
+  },
+  {
+    compound: 'NaCl',
+    temperature: 40,
+    amountAdded: 36,
+    answer: 'saturated',
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 36 g.<br>That matches the solubility limit, so the solution is saturated.'
+  },
+  {
+    compound: 'KNO₃',
+    temperature: 40,
+    amountAdded: 63,
+    answer: 'saturated',
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount added: 63 g.<br>That matches the solubility limit exactly, so the solution is saturated.'
   }
 ];
 
@@ -1319,6 +1384,24 @@ function initChoiceTool(rootId, config) {
   let checked = false;
   let currentIndex = 0;
 
+  function shuffleArray(items) {
+    const shuffled = items.slice();
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  function pickNextIndex(items, current) {
+    if (!items.length) return 0;
+    let next = Math.floor(Math.random() * items.length);
+    if (items.length > 1) {
+      while (next === current) next = Math.floor(Math.random() * items.length);
+    }
+    return next;
+  }
+
   function setList(node, items) {
     if (!node) return;
     node.innerHTML = items.map(item => `<li>${item}</li>`).join('');
@@ -1333,8 +1416,8 @@ function initChoiceTool(rootId, config) {
     if (hintNode) hintNode.innerHTML = scenario.hint;
     if (labelNode) labelNode.textContent = scenario.label || 'Scenario:';
     if (scenarioNode) scenarioNode.innerHTML = scenario.prompt;
-    choiceButtons.forEach((btn, index) => {
-      const choice = scenario.choices[index];
+    shuffleArray(scenario.choices).forEach((choice, index) => {
+      const btn = choiceButtons[index];
       if (choice) {
         btn.hidden = false;
         btn.innerHTML = choice.label;
@@ -1343,6 +1426,7 @@ function initChoiceTool(rootId, config) {
         btn.hidden = true;
       }
     });
+    choiceButtons.slice(scenario.choices.length).forEach((btn) => { btn.hidden = true; });
     setChoiceStyles(choiceButtons.filter(btn => !btn.hidden), selection, false);
     if (feedback) {
       feedback.dataset.state = 'pending';
@@ -1388,10 +1472,11 @@ function initChoiceTool(rootId, config) {
 
   nextBtn?.addEventListener('click', () => {
     if (!scenarios.length) return;
-    currentIndex = (currentIndex + 1) % scenarios.length;
+    currentIndex = pickNextIndex(scenarios, currentIndex);
     loadScenario();
   });
 
+  currentIndex = pickNextIndex(scenarios, -1);
   loadScenario();
 }
 
@@ -1468,6 +1553,123 @@ function initUnit13Visuals() {
           'π = iMRT uses M.',
           'ΔTf = Kfmi and ΔTb = Kbmi use m.'
         ]
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'Freezing-point depression depends on kilograms of solvent, not liters of solution.',
+        label: 'Scenario:',
+        prompt: 'You are using ΔT<sub>f</sub> = K<sub>f</sub>mi for an antifreeze problem. Which concentration unit belongs in the formula?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'b',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — freezing-point depression uses molality.',
+        incorrect: 'Not quite — ΔT<sub>f</sub> uses molality because it is based on kilograms of solvent.',
+        reveal: ['ΔT<sub>f</sub> = K<sub>f</sub>mi uses molality.', 'Molality counts moles per kilogram of solvent.', 'That is why molality fits this setup.'],
+        support: ['Freezing-point depression uses m.', 'Molality is based on kg of solvent.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'If the problem gives volume of solution and asks for moles, think mol/L.',
+        label: 'Problem:',
+        prompt: 'A reaction uses 0.750 L of 0.200 M HCl. Which concentration unit converts directly to moles of HCl?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'a',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — molarity converts liters of solution directly to moles.',
+        incorrect: 'Not quite — liters of solution point to molarity, not molality.',
+        reveal: ['Molarity means mol/L of solution.', '0.750 L can be multiplied by 0.200 mol/L.', 'That gives moles directly.'],
+        support: ['M = mol/L solution', 'Use M when solution volume is given.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'Boiling-point elevation uses the same concentration type as freezing-point depression.',
+        label: 'Scenario:',
+        prompt: 'You are using ΔT<sub>b</sub> = K<sub>b</sub>mi. Which concentration unit belongs in the formula?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'b',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — boiling-point elevation uses molality.',
+        incorrect: 'Not quite — ΔT<sub>b</sub> uses molality because it is based on kilograms of solvent.',
+        reveal: ['ΔT<sub>b</sub> = K<sub>b</sub>mi uses molality.', 'Molality is moles per kilogram of solvent.', 'That is the required concentration unit here.'],
+        support: ['ΔT<sub>b</sub> uses m.', 'Colligative-property formulas often use molality.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'Titration problems in solution usually start from moles per liter of solution.',
+        label: 'Problem:',
+        prompt: 'You need the moles of HCl in 22.0 mL of 0.150 M HCl for a neutralization calculation. Which unit fits?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'a',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — titration setups start from molarity when solution volume is given.',
+        incorrect: 'Not quite — milliliters of solution point to molarity.',
+        reveal: ['Convert 22.0 mL to liters.', 'Then multiply by molarity to get moles.', 'Molality would require kilograms of solvent, which are not given.'],
+        support: ['Solution stoichiometry commonly uses M × L.', 'Molality is not used for titration volume setups.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'If the formula shown is π = iMRT, use the concentration symbol that appears in the equation.',
+        label: 'Scenario:',
+        prompt: 'A dialysis problem uses the osmotic-pressure equation π = iMRT. Which concentration unit should you use?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'a',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — osmotic pressure uses molarity.',
+        incorrect: 'Not quite — the formula itself shows M, which is molarity.',
+        reveal: ['The equation is π = iMRT.', 'That equation uses M, not m.', 'So the concentration unit is molarity.'],
+        support: ['π = iMRT uses M.', 'M means molarity.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'Mass of solvent is the key clue for molality.',
+        label: 'Scenario:',
+        prompt: 'A solution contains 0.40 mol solute dissolved in 1.5 kg water. Which concentration unit is built from that information?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'b',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — kilograms of solvent point directly to molality.',
+        incorrect: 'Not quite — kilograms of solvent are the clue for molality.',
+        reveal: ['Molality is moles per kilogram of solvent.', 'This problem gives moles of solute and kilograms of solvent directly.', 'So molality is the matching unit.'],
+        support: ['m = mol/kg solvent', 'Use m when kg of solvent is given.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'A concentration used to prepare solution stoichiometry from liters is molarity.',
+        label: 'Problem:',
+        prompt: 'You are preparing 0.500 L of 0.300 M NaCl solution and want to find the moles of NaCl needed. Which unit fits?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'a',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — liters of solution and moles of solute point to molarity.',
+        incorrect: 'Not quite — liters of solution are the clue for molarity.',
+        reveal: ['Molarity means mol/L of solution.', '0.500 L can be used directly with 0.300 M.', 'That makes molarity the correct concentration unit.'],
+        support: ['M = mol/L solution', 'Use M with liters of solution.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'Colligative-property formulas based on K<sub>f</sub> or K<sub>b</sub> use molality.',
+        label: 'Problem:',
+        prompt: 'A problem asks for the concentration needed in a boiling-point-elevation equation. Which unit should you choose?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'b',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — boiling-point elevation uses molality.',
+        incorrect: 'Not quite — boiling-point elevation belongs with molality, not molarity.',
+        reveal: ['Boiling-point elevation uses ΔT<sub>b</sub> = K<sub>b</sub>mi.', 'That equation uses molality.', 'So the correct concentration unit is m.'],
+        support: ['K<sub>b</sub> formulas use m.', 'Molality is tied to kg of solvent.']
+      },
+      {
+        title: 'Choose the concentration unit that fits.',
+        hint: 'When the setup is moles dissolved in a known mass of solvent, think molality.',
+        label: 'Scenario:',
+        prompt: 'A lab prep dissolves 0.250 mol glucose in 0.800 kg water. Which concentration unit matches that information directly?',
+        choices: [{ value: 'a', label: 'Use molarity (M)' }, { value: 'b', label: 'Use molality (m)' }],
+        answer: 'b',
+        pending: 'Choose one concentration unit, then click Check.',
+        correct: 'Right — moles of solute with kilograms of solvent point directly to molality.',
+        incorrect: 'Not quite — this setup gives kilograms of solvent, which is the clue for molality.',
+        reveal: ['Molality is defined as moles of solute per kilogram of solvent.', 'This problem gives both of those quantities directly.', 'So molality is the matching concentration unit.'],
+        support: ['m = mol/kg solvent', 'Kilograms of solvent point to molality.']
       }
     ]
   });
@@ -1540,6 +1742,213 @@ function initUnit13Visuals() {
         support: [
           'In volumetric-flask language, "to the mark" means final total volume.',
           'Do not subtract the stock volume from the flask volume when identifying V₂.'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'The final volume is the whole diluted mixture, not just the solvent you poured in.',
+        label: 'Scenario:',
+        prompt: '40.0 mL of stock KNO₃ solution is diluted by adding 160.0 mL of water. What is the final volume (V₂)?',
+        choices: [
+          { value: 'a', label: '200.0 mL' },
+          { value: 'b', label: '160.0 mL' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the final volume includes both the original 40.0 mL and the 160.0 mL of added water.',
+        incorrect: 'Not quite — 160.0 mL is only the water added. V₂ is the total diluted volume.',
+        reveal: [
+          'Final total volume = starting solution volume + water added.',
+          '40.0 mL + 160.0 mL = 200.0 mL.',
+          'That total is the V₂ used in the dilution equation.'
+        ],
+        support: [
+          'V₂ = total diluted volume',
+          'Added solvent alone is not V₂'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'If the flask size is given, the mark sets the final volume.',
+        label: 'Problem:',
+        prompt: '15.0 mL of stock dye solution is transferred to a 250.0 mL volumetric flask and diluted to the mark. What is V₂?',
+        choices: [
+          { value: 'a', label: '235.0 mL' },
+          { value: 'b', label: '250.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the flask volume at the mark is the final total volume.',
+        incorrect: 'Not quite — 235.0 mL would only estimate the water added. V₂ is the total volume after dilution.',
+        reveal: [
+          'A volumetric flask is calibrated to one final total volume.',
+          '“Diluted to the mark” means the solution is brought to that calibration line.',
+          'So V₂ = 250.0 mL.'
+        ],
+        support: [
+          'To the mark = final total volume',
+          'Use the flask size for V₂'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'Add the stock solution volume and the added water to get the diluted total.',
+        label: 'Scenario:',
+        prompt: '80.0 mL of vinegar sample is diluted by adding 320.0 mL of water. What is V₂?',
+        choices: [
+          { value: 'a', label: '320.0 mL' },
+          { value: 'b', label: '400.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — 80.0 mL plus 320.0 mL gives a final total volume of 400.0 mL.',
+        incorrect: 'Not quite — 320.0 mL is only the added water. V₂ is the total solution volume afterward.',
+        reveal: [
+          'The amount of solute stays the same during dilution.',
+          'What changes is the total volume of the solution.',
+          '80.0 mL + 320.0 mL = 400.0 mL, so V₂ = 400.0 mL.'
+        ],
+        support: [
+          'C₁V₁ = C₂V₂',
+          'Use total final volume for V₂'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'Read the wording carefully: “make 125.0 mL total” already tells you the final volume.',
+        label: 'Problem:',
+        prompt: 'A student uses 5.00 mL of stock indicator solution and adds water until the total solution volume is 125.0 mL. What is V₂?',
+        choices: [
+          { value: 'a', label: '120.0 mL' },
+          { value: 'b', label: '125.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the problem directly states the total final solution volume.',
+        incorrect: 'Not quite — 120.0 mL would be the water added, not the final diluted volume.',
+        reveal: [
+          'The phrase “total solution volume” means final overall volume.',
+          'That full total is what V₂ represents in the dilution equation.',
+          'So V₂ = 125.0 mL.'
+        ],
+        support: [
+          'Final total volume goes in the V₂ spot.',
+          'Do not confuse water added with V₂.'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'A transfer into a larger flask means the final mark is the total volume after dilution.',
+        label: 'Scenario:',
+        prompt: '20.0 mL of stock NaOH is pipetted into a 150.0 mL volumetric flask, then diluted to the mark. What is the final volume (V₂)?',
+        choices: [
+          { value: 'a', label: '150.0 mL' },
+          { value: 'b', label: '130.0 mL' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the volumetric flask mark sets the final total volume at 150.0 mL.',
+        incorrect: 'Not quite — 130.0 mL would only be the water added. V₂ is the full flask volume at the mark.',
+        reveal: [
+          'The pipetted stock volume is part of the final mixture.',
+          'Water is added only until the total reaches the flask mark.',
+          'That makes V₂ = 150.0 mL.'
+        ],
+        support: [
+          'Volumetric flasks define final volume.',
+          'V₂ is not the added water amount.'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'Combine the original volume and the added solvent to get the total.',
+        label: 'Scenario:',
+        prompt: '12.5 mL of iodine solution is diluted by adding 37.5 mL of water. What is V₂?',
+        choices: [
+          { value: 'a', label: '50.0 mL' },
+          { value: 'b', label: '37.5 mL' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the final diluted volume is 50.0 mL.',
+        incorrect: 'Not quite — 37.5 mL is only the water portion, not the total solution volume.',
+        reveal: [
+          'Add the original solution and the water added.',
+          '12.5 mL + 37.5 mL = 50.0 mL.',
+          'Use that total as V₂.'
+        ],
+        support: [
+          'V₂ = total final solution',
+          'Dilution keeps solute amount constant'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'If the question says “final volume of 300.0 mL,” use that exact value.',
+        label: 'Problem:',
+        prompt: '30.0 mL of stock Fe(NO₃)₃ solution is diluted until the final volume is 300.0 mL. What is V₂?',
+        choices: [
+          { value: 'a', label: '270.0 mL' },
+          { value: 'b', label: '300.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the final volume is given directly as 300.0 mL.',
+        incorrect: 'Not quite — 270.0 mL would only be the amount of water added, not the final diluted volume.',
+        reveal: [
+          'V₂ represents the final total volume after dilution.',
+          'This problem states that total directly.',
+          'So V₂ = 300.0 mL.'
+        ],
+        support: [
+          'Use the stated final volume when it is given.',
+          'Do not substitute the solvent-only amount.'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'The total mixture volume is what matters, even when a beaker is used instead of a flask.',
+        label: 'Scenario:',
+        prompt: '60.0 mL of stock sugar solution is mixed with 240.0 mL of water in a beaker. What is the final volume (V₂)?',
+        choices: [
+          { value: 'a', label: '240.0 mL' },
+          { value: 'b', label: '300.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the final volume is the total combined solution volume of 300.0 mL.',
+        incorrect: 'Not quite — 240.0 mL is only the water added. V₂ must include the original 60.0 mL too.',
+        reveal: [
+          'Final volume counts all liquid present after mixing.',
+          '60.0 mL + 240.0 mL = 300.0 mL.',
+          'That total is V₂ in the dilution equation.'
+        ],
+        support: [
+          'Final total volume is always V₂.',
+          'Add original solution and added solvent.'
+        ]
+      },
+      {
+        title: 'Choose the correct final volume before using the dilution equation.',
+        hint: 'A larger container does not matter by itself; the final marked volume does.',
+        label: 'Problem:',
+        prompt: '8.00 mL of stock KMnO₄ is transferred into a 50.0 mL volumetric flask and diluted to the mark. What is V₂?',
+        choices: [
+          { value: 'a', label: '42.0 mL' },
+          { value: 'b', label: '50.0 mL' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — the final total volume is the flask’s calibrated 50.0 mL.',
+        incorrect: 'Not quite — 42.0 mL is only the approximate water added. V₂ is the final total volume in the flask.',
+        reveal: [
+          'The stock solution volume becomes part of the diluted solution.',
+          'Water is added until the total reaches the 50.0 mL mark.',
+          'That makes V₂ = 50.0 mL.'
+        ],
+        support: [
+          'Flask mark sets V₂.',
+          'V₂ is the total volume after dilution.'
         ]
       }
     ]
@@ -1614,6 +2023,236 @@ function initUnit13Visuals() {
         support: [
           'For equal M, the larger i gives the larger osmotic pressure.',
           'For equal i, the larger concentration gives the larger effect.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'At the same molality, the solution with more dissolved particles lowers vapor pressure more.',
+        label: 'Scenario:',
+        prompt: 'Both solutions are 0.80 m in water. Which one should have the lower vapor pressure?',
+        choices: [
+          { value: 'a', label: '0.80 m sucrose' },
+          { value: 'b', label: '0.80 m MgCl₂' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — MgCl₂ produces more dissolved particles than sucrose at the same molality, so it lowers vapor pressure more.',
+        incorrect: 'Not quite — the larger vapor-pressure lowering comes from the solution with the larger particle count.',
+        reveal: [
+          'Sucrose is a nonelectrolyte, so i = 1.',
+          'MgCl₂ separates into about 3 particles, so i = 3.',
+          'More particles create the larger colligative effect, so MgCl₂ gives the lower vapor pressure.'
+        ],
+        support: [
+          'Nonelectrolytes: i ≈ 1',
+          'MgCl₂: i ≈ 3'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'If the solutes have the same i value, compare concentration next.',
+        label: 'Problem:',
+        prompt: 'Which solution should have the lower freezing point?',
+        choices: [
+          { value: 'a', label: '0.90 m glucose' },
+          { value: 'b', label: '0.40 m glucose' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — both are glucose, so the higher molality gives the larger freezing-point depression.',
+        incorrect: 'Not quite — when the solute is the same, the more concentrated solution shows the larger colligative effect.',
+        reveal: [
+          'Both solutions use glucose, so both have i = 1.',
+          'That means concentration is the deciding factor.',
+          '0.90 m glucose creates the larger freezing-point depression and the lower freezing point.'
+        ],
+        support: [
+          'Equal i means compare concentration.',
+          'Higher m gives larger ΔTf.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'For boiling-point elevation, compare the product of concentration and particle count.',
+        label: 'Scenario:',
+        prompt: 'Which solution should have the higher boiling point?',
+        choices: [
+          { value: 'a', label: '0.30 m CaCl₂' },
+          { value: 'b', label: '0.30 m NaCl' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — at the same molality, CaCl₂ has the larger i value and gives the bigger boiling-point elevation.',
+        incorrect: 'Not quite — the concentrations match, so the larger i value decides the comparison.',
+        reveal: [
+          'NaCl has i ≈ 2, while CaCl₂ has i ≈ 3.',
+          'At equal molality, the larger i produces the larger ΔTb.',
+          'So 0.30 m CaCl₂ has the higher boiling point.'
+        ],
+        support: [
+          'ΔTb = Kbmi',
+          'Compare i when m is the same.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'The same electrolyte at a higher molarity gives the larger osmotic pressure.',
+        label: 'Scenario:',
+        prompt: 'At the same temperature, which solution should have the larger osmotic pressure?',
+        choices: [
+          { value: 'a', label: '0.20 M NaNO₃' },
+          { value: 'b', label: '0.50 M NaNO₃' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — both solutions use the same solute, so the higher molarity gives the larger osmotic pressure.',
+        incorrect: 'Not quite — because the solute is the same in both, the larger molarity gives the larger π value.',
+        reveal: [
+          'Osmotic pressure follows π = iMRT.',
+          'Both solutions have the same i value because they use the same solute.',
+          'The 0.50 M solution therefore has the larger osmotic pressure.'
+        ],
+        support: [
+          'For the same solute, compare M directly.',
+          'Higher M gives higher π.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'More particles per formula unit can outweigh equal concentration.',
+        label: 'Problem:',
+        prompt: 'Both solutions are 1.0 m. Which should show the greater freezing-point depression?',
+        choices: [
+          { value: 'a', label: '1.0 m AlCl₃' },
+          { value: 'b', label: '1.0 m NaCl' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — AlCl₃ produces more dissolved particles than NaCl at the same molality.',
+        incorrect: 'Not quite — because the molality is the same, the larger particle count gives the larger effect.',
+        reveal: [
+          'NaCl separates into about 2 particles.',
+          'AlCl₃ separates into about 4 particles.',
+          'The larger i value gives the larger freezing-point depression, so AlCl₃ wins.'
+        ],
+        support: [
+          'NaCl: i ≈ 2',
+          'AlCl₃: i ≈ 4'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'If both are nonelectrolytes, only concentration matters.',
+        label: 'Scenario:',
+        prompt: 'Which solution should have the higher boiling point?',
+        choices: [
+          { value: 'a', label: '0.25 m urea' },
+          { value: 'b', label: '0.70 m urea' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — urea is the same nonelectrolyte in both cases, so the higher molality gives the larger boiling-point elevation.',
+        incorrect: 'Not quite — with the same nonelectrolyte, the more concentrated solution shows the larger effect.',
+        reveal: [
+          'Urea is a nonelectrolyte, so i = 1 in both solutions.',
+          'That leaves molality as the deciding factor.',
+          '0.70 m urea gives the larger ΔTb and therefore the higher boiling point.'
+        ],
+        support: [
+          'Equal i means compare m.',
+          'Higher m gives larger ΔTb.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'At equal concentration, the electrolyte with more ions lowers vapor pressure more.',
+        label: 'Problem:',
+        prompt: 'Both solutions are 0.40 m. Which one should have the lower vapor pressure?',
+        choices: [
+          { value: 'a', label: '0.40 m KBr' },
+          { value: 'b', label: '0.40 m Ca(NO₃)₂' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — Ca(NO₃)₂ produces more dissolved particles than KBr, so it lowers vapor pressure more.',
+        incorrect: 'Not quite — when molality is the same, the larger i value causes the larger vapor-pressure lowering.',
+        reveal: [
+          'KBr separates into about 2 particles.',
+          'Ca(NO₃)₂ separates into about 3 particles.',
+          'More particles mean a stronger colligative effect, so Ca(NO₃)₂ has the lower vapor pressure.'
+        ],
+        support: [
+          'KBr: i ≈ 2',
+          'Ca(NO₃)₂: i ≈ 3'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'Compare both concentration and particle count together.',
+        label: 'Scenario:',
+        prompt: 'Which solution should create the larger osmotic pressure at the same temperature?',
+        choices: [
+          { value: 'a', label: '0.30 M CaCl₂' },
+          { value: 'b', label: '0.50 M glucose' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — CaCl₂ produces about 3 particles, so 0.30 × 3 gives a larger particle concentration than 0.50 × 1 for glucose.',
+        incorrect: 'Not quite — osmotic pressure depends on total dissolved particle concentration, so compare i × M.',
+        reveal: [
+          'Glucose has i = 1, so its effective particle concentration is about 0.50.',
+          'CaCl₂ has i ≈ 3, so its effective particle concentration is about 0.90.',
+          'The larger iM value gives the larger osmotic pressure, so CaCl₂ is larger.'
+        ],
+        support: [
+          'For π, compare i × M.',
+          'Higher total particle concentration gives larger osmotic pressure.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'Use the same logic for freezing-point depression: compare effective particle concentration.',
+        label: 'Problem:',
+        prompt: 'Which solution should have the lower freezing point?',
+        choices: [
+          { value: 'a', label: '0.20 m MgCl₂' },
+          { value: 'b', label: '0.50 m sucrose' }
+        ],
+        answer: 'a',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — MgCl₂ gives the larger effective particle concentration, so it creates the larger freezing-point depression and the lower freezing point.',
+        incorrect: 'Not quite — compare i × m for each solution before deciding. MgCl₂ produces more total dissolved particles here.',
+        reveal: [
+          'Sucrose has i = 1, so its effective particle concentration is 0.50.',
+          'MgCl₂ has i ≈ 3, so its effective particle concentration is 0.60.',
+          'Because 0.60 is larger than 0.50, MgCl₂ should have the lower freezing point.'
+        ],
+        support: [
+          'For ΔTf, compare i × m.',
+          'Larger particle concentration gives lower freezing point.'
+        ]
+      },
+      {
+        title: 'Predict which solution has the larger colligative effect.',
+        hint: 'Check both concentration and ion count rather than only the solute name.',
+        label: 'Scenario:',
+        prompt: 'Which solution should have the higher boiling point?',
+        choices: [
+          { value: 'a', label: '0.40 m KCl' },
+          { value: 'b', label: '0.25 m AlCl₃' }
+        ],
+        answer: 'b',
+        pending: 'Choose one answer, then click Check.',
+        correct: 'Right — KCl gives about 0.80 particle-molality units, while AlCl₃ gives about 1.00, so AlCl₃ produces the larger boiling-point elevation.',
+        incorrect: 'Not quite — compare i × m to decide which solution has more dissolved particles overall.',
+        reveal: [
+          'KCl has i ≈ 2, so 0.40 × 2 = 0.80.',
+          'AlCl₃ has i ≈ 4, so 0.25 × 4 = 1.00.',
+          'The larger effective particle concentration gives the higher boiling point, so 0.25 m AlCl₃ wins.'
+        ],
+        support: [
+          'For ΔTb, compare i × m.',
+          'Greater total particle concentration gives the larger effect.'
         ]
       }
     ]

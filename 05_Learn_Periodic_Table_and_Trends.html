@@ -458,8 +458,13 @@
     <div class="card">
       <h2 class="card-title">Periodic Table Family Classifier</h2>
       <div class="tool-output tool-flow">
+        <div class="pt-info-panel tool-context-box visible" id="ptInfoPanel">
+          <div class="pt-info-name" id="ptName">Highlighted element</div>
+          <div class="pt-info-meta" id="ptMeta">Choose one family or region before you check your answer.</div>
+        </div>
+
         <div class="tool-prompt tool-scenario-prompt">
-          <p class="tool-focus-label">Read This First</p>
+          <p class="tool-focus-label">How To Read It</p>
           <p class="tool-scenario-title"><strong id="familyPrompt">Which family does this highlighted element belong to?</strong></p>
           <p class="tool-hint">Start with the highlighted element's column. Families are vertical groups on the periodic table.</p>
           <p class="tool-scenario-text"><strong>Scenario:</strong> Use the highlighted element's position and choose the best family or region before you check.</p>
@@ -476,11 +481,6 @@
               <li>Group 18 = noble gases.</li>
             </ul>
           </div>
-        </div>
-
-        <div class="pt-info-panel visible" id="ptInfoPanel">
-          <div class="pt-info-name" id="ptName">Highlighted element</div>
-          <div class="pt-info-meta" id="ptMeta">Choose one family or region before you check your answer.</div>
         </div>
 
         <div class="segment-controls tool-choice-row" id="familyAnswers" role="group" aria-label="Periodic table family choices"></div>
@@ -543,10 +543,7 @@
         <div class="segment-readout tool-feedback" id="trendFeedback" data-state="pending">Choose one element, then click Check.</div>
         <div class="key-fact tool-support" id="trendSupport" hidden></div>
         <div class="key-fact tool-reveal" id="trendReveal" hidden></div>
-        <div class="tool-value-toggle">
-          <button type="button" class="segment-btn" id="trendValueToggleBtn" disabled>Show values</button>
-          <div class="tool-values" id="trendValues"></div>
-        </div>
+        <div class="tool-values" id="trendValues"></div>
       </div>
     </div>
 
@@ -927,6 +924,24 @@ document.addEventListener('DOMContentLoaded', function () {
     node.hidden = !show;
   }
 
+  function shuffleArray(items) {
+    const shuffled = items.slice();
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  function pickNextIndex(items, currentIndex) {
+    if (!items.length) return 0;
+    let nextIndex = Math.floor(Math.random() * items.length);
+    if (items.length > 1) {
+      while (nextIndex === currentIndex) nextIndex = Math.floor(Math.random() * items.length);
+    }
+    return nextIndex;
+  }
+
   function markTarget(sym) {
     clearGridHighlights();
     const cell = grid.querySelector(`[data-sym="${sym}"]`);
@@ -982,6 +997,102 @@ document.addEventListener('DOMContentLoaded', function () {
       revealAnswer: 'Answer: Noble gas',
       revealWhy: 'Why: Neon is in the last column, Group 18.',
       revealExtra: 'Noble gases have filled valence shells and are usually very unreactive.'
+    },
+    {
+      sym: 'K',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Alkali metal', 'Alkaline earth metal', 'Halogen', 'Noble gas'],
+      answer: 'Alkali metal',
+      correct: 'Right — potassium is in Group 1, so it is an alkali metal.',
+      incorrect: 'Not quite — potassium is not in Group 2. Group 1 elements are alkali metals.',
+      support: 'Why this family: potassium is in Group 1, the first column of metals.',
+      revealAnswer: 'Answer: Alkali metal',
+      revealWhy: 'Why: Potassium sits in Group 1.',
+      revealExtra: 'Alkali metals have 1 valence electron and are very reactive.'
+    },
+    {
+      sym: 'Ar',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Noble gas', 'Halogen', 'Metalloid', 'Alkali metal'],
+      answer: 'Noble gas',
+      correct: 'Right — argon is in Group 18, so it is a noble gas.',
+      incorrect: 'Not quite — argon is in the far right column, which is the noble gas family.',
+      support: 'Why this family: argon is in Group 18, the last column.',
+      revealAnswer: 'Answer: Noble gas',
+      revealWhy: 'Why: Argon is in Group 18.',
+      revealExtra: 'Noble gases are usually very unreactive because their valence shells are full.'
+    },
+    {
+      sym: 'F',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Halogen', 'Noble gas', 'Metalloid', 'Alkali metal'],
+      answer: 'Halogen',
+      correct: 'Right — fluorine is in Group 17, so it is a halogen.',
+      incorrect: 'Not quite — fluorine is one column left of the noble gases, which makes it a halogen.',
+      support: 'Why this family: fluorine is in Group 17.',
+      revealAnswer: 'Answer: Halogen',
+      revealWhy: 'Why: Fluorine is in Group 17.',
+      revealExtra: 'Halogens are reactive nonmetals with 7 valence electrons.'
+    },
+    {
+      sym: 'B',
+      prompt: 'Which region best fits this highlighted element?',
+      options: ['Metalloid', 'Nonmetal', 'Noble gas', 'Transition metal'],
+      answer: 'Metalloid',
+      correct: 'Right — boron sits on the staircase line, so it is a metalloid.',
+      incorrect: 'Not quite — boron is on the staircase border, which marks the metalloids.',
+      support: 'Why this region: boron sits on the staircase boundary between metals and nonmetals.',
+      revealAnswer: 'Answer: Metalloid',
+      revealWhy: 'Why: Boron is on the staircase line.',
+      revealExtra: 'Metalloids have mixed metal/nonmetal properties.'
+    },
+    {
+      sym: 'Ca',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Alkaline earth metal', 'Alkali metal', 'Halogen', 'Nonmetal'],
+      answer: 'Alkaline earth metal',
+      correct: 'Right — calcium is in Group 2, so it is an alkaline earth metal.',
+      incorrect: 'Not quite — calcium is in the second column, not the first.',
+      support: 'Why this family: calcium is in Group 2.',
+      revealAnswer: 'Answer: Alkaline earth metal',
+      revealWhy: 'Why: Calcium is in Group 2.',
+      revealExtra: 'Alkaline earth metals have 2 valence electrons.'
+    },
+    {
+      sym: 'Br',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Halogen', 'Noble gas', 'Metalloid', 'Transition metal'],
+      answer: 'Halogen',
+      correct: 'Right — bromine is in Group 17, so it is a halogen.',
+      incorrect: 'Not quite — bromine is not in the last column. It is one column left of the noble gases.',
+      support: 'Why this family: bromine is in Group 17.',
+      revealAnswer: 'Answer: Halogen',
+      revealWhy: 'Why: Bromine is in Group 17.',
+      revealExtra: 'Halogens are reactive nonmetals.'
+    },
+    {
+      sym: 'He',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Noble gas', 'Halogen', 'Metalloid', 'Alkaline earth metal'],
+      answer: 'Noble gas',
+      correct: 'Right — helium is in Group 18, so it is a noble gas.',
+      incorrect: 'Not quite — helium is in the far-right column, the noble gas family.',
+      support: 'Why this family: helium is placed in Group 18.',
+      revealAnswer: 'Answer: Noble gas',
+      revealWhy: 'Why: Helium is in Group 18.',
+      revealExtra: 'Helium has a filled outer shell and is very unreactive.'
+    },
+    {
+      sym: 'Sr',
+      prompt: 'Which family does this highlighted element belong to?',
+      options: ['Alkaline earth metal', 'Alkali metal', 'Noble gas', 'Halogen'],
+      answer: 'Alkaline earth metal',
+      correct: 'Right — strontium is in Group 2, so it is an alkaline earth metal.',
+      incorrect: 'Not quite — strontium is in the second column, not the first or far right.',
+      support: 'Why this family: strontium is in Group 2 on the periodic table.',
+      revealAnswer: 'Answer: Alkaline earth metal',
+      revealWhy: 'Why: Strontium is in Group 2.',
+      revealExtra: 'Group 2 elements are alkaline earth metals with 2 valence electrons.'
     }
   ];
 
@@ -1004,7 +1115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     familyChecked = false;
     familyPrompt.textContent = q.prompt;
     familyAnswers.innerHTML = '';
-    q.options.forEach(option => {
+    shuffleArray(q.options).forEach(option => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
@@ -1026,7 +1137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleToolPanel(familyReveal, false);
     toggleToolPanel(familySupport, false);
     markTarget(q.sym);
-    updateFamilyInfoPanel(ELEMENTS.find(el => el[0] === q.sym), 'Use its column and location to classify it before you check.');
+    updateFamilyInfoPanel(ELEMENTS.find(el => el[0] === q.sym), 'Use its column and location in the perioidc table to classify it before you check. Scroll down for a view of the periodic table.');
   }
 
   familyCheckBtn.addEventListener('click', function () {
@@ -1073,7 +1184,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   familyNextBtn.addEventListener('click', function () {
-    familyIndex = (familyIndex + 1) % FAMILY_QUESTIONS.length;
+    familyIndex = pickNextIndex(FAMILY_QUESTIONS, familyIndex);
     renderFamilyQuestion();
   });
 
@@ -1139,6 +1250,102 @@ document.addEventListener('DOMContentLoaded', function () {
       revealAnswer: 'Answer: Ca',
       revealWhy: 'Why: Atomic radius increases down a group because each step adds a new energy level.',
       valueText: 'Mg: 160 pm | Ca: 197 pm'
+    },
+    {
+      property: 'radius',
+      prompt: 'Which atom has the larger atomic radius?',
+      pair: ['K', 'Na'],
+      answer: 'K',
+      correct: 'Right — K is larger because atomic radius increases down a group.',
+      incorrect: 'Not quite — these are in the same group. The lower element is larger.',
+      support: 'K and Na are both in Group 1.',
+      revealAnswer: 'Answer: K',
+      revealWhy: 'Why: Going down Group 1 adds an energy level, so potassium is larger.',
+      valueText: 'K: 227 pm | Na: 186 pm'
+    },
+    {
+      property: 'ie',
+      prompt: 'Which atom has the higher ionization energy?',
+      pair: ['Na', 'K'],
+      answer: 'Na',
+      correct: 'Right — Na has the higher ionization energy because ionization energy decreases down a group.',
+      incorrect: 'Not quite — these are in the same group. The higher element holds its electrons more tightly.',
+      support: 'Na and K are both in Group 1.',
+      revealAnswer: 'Answer: Na',
+      revealWhy: 'Why: Ionization energy decreases down a group, so sodium is higher than potassium.',
+      valueText: 'Na: 496 kJ/mol | K: 419 kJ/mol'
+    },
+    {
+      property: 'en',
+      prompt: 'Which atom has the higher electronegativity?',
+      pair: ['O', 'S'],
+      answer: 'O',
+      correct: 'Right — O has the higher electronegativity because electronegativity decreases down a group.',
+      incorrect: 'Not quite — oxygen is above sulfur in the same group, so it pulls shared electrons more strongly.',
+      support: 'O and S are both in Group 16.',
+      revealAnswer: 'Answer: O',
+      revealWhy: 'Why: Electronegativity decreases down a group, so oxygen is higher than sulfur.',
+      valueText: 'O: 3.44 | S: 2.58'
+    },
+    {
+      property: 'radius',
+      prompt: 'Which atom has the larger atomic radius?',
+      pair: ['Li', 'F'],
+      answer: 'Li',
+      correct: 'Right — Li is larger because radius gets smaller from left to right.',
+      incorrect: 'Not quite — these are in the same period. The left-side atom is larger.',
+      support: 'Li and F are both in Period 2.',
+      revealAnswer: 'Answer: Li',
+      revealWhy: 'Why: Atomic radius decreases across a period, so lithium is larger than fluorine.',
+      valueText: 'Li: 152 pm | F: 64 pm'
+    },
+    {
+      property: 'ie',
+      prompt: 'Which atom has the higher ionization energy?',
+      pair: ['Mg', 'Ca'],
+      answer: 'Mg',
+      correct: 'Right — Mg has the higher ionization energy because ionization energy decreases down a group.',
+      incorrect: 'Not quite — magnesium is above calcium, so it takes more energy to remove an electron.',
+      support: 'Mg and Ca are both in Group 2.',
+      revealAnswer: 'Answer: Mg',
+      revealWhy: 'Why: Ionization energy decreases down a group, so magnesium is higher than calcium.',
+      valueText: 'Mg: 738 kJ/mol | Ca: 590 kJ/mol'
+    },
+    {
+      property: 'en',
+      prompt: 'Which atom has the higher electronegativity?',
+      pair: ['Na', 'Cl'],
+      answer: 'Cl',
+      correct: 'Right — Cl has the higher electronegativity because electronegativity increases to the right.',
+      incorrect: 'Not quite — chlorine is far closer to the upper right of the table.',
+      support: 'Na and Cl are both in Period 3.',
+      revealAnswer: 'Answer: Cl',
+      revealWhy: 'Why: Electronegativity increases from left to right across a period.',
+      valueText: 'Na: 0.93 | Cl: 3.16'
+    },
+    {
+      property: 'radius',
+      prompt: 'Which atom has the larger atomic radius?',
+      pair: ['O', 'F'],
+      answer: 'O',
+      correct: 'Right — O is larger because radius decreases from left to right.',
+      incorrect: 'Not quite — oxygen is to the left of fluorine in the same period, so it is larger.',
+      support: 'O and F are both in Period 2.',
+      revealAnswer: 'Answer: O',
+      revealWhy: 'Why: Atomic radius gets smaller from left to right, so oxygen is larger than fluorine.',
+      valueText: 'O: 73 pm | F: 64 pm'
+    },
+    {
+      property: 'ie',
+      prompt: 'Which atom has the higher ionization energy?',
+      pair: ['Cl', 'F'],
+      answer: 'F',
+      correct: 'Right — F has the higher ionization energy because ionization energy decreases down a group.',
+      incorrect: 'Not quite — fluorine is above chlorine in the same group, so it takes more energy to remove an electron.',
+      support: 'Cl and F are both in Group 17.',
+      revealAnswer: 'Answer: F',
+      revealWhy: 'Why: Ionization energy decreases down a group, so fluorine is higher than chlorine.',
+      valueText: 'F: 1681 kJ/mol | Cl: 1251 kJ/mol'
     }
   ];
   const trendPrompt = document.getElementById('trendPrompt');
@@ -1151,19 +1358,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const trendFeedback = document.getElementById('trendFeedback');
   const trendSupport = document.getElementById('trendSupport');
   const trendReveal = document.getElementById('trendReveal');
-  const trendValueToggleBtn = document.getElementById('trendValueToggleBtn');
   const trendValues = document.getElementById('trendValues');
 
   let trendIndex = 0;
   let trendSelection = null;
   let trendChecked = false;
-  let trendValuesVisible = false;
 
   function renderTrendQuestion() {
     const q = TREND_QUESTIONS[trendIndex];
     trendSelection = null;
     trendChecked = false;
-    trendValuesVisible = false;
     trendPropertyChip.textContent =
       q.property === 'radius' ? 'Atomic Radius' :
       q.property === 'ie' ? 'Ionization Energy' :
@@ -1171,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function () {
     trendPrompt.textContent = q.prompt;
     trendPairBadge.textContent = `${q.pair[0]} vs ${q.pair[1]}`;
     trendAnswers.innerHTML = '';
-    q.pair.forEach(sym => {
+    shuffleArray(q.pair).forEach(sym => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
@@ -1187,8 +1391,6 @@ document.addEventListener('DOMContentLoaded', function () {
     trendCheckBtn.disabled = true;
     trendRevealBtn.disabled = true;
     trendNextBtn.disabled = true;
-    trendValueToggleBtn.disabled = true;
-    trendValueToggleBtn.textContent = 'Show values';
     setToolFeedback(trendFeedback, 'Choose one element, then click Check.', 'pending');
     trendSupport.innerHTML = '';
     trendReveal.innerHTML = '';
@@ -1238,19 +1440,12 @@ document.addEventListener('DOMContentLoaded', function () {
         </ul>
       </div>
     `;
-    trendValueToggleBtn.disabled = false;
+    trendValues.className = 'tool-values visible';
     trendValues.innerHTML = q.valueText;
   });
 
-  trendValueToggleBtn.addEventListener('click', function () {
-    if (trendValueToggleBtn.disabled) return;
-    trendValuesVisible = !trendValuesVisible;
-    trendValues.classList.toggle('visible', trendValuesVisible);
-    trendValueToggleBtn.textContent = trendValuesVisible ? 'Hide values' : 'Show values';
-  });
-
   trendNextBtn.addEventListener('click', function () {
-    trendIndex = (trendIndex + 1) % TREND_QUESTIONS.length;
+    trendIndex = pickNextIndex(TREND_QUESTIONS, trendIndex);
     renderTrendQuestion();
   });
 
@@ -1301,6 +1496,94 @@ document.addEventListener('DOMContentLoaded', function () {
       support: 'O gains two electrons to form oxide, so the added electron-electron repulsion expands the outer electron cloud.',
       revealAnswer: 'Answer: O2−',
       revealWhy: 'Why: oxygen gains electrons to form O2−, so the extra electrons increase repulsion and make the ion larger.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'K vs K<sup>+</sup>',
+      options: ['K', 'K+'],
+      answer: 'K',
+      correct: 'Right — K is larger because losing an electron to form K+ makes the ion smaller.',
+      incorrect: 'Not quite — K+ is a cation, and cations are usually smaller than their atoms.',
+      support: 'K loses its outermost electron to form K+.',
+      revealAnswer: 'Answer: K',
+      revealWhy: 'Why: losing the outermost electron shrinks the electron cloud.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'F vs F<sup>−</sup>',
+      options: ['F', 'F−'],
+      answer: 'F−',
+      correct: 'Right — F− is larger because gaining an electron to form an anion makes it larger.',
+      incorrect: 'Not quite — F− is an anion, so extra electron-electron repulsion makes it larger.',
+      support: 'F gains one electron to form fluoride.',
+      revealAnswer: 'Answer: F−',
+      revealWhy: 'Why: added electron repulsion expands the ion.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Ca vs Ca<sup>2+</sup>',
+      options: ['Ca', 'Ca2+'],
+      answer: 'Ca',
+      correct: 'Right — Ca is larger because Ca2+ is a cation and cations are smaller.',
+      incorrect: 'Not quite — calcium loses electrons to form Ca2+, which makes the ion smaller.',
+      support: 'Ca loses two outer electrons to form Ca2+.',
+      revealAnswer: 'Answer: Ca',
+      revealWhy: 'Why: losing electrons shrinks the species.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'S vs S<sup>2−</sup>',
+      options: ['S', 'S2−'],
+      answer: 'S2−',
+      correct: 'Right — S2− is larger because anions are larger than their neutral atoms.',
+      incorrect: 'Not quite — sulfur gains electrons to form sulfide, so the ion becomes larger.',
+      support: 'S gains two electrons to form S2−.',
+      revealAnswer: 'Answer: S2−',
+      revealWhy: 'Why: extra electron repulsion expands sulfide.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Al vs Al<sup>3+</sup>',
+      options: ['Al', 'Al3+'],
+      answer: 'Al',
+      correct: 'Right — Al is larger because Al3+ is a cation and cations are smaller.',
+      incorrect: 'Not quite — aluminum loses electrons to form Al3+, so the ion is smaller.',
+      support: 'Al loses three electrons to form Al3+.',
+      revealAnswer: 'Answer: Al',
+      revealWhy: 'Why: losing electrons reduces repulsion and shrinks the ion.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Br vs Br<sup>−</sup>',
+      options: ['Br', 'Br−'],
+      answer: 'Br−',
+      correct: 'Right — Br− is larger because bromide is an anion.',
+      incorrect: 'Not quite — bromine gains an electron to form bromide, and anions are larger.',
+      support: 'Br gains one electron to form Br−.',
+      revealAnswer: 'Answer: Br−',
+      revealWhy: 'Why: extra electron repulsion makes bromide larger.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'Li vs Li<sup>+</sup>',
+      options: ['Li', 'Li+'],
+      answer: 'Li',
+      correct: 'Right — Li is larger because Li+ is a cation and cations are smaller.',
+      incorrect: 'Not quite — lithium loses its outer electron to form Li+, which shrinks the ion.',
+      support: 'Li loses one electron to form Li+.',
+      revealAnswer: 'Answer: Li',
+      revealWhy: 'Why: losing the outermost electron makes the ion smaller.'
+    },
+    {
+      prompt: 'Which species is larger?',
+      pairHtml: 'N vs N<sup>3−</sup>',
+      options: ['N', 'N3−'],
+      answer: 'N3−',
+      correct: 'Right — N3− is larger because nitride is an anion.',
+      incorrect: 'Not quite — nitrogen gains electrons to form nitride, and anions are larger than the neutral atom.',
+      support: 'N gains three electrons to form N3−.',
+      revealAnswer: 'Answer: N3−',
+      revealWhy: 'Why: the added electrons increase repulsion and expand the ion.'
     }
   ];
 
@@ -1325,7 +1608,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ionPrompt.textContent = q.prompt;
     ionPairBadge.innerHTML = q.pairHtml;
     ionAnswers.innerHTML = '';
-    q.options.forEach(option => {
+    shuffleArray(q.options).forEach(option => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
@@ -1391,7 +1674,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   ionNextBtn.addEventListener('click', function () {
-    ionIndex = (ionIndex + 1) % ION_QUESTIONS.length;
+    ionIndex = pickNextIndex(ION_QUESTIONS, ionIndex);
     renderIonQuestion();
   });
 

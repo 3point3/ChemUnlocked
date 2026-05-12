@@ -928,6 +928,78 @@ const equilibriumCards = [
     revealText: 'Dynamic equilibrium means the reaction is still active in both directions. The forward and reverse rates are equal, so the overall amounts stay constant.',
     correctFeedback: 'Right — dynamic equilibrium means both directions continue at equal rates. The system is active, not frozen.',
     incorrectFeedback: 'Not quite — dynamic equilibrium is not a stopped system. Look for the choice where both directions are still happening at equal rates.'
+  },
+  {
+    prompt: 'Which statement does equilibrium NOT require?',
+    hint: 'Hint: Equal rates do not force equal amounts.',
+    choices: ['Equal amounts of reactants and products.', 'Forward and reverse rates are equal.', 'Both directions can occur.'],
+    correctIndex: 0,
+    revealText: 'Equilibrium requires equal forward and reverse rates, not equal amounts. One side can still contain more particles than the other.',
+    correctFeedback: 'Right — equilibrium does not require equal amounts.',
+    incorrectFeedback: 'Not quite — equilibrium is about equal rates, not equal amounts.'
+  },
+  {
+    prompt: 'After a disturbed system reaches a new equilibrium, what becomes true again?',
+    hint: 'Hint: Think about the two rates after the shift finishes.',
+    choices: ['Forward and reverse rates are equal again.', 'The original concentrations return.', 'The reaction stops completely.'],
+    correctIndex: 0,
+    revealText: 'A new equilibrium still means equal forward and reverse rates, even if the concentrations changed from the original values.',
+    correctFeedback: 'Right — the rates become equal again at the new equilibrium.',
+    incorrectFeedback: 'Not quite — the new equilibrium still has equal forward and reverse rates.'
+  },
+  {
+    prompt: 'Why can product concentration stay larger than reactant concentration at equilibrium?',
+    hint: 'Hint: Rates can match even when amounts do not.',
+    choices: ['Because equilibrium only requires equal rates.', 'Because products cannot change back.', 'Because all reactants are used up.'],
+    correctIndex: 0,
+    revealText: 'Equilibrium is defined by equal rates. The amounts on each side do not have to match.',
+    correctFeedback: 'Right — equal rates do not require equal amounts.',
+    incorrectFeedback: 'Not quite — equal rates, not equal amounts, define equilibrium.'
+  },
+  {
+    prompt: 'What makes equilibrium “dynamic” instead of static?',
+    hint: 'Hint: Ask whether particles are still reacting.',
+    choices: ['Both forward and reverse reactions continue.', 'Nothing moves once equilibrium is reached.', 'Only products remain.'],
+    correctIndex: 0,
+    revealText: 'Dynamic equilibrium means both directions continue while the rates stay equal.',
+    correctFeedback: 'Right — particles keep reacting both ways at equilibrium.',
+    incorrectFeedback: 'Not quite — dynamic equilibrium is active, not frozen.'
+  },
+  {
+    prompt: 'At equilibrium, what makes the net concentration change zero?',
+    hint: 'Hint: Compare the two opposing rates.',
+    choices: ['The forward and reverse rates cancel out.', 'The reactants reach zero.', 'The products stop reacting.'],
+    correctIndex: 0,
+    revealText: 'There is no net concentration change because the forward and reverse rates are equal and cancel each other out.',
+    correctFeedback: 'Right — equal rates cause zero net change.',
+    incorrectFeedback: 'Not quite — the reason is equal forward and reverse rates.'
+  },
+  {
+    prompt: 'If a reaction stops completely, is it at dynamic equilibrium?',
+    hint: 'Hint: Dynamic equilibrium still has ongoing forward and reverse reaction.',
+    choices: ['No, because both directions must still occur.', 'Yes, because concentrations stop changing.', 'Yes, because products and reactants are equal.'],
+    correctIndex: 0,
+    revealText: 'A stopped reaction is not dynamic equilibrium. At equilibrium, both directions still occur at equal rates.',
+    correctFeedback: 'Right — a stopped reaction is not dynamic equilibrium.',
+    incorrectFeedback: 'Not quite — dynamic equilibrium still has both directions happening.'
+  },
+  {
+    prompt: 'Which observation best supports that a system is at equilibrium?',
+    hint: 'Hint: Look for constant concentrations caused by equal rates.',
+    choices: ['Concentrations stay constant while both directions still occur.', 'Only products are present.', 'The flask becomes empty.'],
+    correctIndex: 0,
+    revealText: 'At equilibrium, concentrations stay constant because the forward and reverse rates are equal while both directions still occur.',
+    correctFeedback: 'Right — constant concentrations with both directions active is the equilibrium clue.',
+    incorrectFeedback: 'Not quite — equilibrium means constant concentrations because both directions still happen at equal rates.'
+  },
+  {
+    prompt: 'At equilibrium, what is true about the reaction itself?',
+    hint: 'Hint: The system is not frozen.',
+    choices: ['Both directions are still occurring.', 'Only the reverse reaction remains.', 'All motion has stopped.'],
+    correctIndex: 0,
+    revealText: 'At equilibrium, particles continue reacting in both directions even though the concentrations stay constant.',
+    correctFeedback: 'Right — both forward and reverse reactions are still occurring.',
+    incorrectFeedback: 'Not quite — equilibrium is dynamic, so both directions still occur.'
   }
 ];
 
@@ -955,6 +1027,78 @@ const qkCards = [
     reveal: 'Q = K → the system is already at equilibrium → no shift',
     correctFeedback: 'Right — when Q equals K, the system is already at equilibrium. There is no net shift.',
     incorrectFeedback: 'Not quite — if Q equals K, the system already matches the equilibrium ratio. That means there is no net shift.'
+  },
+  {
+    q: '0.05',
+    k: '2.0',
+    correct: 'Shift right',
+    reveal: 'Q &lt; K → too few products → shift right',
+    correctFeedback: 'Right — Q is smaller than K, so the system shifts right to make more products.',
+    incorrectFeedback: 'Not quite — smaller-than-K means shift right.'
+  },
+  {
+    q: '12',
+    k: '3.0',
+    correct: 'Shift left',
+    reveal: 'Q &gt; K → too many products → shift left',
+    correctFeedback: 'Right — Q is larger than K, so the system shifts left.',
+    incorrectFeedback: 'Not quite — larger-than-K means shift left.'
+  },
+  {
+    q: '0.80',
+    k: '0.80',
+    correct: 'No shift',
+    reveal: 'Q = K → already at equilibrium → no shift',
+    correctFeedback: 'Right — matching Q and K means no shift.',
+    incorrectFeedback: 'Not quite — if Q equals K, there is no shift.'
+  },
+  {
+    q: '0.30',
+    k: '9.0',
+    correct: 'Shift right',
+    reveal: 'Q &lt; K → too few products → shift right',
+    correctFeedback: 'Right — Q is smaller than K, so the system shifts right.',
+    incorrectFeedback: 'Not quite — smaller-than-K means shift right.'
+  },
+  {
+    q: '4.5',
+    k: '0.90',
+    correct: 'Shift left',
+    reveal: 'Q &gt; K → too many products → shift left',
+    correctFeedback: 'Right — Q is larger than K, so the system shifts left.',
+    incorrectFeedback: 'Not quite — larger-than-K means shift left.'
+  },
+  {
+    q: '6.0',
+    k: '6.0',
+    correct: 'No shift',
+    reveal: 'Q = K → already at equilibrium → no shift',
+    correctFeedback: 'Right — equal Q and K means no net shift.',
+    incorrectFeedback: 'Not quite — Q equal to K means no shift.'
+  },
+  {
+    q: '0.002',
+    k: '0.50',
+    correct: 'Shift right',
+    reveal: 'Q &lt; K → too few products → shift right',
+    correctFeedback: 'Right — Q is smaller than K, so products must increase.',
+    incorrectFeedback: 'Not quite — smaller-than-K means shift right.'
+  },
+  {
+    q: '15',
+    k: '1.2',
+    correct: 'Shift left',
+    reveal: 'Q &gt; K → too many products → shift left',
+    correctFeedback: 'Right — Q is larger than K, so reactants must increase.',
+    incorrectFeedback: 'Not quite — larger-than-K means shift left.'
+  },
+  {
+    q: '0.70',
+    k: '7.0',
+    correct: 'Shift right',
+    reveal: 'Q &lt; K → too few products → shift right',
+    correctFeedback: 'Right — Q is smaller than K, so the reaction shifts right.',
+    incorrectFeedback: 'Not quite — smaller-than-K means shift right.'
   }
 ];
 
@@ -985,6 +1129,87 @@ const pressureCards = [
     reveal: 'Left side: 1 mol gas | Right side: 2 mol gas<br>Lower pressure favors the side with more moles of gas.',
     correctFeedback: 'Right — decreasing pressure favors the side with more moles of gas. This reaction shifts right because 2 mol of gas is more than 1 mol.',
     incorrectFeedback: 'Not quite — for a pressure decrease, look for the side with more gas moles. Count both sides, then choose the shift.'
+  },
+  {
+    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 3 mol gas | Right side: 2 mol gas<br>Higher pressure favors the side with fewer moles of gas.',
+    correctFeedback: 'Right — higher pressure favors the side with fewer gas moles, so this shifts right.',
+    incorrectFeedback: 'Not quite — compare the gas moles. Higher pressure favors fewer moles.'
+  },
+  {
+    reaction: 'H₂(g) + I₂(g) ⇌ 2HI(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'No shift',
+    tilt: 0,
+    reveal: 'Left side: 2 mol gas | Right side: 2 mol gas<br>Equal gas totals mean no pressure shift.',
+    correctFeedback: 'Right — equal gas totals mean no pressure shift.',
+    incorrectFeedback: 'Not quite — if gas moles match on both sides, pressure does not shift equilibrium.'
+  },
+  {
+    reaction: '2NO₂(g) ⇌ N₂O₄(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 2 mol gas | Right side: 1 mol gas<br>Higher pressure favors the side with fewer moles of gas.',
+    correctFeedback: 'Right — the side with fewer gas moles is favored, so this shifts right.',
+    incorrectFeedback: 'Not quite — count the gas moles. Higher pressure favors fewer moles.'
+  },
+  {
+    reaction: '2NH₃(g) ⇌ N₂(g) + 3H₂(g)',
+    stress: 'Pressure decreases because volume increases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 2 mol gas | Right side: 4 mol gas<br>Lower pressure favors the side with more moles of gas.',
+    correctFeedback: 'Right — lower pressure favors more gas moles, so this shifts right.',
+    incorrectFeedback: 'Not quite — for lower pressure, look for the side with more gas moles.'
+  },
+  {
+    reaction: 'CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g)',
+    stress: 'Pressure decreases because volume increases',
+    correct: 'No shift',
+    tilt: 0,
+    reveal: 'Left side: 2 mol gas | Right side: 2 mol gas<br>Equal gas moles mean no pressure shift.',
+    correctFeedback: 'Right — equal gas totals mean the pressure change does not shift equilibrium.',
+    incorrectFeedback: 'Not quite — if the gas totals match, there is no pressure shift.'
+  },
+  {
+    reaction: '2SO₃(g) ⇌ 2SO₂(g) + O₂(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'Shift left',
+    tilt: 1,
+    reveal: 'Left side: 2 mol gas | Right side: 3 mol gas<br>Higher pressure favors the side with fewer gas moles, so the shift is left.',
+    correctFeedback: 'Right — higher pressure favors the left side because it has fewer gas moles.',
+    incorrectFeedback: 'Not quite — higher pressure favors the side with fewer gas moles.'
+  },
+  {
+    reaction: 'N₂O₄(g) ⇌ 2NO₂(g)',
+    stress: 'Pressure decreases because volume increases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 1 mol gas | Right side: 2 mol gas<br>Lower pressure favors the side with more gas moles.',
+    correctFeedback: 'Right — lower pressure favors the right side because it has more gas moles.',
+    incorrectFeedback: 'Not quite — lower pressure favors more gas moles.'
+  },
+  {
+    reaction: 'H₂(g) + Cl₂(g) ⇌ 2HCl(g)',
+    stress: 'Pressure decreases because volume increases',
+    correct: 'No shift',
+    tilt: 0,
+    reveal: 'Left side: 2 mol gas | Right side: 2 mol gas<br>Equal gas-mole totals mean no pressure shift.',
+    correctFeedback: 'Right — matching gas totals means no pressure shift.',
+    incorrectFeedback: 'Not quite — equal gas totals mean no pressure shift.'
+  },
+  {
+    reaction: '2CO(g) + O₂(g) ⇌ 2CO₂(g)',
+    stress: 'Pressure increases because volume decreases',
+    correct: 'Shift right',
+    tilt: -1,
+    reveal: 'Left side: 3 mol gas | Right side: 2 mol gas<br>Higher pressure favors the side with fewer gas moles.',
+    correctFeedback: 'Right — higher pressure favors the product side because it has fewer gas moles.',
+    incorrectFeedback: 'Not quite — higher pressure favors the side with fewer gas moles.'
   }
 ];
 
@@ -1015,6 +1240,87 @@ const temperatureCards = [
     reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Decreasing temperature removes reactant-side heat, so equilibrium shifts left and K decreases.',
     correctFeedback: 'Right — for an endothermic forward reaction, lowering temperature removes reactant-side heat. Products become less favored, so K decreases.',
     incorrectFeedback: 'Not quite — when temperature changes, K changes too. Treat heat like a reactant or product first, then decide whether lowering temperature makes products more or less favored.'
+  },
+  {
+    reaction: '2NO₂(g) ⇌ N₂O₄(g)',
+    type: 'Exothermic',
+    change: 'Temperature increases',
+    correct: 'K decreases',
+    reveal: 'Exothermic forward reaction: heat acts like a product.<br>Adding heat shifts equilibrium left, so K decreases.',
+    correctFeedback: 'Right — for an exothermic reaction, increasing temperature decreases K.',
+    incorrectFeedback: 'Not quite — in an exothermic forward reaction, heat acts like a product.'
+  },
+  {
+    reaction: 'CaCO₃(s) ⇌ CaO(s) + CO₂(g)',
+    type: 'Endothermic',
+    change: 'Temperature increases',
+    correct: 'K increases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Adding heat favors products, so K increases.',
+    correctFeedback: 'Right — increasing temperature increases K for an endothermic reaction.',
+    incorrectFeedback: 'Not quite — for an endothermic forward reaction, increasing temperature increases K.'
+  },
+  {
+    reaction: '2SO₃(g) ⇌ 2SO₂(g) + O₂(g)',
+    type: 'Endothermic',
+    change: 'Temperature decreases',
+    correct: 'K decreases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Removing heat makes products less favored, so K decreases.',
+    correctFeedback: 'Right — decreasing temperature lowers K for an endothermic reaction.',
+    incorrectFeedback: 'Not quite — for endothermic reactions, lowering temperature decreases K.'
+  },
+  {
+    reaction: 'N₂(g) + 3H₂(g) ⇌ 2NH₃(g)',
+    type: 'Exothermic',
+    change: 'Temperature decreases',
+    correct: 'K increases',
+    reveal: 'Exothermic forward reaction: heat acts like a product.<br>Removing heat favors products, so K increases.',
+    correctFeedback: 'Right — decreasing temperature increases K for an exothermic reaction.',
+    incorrectFeedback: 'Not quite — for exothermic reactions, lowering temperature increases K.'
+  },
+  {
+    reaction: 'H₂(g) + I₂(g) ⇌ 2HI(g)',
+    type: 'Endothermic',
+    change: 'Temperature increases',
+    correct: 'K increases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Adding heat favors products, so K increases.',
+    correctFeedback: 'Right — adding heat increases K for an endothermic reaction.',
+    incorrectFeedback: 'Not quite — for endothermic reactions, increasing temperature increases K.'
+  },
+  {
+    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    type: 'Exothermic',
+    change: 'Temperature decreases',
+    correct: 'K increases',
+    reveal: 'Exothermic forward reaction: heat acts like a product.<br>Removing heat favors products, so K increases.',
+    correctFeedback: 'Right — decreasing temperature increases K for an exothermic reaction.',
+    incorrectFeedback: 'Not quite — for exothermic reactions, lower temperature increases K.'
+  },
+  {
+    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    type: 'Endothermic',
+    change: 'Temperature increases',
+    correct: 'K increases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Adding heat favors products, so K increases.',
+    correctFeedback: 'Right — increasing temperature increases K for an endothermic reaction.',
+    incorrectFeedback: 'Not quite — if the forward reaction is endothermic, adding heat increases K.'
+  },
+  {
+    reaction: '2NO(g) + O₂(g) ⇌ 2NO₂(g)',
+    type: 'Exothermic',
+    change: 'Temperature increases',
+    correct: 'K decreases',
+    reveal: 'Exothermic forward reaction: heat acts like a product.<br>Adding heat favors reactants, so K decreases.',
+    correctFeedback: 'Right — increasing temperature decreases K for an exothermic reaction.',
+    incorrectFeedback: 'Not quite — for an exothermic forward reaction, adding heat decreases K.'
+  },
+  {
+    reaction: 'CaCO₃(s) ⇌ CaO(s) + CO₂(g)',
+    type: 'Endothermic',
+    change: 'Temperature decreases',
+    correct: 'K decreases',
+    reveal: 'Endothermic forward reaction: heat acts like a reactant.<br>Removing heat makes products less favored, so K decreases.',
+    correctFeedback: 'Right — decreasing temperature decreases K for an endothermic reaction.',
+    incorrectFeedback: 'Not quite — for an endothermic reaction, lowering temperature decreases K.'
   }
 ];
 

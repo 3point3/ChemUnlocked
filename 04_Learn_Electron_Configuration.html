@@ -136,11 +136,46 @@
         <li><strong>Frequency (ν, nu)</strong> — how many wave cycles pass a point per second, measured in Hz (s⁻¹). Higher ν = higher energy.</li>
       </ul>
 
-      <div class="spectrum-bar"></div>
-      <div class="spectrum-labels">
-        <span>↑ shorter λ, higher ν, more E</span>
-        <span>700 nm</span>
-        <span>longer λ, lower ν, less E ↑</span>
+      <div class="em-spectrum-card" aria-label="Electromagnetic spectrum overview and visible light detail">
+        <div class="em-spectrum-topline">
+          <span>Shorter wavelength</span>
+          <span>Higher frequency and energy</span>
+        </div>
+        <div class="em-spectrum-band" role="img" aria-label="Electromagnetic spectrum from gamma rays to radio waves, with visible light marked as a narrow band">
+          <div class="em-segment gamma">Gamma rays</div>
+          <div class="em-segment xray">X-rays</div>
+          <div class="em-segment uv">Ultraviolet</div>
+          <div class="em-segment visible">Visible light</div>
+          <div class="em-segment ir">Infrared</div>
+          <div class="em-segment micro">Microwaves</div>
+          <div class="em-segment radio">Radio waves</div>
+        </div>
+        <div class="em-spectrum-scale">
+          <span>&lt; 10<sup>&minus;11</sup> m</span>
+          <span>10<sup>&minus;8</sup> m</span>
+          <span>400&ndash;700 nm</span>
+          <span>&gt; 1 m</span>
+        </div>
+        <p class="em-spectrum-note">Visible light is only a small slice of the full electromagnetic spectrum.</p>
+
+        <div class="visible-spectrum-detail">
+          <div class="visible-spectrum-head">
+            <h3>Visible Light, Zoomed In</h3>
+            <span>Approximate wavelength ranges in nm</span>
+          </div>
+          <div class="visible-spectrum-bar" role="img" aria-label="Visible light color ranges from violet at about 400 nanometers to red at about 700 nanometers">
+            <div class="visible-color violet"><strong>Violet</strong><span>400&ndash;450 nm</span></div>
+            <div class="visible-color blue"><strong>Blue</strong><span>450&ndash;495 nm</span></div>
+            <div class="visible-color green"><strong>Green</strong><span>495&ndash;570 nm</span></div>
+            <div class="visible-color yellow"><strong>Yellow</strong><span>570&ndash;590 nm</span></div>
+            <div class="visible-color orange"><strong>Orange</strong><span>590&ndash;620 nm</span></div>
+            <div class="visible-color red"><strong>Red</strong><span>620&ndash;700 nm</span></div>
+          </div>
+          <div class="visible-spectrum-direction">
+            <span>400 nm: shorter λ, higher energy</span>
+            <span>700 nm: longer λ, lower energy</span>
+          </div>
+        </div>
       </div>
 
       <div class="formula-box">
@@ -1046,7 +1081,10 @@ const photonPrompts = [
   { label: 'UV hydrogen line', wl_nm: 121 },
   { label: 'green visible line', wl_nm: 530 },
   { label: 'near-IR line', wl_nm: 890 },
-  { label: 'IR hydrogen line', wl_nm: 1876 }
+  { label: 'IR hydrogen line', wl_nm: 1876 },
+  { label: 'yellow visible line', wl_nm: 589 },
+  { label: 'orange visible line', wl_nm: 610 },
+  { label: 'far-UV line', wl_nm: 250 }
 ];
 
 const hydrogenPrompts = [
@@ -1057,7 +1095,11 @@ const hydrogenPrompts = [
   { ni: 3, nf: 1 },
   { ni: 1, nf: 4 },
   { ni: 5, nf: 3 },
-  { ni: 3, nf: 5 }
+  { ni: 3, nf: 5 },
+  { ni: 6, nf: 2 },
+  { ni: 2, nf: 5 },
+  { ni: 6, nf: 4 },
+  { ni: 4, nf: 1 }
 ];
 
 const diagCases = [
@@ -1090,6 +1132,72 @@ const diagCases = [
     mistake: 'pauli',
     corrected: '[He] 2s² 2p⁴',
     explanation: 'Two electrons in the same orbital must have opposite spins. Two spin-up electrons in one orbital violate Pauli exclusion.'
+  },
+  {
+    prompt: 'Phosphorus student work: [Ne] 3s² 3p³ with orbital boxes shown as ↑↓ | ↑ | empty.',
+    mistake: 'hund',
+    corrected: '[Ne] 3s² 3p³',
+    explanation: 'In 3p³, the three electrons should occupy the three p orbitals singly before any pairing happens.'
+  },
+  {
+    prompt: 'Nickel student work: [Ar] 3d⁸ 4s²',
+    mistake: 'aufbau',
+    corrected: '[Ar] 4s² 3d⁸',
+    explanation: 'For neutral atoms in this course sequence, the 4s sublevel is written as filling before 3d.'
+  },
+  {
+    prompt: 'Potassium student work: [Ne] 4s¹',
+    mistake: 'core',
+    corrected: '[Ar] 4s¹',
+    explanation: 'The noble-gas core before potassium is argon. Neon leaves out too many inner electrons.'
+  },
+  {
+    prompt: 'Magnesium student work shows a single orbital box with ↑↑ for 3s².',
+    mistake: 'pauli',
+    corrected: '[Ne] 3s²',
+    explanation: 'If two electrons share the same orbital, they must have opposite spins. An ↑↑ pair is not allowed.'
+  },
+  {
+    prompt: 'Copper student work: [Ar] 4s² 3d⁹',
+    mistake: 'exception',
+    corrected: '[Ar] 4s¹ 3d¹⁰',
+    explanation: 'Copper is another common exception. One electron shifts to make the d sublevel completely filled and more stable.'
+  },
+  {
+    prompt: 'Carbon student work: [He] 2s² 2p² with orbital boxes shown as ↑↓ | empty | empty.',
+    mistake: 'hund',
+    corrected: '[He] 2s² 2p²',
+    explanation: 'The two 2p electrons should go into separate equal-energy p orbitals before any pairing.'
+  },
+  {
+    prompt: 'Bromine student work: [Ar] 3d¹⁰ 4s² 4p⁵',
+    mistake: 'aufbau',
+    corrected: '[Ar] 4s² 3d¹⁰ 4p⁵',
+    explanation: 'The filled sublevels should follow the course Aufbau order with 4s filled before 3d.'
+  },
+  {
+    prompt: 'Strontium student work: [Kr] 5s² with one 5s box drawn as ↑↑.',
+    mistake: 'pauli',
+    corrected: '[Kr] 5s²',
+    explanation: 'A single orbital can hold two electrons only if they have opposite spins, so ↑↑ in one box violates Pauli exclusion.'
+  },
+  {
+    prompt: 'Silicon student work: [He] 3s² 3p²',
+    mistake: 'core',
+    corrected: '[Ne] 3s² 3p²',
+    explanation: 'The shorthand core before silicon is neon, not helium. The noble-gas core must include all inner electrons.'
+  },
+  {
+    prompt: 'Manganese student work: [Ar] 3d⁵ 4s²',
+    mistake: 'aufbau',
+    corrected: '[Ar] 4s² 3d⁵',
+    explanation: 'The electron count is fine, but the filled sublevels are written out of the course Aufbau order.'
+  },
+  {
+    prompt: 'Nitrogen student work uses one 2p orbital with ↑↑ and leaves another 2p orbital empty.',
+    mistake: 'pauli',
+    corrected: '[He] 2s² 2p³',
+    explanation: 'The same-spin pair is the clearest rule break. Pauli exclusion is violated before you even finish applying Hund’s rule.'
   }
 ];
 
@@ -1098,7 +1206,15 @@ const orbitalChoicePrompts = [
   { label: 'Nitrogen 2p³', sublevel: '2p', electrons: 3, ruleFocus: 'hund' },
   { label: 'Sulfur 3p⁴', sublevel: '3p', electrons: 4, ruleFocus: 'hund' },
   { label: 'Iron 3d⁶', sublevel: '3d', electrons: 6, ruleFocus: 'hund' },
-  { label: 'Bromine 4p⁵', sublevel: '4p', electrons: 5, ruleFocus: 'pauli' }
+  { label: 'Bromine 4p⁵', sublevel: '4p', electrons: 5, ruleFocus: 'pauli' },
+  { label: 'Carbon 2p²', sublevel: '2p', electrons: 2, ruleFocus: 'hund' },
+  { label: 'Oxygen 2p⁴', sublevel: '2p', electrons: 4, ruleFocus: 'pauli' },
+  { label: 'Phosphorus 3p³', sublevel: '3p', electrons: 3, ruleFocus: 'hund' },
+  { label: 'Chlorine 3p⁵', sublevel: '3p', electrons: 5, ruleFocus: 'pauli' },
+  { label: 'Cobalt 3d⁷', sublevel: '3d', electrons: 7, ruleFocus: 'hund' },
+  { label: 'Nickel 3d⁸', sublevel: '3d', electrons: 8, ruleFocus: 'pauli' },
+  { label: 'Aluminum 3p¹', sublevel: '3p', electrons: 1, ruleFocus: 'hund' },
+  { label: 'Arsenic 4p³', sublevel: '4p', electrons: 3, ruleFocus: 'hund' }
 ];
 const phState = { index: 0, region: '', trend: '' };
 const hyState = { index: 0, transition: '', sign: '', region: '', compare: '' };

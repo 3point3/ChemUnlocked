@@ -966,6 +966,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function shuffleChoiceButtons(buttons) {
+    if (!buttons.length) return;
+    const parent = buttons[0].parentElement;
+    if (!parent) return;
+    const shuffled = buttons.slice();
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    shuffled.forEach((button) => parent.appendChild(button));
+  }
+
   /* ── Tool A: Compound Type Classifier ── */
   const classifyFormula = document.getElementById('classifyFormula');
   const classifyChoices = Array.from(document.querySelectorAll('#classifyChoices .tool-choice-btn'));
@@ -1012,6 +1024,66 @@ document.addEventListener('DOMContentLoaded', function () {
       answer: 'acid',
       feedback: 'Because it is written as an acid in water, it uses acid naming rules.',
       reveal: '<ul><li>It includes (aq), so use acid naming rules first.</li><li>It contains oxygen, so it is an oxyacid.</li></ul>'
+    },
+    {
+      formula: 'NH<sub>4</sub>NO<sub>3</sub>',
+      answer: 'ionic',
+      feedback: 'Ammonium is a polyatomic cation, so this formula belongs to the ionic group.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains NH<sub>4</sub><sup>+</sup>, which counts as the positive ion clue.</li><li>That makes the compound ionic.</li></ul>'
+    },
+    {
+      formula: 'Al<sub>2</sub>O<sub>3</sub>',
+      answer: 'ionic',
+      feedback: 'Aluminum is a metal, so this formula belongs to the ionic group.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains a metal: Al.</li><li>That sends you to ionic naming rules.</li></ul>'
+    },
+    {
+      formula: 'K<sub>2</sub>SO<sub>4</sub>',
+      answer: 'ionic',
+      feedback: 'Potassium is a metal, so this formula belongs to the ionic group.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains a metal: K.</li><li>Sulfate is polyatomic, but the compound type is still ionic.</li></ul>'
+    },
+    {
+      formula: 'PCl<sub>3</sub>',
+      answer: 'molecular',
+      feedback: 'Phosphorus and chlorine are both nonmetals, so this formula uses molecular naming rules.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains no metal and no NH<sub>4</sub><sup>+</sup>.</li><li>Only nonmetals are present, so it is molecular.</li></ul>'
+    },
+    {
+      formula: 'N<sub>2</sub>O<sub>5</sub>',
+      answer: 'molecular',
+      feedback: 'Nitrogen and oxygen are both nonmetals, so this formula uses molecular naming rules.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains no metal and no NH<sub>4</sub><sup>+</sup>.</li><li>That means you use molecular prefixes.</li></ul>'
+    },
+    {
+      formula: 'SF<sub>6</sub>',
+      answer: 'molecular',
+      feedback: 'Sulfur and fluorine are both nonmetals, so this formula uses molecular naming rules.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It contains no metal and no NH<sub>4</sub><sup>+</sup>.</li><li>Only nonmetals remain, so the type is molecular.</li></ul>'
+    },
+    {
+      formula: 'CCl<sub>4</sub>',
+      answer: 'molecular',
+      feedback: 'Carbon and chlorine are both nonmetals, so this formula uses molecular naming rules.',
+      reveal: '<ul><li>No (aq), so it is not using acid naming rules.</li><li>It does not contain a metal or NH<sub>4</sub><sup>+</sup>.</li><li>That makes it molecular.</li></ul>'
+    },
+    {
+      formula: 'HCl(aq)',
+      answer: 'acid',
+      feedback: 'Because it is written as an acid in water, it uses acid naming rules.',
+      reveal: '<ul><li>It includes (aq), so use acid naming rules first.</li><li>It has no oxygen, so it is a binary acid.</li></ul>'
+    },
+    {
+      formula: 'HClO<sub>2</sub>(aq)',
+      answer: 'acid',
+      feedback: 'Because it is written as an acid in water, it uses acid naming rules.',
+      reveal: '<ul><li>It includes (aq), so use acid naming rules first.</li><li>It contains oxygen, so it is an oxyacid.</li></ul>'
+    },
+    {
+      formula: 'HCN(aq)',
+      answer: 'acid',
+      feedback: 'Because it is written as an acid in water, it uses acid naming rules.',
+      reveal: '<ul><li>It includes (aq), so use acid naming rules first.</li><li>It has no oxygen, so it is treated as a binary acid pattern.</li></ul>'
     }
   ];
 
@@ -1031,6 +1103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setRevealOpen(classifyRevealBox, false);
     classifyRevealText.innerHTML = '';
     resetChoiceButtons(classifyChoices);
+    shuffleChoiceButtons(classifyChoices);
   }
 
   setupChoiceGroup(classifyChoices, (value) => {
@@ -1111,6 +1184,70 @@ document.addEventListener('DOMContentLoaded', function () {
       totalNegative: -3,
       atoms: 1,
       answerName: 'chromium(III) chloride'
+    },
+    {
+      formula: 'SnCl<sub>2</sub>',
+      metalName: 'tin',
+      charge: 2,
+      totalNegative: -2,
+      atoms: 1,
+      answerName: 'tin(II) chloride'
+    },
+    {
+      formula: 'Co<sub>2</sub>O<sub>3</sub>',
+      metalName: 'cobalt',
+      charge: 3,
+      totalNegative: -6,
+      atoms: 2,
+      answerName: 'cobalt(III) oxide'
+    },
+    {
+      formula: 'CuCl<sub>2</sub>',
+      metalName: 'copper',
+      charge: 2,
+      totalNegative: -2,
+      atoms: 1,
+      answerName: 'copper(II) chloride'
+    },
+    {
+      formula: 'FeO',
+      metalName: 'iron',
+      charge: 2,
+      totalNegative: -2,
+      atoms: 1,
+      answerName: 'iron(II) oxide'
+    },
+    {
+      formula: 'PbCl<sub>4</sub>',
+      metalName: 'lead',
+      charge: 4,
+      totalNegative: -4,
+      atoms: 1,
+      answerName: 'lead(IV) chloride'
+    },
+    {
+      formula: 'MnO<sub>2</sub>',
+      metalName: 'manganese',
+      charge: 4,
+      totalNegative: -4,
+      atoms: 1,
+      answerName: 'manganese(IV) oxide'
+    },
+    {
+      formula: 'Ni<sub>2</sub>O<sub>3</sub>',
+      metalName: 'nickel',
+      charge: 3,
+      totalNegative: -6,
+      atoms: 2,
+      answerName: 'nickel(III) oxide'
+    },
+    {
+      formula: 'Hg<sub>2</sub>Cl<sub>2</sub>',
+      metalName: 'mercury',
+      charge: 1,
+      totalNegative: -2,
+      atoms: 2,
+      answerName: 'mercury(I) chloride'
     }
   ];
 
@@ -1130,6 +1267,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setRevealOpen(romanRevealBox, false);
     romanRevealText.innerHTML = '';
     resetChoiceButtons(romanChoices);
+    shuffleChoiceButtons(romanChoices);
   }
 
   setupChoiceGroup(romanChoices, (value) => {
@@ -1209,6 +1347,54 @@ document.addEventListener('DOMContentLoaded', function () {
       ion: 'Cl<sup>−</sup> = chlorine ion',
       answer: 'ide',
       finalName: 'magnesium chloride'
+    },
+    {
+      formula: 'K<sub>2</sub>CO<sub>3</sub>',
+      ion: 'CO<sub>3</sub><sup>2−</sup> = carbonate',
+      answer: 'keep',
+      finalName: 'potassium carbonate'
+    },
+    {
+      formula: '(NH<sub>4</sub>)<sub>3</sub>PO<sub>4</sub>',
+      ion: 'NH<sub>4</sub><sup>+</sup> = ammonium',
+      answer: 'keep',
+      finalName: 'ammonium phosphate'
+    },
+    {
+      formula: 'Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>',
+      ion: 'SO<sub>4</sub><sup>2−</sup> = sulfate',
+      answer: 'keep',
+      finalName: 'aluminum sulfate'
+    },
+    {
+      formula: 'CaF<sub>2</sub>',
+      ion: 'F<sup>−</sup> = fluorine ion',
+      answer: 'ide',
+      finalName: 'calcium fluoride'
+    },
+    {
+      formula: 'K<sub>2</sub>S',
+      ion: 'S<sup>2−</sup> = sulfur ion',
+      answer: 'ide',
+      finalName: 'potassium sulfide'
+    },
+    {
+      formula: 'Li<sub>3</sub>N',
+      ion: 'N<sup>3−</sup> = nitrogen ion',
+      answer: 'ide',
+      finalName: 'lithium nitride'
+    },
+    {
+      formula: 'Al<sub>2</sub>O<sub>3</sub>',
+      ion: 'O<sup>2−</sup> = oxygen ion',
+      answer: 'ide',
+      finalName: 'aluminum oxide'
+    },
+    {
+      formula: 'NaBr',
+      ion: 'Br<sup>−</sup> = bromine ion',
+      answer: 'ide',
+      finalName: 'sodium bromide'
     }
   ];
 
@@ -1229,6 +1415,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setRevealOpen(polyRevealBox, false);
     polyRevealText.innerHTML = '';
     resetChoiceButtons(polyChoices);
+    shuffleChoiceButtons(polyChoices);
   }
 
   setupChoiceGroup(polyChoices, (value) => {
@@ -1305,6 +1492,54 @@ document.addEventListener('DOMContentLoaded', function () {
       answer: 'oxyacid',
       finalName: 'sulfurous acid',
       reveal: '<p>Oxygen is present, so this is an oxyacid.</p><p>The ion is sulfite. -ite becomes -ous acid.</p><p>Final name: <strong>sulfurous acid</strong>.</p>'
+    },
+    {
+      formula: 'HI(aq)',
+      answer: 'binary',
+      finalName: 'hydroiodic acid',
+      reveal: '<p>No oxygen is present, so this is a binary acid.</p><p>Use hydro- + iod + -ic acid.</p><p>Final name: <strong>hydroiodic acid</strong>.</p>'
+    },
+    {
+      formula: 'HF(aq)',
+      answer: 'binary',
+      finalName: 'hydrofluoric acid',
+      reveal: '<p>No oxygen is present, so this is a binary acid.</p><p>Use hydro- + fluor + -ic acid.</p><p>Final name: <strong>hydrofluoric acid</strong>.</p>'
+    },
+    {
+      formula: 'HCl(aq)',
+      answer: 'binary',
+      finalName: 'hydrochloric acid',
+      reveal: '<p>No oxygen is present, so this is a binary acid.</p><p>Use hydro- + chlor + -ic acid.</p><p>Final name: <strong>hydrochloric acid</strong>.</p>'
+    },
+    {
+      formula: 'HCN(aq)',
+      answer: 'binary',
+      finalName: 'hydrocyanic acid',
+      reveal: '<p>No oxygen is present, so this follows the binary acid pattern.</p><p>Use hydro- + cyan + -ic acid.</p><p>Final name: <strong>hydrocyanic acid</strong>.</p>'
+    },
+    {
+      formula: 'HNO<sub>2</sub>(aq)',
+      answer: 'oxyacid',
+      finalName: 'nitrous acid',
+      reveal: '<p>Oxygen is present, so this is an oxyacid.</p><p>The ion is nitrite. -ite becomes -ous acid.</p><p>Final name: <strong>nitrous acid</strong>.</p>'
+    },
+    {
+      formula: 'H<sub>2</sub>CO<sub>3</sub>(aq)',
+      answer: 'oxyacid',
+      finalName: 'carbonic acid',
+      reveal: '<p>Oxygen is present, so this is an oxyacid.</p><p>The ion is carbonate. -ate becomes -ic acid.</p><p>Final name: <strong>carbonic acid</strong>.</p>'
+    },
+    {
+      formula: 'HClO<sub>4</sub>(aq)',
+      answer: 'oxyacid',
+      finalName: 'perchloric acid',
+      reveal: '<p>Oxygen is present, so this is an oxyacid.</p><p>The ion is perchlorate. -ate becomes -ic acid while keeping the per- prefix.</p><p>Final name: <strong>perchloric acid</strong>.</p>'
+    },
+    {
+      formula: 'H<sub>3</sub>PO<sub>4</sub>(aq)',
+      answer: 'oxyacid',
+      finalName: 'phosphoric acid',
+      reveal: '<p>Oxygen is present, so this is an oxyacid.</p><p>The ion is phosphate. -ate becomes -ic acid.</p><p>Final name: <strong>phosphoric acid</strong>.</p>'
     }
   ];
 
@@ -1324,6 +1559,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setRevealOpen(acidRevealBox, false);
     acidRevealText.innerHTML = '';
     resetChoiceButtons(acidChoices);
+    shuffleChoiceButtons(acidChoices);
   }
 
   setupChoiceGroup(acidChoices, (value) => {

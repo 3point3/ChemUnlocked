@@ -696,6 +696,24 @@
 <script src="chem.js?v=20260509"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  function shuffleList(items) {
+    const copy = items.slice();
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function pickNextIndex(items, currentIndex) {
+    if (!items.length) return 0;
+    let nextIndex = Math.floor(Math.random() * items.length);
+    if (items.length > 1) {
+      while (nextIndex === currentIndex) nextIndex = Math.floor(Math.random() * items.length);
+    }
+    return nextIndex;
+  }
+
   const typeScenarios = [
     {
       equation: 'AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)',
@@ -752,6 +770,83 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="tool-subhead">Compare it to</div>
         <p>Combustion is identified by the role of O₂ and the oxide products, not just by the number of reactants.</p>
       `
+    },
+    {
+      equation: '2Mg + O₂ → 2MgO',
+      answer: 'synthesis',
+      feedbackCorrect: 'Right — two simpler reactants combine to make one product, so this is synthesis.',
+      feedbackIncorrect: 'Not quite — this pattern shows smaller pieces combining into one product.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Two reactants combine into a single product compound.</p><div class="tool-subhead">Pattern</div><p>A + B → AB</p><div class="tool-subhead">Compare it to</div><p>Decomposition would start with one reactant, not two.</p>`
+    },
+    {
+      equation: 'CaCO₃ → CaO + CO₂',
+      answer: 'decomposition',
+      feedbackCorrect: 'Right — one reactant breaks into simpler products, so this is decomposition.',
+      feedbackIncorrect: 'Not quite — look for the one-reactant clue. One compound is breaking apart.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>One reactant breaks into two simpler products.</p><div class="tool-subhead">Pattern</div><p>AB → A + B</p><div class="tool-subhead">Compare it to</div><p>Synthesis goes in the opposite direction.</p>`
+    },
+    {
+      equation: 'Cl₂ + 2KI → 2KCl + I₂',
+      answer: 'single',
+      feedbackCorrect: 'Right — chlorine replaces iodine in the compound, so this is single replacement.',
+      feedbackIncorrect: 'Not quite — a free element is taking the place of another element in a compound.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>A free element replaces another element in a compound.</p><div class="tool-subhead">Pattern</div><p>A + BC → AC + B</p><div class="tool-subhead">Compare it to</div><p>Double replacement would start with two compounds.</p>`
+    },
+    {
+      equation: 'C₃H₈ + 5O₂ → 3CO₂ + 4H₂O',
+      answer: 'combustion',
+      feedbackCorrect: 'Right — oxygen reacts with a hydrocarbon to make CO₂ and H₂O, so this is combustion.',
+      feedbackIncorrect: 'Not quite — O₂ as a reactant plus CO₂ and H₂O as products is the combustion pattern.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>O₂ is a reactant and the products are carbon dioxide and water.</p><div class="tool-subhead">Pattern</div><p>fuel + O₂ → CO₂ + H₂O</p><div class="tool-subhead">Compare it to</div><p>This is identified by the oxygen/fuel pattern, not just by having two reactants.</p>`
+    },
+    {
+      equation: '2Na + Cl₂ → 2NaCl',
+      answer: 'synthesis',
+      feedbackCorrect: 'Right — the reactants join to make one compound, so this is synthesis.',
+      feedbackIncorrect: 'Not quite — this is a combine-into-one-product pattern, which is synthesis.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Two reactants combine into a single product.</p><div class="tool-subhead">Pattern</div><p>A + B → AB</p><div class="tool-subhead">Compare it to</div><p>Single replacement would produce a free element as a product.</p>`
+    },
+    {
+      equation: '2HgO → 2Hg + O₂',
+      answer: 'decomposition',
+      feedbackCorrect: 'Right — one reactant breaks apart, so this is decomposition.',
+      feedbackIncorrect: 'Not quite — a single compound is breaking down into simpler substances.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>There is one reactant only, and it breaks into simpler products.</p><div class="tool-subhead">Pattern</div><p>AB → A + B</p><div class="tool-subhead">Compare it to</div><p>Synthesis would have one product instead of one reactant.</p>`
+    },
+    {
+      equation: 'Fe + CuSO₄ → FeSO₄ + Cu',
+      answer: 'single',
+      feedbackCorrect: 'Right — iron replaces copper in the compound, so this is single replacement.',
+      feedbackIncorrect: 'Not quite — one free element is replacing another element in a compound.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Iron starts free and takes copper’s place in the compound.</p><div class="tool-subhead">Pattern</div><p>A + BC → AC + B</p><div class="tool-subhead">Compare it to</div><p>Double replacement would begin with two ionic compounds.</p>`
+    },
+    {
+      equation: '2H₂ + O₂ → 2H₂O',
+      answer: 'synthesis',
+      feedbackCorrect: 'Right — hydrogen and oxygen combine to form one product, so this is synthesis.',
+      feedbackIncorrect: 'Not quite — this reaction combines simpler substances into one compound.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Two reactants join to make one product.</p><div class="tool-subhead">Pattern</div><p>A + B → AB</p><div class="tool-subhead">Compare it to</div><p>Combustion usually involves a fuel producing CO₂ and H₂O.</p>`
+    },
+    {
+      equation: '2NaHCO₃ → Na₂CO₃ + CO₂ + H₂O',
+      answer: 'decomposition',
+      feedbackCorrect: 'Right — one reactant breaks apart into several products, so this is decomposition.',
+      feedbackIncorrect: 'Not quite — the one-reactant clue points to decomposition.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Only one reactant is present, and it breaks into multiple products.</p><div class="tool-subhead">Pattern</div><p>AB → A + B + ...</p><div class="tool-subhead">Compare it to</div><p>Synthesis would move toward fewer formulas, not more.</p>`
+    },
+    {
+      equation: '2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O',
+      answer: 'combustion',
+      feedbackCorrect: 'Right — a hydrocarbon reacts with O₂ to form CO₂ and H₂O, so this is combustion.',
+      feedbackIncorrect: 'Not quite — hydrocarbon plus oxygen making CO₂ and H₂O is the combustion pattern.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Ethane reacts with oxygen and makes carbon dioxide and water.</p><div class="tool-subhead">Pattern</div><p>fuel + O₂ → CO₂ + H₂O</p><div class="tool-subhead">Compare it to</div><p>This is the standard hydrocarbon combustion pattern.</p>`
+    },
+    {
+      equation: 'Pb(NO₃)₂(aq) + 2KI(aq) → PbI₂(s) + 2KNO₃(aq)',
+      answer: 'double',
+      feedbackCorrect: 'Right — the ions swap partners, so this is double replacement.',
+      feedbackIncorrect: 'Not quite — two ionic compounds are exchanging ions here.',
+      revealHtml: `<div class="tool-subhead">Key clue</div><p>Two compounds switch ions and make a new pair of compounds.</p><div class="tool-subhead">Pattern</div><p>AB + CD → AD + CB</p><div class="tool-subhead">Compare it to</div><p>Single replacement would involve one free element, not two compounds.</p>`
     }
   ];
 
@@ -848,6 +943,78 @@ document.addEventListener('DOMContentLoaded', function () {
           <li>Group 1 salts such as KCl are soluble, so both products stay dissolved and <strong>no precipitate forms</strong>.</li>
         </ol>
       `
+    },
+    {
+      equation: 'Pb(NO₃)₂(aq) + 2KI(aq) → PbI₂ + 2KNO₃',
+      answer: 'PbI₂',
+      choices: ['PbI₂', 'KNO₃', 'No precipitate'],
+      feedbackCorrect: 'Right — lead(II) iodide is insoluble, so it forms the precipitate.',
+      feedbackIncorrect: 'Not quite — nitrates stay soluble, but PbI₂ is an insoluble iodide.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict PbI₂ and KNO₃.</li><li>All nitrates are soluble, so KNO₃ stays aqueous.</li><li>PbI₂ is insoluble, so <strong>PbI₂(s)</strong> is the precipitate.</li></ol>`
+    },
+    {
+      equation: 'CaCl₂(aq) + Na₂CO₃(aq) → CaCO₃ + 2NaCl',
+      answer: 'CaCO₃',
+      choices: ['CaCO₃', 'NaCl', 'No precipitate'],
+      feedbackCorrect: 'Right — calcium carbonate is insoluble, so it precipitates.',
+      feedbackIncorrect: 'Not quite — sodium salts stay soluble, but CaCO₃ is insoluble.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict CaCO₃ and NaCl.</li><li>Group 1 salts such as NaCl stay soluble.</li><li>Carbonates are usually insoluble unless paired with Group 1 or NH₄⁺, so <strong>CaCO₃(s)</strong> precipitates.</li></ol>`
+    },
+    {
+      equation: 'Na₂SO₄(aq) + KNO₃(aq) → K₂SO₄ + NaNO₃',
+      answer: 'No precipitate',
+      choices: ['K₂SO₄', 'NaNO₃', 'No precipitate'],
+      feedbackCorrect: 'Right — both predicted products stay soluble, so no precipitate forms.',
+      feedbackIncorrect: 'Not quite — Group 1 salts and nitrates stay soluble, so no solid forms here.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict K₂SO₄ and NaNO₃.</li><li>NaNO₃ is soluble because all nitrates dissolve.</li><li>K₂SO₄ is a Group 1 salt and stays soluble, so <strong>no precipitate forms</strong>.</li></ol>`
+    },
+    {
+      equation: 'CuSO₄(aq) + 2NaOH(aq) → Cu(OH)₂ + Na₂SO₄',
+      answer: 'Cu(OH)₂',
+      choices: ['Cu(OH)₂', 'Na₂SO₄', 'No precipitate'],
+      feedbackCorrect: 'Right — copper(II) hydroxide is insoluble, so it precipitates.',
+      feedbackIncorrect: 'Not quite — hydroxides are often insoluble except for Group 1 and some Group 2 cases. Cu(OH)₂ forms the solid.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict Cu(OH)₂ and Na₂SO₄.</li><li>Sodium sulfate stays dissolved.</li><li>Copper(II) hydroxide is insoluble, so <strong>Cu(OH)₂(s)</strong> is the precipitate.</li></ol>`
+    },
+    {
+      equation: 'MgCl₂(aq) + Na₂CO₃(aq) → MgCO₃ + 2NaCl',
+      answer: 'MgCO₃',
+      choices: ['MgCO₃', 'NaCl', 'No precipitate'],
+      feedbackCorrect: 'Right — magnesium carbonate is insoluble, so it precipitates.',
+      feedbackIncorrect: 'Not quite — sodium salts stay soluble, but MgCO₃ is insoluble.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict MgCO₃ and NaCl.</li><li>NaCl stays aqueous.</li><li>Most carbonates are insoluble, so <strong>MgCO₃(s)</strong> precipitates.</li></ol>`
+    },
+    {
+      equation: 'NaCl(aq) + KBr(aq) → NaBr + KCl',
+      answer: 'No precipitate',
+      choices: ['NaBr', 'KCl', 'No precipitate'],
+      feedbackCorrect: 'Right — all predicted products stay soluble, so no precipitate forms.',
+      feedbackIncorrect: 'Not quite — Group 1 salts stay soluble, so neither product forms a solid.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict NaBr and KCl.</li><li>Both are Group 1 salts and stay soluble.</li><li>So <strong>no precipitate forms</strong>.</li></ol>`
+    },
+    {
+      equation: 'AgNO₃(aq) + Na₂CO₃(aq) → Ag₂CO₃ + NaNO₃',
+      answer: 'Ag₂CO₃',
+      choices: ['Ag₂CO₃', 'NaNO₃', 'No precipitate'],
+      feedbackCorrect: 'Right — silver carbonate is insoluble, so it precipitates.',
+      feedbackIncorrect: 'Not quite — nitrates stay soluble, but Ag₂CO₃ is insoluble.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict Ag₂CO₃ and NaNO₃.</li><li>NaNO₃ stays aqueous because nitrates are soluble.</li><li>Most carbonates are insoluble, so <strong>Ag₂CO₃(s)</strong> precipitates.</li></ol>`
+    },
+    {
+      equation: 'BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄ + 2NaCl',
+      answer: 'BaSO₄',
+      choices: ['BaSO₄', 'NaCl', 'No precipitate'],
+      feedbackCorrect: 'Right — barium sulfate is insoluble, so it precipitates.',
+      feedbackIncorrect: 'Not quite — sodium salts stay soluble, but BaSO₄ is an insoluble sulfate exception.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict BaSO₄ and NaCl.</li><li>NaCl stays dissolved.</li><li>BaSO₄ is insoluble, so <strong>BaSO₄(s)</strong> precipitates.</li></ol>`
+    },
+    {
+      equation: 'NH₄Cl(aq) + NaNO₃(aq) → NH₄NO₃ + NaCl',
+      answer: 'No precipitate',
+      choices: ['NH₄NO₃', 'NaCl', 'No precipitate'],
+      feedbackCorrect: 'Right — ammonium salts, nitrates, and sodium salts stay soluble, so no precipitate forms.',
+      feedbackIncorrect: 'Not quite — both predicted products remain soluble here.',
+      revealHtml: `<ol class="tool-steps"><li>Swap ions to predict NH₄NO₃ and NaCl.</li><li>Ammonium salts and nitrates are soluble.</li><li>NaCl also stays soluble, so <strong>no precipitate forms</strong>.</li></ol>`
     }
   ];
 
@@ -902,8 +1069,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       },
       setChoices(newChoices) {
-        buttons.forEach((button, index) => {
-          const choice = newChoices[index];
+        const orderedChoices = shuffleList(newChoices);
+        orderedChoices.forEach((choice, index) => {
+          const button = buttons[index];
           button.dataset.choice = choice;
           button.textContent = choice;
         });
@@ -925,7 +1093,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function nextScenario(currentIndex, total) {
-    return (currentIndex + 1) % total;
+    if (total <= 1) return 0;
+    let nextIndex = Math.floor(Math.random() * total);
+    while (nextIndex === currentIndex) nextIndex = Math.floor(Math.random() * total);
+    return nextIndex;
   }
 
   /* ── Tool A: Reaction Type Identifier ── */

@@ -946,6 +946,116 @@ reveal:[
 "<strong>What changes:</strong> volume and amount of gas",
 "<strong>Best match:</strong> Avogadro's Law — equal volumes at the same T and P contain equal numbers of molecules, and volume is directly proportional to n."
 ]
+},
+{
+scenario:"A gas sample in a sealed cylinder expands from 1.5 L to 3.0 L while the temperature stays constant and the amount of gas does not change.",
+correct:"boyle",
+correctFeedback:"Right — pressure and volume change while temperature and amount stay constant, so Boyle's Law applies.",
+incorrectFeedback:"Not quite — if temperature and amount are constant, the pressure-volume relationship is Boyle's Law.",
+reveal:[
+"<strong>What stays constant:</strong> temperature and amount of gas",
+"<strong>What changes:</strong> pressure and volume",
+"<strong>Best match:</strong> Boyle's Law relates pressure and volume inversely when T and n stay constant."
+]
+},
+{
+scenario:"A gas in a flexible container cools from 500 K to 250 K while the pressure stays constant and no gas is added or removed.",
+correct:"charles",
+correctFeedback:"Right — volume changes with Kelvin temperature at constant pressure, so Charles's Law applies.",
+incorrectFeedback:"Not quite — constant pressure points to the volume-temperature relationship in Charles's Law.",
+reveal:[
+"<strong>What stays constant:</strong> pressure and amount of gas",
+"<strong>What changes:</strong> volume and temperature",
+"<strong>Best match:</strong> Charles's Law connects V and T when P and n stay constant."
+]
+},
+{
+scenario:"A rigid aerosol can sits in the sun and its temperature rises while the amount of gas and volume stay constant.",
+correct:"gay",
+correctFeedback:"Right — pressure changes with temperature in a rigid container, so Gay-Lussac's Law applies.",
+incorrectFeedback:"Not quite — a rigid container means volume is constant. The pressure-temperature law is Gay-Lussac's Law.",
+reveal:[
+"<strong>What stays constant:</strong> volume and amount of gas",
+"<strong>What changes:</strong> pressure and temperature",
+"<strong>Best match:</strong> Gay-Lussac's Law relates P and T at constant V and n."
+]
+},
+{
+scenario:"One sample of gas changes from 0.95 atm, 2.5 L, 280 K to a new state with different pressure, volume, and temperature. No gas enters or leaves.",
+correct:"combined",
+correctFeedback:"Right — this is a same-sample state change with constant amount of gas, so the Combined Gas Law applies.",
+incorrectFeedback:"Not quite — a state 1 to state 2 comparison for the same sample points to the Combined Gas Law.",
+reveal:[
+"<strong>What stays constant:</strong> amount of gas",
+"<strong>What changes:</strong> pressure, volume, and temperature",
+"<strong>Best match:</strong> The Combined Gas Law compares two states when n stays constant."
+]
+},
+{
+scenario:"A gas is measured at 2.20 atm, 5.00 L, and 315 K, and you need to find the number of moles present from that one set of conditions.",
+correct:"ideal",
+correctFeedback:"Right — a single-state problem with P, V, and T known uses the Ideal Gas Law.",
+incorrectFeedback:"Not quite — nothing is changing from state 1 to state 2 here. Use PV = nRT for a single state.",
+reveal:[
+"<strong>What is known:</strong> pressure, volume, and temperature",
+"<strong>What you're solving for:</strong> moles",
+"<strong>Best match:</strong> The Ideal Gas Law connects all four variables in one state."
+]
+},
+{
+scenario:"At constant temperature and pressure, a gas sample doubles from 0.40 mol to 0.80 mol and its volume doubles too.",
+correct:"avogadro",
+correctFeedback:"Right — volume is directly proportional to amount of gas when temperature and pressure stay constant, so Avogadro's Law applies.",
+incorrectFeedback:"Not quite — if T and P stay constant and only n and V change together, that is Avogadro's Law.",
+reveal:[
+"<strong>What stays constant:</strong> temperature and pressure",
+"<strong>What changes:</strong> amount of gas and volume",
+"<strong>Best match:</strong> Avogadro's Law relates V and n directly at constant T and P."
+]
+},
+{
+scenario:"A gas sample in a piston changes pressure as its temperature changes, but the piston is free to move and the amount of gas stays fixed.",
+correct:"combined",
+correctFeedback:"Right — both pressure and temperature change and the volume may change too, so this is handled by the Combined Gas Law for one sample.",
+incorrectFeedback:"Not quite — because more than one variable changes for the same sample, use the Combined Gas Law instead of a simpler special case.",
+reveal:[
+"<strong>What stays constant:</strong> amount of gas",
+"<strong>What changes:</strong> at least pressure and temperature, and volume is not fixed",
+"<strong>Best match:</strong> The Combined Gas Law is the general one-sample relation when n stays constant."
+]
+},
+{
+scenario:"A gas sample in a fixed-volume bulb cools down, and you want to predict how its pressure changes while no gas escapes.",
+correct:"gay",
+correctFeedback:"Right — with constant volume and amount, pressure follows temperature by Gay-Lussac's Law.",
+incorrectFeedback:"Not quite — the key phrase is fixed volume. That means use Gay-Lussac's Law.",
+reveal:[
+"<strong>What stays constant:</strong> volume and amount of gas",
+"<strong>What changes:</strong> pressure and temperature",
+"<strong>Best match:</strong> Gay-Lussac's Law links P and T at constant V."
+]
+},
+{
+scenario:"A weather balloon rises and the outside pressure drops while the gas temperature stays nearly constant and no gas escapes.",
+correct:"boyle",
+correctFeedback:"Right — at roughly constant temperature and amount, pressure and volume follow Boyle's Law.",
+incorrectFeedback:"Not quite — if temperature and amount stay the same, pressure-volume changes are described by Boyle's Law.",
+reveal:[
+"<strong>What stays constant:</strong> temperature and amount of gas",
+"<strong>What changes:</strong> pressure and volume",
+"<strong>Best match:</strong> Boyle's Law describes the inverse P-V relationship."
+]
+},
+{
+scenario:"A sample of gas is heated in a balloon that can expand freely while pressure stays equal to the outside atmosphere.",
+correct:"charles",
+correctFeedback:"Right — a freely expanding balloon keeps pressure about constant, so the volume-temperature relationship is Charles's Law.",
+incorrectFeedback:"Not quite — constant pressure makes this a Charles's Law situation, not Gay-Lussac's.",
+reveal:[
+"<strong>What stays constant:</strong> pressure and amount of gas",
+"<strong>What changes:</strong> temperature and volume",
+"<strong>Best match:</strong> Charles's Law relates V and T at constant pressure."
+]
 }
 ];
 
@@ -996,6 +1106,150 @@ reveal:[
 "52&deg;C must be converted to <strong>325 K</strong>.",
 "Pressure is already in <strong>atm</strong>, so use <strong>R = 0.08206 L·atm·mol⁻¹·K⁻¹</strong>.",
 "The valid setup is <strong>n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">1.50 atm × 4.20 L</span><span class=\"formula-frac-d\">0.08206 × 325 K</span></span></strong>."
+]
+},
+{
+problem:"A gas sample has P = 650 mmHg, V = 1.25 L, and T = 40&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.855 atm × 1.25 L</span><span class=\"formula-frac-d\">0.08206 × 313 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">650 mmHg × 1.25 L</span><span class=\"formula-frac-d\">0.08206 × 313 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.855 atm × 1.25 L</span><span class=\"formula-frac-d\">8.314 × 40</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — the pressure was converted to atm, the temperature was converted to Kelvin, and the gas constant matches those units.",
+incorrectFeedback:"Not quite — you need Kelvin temperature and a pressure unit that matches R. Recheck both conversions.",
+reveal:[
+"40&deg;C becomes <strong>313 K</strong>.",
+"650 mmHg becomes about <strong>0.855 atm</strong> when using <strong>R = 0.08206</strong>.",
+"That makes choice A the valid setup."
+]
+},
+{
+problem:"A gas sample has P = 98.0 kPa, V = 3.50 L, and T = 18&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">98.0 kPa × 3.50 L</span><span class=\"formula-frac-d\">8.314 × 291 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">98.0 atm × 3.50 L</span><span class=\"formula-frac-d\">0.08206 × 291 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">98.0 kPa × 3.50 L</span><span class=\"formula-frac-d\">8.314 × 18</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — kPa matches R = 8.314, and the temperature has been converted to Kelvin.",
+incorrectFeedback:"Not quite — do not leave temperature in Celsius, and do not switch kPa to atm unless you also change R.",
+reveal:[
+"18&deg;C becomes <strong>291 K</strong>.",
+"Pressure is already in <strong>kPa</strong>, so use <strong>R = 8.314 L·kPa·mol⁻¹·K⁻¹</strong>.",
+"That makes choice A the valid setup."
+]
+},
+{
+problem:"A gas sample has P = 2.40 atm, V = 0.850 L, and T = 12&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">2.40 atm × 0.850 L</span><span class=\"formula-frac-d\">0.08206 × 285 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">2.40 atm × 0.850 L</span><span class=\"formula-frac-d\">8.314 × 285 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">2.40 atm × 0.850 L</span><span class=\"formula-frac-d\">0.08206 × 12</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — this setup uses Kelvin and the atm-based gas constant correctly.",
+incorrectFeedback:"Not quite — atm goes with 0.08206, and Celsius cannot go directly into PV = nRT.",
+reveal:[
+"12&deg;C becomes <strong>285 K</strong>.",
+"Pressure is already in <strong>atm</strong>, so <strong>R = 0.08206</strong> is appropriate.",
+"That makes choice A correct."
+]
+},
+{
+problem:"A gas sample has P = 110.0 kPa, V = 1.80 L, and T = 325 K. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">110.0 kPa × 1.80 L</span><span class=\"formula-frac-d\">8.314 × 325 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">110.0 kPa × 1.80 L</span><span class=\"formula-frac-d\">0.08206 × 325 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">110.0 atm × 1.80 L</span><span class=\"formula-frac-d\">8.314 × 325 K</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — pressure in kPa matches the 8.314 gas constant, and the temperature is already in Kelvin.",
+incorrectFeedback:"Not quite — the pressure unit must match the gas constant, and the given pressure is kPa, not atm.",
+reveal:[
+"Temperature is already in <strong>Kelvin</strong>.",
+"Pressure is already in <strong>kPa</strong>, so use <strong>R = 8.314</strong>.",
+"That makes choice A the valid setup."
+]
+},
+{
+problem:"A gas sample has P = 720 mmHg, V = 2.25 L, and T = 35&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.947 atm × 2.25 L</span><span class=\"formula-frac-d\">0.08206 × 308 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">720 mmHg × 2.25 L</span><span class=\"formula-frac-d\">8.314 × 308 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.947 atm × 2.25 L</span><span class=\"formula-frac-d\">0.08206 × 35</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — the pressure was converted to atm, the temperature to Kelvin, and the gas constant matches.",
+incorrectFeedback:"Not quite — check both conversions. You need Kelvin and a pressure unit that matches R.",
+reveal:[
+"35&deg;C becomes <strong>308 K</strong>.",
+"720 mmHg becomes about <strong>0.947 atm</strong> when using <strong>R = 0.08206</strong>.",
+"That makes choice A the valid setup."
+]
+},
+{
+problem:"A gas sample has P = 88.5 kPa, V = 5.00 L, and T = 44&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">88.5 kPa × 5.00 L</span><span class=\"formula-frac-d\">8.314 × 317 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">88.5 atm × 5.00 L</span><span class=\"formula-frac-d\">0.08206 × 317 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">88.5 kPa × 5.00 L</span><span class=\"formula-frac-d\">8.314 × 44</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — this uses Kelvin temperature and keeps kPa matched with R = 8.314.",
+incorrectFeedback:"Not quite — Celsius cannot go directly into the equation, and the pressure unit must stay consistent with the gas constant.",
+reveal:[
+"44&deg;C becomes <strong>317 K</strong>.",
+"Pressure is already in <strong>kPa</strong>, so use <strong>R = 8.314</strong>.",
+"That makes choice A correct."
+]
+},
+{
+problem:"A gas sample has P = 0.850 atm, V = 6.40 L, and T = 295 K. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.850 atm × 6.40 L</span><span class=\"formula-frac-d\">0.08206 × 295 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.850 kPa × 6.40 L</span><span class=\"formula-frac-d\">8.314 × 295 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">0.850 atm × 6.40 L</span><span class=\"formula-frac-d\">0.08206 × 22</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — atm pairs with 0.08206 and the temperature is already in Kelvin.",
+incorrectFeedback:"Not quite — use the gas constant that matches atm, and do not convert 295 K into Celsius for the equation.",
+reveal:[
+"Temperature is already in <strong>Kelvin</strong>.",
+"Pressure is already in <strong>atm</strong>, so use <strong>R = 0.08206</strong>.",
+"That makes choice A the correct setup."
+]
+},
+{
+problem:"A gas sample has P = 103.0 kPa, V = 0.950 L, and T = 5&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">103.0 kPa × 0.950 L</span><span class=\"formula-frac-d\">8.314 × 278 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">103.0 kPa × 0.950 L</span><span class=\"formula-frac-d\">0.08206 × 278 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">103.0 atm × 0.950 L</span><span class=\"formula-frac-d\">8.314 × 278 K</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — kPa matches 8.314, and 5&deg;C must be converted to 278 K first.",
+incorrectFeedback:"Not quite — the temperature has to be Kelvin and the pressure unit has to match the chosen value of R.",
+reveal:[
+"5&deg;C becomes <strong>278 K</strong>.",
+"Pressure stays in <strong>kPa</strong>, so use <strong>R = 8.314</strong>.",
+"That makes choice A correct."
+]
+},
+{
+problem:"A gas sample has P = 1.10 atm, V = 3.00 L, and T = 60&deg;C. You want to solve for moles.",
+options:{
+a:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">1.10 atm × 3.00 L</span><span class=\"formula-frac-d\">0.08206 × 333 K</span></span>",
+b:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">1.10 atm × 3.00 L</span><span class=\"formula-frac-d\">8.314 × 333 K</span></span>",
+c:"n = <span class=\"formula-frac\"><span class=\"formula-frac-n\">1.10 atm × 3.00 L</span><span class=\"formula-frac-d\">0.08206 × 60</span></span>"
+},
+correct:"a",
+correctFeedback:"Right — that setup converts temperature to Kelvin and keeps atm matched with 0.08206.",
+incorrectFeedback:"Not quite — the equation requires Kelvin, and the gas constant must match the pressure unit.",
+reveal:[
+"60&deg;C becomes <strong>333 K</strong>.",
+"Pressure is already in <strong>atm</strong>, so use <strong>R = 0.08206</strong>.",
+"That makes choice A the valid setup."
 ]
 }
 ];
@@ -1056,6 +1310,146 @@ reveal:[
 "Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
+},
+{
+sampleA:"1.0 L of HCl at the same T and P",
+sampleB:"1.0 L of HBr at the same T and P",
+correct:"same",
+correctFeedback:"Right — equal volumes mean equal numbers of molecules, and each molecule contains one hydrogen atom.",
+incorrectFeedback:"Not quite — start with equal molecules, then compare hydrogen atoms per molecule. Each molecule here has one hydrogen.",
+revealTitle:"Why both samples have the same number of hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each HCl molecule has <strong>1 hydrogen atom</strong>.",
+"Each HBr molecule also has <strong>1 hydrogen atom</strong>.",
+"So both samples contain the same number of hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
+sampleB:"1.0 L of CH<sub>4</sub> at the same T and P",
+correct:"a",
+correctFeedback:"Right — equal volumes contain equal molecules, and C₂H₆ has 6 hydrogen atoms per molecule while CH₄ has 4.",
+incorrectFeedback:"Not quite — compare hydrogen atoms per molecule after you use Avogadro's Law to match molecule counts.",
+revealTitle:"Why Sample A has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
+"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"So Sample A has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of H<sub>2</sub> at the same T and P",
+sampleB:"1.0 L of NH<sub>3</sub> at the same T and P",
+correct:"b",
+correctFeedback:"Right — equal volumes mean equal molecules, and NH₃ has 3 hydrogen atoms per molecule while H₂ has 2.",
+incorrectFeedback:"Not quite — use Avogadro's Law first, then compare hydrogen atoms inside each molecule.",
+revealTitle:"Why Sample B has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
+"Each NH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"So Sample B has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of C<sub>2</sub>H<sub>2</sub> at the same T and P",
+sampleB:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
+correct:"b",
+correctFeedback:"Right — equal volumes give equal molecules, and C₂H₆ has more hydrogen atoms per molecule than C₂H₂.",
+incorrectFeedback:"Not quite — the comparison depends on hydrogen atoms per molecule after you match the number of molecules.",
+revealTitle:"Why Sample B has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each C<sub>2</sub>H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
+"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
+"So Sample B has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of H<sub>2</sub>O vapor at the same T and P",
+sampleB:"1.0 L of NH<sub>3</sub> at the same T and P",
+correct:"b",
+correctFeedback:"Right — equal volumes mean equal molecules, and NH₃ has 3 H atoms per molecule while H₂O has 2.",
+incorrectFeedback:"Not quite — compare the number of hydrogen atoms in each molecule after using Avogadro's Law.",
+revealTitle:"Why Sample B has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each H<sub>2</sub>O molecule has <strong>2 hydrogen atoms</strong>.",
+"Each NH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"So Sample B has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of CH<sub>4</sub> at the same T and P",
+sampleB:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
+correct:"b",
+correctFeedback:"Right — equal volumes give equal numbers of molecules, and C₂H₆ has more H atoms per molecule than CH₄.",
+incorrectFeedback:"Not quite — use equal molecules first, then compare the formulas for hydrogen count.",
+revealTitle:"Why Sample B has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
+"So Sample B has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of HF at the same T and P",
+sampleB:"1.0 L of CH<sub>4</sub> at the same T and P",
+correct:"b",
+correctFeedback:"Right — equal volumes mean equal molecules, and CH₄ has 4 hydrogen atoms per molecule while HF has only 1.",
+incorrectFeedback:"Not quite — the molecule counts are equal, so compare how many hydrogen atoms each molecule contains.",
+revealTitle:"Why Sample B has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each HF molecule has <strong>1 hydrogen atom</strong>.",
+"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"So Sample B has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of H<sub>2</sub>S at the same T and P",
+sampleB:"1.0 L of C<sub>2</sub>H<sub>2</sub> at the same T and P",
+correct:"same",
+correctFeedback:"Right — equal volumes mean equal molecules, and both molecules contain 2 hydrogen atoms each.",
+incorrectFeedback:"Not quite — after you match molecule counts, compare hydrogen atoms in each formula. Both have 2 H atoms.",
+revealTitle:"Why both samples have the same number of hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each H<sub>2</sub>S molecule has <strong>2 hydrogen atoms</strong>.",
+"Each C<sub>2</sub>H<sub>2</sub> molecule also has <strong>2 hydrogen atoms</strong>.",
+"So both samples contain the same number of hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of PH<sub>3</sub> at the same T and P",
+sampleB:"1.0 L of HCl at the same T and P",
+correct:"a",
+correctFeedback:"Right — equal volumes give equal molecules, and PH₃ has 3 hydrogen atoms per molecule while HCl has 1.",
+incorrectFeedback:"Not quite — compare hydrogen atoms per molecule after matching the number of molecules.",
+revealTitle:"Why Sample A has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each PH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"Each HCl molecule has <strong>1 hydrogen atom</strong>.",
+"So Sample A has more hydrogen atoms."
+]
+},
+{
+sampleA:"1.0 L of CH<sub>3</sub>OH vapor at the same T and P",
+sampleB:"1.0 L of H<sub>2</sub>O vapor at the same T and P",
+correct:"a",
+correctFeedback:"Right — equal volumes mean equal molecules, and CH₃OH has 4 hydrogen atoms per molecule while H₂O has 2.",
+incorrectFeedback:"Not quite — first match molecules with Avogadro's Law, then compare the formulas for total hydrogen atoms.",
+revealTitle:"Why Sample A has more hydrogen atoms",
+reveal:[
+"Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
+"Each CH<sub>3</sub>OH molecule has <strong>4 hydrogen atoms</strong>.",
+"Each H<sub>2</sub>O molecule has <strong>2 hydrogen atoms</strong>.",
+"So Sample A has more hydrogen atoms."
+]
 }
 ];
 
@@ -1101,13 +1495,164 @@ reveal:[
 "<strong>780.0 − 31.8 = 748.2 mmHg</strong>",
 "Use <strong>748.2 mmHg</strong> as the pressure of dry N<sub>2</sub>."
 ]
+},
+{
+measured:"730 mmHg",
+vapor:"21.1 mmHg",
+gas:"H<sub>2</sub>",
+options:{total:"730 mmHg",vapor:"21.1 mmHg",dry:"708.9 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtract the water vapor pressure from the measured pressure to get the dry hydrogen pressure.",
+incorrectFeedback:"Not quite — the measured pressure includes both hydrogen and water vapor. Subtract the vapor pressure first.",
+reveal:[
+"Measured pressure = hydrogen gas + water vapor.",
+"<strong>730.0 − 21.1 = 708.9 mmHg</strong>",
+"Use <strong>708.9 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+]
+},
+{
+measured:"765 mmHg",
+vapor:"19.8 mmHg",
+gas:"O<sub>2</sub>",
+options:{total:"765 mmHg",vapor:"19.8 mmHg",dry:"745.2 mmHg"},
+correct:"dry",
+correctFeedback:"Right — the dry oxygen pressure is the total measured pressure minus the water vapor pressure.",
+incorrectFeedback:"Not quite — total pressure includes water vapor, so subtract it before using the gas pressure.",
+reveal:[
+"Measured pressure = oxygen gas + water vapor.",
+"<strong>765.0 − 19.8 = 745.2 mmHg</strong>",
+"Use <strong>745.2 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+]
+},
+{
+measured:"748 mmHg",
+vapor:"24.0 mmHg",
+gas:"CO<sub>2</sub>",
+options:{total:"748 mmHg",vapor:"24.0 mmHg",dry:"724.0 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtracting the water vapor pressure gives the pressure of dry CO₂.",
+incorrectFeedback:"Not quite — the measured pressure is a mixture pressure. Remove the water vapor part first.",
+reveal:[
+"Measured pressure = carbon dioxide + water vapor.",
+"<strong>748.0 − 24.0 = 724.0 mmHg</strong>",
+"Use <strong>724.0 mmHg</strong> as the pressure of dry CO<sub>2</sub>."
+]
+},
+{
+measured:"770 mmHg",
+vapor:"29.9 mmHg",
+gas:"H<sub>2</sub>",
+options:{total:"770 mmHg",vapor:"29.9 mmHg",dry:"740.1 mmHg"},
+correct:"dry",
+correctFeedback:"Right — the dry hydrogen pressure is found by subtraction.",
+incorrectFeedback:"Not quite — total collected pressure includes both the gas and water vapor, so subtract the vapor pressure.",
+reveal:[
+"Measured pressure = hydrogen gas + water vapor.",
+"<strong>770.0 − 29.9 = 740.1 mmHg</strong>",
+"Use <strong>740.1 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+]
+},
+{
+measured:"735 mmHg",
+vapor:"18.7 mmHg",
+gas:"N<sub>2</sub>",
+options:{total:"735 mmHg",vapor:"18.7 mmHg",dry:"716.3 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtract the water vapor pressure to isolate the dry nitrogen pressure.",
+incorrectFeedback:"Not quite — the measured pressure is not pure nitrogen yet. Remove the water vapor contribution first.",
+reveal:[
+"Measured pressure = nitrogen gas + water vapor.",
+"<strong>735.0 − 18.7 = 716.3 mmHg</strong>",
+"Use <strong>716.3 mmHg</strong> as the pressure of dry N<sub>2</sub>."
+]
+},
+{
+measured:"790 mmHg",
+vapor:"32.9 mmHg",
+gas:"O<sub>2</sub>",
+options:{total:"790 mmHg",vapor:"32.9 mmHg",dry:"757.1 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtracting the water vapor pressure gives the pressure of dry oxygen.",
+incorrectFeedback:"Not quite — Dalton's law says the measured pressure is the sum of oxygen and water vapor pressures.",
+reveal:[
+"Measured pressure = oxygen gas + water vapor.",
+"<strong>790.0 − 32.9 = 757.1 mmHg</strong>",
+"Use <strong>757.1 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+]
+},
+{
+measured:"752 mmHg",
+vapor:"20.4 mmHg",
+gas:"He",
+options:{total:"752 mmHg",vapor:"20.4 mmHg",dry:"731.6 mmHg"},
+correct:"dry",
+correctFeedback:"Right — the dry helium pressure is the measured pressure minus the water vapor pressure.",
+incorrectFeedback:"Not quite — subtract the water vapor part from the total to get the dry gas pressure.",
+reveal:[
+"Measured pressure = helium + water vapor.",
+"<strong>752.0 − 20.4 = 731.6 mmHg</strong>",
+"Use <strong>731.6 mmHg</strong> as the pressure of dry He."
+]
+},
+{
+measured:"744 mmHg",
+vapor:"22.4 mmHg",
+gas:"H<sub>2</sub>",
+options:{total:"744 mmHg",vapor:"22.4 mmHg",dry:"721.6 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtracting the vapor pressure gives the dry hydrogen pressure.",
+incorrectFeedback:"Not quite — the total reading contains water vapor too, so subtract it before using the gas pressure.",
+reveal:[
+"Measured pressure = hydrogen gas + water vapor.",
+"<strong>744.0 − 22.4 = 721.6 mmHg</strong>",
+"Use <strong>721.6 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+]
+},
+{
+measured:"760 mmHg",
+vapor:"17.0 mmHg",
+gas:"O<sub>2</sub>",
+options:{total:"760 mmHg",vapor:"17.0 mmHg",dry:"743.0 mmHg"},
+correct:"dry",
+correctFeedback:"Right — subtract the vapor pressure to find the dry oxygen pressure.",
+incorrectFeedback:"Not quite — water vapor contributes to the measured pressure, so subtract it first.",
+reveal:[
+"Measured pressure = oxygen gas + water vapor.",
+"<strong>760.0 − 17.0 = 743.0 mmHg</strong>",
+"Use <strong>743.0 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+]
+},
+{
+measured:"738 mmHg",
+vapor:"26.7 mmHg",
+gas:"N<sub>2</sub>",
+options:{total:"738 mmHg",vapor:"26.7 mmHg",dry:"711.3 mmHg"},
+correct:"dry",
+correctFeedback:"Right — the dry nitrogen pressure is the total minus the water vapor pressure.",
+incorrectFeedback:"Not quite — do not use the total collected pressure directly. First remove the vapor-pressure contribution.",
+reveal:[
+"Measured pressure = nitrogen gas + water vapor.",
+"<strong>738.0 − 26.7 = 711.3 mmHg</strong>",
+"Use <strong>711.3 mmHg</strong> as the pressure of dry N<sub>2</sub>."
+]
 }
 ];
 
 const idealScenarios=[
 {volume:10,aTemp:300,bTemp:700,correct:"b"},
 {volume:8,aTemp:650,bTemp:250,correct:"a"},
-{volume:12,aTemp:400,bTemp:550,correct:"b"}
+{volume:12,aTemp:400,bTemp:550,correct:"b"},
+{volume:6,aTemp:280,bTemp:520,correct:"b"},
+{volume:14,aTemp:600,bTemp:320,correct:"a"},
+{volume:9,aTemp:450,bTemp:500,correct:"b"},
+{volume:15,aTemp:700,bTemp:350,correct:"a"},
+{volume:7,aTemp:260,bTemp:410,correct:"b"},
+{volume:11,aTemp:540,bTemp:300,correct:"a"},
+{volume:5,aTemp:290,bTemp:640,correct:"b"},
+{volume:13,aTemp:610,bTemp:420,correct:"a"},
+{volume:16,aTemp:330,bTemp:580,correct:"b"},
+{volume:4,aTemp:720,bTemp:310,correct:"a"},
+{volume:18,aTemp:360,bTemp:690,correct:"b"}
 ];
 
 const toolIndex={law:0,setup:0,avog:0,water:0,ideal:0};
