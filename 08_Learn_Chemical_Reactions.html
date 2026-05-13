@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-08-learn-chemical-reactions">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="starfield"></div>
 
@@ -371,7 +372,7 @@
           <button class="segment-btn tool-reveal-btn explore-reveal" id="typeRevealBtn" type="button" disabled>Reveal reasoning</button>
           <button class="segment-btn tool-next-btn explore-next" id="typeAnotherBtn" type="button" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="typeFeedback" data-default="Choose one reaction type, then click Check." data-state="pending">Choose one reaction type, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="typeFeedback" data-default="Choose one reaction type, then click Check." data-state="pending" aria-live="polite">Choose one reaction type, then click Check.</div>
         <div class="key-fact tool-reveal" id="typeReveal" hidden>
           <div class="icon">▸</div>
           <div class="key-fact-copy">
@@ -414,7 +415,7 @@
           <button class="segment-btn tool-reveal-btn explore-reveal" id="balanceRevealBtn" type="button" disabled>Reveal reasoning</button>
           <button class="segment-btn tool-next-btn explore-next" id="balanceAnotherBtn" type="button" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="balanceFeedback" data-default="Choose balanced or not balanced, then click Check." data-state="pending">Choose balanced or not balanced, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="balanceFeedback" data-default="Choose balanced or not balanced, then click Check." data-state="pending" aria-live="polite">Choose balanced or not balanced, then click Check.</div>
         <div class="key-fact tool-reveal" id="balanceReveal" hidden>
           <div class="icon">▸</div>
           <div class="key-fact-copy">
@@ -456,7 +457,7 @@
           <button class="segment-btn tool-reveal-btn explore-reveal" id="oxRevealBtn" type="button" disabled>Reveal reasoning</button>
           <button class="segment-btn tool-next-btn explore-next" id="oxAnotherBtn" type="button" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="oxFeedback" data-default="Choose the precipitate, then click Check." data-state="pending">Choose the precipitate, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="oxFeedback" data-default="Choose the precipitate, then click Check." data-state="pending" aria-live="polite">Choose the precipitate, then click Check.</div>
         <div class="key-fact tool-reveal" id="oxReveal" hidden>
           <div class="icon">▸</div>
           <div class="key-fact-copy">
@@ -1039,11 +1040,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let selected = null;
 
     buttons.forEach((button) => {
+      button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', function () {
         if (button.disabled) return;
         selected = button.dataset.choice;
-        buttons.forEach((btn) => btn.classList.remove('active'));
+        buttons.forEach((btn) => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
         button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
       });
     });
 
@@ -1054,6 +1060,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buttons.forEach((button) => {
           button.disabled = true;
           button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
           if (button.dataset.choice === correctChoice) {
             button.classList.add('correct');
           } else if (button.dataset.choice === selected) {
@@ -1066,6 +1073,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buttons.forEach((button) => {
           button.disabled = false;
           button.classList.remove('correct', 'incorrect', 'active');
+          button.setAttribute('aria-pressed', 'false');
         });
       },
       setChoices(newChoices) {

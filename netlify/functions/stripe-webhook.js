@@ -32,13 +32,22 @@ function makeAccessToken() {
   return crypto.randomBytes(40).toString('hex');
 }
 
+function getStripeSignature(headers = {}) {
+  return headers['stripe-signature'] || headers['Stripe-Signature'] || '';
+}
+
+function toIsoFromUnixSeconds(seconds) {
+  if (!Number.isFinite(seconds)) return null;
+  return new Date(seconds * 1000).toISOString();
+}
+
 exports.handler = async function (event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
   /* ── Verify Stripe signature ── */
-  const sig    = event.headers['stripe-signature'];
+  const sig    = getStripeSignature(event.headers || {});
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
 
   if (!sig || !secret) {
@@ -95,7 +104,12 @@ exports.handler = async function (event) {
     case 'customer.subscription.updated': {
       const sub       = stripeEvent.data.object;
       const periodEndTs = sub.current_period_end ?? sub.items?.data?.[0]?.current_period_end;
-      const periodEnd = new Date(periodEndTs * 1000).toISOString();
+      const periodEnd = toIsoFromUnixSeconds(periodEndTs);
+
+      if (!periodEnd) {
+        console.error('[stripe-webhook] Missing current_period_end for subscription:', sub.id);
+        break;
+      }
 
       const { error } = await supabase.from('subscribers')
         .update({

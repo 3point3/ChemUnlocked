@@ -34,7 +34,7 @@ const sigFigCountTasks = [
     incorrectFeedback: 'Not quite — those last zeros are placeholders because there is no decimal point shown. Count only the 2 and 5.'
   },
   {
-    prompt: 'How many significant figures are in 2.50 × 10^3?',
+    prompt: 'How many significant figures are in 2.50 × 10³?',
     options: ['2', '3', '4', 'Ambiguous'],
     answer: '3',
     correctFeedback: 'Right — scientific notation makes the measured digits explicit, so 2.50 has three significant figures.',
@@ -133,6 +133,7 @@ function renderCylinderChoices() {
     button.type = 'button';
     button.className = 'segment-btn tool-choice-btn explore-choice';
     button.dataset.value = choice.value;
+    button.setAttribute('aria-pressed', 'false');
     button.textContent = `${choice.value} mL`;
     button.addEventListener('click', () => selectCylinderChoice(choice.value));
     container.appendChild(button);
@@ -173,6 +174,7 @@ function drawCylinder(size, vol, interval, labelStep) {
   }
 
   svg.innerHTML = `
+    <title>Graduated cylinder showing ${cylinderState.volume.toFixed(1)} mL</title>
     <rect x="12" y="10" width="116" height="320" rx="22" fill="#ffffff"/>
     <rect x="${lx}" y="${bodyTop}" width="${rx - lx}" height="${bodyH}" rx="8" fill="#e0f2fe" stroke="#475569" stroke-width="2.4"/>
     ${lines}
@@ -464,6 +466,7 @@ function newSigFigCountTask() {
     button.type = 'button';
     button.className = 'segment-btn tool-choice-btn explore-choice';
     button.dataset.value = option;
+    button.setAttribute('aria-pressed', 'false');
     button.textContent = option;
     button.addEventListener('click', () => selectSigFigCountChoice(option));
     container.appendChild(button);
@@ -532,6 +535,7 @@ function newSigFigRuleTask() {
     button.type = 'button';
     button.className = 'segment-btn tool-choice-btn explore-choice';
     button.dataset.value = option;
+    button.setAttribute('aria-pressed', 'false');
     button.textContent = option;
     button.addEventListener('click', () => selectSigFigRuleChoice(option));
     container.appendChild(button);

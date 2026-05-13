@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-12-learn-chemistry-gas">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <div class="starfield"></div>
 <main id="main-content" role="main" tabindex="-1">
 <div class="container">
@@ -372,7 +373,7 @@
 <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="lawRevealBtn" onclick="revealLawTool()" disabled>Reveal reasoning</button>
 <button type="button" class="segment-btn tool-next-btn explore-next" id="lawNextBtn" onclick="nextLawTool()" disabled>Try another</button>
 </div>
-<div class="segment-readout tool-feedback" id="lawFeedback" data-state="pending">Choose one law, then click Check.</div>
+<div class="segment-readout tool-feedback" id="lawFeedback" data-state="pending" aria-live="polite">Choose one law, then click Check.</div>
 <div class="key-fact tool-reveal" id="lawReveal" hidden>
 <div class="icon">▸</div>
 <div class="key-fact-copy">
@@ -418,7 +419,7 @@
 <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="setupRevealBtn" onclick="revealSetupTool()" disabled>Reveal reasoning</button>
 <button type="button" class="segment-btn tool-next-btn explore-next" id="setupNextBtn" onclick="nextSetupTool()" disabled>Try another</button>
 </div>
-<div class="segment-readout tool-feedback" id="setupFeedback" data-state="pending">Choose one setup, then click Check.</div>
+<div class="segment-readout tool-feedback" id="setupFeedback" data-state="pending" aria-live="polite">Choose one setup, then click Check.</div>
 <div class="key-fact tool-reveal" id="setupReveal" hidden>
 <div class="icon">▸</div>
 <div class="key-fact-copy">
@@ -468,7 +469,7 @@
 <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="avogRevealBtn" onclick="revealAvogTool()" disabled>Reveal reasoning</button>
 <button type="button" class="segment-btn tool-next-btn explore-next" id="avogNextBtn" onclick="nextAvogTool()" disabled>Try another</button>
 </div>
-<div class="segment-readout tool-feedback" id="avogFeedback" data-state="pending">Choose one answer, then click Check.</div>
+<div class="segment-readout tool-feedback" id="avogFeedback" data-state="pending" aria-live="polite">Choose one answer, then click Check.</div>
 <div class="key-fact tool-reveal" id="avogReveal" hidden>
 <div class="icon">▸</div>
 <div class="key-fact-copy">
@@ -524,7 +525,7 @@
 <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="waterRevealBtn" onclick="revealWaterTool()" disabled>Reveal reasoning</button>
 <button type="button" class="segment-btn tool-next-btn explore-next" id="waterNextBtn" onclick="nextWaterTool()" disabled>Try another</button>
 </div>
-<div class="segment-readout tool-feedback" id="waterFeedback" data-state="pending">Choose one pressure, then click Check.</div>
+<div class="segment-readout tool-feedback" id="waterFeedback" data-state="pending" aria-live="polite">Choose one pressure, then click Check.</div>
 <div class="key-fact tool-reveal" id="waterReveal" hidden>
 <div class="icon">▸</div>
 <div class="key-fact-copy">
@@ -570,7 +571,7 @@
 <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="idealRevealBtn" onclick="revealIdealTool()" disabled>Reveal reasoning</button>
 <button type="button" class="segment-btn tool-next-btn explore-next" id="idealNextBtn" onclick="nextIdealTool()" disabled>Try another</button>
 </div>
-<div class="segment-readout tool-feedback" id="idealReadout" data-state="pending">Choose Point A or Point B, then click Check.</div>
+<div class="segment-readout tool-feedback" id="idealReadout" data-state="pending" aria-live="polite">Choose Point A or Point B, then click Check.</div>
 <div id="idealSliderPanel" hidden>
 <p><strong>Now try the sliders.</strong></p>
 <div class="slider-row">
@@ -1740,7 +1741,12 @@ ideal:['idealOptA','idealOptB']
 }[group]||[];
 }
 function clearChoiceUI(group){
-getChoiceIds(group).forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active');});
+getChoiceIds(group).forEach(id=>{
+const el=document.getElementById(id);
+if(!el)return;
+el.classList.remove('active');
+el.setAttribute('aria-pressed','false');
+});
 toolState[group]=null;
 }
 function selectChoice(group,value){
@@ -1755,7 +1761,13 @@ water:{total:'waterOptTotal',vapor:'waterOptVapor',dry:'waterOptDry'},
 ideal:{a:'idealOptA',b:'idealOptB'}
 };
 const id=selectedMap[group]&&selectedMap[group][value];
-if(id){document.getElementById(id).classList.add('active');}
+if(id){
+const selectedEl=document.getElementById(id);
+if(selectedEl){
+selectedEl.classList.add('active');
+selectedEl.setAttribute('aria-pressed','true');
+}
+}
 }
 function listHTML(items){return items.map(item=>'<li>'+item+'</li>').join('');}
 function shuffleList(items){
@@ -1774,7 +1786,7 @@ const order=createPracticeOrder(baseOrder,choiceOrderState.law,null);
 choiceOrderState.law=order;
 container.innerHTML=order.map(key=>{
 const choice=lawChoiceMeta[key];
-return '<button type="button" class="segment-btn tool-choice-btn explore-choice" id="'+choice.id+'" onclick="selectChoice(\'law\',\''+key+'\')">'+choice.label+'</button>';
+return '<button type="button" class="segment-btn tool-choice-btn explore-choice" id="'+choice.id+'" onclick="selectChoice(\'law\',\''+key+'\')" aria-pressed="false">'+choice.label+'</button>';
 }).join('');
 }
 

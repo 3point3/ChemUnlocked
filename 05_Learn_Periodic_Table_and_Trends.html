@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-05-learn-periodic-table-and-trends">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="starfield"></div>
 
@@ -489,7 +490,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="familyRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="familyNextBtn" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="familyFeedback" data-state="pending">Choose one answer, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="familyFeedback" data-state="pending" aria-live="polite">Choose one answer, then click Check.</div>
         <div class="key-fact tool-support" id="familySupport" hidden></div>
         <div class="key-fact tool-reveal" id="familyReveal" hidden></div>
       </div>
@@ -540,7 +541,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="trendRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="trendNextBtn" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="trendFeedback" data-state="pending">Choose one element, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="trendFeedback" data-state="pending" aria-live="polite">Choose one element, then click Check.</div>
         <div class="key-fact tool-support" id="trendSupport" hidden></div>
         <div class="key-fact tool-reveal" id="trendReveal" hidden></div>
         <div class="tool-values" id="trendValues"></div>
@@ -574,7 +575,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="ionRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="ionNextBtn" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="ionFeedback" data-state="pending">Choose one species, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="ionFeedback" data-state="pending" aria-live="polite">Choose one species, then click Check.</div>
         <div class="key-fact tool-support" id="ionSupport" hidden></div>
         <div class="key-fact tool-reveal" id="ionReveal" hidden></div>
       </div>
@@ -1119,12 +1120,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.setAttribute('aria-pressed', 'false');
       btn.textContent = option;
       btn.addEventListener('click', function () {
         familySelection = option;
         familyCheckBtn.disabled = false;
-        document.querySelectorAll('#familyAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        document.querySelectorAll('#familyAnswers .explore-choice').forEach(node => {
+          node.classList.remove('active');
+          node.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
       });
       familyAnswers.appendChild(btn);
     });
@@ -1379,12 +1385,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.setAttribute('aria-pressed', 'false');
       btn.textContent = sym;
       btn.addEventListener('click', function () {
         trendSelection = sym;
         trendCheckBtn.disabled = false;
-        document.querySelectorAll('#trendAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        document.querySelectorAll('#trendAnswers .explore-choice').forEach(node => {
+          node.classList.remove('active');
+          node.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
       });
       trendAnswers.appendChild(btn);
     });
@@ -1612,12 +1623,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'segment-btn tool-choice-btn explore-choice';
+      btn.setAttribute('aria-pressed', 'false');
       btn.innerHTML = option.replace('2+', '<sup>2+</sup>').replace('2−', '<sup>2−</sup>').replace('+', '<sup>+</sup>').replace('−', '<sup>−</sup>');
       btn.addEventListener('click', function () {
         ionSelection = option;
         ionCheckBtn.disabled = false;
-        document.querySelectorAll('#ionAnswers .explore-choice').forEach(node => node.classList.remove('active'));
+        document.querySelectorAll('#ionAnswers .explore-choice').forEach(node => {
+          node.classList.remove('active');
+          node.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
       });
       ionAnswers.appendChild(btn);
     });

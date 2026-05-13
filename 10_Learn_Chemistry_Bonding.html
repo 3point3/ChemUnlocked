@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-10-learn-chemistry-bonding">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="starfield"></div>
 
@@ -1453,7 +1454,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="bondRevealBtn" onclick="revealBondTool()" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="bondNextBtn" onclick="nextBondTool()" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="bondFeedback" data-state="pending">Choose one bonding picture, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="bondFeedback" data-state="pending" aria-live="polite">Choose one bonding picture, then click Check.</div>
         <div class="en-result tool-reveal" id="bondReveal" hidden></div>
         <div class="formula-box tool-support">
           <div class="label">Support note</div>
@@ -1499,7 +1500,7 @@
           <button type="button" class="segment-btn tool-next-btn explore-next" id="vseprNextBtn" onclick="nextVseprTool()" disabled>Try another</button>
         </div>
 
-        <div class="vsepr-out tool-feedback" id="vseprOut" data-state="pending">
+        <div class="vsepr-out tool-feedback" id="vseprOut" data-state="pending" aria-live="polite">
           <div class="vsepr-shape-name" id="vMolGeo">Choose a molecular shape first.</div>
           <div class="vsepr-eg-name" id="vElecGeo">The answer stays hidden until you commit.</div>
           <div class="vsepr-details" id="vDetails">Use the diagram to count the bonded atoms and lone pairs.</div>
@@ -1533,7 +1534,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="nasbuRevealBtn" onclick="revealNasbuTool()" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="nasbuNextBtn" onclick="nextNasbuTool()" disabled>Try another</button>
         </div>
-        <div id="nasbuOut" class="segment-readout tool-feedback" data-state="pending">
+        <div id="nasbuOut" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">
           Choose one answer, then click Check.
         </div>
         <div id="nasbuReveal" class="en-result tool-reveal" hidden></div>

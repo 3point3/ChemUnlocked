@@ -19,15 +19,19 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
+function json(statusCode, payload) {
+  return {
+    statusCode,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  };
+}
+
 exports.handler = async function (event) {
   const email = (event.queryStringParameters?.email || '').toLowerCase().trim();
 
-  if (!email || !email.includes('@')) {
-    return {
-      statusCode: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Valid email required.' }),
-    };
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return json(400, { error: 'Valid email required.' });
   }
 
   try {
@@ -39,32 +43,16 @@ exports.handler = async function (event) {
 
     if (error || !data) {
       /* Subscriber row not written yet — tell the client to retry */
-      return {
-        statusCode: 404,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Subscription not confirmed yet. Please wait.' }),
-      };
+      return json(404, { error: 'Subscription not confirmed yet. Please wait.' });
     }
 
     if (data.status !== 'active' && data.status !== 'trialing') {
-      return {
-        statusCode: 403,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Subscription is not active.' }),
-      };
+      return json(403, { error: 'Subscription is not active.' });
     }
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: data.access_token }),
-    };
+    return json(200, { token: data.access_token });
   } catch (err) {
     console.error('[get-access-token] Error:', err.message);
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Server error. Please try again.' }),
-    };
+    return json(500, { error: 'Server error. Please try again.' });
   }
 };

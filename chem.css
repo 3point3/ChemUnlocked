@@ -1500,7 +1500,6 @@ pre,
 .table-scroll-wrap {
   position: relative;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin-top: 1rem;
   border-radius: 4px;
   transition: box-shadow 0.2s ease;
@@ -1528,6 +1527,7 @@ pre,
   text-align: center;
   margin: 0.3rem 0 0.6rem;
   letter-spacing: 0.04em;
+  -webkit-user-select: none;
   user-select: none;
 }
 

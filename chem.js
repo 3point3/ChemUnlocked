@@ -325,6 +325,10 @@
     if (btn) {
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
+      document.querySelectorAll('.tab-btn[data-tab]').forEach(otherBtn => {
+        if (otherBtn !== btn) otherBtn.setAttribute('tabindex', '-1');
+      });
       if (targetSection) {
         history.replaceState(null, '', `#${id}`);
         scrollToTabPanel(targetSection);
@@ -336,6 +340,10 @@
     if (fallbackBtn) {
       fallbackBtn.classList.add('active');
       fallbackBtn.setAttribute('aria-selected', 'true');
+      fallbackBtn.setAttribute('tabindex', '0');
+      document.querySelectorAll('.tab-btn[data-tab]').forEach(otherBtn => {
+        if (otherBtn !== fallbackBtn) otherBtn.setAttribute('tabindex', '-1');
+      });
     }
   };
 
@@ -358,6 +366,7 @@
       btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-controls', tabId);
       btn.setAttribute('aria-selected', btn.classList.contains('active') ? 'true' : 'false');
+      btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
 
       panel.setAttribute('role', 'tabpanel');
       panel.setAttribute('aria-labelledby', btn.id);
@@ -366,12 +375,56 @@
   }
 
   function wireTabButtons() {
-    document.querySelectorAll('.tab-btn[data-tab]').forEach(btn => {
+    const buttons = Array.from(document.querySelectorAll('.tab-btn[data-tab]'));
+    if (!buttons.length) return;
+
+    buttons.forEach(btn => {
+      if (btn.dataset.cuTabBound === 'true') return;
+
       btn.addEventListener('click', function () {
         const id = this.getAttribute('data-tab');
         if (id) window.showTab(id, this);
       });
+
+      btn.addEventListener('keydown', function (event) {
+        const currentIndex = buttons.indexOf(this);
+        if (currentIndex === -1) return;
+
+        let nextIndex = -1;
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % buttons.length;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = buttons.length - 1;
+
+        if (nextIndex !== -1) {
+          event.preventDefault();
+          buttons[nextIndex].focus();
+          return;
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const id = this.getAttribute('data-tab');
+          if (id) window.showTab(id, this);
+        }
+      });
+
+      btn.dataset.cuTabBound = 'true';
     });
+  }
+
+  function initTabFromHash() {
+    const tablist = document.querySelector('.nav-tabs');
+    if (!tablist || !window.location.hash) return;
+
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+
+    const btn = document.querySelector(`.tab-btn[data-tab="${id}"]`);
+    const panel = document.getElementById(id);
+    if (!btn || !panel || !panel.classList.contains('section')) return;
+
+    window.showTab(id, btn);
   }
 
   function slugify(text) {
@@ -602,6 +655,7 @@
     if (document.querySelector('.nav-tabs')) {
       normalizeTabs();
       wireTabButtons();
+      initTabFromHash();
     }
 
     if (document.getElementById('concepts') && document.querySelector('.nav-tabs')) {

@@ -13,28 +13,30 @@
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+function json(statusCode, payload) {
+  return {
+    statusCode,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  };
+}
+
 exports.handler = async function (event) {
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return json(405, { error: 'Method Not Allowed' });
   }
 
   let body;
   try {
     body = JSON.parse(event.body || '{}');
   } catch {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'Invalid JSON body.' }),
-    };
+    return json(400, { error: 'Invalid JSON body.' });
   }
 
-  const { email = '' } = body;
+  const email = String(body.email || '').trim().toLowerCase();
 
-  if (!email || !email.includes('@')) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'A valid email address is required.' }),
-    };
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return json(400, { error: 'A valid email address is required.' });
   }
 
   try {
@@ -42,10 +44,7 @@ exports.handler = async function (event) {
     const customers = await stripe.customers.list({ email, limit: 1 });
 
     if (customers.data.length === 0) {
-      return {
-        statusCode: 404,
-        body: JSON.stringify({ error: 'No subscription found for this email address.' }),
-      };
+      return json(404, { error: 'No subscription found for this email address.' });
     }
 
     const customer = customers.data[0];
@@ -57,16 +56,9 @@ exports.handler = async function (event) {
       return_url: `${siteUrl}/practice.html`,
     });
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: session.url }),
-    };
+    return json(200, { url: session.url });
   } catch (err) {
     console.error('[create-customer-portal-session] Stripe error:', err.message);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to open billing portal. Please try again.' }),
-    };
+    return json(500, { error: 'Failed to open billing portal. Please try again.' });
   }
 };

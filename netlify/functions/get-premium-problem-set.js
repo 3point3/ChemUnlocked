@@ -41,6 +41,14 @@ const UNIT_MODULES = {
   '15': () => import('../lib/data/unit15-problems.js'),
 };
 
+const ALLOWED_FILTERS = new Set(['all', 'calc', 'concept', 'multi']);
+
+function clampRequestedCount(rawCount) {
+  const parsed = Number.parseInt(rawCount, 10);
+  if (!Number.isFinite(parsed) || Number.isNaN(parsed)) return 3;
+  return Math.min(Math.max(parsed, 1), 50);
+}
+
 async function isAuthorized(token) {
   if (!token || token.length < 10) return false;
   try {
@@ -61,7 +69,12 @@ async function isAuthorized(token) {
 
 exports.handler = async function (event) {
   /* ── Auth ── */
-  const token      = (event.headers['x-access-token'] || '').trim();
+  const headers = event.headers || {};
+  const token = String(
+    headers['x-access-token'] ||
+    headers['X-Access-Token'] ||
+    ''
+  ).trim();
   const authorized = await isAuthorized(token);
 
   if (!authorized) {
@@ -76,7 +89,20 @@ exports.handler = async function (event) {
   }
 
   /* ── Validate params ── */
-  const { unit = '', filter = 'all', count = '3' } = event.queryStringParameters || {};
+  const query = event.queryStringParameters || {};
+  const unit = String(query.unit || '').trim();
+  const filter = String(query.filter || 'all').trim();
+  const count = clampRequestedCount(query.count || '3');
+
+  if (!ALLOWED_FILTERS.has(filter)) {
+    return {
+      statusCode: 400,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        error: `Invalid filter "${filter}". Expected one of: all, calc, concept, multi.`,
+      }),
+    };
+  }
 
   const loader = UNIT_MODULES[unit];
   if (!loader) {
@@ -100,7 +126,7 @@ exports.handler = async function (event) {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
-    const drawCount = Math.min(parseInt(count, 10) || 3, shuffled.length);
+    const drawCount = Math.min(count, shuffled.length);
 
     return {
       statusCode: 200,

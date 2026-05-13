@@ -299,7 +299,7 @@ function initMatterClassifier() {
     const question = particleQuestions[currentIndex];
 
     if (!selectedChoice) {
-      quizFeedback.dataset.state = 'incorrect';
+      quizFeedback.dataset.state = 'pending';
       quizFeedback.textContent = 'Pick one classification first so the feedback can target your reasoning.';
       return;
     }
@@ -445,7 +445,7 @@ function initChangeClassifier() {
     const item = scenarios[currentIndex];
 
     if (!selectedChoice) {
-      feedbackEl.dataset.state = 'incorrect';
+      feedbackEl.dataset.state = 'pending';
       feedbackEl.textContent = 'Pick one classification first so the feedback can target your reasoning.';
       return;
     }
@@ -484,7 +484,7 @@ function initChangeClassifier() {
   checkBtn.addEventListener('click', checkAnswer);
   revealBtn.addEventListener('click', revealAnswer);
   nextBtn.addEventListener('click', function () {
-    currentIndex = (currentIndex + 1) % scenarios.length;
+    currentIndex = interaction.nextIndex(currentIndex, scenarios.length);
     renderScenario(currentIndex);
   });
 

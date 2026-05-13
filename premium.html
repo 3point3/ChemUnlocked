@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Practice | ChemUnlocked</title>
-<meta name="description" content="ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.">
+<meta name="description" content="ChemUnlocked premium chemistry practice with randomized unit problem sets, instant feedback, full worked solutions, and fast review for quizzes and exams.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://chemunlocked.com/premium.html">
 <meta property="og:title" content="Premium Practice | ChemUnlocked">
@@ -30,6 +30,7 @@
 }
 </script>
 <link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -67,7 +68,7 @@
     <a id="teaserLink" href="practice.html" class="btn btn-sm btn-outline">Back to Free Teaser</a>
   </div>
 
-  <div id="problemContainer"></div>
+  <div id="problemContainer" role="status" aria-live="polite"></div>
 
   <div class="page-end-actions">
     <a href="#main-content" class="btn btn-outline">Back to Top</a>
@@ -123,12 +124,12 @@ if (!unit) {
   const openCustomerPortal = window.openCustomerPortal;
   const unitMeta = UNIT_CONFIG[unit];
 
-  unitLabel.innerHTML = `Introductory General Chemistry &nbsp;&middot;&nbsp; Unit ${unit} Premium Practice`;
+  unitLabel.textContent = `Introductory General Chemistry · Unit ${unit} Premium Practice`;
   unitTitle.textContent = unitMeta.title;
   unitSubtitle.textContent = `Bite-sized practice: 3 randomized problems at a time from the ${unitMeta.problemCount}-problem Unit ${unit} bank. Generate thousands of unique review sets with instant feedback and full worked solutions.`;
   teaserLink.href = `${unit}_practice.html`;
   scrollHint.textContent = `Introductory General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
-  document.title = `Unit ${unit} Premium Practice — ${unitMeta.title} | ChemUnlocked`;
+  document.title = `ChemUnlocked Unit ${unit} Premium Practice`;
 
   async function checkAccess() {
     const token = localStorage.getItem('cu_token') || '';

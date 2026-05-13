@@ -25,8 +25,8 @@ function renderSampleProblems(problems, containerId) {
     const solutionHTML = solutionRenderer ? solutionRenderer.format(p) : p.solution;
 
     if (p.choices) {
-      answerHTML = `<div class="prob-choices">${p.choices.map((c, ci) =>
-        `<button class="choice-btn" data-prob="${p.id}" data-idx="${ci}" data-correct="${p.correct}">${c}</button>`
+      answerHTML = `<div class="prob-choices" role="group" aria-label="Answer choices">${p.choices.map((c, ci) =>
+        `<button class="choice-btn" data-prob="${p.id}" data-idx="${ci}" data-correct="${p.correct}" aria-pressed="false">${c}</button>`
       ).join('')}</div>`;
     } else {
       const unitLabel = p.unit ? ` <span class="unit-label-inline">${p.unit}</span>` : '';
@@ -51,8 +51,8 @@ function renderSampleProblems(problems, containerId) {
         </div>
         <div class="prob-q">${p.q}</div>
         ${answerHTML}
-        <div class="feedback" id="fb-${p.id}"></div>
-        <div class="solution" id="sol-${p.id}">${solutionHTML}</div>
+        <div class="feedback" id="fb-${p.id}" aria-live="polite" hidden></div>
+        <div class="solution" id="sol-${p.id}" hidden>${solutionHTML}</div>
       </div>`);
   });
 
@@ -81,21 +81,25 @@ function renderSampleProblems(problems, containerId) {
 
 function handleChoiceCheck(probId, chosen, correct, btn) {
   const fb = document.getElementById(`fb-${probId}`);
-  if (fb.style.display === 'block') return;
+  if (!fb.hidden) return;
   const btns = btn.closest('.prob-choices').querySelectorAll('.choice-btn');
-  btns.forEach(b => b.disabled = true);
+  btns.forEach(b => {
+    b.disabled = true;
+    b.setAttribute('aria-pressed', 'false');
+  });
+  btn.setAttribute('aria-pressed', 'true');
   const isCorrect = chosen === correct;
   btn.classList.add(isCorrect ? 'correct' : 'incorrect');
   if (!isCorrect) btns[correct].classList.add('reveal-correct');
   fb.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
   fb.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
-  fb.style.display = 'block';
-  document.getElementById(`sol-${probId}`).style.display = 'block';
+  fb.hidden = false;
+  document.getElementById(`sol-${probId}`).hidden = false;
 }
 
 function handleTextCheck(probId, inputEl, answer, tolerance, isText) {
   const fb = document.getElementById(`fb-${probId}`);
-  if (fb.style.display === 'block') return;
+  if (!fb.hidden) return;
   const raw = inputEl.value.trim();
   let isCorrect;
   if (isText) {
@@ -107,6 +111,6 @@ function handleTextCheck(probId, inputEl, answer, tolerance, isText) {
   inputEl.disabled = true;
   fb.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
   fb.textContent = isCorrect ? '✓ Correct!' : `✗ Incorrect — answer: ${answer}`;
-  fb.style.display = 'block';
-  document.getElementById(`sol-${probId}`).style.display = 'block';
+  fb.hidden = false;
+  document.getElementById(`sol-${probId}`).hidden = false;
 }

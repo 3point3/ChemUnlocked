@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-13-learn-chemistry-solutions">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <div class="starfield"></div>
 
 
@@ -432,7 +433,7 @@
         <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="solRevealBtn" disabled>Reveal reasoning</button>
         <button type="button" class="segment-btn tool-next-btn explore-next" id="solNextBtn" disabled>Try another</button>
       </div>
-      <div class="segment-readout tool-feedback" id="solFeedback" data-state="pending">Choose one classification, then click Check.</div>
+      <div class="segment-readout tool-feedback" id="solFeedback" data-state="pending" aria-live="polite">Choose one classification, then click Check.</div>
       <div class="key-fact tool-reveal" id="solRevealBox" hidden>
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -473,7 +474,7 @@
         <button type="button" class="segment-btn tool-reveal-btn explore-reveal" data-reveal disabled>Reveal reasoning</button>
         <button type="button" class="segment-btn tool-next-btn explore-next" data-next disabled>Try another</button>
       </div>
-      <div class="segment-readout tool-feedback" data-feedback data-state="pending">Choose one answer, then click Check.</div>
+      <div class="segment-readout tool-feedback" data-feedback data-state="pending" aria-live="polite">Choose one answer, then click Check.</div>
       <div class="key-fact tool-reveal" data-reveal-box hidden>
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -510,7 +511,7 @@
         <button type="button" class="segment-btn tool-reveal-btn explore-reveal" data-reveal disabled>Reveal reasoning</button>
         <button type="button" class="segment-btn tool-next-btn explore-next" data-next disabled>Try another</button>
       </div>
-      <div class="segment-readout tool-feedback" data-feedback data-state="pending">Choose one answer, then click Check.</div>
+      <div class="segment-readout tool-feedback" data-feedback data-state="pending" aria-live="polite">Choose one answer, then click Check.</div>
       <div class="key-fact tool-reveal" data-reveal-box hidden>
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -547,7 +548,7 @@
         <button type="button" class="segment-btn tool-reveal-btn explore-reveal" data-reveal disabled>Reveal reasoning</button>
         <button type="button" class="segment-btn tool-next-btn explore-next" data-next disabled>Try another</button>
       </div>
-      <div class="segment-readout tool-feedback" data-feedback data-state="pending">Choose one answer, then click Check.</div>
+      <div class="segment-readout tool-feedback" data-feedback data-state="pending" aria-live="polite">Choose one answer, then click Check.</div>
       <div class="key-fact tool-reveal" data-reveal-box hidden>
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -1286,13 +1287,16 @@ function setChoiceStyles(buttons, selectedValue, locked) {
   buttons.forEach(btn => {
     const isSelected = btn.dataset.choice === selectedValue;
     btn.classList.toggle('active', isSelected);
+    btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
     btn.disabled = !!locked;
   });
 }
 
 function showFeedback(node, isCorrect, text) {
   if (!node) return;
-  node.dataset.state = isCorrect ? 'correct' : 'incorrect';
+  let state = isCorrect ? 'correct' : 'incorrect';
+  if (/click Check\.?$|first\.?$/i.test(text)) state = 'pending';
+  node.dataset.state = state;
   node.innerHTML = text;
 }
 

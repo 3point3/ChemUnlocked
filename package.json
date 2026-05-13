@@ -11,6 +11,7 @@
     "audit:html": "bash ./scripts/audit-learn.sh",
     "audit:seo": "node ./scripts/seo-audit.js",
     "audit:site": "npm run audit:html && npm run audit:seo",
+    "check:learn-pages": "sh ./check_files.sh",
     "test": "npm run audit:site"
   },
   "keywords": [],

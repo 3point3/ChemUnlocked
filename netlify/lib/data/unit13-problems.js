@@ -1,5 +1,5 @@
 /* ── Unit 13 Problem Bank — Solutions
-   82 problems total: 30 calc | 33 concept | 18 multi (actually 19 multi — p64–p82)
+   82 problems total: 30 calc | 33 concept | 18 multi
    Served via netlify/functions/get-premium-problem-set.js
    NOT imported by any public-facing page.
 ─────────────────────────────────────────────────────── */

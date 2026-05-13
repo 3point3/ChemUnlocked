@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('submitBtn');
     const formStatus = document.getElementById('formStatus');
     const gotchaTime = document.getElementById('gotchaTime');
+    if (!form || !submitBtn || !formStatus || !gotchaTime) {
+        return;
+    }
     const fields = form.elements;
     const pageLoadTime = Date.now();
     gotchaTime.value = String(pageLoadTime);
@@ -60,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 showStatus('Sorry, something went wrong. Please try again.', 'error');
             }
-        } catch (error) {
+        } catch (_error) {
             showStatus('Sorry, something went wrong. Please try again.', 'error');
         } finally {
             submitBtn.disabled = false;

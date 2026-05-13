@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-01-learn-intro-to-chemistry-and-lab-safety">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <div class="starfield"></div>
 
 
@@ -724,7 +725,7 @@
             </div>
             <div class="cyl-reading">
               <div class="cyl-reading-label">Feedback</div>
-              <div class="segment-readout tool-feedback" id="cylFeedback" data-state="pending">Choose a reading above, then click Check.</div>
+              <div class="segment-readout tool-feedback" id="cylFeedback" data-state="pending" aria-live="polite">Choose a reading above, then click Check.</div>
               <div class="formula-box" id="cylRevealBox" hidden>
                 <span class="label">Reasoning</span>
                 <span id="cylRevealText"></span>
@@ -804,7 +805,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="balanceRevealBtn" onclick="revealBalanceReasoning()" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="balanceNextBtn" onclick="balAction('restart')" disabled>Try another</button>
         </div>
-        <div class="segment-readout tool-feedback" id="balanceFeedback" data-state="pending">Work through the procedure, then click Check.</div>
+        <div class="segment-readout tool-feedback" id="balanceFeedback" data-state="pending" aria-live="polite">Work through the procedure, then click Check.</div>
         <div class="key-fact tool-reveal" id="balanceReveal" hidden>
           <div class="icon">▸</div>
           <div class="key-fact-copy">
@@ -845,7 +846,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="sigfigCountRevealBtn" onclick="revealSigFigCountTask()" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="sigfigCountNextBtn" onclick="newSigFigCountTask()" disabled>Try another</button>
         </div>
-        <div id="sigfigCountResult" class="segment-readout tool-feedback" data-state="pending"></div>
+        <div id="sigfigCountResult" class="segment-readout tool-feedback" data-state="pending" aria-live="polite"></div>
         <div id="sigfigCountExplain" class="sigfig-explain"></div>
       </div>
     </div>
@@ -866,7 +867,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="sigfigRuleRevealBtn" onclick="revealSigFigRuleTask()" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="sigfigRuleNextBtn" onclick="newSigFigRuleTask()" disabled>Try another</button>
         </div>
-        <div id="sigfigRuleResult" class="segment-readout tool-feedback" data-state="pending"></div>
+        <div id="sigfigRuleResult" class="segment-readout tool-feedback" data-state="pending" aria-live="polite"></div>
         <div id="sigfigRuleExplain" class="sigfig-explain"></div>
       </div>
     </div>

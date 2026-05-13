@@ -51,6 +51,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
 </head>
 <body class="page-unit page-04-learn-electron-configuration">
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="starfield"></div>
 
@@ -517,7 +518,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="ecRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="ecNextBtn" disabled>Try another</button>
         </div>
-        <div id="ecFeedback" class="segment-readout tool-feedback" data-state="pending">Choose one last-filled sublevel, then click Check.</div>
+        <div id="ecFeedback" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">Choose one last-filled sublevel, then click Check.</div>
         <div id="ecAnswer" class="key-fact tool-reveal" hidden></div>
         <div class="key-fact tool-support">
           <div class="icon">◉</div>
@@ -569,7 +570,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="ecDiagRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="ecDiagNextBtn" disabled>Try another</button>
         </div>
-        <div id="ecDiagFeedback" class="segment-readout tool-feedback" data-state="pending">Choose the broken rule, then click Check.</div>
+        <div id="ecDiagFeedback" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">Choose the broken rule, then click Check.</div>
         <div id="ecDiagAnswer" class="key-fact tool-reveal" hidden></div>
         <div class="key-fact tool-support">
           <div class="icon">◉</div>
@@ -601,7 +602,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="orbRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="orbNextBtn" disabled>Try another</button>
         </div>
-        <div id="orbFeedback" class="segment-readout tool-feedback" data-state="pending">Choose one diagram, then click Check.</div>
+        <div id="orbFeedback" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">Choose one diagram, then click Check.</div>
         <div id="orbAnswer" class="key-fact tool-reveal" hidden></div>
       </div>
     </div>
@@ -636,7 +637,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="phRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="phNextBtn" disabled>Try another</button>
         </div>
-        <div id="phFeedback" class="segment-readout tool-feedback" data-state="pending">Choose one light region, then click Check.</div>
+        <div id="phFeedback" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">Choose one light region, then click Check.</div>
         <div id="phAnswer" class="key-fact tool-reveal" hidden></div>
         <div class="key-fact tool-support">
           <div class="icon">◉</div>
@@ -676,7 +677,7 @@
           <button type="button" class="segment-btn tool-reveal-btn explore-reveal" id="hyRevealBtn" disabled>Reveal reasoning</button>
           <button type="button" class="segment-btn tool-next-btn explore-next" id="hyNextBtn" disabled>Try another</button>
         </div>
-        <div id="hyFeedback" class="segment-readout tool-feedback" data-state="pending">Choose emission or absorption, then click Check.</div>
+        <div id="hyFeedback" class="segment-readout tool-feedback" data-state="pending" aria-live="polite">Choose emission or absorption, then click Check.</div>
         <div id="hyAnswer" class="key-fact tool-reveal" hidden></div>
         <div class="key-fact tool-support">
           <div class="icon">◉</div>
@@ -1364,10 +1365,15 @@ function renderElectronSublevelChoices(correctValue) {
     btn.type = 'button';
     btn.className = 'segment-btn tool-choice-btn explore-choice';
     btn.dataset.value = choice;
+    btn.setAttribute('aria-pressed', 'false');
     btn.textContent = choice;
     btn.addEventListener('click', function () {
-      wrap.querySelectorAll('.explore-choice').forEach(function (other) { other.classList.remove('active'); });
+      wrap.querySelectorAll('.explore-choice').forEach(function (other) {
+        other.classList.remove('active');
+        other.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
     });
     wrap.appendChild(btn);
   });
@@ -1600,14 +1606,19 @@ function renderOrbitalChoiceOptions() {
     card.type = 'button';
     card.className = 'segment-btn tool-choice-btn explore-choice cardlike';
     card.dataset.value = option.id;
+    card.setAttribute('aria-pressed', 'false');
     card.innerHTML =
       `<strong>${option.label}</strong>` +
       `<span>${prompt.sublevel} orbital diagram</span>` +
       renderOrbitalRowMarkup(prompt.sublevel, option.states);
     card.addEventListener('click', function () {
       orbState.selected = option.id;
-      grid.querySelectorAll('.explore-choice').forEach(function (other) { other.classList.remove('active'); });
+      grid.querySelectorAll('.explore-choice').forEach(function (other) {
+        other.classList.remove('active');
+        other.setAttribute('aria-pressed', 'false');
+      });
       card.classList.add('active');
+      card.setAttribute('aria-pressed', 'true');
     });
     grid.appendChild(card);
   });
@@ -1813,8 +1824,12 @@ function initChoiceButtons(containerId) {
   if (!container) return;
   container.querySelectorAll('.explore-choice').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      container.querySelectorAll('.explore-choice').forEach(function (other) { other.classList.remove('active'); });
+      container.querySelectorAll('.explore-choice').forEach(function (other) {
+        other.classList.remove('active');
+        other.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
     });
   });
 }
@@ -1827,7 +1842,10 @@ function getChoiceValue(containerId) {
 function clearChoiceGroup(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.querySelectorAll('.explore-choice').forEach(function (btn) { btn.classList.remove('active'); });
+  container.querySelectorAll('.explore-choice').forEach(function (btn) {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed', 'false');
+  });
 }
 
 function setFeedback(id, message, tone) {

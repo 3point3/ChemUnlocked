@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activating your subscription… | ChemUnlocked</title>
-<meta name="description" content="Activating your ChemUnlocked premium subscription and confirming access to premium practice.">
+<meta name="description" content="Activating your ChemUnlocked premium subscription and confirming secure access to premium practice, with automatic token setup and redirect once verification completes.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://chemunlocked.com/subscription-success.html">
 <meta property="og:title" content="Activating your subscription… | ChemUnlocked">
@@ -30,6 +30,7 @@
 }
 </script>
 <link rel="stylesheet" href="chem.css?v=20260509">
+<meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -53,11 +54,11 @@
     <p class="subtitle">This takes a few seconds. Please don't close this tab.</p>
     <div class="spinner-row">
       <div id="spinner"></div>
-      <span id="status-msg">Waiting for confirmation from Stripe…</span>
+      <span id="status-msg" role="status" aria-live="polite">Waiting for confirmation from Stripe…</span>
     </div>
   </div>
 
-  <div id="state-error">
+  <div id="state-error" hidden>
     <div class="state-icon">⚠️</div>
     <h2>Taking longer than expected</h2>
     <p class="error-subtitle">
@@ -73,7 +74,7 @@
 <script>
 (async function () {
   const params = new URLSearchParams(window.location.search);
-  const email  = params.get('email') || '';
+  const email  = (params.get('email') || '').trim().toLowerCase();
   const requestedUnit = (params.get('unit') || '05').trim();
   const validUnits = new Set([
     '01', '02', '03', '04', '05',
@@ -121,8 +122,8 @@
     if (attempts < MAX_ATTEMPTS) {
       setTimeout(poll, 2000);
     } else {
-      document.getElementById('state-loading').style.display = 'none';
-      document.getElementById('state-error').style.display   = 'block';
+      document.getElementById('state-loading').hidden = true;
+      document.getElementById('state-error').hidden = false;
     }
   }
 
