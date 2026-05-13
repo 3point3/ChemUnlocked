@@ -2380,6 +2380,10 @@ td {
   font-weight: 550;
 }
 
+.feedback:not([hidden]) {
+  display: block;
+}
+
 .feedback.correct {
   border: 1px solid #bbf7d0;
 }
@@ -2431,6 +2435,10 @@ td {
   border: 1px solid var(--border);
   border-radius: 12px;
   color: var(--dim);
+}
+
+.solution:not([hidden]) {
+  display: block;
 }
 
 .solution .worked-solution-copy,

@@ -11,3 +11,8 @@
 # Archives / scratch files
 *.zip
 --
+
+.projects/cache
+.projects/vault
+.env
+.env.local

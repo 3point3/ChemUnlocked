@@ -12,6 +12,20 @@ function normalize(s) {
     .trim();
 }
 
+function matchesTextAnswer(raw, answer) {
+  if (Array.isArray(answer)) {
+    return answer.some(option => normalize(raw) === normalize(String(option)));
+  }
+  return normalize(raw) === normalize(String(answer));
+}
+
+function formatAnswerForFeedback(answer) {
+  if (Array.isArray(answer)) {
+    return answer.join(' or ');
+  }
+  return String(answer);
+}
+
 /* ── Render a fixed array of sample problems ── */
 function renderSampleProblems(problems, containerId) {
   const container = document.getElementById(containerId);
@@ -103,14 +117,14 @@ function handleTextCheck(probId, inputEl, answer, tolerance, isText) {
   const raw = inputEl.value.trim();
   let isCorrect;
   if (isText) {
-    isCorrect = normalize(raw) === normalize(String(answer));
+    isCorrect = matchesTextAnswer(raw, answer);
   } else {
     const val = parseFloat(raw);
     isCorrect = !isNaN(val) && Math.abs(val - answer) <= tolerance;
   }
   inputEl.disabled = true;
   fb.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-  fb.textContent = isCorrect ? '✓ Correct!' : `✗ Incorrect — answer: ${answer}`;
+  fb.textContent = isCorrect ? '✓ Correct!' : `✗ Incorrect — answer: ${formatAnswerForFeedback(answer)}`;
   fb.hidden = false;
   document.getElementById(`sol-${probId}`).hidden = false;
 }
