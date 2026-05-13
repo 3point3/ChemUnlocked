@@ -86,6 +86,9 @@ exports.handler = async function (event) {
          Requires tax settings configured in the Stripe Dashboard. */
       automatic_tax: { enabled: true },
 
+      /* Allow customers to enter a coupon or promotion code at checkout. */
+      allow_promotion_codes: true,
+
       /* Store plan and unit in metadata for use in webhook. */
       metadata: {
         plan,
