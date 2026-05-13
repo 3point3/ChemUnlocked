@@ -5102,7 +5102,7 @@ th,
   color: rgba(11, 111, 99, 0.78);
 }
 
-.page-unit header {
+.page-unit main > .container > header {
   max-width: 58rem;
 }
 
