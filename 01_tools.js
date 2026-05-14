@@ -188,7 +188,6 @@ function checkCylinderAnswer() {
   const correct = cylinderState.volume;
   const guess = parseFloat(cylinderState.selected);
   const chosen = cylinderState.choices.find((choice) => choice.value === cylinderState.selected);
-  const feedback = document.getElementById('cylFeedback');
   const tip = document.getElementById('cylTip');
   const revealBtn = document.getElementById('cylRevealBtn');
   const nextBtn = document.getElementById('cylNextBtn');
@@ -278,6 +277,15 @@ function balSyncVisual() {
     sample_added_no_tare: 'READING NOT USABLE ✗',
     container_removed:    'INVALID STATE ✗'
   };
+  const balSvg = document.getElementById('balSVG');
+  if (balSvg) {
+    let title = balSvg.querySelector('title');
+    if (!title) {
+      title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+      balSvg.insertBefore(title, balSvg.firstChild);
+    }
+    title.textContent = `Electronic balance showing ${dispText} grams. State: ${stateLabels[s.state] || 'UNKNOWN'}.`;
+  }
   if (stateLbl) stateLbl.textContent = stateLabels[s.state] || '';
 }
 

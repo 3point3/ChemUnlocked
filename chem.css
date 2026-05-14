@@ -4837,6 +4837,12 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
   margin-bottom: 1rem;
 }
 
+.premium-control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
 .premium-controls label {
   color: var(--dim);
   font-size: 0.9rem;
@@ -6773,6 +6779,10 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   max-width: 640px;
 }
 
+.section-desc-wide {
+  max-width: 980px;
+}
+
 /* Practice unit grid */
 .practice-grid {
   display: grid;
@@ -6828,6 +6838,14 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
   font-size: 0.68rem;
   font-weight: 600;
   color: var(--muted);
+}
+
+.practice-card-setsizes {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.01em;
 }
 
 .practice-card-title {
