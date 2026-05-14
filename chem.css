@@ -5983,6 +5983,47 @@ textarea:focus-visible {
   letter-spacing: 0.1em;
   margin-bottom: 0.4rem;
 }
+.myth-truth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+@media (max-width: 600px) {
+  .myth-truth { grid-template-columns: 1fr; }
+}
+.myth-box,
+.truth-box {
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--dim);
+}
+.myth-box {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+.myth-box .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+  color: #be123c;
+}
+.truth-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+.truth-box .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+  color: #15803d;
+}
 .strategy-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -6046,6 +6087,21 @@ body.post-green .research-callout {
 }
 body.post-green .research-callout .label { color: var(--green); }
 body.post-green .strategy-card .strategy-num { color: var(--green); }
+
+/* ── Blue theme (body.post-blue) ── */
+body.post-blue .post-hero {
+  background: linear-gradient(135deg, rgba(29,78,216,0.09) 0%, rgba(29,78,216,0.03) 100%);
+  border: 1px solid rgba(29,78,216,0.18);
+}
+body.post-blue .post-eyebrow { color: #1d4ed8; }
+body.post-blue .research-callout {
+  background: #eff6ff;
+  border-left: 3px solid #1d4ed8;
+}
+body.post-blue .research-callout .label { color: #1d4ed8; }
+body.post-blue .strategy-card .strategy-num { color: #1d4ed8; }
+body.post-blue .making-step .step-label { color: #1d4ed8; }
+body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
 /* ── Flashcard-page components ── */
 .game-card {
@@ -6299,6 +6355,7 @@ body.post-green .strategy-card .strategy-num { color: var(--green); }
 .effect-high .label { color: #166534; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
 .effect-low ul, .effect-high ul { margin: 0.3rem 0 0 1.1rem; padding: 0; color: var(--dim); }
 .effect-low li, .effect-high li { margin-bottom: 0.25rem; }
+.effect-low p, .effect-high p { margin: 0.3rem 0 0; color: var(--dim); }
 
 /* ── Subscription success page ── */
 @keyframes spin { to { transform: rotate(360deg); } }
