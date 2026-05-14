@@ -42,7 +42,9 @@
       "Bash(netlify --version)",
       "Bash(which stripe *)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST https://chemunlocked.com/.netlify/functions/create-checkout-session -H 'Content-Type: application/json' -d '{\"plan\":\"monthly\",\"unit\":\"05\",\"email\":\"test@example.com\"}')",
-      "Bash(curl -s -X POST https://chemunlocked.com/.netlify/functions/create-checkout-session -H 'Content-Type: application/json' -d '{\"plan\":\"monthly\",\"unit\":\"05\",\"email\":\"test@example.com\"}')"
+      "Bash(curl -s -X POST https://chemunlocked.com/.netlify/functions/create-checkout-session -H 'Content-Type: application/json' -d '{\"plan\":\"monthly\",\"unit\":\"05\",\"email\":\"test@example.com\"}')",
+      "Bash(awk 'NR>=5200 && NR<=5225' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/chem.css\")",
+      "Bash(xargs -0 sed -i '' 's/chem\\\\.css?v=20260514c/chem.css?v=20260514d/g')"
     ]
   }
 }
