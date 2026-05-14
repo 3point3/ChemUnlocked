@@ -58,7 +58,27 @@ function stripTags(text) {
 }
 
 function expectedCanonical(file) {
-  return file === 'index.html' ? `${siteOrigin}/` : `${siteOrigin}/${file}`;
+  const slugOverrides = {
+    '01_Learn_Intro_to_Chemistry_and_Lab_Safety.html': `${siteOrigin}/01_learn_intro_to_chemistry_and_lab_safety`,
+    '02_Learn_Chemistry_Matter.html': `${siteOrigin}/02_learn_chemistry_matter`,
+    '03_Learn_Atomic_Structure.html': `${siteOrigin}/03_learn_atomic_structure`,
+    '04_Learn_Electron_Configuration.html': `${siteOrigin}/04_learn_electron_configuration`,
+    '05_Learn_Periodic_Table_and_Trends.html': `${siteOrigin}/05_learn_periodic_table_and_trends`,
+    '06_Learn_Chemistry_Nomenclature.html': `${siteOrigin}/06_learn_chemistry_nomenclature`,
+    '07_Learn_Chemistry_Moles.html': `${siteOrigin}/07_learn_chemistry_moles`,
+    '08_Learn_Chemical_Reactions.html': `${siteOrigin}/08_learn_chemical_reactions`,
+    '09_Learn_Chemistry_Stoichiometry.html': `${siteOrigin}/09_learn_chemistry_stoichiometry`,
+    '10_Learn_Chemistry_Bonding.html': `${siteOrigin}/10_learn_chemistry_bonding`,
+    '11_Learn_Chemistry_Energy_Thermochemistry.html': `${siteOrigin}/11_learn_chemistry_energy_thermochemistry`,
+    '12_Learn_Chemistry_Gas.html': `${siteOrigin}/12_learn_chemistry_gas`,
+    '13_Learn_Chemistry_Solutions.html': `${siteOrigin}/13_learn_chemistry_solutions`,
+    '14_Learn_Chemistry_Equilibrium.html': `${siteOrigin}/14_learn_chemistry_equilibrium`,
+    '15_Learn_Chemistry_Acid_Base.html': `${siteOrigin}/15_learn_chemistry_acid_base`,
+    'Contact_ChemUnlocked.html': `${siteOrigin}/contact_chemunlocked`,
+    'Privacy-Policy.html': `${siteOrigin}/privacy-policy`,
+    'Terms-of-Service.html': `${siteOrigin}/terms-of-service`,
+  };
+  return slugOverrides[file] || (file === 'index.html' ? `${siteOrigin}/` : `${siteOrigin}/${file}`);
 }
 
 function isLikelyRedirectPage(html) {
