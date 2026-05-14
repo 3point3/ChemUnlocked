@@ -3,6 +3,7 @@
 fail_learn=""
 fail_practice=""
 fail_premium=""
+NETLIFY_CONFIG="netlify.toml"
 
 append_fail() {
   local current="$1"
@@ -13,8 +14,6 @@ append_fail() {
 for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
   LEARN_FILE=$(ls "${i}"_Learn_*.html 2>/dev/null | head -n 1)
   PRACTICE_FILE="${i}_practice.html"
-  PREMIUM_FILE="${i}_premium.html"
-
   if [ -f "$LEARN_FILE" ]; then
     grep -q "skip-link" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (skip-link)")
     grep -q "theme-color" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (theme-color)")
@@ -36,14 +35,16 @@ for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
     fail_practice=$(append_fail "$fail_practice" "Unit $i Practice page NOT FOUND")
   fi
 
-  if [ -f "$PREMIUM_FILE" ]; then
-    grep -q "skip-link" "$PREMIUM_FILE" || fail_premium=$(append_fail "$fail_premium" "$PREMIUM_FILE (skip-link)")
-    grep -q "theme-color" "$PREMIUM_FILE" || fail_premium=$(append_fail "$fail_premium" "$PREMIUM_FILE (theme-color)")
-    grep -q "premium.html?unit=${i}" "$PREMIUM_FILE" || fail_premium=$(append_fail "$fail_premium" "$PREMIUM_FILE (redirect mismatch)")
-  else
-    fail_premium=$(append_fail "$fail_premium" "Unit $i Premium page NOT FOUND")
+  if ! grep -Fq "from = \"/${i}_premium.html\"" "$NETLIFY_CONFIG" || \
+     ! grep -Fq "to = \"/premium.html?unit=${i}\"" "$NETLIFY_CONFIG"; then
+    fail_premium=$(append_fail "$fail_premium" "${i}_premium.html redirect missing from netlify.toml")
   fi
 done
+
+if ! grep -Fq 'from = "/index.html"' "$NETLIFY_CONFIG" || \
+   ! grep -Fq 'to = "/"' "$NETLIFY_CONFIG"; then
+  fail_premium=$(append_fail "$fail_premium" "index.html homepage redirect missing from netlify.toml")
+fi
 
 echo "--- Learn Pages ---"
 if [ -z "$fail_learn" ]; then

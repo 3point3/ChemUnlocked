@@ -7,6 +7,9 @@ fail_learn = []
 fail_practice = []
 fail_premium = []
 
+with open("netlify.toml", "r", encoding="utf-8") as handle:
+    netlify_config = handle.read()
+
 for unit in units:
     learn_files = glob.glob(f"{unit}_Learn_*.html")
     if not learn_files:
@@ -45,18 +48,21 @@ for unit in units:
         if f"startCheckout('yearly', '{unit}')" not in data:
             fail_practice.append(f"{practice_file} (yearly checkout mismatch)")
 
-    premium_file = f"{unit}_premium.html"
-    if not os.path.exists(premium_file):
-        fail_premium.append(f"Unit {unit} Premium page NOT FOUND")
-    else:
-        with open(premium_file, "r", encoding="utf-8") as handle:
-            data = handle.read()
-        if "skip-link" not in data:
-            fail_premium.append(f"{premium_file} (skip-link)")
-        if "theme-color" not in data:
-            fail_premium.append(f"{premium_file} (theme-color)")
-        if f"premium.html?unit={unit}" not in data:
-            fail_premium.append(f"{premium_file} (redirect mismatch)")
+    redirect_pattern = (
+        r'\[\[redirects\]\]\s+'
+        + rf'from = "/{unit}_premium\.html"\s+'
+        + rf'to = "/premium\.html\?unit={unit}"\s+'
+        + r"status = 301"
+    )
+    if not re.search(redirect_pattern, netlify_config, re.MULTILINE):
+        fail_premium.append(f"{unit}_premium.html redirect missing from netlify.toml")
+
+if not re.search(
+    r'\[\[redirects\]\]\s+from = "/index\.html"\s+to = "/"\s+status = 301',
+    netlify_config,
+    re.MULTILINE,
+):
+    fail_premium.append("index.html homepage redirect missing from netlify.toml")
 
 print("--- Learn Pages ---")
 print("\n".join(fail_learn) if fail_learn else "All passed")
