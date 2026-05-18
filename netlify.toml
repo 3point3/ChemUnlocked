@@ -290,13 +290,31 @@
   force = true
 
 [[redirects]]
+  from = "/contact_chemunlocked.html"
+  to = "/contact_chemunlocked"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/Privacy-Policy.html"
   to = "/privacy-policy"
   status = 301
   force = true
 
 [[redirects]]
+  from = "/privacy-policy.html"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/Terms-of-Service.html"
+  to = "/terms-of-service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-of-service.html"
   to = "/terms-of-service"
   status = 301
   force = true
@@ -326,7 +344,19 @@
   force = true
 
 [[redirects]]
+  from = "/study-skills-blog.html"
+  to = "/study_skills_blog"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/study_skills_flashcards.html"
+  to = "/study_skills_flashcards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study-skills-flashcards.html"
   to = "/study_skills_flashcards"
   status = 301
   force = true
@@ -338,7 +368,19 @@
   force = true
 
 [[redirects]]
+  from = "/study-skills-practice-tests.html"
+  to = "/study_skills_practice_tests"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/study_skills_smarter_not_longer.html"
+  to = "/study_skills_smarter_not_longer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study-skills-smarter-not-longer.html"
   to = "/study_skills_smarter_not_longer"
   status = 301
   force = true
