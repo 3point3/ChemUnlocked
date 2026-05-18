@@ -14,6 +14,252 @@
   force = true
 
 [[redirects]]
+  from = "/01_Learn_Intro_to_Chemistry_and_Lab_Safety.html"
+  to = "/01_learn_intro_to_chemistry_and_lab_safety"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/01_practice.html"
+  to = "/01_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/02_Learn_Chemistry_Matter.html"
+  to = "/02_learn_chemistry_matter"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/02_practice.html"
+  to = "/02_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/03_Learn_Atomic_Structure.html"
+  to = "/03_learn_atomic_structure"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/03_practice.html"
+  to = "/03_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/04_Learn_Electron_Configuration.html"
+  to = "/04_learn_electron_configuration"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/04_practice.html"
+  to = "/04_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/05_Learn_Periodic_Table_and_Trends.html"
+  to = "/05_learn_periodic_table_and_trends"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/05_practice.html"
+  to = "/05_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/06_Learn_Chemistry_Nomenclature.html"
+  to = "/06_learn_chemistry_nomenclature"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/06_practice.html"
+  to = "/06_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/07_Learn_Chemistry_Moles.html"
+  to = "/07_learn_chemistry_moles"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/07_practice.html"
+  to = "/07_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/08_Learn_Chemical_Reactions.html"
+  to = "/08_learn_chemical_reactions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/08_practice.html"
+  to = "/08_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/09_Learn_Chemistry_Stoichiometry.html"
+  to = "/09_learn_chemistry_stoichiometry"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/09_practice.html"
+  to = "/09_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/10_Learn_Chemistry_Bonding.html"
+  to = "/10_learn_chemistry_bonding"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/10_practice.html"
+  to = "/10_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/11_Learn_Chemistry_Energy_Thermochemistry.html"
+  to = "/11_learn_chemistry_energy_thermochemistry"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/11_practice.html"
+  to = "/11_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/12_Learn_Chemistry_Gas.html"
+  to = "/12_learn_chemistry_gas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/12_practice.html"
+  to = "/12_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/13_Learn_Chemistry_Solutions.html"
+  to = "/13_learn_chemistry_solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/13_practice.html"
+  to = "/13_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/14_Learn_Chemistry_Equilibrium.html"
+  to = "/14_learn_chemistry_equilibrium"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/14_practice.html"
+  to = "/14_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/15_Learn_Chemistry_Acid_Base.html"
+  to = "/15_learn_chemistry_acid_base"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/15_practice.html"
+  to = "/15_practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Contact_ChemUnlocked.html"
+  to = "/contact_chemunlocked"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Privacy-Policy.html"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Terms-of-Service.html"
+  to = "/terms-of-service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-it-works.html"
+  to = "/how-it-works"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/practice.html"
+  to = "/practice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premium.html"
+  to = "/premium"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study_skills_blog.html"
+  to = "/study_skills_blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study_skills_flashcards.html"
+  to = "/study_skills_flashcards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study_skills_practice_tests.html"
+  to = "/study_skills_practice_tests"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study_skills_smarter_not_longer.html"
+  to = "/study_skills_smarter_not_longer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/subscription-success.html"
+  to = "/subscription-success"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/01_premium.html"
   to = "/premium?unit=01"
   status = 301
