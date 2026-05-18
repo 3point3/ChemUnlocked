@@ -15,91 +15,91 @@
 
 [[redirects]]
   from = "/01_premium.html"
-  to = "/premium.html?unit=01"
+  to = "/premium?unit=01"
   status = 301
   force = true
 
 [[redirects]]
   from = "/02_premium.html"
-  to = "/premium.html?unit=02"
+  to = "/premium?unit=02"
   status = 301
   force = true
 
 [[redirects]]
   from = "/03_premium.html"
-  to = "/premium.html?unit=03"
+  to = "/premium?unit=03"
   status = 301
   force = true
 
 [[redirects]]
   from = "/04_premium.html"
-  to = "/premium.html?unit=04"
+  to = "/premium?unit=04"
   status = 301
   force = true
 
 [[redirects]]
   from = "/05_premium.html"
-  to = "/premium.html?unit=05"
+  to = "/premium?unit=05"
   status = 301
   force = true
 
 [[redirects]]
   from = "/06_premium.html"
-  to = "/premium.html?unit=06"
+  to = "/premium?unit=06"
   status = 301
   force = true
 
 [[redirects]]
   from = "/07_premium.html"
-  to = "/premium.html?unit=07"
+  to = "/premium?unit=07"
   status = 301
   force = true
 
 [[redirects]]
   from = "/08_premium.html"
-  to = "/premium.html?unit=08"
+  to = "/premium?unit=08"
   status = 301
   force = true
 
 [[redirects]]
   from = "/09_premium.html"
-  to = "/premium.html?unit=09"
+  to = "/premium?unit=09"
   status = 301
   force = true
 
 [[redirects]]
   from = "/10_premium.html"
-  to = "/premium.html?unit=10"
+  to = "/premium?unit=10"
   status = 301
   force = true
 
 [[redirects]]
   from = "/11_premium.html"
-  to = "/premium.html?unit=11"
+  to = "/premium?unit=11"
   status = 301
   force = true
 
 [[redirects]]
   from = "/12_premium.html"
-  to = "/premium.html?unit=12"
+  to = "/premium?unit=12"
   status = 301
   force = true
 
 [[redirects]]
   from = "/13_premium.html"
-  to = "/premium.html?unit=13"
+  to = "/premium?unit=13"
   status = 301
   force = true
 
 [[redirects]]
   from = "/14_premium.html"
-  to = "/premium.html?unit=14"
+  to = "/premium?unit=14"
   status = 301
   force = true
 
 [[redirects]]
   from = "/15_premium.html"
-  to = "/premium.html?unit=15"
+  to = "/premium?unit=15"
   status = 301
   force = true
 

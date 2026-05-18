@@ -8,7 +8,7 @@
   const FALLBACK_HEADER_HTML = `
     <header class="site-header">
       <div class="site-header-inner">
-        <a href="index.html" class="site-logo" aria-label="ChemUnlocked home">
+        <a href="/" class="site-logo" aria-label="ChemUnlocked home">
           <span class="logo-chem">Chem</span><span class="logo-unlock">Unlocked</span>
         </a>
         <button
@@ -22,11 +22,11 @@
           <span class="site-menu-toggle-bar" aria-hidden="true"></span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-          <a href="index.html#units">Learning Hub</a>
-          <a href="practice.html">Practice Hub</a>
-          <a href="study_skills_blog.html">Study Skills</a>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="Contact_ChemUnlocked.html">Contact</a>
+          <a href="/#units">Learning Hub</a>
+          <a href="/practice">Practice Hub</a>
+          <a href="/study_skills_blog">Study Skills</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/contact_chemunlocked">Contact</a>
         </nav>
       </div>
     </header>
@@ -35,15 +35,15 @@
   const FALLBACK_FOOTER_HTML = `
     <footer class="site-footer">
       <div class="footer-links">
-        <a href="index.html#units">Learning Hub</a> &nbsp;·&nbsp;
-        <a href="practice.html">Practice Hub</a> &nbsp;·&nbsp;
-        <a href="study_skills_blog.html">Study Skills</a> &nbsp;·&nbsp;
-        <a href="how-it-works.html">How It Works</a> &nbsp;·&nbsp;
-        <a href="Contact_ChemUnlocked.html">Contact</a>
+        <a href="/#units">Learning Hub</a> &nbsp;·&nbsp;
+        <a href="/practice">Practice Hub</a> &nbsp;·&nbsp;
+        <a href="/study_skills_blog">Study Skills</a> &nbsp;·&nbsp;
+        <a href="/how-it-works">How It Works</a> &nbsp;·&nbsp;
+        <a href="/contact_chemunlocked">Contact</a>
       </div>
       <div class="footer-links-legal">
-        <a href="Privacy-Policy.html">Privacy Policy</a> &nbsp;·&nbsp;
-        <a href="Terms-of-Service.html">Terms of Service</a>
+        <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms-of-service">Terms of Service</a>
       </div>
       © 2026 ChemUnlocked &nbsp;·&nbsp; Introductory General Chemistry
     </footer>
@@ -216,9 +216,10 @@
   }
 
   function highlightActiveNav() {
-    const current = window.location.pathname.split('/').pop() || 'index.html';
+    const current = window.location.pathname.replace(/\/+$/, '') || '/';
     document.querySelectorAll('.site-nav a').forEach(link => {
-      const linkPage = (link.getAttribute('href') || '').split('#')[0];
+      const rawHref = (link.getAttribute('href') || '').split('#')[0] || '/';
+      const linkPage = rawHref === '/' ? '/' : rawHref.replace(/\/+$/, '');
       if (linkPage === current) {
         link.classList.add('active');
       }
@@ -226,7 +227,7 @@
   }
 
   function addBodyPageClasses() {
-    const raw = window.location.pathname.split('/').pop() || 'index.html';
+    const raw = window.location.pathname.split('/').pop() || 'index';
     const base = raw.replace(/\.html?$/i, '');
     const safe = base
       .toLowerCase()
@@ -261,21 +262,21 @@
   }
 
   const COURSE_UNITS = [
-    { unit: '01', title: 'Intro to Chemistry & Lab Safety', learn: '01_Learn_Intro_to_Chemistry_and_Lab_Safety.html', practice: '01_practice.html' },
-    { unit: '02', title: 'Matter', learn: '02_Learn_Chemistry_Matter.html', practice: '02_practice.html' },
-    { unit: '03', title: 'Atomic Structure', learn: '03_Learn_Atomic_Structure.html', practice: '03_practice.html' },
-    { unit: '04', title: 'Electron Configuration', learn: '04_Learn_Electron_Configuration.html', practice: '04_practice.html' },
-    { unit: '05', title: 'Periodic Table & Trends', learn: '05_Learn_Periodic_Table_and_Trends.html', practice: '05_practice.html' },
-    { unit: '06', title: 'Nomenclature', learn: '06_Learn_Chemistry_Nomenclature.html', practice: '06_practice.html' },
-    { unit: '07', title: 'Moles', learn: '07_Learn_Chemistry_Moles.html', practice: '07_practice.html' },
-    { unit: '08', title: 'Chemical Reactions', learn: '08_Learn_Chemical_Reactions.html', practice: '08_practice.html' },
-    { unit: '09', title: 'Stoichiometry', learn: '09_Learn_Chemistry_Stoichiometry.html', practice: '09_practice.html' },
-    { unit: '10', title: 'Bonding', learn: '10_Learn_Chemistry_Bonding.html', practice: '10_practice.html' },
-    { unit: '11', title: 'Energy & Thermochemistry', learn: '11_Learn_Chemistry_Energy_Thermochemistry.html', practice: '11_practice.html' },
-    { unit: '12', title: 'Gas Laws', learn: '12_Learn_Chemistry_Gas.html', practice: '12_practice.html' },
-    { unit: '13', title: 'Solutions', learn: '13_Learn_Chemistry_Solutions.html', practice: '13_practice.html' },
-    { unit: '14', title: 'Equilibrium', learn: '14_Learn_Chemistry_Equilibrium.html', practice: '14_practice.html' },
-    { unit: '15', title: 'Acids & Bases', learn: '15_Learn_Chemistry_Acid_Base.html', practice: '15_practice.html' }
+    { unit: '01', title: 'Intro to Chemistry & Lab Safety', learn: '/01_learn_intro_to_chemistry_and_lab_safety', practice: '/01_practice' },
+    { unit: '02', title: 'Matter', learn: '/02_learn_chemistry_matter', practice: '/02_practice' },
+    { unit: '03', title: 'Atomic Structure', learn: '/03_learn_atomic_structure', practice: '/03_practice' },
+    { unit: '04', title: 'Electron Configuration', learn: '/04_learn_electron_configuration', practice: '/04_practice' },
+    { unit: '05', title: 'Periodic Table & Trends', learn: '/05_learn_periodic_table_and_trends', practice: '/05_practice' },
+    { unit: '06', title: 'Nomenclature', learn: '/06_learn_chemistry_nomenclature', practice: '/06_practice' },
+    { unit: '07', title: 'Moles', learn: '/07_learn_chemistry_moles', practice: '/07_practice' },
+    { unit: '08', title: 'Chemical Reactions', learn: '/08_learn_chemical_reactions', practice: '/08_practice' },
+    { unit: '09', title: 'Stoichiometry', learn: '/09_learn_chemistry_stoichiometry', practice: '/09_practice' },
+    { unit: '10', title: 'Bonding', learn: '/10_learn_chemistry_bonding', practice: '/10_practice' },
+    { unit: '11', title: 'Energy & Thermochemistry', learn: '/11_learn_chemistry_energy_thermochemistry', practice: '/11_practice' },
+    { unit: '12', title: 'Gas Laws', learn: '/12_learn_chemistry_gas', practice: '/12_practice' },
+    { unit: '13', title: 'Solutions', learn: '/13_learn_chemistry_solutions', practice: '/13_practice' },
+    { unit: '14', title: 'Equilibrium', learn: '/14_learn_chemistry_equilibrium', practice: '/14_practice' },
+    { unit: '15', title: 'Acids & Bases', learn: '/15_learn_chemistry_acid_base', practice: '/15_practice' }
   ];
 
   const UNIT_PAGES = COURSE_UNITS.reduce((pages, unit) => {
@@ -284,12 +285,13 @@
   }, {});
 
   function getCurrentPageName() {
-    return window.location.pathname.split('/').pop() || 'index.html';
+    return window.location.pathname.split('/').pop() || 'index';
   }
 
   function getUnitFromPage() {
-    const match = getCurrentPageName().match(/^(\d{2})_(Learn|practice)/i);
-    return match ? { unit: match[1], isPractice: /practice/i.test(match[2]) } : null;
+    const current = getCurrentPageName();
+    const match = current.match(/^(\d{2})_(learn_[a-z_]+|practice)$/i);
+    return match ? { unit: match[1], isPractice: /^practice$/i.test(match[2]) } : null;
   }
 
   function scrollToTabPanel(section) {
@@ -523,7 +525,7 @@
     } else if (current.practice) {
       nav.appendChild(makeUnitNavLink('Practice', { unit: unitInfo.unit, title: `${current.title} Practice` }, current.practice, 'Practice'));
     } else {
-      nav.appendChild(makeUnitNavLink('Practice', { unit: unitInfo.unit, title: 'All Practice Banks' }, 'practice.html', 'All Practice Banks'));
+      nav.appendChild(makeUnitNavLink('Practice', { unit: unitInfo.unit, title: 'All Practice Banks' }, '/practice', 'All Practice Banks'));
     }
 
     nav.appendChild(makeUnitNavLink('Next', nextUnit ? { unit: nextUnit, ...UNIT_PAGES[nextUnit] } : null, nextUnit ? UNIT_PAGES[nextUnit].learn : '', 'End of course'));

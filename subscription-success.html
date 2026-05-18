@@ -6,10 +6,10 @@
 <title>Activating your subscription… | ChemUnlocked</title>
 <meta name="description" content="Activating your ChemUnlocked premium subscription, confirming secure access, and redirecting you to premium practice.">
 <meta name="robots" content="noindex">
-<link rel="canonical" href="https://chemunlocked.com/subscription-success.html">
+<link rel="canonical" href="https://chemunlocked.com/subscription-success">
 <meta property="og:title" content="Activating your subscription… | ChemUnlocked">
 <meta property="og:description" content="Activating your ChemUnlocked premium subscription and confirming access to premium practice.">
-<meta property="og:url" content="https://chemunlocked.com/subscription-success.html">
+<meta property="og:url" content="https://chemunlocked.com/subscription-success">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
   "@type": "WebPage",
   "name": "Activating your subscription… | ChemUnlocked",
   "description": "Activating your ChemUnlocked premium subscription and confirming access to premium practice.",
-  "url": "https://chemunlocked.com/subscription-success.html"
+  "url": "https://chemunlocked.com/subscription-success"
 }
 </script>
 <link rel="stylesheet" href="chem.css?v=20260514d">
@@ -65,7 +65,7 @@
       Your payment was processed but the activation is delayed.
       Check your email for a receipt, then try signing in below.
     </p>
-    <a href="practice.html" class="btn">Go to Practice</a>
+    <a href="/practice" class="btn">Go to Practice</a>
   </div>
 </div>
   </main>
@@ -90,7 +90,7 @@
   window.history.replaceState({}, '', window.location.pathname);
 
   if (!email) {
-    window.location.replace('practice.html');
+    window.location.replace('/practice');
     return;
   }
 
@@ -112,7 +112,7 @@
         localStorage.setItem('cu_token', data.token);
         localStorage.setItem('cu_email', email);
         statusMsg.textContent = 'Subscription confirmed! Redirecting…';
-        setTimeout(() => window.location.replace(`premium.html?unit=${encodeURIComponent(unit)}`), 600);
+        setTimeout(() => window.location.replace(`/premium?unit=${encodeURIComponent(unit)}`), 600);
         return;
       }
     } catch {

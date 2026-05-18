@@ -6,10 +6,10 @@
 <title>Premium Practice | ChemUnlocked</title>
 <meta name="description" content="Work through randomized chemistry problems by unit, compare your thinking to worked solutions, and see what needs another pass before the test.">
 <meta name="robots" content="noindex, nofollow">
-<link rel="canonical" href="https://chemunlocked.com/premium.html">
+<link rel="canonical" href="https://chemunlocked.com/premium">
 <meta property="og:title" content="Premium Practice | ChemUnlocked">
 <meta property="og:description" content="Work through randomized chemistry problems by unit, then check your reasoning against the full worked solutions. Find out what you actually know before the test does.">
-<meta property="og:url" content="https://chemunlocked.com/premium.html">
+<meta property="og:url" content="https://chemunlocked.com/premium">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
   "@type": "WebPage",
   "name": "Premium Practice | ChemUnlocked",
   "description": "ChemUnlocked premium chemistry practice with randomized problem sets, instant feedback, and full worked solutions.",
-  "url": "https://chemunlocked.com/premium.html"
+  "url": "https://chemunlocked.com/premium"
 }
 </script>
 <link rel="stylesheet" href="chem.css?v=20260514d">
@@ -76,7 +76,7 @@
 
     <button id="reloadBtn" class="btn btn-sm" type="button">Load 3 Fresh Problems</button>
     <button id="billingBtn" class="btn btn-sm btn-outline" type="button">Manage Billing</button>
-    <a id="teaserLink" href="practice.html" class="btn btn-sm btn-outline">Back to Free Teaser</a>
+    <a id="teaserLink" href="/practice" class="btn btn-sm btn-outline">Back to Free Teaser</a>
   </div>
 
   <div id="problemContainer" role="status" aria-live="polite"></div>
@@ -148,7 +148,7 @@ const isFilePreview = window.location.protocol === 'file:';
 const debugEnabled = debugRequested && (isLocalHost || isFilePreview);
 
 if (!unit) {
-  window.location.replace('practice.html');
+  window.location.replace('/practice');
 } else {
   const setSizeSelect = document.getElementById('setSizeSelect');
   const filterSelect = document.getElementById('filterSelect');
@@ -168,7 +168,7 @@ if (!unit) {
   unitLabel.textContent = `Introductory General Chemistry · Unit ${unit} Premium Practice`;
   unitTitle.textContent = unitMeta.title;
   unitSubtitle.textContent = `Choose Quick Sets (3 at a time), Standard Sets (9 at a time), or Extended Sets (18 at a time) from the ${unitMeta.problemCount}-problem bank. Work the problems, then use the full worked solutions to see exactly where your thinking was right — and where it went off track.`;
-  teaserLink.href = `${unit}_practice.html`;
+  teaserLink.href = `/${unit}_practice`;
   scrollHint.textContent = `Introductory General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
   document.title = `Unit ${unit}: ${unitMeta.title} | ChemUnlocked Premium`;
   setSizeSelect.value = String(initialSetSize);
@@ -237,7 +237,7 @@ if (!unit) {
   }
 
   function redirectToGate(reason) {
-    window.location.replace(`${unit}_practice.html?access=${encodeURIComponent(reason)}`);
+    window.location.replace(`/${unit}_practice?access=${encodeURIComponent(reason)}`);
   }
 
   async function loadSet() {

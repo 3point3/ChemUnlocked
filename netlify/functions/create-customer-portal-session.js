@@ -53,7 +53,7 @@ exports.handler = async function (event) {
     const siteUrl = process.env.URL || 'https://chemunlocked.com';
     const session = await stripe.billingPortal.sessions.create({
       customer: customer.id,
-      return_url: `${siteUrl}/practice.html`,
+      return_url: `${siteUrl}/practice`,
     });
 
     return json(200, { url: session.url });

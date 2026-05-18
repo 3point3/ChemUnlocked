@@ -64,10 +64,10 @@ exports.handler = async function (event) {
 
   /* ── Build redirect URLs ── */
   const siteUrl      = process.env.URL || 'https://chemunlocked.com';
-  const practiceSlug = unit ? `${unit}_practice.html` : 'practice.html';
+  const practiceSlug = unit ? `${unit}_practice` : 'practice';
   // Success: go to the activation page which polls for the access token,
   // then redirects to the premium page once the webhook confirms the subscription.
-  const successUrl = `${siteUrl}/subscription-success.html?email=${encodeURIComponent(email)}&unit=${encodeURIComponent(unit)}`;
+  const successUrl = `${siteUrl}/subscription-success?email=${encodeURIComponent(email)}&unit=${encodeURIComponent(unit)}`;
   const cancelUrl  = `${siteUrl}/${practiceSlug}?checkout=cancelled`;
 
   try {
