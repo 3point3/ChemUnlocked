@@ -5385,6 +5385,7 @@ textarea:focus-visible {
 
 .hero-visual {
   min-height: 350px;
+  width: min(100%, 42rem);
   border: 9px solid #d1d5db;
   border-radius: var(--radius-lg);
   background:
@@ -5401,6 +5402,7 @@ textarea:focus-visible {
   position: relative;
   overflow: hidden;
   padding: 1.1rem;
+  justify-self: end;
 }
 
 .hero-visual::before {
@@ -5815,8 +5817,14 @@ textarea:focus-visible {
     padding-top: 2rem;
   }
 
+  .home-hero h1 {
+    max-width: 12ch;
+  }
+
   .hero-visual {
     min-height: 285px;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .practice-stats {
@@ -5874,6 +5882,30 @@ textarea:focus-visible {
 
   .practice-stat--sets dt {
     text-align: left;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1360px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.7fr);
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    align-items: start;
+    padding: 0.6rem 0 1.5rem;
+  }
+
+  .home-hero h1 {
+    max-width: 13.2ch;
+    font-size: clamp(2.95rem, 4.15vw, 4.25rem);
+    line-height: 1.02;
+  }
+
+  .hero-subtitle {
+    max-width: 60ch;
+  }
+
+  .hero-visual {
+    min-height: 325px;
     margin-top: 0;
   }
 }
