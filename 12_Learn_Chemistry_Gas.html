@@ -108,14 +108,14 @@
 </div>
 </div>
 <p>These five pressure units all measure the same thing. Recognize which unit a problem gives you and convert before setting up any gas law equation.</p>
-<table>
+<table class="mobile-stack-table">
 <thead><tr><th>Unit</th><th>Symbol</th><th>= 1 atm</th><th>Common Use</th></tr></thead>
 <tbody>
-<tr><td>Atmosphere</td><td>atm</td><td>1.000</td><td>Standard chemistry problems</td></tr>
-<tr><td>Millimeters mercury</td><td>mmHg</td><td>760.0</td><td>Barometers, medical settings</td></tr>
-<tr><td>Torr</td><td>torr</td><td>760.0</td><td>Equivalent to mmHg</td></tr>
-<tr><td>Kilopascal</td><td>kPa</td><td>101.325</td><td>SI unit, international use</td></tr>
-<tr><td>Pascal</td><td>Pa</td><td>101,325</td><td>Formal SI calculations</td></tr>
+<tr><td data-label="Unit">Atmosphere</td><td data-label="Symbol">atm</td><td data-label="= 1 atm">1.000</td><td data-label="Common Use">Standard chemistry problems</td></tr>
+<tr><td data-label="Unit">Millimeters mercury</td><td data-label="Symbol">mmHg</td><td data-label="= 1 atm">760.0</td><td data-label="Common Use">Barometers, medical settings</td></tr>
+<tr><td data-label="Unit">Torr</td><td data-label="Symbol">torr</td><td data-label="= 1 atm">760.0</td><td data-label="Common Use">Equivalent to mmHg</td></tr>
+<tr><td data-label="Unit">Kilopascal</td><td data-label="Symbol">kPa</td><td data-label="= 1 atm">101.325</td><td data-label="Common Use">SI unit, international use</td></tr>
+<tr><td data-label="Unit">Pascal</td><td data-label="Symbol">Pa</td><td data-label="= 1 atm">101,325</td><td data-label="Common Use">Formal SI calculations</td></tr>
 </tbody>
 </table>
 </div>
@@ -128,27 +128,77 @@
 <div class="formula-box">
 <span class="label">Boyle's Law (T and n constant)</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong>P₁V₁ = P₂V₂</strong></span>
+<span class="formula-rule"><strong>P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub></strong></span>
 <span class="formula-rule"><strong>P × V = k</strong> (constant)</span>
 </div>
 </div>
+<div class="gas-law-panel gas-law-panel--boyle">
+  <div class="gas-law-conditions gas-law-conditions--boyle">
+    <p class="gas-law-conditions-title">Required Conditions</p>
+    <p><strong>Constant temperature (T)</strong> and <strong>constant amount of gas (n)</strong>.</p>
+  </div>
+  <div class="gas-law-grid">
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 1</p>
+      <h3>Large Volume, Low Pressure</h3>
+      <p>Molecules have more space, so they hit the container walls less often.</p>
+      <svg viewBox="0 0 180 220" role="img" aria-label="Low-pressure gas in a larger container under one weight">
+        <rect x="40" y="48" width="100" height="130" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <rect x="34" y="48" width="112" height="12" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="80" y="10" width="20" height="38" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+        <rect x="67" y="0" width="46" height="18" rx="4" fill="#ea580c"/>
+        <text x="90" y="12" font-size="9" font-weight="800" text-anchor="middle" fill="#fff">1 kg</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="68" cy="80" r="11"/><circle cx="108" cy="92" r="11"/><circle cx="88" cy="118" r="11"/>
+          <circle cx="64" cy="142" r="11"/><circle cx="108" cy="148" r="11"/><circle cx="88" cy="162" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="68" y="80">g</text><text x="108" y="92">g</text><text x="88" y="118">g</text>
+          <text x="64" y="142">g</text><text x="108" y="148">g</text><text x="88" y="162">g</text>
+        </g>
+        <line x1="154" y1="60" x2="154" y2="178" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="121" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 121)">V<tspan baseline-shift="sub" font-size="9">1</tspan></text>
+      </svg>
+      <p class="gas-law-stage-note"><strong>P<span class="chem-sub">1</span></strong> is lower because wall collisions are less frequent.</p>
+    </article>
+    <article class="gas-law-connector-card">
+      <p class="gas-law-connector-title">Inverse Relationship</p>
+      <p class="gas-law-connector-eq">P<span class="chem-sub">1</span>V<span class="chem-sub">1</span> = P<span class="chem-sub">2</span>V<span class="chem-sub">2</span></p>
+      <div class="gas-law-connector-arrow" aria-hidden="true">↓</div>
+      <div class="gas-law-connector-chip gas-law-chip-down">Volume halved</div>
+      <div class="gas-law-connector-chip gas-law-chip-up">Pressure doubles</div>
+      <p class="gas-law-connector-note">At constant T and n, squeezing the gas into less space raises the pressure.</p>
+    </article>
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 2</p>
+      <h3>Small Volume, High Pressure</h3>
+      <p>The same number of particles are forced into less space, so wall collisions increase.</p>
+      <svg viewBox="0 0 180 220" role="img" aria-label="Higher-pressure gas in a smaller volume under two weights">
+        <rect x="40" y="88" width="100" height="90" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <rect x="34" y="88" width="112" height="12" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="80" y="30" width="20" height="58" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+        <rect x="44" y="16" width="42" height="18" rx="4" fill="#ea580c"/>
+        <rect x="94" y="16" width="42" height="18" rx="4" fill="#ea580c"/>
+        <text x="65" y="28" font-size="8" font-weight="800" text-anchor="middle" fill="#fff">1 kg</text>
+        <text x="115" y="28" font-size="8" font-weight="800" text-anchor="middle" fill="#fff">1 kg</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="62" cy="110" r="11"/><circle cx="88" cy="124" r="11"/><circle cx="108" cy="114" r="11"/>
+          <circle cx="68" cy="140" r="11"/><circle cx="92" cy="148" r="11"/><circle cx="108" cy="140" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="62" y="110">g</text><text x="88" y="124">g</text><text x="108" y="114">g</text>
+          <text x="68" y="140">g</text><text x="92" y="148">g</text><text x="108" y="140">g</text>
+        </g>
+        <line x1="154" y1="100" x2="154" y2="178" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="139" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 139)">V<tspan baseline-shift="sub" font-size="9">2</tspan></text>
+      </svg>
+      <p class="gas-law-stage-note"><strong>P<span class="chem-sub">2</span></strong> is higher because the particles strike the walls more often.</p>
+    </article>
+  </div>
+  <p class="gas-law-panel-caption">The particle model shows why Boyle's Law works: with the same number of gas particles at constant temperature, squeezing the gas into less space increases wall collisions and raises pressure.</p>
+</div>
 <p><strong>Real-world example:</strong> A scuba diver exhales air bubbles at depth (~3 atm). As the bubbles rise toward the surface (~1 atm), the pressure drops to about one-third, so the volume triples.</p>
 <p>The P vs. V graph for Boyle's Law always forms a <strong>hyperbola</strong>.</p>
-<div class="graph-wrap">
-<div class="graph-title">▶ Interactive: Boyle's Law — P vs. V (hyperbola shape)</div>
-<canvas class="graph-canvas" id="boyleCanvas"></canvas>
-<div class="slider-row">
-<label for="boyleP">Set Pressure (atm):</label>
-<input type="range" min="0.2" max="5" step="0.05" value="1" id="boyleP" oninput="updateBoyle()">
-<span class="slider-val" id="boylePVal">1.00 atm</span>
-</div>
-<div class="slider-row">
-<label for="boyleK">PV constant k (L·atm):</label>
-<input type="range" min="1" max="11" step="0.5" value="4" id="boyleK" oninput="updateBoyle()">
-<span class="slider-val" id="boyleKVal">k = 4.0</span>
-</div>
-<div class="graph-readout" id="boyleReadout">Drag the sliders to explore Boyle's Law.</div>
-</div>
 <div class="key-fact">
         <div class="icon">◉</div>
         <div class="key-fact-copy">
@@ -169,26 +219,83 @@
 <div class="formula-box">
 <span class="label">Charles's Law (P and n constant) — T ALWAYS in Kelvin!</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">V₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">V₂</span><span class="formula-frac-d">T₂</span></span></strong></span>
+<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">V<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">V<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></strong></span>
 <span class="formula-rule"><strong>K = &deg;C + 273</strong></span>
 </div>
 </div>
+<div class="gas-law-panel gas-law-panel--charles">
+  <div class="gas-law-conditions gas-law-conditions--charles">
+    <p class="gas-law-conditions-title">Required Conditions</p>
+    <p><strong>Constant pressure (P)</strong> and <strong>constant amount of gas (n)</strong>. Temperature must be in <strong>Kelvin</strong>.</p>
+  </div>
+  <div class="gas-law-grid">
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 1</p>
+      <h3>Low Temperature</h3>
+      <p>Cooler gas particles move more slowly, so the volume stays smaller when pressure remains constant.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Gas at lower temperature with smaller volume under one weight">
+        <rect x="40" y="74" width="100" height="110" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <rect x="34" y="74" width="112" height="12" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="80" y="18" width="20" height="56" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+        <rect x="67" y="0" width="46" height="18" rx="4" fill="#64748b"/>
+        <text x="90" y="12" font-size="9" font-weight="800" text-anchor="middle" fill="#fff">P</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="64" cy="106" r="11"/><circle cx="106" cy="116" r="11"/><circle cx="88" cy="138" r="11"/>
+          <circle cx="68" cy="156" r="11"/><circle cx="106" cy="158" r="11"/><circle cx="90" cy="168" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="64" y="106">g</text><text x="106" y="116">g</text><text x="88" y="138">g</text>
+          <text x="68" y="156">g</text><text x="106" y="158">g</text><text x="90" y="168">g</text>
+        </g>
+        <line x1="154" y1="84" x2="154" y2="184" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="134" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 134)">V<tspan baseline-shift="sub" font-size="9">1</tspan></text>
+        <rect x="58" y="198" width="64" height="22" rx="6" fill="#ffedd5" stroke="#fed7aa"/>
+        <text x="90" y="212" font-size="10" font-weight="700" text-anchor="middle" fill="#ea580c">300 K</text>
+      </svg>
+      <p class="gas-law-stage-note">At the lower Kelvin temperature, the gas occupies the smaller volume <strong>V<span class="chem-sub">1</span></strong>.</p>
+    </article>
+    <article class="gas-law-connector-card">
+      <p class="gas-law-connector-title">Direct Relationship</p>
+      <p class="gas-law-connector-eq">
+        <span class="formula-frac"><span class="formula-frac-n">V<span class="chem-sub">1</span></span><span class="formula-frac-d">T<span class="chem-sub">1</span></span></span>
+        <span>=</span>
+        <span class="formula-frac"><span class="formula-frac-n">V<span class="chem-sub">2</span></span><span class="formula-frac-d">T<span class="chem-sub">2</span></span></span>
+      </p>
+      <div class="gas-law-connector-arrow" aria-hidden="true">→</div>
+      <div class="gas-law-connector-chip gas-law-chip-temp">Temperature increases</div>
+      <div class="gas-law-connector-chip gas-law-chip-volume">Volume increases</div>
+      <p class="gas-law-connector-note">When pressure stays constant, hotter gas expands because the particles move faster and need more space.</p>
+      <div class="gas-law-kelvin-note">Always convert °C to K before using the equation.</div>
+    </article>
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 2</p>
+      <h3>High Temperature</h3>
+      <p>Hotter gas particles move faster, so the piston rises and the volume increases while the outside pressure stays the same.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Gas at higher temperature with larger volume under the same pressure">
+        <rect x="40" y="48" width="100" height="136" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <rect x="34" y="48" width="112" height="12" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="80" y="0" width="20" height="48" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+        <rect x="67" y="-18" width="46" height="18" rx="4" fill="#64748b"/>
+        <text x="90" y="-6" font-size="9" font-weight="800" text-anchor="middle" fill="#fff">P</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="62" cy="82" r="11"/><circle cx="108" cy="92" r="11"/><circle cx="90" cy="116" r="11"/>
+          <circle cx="64" cy="142" r="11"/><circle cx="108" cy="150" r="11"/><circle cx="88" cy="166" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="62" y="82">g</text><text x="108" y="92">g</text><text x="90" y="116">g</text>
+          <text x="64" y="142">g</text><text x="108" y="150">g</text><text x="88" y="166">g</text>
+        </g>
+        <line x1="154" y1="58" x2="154" y2="184" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="121" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 121)">V<tspan baseline-shift="sub" font-size="9">2</tspan></text>
+        <rect x="58" y="198" width="64" height="22" rx="6" fill="#ffedd5" stroke="#fed7aa"/>
+        <text x="90" y="212" font-size="10" font-weight="700" text-anchor="middle" fill="#ea580c">600 K</text>
+      </svg>
+      <p class="gas-law-stage-note">At the higher Kelvin temperature, the gas expands to the larger volume <strong>V<span class="chem-sub">2</span></strong>.</p>
+    </article>
+  </div>
+  <p class="gas-law-panel-caption">The particle picture, equation, and volume change all show the same rule: at constant pressure, hotter gas occupies more space.</p>
+</div>
 <p><strong>Why Kelvin?</strong> At absolute zero (0 K = −273°C), gas volume theoretically reaches zero. Kelvin starts at this true zero point, making the proportional relationship mathematically valid. Using Celsius gives wrong answers.</p>
-<div class="graph-wrap">
-<div class="graph-title">▶ Interactive: Charles's Law — V vs. T (straight line)</div>
-<canvas class="graph-canvas" id="charlesCanvas"></canvas>
-<div class="slider-row">
-<label for="charlesT">Temperature (K):</label>
-<input type="range" min="50" max="700" step="5" value="300" id="charlesT" oninput="updateCharles()">
-<span class="slider-val" id="charlesTVal">300 K</span>
-</div>
-<div class="slider-row">
-<label for="charlesK">V/T ratio k (L/K):</label>
-<input type="range" min="0.02" max="0.15" step="0.005" value="0.08" id="charlesK" oninput="updateCharles()">
-<span class="slider-val" id="charlesKVal">k = 0.080</span>
-</div>
-<div class="graph-readout" id="charlesReadout">Drag the sliders to explore Charles's Law.</div>
-</div>
 </div>
 
 <div class="card">
@@ -198,25 +305,78 @@
 <div class="formula-box">
 <span class="label">Gay-Lussac's Law (V and n constant) — T ALWAYS in Kelvin!</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">P₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">P₂</span><span class="formula-frac-d">T₂</span></span></strong></span>
+<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">P<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></strong></span>
 </div>
+</div>
+<div class="gas-law-panel gas-law-panel--gay">
+  <div class="gas-law-conditions gas-law-conditions--gay">
+    <p class="gas-law-conditions-title">Required Conditions</p>
+    <p><strong>Constant volume (V)</strong> and <strong>constant amount of gas (n)</strong>. The container must be <strong>rigid</strong>, and temperature must be in <strong>Kelvin</strong>.</p>
+  </div>
+  <div class="gas-law-grid">
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 1</p>
+      <h3>Low Temperature, Low Pressure</h3>
+      <p>Cooler particles move more slowly, so their wall collisions are less frequent and less forceful inside the fixed-volume tank.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Rigid container at lower temperature with lower pressure">
+        <rect x="40" y="54" width="100" height="126" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <text x="90" y="72" font-size="10" font-weight="800" text-anchor="middle" fill="#94a3b8" letter-spacing="1">RIGID TANK</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="64" cy="102" r="11"/><circle cx="116" cy="112" r="11"/><circle cx="90" cy="146" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="64" y="102">g</text><text x="116" y="112">g</text><text x="90" y="146">g</text>
+        </g>
+        <g stroke="#ea580c" stroke-width="2" stroke-linecap="round" fill="#ea580c">
+          <line x1="64" y1="88" x2="64" y2="78"/><polygon points="64,74 60,80 68,80"/>
+          <line x1="104" y1="112" x2="94" y2="112"/><polygon points="90,112 96,108 96,116"/>
+          <line x1="90" y1="160" x2="90" y2="170"/><polygon points="90,174 86,168 94,168"/>
+        </g>
+        <rect x="52" y="194" width="76" height="22" rx="6" fill="#ffedd5" stroke="#fed7aa"/>
+        <text x="90" y="208" font-size="10" font-weight="700" text-anchor="middle" fill="#ea580c">T<span class="chem-sub">1</span> = 300 K</text>
+      </svg>
+      <p class="gas-law-stage-note"><strong>P<span class="chem-sub">1</span></strong> is lower because the slower particles do not strike the walls as hard.</p>
+    </article>
+    <article class="gas-law-connector-card">
+      <p class="gas-law-connector-title">Direct Relationship</p>
+      <p class="gas-law-connector-eq">
+        <span class="formula-frac"><span class="formula-frac-n">P<span class="chem-sub">1</span></span><span class="formula-frac-d">T<span class="chem-sub">1</span></span></span>
+        <span>=</span>
+        <span class="formula-frac"><span class="formula-frac-n">P<span class="chem-sub">2</span></span><span class="formula-frac-d">T<span class="chem-sub">2</span></span></span>
+      </p>
+      <div class="gas-law-connector-arrow" aria-hidden="true">↑</div>
+      <div class="gas-law-connector-chip gas-law-chip-temp">Temperature increases</div>
+      <div class="gas-law-connector-chip gas-law-chip-up">Pressure increases</div>
+      <p class="gas-law-connector-note">Because volume cannot expand, heating the gas raises particle speed and pressure instead.</p>
+      <div class="gas-law-kelvin-note">Rigid container = volume unchanged. Always convert °C to K.</div>
+    </article>
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 2</p>
+      <h3>High Temperature, High Pressure</h3>
+      <p>Hotter particles move faster, so the same tank experiences more frequent and more forceful wall collisions.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Rigid container at higher temperature with higher pressure">
+        <rect x="40" y="54" width="100" height="126" rx="4" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <text x="90" y="72" font-size="10" font-weight="800" text-anchor="middle" fill="#94a3b8" letter-spacing="1">VOLUME FIXED</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="64" cy="100" r="11"/><circle cx="116" cy="108" r="11"/><circle cx="88" cy="142" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="64" y="100">g</text><text x="116" y="108">g</text><text x="88" y="142">g</text>
+        </g>
+        <g stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" fill="#ea580c">
+          <line x1="56" y1="92" x2="44" y2="80"/><polygon points="40,76 46,77 43,83"/>
+          <line x1="126" y1="102" x2="140" y2="98"/><polygon points="144,97 138,94 140,101"/>
+          <line x1="88" y1="154" x2="88" y2="170"/><polygon points="88,174 84,168 92,168"/>
+        </g>
+        <rect x="52" y="194" width="76" height="22" rx="6" fill="#ffedd5" stroke="#fed7aa"/>
+        <text x="90" y="208" font-size="10" font-weight="700" text-anchor="middle" fill="#ea580c">T<span class="chem-sub">2</span> = 600 K</text>
+      </svg>
+      <p class="gas-law-stage-note"><strong>P<span class="chem-sub">2</span></strong> is higher because the faster particles hit the walls harder and more often.</p>
+    </article>
+  </div>
+  <p class="gas-law-panel-caption">In a rigid container, volume cannot expand. Heating the gas increases particle speed, so pressure rises instead.</p>
 </div>
 <p><strong>Real-world example:</strong> An aerosol spray can in a hot car can explode. The rigid metal walls prevent volume change, so the rising temperature directly drives up the internal pressure — sometimes past the structural limit of the can.</p>
-<div class="graph-wrap">
-<div class="graph-title">▶ Interactive: Gay-Lussac's Law — P vs. T (straight line)</div>
-<canvas class="graph-canvas" id="gayCanvas"></canvas>
-<div class="slider-row">
-<label for="gayT">Temperature (K):</label>
-<input type="range" min="50" max="700" step="5" value="300" id="gayT" oninput="updateGay()">
-<span class="slider-val" id="gayTVal">300 K</span>
-</div>
-<div class="slider-row">
-<label for="gayK">P/T ratio k (atm/K):</label>
-<input type="range" min="0.001" max="0.010" step="0.0005" value="0.003" id="gayK" oninput="updateGay()">
-<span class="slider-val" id="gayKVal">k = 0.0030</span>
-</div>
-<div class="graph-readout" id="gayReadout">Drag the sliders to explore Gay-Lussac's Law.</div>
-</div>
 </div>
 
 <div class="card">
@@ -226,18 +386,82 @@
 <div class="formula-box">
 <span class="label">Avogadro's Law (T and P constant)</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">V₁</span><span class="formula-frac-d">n₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">V₂</span><span class="formula-frac-d">n₂</span></span></strong></span>
+<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">V<sub>1</sub></span><span class="formula-frac-d">n<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">V<sub>2</sub></span><span class="formula-frac-d">n<sub>2</sub></span></span></strong></span>
 <span class="formula-rule">Molar volume at STP (0&deg;C = 273 K, exactly 1 atm): <strong>1 mol any ideal gas = 22.4 L</strong></span>
 </div>
+</div>
+<div class="gas-law-panel gas-law-panel--avogadro">
+  <div class="gas-law-conditions gas-law-conditions--avogadro">
+    <p class="gas-law-conditions-title">Required Conditions</p>
+    <p><strong>Constant temperature (T)</strong> and <strong>constant pressure (P)</strong>. At STP, <strong>1 mol of any ideal gas occupies 22.4 L</strong>.</p>
+  </div>
+  <div class="gas-law-grid">
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 1</p>
+      <h3>Fewer Moles, Smaller Volume</h3>
+      <p>With fewer gas molecules present, the sample occupies the smaller volume when temperature and pressure stay fixed.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Gas sample with fewer molecules in a smaller volume at constant temperature and pressure">
+        <rect x="40" y="70" width="100" height="90" rx="18" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <text x="90" y="58" font-size="10" font-weight="800" text-anchor="middle" fill="#94a3b8">same T and P</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="64" cy="104" r="11"/><circle cx="116" cy="108" r="11"/><circle cx="90" cy="134" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="64" y="104">g</text><text x="116" y="108">g</text><text x="90" y="134">g</text>
+        </g>
+        <line x1="154" y1="74" x2="154" y2="160" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="117" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 117)">V<tspan baseline-shift="sub" font-size="9">1</tspan></text>
+        <rect x="48" y="178" width="84" height="22" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+        <text x="90" y="192" font-size="10" font-weight="700" text-anchor="middle" fill="#2563eb">n<tspan baseline-shift="sub" font-size="8">1</tspan> = 1 mol</text>
+      </svg>
+      <p class="gas-law-stage-note">At fixed T and P, the smaller amount of gas corresponds to the smaller volume <strong>V<span class="chem-sub">1</span></strong>.</p>
+    </article>
+    <article class="gas-law-connector-card">
+      <p class="gas-law-connector-title">Direct Relationship</p>
+      <p class="gas-law-connector-eq">
+        <span class="formula-frac"><span class="formula-frac-n">V<span class="chem-sub">1</span></span><span class="formula-frac-d">n<span class="chem-sub">1</span></span></span>
+        <span>=</span>
+        <span class="formula-frac"><span class="formula-frac-n">V<span class="chem-sub">2</span></span><span class="formula-frac-d">n<span class="chem-sub">2</span></span></span>
+      </p>
+      <div class="gas-law-connector-arrow" aria-hidden="true">→</div>
+      <div class="gas-law-connector-chip gas-law-chip-moles">Moles increase</div>
+      <div class="gas-law-connector-chip gas-law-chip-volume">Volume increases</div>
+      <p class="gas-law-connector-note">If temperature and pressure stay constant, adding more gas molecules requires more space.</p>
+      <div class="gas-law-kelvin-note">Equal volumes at the same T and P contain equal numbers of molecules.</div>
+    </article>
+    <article class="gas-law-stage-card">
+      <p class="gas-law-stage-kicker">State 2</p>
+      <h3>More Moles, Larger Volume</h3>
+      <p>With more gas molecules under the same conditions, the sample occupies a larger volume.</p>
+      <svg viewBox="0 0 180 230" role="img" aria-label="Gas sample with more molecules in a larger volume at constant temperature and pressure">
+        <rect x="40" y="44" width="100" height="126" rx="18" fill="#fff" stroke="#475569" stroke-width="4"/>
+        <text x="90" y="32" font-size="10" font-weight="800" text-anchor="middle" fill="#94a3b8">same T and P</text>
+        <g fill="#3b82f6" stroke="#1d4ed8" stroke-width="2">
+          <circle cx="62" cy="76" r="11"/><circle cx="116" cy="84" r="11"/><circle cx="88" cy="108" r="11"/>
+          <circle cx="64" cy="136" r="11"/><circle cx="116" cy="142" r="11"/><circle cx="90" cy="156" r="11"/>
+        </g>
+        <g fill="#fff" font-size="10" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="62" y="76">g</text><text x="116" y="84">g</text><text x="88" y="108">g</text>
+          <text x="64" y="136">g</text><text x="116" y="142">g</text><text x="90" y="156">g</text>
+        </g>
+        <line x1="154" y1="48" x2="154" y2="170" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="165" y="109" font-size="12" font-weight="700" fill="#2563eb" transform="rotate(90 165 109)">V<tspan baseline-shift="sub" font-size="9">2</tspan></text>
+        <rect x="48" y="186" width="84" height="22" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+        <text x="90" y="200" font-size="10" font-weight="700" text-anchor="middle" fill="#2563eb">n<tspan baseline-shift="sub" font-size="8">2</tspan> = 2 mol</text>
+      </svg>
+      <p class="gas-law-stage-note">At the same T and P, the larger amount of gas occupies the larger volume <strong>V<span class="chem-sub">2</span></strong>.</p>
+    </article>
+  </div>
+  <p class="gas-law-panel-caption">Avogadro's Law says the amount of gas and the volume rise together when temperature and pressure stay fixed.</p>
 </div>
 <div class="key-fact">
         <div class="icon">▸</div>
         <div class="key-fact-copy">
         <p class="key-fact-title">Classic trap</p>
           <ul class="key-fact-list">
-          <li>"Does 1 L of CH₄ or 1 L of H₂ contain more hydrogen atoms at STP?" Both contain the same number of <em>molecules</em> by Avogadro's Law.</li>
-          <li>But CH₄ has 4 H atoms per molecule while H₂ has only 2.</li>
-          <li>So 1 L of CH₄ contains twice as many hydrogen atoms.</li>
+          <li>"Does 1 L of <span class="ion-group">CH<span class="chem-sub">4</span></span> or 1 L of <span class="ion-group">H<span class="chem-sub">2</span></span> contain more hydrogen atoms at STP?" Both contain the same number of <em>molecules</em> by Avogadro's Law.</li>
+          <li>But <span class="ion-group">CH<span class="chem-sub">4</span></span> has 4 H atoms per molecule while <span class="ion-group">H<span class="chem-sub">2</span></span> has only 2.</li>
+          <li>So 1 L of <span class="ion-group">CH<span class="chem-sub">4</span></span> contains twice as many hydrogen atoms.</li>
           <li>Equal molecules does not mean equal atoms. Always distinguish atoms from molecules.</li>
           </ul>
         </div>
@@ -251,18 +475,18 @@
 <div class="formula-box">
 <span class="label">Combined Gas Law (n constant) — T in Kelvin, P in same units both sides</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">P₁ × V₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">P₂ × V₂</span><span class="formula-frac-d">T₂</span></span></strong></span>
+<span class="formula-rule"><strong><span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub> × V<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">P<sub>2</sub> × V<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></strong></span>
 </div>
 </div>
 <p>Use this table to see all five laws side by side. The 'Held Constant' column is what you check first when reading a gas law problem.</p>
-<table>
+<table class="mobile-stack-table">
 <thead><tr><th>Law</th><th>Held Constant</th><th>Equation</th><th>Graph of</th><th>Shape</th></tr></thead>
 <tbody>
-<tr><td>Boyle's</td><td>T, n</td><td>P₁V₁ = P₂V₂</td><td>P vs. V</td><td>Hyperbola</td></tr>
-<tr><td>Charles's</td><td>P, n</td><td><span class="formula-frac"><span class="formula-frac-n">V₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">V₂</span><span class="formula-frac-d">T₂</span></span></td><td>V vs. T</td><td>Straight line</td></tr>
-<tr><td>Gay-Lussac's</td><td>V, n</td><td><span class="formula-frac"><span class="formula-frac-n">P₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">P₂</span><span class="formula-frac-d">T₂</span></span></td><td>P vs. T</td><td>Straight line</td></tr>
-<tr><td>Combined</td><td>n only</td><td><span class="formula-frac"><span class="formula-frac-n">P₁V₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">P₂V₂</span><span class="formula-frac-d">T₂</span></span></td><td>—</td><td>—</td></tr>
-<tr><td>Avogadro's</td><td>T, P</td><td><span class="formula-frac"><span class="formula-frac-n">V₁</span><span class="formula-frac-d">n₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">V₂</span><span class="formula-frac-d">n₂</span></span></td><td>V vs. n</td><td>Straight line</td></tr>
+<tr><td data-label="Law">Boyle's</td><td data-label="Held Constant">T, n</td><td data-label="Equation">P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub></td><td data-label="Graph of">P vs. V</td><td data-label="Shape">Hyperbola</td></tr>
+<tr><td data-label="Law">Charles's</td><td data-label="Held Constant">P, n</td><td data-label="Equation"><span class="formula-frac"><span class="formula-frac-n">V<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">V<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></td><td data-label="Graph of">V vs. T</td><td data-label="Shape">Straight line</td></tr>
+<tr><td data-label="Law">Gay-Lussac's</td><td data-label="Held Constant">V, n</td><td data-label="Equation"><span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">P<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></td><td data-label="Graph of">P vs. T</td><td data-label="Shape">Straight line</td></tr>
+<tr><td data-label="Law">Combined</td><td data-label="Held Constant">n only</td><td data-label="Equation"><span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub>V<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">P<sub>2</sub>V<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span></td><td data-label="Graph of">—</td><td data-label="Shape">—</td></tr>
+<tr><td data-label="Law">Avogadro's</td><td data-label="Held Constant">T, P</td><td data-label="Equation"><span class="formula-frac"><span class="formula-frac-n">V<sub>1</sub></span><span class="formula-frac-d">n<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">V<sub>2</sub></span><span class="formula-frac-d">n<sub>2</sub></span></span></td><td data-label="Graph of">V vs. n</td><td data-label="Shape">Straight line</td></tr>
 </tbody>
 </table>
 </div>
@@ -308,10 +532,10 @@
 <div class="formula-box">
 <span class="label">Dalton's Law of Partial Pressures</span>
 <div class="formula-rule-list">
-<span class="formula-rule"><strong>P<sub>total</sub> = P₁ + P₂ + P₃ + …</strong></span>
-<span class="formula-rule">Mole fraction: <strong>χₐ = <span class="formula-frac"><span class="formula-frac-n">nₐ</span><span class="formula-frac-d">n<sub>total</sub></span></span></strong></span>
-<span class="formula-rule">Partial pressure: <strong>Pₐ = χₐ × P<sub>total</sub></strong></span>
-<span class="formula-rule">Gas collected over water: <strong>P<sub>dry gas</sub> = P<sub>barometer</sub> − P<sub>H₂O vapor</sub></strong></span>
+<span class="formula-rule"><strong>P<sub>total</sub> = P<sub>1</sub> + P<sub>2</sub> + P<sub>3</sub> + …</strong></span>
+<span class="formula-rule">Mole fraction: <strong>χ<sub>a</sub> = <span class="formula-frac"><span class="formula-frac-n">n<sub>a</sub></span><span class="formula-frac-d">n<sub>total</sub></span></span></strong></span>
+<span class="formula-rule">Partial pressure: <strong>P<sub>a</sub> = χ<sub>a</sub> × P<sub>total</sub></strong></span>
+<span class="formula-rule">Gas collected over water: <strong>P<sub>dry gas</sub> = P<sub>barometer</sub> − P<sub><span class="ion-group">H<span class="chem-sub">2</span>O</span> vapor</sub></strong></span>
 </div>
 </div>
 <div class="key-fact">
@@ -458,11 +682,11 @@
 <div class="segment-controls tool-choice-row" id="avogChoices" role="group" aria-label="Avogadro choices">
 <button type="button" class="segment-btn tool-choice-btn explore-choice cardlike" id="avogOptA" onclick="selectChoice('avog','a')">
 <p><strong>Sample A</strong></p>
-<p id="avogSampleA">1.0 L of CH<sub>4</sub> at the same T and P</p>
+<p id="avogSampleA">1.0 L of <span class="ion-group">CH<span class="chem-sub">4</span></span> at the same T and P</p>
 </button>
 <button type="button" class="segment-btn tool-choice-btn explore-choice cardlike" id="avogOptB" onclick="selectChoice('avog','b')">
 <p><strong>Sample B</strong></p>
-<p id="avogSampleB">1.0 L of H<sub>2</sub> at the same T and P</p>
+<p id="avogSampleB">1.0 L of <span class="ion-group">H<span class="chem-sub">2</span></span> at the same T and P</p>
 </button>
 <button type="button" class="segment-btn tool-choice-btn explore-choice" id="avogOptSame" onclick="selectChoice('avog','same')">Same number of hydrogen atoms</button>
 </div>
@@ -478,8 +702,8 @@
 <p class="key-fact-title" id="avogRevealTitle">Why Sample A has more hydrogen atoms</p>
 <ul class="key-fact-list" id="avogRevealList">
 <li>Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.</li>
-<li>Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.</li>
-<li>Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.</li>
+<li>Each <span class="ion-group">CH<span class="chem-sub">4</span></span> molecule has <strong>4 hydrogen atoms</strong>.</li>
+<li>Each <span class="ion-group">H<span class="chem-sub">2</span></span> molecule has <strong>2 hydrogen atoms</strong>.</li>
 <li>So Sample A has more hydrogen atoms.</li>
 </ul>
 </div>
@@ -514,7 +738,7 @@
 <strong>Water vapor pressure:</strong> <span id="waterVapor">23.8 mmHg</span>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Gas collected:</strong> <span id="waterGas">H<sub>2</sub></span>
+<strong>Gas collected:</strong> <span id="waterGas"><span class="ion-group">H<span class="chem-sub">2</span></span></span>
 </div></div>
 </div>
 <div class="segment-controls tool-choice-row" id="waterChoices" role="group" aria-label="Water collection pressure choices">
@@ -535,7 +759,7 @@
 <ul class="key-fact-list" id="waterRevealList">
 <li>Measured pressure = hydrogen gas + water vapor.</li>
 <li><strong>755.0 − 23.8 = 731.2 mmHg</strong></li>
-<li>Use <strong>731.2 mmHg</strong> as the pressure of dry H<sub>2</sub>.</li>
+<li>Use <strong>731.2 mmHg</strong> as the pressure of dry <span class="ion-group">H<span class="chem-sub">2</span></span>.</li>
 </ul>
 </div>
 </div>
@@ -601,19 +825,19 @@
 <h2 class="card-title">Example 1 · Boyle's Law — Syringe Compression</h2>
 <div class="example-setup">
 <p><strong>Problem:</strong> Find the new volume after the pressure changes.</p>
-<p><strong>Given:</strong> V₁ = 4.50 L, P₁ = 1.20 atm, P₂ = 3.00 atm, constant temperature</p>
-<p><strong>Find:</strong> V₂</p>
+<p><strong>Given:</strong> V<sub>1</sub> = 4.50 L, P<sub>1</sub> = 1.20 atm, P<sub>2</sub> = 3.00 atm, constant temperature</p>
+<p><strong>Find:</strong> V<sub>2</sub></p>
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 1 — Identify the law: T and n constant → Boyle's Law</strong>
-<p>P₁ = 1.20 atm &nbsp; V₁ = 4.50 L &nbsp; P₂ = 3.00 atm &nbsp; V₂ = ?</p>
+<p>P<sub>1</sub> = 1.20 atm &nbsp; V<sub>1</sub> = 4.50 L &nbsp; P<sub>2</sub> = 3.00 atm &nbsp; V<sub>2</sub> = ?</p>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 2 — Apply Boyle's Law and solve for V₂</strong>
-<div class="fl-chain">P₁V₁ = P₂V₂ &nbsp;→&nbsp; V₂ = <span class="formula-frac"><span class="formula-frac-n">P₁V₁</span><span class="formula-frac-d">P₂</span></span> = <span class="formula-frac"><span class="formula-frac-n">1.20 atm × 4.50 L</span><span class="formula-frac-d">3.00 atm</span></span></div>
+<strong>Step 2 — Apply Boyle's Law and solve for V<sub>2</sub></strong>
+<div class="fl-chain">P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub> &nbsp;→&nbsp; V<sub>2</sub> = <span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub>V<sub>1</sub></span><span class="formula-frac-d">P<sub>2</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">1.20 <span class="cancel-mark cancel-blue">atm</span> × 4.50 L</span><span class="formula-frac-d">3.00 <span class="cancel-mark cancel-blue">atm</span></span></span></div>
 <div class="fl-cancel">atm cancels on top and bottom → unit remaining: <strong>L ✓</strong></div>
-<div class="fl-chain">V₂ = <span class="formula-frac"><span class="formula-frac-n">5.40</span><span class="formula-frac-d">3.00</span></span> = <span class="fl-result">1.80 L</span></div>
+<div class="fl-chain">V<sub>2</sub> = <span class="formula-frac"><span class="formula-frac-n">5.40</span><span class="formula-frac-d">3.00</span></span> = <span class="fl-result">1.80 L</span></div>
 <p>Sanity check: pressure × 2.5 increase → volume ÷ 2.5. 4.50 ÷ 2.5 = 1.80 ✓</p>
 </div></div>
 </div>
@@ -623,17 +847,17 @@
 <h2 class="card-title">Example 2 · Charles's Law — Balloon Heating</h2>
 <div class="example-setup">
 <p><strong>Problem:</strong> Find the new volume after heating a balloon at constant pressure.</p>
-<p><strong>Given:</strong> V₁ = 2.50 L, T₁ = 25.0°C, T₂ = 100.0°C, constant pressure</p>
-<p><strong>Find:</strong> V₂</p>
+<p><strong>Given:</strong> V<sub>1</sub> = 2.50 L, T<sub>1</sub> = 25.0°C, T<sub>2</sub> = 100.0°C, constant pressure</p>
+<p><strong>Find:</strong> V<sub>2</sub></p>
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 1 — Convert temperatures to Kelvin FIRST</strong>
-<div class="fl-chain">T₁ = 25.0 + 273 = <strong>298 K</strong> &nbsp;&nbsp; T₂ = 100.0 + 273 = <strong>373 K</strong></div>
+<strong>Step 1 — Use Charles's Law, then convert both temperatures to Kelvin first</strong>
+<div class="fl-chain">T<sub>1</sub> = 25.0 + 273 = <strong>298 K</strong> &nbsp;&nbsp; T<sub>2</sub> = 100.0 + 273 = <strong>373 K</strong></div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 2 — Apply Charles's Law</strong>
-<div class="fl-chain"><span class="formula-frac"><span class="formula-frac-n">V₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">V₂</span><span class="formula-frac-d">T₂</span></span> &nbsp;→&nbsp; V₂ = V₁ × <span class="formula-frac"><span class="formula-frac-n">T₂</span><span class="formula-frac-d">T₁</span></span> = 2.50 L × <span class="formula-frac"><span class="formula-frac-n">373 K</span><span class="formula-frac-d">298 K</span></span> = <span class="fl-result">3.13 L</span></div>
+<div class="fl-chain"><span class="formula-frac"><span class="formula-frac-n">V<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">V<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span> &nbsp;→&nbsp; V<sub>2</sub> = V<sub>1</sub> × <span class="formula-frac"><span class="formula-frac-n">T<sub>2</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = 2.50 L × <span class="formula-frac"><span class="formula-frac-n">373 <span class="cancel-mark cancel-blue">K</span></span><span class="formula-frac-d">298 <span class="cancel-mark cancel-blue">K</span></span></span> = <span class="fl-result">3.13 L</span></div>
 <p>Sanity check: T increased → V must increase. 3.13 > 2.50 ✓</p>
 </div></div>
 </div>
@@ -643,17 +867,17 @@
 <h2 class="card-title">Example 3 · Gay-Lussac's Law — Spray Can in Fire</h2>
 <div class="example-setup">
 <p><strong>Problem:</strong> Find the new pressure when the gas is heated in a rigid can.</p>
-<p><strong>Given:</strong> P₁ = 1.44 atm, T₁ = 23°C, T₂ = 475°C, constant volume</p>
-<p><strong>Find:</strong> P₂</p>
+<p><strong>Given:</strong> P<sub>1</sub> = 1.44 atm, T<sub>1</sub> = 23°C, T<sub>2</sub> = 475°C, constant volume</p>
+<p><strong>Find:</strong> P<sub>2</sub></p>
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 1 — Convert temperatures</strong>
-<div class="fl-chain">T₁ = 23 + 273 = 296 K &nbsp;&nbsp; T₂ = 475 + 273 = 748 K</div>
+<strong>Step 1 — Use Gay-Lussac's Law, then convert both temperatures to Kelvin</strong>
+<div class="fl-chain">T<sub>1</sub> = 23 + 273 = 296 K &nbsp;&nbsp; T<sub>2</sub> = 475 + 273 = 748 K</div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 2 — Apply Gay-Lussac's Law</strong>
-<div class="fl-chain"><span class="formula-frac"><span class="formula-frac-n">P₁</span><span class="formula-frac-d">T₁</span></span> = <span class="formula-frac"><span class="formula-frac-n">P₂</span><span class="formula-frac-d">T₂</span></span> &nbsp;→&nbsp; P₂ = P₁ × <span class="formula-frac"><span class="formula-frac-n">T₂</span><span class="formula-frac-d">T₁</span></span> = 1.44 atm × <span class="formula-frac"><span class="formula-frac-n">748</span><span class="formula-frac-d">296</span></span> = <span class="fl-result">3.64 atm</span></div>
+<div class="fl-chain"><span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">P<sub>2</sub></span><span class="formula-frac-d">T<sub>2</sub></span></span> &nbsp;→&nbsp; P<sub>2</sub> = P<sub>1</sub> × <span class="formula-frac"><span class="formula-frac-n">T<sub>2</sub></span><span class="formula-frac-d">T<sub>1</sub></span></span> = 1.44 atm × <span class="formula-frac"><span class="formula-frac-n">748 <span class="cancel-mark cancel-blue">K</span></span><span class="formula-frac-d">296 <span class="cancel-mark cancel-blue">K</span></span></span> = <span class="fl-result">3.64 atm</span></div>
 <p>The pressure more than doubled — enough to rupture the can.</p>
 </div></div>
 </div>
@@ -663,17 +887,17 @@
 <h2 class="card-title">Example 4 · Combined Gas Law — Weather Balloon</h2>
 <div class="example-setup">
 <p><strong>Problem:</strong> Find the balloon's new volume after both pressure and temperature change.</p>
-<p><strong>Given:</strong> V₁ = 8.50 L, P₁ = 750 mmHg, T₁ = 22°C, P₂ = 365 mmHg, T₂ = −15°C</p>
-<p><strong>Find:</strong> V₂</p>
+<p><strong>Given:</strong> V<sub>1</sub> = 8.50 L, P<sub>1</sub> = 750 mmHg, T<sub>1</sub> = 22°C, P<sub>2</sub> = 365 mmHg, T<sub>2</sub> = −15°C</p>
+<p><strong>Find:</strong> V<sub>2</sub></p>
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 1 — Choose the law: this is the same gas sample, the amount of gas stays constant, and both pressure and temperature change. Use the Combined Gas Law.</strong>
-<div class="fl-chain">T₁ = 295 K &nbsp;&nbsp; T₂ = 258 K &nbsp;&nbsp; P in mmHg both sides → no conversion needed</div>
+<div class="fl-chain">T<sub>1</sub> = 295 K &nbsp;&nbsp; T<sub>2</sub> = 258 K &nbsp;&nbsp; P in mmHg both sides → no conversion needed</div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 2 — Solve Combined Gas Law for V₂</strong>
-<div class="fl-chain">V₂ = <span class="formula-frac"><span class="formula-frac-n">P₁V₁T₂</span><span class="formula-frac-d">T₁P₂</span></span> = <span class="formula-frac"><span class="formula-frac-n">750 × 8.50 × 258</span><span class="formula-frac-d">295 × 365</span></span> = <span class="fl-result">15.3 L</span></div>
+<strong>Step 2 — Solve the Combined Gas Law for V<sub>2</sub></strong>
+<div class="fl-chain">V<sub>2</sub> = <span class="formula-frac"><span class="formula-frac-n">P<sub>1</sub>V<sub>1</sub>T<sub>2</sub></span><span class="formula-frac-d">T<sub>1</sub>P<sub>2</sub></span></span> = <span class="formula-frac"><span class="formula-frac-n">750 × 8.50 × 258</span><span class="formula-frac-d">295 × 365</span></span> = <span class="fl-result">15.3 L</span></div>
 <p>Sanity check: P dropped by ~half (big ↑ volume) while T dropped slightly (small ↓ volume). Net result = volume increase. ✓</p>
 </div></div>
 </div>
@@ -688,12 +912,12 @@
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 1 — Convert T; choose R</strong>
+<strong>Step 1 — Use PV = nRT, then convert temperature and choose the matching gas constant</strong>
 <div class="fl-chain">T = 127 + 273 = 400 K &nbsp;&nbsp; P in atm → R = 0.08206 L·atm/mol·K</div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 2 — Solve PV = nRT for n</strong>
-<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">3.75 × 8.25</span><span class="formula-frac-d">0.08206 × 400</span></span> = <span class="formula-frac"><span class="formula-frac-n">30.94</span><span class="formula-frac-d">32.82</span></span> = <span class="fl-result">0.943 mol</span></div>
+<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">3.75 <span class="cancel-mark cancel-blue">atm</span> × 8.25 <span class="cancel-mark cancel-gold">L</span></span><span class="formula-frac-d">0.08206 <span class="cancel-mark cancel-gold">L</span>·<span class="cancel-mark cancel-blue">atm</span>·mol⁻¹·<span class="cancel-mark cancel-red">K</span>⁻¹ × 400 <span class="cancel-mark cancel-red">K</span></span></span> = <span class="formula-frac"><span class="formula-frac-n">30.94</span><span class="formula-frac-d">32.82</span></span> = <span class="fl-result">0.943 mol</span></div>
 <div class="fl-cancel">Units: <span class="formula-frac"><span class="formula-frac-n">atm·L</span><span class="formula-frac-d">L·atm·mol⁻¹·K⁻¹·K</span></span> → <strong>mol ✓</strong></div>
 </div></div>
 </div>
@@ -709,12 +933,12 @@
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
-<strong>Step 1 — Convert units</strong>
+<strong>Step 1 — Use PV = nRT for moles first, so convert the temperature and pressure units</strong>
 <div class="fl-chain">T = 45 + 273 = 318 K &nbsp;&nbsp; P = 740 ÷ 760 = 0.9737 atm</div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 2 — Find moles via PV = nRT</strong>
-<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.9737 × 0.250</span><span class="formula-frac-d">0.08206 × 318</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.2434</span><span class="formula-frac-d">26.10</span></span> = 0.009328 mol</div>
+<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.9737 <span class="cancel-mark cancel-blue">atm</span> × 0.250 <span class="cancel-mark cancel-gold">L</span></span><span class="formula-frac-d">0.08206 <span class="cancel-mark cancel-gold">L</span>·<span class="cancel-mark cancel-blue">atm</span>·mol⁻¹·<span class="cancel-mark cancel-red">K</span>⁻¹ × 318 <span class="cancel-mark cancel-red">K</span></span></span> = <span class="formula-frac"><span class="formula-frac-n">0.2434</span><span class="formula-frac-d">26.10</span></span> = 0.009328 mol</div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 3 — Molar mass = mass ÷ moles</strong>
@@ -728,17 +952,17 @@
 <div class="example-setup">
 <p><strong>Problem:</strong> Find the pressure of dry hydrogen and then the number of moles collected.</p>
 <p><strong>Given:</strong> total pressure = 755 mmHg, water vapor pressure = 23.8 mmHg, T = 25°C, V = 0.380 L</p>
-<p><strong>Find:</strong> P(H₂) and mol H₂</p>
+<p><strong>Find:</strong> P(<span class="ion-group">H<span class="chem-sub">2</span></span>) and mol <span class="ion-group">H<span class="chem-sub">2</span></span></p>
 </div>
 <div class="steps">
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 1 — Isolate the dry gas pressure: the total pressure includes both hydrogen gas and water vapor, so subtract the water vapor pressure first.</strong>
-<div class="fl-chain">P(H₂) = P(total) − P(H₂O) = 755 − 23.8 = <span class="fl-result">731.2 mmHg</span></div>
+<div class="fl-chain">P(<span class="ion-group">H<span class="chem-sub">2</span></span>) = P(total) − P(<span class="ion-group">H<span class="chem-sub">2</span>O</span>) = 755 − 23.8 = <span class="fl-result">731.2 mmHg</span></div>
 </div></div>
 <div class="step"><div class="step-num"></div><div class="step-content">
 <strong>Step 2 — Use only the dry hydrogen pressure in PV = nRT.</strong>
 <div class="fl-chain">P = 731.2 ÷ 760 = 0.9621 atm &nbsp;&nbsp; T = 298 K</div>
-<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.9621 × 0.380</span><span class="formula-frac-d">0.08206 × 298</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.3656</span><span class="formula-frac-d">24.45</span></span> = <span class="fl-result">0.01495 mol H₂</span></div>
+<div class="fl-chain">n = <span class="formula-frac"><span class="formula-frac-n">PV</span><span class="formula-frac-d">RT</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.9621 × 0.380</span><span class="formula-frac-d">0.08206 × 298</span></span> = <span class="formula-frac"><span class="formula-frac-n">0.3656</span><span class="formula-frac-d">24.45</span></span> = <span class="fl-result">0.01495 mol <span class="ion-group">H<span class="chem-sub">2</span></span></span></div>
 </div></div>
 </div>
 </div>
@@ -809,12 +1033,18 @@ ctx.save();ctx.translate(11,H/2);ctx.rotate(-Math.PI/2);ctx.fillText(yL,0,0);ctx
 function dot(ctx,x,y,lbl){ctx.fillStyle='#dc2626';ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();ctx.fillStyle='#1e3a8a';ctx.font='bold 10px DM Mono,monospace';ctx.textAlign='left';ctx.fillText(lbl,x+10,y-6);}
 
 function updateBoyle(){
-const p=parseFloat(document.getElementById('boyleP').value);
-const k=parseFloat(document.getElementById('boyleK').value);
-document.getElementById('boylePVal').textContent=p.toFixed(2)+' atm';
-document.getElementById('boyleKVal').textContent='k = '+k.toFixed(1);
+const pInput=document.getElementById('boyleP');
+const kInput=document.getElementById('boyleK');
+const pVal=document.getElementById('boylePVal');
+const kVal=document.getElementById('boyleKVal');
+const readout=document.getElementById('boyleReadout');
+if(!pInput||!kInput||!pVal||!kVal||!readout)return;
+const p=parseFloat(pInput.value);
+const k=parseFloat(kInput.value);
+pVal.textContent=p.toFixed(2)+' atm';
+kVal.textContent='k = '+k.toFixed(1);
 const v=k/p;
-document.getElementById('boyleReadout').textContent='P = '+p.toFixed(3)+' atm  |  V = '+v.toFixed(3)+' L  |  P×V = '+(p*v).toFixed(3)+' L·atm (constant)';
+readout.textContent='P = '+p.toFixed(3)+' atm  |  V = '+v.toFixed(3)+' L  |  P×V = '+(p*v).toFixed(3)+' L·atm (constant)';
 const g=sc('boyleCanvas');if(!g)return;
 const{ctx,W,H}=g;const pad={l:55,r:20,t:15,b:36};
 const pMax=6,vMax=Math.min(k/0.18+1,45);
@@ -827,12 +1057,18 @@ if(v>0&&v<=vMax&&p<=pMax)dot(ctx,scX(v),scY(p),'('+v.toFixed(2)+'L, '+p.toFixed(
 }
 
 function updateCharles(){
-const T=parseFloat(document.getElementById('charlesT').value);
-const k=parseFloat(document.getElementById('charlesK').value);
-document.getElementById('charlesTVal').textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
-document.getElementById('charlesKVal').textContent='k = '+k.toFixed(3);
+const tInput=document.getElementById('charlesT');
+const kInput=document.getElementById('charlesK');
+const tVal=document.getElementById('charlesTVal');
+const kVal=document.getElementById('charlesKVal');
+const readout=document.getElementById('charlesReadout');
+if(!tInput||!kInput||!tVal||!kVal||!readout)return;
+const T=parseFloat(tInput.value);
+const k=parseFloat(kInput.value);
+tVal.textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
+kVal.textContent='k = '+k.toFixed(3);
 const V=k*T;
-document.getElementById('charlesReadout').textContent='T = '+T+' K  |  V = '+V.toFixed(3)+' L  |  V/T = '+k.toFixed(4)+' L/K (constant)';
+readout.textContent='T = '+T+' K  |  V = '+V.toFixed(3)+' L  |  V/T = '+k.toFixed(4)+' L/K (constant)';
 const g=sc('charlesCanvas');if(!g)return;
 const{ctx,W,H}=g;const pad={l:55,r:20,t:15,b:36};
 const Tmax=750,Vmax=k*Tmax*1.1;
@@ -843,12 +1079,18 @@ if(T<=Tmax&&V<=Vmax)dot(ctx,scX(T),scY(V),'('+T+'K, '+V.toFixed(2)+'L)');
 }
 
 function updateGay(){
-const T=parseFloat(document.getElementById('gayT').value);
-const k=parseFloat(document.getElementById('gayK').value);
-document.getElementById('gayTVal').textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
-document.getElementById('gayKVal').textContent='k = '+k.toFixed(4);
+const tInput=document.getElementById('gayT');
+const kInput=document.getElementById('gayK');
+const tVal=document.getElementById('gayTVal');
+const kVal=document.getElementById('gayKVal');
+const readout=document.getElementById('gayReadout');
+if(!tInput||!kInput||!tVal||!kVal||!readout)return;
+const T=parseFloat(tInput.value);
+const k=parseFloat(kInput.value);
+tVal.textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
+kVal.textContent='k = '+k.toFixed(4);
 const P=k*T;
-document.getElementById('gayReadout').textContent='T = '+T+' K  |  P = '+P.toFixed(4)+' atm  |  P/T = '+k.toFixed(5)+' atm/K (constant)';
+readout.textContent='T = '+T+' K  |  P = '+P.toFixed(4)+' atm  |  P/T = '+k.toFixed(5)+' atm/K (constant)';
 const g=sc('gayCanvas');if(!g)return;
 const{ctx,W,H}=g;const pad={l:65,r:20,t:15,b:36};
 const Tmax=750,Pmax=k*Tmax*1.1;
@@ -1259,58 +1501,58 @@ reveal:[
 
 const avogScenarios=[
 {
-sampleA:"1.0 L of CH<sub>4</sub> at the same T and P",
-sampleB:"1.0 L of H<sub>2</sub> at the same T and P",
+sampleA:"1.0 L of CH4 at the same T and P",
+sampleB:"1.0 L of H2 at the same T and P",
 correct:"a",
-correctFeedback:"Right — equal volumes at the same temperature and pressure have the same number of molecules, but CH₄ has more hydrogen atoms in each molecule.",
+correctFeedback:"Right — equal volumes at the same temperature and pressure have the same number of molecules, but CH4 has more hydrogen atoms in each molecule.",
 incorrectFeedback:"Not quite — you mixed up molecules and atoms. Start with Avogadro's Law: equal volumes mean equal numbers of molecules. Then compare how many hydrogen atoms each molecule contains.",
 revealTitle:"Why Sample A has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
-"Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
+"Each CH4 molecule has <strong>4 hydrogen atoms</strong>.",
+"Each H2 molecule has <strong>2 hydrogen atoms</strong>.",
 "So Sample A has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of NH<sub>3</sub> at the same T and P",
-sampleB:"1.0 L of H<sub>2</sub> at the same T and P",
+sampleA:"1.0 L of NH3 at the same T and P",
+sampleB:"1.0 L of H2 at the same T and P",
 correct:"a",
-correctFeedback:"Right — equal volumes mean equal numbers of molecules, and NH₃ has 3 hydrogen atoms per molecule while H₂ has 2.",
+correctFeedback:"Right — equal volumes mean equal numbers of molecules, and NH3 has 3 hydrogen atoms per molecule while H2 has 2.",
 incorrectFeedback:"Not quite — do not compare liters directly to atoms. First use Avogadro's Law to match molecules, then compare hydrogen atoms per molecule.",
 revealTitle:"Why Sample A has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each NH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
-"Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
+"Each NH3 molecule has <strong>3 hydrogen atoms</strong>.",
+"Each H2 molecule has <strong>2 hydrogen atoms</strong>.",
 "So Sample A has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of H<sub>2</sub>O vapor at the same T and P",
-sampleB:"1.0 L of H<sub>2</sub>S at the same T and P",
+sampleA:"1.0 L of H2O vapor at the same T and P",
+sampleB:"1.0 L of H2S at the same T and P",
 correct:"same",
 correctFeedback:"Right — equal volumes mean equal numbers of molecules, and each molecule in both samples contains 2 hydrogen atoms.",
 incorrectFeedback:"Not quite — start with equal molecules, not equal masses. Then compare the number of hydrogen atoms in each molecule.",
 revealTitle:"Why both samples have the same number of hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each H<sub>2</sub>O molecule has <strong>2 hydrogen atoms</strong>.",
-"Each H<sub>2</sub>S molecule also has <strong>2 hydrogen atoms</strong>.",
+"Each H2O molecule has <strong>2 hydrogen atoms</strong>.",
+"Each H2S molecule also has <strong>2 hydrogen atoms</strong>.",
 "So both samples have the same number of hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of H<sub>2</sub> at the same T and P",
-sampleB:"1.0 L of CH<sub>4</sub> at the same T and P",
+sampleA:"1.0 L of H2 at the same T and P",
+sampleB:"1.0 L of CH4 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes mean equal numbers of molecules, but CH₄ has 4 hydrogen atoms per molecule while H₂ has only 2.",
+correctFeedback:"Right — equal volumes mean equal numbers of molecules, but CH4 has 4 hydrogen atoms per molecule while H2 has only 2.",
 incorrectFeedback:"Not quite — equal volumes mean equal numbers of molecules at the same T and P. The question is how many hydrogen atoms are inside each molecule.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
-"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"Each H2 molecule has <strong>2 hydrogen atoms</strong>.",
+"Each CH4 molecule has <strong>4 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
@@ -1329,128 +1571,128 @@ reveal:[
 ]
 },
 {
-sampleA:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
-sampleB:"1.0 L of CH<sub>4</sub> at the same T and P",
+sampleA:"1.0 L of C2H6 at the same T and P",
+sampleB:"1.0 L of CH4 at the same T and P",
 correct:"a",
-correctFeedback:"Right — equal volumes contain equal molecules, and C₂H₆ has 6 hydrogen atoms per molecule while CH₄ has 4.",
+correctFeedback:"Right — equal volumes contain equal molecules, and C2H6 has 6 hydrogen atoms per molecule while CH4 has 4.",
 incorrectFeedback:"Not quite — compare hydrogen atoms per molecule after you use Avogadro's Law to match molecule counts.",
 revealTitle:"Why Sample A has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
-"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"Each C2H6 molecule has <strong>6 hydrogen atoms</strong>.",
+"Each CH4 molecule has <strong>4 hydrogen atoms</strong>.",
 "So Sample A has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of H<sub>2</sub> at the same T and P",
-sampleB:"1.0 L of NH<sub>3</sub> at the same T and P",
+sampleA:"1.0 L of H2 at the same T and P",
+sampleB:"1.0 L of NH3 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes mean equal molecules, and NH₃ has 3 hydrogen atoms per molecule while H₂ has 2.",
+correctFeedback:"Right — equal volumes mean equal molecules, and NH3 has 3 hydrogen atoms per molecule while H2 has 2.",
 incorrectFeedback:"Not quite — use Avogadro's Law first, then compare hydrogen atoms inside each molecule.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
-"Each NH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"Each H2 molecule has <strong>2 hydrogen atoms</strong>.",
+"Each NH3 molecule has <strong>3 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of C<sub>2</sub>H<sub>2</sub> at the same T and P",
-sampleB:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
+sampleA:"1.0 L of C2H2 at the same T and P",
+sampleB:"1.0 L of C2H6 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes give equal molecules, and C₂H₆ has more hydrogen atoms per molecule than C₂H₂.",
+correctFeedback:"Right — equal volumes give equal molecules, and C2H6 has more hydrogen atoms per molecule than C2H2.",
 incorrectFeedback:"Not quite — the comparison depends on hydrogen atoms per molecule after you match the number of molecules.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each C<sub>2</sub>H<sub>2</sub> molecule has <strong>2 hydrogen atoms</strong>.",
-"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
+"Each C2H2 molecule has <strong>2 hydrogen atoms</strong>.",
+"Each C2H6 molecule has <strong>6 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of H<sub>2</sub>O vapor at the same T and P",
-sampleB:"1.0 L of NH<sub>3</sub> at the same T and P",
+sampleA:"1.0 L of H2O vapor at the same T and P",
+sampleB:"1.0 L of NH3 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes mean equal molecules, and NH₃ has 3 H atoms per molecule while H₂O has 2.",
+correctFeedback:"Right — equal volumes mean equal molecules, and NH3 has 3 H atoms per molecule while H2O has 2.",
 incorrectFeedback:"Not quite — compare the number of hydrogen atoms in each molecule after using Avogadro's Law.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each H<sub>2</sub>O molecule has <strong>2 hydrogen atoms</strong>.",
-"Each NH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"Each H2O molecule has <strong>2 hydrogen atoms</strong>.",
+"Each NH3 molecule has <strong>3 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of CH<sub>4</sub> at the same T and P",
-sampleB:"1.0 L of C<sub>2</sub>H<sub>6</sub> at the same T and P",
+sampleA:"1.0 L of CH4 at the same T and P",
+sampleB:"1.0 L of C2H6 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes give equal numbers of molecules, and C₂H₆ has more H atoms per molecule than CH₄.",
+correctFeedback:"Right — equal volumes give equal numbers of molecules, and C2H6 has more H atoms per molecule than CH4.",
 incorrectFeedback:"Not quite — use equal molecules first, then compare the formulas for hydrogen count.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
-"Each C<sub>2</sub>H<sub>6</sub> molecule has <strong>6 hydrogen atoms</strong>.",
+"Each CH4 molecule has <strong>4 hydrogen atoms</strong>.",
+"Each C2H6 molecule has <strong>6 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
 {
 sampleA:"1.0 L of HF at the same T and P",
-sampleB:"1.0 L of CH<sub>4</sub> at the same T and P",
+sampleB:"1.0 L of CH4 at the same T and P",
 correct:"b",
-correctFeedback:"Right — equal volumes mean equal molecules, and CH₄ has 4 hydrogen atoms per molecule while HF has only 1.",
+correctFeedback:"Right — equal volumes mean equal molecules, and CH4 has 4 hydrogen atoms per molecule while HF has only 1.",
 incorrectFeedback:"Not quite — the molecule counts are equal, so compare how many hydrogen atoms each molecule contains.",
 revealTitle:"Why Sample B has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
 "Each HF molecule has <strong>1 hydrogen atom</strong>.",
-"Each CH<sub>4</sub> molecule has <strong>4 hydrogen atoms</strong>.",
+"Each CH4 molecule has <strong>4 hydrogen atoms</strong>.",
 "So Sample B has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of H<sub>2</sub>S at the same T and P",
-sampleB:"1.0 L of C<sub>2</sub>H<sub>2</sub> at the same T and P",
+sampleA:"1.0 L of H2S at the same T and P",
+sampleB:"1.0 L of C2H2 at the same T and P",
 correct:"same",
 correctFeedback:"Right — equal volumes mean equal molecules, and both molecules contain 2 hydrogen atoms each.",
 incorrectFeedback:"Not quite — after you match molecule counts, compare hydrogen atoms in each formula. Both have 2 H atoms.",
 revealTitle:"Why both samples have the same number of hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each H<sub>2</sub>S molecule has <strong>2 hydrogen atoms</strong>.",
-"Each C<sub>2</sub>H<sub>2</sub> molecule also has <strong>2 hydrogen atoms</strong>.",
+"Each H2S molecule has <strong>2 hydrogen atoms</strong>.",
+"Each C2H2 molecule also has <strong>2 hydrogen atoms</strong>.",
 "So both samples contain the same number of hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of PH<sub>3</sub> at the same T and P",
+sampleA:"1.0 L of PH3 at the same T and P",
 sampleB:"1.0 L of HCl at the same T and P",
 correct:"a",
-correctFeedback:"Right — equal volumes give equal molecules, and PH₃ has 3 hydrogen atoms per molecule while HCl has 1.",
+correctFeedback:"Right — equal volumes give equal molecules, and PH3 has 3 hydrogen atoms per molecule while HCl has 1.",
 incorrectFeedback:"Not quite — compare hydrogen atoms per molecule after matching the number of molecules.",
 revealTitle:"Why Sample A has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each PH<sub>3</sub> molecule has <strong>3 hydrogen atoms</strong>.",
+"Each PH3 molecule has <strong>3 hydrogen atoms</strong>.",
 "Each HCl molecule has <strong>1 hydrogen atom</strong>.",
 "So Sample A has more hydrogen atoms."
 ]
 },
 {
-sampleA:"1.0 L of CH<sub>3</sub>OH vapor at the same T and P",
-sampleB:"1.0 L of H<sub>2</sub>O vapor at the same T and P",
+sampleA:"1.0 L of CH3OH vapor at the same T and P",
+sampleB:"1.0 L of H2O vapor at the same T and P",
 correct:"a",
-correctFeedback:"Right — equal volumes mean equal molecules, and CH₃OH has 4 hydrogen atoms per molecule while H₂O has 2.",
+correctFeedback:"Right — equal volumes mean equal molecules, and CH3OH has 4 hydrogen atoms per molecule while H2O has 2.",
 incorrectFeedback:"Not quite — first match molecules with Avogadro's Law, then compare the formulas for total hydrogen atoms.",
 revealTitle:"Why Sample A has more hydrogen atoms",
 reveal:[
 "Equal volumes at the same temperature and pressure contain the same number of <strong>molecules</strong>.",
-"Each CH<sub>3</sub>OH molecule has <strong>4 hydrogen atoms</strong>.",
-"Each H<sub>2</sub>O molecule has <strong>2 hydrogen atoms</strong>.",
+"Each CH3OH molecule has <strong>4 hydrogen atoms</strong>.",
+"Each H2O molecule has <strong>2 hydrogen atoms</strong>.",
 "So Sample A has more hydrogen atoms."
 ]
 }
@@ -1460,7 +1702,7 @@ const waterScenarios=[
 {
 measured:"755 mmHg",
 vapor:"23.8 mmHg",
-gas:"H<sub>2</sub>",
+gas:"H2",
 options:{total:"755 mmHg",vapor:"23.8 mmHg",dry:"731.2 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the measured pressure includes hydrogen gas and water vapor, so you must subtract the water vapor pressure to get the dry hydrogen pressure.",
@@ -1468,13 +1710,13 @@ incorrectFeedback:"Not quite — the measured pressure is not just hydrogen. Tot
 reveal:[
 "Measured pressure = hydrogen gas + water vapor.",
 "<strong>755.0 − 23.8 = 731.2 mmHg</strong>",
-"Use <strong>731.2 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+"Use <strong>731.2 mmHg</strong> as the pressure of dry H2."
 ]
 },
 {
 measured:"742 mmHg",
 vapor:"17.5 mmHg",
-gas:"O<sub>2</sub>",
+gas:"O2",
 options:{total:"742 mmHg",vapor:"17.5 mmHg",dry:"724.5 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the measured pressure includes oxygen gas and water vapor, so you must subtract the water vapor pressure first.",
@@ -1482,13 +1724,13 @@ incorrectFeedback:"Not quite — the barometer reading includes water vapor. Rem
 reveal:[
 "Measured pressure = oxygen gas + water vapor.",
 "<strong>742.0 − 17.5 = 724.5 mmHg</strong>",
-"Use <strong>724.5 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+"Use <strong>724.5 mmHg</strong> as the pressure of dry O2."
 ]
 },
 {
 measured:"780 mmHg",
 vapor:"31.8 mmHg",
-gas:"N<sub>2</sub>",
+gas:"N2",
 options:{total:"780 mmHg",vapor:"31.8 mmHg",dry:"748.2 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the total pressure includes nitrogen gas and water vapor, so the dry-gas pressure is the difference.",
@@ -1496,13 +1738,13 @@ incorrectFeedback:"Not quite — total pressure is a mixture pressure. Subtract 
 reveal:[
 "Measured pressure = nitrogen gas + water vapor.",
 "<strong>780.0 − 31.8 = 748.2 mmHg</strong>",
-"Use <strong>748.2 mmHg</strong> as the pressure of dry N<sub>2</sub>."
+"Use <strong>748.2 mmHg</strong> as the pressure of dry N2."
 ]
 },
 {
 measured:"730 mmHg",
 vapor:"21.1 mmHg",
-gas:"H<sub>2</sub>",
+gas:"H2",
 options:{total:"730 mmHg",vapor:"21.1 mmHg",dry:"708.9 mmHg"},
 correct:"dry",
 correctFeedback:"Right — subtract the water vapor pressure from the measured pressure to get the dry hydrogen pressure.",
@@ -1510,13 +1752,13 @@ incorrectFeedback:"Not quite — the measured pressure includes both hydrogen an
 reveal:[
 "Measured pressure = hydrogen gas + water vapor.",
 "<strong>730.0 − 21.1 = 708.9 mmHg</strong>",
-"Use <strong>708.9 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+"Use <strong>708.9 mmHg</strong> as the pressure of dry H2."
 ]
 },
 {
 measured:"765 mmHg",
 vapor:"19.8 mmHg",
-gas:"O<sub>2</sub>",
+gas:"O2",
 options:{total:"765 mmHg",vapor:"19.8 mmHg",dry:"745.2 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the dry oxygen pressure is the total measured pressure minus the water vapor pressure.",
@@ -1524,27 +1766,27 @@ incorrectFeedback:"Not quite — total pressure includes water vapor, so subtrac
 reveal:[
 "Measured pressure = oxygen gas + water vapor.",
 "<strong>765.0 − 19.8 = 745.2 mmHg</strong>",
-"Use <strong>745.2 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+"Use <strong>745.2 mmHg</strong> as the pressure of dry O2."
 ]
 },
 {
 measured:"748 mmHg",
 vapor:"24.0 mmHg",
-gas:"CO<sub>2</sub>",
+gas:"CO2",
 options:{total:"748 mmHg",vapor:"24.0 mmHg",dry:"724.0 mmHg"},
 correct:"dry",
-correctFeedback:"Right — subtracting the water vapor pressure gives the pressure of dry CO₂.",
+correctFeedback:"Right — subtracting the water vapor pressure gives the pressure of dry CO2.",
 incorrectFeedback:"Not quite — the measured pressure is a mixture pressure. Remove the water vapor part first.",
 reveal:[
 "Measured pressure = carbon dioxide + water vapor.",
 "<strong>748.0 − 24.0 = 724.0 mmHg</strong>",
-"Use <strong>724.0 mmHg</strong> as the pressure of dry CO<sub>2</sub>."
+"Use <strong>724.0 mmHg</strong> as the pressure of dry CO2."
 ]
 },
 {
 measured:"770 mmHg",
 vapor:"29.9 mmHg",
-gas:"H<sub>2</sub>",
+gas:"H2",
 options:{total:"770 mmHg",vapor:"29.9 mmHg",dry:"740.1 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the dry hydrogen pressure is found by subtraction.",
@@ -1552,13 +1794,13 @@ incorrectFeedback:"Not quite — total collected pressure includes both the gas 
 reveal:[
 "Measured pressure = hydrogen gas + water vapor.",
 "<strong>770.0 − 29.9 = 740.1 mmHg</strong>",
-"Use <strong>740.1 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+"Use <strong>740.1 mmHg</strong> as the pressure of dry H2."
 ]
 },
 {
 measured:"735 mmHg",
 vapor:"18.7 mmHg",
-gas:"N<sub>2</sub>",
+gas:"N2",
 options:{total:"735 mmHg",vapor:"18.7 mmHg",dry:"716.3 mmHg"},
 correct:"dry",
 correctFeedback:"Right — subtract the water vapor pressure to isolate the dry nitrogen pressure.",
@@ -1566,13 +1808,13 @@ incorrectFeedback:"Not quite — the measured pressure is not pure nitrogen yet.
 reveal:[
 "Measured pressure = nitrogen gas + water vapor.",
 "<strong>735.0 − 18.7 = 716.3 mmHg</strong>",
-"Use <strong>716.3 mmHg</strong> as the pressure of dry N<sub>2</sub>."
+"Use <strong>716.3 mmHg</strong> as the pressure of dry N2."
 ]
 },
 {
 measured:"790 mmHg",
 vapor:"32.9 mmHg",
-gas:"O<sub>2</sub>",
+gas:"O2",
 options:{total:"790 mmHg",vapor:"32.9 mmHg",dry:"757.1 mmHg"},
 correct:"dry",
 correctFeedback:"Right — subtracting the water vapor pressure gives the pressure of dry oxygen.",
@@ -1580,7 +1822,7 @@ incorrectFeedback:"Not quite — Dalton's law says the measured pressure is the 
 reveal:[
 "Measured pressure = oxygen gas + water vapor.",
 "<strong>790.0 − 32.9 = 757.1 mmHg</strong>",
-"Use <strong>757.1 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+"Use <strong>757.1 mmHg</strong> as the pressure of dry O2."
 ]
 },
 {
@@ -1600,7 +1842,7 @@ reveal:[
 {
 measured:"744 mmHg",
 vapor:"22.4 mmHg",
-gas:"H<sub>2</sub>",
+gas:"H2",
 options:{total:"744 mmHg",vapor:"22.4 mmHg",dry:"721.6 mmHg"},
 correct:"dry",
 correctFeedback:"Right — subtracting the vapor pressure gives the dry hydrogen pressure.",
@@ -1608,13 +1850,13 @@ incorrectFeedback:"Not quite — the total reading contains water vapor too, so 
 reveal:[
 "Measured pressure = hydrogen gas + water vapor.",
 "<strong>744.0 − 22.4 = 721.6 mmHg</strong>",
-"Use <strong>721.6 mmHg</strong> as the pressure of dry H<sub>2</sub>."
+"Use <strong>721.6 mmHg</strong> as the pressure of dry H2."
 ]
 },
 {
 measured:"760 mmHg",
 vapor:"17.0 mmHg",
-gas:"O<sub>2</sub>",
+gas:"O2",
 options:{total:"760 mmHg",vapor:"17.0 mmHg",dry:"743.0 mmHg"},
 correct:"dry",
 correctFeedback:"Right — subtract the vapor pressure to find the dry oxygen pressure.",
@@ -1622,13 +1864,13 @@ incorrectFeedback:"Not quite — water vapor contributes to the measured pressur
 reveal:[
 "Measured pressure = oxygen gas + water vapor.",
 "<strong>760.0 − 17.0 = 743.0 mmHg</strong>",
-"Use <strong>743.0 mmHg</strong> as the pressure of dry O<sub>2</sub>."
+"Use <strong>743.0 mmHg</strong> as the pressure of dry O2."
 ]
 },
 {
 measured:"738 mmHg",
 vapor:"26.7 mmHg",
-gas:"N<sub>2</sub>",
+gas:"N2",
 options:{total:"738 mmHg",vapor:"26.7 mmHg",dry:"711.3 mmHg"},
 correct:"dry",
 correctFeedback:"Right — the dry nitrogen pressure is the total minus the water vapor pressure.",
@@ -1636,7 +1878,7 @@ incorrectFeedback:"Not quite — do not use the total collected pressure directl
 reveal:[
 "Measured pressure = nitrogen gas + water vapor.",
 "<strong>738.0 − 26.7 = 711.3 mmHg</strong>",
-"Use <strong>711.3 mmHg</strong> as the pressure of dry N<sub>2</sub>."
+"Use <strong>711.3 mmHg</strong> as the pressure of dry N2."
 ]
 }
 ];
@@ -1664,6 +1906,21 @@ function setText(id,text){const el=document.getElementById(id);if(el)el.textCont
 function setHTML(id,html){const el=document.getElementById(id);if(el)el.innerHTML=html;}
 function showEl(id,show=true){const el=document.getElementById(id);if(el)el.hidden=!show;}
 function setDisabled(id,disabled=true){const el=document.getElementById(id);if(el)el.disabled=disabled;}
+function renderChemFormula(formula){
+if(!formula)return '';
+const chargeMatch=formula.match(/^(.*?)(\d*)([+-])$/);
+const coreFormula=chargeMatch?chargeMatch[1]:formula;
+const chargeText=chargeMatch?`${chargeMatch[2]||''}${chargeMatch[3]==='-'?'−':'+'}`:'';
+const coreMarkup=coreFormula.replace(/(\d+)/g,'<span class="chem-sub">$1</span>');
+return `<span class="ion-group">${coreMarkup}${chargeText?`<span class="chem-charge">${chargeText}</span>`:''}</span>`;
+}
+function renderChemText(text){
+if(!text)return '';
+const formulas=['CH3OH','C2H6','C2H2','CH4','NH3','PH3','HCl','HBr','HF','H2O','H2S','H2','O2','N2','CO2','He'];
+return formulas.reduce((out,formula)=>{
+return out.replace(new RegExp(formula.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'),renderChemFormula(formula));
+},text);
+}
 function setFeedbackState(id,text){
 const el=document.getElementById(id);
 if(!el)return;
@@ -1833,11 +2090,11 @@ function nextSetupTool(){advanceScenario('setup',setupScenarios);renderSetupTool
 
 function renderAvogTool(){
 const data=avogScenarios[ensureScenarioIndex('avog',avogScenarios)];
-setHTML('avogSampleA',data.sampleA);
-setHTML('avogSampleB',data.sampleB);
+setHTML('avogSampleA',renderChemText(data.sampleA));
+setHTML('avogSampleB',renderChemText(data.sampleB));
 setFeedbackState('avogFeedback','Choose one answer, then click Check.');
 setText('avogRevealTitle',data.revealTitle);
-setHTML('avogRevealList',listHTML(data.reveal));
+setHTML('avogRevealList',renderChemText(listHTML(data.reveal)));
 showEl('avogReveal',false);showEl('avogSupport',false);setDisabled('avogRevealBtn',true);setDisabled('avogNextBtn',true);
 clearChoiceUI('avog');
 shuffleChoiceGroup('avogChoices','.explore-choice','avog');
@@ -1855,12 +2112,12 @@ function renderWaterTool(){
 const data=waterScenarios[ensureScenarioIndex('water',waterScenarios)];
 setHTML('waterMeasured',data.measured);
 setHTML('waterVapor',data.vapor);
-setHTML('waterGas',data.gas);
+setHTML('waterGas',renderChemText(data.gas));
 setHTML('waterOptTotal',data.options.total);
 setHTML('waterOptVapor',data.options.vapor);
 setHTML('waterOptDry',data.options.dry);
 setFeedbackState('waterFeedback','Choose one pressure, then click Check.');
-setHTML('waterRevealList',listHTML(data.reveal));
+setHTML('waterRevealList',renderChemText(listHTML(data.reveal)));
 showEl('waterReveal',false);showEl('waterSupport',false);setDisabled('waterRevealBtn',true);setDisabled('waterNextBtn',true);
 clearChoiceUI('water');
 shuffleChoiceGroup('waterChoices','.explore-choice','water');

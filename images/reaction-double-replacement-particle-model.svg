@@ -1,0 +1,142 @@
+<svg width="100%" height="auto" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Double replacement reaction particle model</title>
+  <desc id="desc">Lead two nitrate reacts with potassium iodide to form lead iodide and potassium nitrate in a double replacement particle model.</desc>
+  <defs>
+    <radialGradient id="lead-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </radialGradient>
+    <radialGradient id="nitrogen-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="60%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </radialGradient>
+    <radialGradient id="oxygen-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff8787"/>
+      <stop offset="60%" stop-color="#fa5252"/>
+      <stop offset="100%" stop-color="#c92a2a"/>
+    </radialGradient>
+    <radialGradient id="potassium-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e9d5ff"/>
+      <stop offset="60%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </radialGradient>
+    <radialGradient id="iodine-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="60%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </radialGradient>
+    <style>
+      .bg-panel { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5px; rx: 16px; }
+      .header-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #64748b; letter-spacing: 0.1em; }
+      .atom-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+      .pb-label, .n-label, .o-label, .k-label, .i-label { fill: #ffffff; }
+      .math-symbol { font-family: system-ui, -apple-system, sans-serif; font-size: 28px; font-weight: 500; fill: #94a3b8; text-anchor: middle; dominant-baseline: central; }
+      .formula-text { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .coeff { fill: #2563eb; font-weight: 800; }
+      .subscript { font-size: 14px; baseline-shift: sub; fill: #475569; }
+      .state-symbol { font-size: 14px; fill: #64748b; font-weight: 500; }
+      .divider { stroke: #f1f5f9; stroke-width: 2px; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+
+  <rect class="bg-panel" x="10" y="10" width="880" height="400" />
+  <text x="450" y="36" class="header-text" text-anchor="middle">PARTICLE LEVEL REACTION MODEL</text>
+  <line x1="40" y1="255" x2="860" y2="255" class="divider" />
+
+  <g transform="translate(145, 140)">
+    <circle cx="0" cy="0" r="24" fill="url(#lead-grad)" stroke="#1e293b" stroke-width="1.2" />
+    <text x="0" y="0" class="atom-label pb-label">Pb</text>
+    <g transform="translate(-45, 0)">
+      <circle cx="0" cy="0" r="20" fill="url(#nitrogen-grad)" stroke="#1d4ed8" stroke-width="1.2" />
+      <text x="0" y="0" class="atom-label n-label">N</text>
+      <circle cx="-24" cy="0" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="-24" y="0" class="atom-label o-label">O</text>
+      <circle cx="12" cy="-20" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="12" y="-20" class="atom-label o-label">O</text>
+      <circle cx="12" cy="20" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="12" y="20" class="atom-label o-label">O</text>
+    </g>
+    <g transform="translate(45, 0)">
+      <circle cx="0" cy="0" r="20" fill="url(#nitrogen-grad)" stroke="#1d4ed8" stroke-width="1.2" />
+      <text x="0" y="0" class="atom-label n-label">N</text>
+      <circle cx="24" cy="0" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="24" y="0" class="atom-label o-label">O</text>
+      <circle cx="-12" cy="-20" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="-12" y="-20" class="atom-label o-label">O</text>
+      <circle cx="-12" cy="20" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="-12" y="20" class="atom-label o-label">O</text>
+    </g>
+  </g>
+
+  <text x="255" y="140" class="math-symbol">+</text>
+
+  <g transform="translate(335, 140)">
+    <g transform="translate(0, -45)">
+      <circle cx="-20" cy="0" r="24" fill="url(#potassium-grad)" stroke="#6b21a8" stroke-width="1.2" />
+      <text x="-20" y="0" class="atom-label k-label">K</text>
+      <circle cx="20" cy="0" r="24" fill="url(#iodine-grad)" stroke="#ca8a04" stroke-width="1.2" />
+      <text x="20" y="0" class="atom-label i-label">I</text>
+    </g>
+    <g transform="translate(0, 45)">
+      <circle cx="-20" cy="0" r="24" fill="url(#potassium-grad)" stroke="#6b21a8" stroke-width="1.2" />
+      <text x="-20" y="0" class="atom-label k-label">K</text>
+      <circle cx="20" cy="0" r="24" fill="url(#iodine-grad)" stroke="#ca8a04" stroke-width="1.2" />
+      <text x="20" y="0" class="atom-label i-label">I</text>
+    </g>
+  </g>
+
+  <g transform="translate(445, 140)">
+    <path d="M -20,0 L 20,0 M 8,-8 L 21,0 L 8,8" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <g transform="translate(565, 140)">
+    <circle cx="0" cy="0" r="24" fill="url(#lead-grad)" stroke="#1e293b" stroke-width="1.2" />
+    <text x="0" y="0" class="atom-label pb-label">Pb</text>
+    <circle cx="-38" cy="0" r="24" fill="url(#iodine-grad)" stroke="#ca8a04" stroke-width="1.2" />
+    <text x="-38" y="0" class="atom-label i-label">I</text>
+    <circle cx="38" cy="0" r="24" fill="url(#iodine-grad)" stroke="#ca8a04" stroke-width="1.2" />
+    <text x="38" y="0" class="atom-label i-label">I</text>
+  </g>
+
+  <text x="675" y="140" class="math-symbol">+</text>
+
+  <g transform="translate(785, 140)">
+    <g transform="translate(0, -50)">
+      <circle cx="-32" cy="0" r="22" fill="url(#potassium-grad)" stroke="#6b21a8" stroke-width="1.2" />
+      <text x="-32" y="0" class="atom-label k-label">K</text>
+      <circle cx="10" cy="0" r="20" fill="url(#nitrogen-grad)" stroke="#1d4ed8" stroke-width="1.2" />
+      <text x="10" y="0" class="atom-label n-label">N</text>
+      <circle cx="34" cy="0" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="34" y="0" class="atom-label o-label">O</text>
+      <circle cx="0" cy="-22" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="0" y="-22" class="atom-label o-label">O</text>
+      <circle cx="0" cy="22" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="0" y="22" class="atom-label o-label">O</text>
+    </g>
+    <g transform="translate(0, 50)">
+      <circle cx="-32" cy="0" r="22" fill="url(#potassium-grad)" stroke="#6b21a8" stroke-width="1.2" />
+      <text x="-32" y="0" class="atom-label k-label">K</text>
+      <circle cx="10" cy="0" r="20" fill="url(#nitrogen-grad)" stroke="#1d4ed8" stroke-width="1.2" />
+      <text x="10" y="0" class="atom-label n-label">N</text>
+      <circle cx="34" cy="0" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="34" y="0" class="atom-label o-label">O</text>
+      <circle cx="0" cy="-22" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="0" y="-22" class="atom-label o-label">O</text>
+      <circle cx="0" cy="22" r="18" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+      <text x="0" y="22" class="atom-label o-label">O</text>
+    </g>
+  </g>
+
+  <g transform="translate(0, 300)">
+    <text x="145" y="0" class="formula-text">Pb(NO<tspan class="subscript">3</tspan>)<tspan class="subscript">2</tspan> <tspan class="state-symbol">(aq)</tspan></text>
+    <text x="255" y="-4" class="math-symbol" font-size="24">+</text>
+    <text x="335" y="0" class="formula-text"><tspan class="coeff">2</tspan>KI <tspan class="state-symbol">(aq)</tspan></text>
+    <text x="445" y="-4" class="math-symbol" font-size="24">→</text>
+    <text x="565" y="0" class="formula-text">PbI<tspan class="subscript">2</tspan> <tspan class="state-symbol">(s)</tspan></text>
+    <text x="675" y="-4" class="math-symbol" font-size="24">+</text>
+    <text x="785" y="0" class="formula-text"><tspan class="coeff">2</tspan>KNO<tspan class="subscript">3</tspan> <tspan class="state-symbol">(aq)</tspan></text>
+  </g>
+
+</svg>

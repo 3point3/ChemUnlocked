@@ -12,25 +12,25 @@ export const ALL_PROBLEMS = [
     id: 'p01', type: 'calc', tag: 'Subatomic Particles',
     q: 'How many neutrons are in an atom of iron-56 (Fe-56)? (Atomic number of Fe = 26)',
     answer: 30, tolerance: 0,
-    solution: '<p>Neutrons = A − Z = 56 − 26 = <strong>30 neutrons</strong>. The mass number (56) minus the atomic number (26) gives the neutron count.</p>'
+    solution: '<p>Neutrons = A - Z = 56 - 26 = <strong>30 neutrons</strong>. The mass number (56) minus the atomic number (26) gives the neutron count.</p>'
   },
   {
     id: 'p02', type: 'calc', tag: 'Subatomic Particles',
     q: 'How many neutrons are in uranium-238? (Atomic number of U = 92)',
     answer: 146, tolerance: 0,
-    solution: '<p>Use the isotope relationship: neutrons = mass number − atomic number.</p><p>For U-238, neutrons = 238 − 92 = <strong>146 neutrons</strong>.</p><p>The extra fact about U-238 is interesting, but the key test step is simply subtracting A − Z.</p>'
+    solution: '<p>Use the isotope relationship: neutrons = mass number - atomic number.</p><p>For U-238, neutrons = 238 - 92 = <strong>146 neutrons</strong>.</p><p>The extra fact about U-238 is interesting, but the key test step is simply subtracting A - Z.</p>'
   },
   {
     id: 'p03', type: 'calc', tag: 'Ion Electrons',
-    q: 'How many electrons does a Ca²⁺ ion have? (Atomic number of Ca = 20)',
+    q: 'How many electrons does a Ca^2+ ion have? (Atomic number of Ca = 20)',
     answer: 18, tolerance: 0,
-    solution: '<p>Electrons = Z − charge = 20 − 2 = <strong>18 electrons</strong>. Ca²⁺ has lost 2 electrons, giving it the same electron count as argon.</p>'
+    solution: '<p>Electrons = Z - charge = 20 - 2 = <strong>18 electrons</strong>. Ca^2+ has lost 2 electrons, giving it the same electron count as argon.</p>'
   },
   {
     id: 'p04', type: 'calc', tag: 'Ion Electrons',
-    q: 'How many electrons does a Cl⁻ ion have? (Atomic number of Cl = 17)',
+    q: 'How many electrons does a Cl^- ion have? (Atomic number of Cl = 17)',
     answer: 18, tolerance: 0,
-    solution: '<p>Electrons = Z − charge = 17 − (−1) = 17 + 1 = <strong>18 electrons</strong>. Cl⁻ has gained 1 electron, giving it the same count as argon.</p>'
+    solution: '<p>Electrons = Z - charge = 17 - (-1) = 17 + 1 = <strong>18 electrons</strong>. Cl^- has gained 1 electron, giving it the same count as argon.</p>'
   },
   {
     id: 'p05', type: 'calc', tag: 'Average Atomic Mass',
@@ -48,13 +48,13 @@ export const ALL_PROBLEMS = [
     id: 'p07', type: 'calc', tag: 'Subatomic Particles',
     q: 'How many neutrons are in a phosphorus-31 atom? (Atomic number of P = 15)',
     answer: 16, tolerance: 0,
-    solution: '<p>Neutrons = A − Z = 31 − 15 = <strong>16 neutrons</strong>. Phosphorus-31 is the only stable isotope of phosphorus.</p>'
+    solution: '<p>Neutrons = A - Z = 31 - 15 = <strong>16 neutrons</strong>. Phosphorus-31 is the only stable isotope of phosphorus.</p>'
   },
   {
     id: 'p08', type: 'calc', tag: 'Ion Electrons',
-    q: 'How many electrons does an Al³⁺ ion have? (Atomic number of Al = 13)',
+    q: 'How many electrons does an Al^3+ ion have? (Atomic number of Al = 13)',
     answer: 10, tolerance: 0,
-    solution: '<p>Electrons = Z − charge = 13 − 3 = <strong>10 electrons</strong>. Al³⁺ has lost 3 electrons, giving it the same electron count as neon.</p>'
+    solution: '<p>Electrons = Z - charge = 13 - 3 = <strong>10 electrons</strong>. Al^3+ has lost 3 electrons, giving it the same electron count as neon.</p>'
   },
   {
     id: 'p09', type: 'calc', tag: 'Average Atomic Mass',
@@ -66,13 +66,13 @@ export const ALL_PROBLEMS = [
     id: 'p10', type: 'calc', tag: 'Subatomic Particles',
     q: 'How many neutrons are in a lead-207 (Pb-207) atom? (Atomic number of Pb = 82)',
     answer: 125, tolerance: 0,
-    solution: '<p>Neutrons = A − Z = 207 − 82 = <strong>125 neutrons</strong>. Lead-207 is one of four stable lead isotopes.</p>'
+    solution: '<p>Neutrons = A - Z = 207 - 82 = <strong>125 neutrons</strong>. Lead-207 is one of four stable lead isotopes.</p>'
   },
   {
     id: 'p11', type: 'calc', tag: 'Ion Electrons',
-    q: 'How many electrons does an O²⁻ ion have? (Atomic number of O = 8)',
+    q: 'How many electrons does an O^2- ion have? (Atomic number of O = 8)',
     answer: 10, tolerance: 0,
-    solution: '<p>Electrons = Z − charge = 8 − (−2) = 8 + 2 = <strong>10 electrons</strong>. O²⁻ has gained 2 electrons, making it isoelectronic with neon.</p>'
+    solution: '<p>Electrons = Z - charge = 8 - (-2) = 8 + 2 = <strong>10 electrons</strong>. O^2- has gained 2 electrons, making it isoelectronic with neon.</p>'
   },
   {
     id: 'p12', type: 'calc', tag: 'Average Atomic Mass',
@@ -113,10 +113,10 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p17', type: 'concept', tag: 'Ions',
-    q: 'A sodium atom loses one electron to form Na⁺. Which statement is true about Na⁺?',
+    q: 'A sodium atom loses one electron to form Na^+. Which statement is true about Na^+?',
     choices: ['It has more protons than a neutral sodium atom', 'It has 11 electrons and 11 protons', 'It has 10 electrons and 11 protons', 'It has a different atomic number than sodium'],
     correct: 2,
-    solution: '<p><strong>C — 10 electrons, 11 protons.</strong> Na (Z=11) loses 1 electron → 11 − 1 = 10 electrons. Protons do not change when forming an ion, so there are still 11 protons. The charge is +1 because protons outnumber electrons by 1.</p>'
+    solution: '<p><strong>C — 10 electrons, 11 protons.</strong> Na (Z=11) loses 1 electron → 11 - 1 = 10 electrons. Protons do not change when forming an ion, so there are still 11 protons. The charge is +1 because protons outnumber electrons by 1.</p>'
   },
   {
     id: 'p18', type: 'concept', tag: 'Subatomic Particles',
@@ -130,7 +130,7 @@ export const ALL_PROBLEMS = [
     q: 'What type of formula shows the exact number of each type of atom in one molecule of a compound?',
     choices: ['Empirical formula', 'Structural formula', 'Molecular formula', 'Ionic formula'],
     correct: 2,
-    solution: '<p><strong>C — molecular formula.</strong> The molecular formula (e.g., C₆H₁₂O₆ for glucose) shows the actual count of each atom per molecule. The empirical formula (CH₂O) gives only the simplest ratio. The structural formula shows connectivity.</p>'
+    solution: '<p><strong>C — molecular formula.</strong> The molecular formula (e.g., C6H12O6 for glucose) shows the actual count of each atom per molecule. The empirical formula (CH2O) gives only the simplest ratio. The structural formula shows connectivity.</p>'
   },
   {
     id: 'p20', type: 'concept', tag: 'Average Atomic Mass',
@@ -162,10 +162,10 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p24', type: 'concept', tag: 'Empirical Formula',
-    q: 'Hydrogen peroxide has the molecular formula H₂O₂. What is its empirical formula?',
-    choices: ['H₂O₂', 'HO', 'H₂O', 'H₄O₄'],
+    q: 'Hydrogen peroxide has the molecular formula H2O2. What is its empirical formula?',
+    choices: ['H2O2', 'HO', 'H2O', 'H4O4'],
     correct: 1,
-    solution: '<p><strong>B — HO.</strong> Divide each subscript by the GCF (which is 2): H: 2÷2=1, O: 2÷2=1. The empirical formula is HO. Note that water (H₂O) is a different compound entirely, even though it also contains H and O.</p>'
+    solution: '<p><strong>B — HO.</strong> Divide each subscript by the GCF (which is 2): H: 2÷2=1, O: 2÷2=1. The empirical formula is HO. Note that water (H2O) is a different compound entirely, even though it also contains H and O.</p>'
   },
   {
     id: 'p25', type: 'concept', tag: 'Atomic Number',
@@ -176,10 +176,10 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p26', type: 'concept', tag: 'Chemical Formulas',
-    q: 'In the formula Al₂(SO₄)₃, how many oxygen atoms are present per formula unit?',
+    q: 'In the formula Al2(SO4)3, how many oxygen atoms are present per formula unit?',
     choices: ['4', '3', '12', '6'],
     correct: 2,
-    solution: '<p><strong>C — 12.</strong> Inside the parentheses: (SO₄) contains 4 oxygen atoms. The subscript 3 outside the parentheses multiplies all atoms inside: O: 4 × 3 = 12. The complete count is Al:2, S:3, O:12 → 17 total atoms.</p>'
+    solution: '<p><strong>C — 12.</strong> Inside the parentheses: (SO4) contains 4 oxygen atoms. The subscript 3 outside the parentheses multiplies all atoms inside: O: 4 × 3 = 12. The complete count is Al:2, S:3, O:12 → 17 total atoms.</p>'
   },
   {
     id: 'p27', type: 'concept', tag: 'Dalton\'s Theory',
@@ -198,9 +198,9 @@ export const ALL_PROBLEMS = [
   {
     id: 'p29', type: 'concept', tag: 'Ions',
     q: 'Which of the following ions has the SAME number of electrons as a neutral neon atom (Z=10)?',
-    choices: ['Na⁺ (Z=11)', 'K⁺ (Z=19)', 'F²⁻ (Z=9)', 'Mg⁺ (Z=12)'],
+    choices: ['Na^+ (Z=11)', 'K^+ (Z=19)', 'F^2- (Z=9)', 'Mg^+ (Z=12)'],
     correct: 0,
-    solution: '<p><strong>A — Na⁺.</strong> Na (Z=11) loses 1 electron → 10 electrons = same as neutral Ne. Check the others: K⁺ has 18 electrons; F²⁻ (if it existed) would have 11; Mg⁺ has 11. Only Na⁺ matches Ne\'s 10 electrons.</p>'
+    solution: '<p><strong>A — Na^+.</strong> Na (Z=11) loses 1 electron → 10 electrons = same as neutral Ne. Check the others: K^+ has 18 electrons; F^2- (if it existed) would have 11; Mg^+ has 11. Only Na^+ matches Ne\'s 10 electrons.</p>'
   },
   {
     id: 'p30', type: 'concept', tag: 'Subatomic Particles',
@@ -214,7 +214,7 @@ export const ALL_PROBLEMS = [
     q: 'Compounds with the same molecular formula but different structural arrangements are called:',
     choices: ['Isotopes', 'Isomers', 'Allotropes', 'Ions'],
     correct: 1,
-    solution: '<p><strong>B — isomers.</strong> Isomers share the same molecular formula (same number and type of atoms) but differ in how those atoms are connected. For example, C₂H₆O can be ethanol or dimethyl ether — same formula, very different structures and properties.</p>'
+    solution: '<p><strong>B — isomers.</strong> Isomers share the same molecular formula (same number and type of atoms) but differ in how those atoms are connected. For example, C2H6O can be ethanol or dimethyl ether — same formula, very different structures and properties.</p>'
   },
   {
     id: 'p32', type: 'concept', tag: 'Atomic Mass Unit',
@@ -232,17 +232,17 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p34', type: 'concept', tag: 'Atomic Number',
-    q: 'An atom has the nuclear symbol ⁶³₂₉Cu. How many neutrons does it have?',
+    q: 'An atom has the nuclear symbol ^6329Cu. How many neutrons does it have?',
     choices: ['29', '63', '34', '92'],
     correct: 2,
-    solution: '<p><strong>C — 34 neutrons.</strong> The nuclear symbol shows A=63 (mass number) and Z=29 (atomic number, copper). Neutrons = A − Z = 63 − 29 = 34.</p>'
+    solution: '<p><strong>C — 34 neutrons.</strong> The nuclear symbol shows A=63 (mass number) and Z=29 (atomic number, copper). Neutrons = A - Z = 63 - 29 = 34.</p>'
   },
   {
     id: 'p35', type: 'concept', tag: 'Chemical Formulas',
-    q: 'What is the total number of atoms in one formula unit of Ca₃(PO₄)₂?',
+    q: 'What is the total number of atoms in one formula unit of Ca3(PO4)2?',
     choices: ['7', '9', '13', '12'],
     correct: 2,
-    solution: '<p><strong>C — 13 atoms.</strong> Ca: 3 atoms. Inside (PO₄)₂: P = 1×2 = 2 atoms; O = 4×2 = 8 atoms. Total = 3 + 2 + 8 = 13 atoms per formula unit.</p>'
+    solution: '<p><strong>C — 13 atoms.</strong> Ca: 3 atoms. Inside (PO4)2: P = 1×2 = 2 atoms; O = 4×2 = 8 atoms. Total = 3 + 2 + 8 = 13 atoms per formula unit.</p>'
   },
   {
     id: 'p36', type: 'concept', tag: 'Ions',
@@ -254,16 +254,16 @@ export const ALL_PROBLEMS = [
   {
     id: 'p37', type: 'concept', tag: 'Empirical Formula',
     q: 'Which pair of compounds could be represented by the same empirical formula?',
-    choices: ['H₂O and H₂O₂', 'CH₄ and C₂H₄', 'C₂H₄ and C₄H₈', 'CO and CO₂'],
+    choices: ['H2O and H2O2', 'CH4 and C2H4', 'C2H4 and C4H8', 'CO and CO2'],
     correct: 2,
-    solution: '<p><strong>C — C₂H₄ and C₄H₈.</strong> C₂H₄: GCF=2 → CH₂. C₄H₈: GCF=4 → CH₂. Both reduce to the empirical formula CH₂. The others: H₂O and H₂O₂ give different empirical formulas (H₂O and HO); CH₄ → CH₄; C₂H₄ → CH₂; CO → CO; CO₂ → CO₂.</p>'
+    solution: '<p><strong>C — C2H4 and C4H8.</strong> C2H4: GCF=2 → CH2. C4H8: GCF=4 → CH2. Both reduce to the empirical formula CH2. The others: H2O and H2O2 give different empirical formulas (H2O and HO); CH4 → CH4; C2H4 → CH2; CO → CO; CO2 → CO2.</p>'
   },
   {
     id: 'p38', type: 'concept', tag: 'Millikan',
     q: 'What was the significance of Millikan\'s oil drop experiment?',
     choices: ['It discovered the proton and measured its charge', 'It revealed the structure of the atomic nucleus', 'It determined the fundamental charge of a single electron', 'It showed that atoms are mostly empty space'],
     correct: 2,
-    solution: '<p><strong>C — fundamental charge of the electron.</strong> Millikan suspended charged oil droplets between electric plates and measured the minimum electric force needed, revealing that charge always comes in multiples of one minimum value: the electron charge (−1.602 × 10⁻¹⁹ C).</p>'
+    solution: '<p><strong>C — fundamental charge of the electron.</strong> Millikan suspended charged oil droplets between electric plates and measured the minimum electric force needed, revealing that charge always comes in multiples of one minimum value: the electron charge (-1.602 × 10^-19 C).</p>'
   },
   {
     id: 'p39', type: 'concept', tag: 'Subatomic Particles',
@@ -277,14 +277,14 @@ export const ALL_PROBLEMS = [
     q: 'What type of formula shows which atoms are bonded to which in a molecule?',
     choices: ['Molecular formula', 'Empirical formula', 'Structural formula', 'Nuclear symbol'],
     correct: 2,
-    solution: '<p><strong>C — structural formula.</strong> A structural formula shows every bond between atoms (e.g., H−O−H for water). Molecular formulas give counts; empirical formulas give ratios; nuclear symbols describe single atoms, not compounds.</p>'
+    solution: '<p><strong>C — structural formula.</strong> A structural formula shows every bond between atoms (e.g., H-O-H for water). Molecular formulas give counts; empirical formulas give ratios; nuclear symbols describe single atoms, not compounds.</p>'
   },
   {
     id: 'p41', type: 'concept', tag: 'Dalton\'s Theory',
     q: 'Dalton\'s law of multiple proportions states that when two elements form more than one compound, the ratios of the masses of one element that combine with a fixed mass of the other are:',
     choices: ['Equal to each other', 'Small whole-number ratios', 'Irrational numbers', 'Equal to the atomic mass ratio'],
     correct: 1,
-    solution: '<p><strong>B — small whole-number ratios.</strong> For example, CO and CO₂ both contain C and O. For a fixed mass of carbon, the oxygen in CO₂ is exactly twice the oxygen in CO — a 1:2 ratio. This simple ratio arises because atoms combine in discrete, whole-number quantities.</p>'
+    solution: '<p><strong>B — small whole-number ratios.</strong> For example, CO and CO2 both contain C and O. For a fixed mass of carbon, the oxygen in CO2 is exactly twice the oxygen in CO — a 1:2 ratio. This simple ratio arises because atoms combine in discrete, whole-number quantities.</p>'
   },
   {
     id: 'p42', type: 'concept', tag: 'Isotopes',
@@ -295,31 +295,31 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p43', type: 'concept', tag: 'Ions',
-    q: 'Fe³⁺ has an atomic number of 26. How many electrons does Fe³⁺ have?',
+    q: 'Fe^3+ has an atomic number of 26. How many electrons does Fe^3+ have?',
     choices: ['26', '29', '23', '30'],
     correct: 2,
-    solution: '<p><strong>C — 23 electrons.</strong> Electrons = Z − charge = 26 − 3 = 23. Iron lost 3 electrons to form the Fe³⁺ ion. Note that protons (26) and neutrons are unchanged.</p>'
+    solution: '<p><strong>C — 23 electrons.</strong> Electrons = Z - charge = 26 - 3 = 23. Iron lost 3 electrons to form the Fe^3+ ion. Note that protons (26) and neutrons are unchanged.</p>'
   },
   {
     id: 'p44', type: 'concept', tag: 'Subatomic Particles',
     q: 'Which statement correctly explains why atoms are electrically neutral?',
     choices: ['Protons and electrons cancel out by combining in the nucleus', 'Atoms contain equal numbers of protons and electrons', 'Neutrons balance the charges of protons and electrons', 'The positive nucleus repels all electrons away equally'],
     correct: 1,
-    solution: '<p><strong>B — equal numbers of protons and electrons.</strong> Each proton carries a +1 charge and each electron carries a −1 charge. When these counts are equal, charges cancel and the atom is neutral. Neutrons contribute no charge.</p>'
+    solution: '<p><strong>B — equal numbers of protons and electrons.</strong> Each proton carries a +1 charge and each electron carries a -1 charge. When these counts are equal, charges cancel and the atom is neutral. Neutrons contribute no charge.</p>'
   },
   {
     id: 'p45', type: 'concept', tag: 'Chemical Formulas',
-    q: 'How many hydrogen atoms are in one molecule of sucrose, C₁₂H₂₂O₁₁?',
+    q: 'How many hydrogen atoms are in one molecule of sucrose, C12H22O11?',
     choices: ['12', '13', '22', '45'],
     correct: 2,
-    solution: '<p><strong>C — 22 hydrogen atoms.</strong> Read the subscript after H in the molecular formula: C₁₂<strong>H₂₂</strong>O₁₁. The subscript 22 tells you there are 22 hydrogen atoms per molecule.</p>'
+    solution: '<p><strong>C — 22 hydrogen atoms.</strong> Read the subscript after H in the molecular formula: C12<strong>H22</strong>O11. The subscript 22 tells you there are 22 hydrogen atoms per molecule.</p>'
   },
   {
     id: 'p46', type: 'concept', tag: 'Atomic Mass Unit',
     q: 'Which of the following is approximately equal to the mass of one proton?',
-    choices: ['1.6605 × 10⁻²⁴ g', '9.109 × 10⁻²⁸ g', '1.6605 × 10⁻¹⁹ g', '6.022 × 10²³ g'],
+    choices: ['1.6605 × 10^-24 g', '9.109 × 10^-28 g', '1.6605 × 10^-19 g', '6.022 × 10^23 g'],
     correct: 0,
-    solution: '<p><strong>A — 1.6605 × 10⁻²⁴ g.</strong> One amu = 1.6605 × 10⁻²⁴ g, and protons have a mass of approximately 1.0073 amu, so a proton\'s mass ≈ 1.673 × 10⁻²⁴ g. Option B is the electron mass. Option C is the electron charge in coulombs. Option D is Avogadro\'s number.</p>'
+    solution: '<p><strong>A — 1.6605 × 10^-24 g.</strong> One amu = 1.6605 × 10^-24 g, and protons have a mass of approximately 1.0073 amu, so a proton\'s mass ≈ 1.673 × 10^-24 g. Option B is the electron mass. Option C is the electron charge in coulombs. Option D is Avogadro\'s number.</p>'
   },
   {
     id: 'p47', type: 'concept', tag: 'Isotopes',
@@ -330,24 +330,24 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p48', type: 'concept', tag: 'Empirical Formula',
-    q: 'Benzene has the molecular formula C₆H₆. What is its empirical formula?',
-    choices: ['C₆H₆', 'CH', 'C₂H₂', 'C₃H₃'],
+    q: 'Benzene has the molecular formula C6H6. What is its empirical formula?',
+    choices: ['C6H6', 'CH', 'C2H2', 'C3H3'],
     correct: 1,
     solution: '<p><strong>B — CH.</strong> GCF of subscripts 6 and 6 is 6. Divide each by 6: C:1, H:1. Empirical formula = CH. This 1:1 carbon-to-hydrogen ratio is characteristic of many aromatic compounds.</p>'
   },
   {
     id: 'p49', type: 'concept', tag: 'Ions',
-    q: 'Which change occurs when a neutral sulfur atom (Z=16) forms the S²⁻ ion?',
+    q: 'Which change occurs when a neutral sulfur atom (Z=16) forms the S^2- ion?',
     choices: ['It loses 2 protons', 'It gains 2 neutrons', 'It gains 2 electrons', 'It loses 2 electrons'],
     correct: 2,
-    solution: '<p><strong>C — gains 2 electrons.</strong> A 2− charge means 2 more electrons than protons. Neutral S has 16 electrons; S²⁻ has 18 electrons. No protons or neutrons change — only electrons transfer during ion formation.</p>'
+    solution: '<p><strong>C — gains 2 electrons.</strong> A 2- charge means 2 more electrons than protons. Neutral S has 16 electrons; S^2- has 18 electrons. No protons or neutrons change — only electrons transfer during ion formation.</p>'
   },
   {
     id: 'p50', type: 'concept', tag: 'Chemical Formulas',
     q: 'What does a subscript in a chemical formula tell you?',
     choices: ['The charge of the preceding element', 'The number of atoms of the preceding element (or group) per formula unit', 'The atomic number of the preceding element', 'The mass of the preceding element in amu'],
     correct: 1,
-    solution: '<p><strong>B — number of atoms per formula unit.</strong> In H₂O, the subscript 2 after H means there are 2 hydrogen atoms per molecule. Subscripts after a closing parenthesis multiply every atom inside. They have no relationship to charge or atomic number.</p>'
+    solution: '<p><strong>B — number of atoms per formula unit.</strong> In H2O, the subscript 2 after H means there are 2 hydrogen atoms per molecule. Subscripts after a closing parenthesis multiply every atom inside. They have no relationship to charge or atomic number.</p>'
   },
   {
     id: 'p51', type: 'concept', tag: 'Dalton\'s Theory',
@@ -379,10 +379,10 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p55', type: 'concept', tag: 'Chemical Formulas',
-    q: 'Glucose (C₆H₁₂O₆) and fructose are both monosaccharides with the same molecular formula but different structures. This makes them:',
+    q: 'Glucose (C6H12O6) and fructose are both monosaccharides with the same molecular formula but different structures. This makes them:',
     choices: ['Isotopes', 'Ions', 'Isomers', 'Empirical formula pairs'],
     correct: 2,
-    solution: '<p><strong>C — isomers.</strong> Isomers are compounds with the same molecular formula but different arrangements of atoms (different structures), leading to different properties. Glucose and fructose both have C₆H₁₂O₆ but differ in how the atoms are connected, giving them different physical and biochemical properties.</p>'
+    solution: '<p><strong>C — isomers.</strong> Isomers are compounds with the same molecular formula but different arrangements of atoms (different structures), leading to different properties. Glucose and fructose both have C6H12O6 but differ in how the atoms are connected, giving them different physical and biochemical properties.</p>'
   },
   {
     id: 'p56', type: 'concept', tag: 'Average Atomic Mass',
@@ -396,7 +396,7 @@ export const ALL_PROBLEMS = [
     q: 'An ion has 18 electrons and a charge of 2+. Which element is it?',
     choices: ['Argon (Z=18)', 'Calcium (Z=20)', 'Chlorine (Z=17)', 'Potassium (Z=19)'],
     correct: 1,
-    solution: '<p><strong>B — Calcium (Z=20).</strong> Electrons = Z − charge → Z = electrons + charge = 18 + 2 = 20. Element with Z=20 is calcium. Ca²⁺ has lost 2 electrons (20 − 2 = 18 electrons) and is isoelectronic with argon.</p>'
+    solution: '<p><strong>B — Calcium (Z=20).</strong> Electrons = Z - charge → Z = electrons + charge = 18 + 2 = 20. Element with Z=20 is calcium. Ca^2+ has lost 2 electrons (20 - 2 = 18 electrons) and is isoelectronic with argon.</p>'
   },
   {
     id: 'p58', type: 'concept', tag: 'Subatomic Particles',
@@ -407,10 +407,10 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p59', type: 'concept', tag: 'Chemical Formulas',
-    q: 'How many oxygen atoms are in one formula unit of Al₂(SO₄)₃?',
+    q: 'How many oxygen atoms are in one formula unit of Al2(SO4)3?',
     choices: ['3', '4', '7', '12'],
     correct: 3,
-    solution: '<p><strong>D — 12 oxygen atoms.</strong> The sulfate group (SO₄) contains 4 oxygen atoms. The subscript 3 outside the parentheses multiplies everything inside: O = 4 × 3 = 12. Full count: Al:2, S:3, O:12 = 17 atoms total.</p>'
+    solution: '<p><strong>D — 12 oxygen atoms.</strong> The sulfate group (SO4) contains 4 oxygen atoms. The subscript 3 outside the parentheses multiplies everything inside: O = 4 × 3 = 12. Full count: Al:2, S:3, O:12 = 17 atoms total.</p>'
   },
   {
     id: 'p60', type: 'concept', tag: 'Dalton\'s Theory',
@@ -422,9 +422,9 @@ export const ALL_PROBLEMS = [
   {
     id: 'p61', type: 'concept', tag: 'Atomic Mass Unit',
     q: 'One atomic mass unit (amu) is equal to:',
-    choices: ['1.6605 × 10⁻²⁴ g', '6.022 × 10²³ g', '1.6605 × 10⁻¹⁹ g', '1.000 g'],
+    choices: ['1.6605 × 10^-24 g', '6.022 × 10^23 g', '1.6605 × 10^-19 g', '1.000 g'],
     correct: 0,
-    solution: '<p><strong>A — 1.6605 × 10⁻²⁴ g.</strong> This tiny mass reflects the scale of individual atoms. One mole of these 1-amu units (6.022 × 10²³ of them) weighs exactly 1 gram — this is the bridge between atomic mass and molar mass.</p>'
+    solution: '<p><strong>A — 1.6605 × 10^-24 g.</strong> This tiny mass reflects the scale of individual atoms. One mole of these 1-amu units (6.022 × 10^23 of them) weighs exactly 1 gram — this is the bridge between atomic mass and molar mass.</p>'
   },
   {
     id: 'p62', type: 'concept', tag: 'Isotopes',
@@ -436,20 +436,20 @@ export const ALL_PROBLEMS = [
   {
     id: 'p63', type: 'concept', tag: 'Ions',
     q: 'Which of the following is a cation?',
-    choices: ['Cl⁻', 'O²⁻', 'S²⁻', 'Mg²⁺'],
+    choices: ['Cl^-', 'O^2-', 'S^2-', 'Mg^2+'],
     correct: 3,
-    solution: '<p><strong>D — Mg²⁺.</strong> A cation is a positively charged ion (lost electrons). Mg²⁺ has lost 2 electrons. The other options (Cl⁻, O²⁻, S²⁻) are all anions — they have gained electrons and carry negative charges.</p>'
+    solution: '<p><strong>D — Mg^2+.</strong> A cation is a positively charged ion (lost electrons). Mg^2+ has lost 2 electrons. The other options (Cl^-, O^2-, S^2-) are all anions — they have gained electrons and carry negative charges.</p>'
   },
   {
     id: 'p64', type: 'concept', tag: 'Empirical Formula',
-    q: 'A compound has the molecular formula N₂H₄. What is its empirical formula?',
-    choices: ['N₂H₄', 'NH₃', 'NH₂', 'N₂H₂'],
+    q: 'A compound has the molecular formula N2H4. What is its empirical formula?',
+    choices: ['N2H4', 'NH3', 'NH2', 'N2H2'],
     correct: 2,
-    solution: '<p><strong>C — NH₂.</strong> GCF of 2 and 4 is 2. Divide each subscript: N: 2÷2=1, H: 4÷2=2. Empirical formula = NH₂. This is hydrazine — its 1:2 N:H ratio is the simplest whole-number expression.</p>'
+    solution: '<p><strong>C — NH2.</strong> GCF of 2 and 4 is 2. Divide each subscript: N: 2÷2=1, H: 4÷2=2. Empirical formula = NH2. This is hydrazine — its 1:2 N:H ratio is the simplest whole-number expression.</p>'
   },
   {
     id: 'p65', type: 'concept', tag: 'Chemical Formulas',
-    q: 'What is the total number of atoms in one molecule of glucose, C₆H₁₂O₆?',
+    q: 'What is the total number of atoms in one molecule of glucose, C6H12O6?',
     choices: ['18', '21', '24', '13'],
     correct: 2,
     solution: '<p><strong>C — 24 atoms.</strong> Add all subscripts: C: 6, H: 12, O: 6. Total = 6 + 12 + 6 = 24 atoms per molecule. This is why glucose is a relatively large organic molecule.</p>'
@@ -459,33 +459,33 @@ export const ALL_PROBLEMS = [
     q: 'Which subatomic particle carries a positive charge?',
     choices: ['Electron', 'Neutron', 'Proton', 'Photon'],
     correct: 2,
-    solution: '<p><strong>C — proton.</strong> Protons carry a +1 charge and are located in the nucleus. Electrons (−1) are outside the nucleus. Neutrons (0) are neutral. Photons are particles of light — not subatomic particles of atoms.</p>'
+    solution: '<p><strong>C — proton.</strong> Protons carry a +1 charge and are located in the nucleus. Electrons (-1) are outside the nucleus. Neutrons (0) are neutral. Photons are particles of light — not subatomic particles of atoms.</p>'
   },
   {
     id: 'p67', type: 'concept', tag: 'Atomic Number',
-    q: 'An atom has 17 protons. When it becomes a Cl⁻ ion, the atomic number:',
+    q: 'An atom has 17 protons. When it becomes a Cl^- ion, the atomic number:',
     choices: ['Decreases to 16', 'Increases to 18', 'Stays at 17', 'Changes to match the number of electrons'],
     correct: 2,
-    solution: '<p><strong>C — stays at 17.</strong> Atomic number = number of protons, which never changes during ion formation. Only electrons are gained or lost. Cl (Z=17) becomes Cl⁻ by gaining 1 electron, but it still has 17 protons and is still chlorine.</p>'
+    solution: '<p><strong>C — stays at 17.</strong> Atomic number = number of protons, which never changes during ion formation. Only electrons are gained or lost. Cl (Z=17) becomes Cl^- by gaining 1 electron, but it still has 17 protons and is still chlorine.</p>'
   },
 
   /* ═══════════════════ MULTI-STEP PROBLEMS (17) ═══════════════════ */
 
   {
     id: 'p68', type: 'multi', tag: 'Isotopes + Particles',
-    q: 'An atom of bromine-80 (Z = 35) forms a Br⁻ ion. How many electrons does Br⁻ have, and how does this compare to the number of neutrons in Br-80?',
+    q: 'An atom of bromine-80 (Z = 35) forms a Br^- ion. How many electrons does Br^- have, and how does this compare to the number of neutrons in Br-80?',
     choices: [
-      'Br⁻ has 36 electrons; Br-80 has 45 neutrons — more neutrons than electrons',
-      'Br⁻ has 34 electrons; Br-80 has 45 neutrons — more neutrons than electrons',
-      'Br⁻ has 36 electrons; Br-80 has 35 neutrons — they are about equal',
-      'Br⁻ has 35 electrons; Br-80 has 45 neutrons — more neutrons'
+      'Br^- has 36 electrons; Br-80 has 45 neutrons — more neutrons than electrons',
+      'Br^- has 34 electrons; Br-80 has 45 neutrons — more neutrons than electrons',
+      'Br^- has 36 electrons; Br-80 has 35 neutrons — they are about equal',
+      'Br^- has 35 electrons; Br-80 has 45 neutrons — more neutrons'
     ],
     correct: 0,
-    solution: '<p><strong>Electrons in Br⁻:</strong> Z=35, charge=−1 → electrons = 35 − (−1) = 36.<br><strong>Neutrons in Br-80:</strong> A=80, Z=35 → neutrons = 80 − 35 = 45.<br>So Br⁻ has 36 electrons and the nucleus has 45 neutrons — more neutrons than electrons. Answer A is correct.</p>'
+    solution: '<p><strong>Electrons in Br^-:</strong> Z=35, charge=-1 → electrons = 35 - (-1) = 36.<br><strong>Neutrons in Br-80:</strong> A=80, Z=35 → neutrons = 80 - 35 = 45.<br>So Br^- has 36 electrons and the nucleus has 45 neutrons — more neutrons than electrons. Answer A is correct.</p>'
   },
   {
     id: 'p69', type: 'multi', tag: 'Nuclear Symbol',
-    q: 'Element X has the nuclear symbol ⁵⁶₂₆X. It forms a 2+ ion. Which set of values is correct for the ion?',
+    q: 'Element X has the nuclear symbol ^5626X. It forms a 2+ ion. Which set of values is correct for the ion?',
     choices: [
       'Protons: 26, Neutrons: 30, Electrons: 28',
       'Protons: 26, Neutrons: 30, Electrons: 24',
@@ -493,40 +493,40 @@ export const ALL_PROBLEMS = [
       'Protons: 28, Neutrons: 28, Electrons: 26'
     ],
     correct: 1,
-    solution: '<p>From ⁵⁶₂₆X: Z = 26 (protons), A = 56, neutrons = A − Z = 56 − 26 = 30. For a 2+ ion: electrons = Z − charge = 26 − 2 = <strong>24 electrons</strong>. The correct set is protons=26, neutrons=30, electrons=24 — option B. Option A has 28 electrons, which would correspond to a 2− ion, not 2+.</p>'
+    solution: '<p>From ^5626X: Z = 26 (protons), A = 56, neutrons = A - Z = 56 - 26 = 30. For a 2+ ion: electrons = Z - charge = 26 - 2 = <strong>24 electrons</strong>. The correct set is protons=26, neutrons=30, electrons=24 — option B. Option A has 28 electrons, which would correspond to a 2- ion, not 2+.</p>'
   },
   {
     id: 'p70', type: 'multi', tag: 'Average Atomic Mass',
     q: 'An unknown element has two isotopes. Isotope A has a mass of 6.015 amu and Isotope B has a mass of 7.016 amu. The average atomic mass is 6.94 amu. What is the approximate percent abundance of Isotope A?',
     choices: ['7.6%', '19.9%', '75.8%', '92.4%'],
     correct: 0,
-    solution: '<p>Let x = fraction of isotope A. Then:<br>6.015x + 7.016(1−x) = 6.94<br>6.015x + 7.016 − 7.016x = 6.94<br>−1.001x = −0.076<br>x = 0.0759 ≈ 7.6%.<br>Isotope A (mass 6.015) is about <strong>7.6% abundant</strong> — this is lithium-6. Isotope B (Li-7) is 92.4% abundant, pulling the average close to 7.</p>'
+    solution: '<p>Let x = fraction of isotope A. Then:<br>6.015x + 7.016(1-x) = 6.94<br>6.015x + 7.016 - 7.016x = 6.94<br>-1.001x = -0.076<br>x = 0.0759 ≈ 7.6%.<br>Isotope A (mass 6.015) is about <strong>7.6% abundant</strong> — this is lithium-6. Isotope B (Li-7) is 92.4% abundant, pulling the average close to 7.</p>'
   },
   {
     id: 'p71', type: 'multi', tag: 'Formula + Atom Count',
-    q: 'How many total atoms are in one formula unit of Al₂(SO₄)₃?',
+    q: 'How many total atoms are in one formula unit of Al2(SO4)3?',
     choices: ['7', '13', '17', '15'],
     correct: 2,
-    solution: '<p>Count carefully: Al: 2. Inside (SO₄)₃ — S: 1×3=3, O: 4×3=12. Total = 2 + 3 + 12 = <strong>17 atoms</strong>.</p>'
+    solution: '<p>Count carefully: Al: 2. Inside (SO4)3 — S: 1×3=3, O: 4×3=12. Total = 2 + 3 + 12 = <strong>17 atoms</strong>.</p>'
   },
   {
     id: 'p72', type: 'multi', tag: 'Isotopes + Averages',
     q: 'Gallium has two stable isotopes: Ga-69 (mass = 68.926 amu) and Ga-71 (mass = 70.925 amu). The average atomic mass of gallium is 69.723 amu. What is the percent abundance of Ga-69?',
     choices: ['39.9%', '50.0%', '60.1%', '75.8%'],
     correct: 2,
-    solution: '<p>Let x = fraction of Ga-69. Then:<br>68.926x + 70.925(1−x) = 69.723<br>68.926x + 70.925 − 70.925x = 69.723<br>−1.999x = −1.202<br>x = 0.6013 ≈ <strong>60.1%</strong> for Ga-69. Ga-71 is 39.9% abundant.</p>'
+    solution: '<p>Let x = fraction of Ga-69. Then:<br>68.926x + 70.925(1-x) = 69.723<br>68.926x + 70.925 - 70.925x = 69.723<br>-1.999x = -1.202<br>x = 0.6013 ≈ <strong>60.1%</strong> for Ga-69. Ga-71 is 39.9% abundant.</p>'
   },
   {
     id: 'p73', type: 'multi', tag: 'Nuclear Symbol + Ions',
     q: 'A neutral atom has 20 protons and 20 neutrons. It then loses 2 electrons. Which nuclear symbol AND ion description are both correct?',
     choices: [
-      '⁴⁰₂₀Ca; the ion has 18 electrons and is called Ca²⁺',
-      '²⁰₄₀Ca; the ion has 22 electrons and is called Ca²⁺',
-      '⁴⁰₂₀Ca; the ion has 22 electrons and is called Ca²⁻',
-      '⁴⁰₂₀Ca; the ion has 20 electrons and is called Ca⁰'
+      '^4020Ca; the ion has 18 electrons and is called Ca^2+',
+      '^2040Ca; the ion has 22 electrons and is called Ca^2+',
+      '^4020Ca; the ion has 22 electrons and is called Ca^2-',
+      '^4020Ca; the ion has 20 electrons and is called Ca^0'
     ],
     correct: 0,
-    solution: '<p>Nuclear symbol: A = protons + neutrons = 20 + 20 = 40; Z = 20. Symbol: ⁴⁰₂₀Ca ✓. After losing 2 electrons: electrons = 20 − 2 = 18, charge = +2 → Ca²⁺. Answer A is correct.</p>'
+    solution: '<p>Nuclear symbol: A = protons + neutrons = 20 + 20 = 40; Z = 20. Symbol: ^4020Ca ✓. After losing 2 electrons: electrons = 20 - 2 = 18, charge = +2 → Ca^2+. Answer A is correct.</p>'
   },
   {
     id: 'p74', type: 'multi', tag: 'Dalton + Modern',
@@ -542,24 +542,24 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p75', type: 'multi', tag: 'Empirical + Molecular',
-    q: 'A compound with empirical formula CH₂O has a molar mass of approximately 180 g/mol. The molar mass of CH₂O is approximately 30 g/mol. What is the molecular formula?',
-    choices: ['CH₂O', 'C₃H₆O₃', 'C₆H₁₂O₆', 'C₄H₈O₄'],
+    q: 'A compound with empirical formula CH2O has a molar mass of approximately 180 g/mol. The molar mass of CH2O is approximately 30 g/mol. What is the molecular formula?',
+    choices: ['CH2O', 'C3H6O3', 'C6H12O6', 'C4H8O4'],
     correct: 2,
-    solution: '<p>Ratio = molar mass / empirical formula mass = 180 / 30 = 6. Multiply each subscript in CH₂O by 6: C:1×6=6, H:2×6=12, O:1×6=6. Molecular formula = <strong>C₆H₁₂O₆</strong> (glucose).</p>'
+    solution: '<p>Ratio = molar mass / empirical formula mass = 180 / 30 = 6. Multiply each subscript in CH2O by 6: C:1×6=6, H:2×6=12, O:1×6=6. Molecular formula = <strong>C6H12O6</strong> (glucose).</p>'
   },
   {
     id: 'p76', type: 'multi', tag: 'Ions + Particles',
     q: 'An ion has 36 electrons, 35 protons, and 45 neutrons. What is its identity and charge?',
-    choices: ['Br⁻ (bromine, 1− charge)', 'Kr (krypton, neutral)', 'Se²⁻ (selenium, 2− charge)', 'Rb⁺ (rubidium, 1+ charge)'],
+    choices: ['Br^- (bromine, 1- charge)', 'Kr (krypton, neutral)', 'Se^2- (selenium, 2- charge)', 'Rb^+ (rubidium, 1+ charge)'],
     correct: 0,
-    solution: '<p>Protons = 35 → element is bromine (Br, Z=35). Charge = protons − electrons = 35 − 36 = −1. So this is <strong>Br⁻</strong>. Neutrons = 45 → A = Z + N = 35 + 45 = 80 → Br-80.</p>'
+    solution: '<p>Protons = 35 → element is bromine (Br, Z=35). Charge = protons - electrons = 35 - 36 = -1. So this is <strong>Br^-</strong>. Neutrons = 45 → A = Z + N = 35 + 45 = 80 → Br-80.</p>'
   },
   {
     id: 'p77', type: 'multi', tag: 'Formula + Empirical',
     q: 'A molecule contains 2 carbon atoms, 6 hydrogen atoms, and 1 oxygen atom. What is its empirical formula?',
-    choices: ['C₂H₆O', 'CH₃O', 'CHO', 'C₂H₆O — this IS the empirical formula because the GCF is 1'],
+    choices: ['C2H6O', 'CH3O', 'CHO', 'C2H6O — this IS the empirical formula because the GCF is 1'],
     correct: 3,
-    solution: '<p>Molecular formula: C₂H₆O. Find GCF of subscripts 2, 6, 1. GCF = 1. When the GCF is 1, the empirical formula equals the molecular formula: <strong>C₂H₆O</strong>. This is the formula for ethanol — you cannot simplify it further.</p>'
+    solution: '<p>Molecular formula: C2H6O. Find GCF of subscripts 2, 6, 1. GCF = 1. When the GCF is 1, the empirical formula equals the molecular formula: <strong>C2H6O</strong>. This is the formula for ethanol — you cannot simplify it further.</p>'
   },
   {
     id: 'p78', type: 'multi', tag: 'Average Atomic Mass',
@@ -577,48 +577,48 @@ export const ALL_PROBLEMS = [
   },
   {
     id: 'p80', type: 'multi', tag: 'Ions + Isoelectronic',
-    q: 'Na⁺ (Z=11), Mg²⁺ (Z=12), Al³⁺ (Z=13), and Ne (Z=10) all have 10 electrons. What term describes species that have the same number of electrons?',
+    q: 'Na^+ (Z=11), Mg^2+ (Z=12), Al^3+ (Z=13), and Ne (Z=10) all have 10 electrons. What term describes species that have the same number of electrons?',
     choices: ['Isotopes', 'Isomers', 'Isoelectronic', 'Allotropes'],
     correct: 2,
-    solution: '<p><strong>C — isoelectronic.</strong> Isoelectronic species have the same number of electrons (and therefore the same electron configuration). Na⁺, Mg²⁺, Al³⁺, and Ne all have 10 electrons and share the neon electron configuration, despite being different elements/ions.</p>'
+    solution: '<p><strong>C — isoelectronic.</strong> Isoelectronic species have the same number of electrons (and therefore the same electron configuration). Na^+, Mg^2+, Al^3+, and Ne all have 10 electrons and share the neon electron configuration, despite being different elements/ions.</p>'
   },
   {
     id: 'p81', type: 'multi', tag: 'Formula + Counting',
-    q: 'How many total atoms are in one formula unit of Ca₃(PO₄)₂, and what is its empirical formula?',
+    q: 'How many total atoms are in one formula unit of Ca3(PO4)2, and what is its empirical formula?',
     choices: [
-      '13 total atoms; Ca₃(PO₄)₂ is already the empirical formula',
-      '10 total atoms; CaPO₄',
-      '13 total atoms; CaPO₄ is a simpler formula',
-      '9 total atoms; Ca₃P₂O₈'
+      '13 total atoms; Ca3(PO4)2 is already the empirical formula',
+      '10 total atoms; CaPO4',
+      '13 total atoms; CaPO4 is a simpler formula',
+      '9 total atoms; Ca3P2O8'
     ],
     correct: 0,
-    solution: '<p>Atom count: Ca=3, P=1×2=2, O=4×2=8. Total = 3+2+8 = <strong>13 atoms</strong>. GCF of subscripts 3, 2, 8 is 1 — so Ca₃(PO₄)₂ cannot be simplified further and is already the empirical formula. Answer A is correct.</p>'
+    solution: '<p>Atom count: Ca=3, P=1×2=2, O=4×2=8. Total = 3+2+8 = <strong>13 atoms</strong>. GCF of subscripts 3, 2, 8 is 1 — so Ca3(PO4)2 cannot be simplified further and is already the empirical formula. Answer A is correct.</p>'
   },
   {
     id: 'p82', type: 'multi', tag: 'Dalton + Proportions',
-    q: 'Water (H₂O) is always 11.2% hydrogen and 88.8% oxygen by mass. Carbon dioxide (CO₂) is always 27.3% carbon and 72.7% oxygen. These facts illustrate which of Dalton\'s laws?',
+    q: 'Water (H2O) is always 11.2% hydrogen and 88.8% oxygen by mass. Carbon dioxide (CO2) is always 27.3% carbon and 72.7% oxygen. These facts illustrate which of Dalton\'s laws?',
     choices: ['Law of conservation of mass', 'Law of definite proportions', 'Law of multiple proportions', 'Law of mass action'],
     correct: 1,
-    solution: '<p><strong>B — law of definite proportions.</strong> Each pure compound always has the same mass ratio of elements, regardless of sample size or source. Water is always ~1:8 H:O by mass. This is explained by atoms combining in fixed whole-number ratios (2H per O in water, 1C per 2O in CO₂).</p>'
+    solution: '<p><strong>B — law of definite proportions.</strong> Each pure compound always has the same mass ratio of elements, regardless of sample size or source. Water is always ~1:8 H:O by mass. This is explained by atoms combining in fixed whole-number ratios (2H per O in water, 1C per 2O in CO2).</p>'
   },
   {
     id: 'p83', type: 'multi', tag: 'Isotopes + Notation',
     q: 'Write out the nuclear symbol for an atom with 7 protons and 8 neutrons, and identify the element.',
-    choices: ['¹⁵₇N — Nitrogen-15', '¹⁵₈O — Oxygen-15', '⁸₇N — Nitrogen-8', '⁷₈O — Oxygen-7'],
+    choices: ['^157N — Nitrogen-15', '^158O — Oxygen-15', '^87N — Nitrogen-8', '^78O — Oxygen-7'],
     correct: 0,
-    solution: '<p>Z = 7 (nitrogen, N). A = protons + neutrons = 7 + 8 = 15. Nuclear symbol: <strong>¹⁵₇N</strong> — this is nitrogen-15, a stable heavy isotope of nitrogen (the more common isotope is N-14 with 7 neutrons).</p>'
+    solution: '<p>Z = 7 (nitrogen, N). A = protons + neutrons = 7 + 8 = 15. Nuclear symbol: <strong>^157N</strong> — this is nitrogen-15, a stable heavy isotope of nitrogen (the more common isotope is N-14 with 7 neutrons).</p>'
   },
   {
     id: 'p84', type: 'multi', tag: 'All Concepts',
     q: 'An atom has: 29 protons, 36 neutrons, and 29 electrons. It forms a 2+ ion. Which of the following statements about this atom and its ion are BOTH correct?',
     choices: [
-      'The atom is Cu-65; the ion Cu²⁺ has 27 electrons',
-      'The atom is Cu-65; the ion Cu²⁺ has 29 electrons',
-      'The atom is Zn-65; the ion Zn²⁺ has 27 electrons',
-      'The atom is Cu-64; the ion Cu²⁺ has 31 electrons'
+      'The atom is Cu-65; the ion Cu^2+ has 27 electrons',
+      'The atom is Cu-65; the ion Cu^2+ has 29 electrons',
+      'The atom is Zn-65; the ion Zn^2+ has 27 electrons',
+      'The atom is Cu-64; the ion Cu^2+ has 31 electrons'
     ],
     correct: 0,
-    solution: '<p>Z=29 → copper (Cu). A = 29 + 36 = 65 → Cu-65. For Cu²⁺: electrons = Z − charge = 29 − 2 = 27. Both statements in A are correct: Cu-65 with a Cu²⁺ ion having 27 electrons.</p>'
+    solution: '<p>Z=29 → copper (Cu). A = 29 + 36 = 65 → Cu-65. For Cu^2+: electrons = Z - charge = 29 - 2 = 27. Both statements in A are correct: Cu-65 with a Cu^2+ ion having 27 electrons.</p>'
   }
 
 ]; // end ALL_PROBLEMS — 84 problems total

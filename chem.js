@@ -674,6 +674,7 @@
     }
 
     wrapTables();
+    wireHorizontalOverflowHints();
   }
 
   function wrapTables() {
@@ -695,26 +696,60 @@
       table.parentNode.insertBefore(wrap, table);
       wrap.appendChild(table);
 
-      const hint = document.createElement('p');
-      hint.className = 'table-scroll-hint';
-      hint.setAttribute('aria-hidden', 'true');
-      hint.textContent = '← swipe to see more →';
-      wrap.parentNode.insertBefore(hint, wrap.nextSibling);
+      bindHorizontalOverflowHint(wrap);
+    });
+  }
 
-      function checkOverflow() {
-        const overflows = wrap.scrollWidth > wrap.clientWidth + 2;
-        wrap.classList.toggle('has-overflow', overflows);
-        hint.classList.toggle('visible', overflows);
-      }
+  function bindHorizontalOverflowHint(wrap, options) {
+    if (!wrap || wrap.dataset.scrollHintBound === 'true') return;
 
-      wrap.addEventListener('scroll', function () {
-        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 4;
-        wrap.classList.toggle('has-overflow', !atEnd);
-        hint.classList.toggle('visible', wrap.scrollLeft < wrap.scrollWidth - wrap.clientWidth - 4);
-      }, { passive: true });
+    const settings = options || {};
+    const hintText = settings.text || '← swipe to see more →';
 
-      checkOverflow();
-      window.addEventListener('resize', checkOverflow, { passive: true });
+    wrap.dataset.scrollHintBound = 'true';
+    wrap.classList.add('overflow-scroll-wrap');
+
+    const hint = document.createElement('p');
+    hint.className = 'table-scroll-hint';
+    hint.setAttribute('aria-hidden', 'true');
+    hint.textContent = hintText;
+    wrap.parentNode.insertBefore(hint, wrap.nextSibling);
+
+    function updateHint() {
+      const overflows = wrap.scrollWidth > wrap.clientWidth + 2;
+      const canScrollMore = wrap.scrollLeft < wrap.scrollWidth - wrap.clientWidth - 4;
+      wrap.classList.toggle('has-overflow', overflows && canScrollMore);
+      hint.classList.toggle('visible', overflows && canScrollMore);
+    }
+
+    wrap.addEventListener('scroll', updateHint, { passive: true });
+    window.addEventListener('resize', updateHint, { passive: true });
+    window.addEventListener('load', updateHint, { once: true });
+
+    if ('ResizeObserver' in window) {
+      const resizeObserver = new ResizeObserver(updateHint);
+      resizeObserver.observe(wrap);
+    }
+
+    requestAnimationFrame(updateHint);
+    setTimeout(updateHint, 0);
+  }
+
+  function wireHorizontalOverflowHints() {
+    document.querySelectorAll('.chart-scroll-wrap').forEach(function (wrap) {
+      bindHorizontalOverflowHint(wrap, { text: '← swipe to see full chart →' });
+    });
+
+    document.querySelectorAll([
+      '.pt-diag-outer',
+      '.mini-pt-wrap',
+      '.pt-tool-grid',
+      '.u02-svg-scroll',
+      '.reaction-visual-scroll',
+      '.graph-wrapper',
+      '.resonance-row--nitrate'
+    ].join(', ')).forEach(function (wrap) {
+      bindHorizontalOverflowHint(wrap);
     });
   }
 

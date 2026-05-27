@@ -34,7 +34,7 @@ const sigFigCountTasks = [
     incorrectFeedback: 'Not quite — those last zeros are placeholders because there is no decimal point shown. Count only the 2 and 5.'
   },
   {
-    prompt: 'How many significant figures are in 2.50 × 10³?',
+    prompt: 'How many significant figures are in 2.50 x 10^3?',
     options: ['2', '3', '4', 'Ambiguous'],
     answer: '3',
     correctFeedback: 'Right — scientific notation makes the measured digits explicit, so 2.50 has three significant figures.',

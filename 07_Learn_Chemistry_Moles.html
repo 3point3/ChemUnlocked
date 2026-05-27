@@ -137,14 +137,14 @@
     <div class="card mole-spotlight">
       <h2 class="card-title"><span class="num">7.1A</span> Mole Concept Spotlight: Same Count, Different Mass</h2>
       <p>Notice the big idea here: one mole always means the same <strong>number of particles</strong>, but definitely not the same <strong>mass</strong>.</p>
-      <p>The particle type depends on the substance. For carbon, the particles are atoms; for oxygen gas, they are O<sub>2</sub> molecules; and for carbon dioxide, they are CO<sub>2</sub> molecules. Same mole idea, different particles, different masses.</p>
+      <p>The particle type depends on the substance. For carbon, the particles are atoms; for oxygen gas, they are <span class="ion-group">O<span class="chem-sub">2</span></span> molecules; and for carbon dioxide, they are <span class="ion-group">CO<span class="chem-sub">2</span></span> molecules. Same mole idea, different particles, different masses.</p>
 
       <div class="particle-wrapper">
         <div class="particle-summary-box">
           <strong>Carbon Atom</strong>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="black"></circle>
-            <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="35" fill="white">C</text>
+            <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, sans-serif" font-size="35" fill="white">C</text>
           </svg>
           <p>
             One black circle represents <strong>1 carbon atom</strong>. <br>
@@ -158,8 +158,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 55">
             <circle cx="27" cy="27" r="23" fill="red" />
             <circle cx="73" cy="27" r="23" fill="red" />
-            <text x="27" y="27" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial" font-size="20" font-weight="bold">O</text>
-            <text x="73" y="27" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial" font-size="20" font-weight="bold">O</text>
+            <text x="27" y="27" text-anchor="middle" dominant-baseline="central" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold">O</text>
+            <text x="73" y="27" text-anchor="middle" dominant-baseline="central" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold">O</text>
           </svg>
           <p>
             The two red circles together represent <strong>1 oxygen molecule made from two oxygen atoms</strong>. <br>
@@ -175,7 +175,7 @@
         1 mol = 6.022 × 10<sup>23</sup> representative particles, even though different substances have different masses
       </div>
 
-      <div class="reaction-band">C(s) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)</div>
+      <div class="reaction-band"><span class="chem-eq"><span class="chem-token">C(s)</span><span class="chem-op">+</span><span class="chem-token"><span class="ion-group">O<span class="chem-sub">2</span></span>(g)</span><span class="chem-op">→</span><span class="chem-token"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</span></span></div>
 
       <p class="mt-075">The balanced equation shows a <strong>1 : 1 : 1 mole ratio</strong>.</p>
       <p>This is what you need to notice: the coefficients compare substances in moles first, not in grams.</p>
@@ -187,11 +187,11 @@
         </div>
         <div class="mole-summary-box">
           <strong>Oxygen Gas</strong>
-          1 mole of O<sub>2</sub> molecules = 6.022 × 10<sup>23</sup> molecules = <strong>31.999 g</strong>
+          1 mole of <span class="ion-group">O<span class="chem-sub">2</span></span> molecules = 6.022 × 10<sup>23</sup> molecules = <strong>31.999 g</strong>
         </div>
         <div class="mole-summary-box">
           <strong>Carbon Dioxide Gas</strong>
-          1 mole of CO<sub>2</sub> molecules = 6.022 × 10<sup>23</sup> molecules = <strong>44.010 g</strong>
+          1 mole of <span class="ion-group">CO<span class="chem-sub">2</span></span> molecules = 6.022 × 10<sup>23</sup> molecules = <strong>44.010 g</strong>
         </div>
       </div>
 
@@ -232,7 +232,7 @@
 
     <div class="card">
       <h2 class="card-title"><span class="num">7.2</span> Molar Mass: The Bridge Between Grams and Moles</h2>
-      <p>Moles connect particle counting to mass. The <strong>molar mass</strong> (symbol: M) is the number that makes that connection. It tells you the mass of exactly one mole of a substance in g/mol.</p>
+      <p>Moles connect particle counting to mass. The <strong>molar mass</strong> (symbol: MM) is the number that makes that connection. It tells you the mass of exactly one mole of a substance in g/mol.</p>
       <p>Start here when a problem gives you grams. Grams come from the balance, but chemistry comparisons usually happen in moles first. Molar mass is the bridge that lets you switch between those two ideas without losing the meaning of the substance.</p>
       <p>For an element, the molar mass is its atomic mass from the periodic table written in g/mol. For a compound, you find the total by adding the mass contribution from each element in the formula.</p>
 
@@ -256,17 +256,17 @@
       </div>
 
       <p>Use these five compounds as models. For each one, notice how you multiply the atomic mass by the number of atoms in the formula before adding — that is the calculation pattern you will repeat.</p>
-      <table class="molar-mass-table-mobile">
+      <table class="molar-mass-table-mobile mobile-stack-table">
         <caption>Molar Mass Calculations for Common Substances</caption>
         <thead>
           <tr><th>Substance</th><th>Formula</th><th>Calculation</th><th>Molar Mass</th></tr>
         </thead>
         <tbody>
-          <tr><td>Water</td><td>H₂O</td><td>2(1.008) + 15.999</td><td>18.015 g/mol</td></tr>
-          <tr><td>Glucose</td><td>C₆H₁₂O₆</td><td>6(12.011) + 12(1.008) + 6(15.999)</td><td>180.156 g/mol</td></tr>
-          <tr><td>Sodium chloride</td><td>NaCl</td><td>22.990 + 35.453</td><td>58.443 g/mol</td></tr>
-          <tr><td>Sulfuric acid</td><td>H₂SO₄</td><td>2(1.008) + 32.065 + 4(15.999)</td><td>98.079 g/mol</td></tr>
-          <tr><td>Calcium carbonate</td><td>CaCO₃</td><td>40.078 + 12.011 + 3(15.999)</td><td>100.086 g/mol</td></tr>
+          <tr><td data-label="Substance">Water</td><td data-label="Formula"><span class="ion-group">H<span class="chem-sub">2</span>O</span></td><td data-label="Calculation">2(1.008) + 15.999</td><td data-label="Molar Mass">18.015 g/mol</td></tr>
+          <tr><td data-label="Substance">Glucose</td><td data-label="Formula"><span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></td><td data-label="Calculation">6(12.011) + 12(1.008) + 6(15.999)</td><td data-label="Molar Mass">180.156 g/mol</td></tr>
+          <tr><td data-label="Substance">Sodium chloride</td><td data-label="Formula">NaCl</td><td data-label="Calculation">22.990 + 35.453</td><td data-label="Molar Mass">58.443 g/mol</td></tr>
+          <tr><td data-label="Substance">Sulfuric acid</td><td data-label="Formula"><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">4</span></span></td><td data-label="Calculation">2(1.008) + 32.065 + 4(15.999)</td><td data-label="Molar Mass">98.079 g/mol</td></tr>
+          <tr><td data-label="Substance">Calcium carbonate</td><td data-label="Formula"><span class="ion-group">CaCO<span class="chem-sub">3</span></span></td><td data-label="Calculation">40.078 + 12.011 + 3(15.999)</td><td data-label="Molar Mass">100.086 g/mol</td></tr>
         </tbody>
       </table>
     </div>
@@ -288,6 +288,15 @@
         </div>
       </div>
 
+      <div class="formula-box">
+        <span class="label">Molar Mass and MM</span>
+        <div class="formula-rule-list">
+          <div class="formula-rule"><strong>MM</strong> = molar mass from the periodic table or from adding the atomic masses in a formula</div>
+          <div class="formula-rule">For water: MM(<span class="ion-group">H<span class="chem-sub">2</span>O</span>) = 2(1.008) + 15.999 = <strong>18.015 g/mol</strong></div>
+        </div>
+        <div class="formula-rule-note">Use <strong>MM</strong> whenever you are bridging between grams and moles.</div>
+      </div>
+
       <div class="formula-box particle-mole-box">
         <span class="label">Particles and Moles</span>
         <div class="particle-mole-layout">
@@ -303,64 +312,100 @@
         </div>
       </div>
 
-      <table class="molar-mass-table-mobile">
+      <table class="molar-mass-table-mobile mobile-stack-table">
         <caption>Quick Mole Conversion Cheat Sheet</caption>
         <thead>
           <tr><th>Convert From</th><th>Convert To</th><th>What to Use</th></tr>
         </thead>
         <tbody>
-          <tr><td>Grams</td><td>Moles</td><td>Divide by molar mass</td></tr>
-          <tr><td>Moles</td><td>Grams</td><td>Multiply by molar mass</td></tr>
-          <tr><td>Moles</td><td>Particles</td><td>Multiply by 6.022 × 10²³ particles/mol</td></tr>
-          <tr><td>Particles</td><td>Moles</td><td>Divide by 6.022 × 10²³ particles/mol</td></tr>
-          <tr><td>Moles</td><td>Liters at STP</td><td>Use 22.4 L/mol for gases at STP only</td></tr>
+          <tr><td data-label="Convert From">Grams</td><td data-label="Convert To">Moles</td><td data-label="What to Use">Divide by molar mass</td></tr>
+          <tr><td data-label="Convert From">Moles</td><td data-label="Convert To">Grams</td><td data-label="What to Use">Multiply by molar mass</td></tr>
+          <tr><td data-label="Convert From">Moles</td><td data-label="Convert To">Particles</td><td data-label="What to Use">Multiply by 6.022 × 10²³ particles/mol</td></tr>
+          <tr><td data-label="Convert From">Particles</td><td data-label="Convert To">Moles</td><td data-label="What to Use">Divide by 6.022 × 10²³ particles/mol</td></tr>
+          <tr><td data-label="Convert From">Moles</td><td data-label="Convert To">Liters at STP</td><td data-label="What to Use">Use 22.4 L/mol for gases at STP only</td></tr>
         </tbody>
       </table>
 
       <p>The wheel below shows the same idea visually. The table tells you which factor to use; the wheel shows you which direction to move.</p>
       <div id="moleWheel73" class="mole-wheel-shell">
         <div class="mole-wheel-stack">
-          <svg class="mole-wheel-svg" viewBox="0 0 360 360" role="img">
+          <div class="mole-wheel-visual-tile">
+          <svg class="mole-wheel-svg" viewBox="0 0 640 430" role="img">
             <title>Mole conversion wheel</title>
-            <desc>Interactive wheel showing moles as the central hub connected by spokes to grams, particles, liters at STP, and a two-step chain.</desc>
-            <circle cx="180" cy="180" r="152" stroke="var(--border)" stroke-width="1" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
-            <line x1="180" y1="180" x2="180" y2="42" stroke="var(--border)" stroke-width="3" fill="none"/>
-            <line x1="180" y1="180" x2="318" y2="180" stroke="var(--border)" stroke-width="3" fill="none"/>
-            <line x1="180" y1="180" x2="180" y2="318" stroke="var(--border)" stroke-width="3" fill="none"/>
-            <line x1="180" y1="180" x2="42" y2="180" stroke="var(--border)" stroke-width="2.5" fill="none" stroke-dasharray="5 3"/>
-            <circle cx="180" cy="180" r="58" fill="#534AB7" stroke="#3C3489" stroke-width="1.5"/>
-            <text x="180" y="172" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#EEEDFE">Moles</text>
-            <text x="180" y="186" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#EEEDFE">(mol)</text>
-            <text x="180" y="200" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#AFA9EC">always the hub</text>
-            <g class="mole-wheel-node" onclick="mw73Show('grams')">
-              <rect x="118" y="16" width="124" height="48" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
-              <text x="180" y="35" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#085041">Grams (g)</text>
-              <text x="180" y="50" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#0F6E56">balance measurement</text>
+            <desc>Hub-and-spoke at 120° spacing: moles center, grams top, particles lower-right, liters lower-left. Tap a unit to start a conversion path.</desc>
+
+            <!-- Grams spoke (circle edge → card edge) -->
+            <g id="mw73sg" opacity="0.55">
+              <line x1="320" y1="190" x2="320" y2="63" stroke="#0F6E56" stroke-width="2.5"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(320,105)"              fill="#0F6E56"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(320,148) rotate(180)" fill="#0F6E56"/>
+              <text x="337" y="128" font-size="17" font-weight="500" fill="#0F6E56" text-anchor="start">÷ or × MM</text>
             </g>
-            <g class="mole-wheel-node" onclick="mw73Show('particles')">
-              <rect x="274" y="142" width="80" height="76" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
-              <text x="314" y="163" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#4A1B0C">Particles</text>
-              <text x="314" y="176" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#993C1D">atoms</text>
-              <text x="314" y="187" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#993C1D">molecules</text>
-              <text x="314" y="198" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#993C1D">ions</text>
-              <text x="314" y="209" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#993C1D">formula units</text>
+
+            <!-- Particles spoke (circle edge → card edge) -->
+            <g id="mw73sp" opacity="0.55">
+              <line x1="368" y1="272" x2="458" y2="322" stroke="#993C1D" stroke-width="2.5"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(434,309) rotate(119)" fill="#993C1D"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(398,289) rotate(299)" fill="#993C1D"/>
+              <text x="450" y="268" font-size="17" font-weight="500" fill="#993C1D" text-anchor="middle">÷ or × Nₐ</text>
+              <text x="450" y="289" font-size="13"                   fill="#993C1D" text-anchor="middle">(6.02×10²³)</text>
             </g>
-            <g class="mole-wheel-node" onclick="mw73Show('liters')">
-              <rect x="106" y="296" width="148" height="46" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
-              <text x="180" y="314" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#042C53">Liters gas (L)</text>
-              <text x="180" y="329" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#185FA5">STP only · gases only</text>
+
+            <!-- Liters spoke (circle edge → card edge) -->
+            <g id="mw73sl" opacity="0.55">
+              <line x1="272" y1="272" x2="182" y2="322" stroke="#185FA5" stroke-width="2.5"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(206,309) rotate(241)" fill="#185FA5"/>
+              <polygon points="0,-12 -7,0 7,0" transform="translate(242,289) rotate(61)"  fill="#185FA5"/>
+              <text x="190" y="268" font-size="17" font-weight="500" fill="#185FA5" text-anchor="middle">÷ or × 22.4</text>
+              <text x="190" y="289" font-size="13"                   fill="#185FA5" text-anchor="middle">L/mol</text>
             </g>
-            <g class="mole-wheel-node" onclick="mw73Show('chain')">
-              <rect x="6" y="136" width="80" height="88" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <text x="46" y="158" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#26215C">g ↔ mol</text>
-              <text x="46" y="172" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#534AB7">↔ particles</text>
-              <text x="46" y="190" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#26215C">two-step</text>
-              <text x="46" y="204" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#534AB7">chain</text>
+
+            <!-- Hub: Moles — drawn after spokes so fill masks spoke endpoints -->
+            <g class="mole-wheel-node" id="mw73hub" onclick="mw73SetFrom('moles')">
+              <circle cx="320" cy="245" r="55" fill="#534AB7" stroke="#3C3489" stroke-width="1.5"/>
+              <text x="320" y="232" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#EEEDFE">Moles</text>
+              <text x="320" y="248" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#EEEDFE">(mol)</text>
+              <text x="320" y="265" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#AFA9EC">the hub — tap me</text>
+            </g>
+
+            <!-- Grams node (top, center 320,35) 180×56 -->
+            <g class="mole-wheel-node" id="mw73ng" onclick="mw73SetFrom('grams')">
+              <rect x="230" y="7" width="180" height="56" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+              <text x="320" y="25" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#085041">Grams (g)</text>
+              <text x="320" y="44" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#0F6E56">measured on a balance</text>
+            </g>
+
+            <!-- Particles node (lower-right, center 526,356) 180×56 -->
+            <g class="mole-wheel-node" id="mw73np" onclick="mw73SetFrom('particles')">
+              <rect x="430" y="322" width="180" height="56" rx="12" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+              <text x="520" y="340" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#4A1B0C">Particles</text>
+              <text x="520" y="358" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#993C1D">atoms · molecules · ions · units</text>
+            </g>
+
+            <!-- Liters node (lower-left, center 114,356) 180×56 -->
+            <g class="mole-wheel-node" id="mw73nl" onclick="mw73SetFrom('liters')">
+              <rect x="30" y="322" width="180" height="56" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+              <text x="120" y="340" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#042C53">Liters (L)</text>
+              <text x="120" y="358" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#185FA5">STP only · gases only</text>
             </g>
           </svg>
-          <div id="mw73Panel" class="mole-wheel-panel">
-            <div id="mw73Title" class="mole-wheel-title">Click any rim node to see the rule</div>
-            <div id="mw73Body" class="mole-wheel-body">Use the wheel like a coach. First decide what bridge belongs here, then build the fraction so the unit you already have cancels.</div>
+          </div>
+          <div id="mw73Panel" class="mole-wheel-panel mole-wheel-control-tile">
+            <div class="mw73-picker-row">
+              <span class="mw73-picker-label">I have:</span>
+              <div class="mw73-chips" id="mw73FromChips">
+                <button class="mw73-chip" data-unit="grams" onclick="mw73SetFrom('grams')">Grams (g)</button>
+                <button class="mw73-chip" data-unit="moles" onclick="mw73SetFrom('moles')">Moles (mol)</button>
+                <button class="mw73-chip" data-unit="particles" onclick="mw73SetFrom('particles')">Particles</button>
+                <button class="mw73-chip" data-unit="liters" onclick="mw73SetFrom('liters')">Liters (STP)</button>
+              </div>
+            </div>
+            <div class="mw73-picker-row" id="mw73ToRow" style="display:none">
+              <span class="mw73-picker-label">I want:</span>
+              <div class="mw73-chips" id="mw73ToChips"></div>
+            </div>
+            <div id="mw73Hint"></div>
+            <div id="mw73Default" class="mole-wheel-body">Tap any unit on the wheel — or pick one above — then choose where you want to end up.</div>
           </div>
         </div>
       </div>
@@ -379,7 +424,7 @@
         </div>
       </div>
 
-      <p><strong>Worked example — Water (H₂O, M = 18.015 g/mol):</strong></p>
+      <p><strong>Worked example — Water (<span class="ion-group">H<span class="chem-sub">2</span>O</span>, MM = 18.015 g/mol):</strong></p>
       <p>%H = (2 atoms × 1.008 g/mol) ÷ 18.015 g/mol × 100 = <strong>11.19% hydrogen</strong></p>
       <p>%O = (1 atom × 15.999 g/mol) ÷ 18.015 g/mol × 100 = <strong>88.81% oxygen</strong></p>
       <p>Notice that the percentages should add up to 100% or very close after rounding. If they do not, something probably went wrong in the arithmetic.</p>
@@ -419,7 +464,7 @@
         <div class="label">The Key Relationship Between Empirical and Molecular Formulas</div>
         <div class="formula-rule-list">
           <div class="formula-rule">Molecular Formula = n × (Empirical Formula)</div>
-          <div class="formula-rule-note">n = <span class="formula-frac"><span class="formula-frac-n">M<sub>molecular</sub></span><span class="formula-frac-d">M<sub>empirical</sub></span></span></div>
+          <div class="formula-rule-note">n = <span class="formula-frac"><span class="formula-frac-n">MM<sub>molecular</sub></span><span class="formula-frac-d">MM<sub>empirical</sub></span></span></div>
         </div>
       </div>
 
@@ -430,9 +475,9 @@
         <div class="key-fact-copy">
           <p class="key-fact-title">Concrete check</p>
           <ul class="key-fact-list">
-            <li><strong>CH₂O</strong> is an empirical formula because the ratio 1 : 2 : 1 is already simplest.</li>
-            <li><strong>C₆H₁₂O₆</strong> is a molecular formula because its subscripts reduce to 1 : 2 : 1.</li>
-            <li>That means C₆H₁₂O₆ = 6 × CH₂O, so <strong>n = 6</strong>.</li>
+            <li><strong><span class="ion-group">CH<span class="chem-sub">2</span>O</span></strong> is an empirical formula because the ratio 1 : 2 : 1 is already simplest.</li>
+            <li><strong><span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></strong> is a molecular formula because its subscripts reduce to 1 : 2 : 1.</li>
+            <li>That means <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span> = 6 × <span class="ion-group">CH<span class="chem-sub">2</span>O</span>, so <strong>n = 6</strong>.</li>
           </ul>
         </div>
       </div>
@@ -474,7 +519,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 5 — Find the multiplier n to get the molecular formula (if given the molar mass)</strong>
-            <p>Calculate the molar mass of your empirical formula. Then divide the given molecular molar mass by the empirical formula molar mass: n = M<sub>molecular</sub> / M<sub>empirical</sub>. Round n to the nearest whole number, then multiply every subscript in your empirical formula by n to get the final molecular formula.</p>
+            <p>Calculate the molar mass of your empirical formula. Then divide the given molecular molar mass by the empirical formula molar mass: n = MM<sub>molecular</sub> / MM<sub>empirical</sub>. Round n to the nearest whole number, then multiply every subscript in your empirical formula by n to get the final molecular formula.</p>
           </div>
         </div>
       </div>
@@ -648,8 +693,8 @@
     <div class="card">
       <h2 class="card-title">Example 1 · Grams → Moles → Molecules</h2>
       <div class="example-setup">
-        <p><strong>Problem:</strong> How many molecules are in 25.0 g of glucose, C₆H₁₂O₆?</p>
-        <p><strong>Given:</strong> 25.0 g C₆H₁₂O₆</p>
+        <p><strong>Problem:</strong> How many molecules are in 25.0 g of glucose, <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span>?</p>
+        <p><strong>Given:</strong> 25.0 g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></p>
         <p><strong>Find:</strong> number of molecules</p>
       </div>
       <p class="example-note"><strong>Road map:</strong> grams → moles → molecules. Notice that you cannot jump from grams straight to molecules.</p>
@@ -658,7 +703,7 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Calculate the molar mass of glucose (C₆H₁₂O₆)</strong>
+            <strong>Step 1 — Calculate the molar mass of glucose (<span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span>)</strong>
             <p>Start by finding the molar mass. Add the contribution from each element:</p>
             <p>6(12.011) + 12(1.008) + 6(15.999) = 72.066 + 12.096 + 95.994 = <span class="fl-result">180.156 g/mol</span></p>
           </div>
@@ -670,8 +715,8 @@
             <strong>Step 2 — Factor label chain: grams → moles → molecules</strong>
             <p>Write the given quantity first. Then build the chain so the unit you already have cancels. If the units do not cancel cleanly, the setup is not right yet.</p>
             <div class="fl-label">Factor label chain — horizontal setup</div>
-            <div class="fl-chain">25.0 <b>g C₆H₁₂O₆</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 mol C₆H₁₂O₆</span><span class="fl-den">180.156 <b>g C₆H₁₂O₆</b></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 <b>mol C₆H₁₂O₆</b></span></span> &nbsp;= ?</div>
-            <div class="fl-cancel">Units that cancel: &nbsp;<s>g C₆H₁₂O₆</s> · <s>mol C₆H₁₂O₆</s><br>Unit left standing: <strong>molecules</strong> ✓</div>
+            <div class="fl-chain">25.0 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <span class="cancel-mark cancel-green">mol <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></span></span><span class="fl-den">180.156 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></b></span></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 <span class="cancel-mark cancel-green"><b>mol <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></b></span></span></span> &nbsp;= ?</div>
+            <div class="fl-cancel">Units that cancel: &nbsp;<s>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></s> · <s>mol <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></s><br>Unit left standing: <strong>molecules</strong> ✓</div>
             <p>Calculate:</p>
             <p>(25.0 ÷ 180.156) × 6.022×10²³ = <span class="fl-result">8.36 × 10²² molecules</span></p>
           </div>
@@ -682,8 +727,8 @@
     <div class="card">
       <h2 class="card-title">Example 2 · Mass of One Element in a Compound Sample</h2>
       <div class="example-setup">
-        <p><strong>Problem:</strong> A 25.0 g sample of glucose, C₆H₁₂O₆, contains how many grams of oxygen?</p>
-        <p><strong>Given:</strong> 25.0 g C₆H₁₂O₆</p>
+        <p><strong>Problem:</strong> A 25.0 g sample of glucose, <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span>, contains how many grams of oxygen?</p>
+        <p><strong>Given:</strong> 25.0 g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></p>
         <p><strong>Find:</strong> grams of oxygen</p>
       </div>
       <p class="example-note"><strong>Road map:</strong> use the mass contribution of oxygen in 1 mol of glucose.</p>
@@ -693,7 +738,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 1 — Find oxygen's mass contribution in 1 mol of glucose</strong>
-            <p>In C₆H₁₂O₆, oxygen contributes 6(15.999) = <span class="fl-result">95.994 g O</span> per 1 mol of glucose.</p>
+            <p>In <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span>, oxygen contributes 6(15.999) = <span class="fl-result">95.994 g O</span> per 1 mol of glucose.</p>
             <p>The full molar mass of glucose is <span class="fl-result">180.156 g/mol</span>.</p>
           </div>
         </div>
@@ -703,8 +748,8 @@
           <div class="step-content">
             <strong>Step 2 — Set up the mass-fraction conversion</strong>
             <div class="fl-label">Factor label chain</div>
-            <div class="fl-chain">25.0 <b>g C₆H₁₂O₆</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">95.994 g O</span><span class="fl-den">180.156 <b>g C₆H₁₂O₆</b></span></span> &nbsp;= ?</div>
-            <div class="fl-cancel">Units that cancel: &nbsp;<s>g C₆H₁₂O₆</s><br>Unit left standing: <strong>g O</strong> ✓</div>
+            <div class="fl-chain">25.0 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">95.994 g O</span><span class="fl-den">180.156 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></b></span></span></span> &nbsp;= ?</div>
+            <div class="fl-cancel">Units that cancel: &nbsp;<s>g <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></s><br>Unit left standing: <strong>g O</strong> ✓</div>
             <p>Calculate:</p>
             <p>25.0 × (95.994 ÷ 180.156) = <span class="fl-result">13.32 g oxygen</span></p>
           </div>
@@ -716,16 +761,16 @@
       <h2 class="card-title">Example 3 · Empirical Formula from Combustion Data</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Find the empirical formula first. Then use the molar mass to find the molecular formula.</p>
-        <p><strong>Given:</strong> 1.000 g compound containing only C, H, and O; 1.466 g CO₂; 0.600 g H₂O; molar mass ≈ 88 g/mol</p>
+        <p><strong>Given:</strong> 1.000 g compound containing only C, H, and O; 1.466 g <span class="ion-group">CO<span class="chem-sub">2</span></span>; 0.600 g <span class="ion-group">H<span class="chem-sub">2</span>O</span>; molar mass ≈ 88 g/mol</p>
         <p><strong>Find:</strong> molecular formula</p>
       </div>
-      <p class="example-note">Key idea: all C ends up in CO₂, all H ends up in H₂O, and O is found by subtraction. This looks long, but each step has a job.</p>
+      <p class="example-note">Key idea: all C ends up in <span class="ion-group">CO<span class="chem-sub">2</span></span>, all H ends up in <span class="ion-group">H<span class="chem-sub">2</span>O</span>, and O is found by subtraction. This looks long, but each step has a job.</p>
       <div class="example-roadmap">
         <p class="example-roadmap-title">Roadmap</p>
         <div class="example-roadmap-steps">
-          <span class="example-roadmap-step">CO₂ → C</span>
+          <span class="example-roadmap-step"><span class="ion-group">CO<span class="chem-sub">2</span></span> → C</span>
           <span class="example-roadmap-arrow">→</span>
-          <span class="example-roadmap-step">H₂O → H</span>
+          <span class="example-roadmap-step"><span class="ion-group">H<span class="chem-sub">2</span>O</span> → H</span>
           <span class="example-roadmap-arrow">→</span>
           <span class="example-roadmap-step">sample remainder → O</span>
           <span class="example-roadmap-arrow">→</span>
@@ -747,10 +792,10 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Factor label chain: g CO₂ → mol CO₂ → mol C</strong>
+            <strong>Step 1 — Factor label chain: g <span class="ion-group">CO<span class="chem-sub">2</span></span> → mol <span class="ion-group">CO<span class="chem-sub">2</span></span> → mol C</strong>
             <div class="fl-label">Factor label chain</div>
-            <div class="fl-chain">1.466 <b>g CO₂</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <b>mol CO₂</b></span><span class="fl-den">44.010 <b>g CO₂</b></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 mol C</span><span class="fl-den">1 <b>mol CO₂</b></span></span> &nbsp;= ?</div>
-            <div class="fl-cancel">Units that cancel: &nbsp;<s>g CO₂</s> · <s>mol CO₂</s> &nbsp;→ &nbsp;<strong>mol C</strong> ✓</div>
+            <div class="fl-chain">1.466 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">CO<span class="chem-sub">2</span></span></b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <span class="cancel-mark cancel-green"><b>mol <span class="ion-group">CO<span class="chem-sub">2</span></span></b></span></span><span class="fl-den">44.010 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">CO<span class="chem-sub">2</span></span></b></span></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 mol C</span><span class="fl-den">1 <span class="cancel-mark cancel-green"><b>mol <span class="ion-group">CO<span class="chem-sub">2</span></span></b></span></span></span> &nbsp;= ?</div>
+            <div class="fl-cancel">Units that cancel: &nbsp;<s>g <span class="ion-group">CO<span class="chem-sub">2</span></span></s> · <s>mol <span class="ion-group">CO<span class="chem-sub">2</span></span></s> &nbsp;→ &nbsp;<strong>mol C</strong> ✓</div>
             <p>Calculate:</p>
             <p><span class="fl-result">0.03331 mol C</span> &nbsp;→&nbsp; mass C = 0.4000 g</p>
           </div>
@@ -759,10 +804,10 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 2 — Factor label chain: g H₂O → mol H₂O → mol H</strong>
+            <strong>Step 2 — Factor label chain: g <span class="ion-group">H<span class="chem-sub">2</span>O</span> → mol <span class="ion-group">H<span class="chem-sub">2</span>O</span> → mol H</strong>
             <div class="fl-label">Factor label chain</div>
-            <div class="fl-chain">0.600 <b>g H₂O</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <b>mol H₂O</b></span><span class="fl-den">18.015 <b>g H₂O</b></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">2 mol H</span><span class="fl-den">1 <b>mol H₂O</b></span></span> &nbsp;= ?</div>
-            <div class="fl-cancel">Units that cancel: &nbsp;<s>g H₂O</s> · <s>mol H₂O</s> &nbsp;→ &nbsp;<strong>mol H</strong> ✓</div>
+            <div class="fl-chain">0.600 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">H<span class="chem-sub">2</span>O</span></b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <span class="cancel-mark cancel-green"><b>mol <span class="ion-group">H<span class="chem-sub">2</span>O</span></b></span></span><span class="fl-den">18.015 <span class="cancel-mark cancel-blue"><b>g <span class="ion-group">H<span class="chem-sub">2</span>O</span></b></span></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">2 mol H</span><span class="fl-den">1 <span class="cancel-mark cancel-green"><b>mol <span class="ion-group">H<span class="chem-sub">2</span>O</span></b></span></span></span> &nbsp;= ?</div>
+            <div class="fl-cancel">Units that cancel: &nbsp;<s>g <span class="ion-group">H<span class="chem-sub">2</span>O</span></s> · <s>mol <span class="ion-group">H<span class="chem-sub">2</span>O</span></s> &nbsp;→ &nbsp;<strong>mol H</strong> ✓</div>
             <p>Calculate:</p>
             <p><span class="fl-result">0.06661 mol H</span> &nbsp;→&nbsp; mass H = 0.06714 g</p>
           </div>
@@ -772,7 +817,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 3 — Find mass of O by subtraction → mol O</strong>
-            <div class="fl-chain">0.5329 <b>g O</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 mol O</span><span class="fl-den">15.999 <b>g O</b></span></span> &nbsp;= <span class="fl-result">0.03331 mol O</span></div>
+            <div class="fl-chain">0.5329 <span class="cancel-mark cancel-blue"><b>g O</b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 mol O</span><span class="fl-den">15.999 <span class="cancel-mark cancel-blue"><b>g O</b></span></span></span> &nbsp;= <span class="fl-result">0.03331 mol O</span></div>
           </div>
         </div>
 
@@ -789,7 +834,7 @@
           <div class="step-content">
             <strong>Step 4 — Divide by smallest → empirical formula</strong>
             <p>Divide all mole amounts by the smallest value.</p>
-            <p>That gives 1 : 2 : 1 → <span class="fl-result">CH₂O</span> &nbsp; and M<sub>emp</sub> = 30.026 g/mol</p>
+            <p>That gives 1 : 2 : 1 → <span class="fl-result"><span class="ion-group">CH<span class="chem-sub">2</span>O</span></span> &nbsp; and MM<sub>emp</sub> = 30.026 g/mol</p>
           </div>
         </div>
 
@@ -805,7 +850,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 5 — Find multiplier n</strong>
-            <div class="fl-chain"><span class="fl-frac"><span class="fl-num">88 g/mol</span><span class="fl-den">30.026 g/mol</span></span> &nbsp;= n ≈ 3 &nbsp;→&nbsp; Molecular formula = <span class="fl-result">C₃H₆O₃</span></div>
+            <div class="fl-chain"><span class="fl-frac"><span class="fl-num">88 g/mol</span><span class="fl-den">30.026 g/mol</span></span> &nbsp;= n ≈ 3 &nbsp;→&nbsp; Molecular formula = <span class="fl-result"><span class="ion-group">C<span class="chem-sub">3</span>H<span class="chem-sub">6</span>O<span class="chem-sub">3</span></span></span></div>
           </div>
         </div>
       </div>
@@ -815,7 +860,7 @@
       <h2 class="card-title">Example 4 · Particles → Moles → Volume at STP</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Find the STP volume from a particle count.</p>
-        <p><strong>Given:</strong> 3.50 × 10²⁴ molecules CO₂</p>
+        <p><strong>Given:</strong> 3.50 × 10²⁴ molecules <span class="ion-group">CO<span class="chem-sub">2</span></span></p>
         <p><strong>Find:</strong> volume at STP</p>
       </div>
       <p class="example-note">Road map: molecules → moles → liters. You must pass through moles.</p>
@@ -826,7 +871,7 @@
           <div class="step-content">
             <strong>Step 1 — Full two-step factor label chain</strong>
             <div class="fl-label">Factor label chain — full setup</div>
-            <div class="fl-chain">3.50 × 10²⁴ <b>molecules</b> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <b>mol</b></span><span class="fl-den">6.022 × 10²³ <b>molecules</b></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">22.4 L</span><span class="fl-den">1 <b>mol</b></span></span> &nbsp;= ?</div>
+            <div class="fl-chain">3.50 × 10²⁴ <span class="cancel-mark cancel-blue"><b>molecules</b></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">1 <span class="cancel-mark cancel-green"><b>mol</b></span></span><span class="fl-den">6.022 × 10²³ <span class="cancel-mark cancel-blue"><b>molecules</b></span></span></span> &nbsp;×&nbsp; <span class="fl-frac"><span class="fl-num">22.4 L</span><span class="fl-den">1 <span class="cancel-mark cancel-green"><b>mol</b></span></span></span> &nbsp;= ?</div>
             <div class="fl-cancel">Units that cancel: &nbsp;<s>molecules</s> · <s>mol</s> &nbsp;→ &nbsp;<strong>L</strong> ✓</div>
           </div>
         </div>
@@ -847,7 +892,7 @@
       <p class="tool-focus-label">Use After Solving</p>
       <p class="tool-scenario-title"><strong>Use this only after you have predicted the biggest mass contributor or solved the percent-composition problem by hand.</strong></p>
       <p class="tool-hint">This is a checker, not an Explore tool. It confirms molar mass, each element's mass contribution, and the final percent by mass.</p>
-      <p class="tool-scenario-text"><strong>Check:</strong> Enter a valid chemical formula, including parentheses when needed, such as Ca₃(PO₄)₂.</p>
+      <p class="tool-scenario-text"><strong>Check:</strong> Enter a valid chemical formula, including parentheses when needed, such as <span class="ion-group">Ca<span class="chem-sub">3</span>(PO<span class="chem-sub">4</span>)<span class="chem-sub">2</span></span>.</p>
     </div>
 
     <div class="converter">
@@ -915,61 +960,184 @@
 
 // ===================== MOLE CONVERSION WHEEL =====================
 (function () {
-  const wData = {
-    grams: {
-      color: '#0F6E56',
-      dirs: [
-        { btn: 'g → mol', title: 'Grams ↔ Moles', rule: 'Use molar mass to move between grams and moles.', note: 'If you start with grams, the first denominator must be grams so the given unit cancels.' },
-        { btn: 'mol → g', title: 'Grams ↔ Moles', rule: 'Use molar mass to move between grams and moles.', note: 'If you start with moles, the first denominator must be moles so the given unit cancels.' }
-      ]
-    },
-    particles: {
-      color: '#993C1D',
-      dirs: [
-        { btn: 'mol → particles', title: 'Moles ↔ Particles', rule: "Use Avogadro's number to move between moles and particles.", note: 'This works for atoms, molecules, ions, or formula units.' },
-        { btn: 'particles → mol', title: 'Moles ↔ Particles', rule: "Use Avogadro's number to move between moles and particles.", note: 'The denominator must match the particle unit you already have.' }
-      ]
-    },
-    liters: {
-      color: '#185FA5',
-      dirs: [
-        { btn: 'mol → L', title: 'Moles ↔ Liters at STP', rule: 'Use 22.4 L/mol only for gases at STP.', note: 'Do not use this bridge for solids, liquids, or gases that are not at STP.' },
-        { btn: 'L → mol', title: 'Moles ↔ Liters at STP', rule: 'Use 22.4 L/mol only for gases at STP.', note: 'If you start with liters, the denominator must be liters so the given unit cancels.' }
-      ]
-    },
-    chain: {
-      color: '#534AB7',
-      dirs: [
-        { btn: 'g → particles', title: 'Two-Step Chain', rule: 'Some problems need two bridges: first to moles, then to the target unit.', note: 'Typical chains are grams → moles → particles or particles → moles → grams.' },
-        { btn: 'particles → g', title: 'Two-Step Chain', rule: 'Some problems need two bridges: first to moles, then to the target unit.', note: 'Choose the path first. Then build the first fraction that cancels the unit you already have.' }
-      ]
-    }
+  const UC = { grams: '#0F6E56', moles: '#534AB7', particles: '#993C1D', liters: '#185FA5' };
+  const UL = { grams: 'Grams (g)', moles: 'Moles (mol)', particles: 'Particles', liters: 'Liters at STP' };
+  const OTHERS = {
+    grams:     ['moles', 'particles', 'liters'],
+    moles:     ['grams', 'particles', 'liters'],
+    particles: ['grams', 'moles',     'liters'],
+    liters:    ['grams', 'moles',     'particles']
   };
+  const NODE_IDS  = { grams: 'mw73ng', moles: 'mw73hub', particles: 'mw73np', liters: 'mw73nl' };
+  const SPOKE_IDS = { g: 'mw73sg', p: 'mw73sp', l: 'mw73sl' };
 
-  let wCurrent = null;
-  let wDirIdx = 0;
-
-  function wRender() {
-    const titleEl = document.getElementById('mw73Title');
-    const bodyEl = document.getElementById('mw73Body');
-    if (!titleEl || !bodyEl || !wCurrent) return;
-    const entry = wData[wCurrent];
-    const conv = entry.dirs[wDirIdx];
-    titleEl.textContent = conv.title;
-    titleEl.style.color = entry.color;
-    const btns = entry.dirs.map((d, i) =>
-      `<button class="mole-wheel-direction" onclick="mw73Dir(${i})" style="background:${i===wDirIdx ? entry.color : 'transparent'};color:${i===wDirIdx ? '#fff' : 'var(--muted)'};">${d.btn}</button>`
-    ).join('');
-    bodyEl.innerHTML = `
-      <div class="mole-wheel-rule">${conv.rule}</div>
-      <div class="mole-wheel-note">${conv.note}</div>
-      <div>${btns}</div>
-    `;
+  function frac(n, d) {
+    return `<span class="mw73-fbox"><span class="mw73-fn">${n}</span><span class="mw73-fd">${d}</span></span>`;
   }
 
-  window.mw73Show = function (key) { wCurrent = key; wDirIdx = 0; wRender(); };
-  window.mw73Dir = function (i) { wDirIdx = i; wRender(); };
+  const routes = {
+    'grams-moles':      { path: 'g &rarr; mol',                    c: UC.grams,     spokes: ['g'],    steps: [
+      { label: 'Divide by molar mass',         formula: `g &times; ${frac('1 mol','<em>MM</em> g')} = mol`,                                          tip: 'MM is the molar mass from the periodic table (g/mol).' }
+    ]},
+    'moles-grams':      { path: 'mol &rarr; g',                    c: UC.grams,     spokes: ['g'],    steps: [
+      { label: 'Multiply by molar mass',        formula: `mol &times; ${frac('<em>MM</em> g','1 mol')} = g`,                                          tip: 'MM is the molar mass from the periodic table (g/mol).' }
+    ]},
+    'moles-particles':  { path: 'mol &rarr; particles',            c: UC.particles, spokes: ['p'],    steps: [
+      { label: 'Multiply by Avogadro\'s number', formula: `mol &times; ${frac('6.022&times;10<sup>23</sup> particles','1 mol')} = particles`,         tip: 'Works for atoms, molecules, ions, or formula units.' }
+    ]},
+    'particles-moles':  { path: 'particles &rarr; mol',            c: UC.particles, spokes: ['p'],    steps: [
+      { label: 'Divide by Avogadro\'s number',  formula: `particles &times; ${frac('1 mol','6.022&times;10<sup>23</sup> particles')} = mol`,          tip: 'Particles go in the denominator so the unit cancels.' }
+    ]},
+    'moles-liters':     { path: 'mol &rarr; L (STP)',              c: UC.liters,    spokes: ['l'],    steps: [
+      { label: 'Multiply by 22.4 L/mol',        formula: `mol &times; ${frac('22.4 L','1 mol')} = L`,                                               tip: 'Only valid for gases at STP (0 °C, 1 atm).' }
+    ]},
+    'liters-moles':     { path: 'L &rarr; mol (STP)',              c: UC.liters,    spokes: ['l'],    steps: [
+      { label: 'Divide by 22.4 L/mol',          formula: `L &times; ${frac('1 mol','22.4 L')} = mol`,                                               tip: 'Only valid for gases at STP. Put L in the denominator so it cancels.' }
+    ]},
+    'grams-particles':  { path: 'g &rarr; mol &rarr; particles',   c: '#534AB7',    spokes: ['g','p'], steps: [
+      { step: 'Step 1', label: 'Divide by molar mass',          formula: `g &times; ${frac('1 mol','<em>MM</em> g')}`,                               tip: 'Always go through moles — it is always the bridge.' },
+      { step: 'Step 2', label: 'Multiply by Avogadro\'s number', formula: `&times; ${frac('6.022&times;10<sup>23</sup> particles','1 mol')} = particles`, tip: '' }
+    ]},
+    'particles-grams':  { path: 'particles &rarr; mol &rarr; g',   c: '#534AB7',    spokes: ['p','g'], steps: [
+      { step: 'Step 1', label: 'Divide by Avogadro\'s number',  formula: `particles &times; ${frac('1 mol','6.022&times;10<sup>23</sup> particles')}`, tip: '' },
+      { step: 'Step 2', label: 'Multiply by molar mass',        formula: `&times; ${frac('<em>MM</em> g','1 mol')} = g`,                              tip: '' }
+    ]},
+    'grams-liters':     { path: 'g &rarr; mol &rarr; L (STP)',     c: '#534AB7',    spokes: ['g','l'], steps: [
+      { step: 'Step 1', label: 'Divide by molar mass',          formula: `g &times; ${frac('1 mol','<em>MM</em> g')}`,                               tip: 'Gas must be at STP for step 2 to apply.' },
+      { step: 'Step 2', label: 'Multiply by 22.4 L/mol',        formula: `&times; ${frac('22.4 L','1 mol')} = L`,                                   tip: '' }
+    ]},
+    'liters-grams':     { path: 'L &rarr; mol &rarr; g (STP)',     c: '#534AB7',    spokes: ['l','g'], steps: [
+      { step: 'Step 1', label: 'Divide by 22.4 L/mol',          formula: `L &times; ${frac('1 mol','22.4 L')}`,                                     tip: '' },
+      { step: 'Step 2', label: 'Multiply by molar mass',        formula: `&times; ${frac('<em>MM</em> g','1 mol')} = g`,                              tip: '' }
+    ]},
+    'particles-liters': { path: 'particles &rarr; mol &rarr; L (STP)', c: '#534AB7', spokes: ['p','l'], steps: [
+      { step: 'Step 1', label: 'Divide by Avogadro\'s number',  formula: `particles &times; ${frac('1 mol','6.022&times;10<sup>23</sup> particles')}`, tip: '' },
+      { step: 'Step 2', label: 'Multiply by 22.4 L/mol',        formula: `&times; ${frac('22.4 L','1 mol')} = L`,                                   tip: 'Only valid for gases at STP.' }
+    ]},
+    'liters-particles': { path: 'L &rarr; mol &rarr; particles (STP)', c: '#534AB7', spokes: ['l','p'], steps: [
+      { step: 'Step 1', label: 'Divide by 22.4 L/mol',          formula: `L &times; ${frac('1 mol','22.4 L')}`,                                     tip: '' },
+      { step: 'Step 2', label: 'Multiply by Avogadro\'s number', formula: `&times; ${frac('6.022&times;10<sup>23</sup> particles','1 mol')} = particles`, tip: 'Only valid for gases at STP.' }
+    ]}
+  };
+
+  let fromUnit = null;
+
+  function setSpokes(active) {
+    Object.entries(SPOKE_IDS).forEach(([k, id]) => {
+      const el = document.getElementById(id);
+      if (el) el.style.opacity = active.includes(k) ? '1' : '0.12';
+    });
+  }
+
+  function resetSpokes() {
+    Object.values(SPOKE_IDS).forEach(id => { const el = document.getElementById(id); if (el) el.style.opacity = ''; });
+  }
+
+  function highlightNodes(primary, secondary) {
+    Object.entries(NODE_IDS).forEach(([u, id]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const active = u === primary || u === secondary;
+      el.style.opacity = active ? '1' : '0.3';
+      el.style.filter  = active ? `drop-shadow(0 0 5px ${UC[u]}99)` : '';
+    });
+  }
+
+  function resetNodes() {
+    Object.values(NODE_IDS).forEach(id => { const el = document.getElementById(id); if (el) { el.style.opacity = ''; el.style.filter = ''; } });
+  }
+
+  function renderFromChips() {
+    document.querySelectorAll('#mw73FromChips .mw73-chip').forEach(btn => {
+      const u = btn.dataset.unit;
+      const on = u === fromUnit;
+      btn.style.background  = on ? UC[u] : '';
+      btn.style.borderColor = on ? UC[u] : '';
+      btn.style.color       = on ? '#fff' : '';
+    });
+  }
+
+  function renderToChips(toUnit) {
+    const row   = document.getElementById('mw73ToRow');
+    const chips = document.getElementById('mw73ToChips');
+    if (!fromUnit) { row.style.display = 'none'; return; }
+    row.style.display = '';
+    chips.innerHTML = ['grams','moles','particles','liters'].map(u => {
+      const isSelf   = u === fromUnit;
+      const isActive = u === toUnit;
+      const bg    = isActive ? UC[u] : '';
+      const color = isActive ? '#fff' : isSelf ? 'var(--muted)' : UC[u];
+      const extra = isSelf ? 'opacity:0.35;cursor:default;' : '';
+      const action = isSelf ? '' : `onclick="mw73SetTo('${u}')"`;
+      return `<button class="mw73-chip" ${action} style="border-color:${isSelf ? 'var(--border)' : UC[u]};color:${color};background:${bg};${extra}">${UL[u]}</button>`;
+    }).join('');
+  }
+
+  function renderHint(toUnit) {
+    const key   = `${fromUnit}-${toUnit}`;
+    const route = routes[key];
+    const el    = document.getElementById('mw73Hint');
+    if (!route) { el.innerHTML = ''; return; }
+    const twoStep = route.steps.length > 1;
+    setSpokes(route.spokes);
+    highlightNodes(fromUnit, toUnit);
+    const stepsHTML = route.steps.map(s => {
+      const hdr = `<div class="mw73-step-num" style="color:${route.c}">${s.step ? s.step + ' — ' : ''}${s.label}</div>`;
+      const tip = s.tip ? `<div class="mw73-step-tip">${s.tip}</div>` : '';
+      return `<div class="mw73-step-box">${hdr}<div class="mw73-step-formula">${s.formula}</div>${tip}</div>`;
+    }).join('');
+    const bridge = twoStep ? `<div class="mw73-route-note">↳ two steps — moles is always the bridge in the middle</div>` : '';
+    el.innerHTML = `<div class="mw73-route-header" style="color:${route.c}">${route.path}</div>${bridge}${stepsHTML}`;
+  }
+
+  window.mw73SetFrom = function (unit) {
+    fromUnit = unit;
+    document.getElementById('mw73Default').style.display = 'none';
+    document.getElementById('mw73Hint').innerHTML = '';
+    resetSpokes();
+    resetNodes();
+    highlightNodes(unit, null);
+    renderFromChips();
+    renderToChips(null);
+  };
+
+  window.mw73SetTo = function (unit) {
+    renderToChips(unit);
+    renderHint(unit);
+  };
 })();
+
+function renderChemFormula(formula) {
+  if (!formula) return '';
+  const chargeMatch = formula.match(/^(.*?)(\d*)([+-])$/);
+  const coreFormula = chargeMatch ? chargeMatch[1] : formula;
+  const chargeText = chargeMatch
+    ? `${chargeMatch[2] || ''}${chargeMatch[3] === '-' ? '−' : '+'}`
+    : '';
+  const coreMarkup = coreFormula.replace(/(\d+)/g, '<span class="chem-sub">$1</span>');
+  return `<span class="ion-group">${coreMarkup}${chargeText ? `<span class="chem-charge">${chargeText}</span>` : ''}</span>`;
+}
+
+function renderChemText(text) {
+  if (!text) return '';
+
+  const replacements = [
+    'Ca3(PO4)2',
+    'C6H12O6',
+    'C3H6O3',
+    'AgNO3',
+    'CH2O',
+    'NaCl',
+    'NH3',
+    'H2O',
+    'CO2',
+    'O2'
+  ];
+
+  return replacements.reduce((out, formula) => {
+    return out.replace(new RegExp(formula.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), renderChemFormula(formula));
+  }, text);
+}
 
 // ===================== EXPLORE TOOLS =====================
 function initSingleChoiceTool(config) {
@@ -1032,11 +1200,7 @@ function initSingleChoiceTool(config) {
       button.className = 'segment-btn tool-choice-btn explore-choice';
       button.dataset.choice = option.value;
       button.setAttribute('aria-pressed', 'false');
-      if (option.isHTML) {
-        button.innerHTML = option.label;
-      } else {
-        button.textContent = option.label;
-      }
+      button.innerHTML = renderChemText(option.label);
       button.addEventListener('click', function () {
         selected = option.value;
         choicesEl.querySelectorAll('.explore-choice').forEach(btn => {
@@ -1057,7 +1221,7 @@ function initSingleChoiceTool(config) {
   function loadItem(index) {
     const item = config.items[index];
     selected = '';
-    promptEl.textContent = item.prompt;
+    promptEl.innerHTML = renderChemText(item.prompt);
     setFeedbackState(config.startText, 'pending');
     revealBox.hidden = true;
     revealBtn.disabled = true;
@@ -1086,7 +1250,7 @@ function initSingleChoiceTool(config) {
     } else {
       setFeedbackState(item.incorrectFeedback, 'incorrect');
     }
-    revealBody.innerHTML = item.reveal;
+    revealBody.innerHTML = renderChemText(item.reveal);
     revealBox.hidden = true;
     revealBtn.disabled = false;
     nextBtn.disabled = false;
@@ -1118,7 +1282,7 @@ initSingleChoiceTool({
   selectFirstText: 'Choose one road map before you check.',
   items: [
     {
-      prompt: '18.3 g CO₂ → molecules CO₂. Which path gets from the given unit to the target unit?',
+      prompt: '18.3 g CO2 → molecules CO2. Which path gets from the given unit to the target unit?',
       options: ['Grams → Moles → Particles', 'Grams → Particles', 'Particles → Moles → Grams'],
       answer: 'Grams → Moles → Particles',
       correctFeedback: 'Right — this conversion must pass through moles because moles connect grams to particles.',
@@ -1126,7 +1290,7 @@ initSingleChoiceTool({
       reveal: '<p><strong>Correct road map:</strong> Grams → Moles → Particles</p><p>Grams connect to moles by molar mass. Moles connect to particles by Avogadro\'s number.</p>'
     },
     {
-      prompt: '3.20 × 10²⁴ molecules CO₂ → grams CO₂. Which path gets from the given unit to the target unit?',
+      prompt: '3.20 × 10²⁴ molecules CO2 → grams CO2. Which path gets from the given unit to the target unit?',
       options: ['Particles → Moles → Grams', 'Particles → Grams', 'Grams → Moles → Particles'],
       answer: 'Particles → Moles → Grams',
       correctFeedback: 'Right — this conversion must pass through moles because moles connect particles to grams.',
@@ -1134,7 +1298,7 @@ initSingleChoiceTool({
       reveal: '<p><strong>Correct road map:</strong> Particles → Moles → Grams</p><p>Particles connect to moles by Avogadro\'s number. Moles connect to grams by molar mass.</p>'
     },
     {
-      prompt: '11.2 L NH₃ at STP → molecules NH₃. Which path gets from the given unit to the target unit?',
+      prompt: '11.2 L NH3 at STP → molecules NH3. Which path gets from the given unit to the target unit?',
       options: ['Liters at STP → Moles → Particles', 'Liters at STP → Particles', 'Grams → Moles → Particles'],
       answer: 'Liters at STP → Moles → Particles',
       correctFeedback: 'Right — gases at STP convert to moles first, and then moles convert to particles.',
@@ -1158,21 +1322,21 @@ initSingleChoiceTool({
   selectFirstText: 'Choose one factor before you check.',
   items: [
     {
-      prompt: '18.3 g CO₂ → moles CO₂. Which conversion factor is the right bridge to moles?',
+      prompt: '18.3 g CO2 → moles CO2. Which conversion factor is the right bridge to moles?',
       options: [
         {
           value: 'molar-mass',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol CO₂</span><span class="fl-den">44.010 g CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol CO2</span><span class="fl-den">44.010 g CO2</span></span>',
           isHTML: true
         },
         {
           value: 'avogadro',
-          label: '<span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         },
         {
           value: 'stp',
-          label: '<span class="fl-frac"><span class="fl-num">22.4 L CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">22.4 L CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         }
       ],
@@ -1182,21 +1346,21 @@ initSingleChoiceTool({
       reveal: '<p><strong>Correct bridge:</strong> molar mass</p><p>Grams connect to moles through the molar mass of the substance. Avogadro\'s number connects particles to moles, and 22.4 L/mol only applies to gases at STP.</p>'
     },
     {
-      prompt: '3.20 × 10²⁴ molecules CO₂ → moles CO₂. Which conversion factor is the right bridge to moles?',
+      prompt: '3.20 × 10²⁴ molecules CO2 → moles CO2. Which conversion factor is the right bridge to moles?',
       options: [
         {
           value: 'molar-mass',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol CO₂</span><span class="fl-den">44.010 g CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol CO2</span><span class="fl-den">44.010 g CO2</span></span>',
           isHTML: true
         },
         {
           value: 'avogadro',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol CO₂</span><span class="fl-den">6.022 × 10²³ molecules CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol CO2</span><span class="fl-den">6.022 × 10²³ molecules CO2</span></span>',
           isHTML: true
         },
         {
           value: 'stp',
-          label: '<span class="fl-frac"><span class="fl-num">22.4 L CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">22.4 L CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         }
       ],
@@ -1206,21 +1370,21 @@ initSingleChoiceTool({
       reveal: '<p><strong>Correct bridge:</strong> Avogadro\'s number</p><p>Particles connect to moles through 6.022 × 10²³ particles per mole. Molar mass is for grams, and 22.4 L/mol is for gases at STP.</p>'
     },
     {
-      prompt: '11.2 L NH₃ at STP → moles NH₃. Which conversion factor is the right bridge to moles?',
+      prompt: '11.2 L NH3 at STP → moles NH3. Which conversion factor is the right bridge to moles?',
       options: [
         {
           value: 'molar-mass',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol NH₃</span><span class="fl-den">17.031 g NH₃</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol NH3</span><span class="fl-den">17.031 g NH3</span></span>',
           isHTML: true
         },
         {
           value: 'avogadro',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol NH₃</span><span class="fl-den">6.022 × 10²³ molecules NH₃</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol NH3</span><span class="fl-den">6.022 × 10²³ molecules NH3</span></span>',
           isHTML: true
         },
         {
           value: 'stp',
-          label: '<span class="fl-frac"><span class="fl-num">1 mol NH₃</span><span class="fl-den">22.4 L NH₃</span></span>',
+          label: '<span class="fl-frac"><span class="fl-num">1 mol NH3</span><span class="fl-den">22.4 L NH3</span></span>',
           isHTML: true
         }
       ],
@@ -1246,7 +1410,7 @@ initSingleChoiceTool({
   selectFirstText: 'Choose one element before you check.',
   items: [
     {
-      prompt: 'In 1 mol of H₂O, which element contributes the greatest mass percent?',
+      prompt: 'In 1 mol of H2O, which element contributes the greatest mass percent?',
       options: ['Hydrogen', 'Oxygen'],
       answer: 'Oxygen',
       correctFeedback: 'Right — oxygen contributes the most mass here because its total mass contribution in 1 mol of the compound is largest.',
@@ -1254,7 +1418,7 @@ initSingleChoiceTool({
       reveal: '<p><strong>Mass contribution check:</strong></p><p>H: 2 × 1.008 = 2.016 g/mol<br>O: 1 × 15.999 = 15.999 g/mol</p><p>Oxygen contributes more mass, so it has the greater mass percent.</p>'
     },
     {
-      prompt: 'In 1 mol of CO₂, which element contributes the greatest mass percent?',
+      prompt: 'In 1 mol of CO2, which element contributes the greatest mass percent?',
       options: ['Carbon', 'Oxygen'],
       answer: 'Oxygen',
       correctFeedback: 'Right — oxygen contributes the most mass here because its total mass contribution in 1 mol of the compound is largest.',
@@ -1262,7 +1426,7 @@ initSingleChoiceTool({
       reveal: '<p><strong>Mass contribution check:</strong></p><p>C: 1 × 12.011 = 12.011 g/mol<br>O: 2 × 15.999 = 31.998 g/mol</p><p>Oxygen contributes more total mass, so it has the greater mass percent.</p>'
     },
     {
-      prompt: 'In 1 mol of NH₃, which element contributes the greatest mass percent?',
+      prompt: 'In 1 mol of NH3, which element contributes the greatest mass percent?',
       options: ['Nitrogen', 'Hydrogen'],
       answer: 'Nitrogen',
       correctFeedback: 'Right — nitrogen contributes the most mass here because its total mass contribution in 1 mol of the compound is largest.',
@@ -1286,21 +1450,21 @@ initSingleChoiceTool({
   selectFirstText: 'Choose one setup before you check.',
   items: [
     {
-      prompt: '25.0 g C₆H₁₂O₆ → molecules C₆H₁₂O₆. Which full setup is valid?',
+      prompt: '25.0 g C6H12O6 → molecules C6H12O6. Which full setup is valid?',
       options: [
         {
           value: 'correct',
-          label: '25.0 g C₆H₁₂O₆ × <span class="fl-frac"><span class="fl-num">1 mol C₆H₁₂O₆</span><span class="fl-den">180.156 g C₆H₁₂O₆</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C₆H₁₂O₆</span></span>',
+          label: '25.0 g C6H12O6 × <span class="fl-frac"><span class="fl-num">1 mol C6H12O6</span><span class="fl-den">180.156 g C6H12O6</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C6H12O6</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-order',
-          label: '25.0 g C₆H₁₂O₆ × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C₆H₁₂O₆</span></span> × <span class="fl-frac"><span class="fl-num">1 mol C₆H₁₂O₆</span><span class="fl-den">180.156 g C₆H₁₂O₆</span></span>',
+          label: '25.0 g C6H12O6 × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C6H12O6</span></span> × <span class="fl-frac"><span class="fl-num">1 mol C6H12O6</span><span class="fl-den">180.156 g C6H12O6</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-flip',
-          label: '25.0 g C₆H₁₂O₆ × <span class="fl-frac"><span class="fl-num">180.156 g C₆H₁₂O₆</span><span class="fl-den">1 mol C₆H₁₂O₆</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C₆H₁₂O₆</span></span>',
+          label: '25.0 g C6H12O6 × <span class="fl-frac"><span class="fl-num">180.156 g C6H12O6</span><span class="fl-den">1 mol C6H12O6</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules</span><span class="fl-den">1 mol C6H12O6</span></span>',
           isHTML: true
         }
       ],
@@ -1310,21 +1474,21 @@ initSingleChoiceTool({
       reveal: '<p><strong>Why this one works:</strong> grams must convert to moles through molar mass first. Once moles are in the middle, Avogadro\'s number converts moles to molecules.</p>'
     },
     {
-      prompt: '3.50 × 10²⁴ molecules CO₂ → liters CO₂ at STP. Which full setup is valid?',
+      prompt: '3.50 × 10²⁴ molecules CO2 → liters CO2 at STP. Which full setup is valid?',
       options: [
         {
           value: 'correct',
-          label: '3.50 × 10²⁴ molecules CO₂ × <span class="fl-frac"><span class="fl-num">1 mol CO₂</span><span class="fl-den">6.022 × 10²³ molecules CO₂</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '3.50 × 10²⁴ molecules CO2 × <span class="fl-frac"><span class="fl-num">1 mol CO2</span><span class="fl-den">6.022 × 10²³ molecules CO2</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-bridge',
-          label: '3.50 × 10²⁴ molecules CO₂ × <span class="fl-frac"><span class="fl-num">44.010 g CO₂</span><span class="fl-den">1 mol CO₂</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '3.50 × 10²⁴ molecules CO2 × <span class="fl-frac"><span class="fl-num">44.010 g CO2</span><span class="fl-den">1 mol CO2</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-final',
-          label: '3.50 × 10²⁴ molecules CO₂ × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules CO₂</span><span class="fl-den">1 mol CO₂</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO₂</span><span class="fl-den">1 mol CO₂</span></span>',
+          label: '3.50 × 10²⁴ molecules CO2 × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules CO2</span><span class="fl-den">1 mol CO2</span></span> × <span class="fl-frac"><span class="fl-num">22.4 L CO2</span><span class="fl-den">1 mol CO2</span></span>',
           isHTML: true
         }
       ],
@@ -1334,21 +1498,21 @@ initSingleChoiceTool({
       reveal: '<p><strong>Why this one works:</strong> molecules connect to moles through Avogadro\'s number. After that, 22.4 L/mol can convert moles to liters because the gas is at STP.</p>'
     },
     {
-      prompt: '11.2 L NH₃ at STP → molecules NH₃. Which full setup is valid?',
+      prompt: '11.2 L NH3 at STP → molecules NH3. Which full setup is valid?',
       options: [
         {
           value: 'correct',
-          label: '11.2 L NH₃ × <span class="fl-frac"><span class="fl-num">1 mol NH₃</span><span class="fl-den">22.4 L NH₃</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH₃</span><span class="fl-den">1 mol NH₃</span></span>',
+          label: '11.2 L NH3 × <span class="fl-frac"><span class="fl-num">1 mol NH3</span><span class="fl-den">22.4 L NH3</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH3</span><span class="fl-den">1 mol NH3</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-order',
-          label: '11.2 L NH₃ × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH₃</span><span class="fl-den">1 mol NH₃</span></span> × <span class="fl-frac"><span class="fl-num">1 mol NH₃</span><span class="fl-den">22.4 L NH₃</span></span>',
+          label: '11.2 L NH3 × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH3</span><span class="fl-den">1 mol NH3</span></span> × <span class="fl-frac"><span class="fl-num">1 mol NH3</span><span class="fl-den">22.4 L NH3</span></span>',
           isHTML: true
         },
         {
           value: 'wrong-flip',
-          label: '11.2 L NH₃ × <span class="fl-frac"><span class="fl-num">22.4 L NH₃</span><span class="fl-den">1 mol NH₃</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH₃</span><span class="fl-den">1 mol NH₃</span></span>',
+          label: '11.2 L NH3 × <span class="fl-frac"><span class="fl-num">22.4 L NH3</span><span class="fl-den">1 mol NH3</span></span> × <span class="fl-frac"><span class="fl-num">6.022 × 10²³ molecules NH3</span><span class="fl-den">1 mol NH3</span></span>',
           isHTML: true
         }
       ],
@@ -1428,13 +1592,13 @@ function calcComposition() {
       total += mass;
     }
 
-    let html = `<strong class="composition-result-start">${f}</strong> — Molar mass: <span class="composition-result-molar-mass">${total.toFixed(3)} g/mol</span><br><br>`;
+    let html = `<strong class="composition-result-start">${renderChemFormula(f)}</strong> — Molar mass: <span class="composition-result-molar-mass">${total.toFixed(3)} g/mol</span><br><br>`;
     for (const el in contributions) {
       const pct = (contributions[el].mass / total * 100).toFixed(2);
       html += `<span class="composition-result-element">${el}</span>: ${contributions[el].count} × ${atomicMasses[el]} = ${contributions[el].mass.toFixed(3)} g/mol → <span class="composition-result-percent">${pct}%</span>&nbsp;&nbsp;&nbsp;`;
     }
 
-    document.getElementById('compResult').innerHTML = html;
+    document.getElementById('compResult').innerHTML = renderChemText(html);
   } catch (e) {
     document.getElementById('compResult').textContent = 'Could not parse formula.';
   }

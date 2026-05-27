@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-      <p>By the end, a notation like <strong>1s² 2s² 2p⁴</strong> will mean something physical: which energy levels exist, which sublevels exist inside them, and how many electrons occupy each one.</p>
+      <p>By the end, a notation like <strong><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">4</span></span></span></strong> will mean something physical: which energy levels exist, which sublevels exist inside them, and how many electrons occupy each one.</p>
       <div class="key-fact">
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -151,6 +151,7 @@
           <div class="em-segment micro">Microwaves</div>
           <div class="em-segment radio">Radio waves</div>
         </div>
+        <p class="spectrum-scroll-hint" aria-hidden="true">&larr; swipe to see more &rarr;</p>
         <div class="em-spectrum-scale">
           <span>&lt; 10<sup>&minus;11</sup> m</span>
           <span>10<sup>&minus;8</sup> m</span>
@@ -172,6 +173,7 @@
             <div class="visible-color orange"><strong>Orange</strong><span>590&ndash;620 nm</span></div>
             <div class="visible-color red"><strong>Red</strong><span>620&ndash;700 nm</span></div>
           </div>
+          <p class="spectrum-scroll-hint" aria-hidden="true">&larr; swipe to see more &rarr;</p>
           <div class="visible-spectrum-direction">
             <span>400 nm: shorter λ, higher energy</span>
             <span>700 nm: longer λ, lower energy</span>
@@ -184,7 +186,7 @@
         <span class="label">Wave Equation — connects wavelength and frequency</span>
         <div class="formula-rule-list">
           <div class="formula-rule">c = λ × ν</div>
-          <div class="formula-rule-note">c = 3.00 × 10⁸ m/s, the speed of light</div>
+          <div class="formula-rule-note">c = 3.00 × 10<sup>8</sup> m/s, the speed of light</div>
         </div>
       </div>
 
@@ -195,7 +197,7 @@
         <span class="label">Planck's Equation — photon energy</span>
         <div class="formula-rule-list">
           <div class="formula-rule">E = h × ν</div>
-          <div class="formula-rule-note">h = 6.626 × 10⁻³⁴ J·s, Planck's constant</div>
+          <div class="formula-rule-note">h = 6.626 × 10<sup>−34</sup> J·s, Planck's constant</div>
         </div>
       </div>
 
@@ -229,7 +231,7 @@
       <p>For hydrogen specifically, the energy of each level is:</p>
       <div class="formula-box">
         <span class="label">Bohr's hydrogen energy levels</span>
-        Eₙ = −2.18 × 10⁻¹⁸ J × (1/n²)
+        E<sub>n</sub> = −2.18 × 10<sup>−18</sup> J × (1/n<sup>2</sup>)
       </div>
 
       <p>Bohr's model gets us the idea of fixed main energy levels. The modern quantum model keeps those main levels, but adds more detail inside each one: each shell contains smaller energy regions called <strong>sublevels</strong>.</p>
@@ -253,7 +255,7 @@
       <p>The number of sublevels in a shell equals the value of <em>n</em>. So shell 1 has only one sublevel (1s), shell 2 has two sublevels (2s and 2p), shell 3 has three (3s, 3p, 3d), and so on.</p>
       <div class="formula-box">
         <span class="label">One concrete picture</span>
-        2p⁴ means <strong>shell 2</strong>, <strong>p sublevel</strong>, and <strong>4 electrons</strong> placed across <strong>3 p orbitals</strong>.
+        <span class="electron-config-inline"><span class="chem-token">2p<span class="ec-count">4</span></span></span> means <strong>shell 2</strong>, <strong>p sublevel</strong>, and <strong>4 electrons</strong> placed across <strong>3 p orbitals</strong>.
       </div>
       <div class="orbital-row" aria-label="Orbital boxes for 2p4">
         <span class="sublevel-name">2p:</span>
@@ -262,22 +264,22 @@
         <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
         <span class="orbital-detail">spread out first, then pair</span>
       </div>
-      <table>
+      <table class="mobile-stack-table">
         <caption>Electron sublevels with orbital counts and maximum electrons.</caption>
         <thead>
           <tr><th>Sublevel</th><th>Number of Orbitals</th><th>Max Electrons</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>s</strong></td><td>1</td><td>2</td></tr>
-          <tr><td><strong>p</strong></td><td>3</td><td>6</td></tr>
-          <tr><td><strong>d</strong></td><td>5</td><td>10</td></tr>
-          <tr><td><strong>f</strong></td><td>7</td><td>14</td></tr>
+          <tr><td data-label="Sublevel"><strong>s</strong></td><td data-label="Number of Orbitals">1</td><td data-label="Max Electrons">2</td></tr>
+          <tr><td data-label="Sublevel"><strong>p</strong></td><td data-label="Number of Orbitals">3</td><td data-label="Max Electrons">6</td></tr>
+          <tr><td data-label="Sublevel"><strong>d</strong></td><td data-label="Number of Orbitals">5</td><td data-label="Max Electrons">10</td></tr>
+          <tr><td data-label="Sublevel"><strong>f</strong></td><td data-label="Number of Orbitals">7</td><td data-label="Max Electrons">14</td></tr>
         </tbody>
       </table>
-      <p>That is why a 1-orbital s sublevel holds 2 electrons, while a 3-orbital p sublevel holds 6. A p sublevel has 3 orbitals, so 4 electrons in 2p⁴ must be spread across 3 boxes.</p>
+      <p>That is why a 1-orbital s sublevel holds 2 electrons, while a 3-orbital p sublevel holds 6. A p sublevel has 3 orbitals, so 4 electrons in <span class="electron-config-inline"><span class="chem-token">2p<span class="ec-count">4</span></span></span> must be spread across 3 boxes.</p>
       <div class="formula-box">
         <span class="label">Reading configuration notation</span>
-        2p⁴ means shell 2, p sublevel, with 4 electrons in that sublevel.
+        <span class="electron-config-inline"><span class="chem-token">2p<span class="ec-count">4</span></span></span> means shell 2, p sublevel, with 4 electrons in that sublevel.
       </div>
       <div class="key-fact">
         <div class="icon">▸</div>
@@ -302,14 +304,14 @@
         <li>n = 4: s + p + d + f → 2 + 6 + 10 + 14 = 32 electrons</li>
       </ul>
       <p><strong>Important:</strong> these totals tell you the <em>maximum capacity</em> of a shell. They do <strong>not</strong> tell you which sublevel fills next. Filling order follows sublevel energy, so 4s starts before 3d even though 3d belongs to shell 3.</p>
-      <table>
+      <table class="mobile-stack-table">
         <caption>Sublevel capacities showing how many orbitals and electrons each sublevel holds and where it first appears.</caption>
         <thead><tr><th>Sublevel</th><th># Orbitals</th><th>Max electrons</th><th>First appears at</th></tr></thead>
         <tbody>
-          <tr><td><strong>s</strong></td><td>1</td><td>2</td><td>n = 1 (1s)</td></tr>
-          <tr><td><strong>p</strong></td><td>3</td><td>6</td><td>n = 2 (2p)</td></tr>
-          <tr><td><strong>d</strong></td><td>5</td><td>10</td><td>n = 3 (3d)</td></tr>
-          <tr><td><strong>f</strong></td><td>7</td><td>14</td><td>n = 4 (4f)</td></tr>
+          <tr><td data-label="Sublevel"><strong>s</strong></td><td data-label="# Orbitals">1</td><td data-label="Max electrons">2</td><td data-label="First appears at">n = 1 (<span class="electron-config-inline"><span class="chem-token">1s</span></span>)</td></tr>
+          <tr><td data-label="Sublevel"><strong>p</strong></td><td data-label="# Orbitals">3</td><td data-label="Max electrons">6</td><td data-label="First appears at">n = 2 (<span class="electron-config-inline"><span class="chem-token">2p</span></span>)</td></tr>
+          <tr><td data-label="Sublevel"><strong>d</strong></td><td data-label="# Orbitals">5</td><td data-label="Max electrons">10</td><td data-label="First appears at">n = 3 (<span class="electron-config-inline"><span class="chem-token">3d</span></span>)</td></tr>
+          <tr><td data-label="Sublevel"><strong>f</strong></td><td data-label="# Orbitals">7</td><td data-label="Max electrons">14</td><td data-label="First appears at">n = 4 (<span class="electron-config-inline"><span class="chem-token">4f</span></span>)</td></tr>
         </tbody>
       </table>
       <div class="key-fact">
@@ -335,7 +337,7 @@
             <strong>Rule 1 — Aufbau Principle ("building up")</strong>
             <p>For neutral atoms in this course, electrons fill the lowest available energy sublevel first. That is why 4s fills before 3d in the configurations you will write here.</p>
             <div class="formula-box">
-              Filling order: 1s → 2s → 2p → 3s → 3p → <strong>4s → 3d</strong> → 4p → <strong>5s → 4d</strong> → 5p
+              Filling order: <span class="electron-config-inline"><span class="chem-token">1s</span> <span class="chem-op">→</span> <span class="chem-token">2s</span> <span class="chem-op">→</span> <span class="chem-token">2p</span> <span class="chem-op">→</span> <span class="chem-token">3s</span> <span class="chem-op">→</span> <span class="chem-token">3p</span> <span class="chem-op">→</span> <strong><span class="chem-token">4s</span> <span class="chem-op">→</span> <span class="chem-token">3d</span></strong> <span class="chem-op">→</span> <span class="chem-token">4p</span> <span class="chem-op">→</span> <strong><span class="chem-token">5s</span> <span class="chem-op">→</span> <span class="chem-token">4d</span></strong> <span class="chem-op">→</span> <span class="chem-token">5p</span></span>
             </div>
             <figure class="unit-figure">
               <img src="images/iron_aufbau_v2.svg" alt="Aufbau filling diagram for iron showing electrons filling sublevels through 4s before 3d." loading="lazy" decoding="async">
@@ -344,7 +346,7 @@
               </figcaption>
             </figure>
             <p class="unit-note">
-              In the diagram, blue cards are <strong>s</strong> sublevels, green cards are <strong>d</strong> sublevels, and red cards are <strong>p</strong> sublevels. The numbered amber arrows show the filling order, and iron ends at <strong>4s² 3d⁶</strong>, so one 3d orbital is paired while four are singly occupied.
+              In the diagram, blue cards are <strong>s</strong> sublevels, green cards are <strong>d</strong> sublevels, and red cards are <strong>p</strong> sublevels. The numbered amber arrows show the filling order, and iron ends at <strong><span class="electron-config-inline"><span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">6</span></span></span></strong>, so one 3d orbital is paired while four are singly occupied.
             </p>
             <div class="info-callout stack-top">
               <h4>Quick Structure Map</h4>
@@ -410,19 +412,19 @@
       <h2 class="card-title"><span class="num">4.7</span> Writing Electron Configurations Step by Step</h2>
       <p>Start with the standard filling pattern. First decide the last-filled sublevel, then write each sublevel in order and count electrons carefully. If this feels shaky, do not jump straight to shorthand yet.</p>
 
-      <table>
+      <table class="mobile-stack-table">
         <caption>Standard electron configurations and noble-gas shorthand for common elements.</caption>
         <thead><tr><th>Element (Z)</th><th>Configuration shown</th><th>Noble-gas shorthand</th></tr></thead>
         <tbody>
-          <tr><td>H (1)</td><td>1s¹</td><td>—</td></tr>
-          <tr><td>He (2)</td><td>1s²</td><td>—</td></tr>
-          <tr><td>Li (3)</td><td>1s² 2s¹</td><td>[He] 2s¹</td></tr>
-          <tr><td>C (6)</td><td>1s² 2s² 2p²</td><td>[He] 2s² 2p²</td></tr>
-          <tr><td>Ne (10)</td><td>1s² 2s² 2p⁶</td><td>—</td></tr>
-          <tr><td>Na (11)</td><td>1s² 2s² 2p⁶ 3s¹</td><td>[Ne] 3s¹</td></tr>
-          <tr><td>Ar (18)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶</td><td>—</td></tr>
-          <tr><td>K (19)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹</td><td>[Ar] 4s¹</td></tr>
-          <tr><td>Fe (26)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</td><td>[Ar] 4s² 3d⁶</td></tr>
+          <tr><td data-label="Element (Z)">H (1)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">1</span></span></span></td><td data-label="Noble-gas shorthand">—</td></tr>
+          <tr><td data-label="Element (Z)">He (2)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span></span></td><td data-label="Noble-gas shorthand">—</td></tr>
+          <tr><td data-label="Element (Z)">Li (3)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">1</span></span></span></td><td data-label="Noble-gas shorthand"><span class="electron-config-inline"><span class="chem-token">[He]</span> <span class="chem-token">2s<span class="ec-count">1</span></span></span></td></tr>
+          <tr><td data-label="Element (Z)">C (6)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">2</span></span></span></td><td data-label="Noble-gas shorthand"><span class="electron-config-inline"><span class="chem-token">[He]</span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">2</span></span></span></td></tr>
+          <tr><td data-label="Element (Z)">Ne (10)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span></span></td><td data-label="Noble-gas shorthand">—</td></tr>
+          <tr><td data-label="Element (Z)">Na (11)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">1</span></span></span></td><td data-label="Noble-gas shorthand"><span class="electron-config-inline"><span class="chem-token">[Ne]</span> <span class="chem-token">3s<span class="ec-count">1</span></span></span></td></tr>
+          <tr><td data-label="Element (Z)">Ar (18)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">6</span></span></span></td><td data-label="Noble-gas shorthand">—</td></tr>
+          <tr><td data-label="Element (Z)">K (19)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">6</span></span> <span class="chem-token">4s<span class="ec-count">1</span></span></span></td><td data-label="Noble-gas shorthand"><span class="electron-config-inline"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">1</span></span></span></td></tr>
+          <tr><td data-label="Element (Z)">Fe (26)</td><td data-label="Configuration shown"><span class="electron-config-inline"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">6</span></span> <span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">6</span></span></span></td><td data-label="Noble-gas shorthand"><span class="electron-config-inline"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">6</span></span></span></td></tr>
         </tbody>
       </table>
       <p>After the standard pattern is secure, then learn the common exceptions such as Cr and Cu.</p>
@@ -436,7 +438,7 @@
         <div class="key-fact-copy">
           <ul class="key-fact-list">
           <li>Noble-gas shorthand replaces the inner electrons with the symbol of the noble gas before your element on the periodic table.</li>
-          <li>For example, K (Z=19) is written [Ar] 4s¹ because Ar (Z=18) is the noble gas just before K.</li>
+          <li>For example, K (Z=19) is written <span class="electron-config-inline"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">1</span></span></span> because Ar (Z=18) is the noble gas just before K.</li>
           <li>The [Ar] stands for all 18 inner electrons, so you only need to write the outer electrons.</li>
           <li>Common mistake: choosing the next noble gas after the element instead of the one before it.</li>
           </ul>
@@ -709,21 +711,30 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Convert wavelength from nm to meters</strong>
+            <strong>Step 1 — Find the correct equations</strong>
+            <p>Because the problem asks for frequency from wavelength and then energy from frequency, use <strong>ν = c/λ</strong> followed by <strong>E = hν</strong>.</p>
+            <div class="fl-chain">ν = c/λ</div>
+            <div class="fl-chain">E = hν</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Convert wavelength from nm to meters</strong>
             <p>Always convert to SI base units (meters) before using the formula.</p>
             <div class="fl-chain">
-              486.1 <strong>nm</strong> &nbsp;×&nbsp;
-              <span class="fl-frac"><span class="fl-num">1 × 10⁻⁹ m</span><span class="fl-den">1 <strong>nm</strong></span></span>
-              &nbsp;= 4.861 × 10⁻⁷ m
+              486.1 <span class="cancel-mark cancel-green"><strong>nm</strong></span> &nbsp;×&nbsp;
+              <span class="fl-frac"><span class="fl-num">1 × 10<sup>−9</sup> m</span><span class="fl-den">1 <span class="cancel-mark cancel-green"><strong>nm</strong></span></span></span>
+              &nbsp;= 4.861 × 10<sup>−7</sup> m
             </div>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 2 — Calculate frequency using ν = c/λ</strong>
+            <strong>Step 3 — Calculate frequency using ν = c/λ</strong>
             <div class="fl-chain">
-              ν = (3.00 × 10⁸ m/s) ÷ (4.861 × 10⁻⁷ m) = <span class="fl-result">6.17 × 10¹⁴ Hz</span>
+              ν = (3.00 × 10<sup>8</sup> m/s) ÷ (4.861 × 10<sup>−7</sup> m) = <span class="fl-result">6.17 × 10<sup>14</sup> Hz</span>
             </div>
             <div class="fl-cancel">Units: m/s ÷ m = 1/s = Hz ✓</div>
           </div>
@@ -731,9 +742,9 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 3 — Calculate energy using E = hν</strong>
+            <strong>Step 4 — Calculate energy using E = hν</strong>
             <div class="fl-chain">
-              E = (6.626 × 10⁻³⁴ J·s) × (6.17 × 10¹⁴ s⁻¹) = <span class="fl-result">4.09 × 10⁻¹⁹ J</span>
+              E = (6.626 × 10<sup>−34</sup> J·s) × (6.17 × 10<sup>14</sup> s<sup>−1</sup>) = <span class="fl-result">4.09 × 10<sup>−19</sup> J</span>
             </div>
             <div class="fl-cancel">Units: J·s × s⁻¹ = J ✓</div>
           </div>
@@ -753,11 +764,18 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Sulfur (Z = 16) — full configuration</strong>
+            <strong>Step 1 — Find the correct filling pattern</strong>
+            <p>Because this is an electron-configuration problem, start with the <strong>Aufbau filling order</strong> and use the element’s position on the periodic table to identify the last-filled sublevel.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write the sulfur configuration</strong>
             <p>First decide the last-filled sublevel from the periodic table: sulfur is in period 3, p-block, so the last electrons go into 3p. Then fill in Aufbau order and count electrons: 2 + 2 + 6 + 2 + 4 = 16.</p>
-            <div class="formula-box">1s² 2s² 2p⁶ 3s² 3p⁴</div>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">4</span></span></div></div>
             <p>Noble-gas shorthand: The noble gas before S is Ne (Z=10).</p>
-            <div class="formula-box">[Ne] 3s² 3p⁴</div>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">[Ne]</span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">4</span></span></div></div>
             <p>Last occupied sublevel: <strong>3p</strong>.</p>
             <p>Orbital box for 3p (4 electrons — Hund's rule: fill singly first):</p>
             <div class="orbital-row">
@@ -784,11 +802,18 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Iron (Z = 26) — full configuration</strong>
+            <strong>Step 1 — Find the correct filling pattern</strong>
+            <p>Because this is an electron-configuration problem, start with the <strong>Aufbau filling order</strong> and use the periodic table to identify the last-filled sublevel before writing the full configuration.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write the iron configuration</strong>
             <p>First decide the last-filled sublevel from the periodic table: iron is in the d-block of period 4, so the last electrons go into 3d. Then fill 4s before 3d in the neutral-atom order used in this unit. Count: 2 + 2 + 6 + 2 + 6 + 2 + 6 = 26.</p>
-            <div class="formula-box">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</div>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">1s<span class="ec-count">2</span></span> <span class="chem-token">2s<span class="ec-count">2</span></span> <span class="chem-token">2p<span class="ec-count">6</span></span> <span class="chem-token">3s<span class="ec-count">2</span></span> <span class="chem-token">3p<span class="ec-count">6</span></span> <span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">6</span></span></div></div>
             <p>Noble-gas shorthand: The noble gas before Fe is Ar (Z=18).</p>
-            <div class="formula-box">[Ar] 4s² 3d⁶</div>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">6</span></span></div></div>
             <p>Last occupied sublevel: <strong>3d</strong>.</p>
             <p>Orbital box for 3d (6 electrons — Hund's rule: 5 singly, then 1 pairs):</p>
             <div class="orbital-row">
@@ -817,26 +842,36 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Calculate the energy of each level</strong>
-            <div class="fl-chain">E₄ = −2.18 × 10⁻¹⁸ × (1/16) = −1.36 × 10⁻¹⁹ J</div>
-            <div class="fl-chain">E₂ = −2.18 × 10⁻¹⁸ × (1/4) = −5.45 × 10⁻¹⁹ J</div>
+            <strong>Step 1 — Find the correct equations</strong>
+            <p>Because the problem asks for photon energy from a hydrogen transition and then wavelength, use the Bohr energy-level equation <strong>E<sub>n</sub> = −2.18 × 10<sup>−18</sup>(1/n<sup>2</sup>)</strong>, then <strong>ΔE = E<sub>final</sub> − E<sub>initial</sub></strong>, and finally <strong>λ = hc/|ΔE|</strong>.</p>
+            <div class="fl-chain">E<sub>n</sub> = −2.18 × 10<sup>−18</sup>(1/n<sup>2</sup>)</div>
+            <div class="fl-chain">ΔE = E<sub>final</sub> − E<sub>initial</sub></div>
+            <div class="fl-chain">λ = hc/|ΔE|</div>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 2 — Calculate ΔE (final minus initial)</strong>
-            <div class="fl-chain">ΔE = E₂ − E₄ = −5.45 × 10⁻¹⁹ − (−1.36 × 10⁻¹⁹) = <span class="fl-result">−4.09 × 10⁻¹⁹ J</span></div>
+            <strong>Step 2 — Calculate the energy of each level</strong>
+            <div class="fl-chain">E<sub>4</sub> = −2.18 × 10<sup>−18</sup> × (1/16) = −1.36 × 10<sup>−19</sup> J</div>
+            <div class="fl-chain">E<sub>2</sub> = −2.18 × 10<sup>−18</sup> × (1/4) = −5.45 × 10<sup>−19</sup> J</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 3 — Calculate ΔE (final minus initial)</strong>
+            <div class="fl-chain">ΔE = E<sub>2</sub> − E<sub>4</sub> = −5.45 × 10<sup>−19</sup> − (−1.36 × 10<sup>−19</sup>) = <span class="fl-result">−4.09 × 10<sup>−19</sup> J</span></div>
             <p>The negative sign confirms this is <strong>emission</strong> (energy released as a photon).</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 3 — Find wavelength using λ = hc/|ΔE|</strong>
+            <strong>Step 4 — Find wavelength using λ = hc/|ΔE|</strong>
             <div class="fl-chain">
-              λ = (6.626 × 10⁻³⁴ × 3.00 × 10⁸) ÷ (4.09 × 10⁻¹⁹) =
-              <span class="fl-result">4.86 × 10⁻⁷ m = 486 nm</span>
+              λ = (6.626 × 10<sup>−34</sup> × 3.00 × 10<sup>8</sup>) ÷ (4.09 × 10<sup>−19</sup>) =
+              <span class="fl-result">4.86 × 10<sup>−7</sup> m = 486 nm</span>
             </div>
             <p>This falls in the <strong>visible blue-green</strong> range, so the emitted light is visible.</p>
           </div>
@@ -857,8 +892,15 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Write the usual Aufbau prediction</strong>
-            <div class="formula-box">[Ar] 4s² 3d⁴</div>
+            <strong>Step 1 — Find the correct filling pattern</strong>
+            <p>Start with the <strong>usual Aufbau order</strong> for a neutral atom first. Then compare that prediction with the known chromium exception.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <strong>Step 2 — Write the usual Aufbau prediction</strong>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">2</span></span> <span class="chem-token">3d<span class="ec-count">4</span></span></div></div>
             <div class="orbital-row">
               <span class="sublevel-name">3d:</span>
               <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
@@ -873,8 +915,8 @@
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 2 — Compare it with the actual configuration</strong>
-            <div class="formula-box">[Ar] 4s¹ 3d⁵</div>
+            <strong>Step 3 — Compare it with the actual configuration</strong>
+            <div class="formula-box"><div class="electron-config-line"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">1</span></span> <span class="chem-token">3d<span class="ec-count">5</span></span></div></div>
             <div class="orbital-row">
               <span class="sublevel-name">4s:</span>
               <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
@@ -887,7 +929,7 @@
               <div class="orb-box up-only"><span class="arrow-up-el">↑</span></div>
               <span class="orbital-detail orbital-detail-good">3d is exactly half-filled — extra stable!</span>
             </div>
-            <p>One electron promotes from 4s to 3d because a <strong>half-filled d sublevel</strong> (all 5 orbitals singly occupied, symmetrical) is lower in energy than the Aufbau prediction. The same logic applies to Cu (Z=29), which goes to [Ar] 4s¹ 3d¹⁰ for a fully-filled d.</p>
+            <p>One electron promotes from 4s to 3d because a <strong>half-filled d sublevel</strong> (all 5 orbitals singly occupied, symmetrical) is lower in energy than the Aufbau prediction. The same logic applies to Cu (Z=29), which goes to <span class="electron-config-inline"><span class="chem-token">[Ar]</span> <span class="chem-token">4s<span class="ec-count">1</span></span> <span class="chem-token">3d<span class="ec-count">10</span></span></span> for a fully-filled d.</p>
           </div>
         </div>
       </div>
@@ -946,124 +988,124 @@ document.addEventListener('DOMContentLoaded', function () {
 // Format: [symbol, name, config_string, noble_gas_core, block, valence_e, unpaired_e]
 const ELEMENTS = [
   null,
-  ['H',  'Hydrogen',     '1s¹',                                    '',      's', 1, 1],
-  ['He', 'Helium',       '1s²',                                    '',      's', 2, 0],
-  ['Li', 'Lithium',      '1s² 2s¹',                                '[He]',  's', 1, 1],
-  ['Be', 'Beryllium',    '1s² 2s²',                                '[He]',  's', 2, 0],
-  ['B',  'Boron',        '1s² 2s² 2p¹',                           '[He]',  'p', 3, 1],
-  ['C',  'Carbon',       '1s² 2s² 2p²',                           '[He]',  'p', 4, 2],
-  ['N',  'Nitrogen',     '1s² 2s² 2p³',                           '[He]',  'p', 5, 3],
-  ['O',  'Oxygen',       '1s² 2s² 2p⁴',                           '[He]',  'p', 6, 2],
-  ['F',  'Fluorine',     '1s² 2s² 2p⁵',                           '[He]',  'p', 7, 1],
-  ['Ne', 'Neon',         '1s² 2s² 2p⁶',                           '[He]',  'p', 8, 0],
-  ['Na', 'Sodium',       '1s² 2s² 2p⁶ 3s¹',                      '[Ne]',  's', 1, 1],
-  ['Mg', 'Magnesium',    '1s² 2s² 2p⁶ 3s²',                      '[Ne]',  's', 2, 0],
-  ['Al', 'Aluminum',     '1s² 2s² 2p⁶ 3s² 3p¹',                  '[Ne]',  'p', 3, 1],
-  ['Si', 'Silicon',      '1s² 2s² 2p⁶ 3s² 3p²',                  '[Ne]',  'p', 4, 2],
-  ['P',  'Phosphorus',   '1s² 2s² 2p⁶ 3s² 3p³',                  '[Ne]',  'p', 5, 3],
-  ['S',  'Sulfur',       '1s² 2s² 2p⁶ 3s² 3p⁴',                  '[Ne]',  'p', 6, 2],
-  ['Cl', 'Chlorine',     '1s² 2s² 2p⁶ 3s² 3p⁵',                  '[Ne]',  'p', 7, 1],
-  ['Ar', 'Argon',        '1s² 2s² 2p⁶ 3s² 3p⁶',                  '[Ne]',  'p', 8, 0],
-  ['K',  'Potassium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹',              '[Ar]',  's', 1, 1],
-  ['Ca', 'Calcium',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s²',              '[Ar]',  's', 2, 0],
-  ['Sc', 'Scandium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹',         '[Ar]',  'd', 2, 1],
-  ['Ti', 'Titanium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d²',         '[Ar]',  'd', 2, 2],
-  ['V',  'Vanadium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d³',         '[Ar]',  'd', 2, 3],
-  ['Cr', 'Chromium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ 3d⁵ ★',       '[Ar]',  'd', 1, 6],
-  ['Mn', 'Manganese',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁵',         '[Ar]',  'd', 2, 5],
-  ['Fe', 'Iron',         '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶',         '[Ar]',  'd', 2, 4],
-  ['Co', 'Cobalt',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁷',         '[Ar]',  'd', 2, 3],
-  ['Ni', 'Nickel',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁸',         '[Ar]',  'd', 2, 2],
-  ['Cu', 'Copper',       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ 3d¹⁰ ★',      '[Ar]',  'd', 1, 1],
-  ['Zn', 'Zinc',         '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰',        '[Ar]',  'd', 2, 0],
-  ['Ga', 'Gallium',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p¹',    '[Ar]',  'p', 3, 1],
-  ['Ge', 'Germanium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p²',    '[Ar]',  'p', 4, 2],
-  ['As', 'Arsenic',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p³',    '[Ar]',  'p', 5, 3],
-  ['Se', 'Selenium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁴',    '[Ar]',  'p', 6, 2],
-  ['Br', 'Bromine',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁵',    '[Ar]',  'p', 7, 1],
-  ['Kr', 'Krypton',      '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶',    '[Ar]',  'p', 8, 0],
-  ['Rb', 'Rubidium',     '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s¹','[Kr]',  's', 1, 1],
-  ['Sr', 'Strontium',    '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s²','[Kr]',  's', 2, 0],
-  ['Y',  'Yttrium',      '[Kr] 5s² 4d¹',                           '[Kr]',  'd', 2, 1],
-  ['Zr', 'Zirconium',    '[Kr] 5s² 4d²',                           '[Kr]',  'd', 2, 2],
-  ['Nb', 'Niobium',      '[Kr] 5s¹ 4d⁴ ★',                        '[Kr]',  'd', 1, 5],
-  ['Mo', 'Molybdenum',   '[Kr] 5s¹ 4d⁵ ★',                        '[Kr]',  'd', 1, 6],
-  ['Tc', 'Technetium',   '[Kr] 5s² 4d⁵',                           '[Kr]',  'd', 2, 5],
-  ['Ru', 'Ruthenium',    '[Kr] 5s¹ 4d⁷ ★',                        '[Kr]',  'd', 1, 7],
-  ['Rh', 'Rhodium',      '[Kr] 5s¹ 4d⁸ ★',                        '[Kr]',  'd', 1, 8],
-  ['Pd', 'Palladium',    '[Kr] 4d¹⁰ ★',                           '[Kr]',  'd', 0, 0],
-  ['Ag', 'Silver',       '[Kr] 5s¹ 4d¹⁰ ★',                       '[Kr]',  'd', 1, 1],
-  ['Cd', 'Cadmium',      '[Kr] 5s² 4d¹⁰',                         '[Kr]',  'd', 2, 0],
-  ['In', 'Indium',       '[Kr] 5s² 4d¹⁰ 5p¹',                     '[Kr]',  'p', 3, 1],
-  ['Sn', 'Tin',          '[Kr] 5s² 4d¹⁰ 5p²',                     '[Kr]',  'p', 4, 2],
-  ['Sb', 'Antimony',     '[Kr] 5s² 4d¹⁰ 5p³',                     '[Kr]',  'p', 5, 3],
-  ['Te', 'Tellurium',    '[Kr] 5s² 4d¹⁰ 5p⁴',                     '[Kr]',  'p', 6, 2],
-  ['I',  'Iodine',       '[Kr] 5s² 4d¹⁰ 5p⁵',                     '[Kr]',  'p', 7, 1],
-  ['Xe', 'Xenon',        '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶', '[Kr]', 'p', 8, 0],
-  ['Cs', 'Cesium',       '[Xe] 6s¹',                          '[Xe]', 's', 1, 1],
-  ['Ba', 'Barium',       '[Xe] 6s²',                          '[Xe]', 's', 2, 0],
-  ['La', 'Lanthanum',    '[Xe] 5d¹ 6s²',                      '[Xe]', 'f', 2, 1],
-  ['Ce', 'Cerium',       '[Xe] 4f¹ 5d¹ 6s²',                  '[Xe]', 'f', 2, 2],
-  ['Pr', 'Praseodymium', '[Xe] 4f³ 6s²',                      '[Xe]', 'f', 2, 3],
-  ['Nd', 'Neodymium',    '[Xe] 4f⁴ 6s²',                      '[Xe]', 'f', 2, 4],
-  ['Pm', 'Promethium',   '[Xe] 4f⁵ 6s²',                      '[Xe]', 'f', 2, 5],
-  ['Sm', 'Samarium',     '[Xe] 4f⁶ 6s²',                      '[Xe]', 'f', 2, 6],
-  ['Eu', 'Europium',     '[Xe] 4f⁷ 6s²',                      '[Xe]', 'f', 2, 7],
-  ['Gd', 'Gadolinium',   '[Xe] 4f⁷ 5d¹ 6s²',                  '[Xe]', 'f', 2, 8],
-  ['Tb', 'Terbium',      '[Xe] 4f⁹ 6s²',                      '[Xe]', 'f', 2, 3],
-  ['Dy', 'Dysprosium',   '[Xe] 4f¹⁰ 6s²',                     '[Xe]', 'f', 2, 4],
-  ['Ho', 'Holmium',      '[Xe] 4f¹¹ 6s²',                     '[Xe]', 'f', 2, 3],
-  ['Er', 'Erbium',       '[Xe] 4f¹² 6s²',                     '[Xe]', 'f', 2, 2],
-  ['Tm', 'Thulium',      '[Xe] 4f¹³ 6s²',                     '[Xe]', 'f', 2, 1],
-  ['Yb', 'Ytterbium',    '[Xe] 4f¹⁴ 6s²',                     '[Xe]', 'f', 2, 0],
-  ['Lu', 'Lutetium',     '[Xe] 4f¹⁴ 5d¹ 6s²',                 '[Xe]', 'd', 2, 1],
-  ['Hf', 'Hafnium',      '[Xe] 4f¹⁴ 5d² 6s²',                 '[Xe]', 'd', 2, 2],
-  ['Ta', 'Tantalum',     '[Xe] 4f¹⁴ 5d³ 6s²',                 '[Xe]', 'd', 2, 3],
-  ['W',  'Tungsten',     '[Xe] 4f¹⁴ 5d⁴ 6s²',                 '[Xe]', 'd', 2, 4],
-  ['Re', 'Rhenium',      '[Xe] 4f¹⁴ 5d⁵ 6s²',                 '[Xe]', 'd', 2, 5],
-  ['Os', 'Osmium',       '[Xe] 4f¹⁴ 5d⁶ 6s²',                 '[Xe]', 'd', 2, 4],
-  ['Ir', 'Iridium',      '[Xe] 4f¹⁴ 5d⁷ 6s²',                 '[Xe]', 'd', 2, 3],
-  ['Pt', 'Platinum',     '[Xe] 4f¹⁴ 5d⁹ 6s¹ ★',               '[Xe]', 'd', 1, 1],
-  ['Au', 'Gold',         '[Xe] 4f¹⁴ 5d¹⁰ 6s¹ ★',              '[Xe]', 'd', 1, 1],
-  ['Hg', 'Mercury',      '[Xe] 4f¹⁴ 5d¹⁰ 6s²',                '[Xe]', 'd', 2, 0],
-  ['Tl', 'Thallium',     '[Xe] 4f¹⁴ 5d¹⁰ 6p¹',                '[Xe]', 'p', 3, 1],
-  ['Pb', 'Lead',         '[Xe] 4f¹⁴ 5d¹⁰ 6p²',                '[Xe]', 'p', 4, 2],
-  ['Bi', 'Bismuth',      '[Xe] 4f¹⁴ 5d¹⁰ 6p³',                '[Xe]', 'p', 5, 3],
-  ['Po', 'Polonium',     '[Xe] 4f¹⁴ 5d¹⁰ 6p⁴',                '[Xe]', 'p', 6, 2],
-  ['At', 'Astatine',     '[Xe] 4f¹⁴ 5d¹⁰ 6p⁵',                '[Xe]', 'p', 7, 1],
-  ['Rn', 'Radon',        '[Xe] 4f¹⁴ 5d¹⁰ 6p⁶',                '[Xe]', 'p', 8, 0],
-  ['Fr', 'Francium',     '[Rn] 7s¹',                           '[Rn]', 's', 1, 1],
-  ['Ra', 'Radium',       '[Rn] 7s²',                           '[Rn]', 's', 2, 0],
-  ['Ac', 'Actinium',     '[Rn] 6d¹ 7s²',                       '[Rn]', 'f', 2, 1],
-  ['Th', 'Thorium',      '[Rn] 6d² 7s²',                       '[Rn]', 'f', 2, 2],
-  ['Pa', 'Protactinium', '[Rn] 5f² 6d¹ 7s²',                   '[Rn]', 'f', 2, 3],
-  ['U',  'Uranium',      '[Rn] 5f³ 6d¹ 7s²',                   '[Rn]', 'f', 2, 4],
-  ['Np', 'Neptunium',    '[Rn] 5f⁴ 6d¹ 7s²',                   '[Rn]', 'f', 2, 5],
-  ['Pu', 'Plutonium',    '[Rn] 5f⁶ 7s²',                       '[Rn]', 'f', 2, 6],
-  ['Am', 'Americium',    '[Rn] 5f⁷ 7s²',                       '[Rn]', 'f', 2, 7],
-  ['Cm', 'Curium',       '[Rn] 5f⁷ 6d¹ 7s²',                   '[Rn]', 'f', 2, 8],
-  ['Bk', 'Berkelium',    '[Rn] 5f⁹ 7s²',                       '[Rn]', 'f', 2, 3],
-  ['Cf', 'Californium',  '[Rn] 5f¹⁰ 7s²',                      '[Rn]', 'f', 2, 4],
-  ['Es', 'Einsteinium',  '[Rn] 5f¹¹ 7s²',                      '[Rn]', 'f', 2, 3],
-  ['Fm', 'Fermium',      '[Rn] 5f¹² 7s²',                      '[Rn]', 'f', 2, 2],
-  ['Md', 'Mendelevium',  '[Rn] 5f¹³ 7s²',                      '[Rn]', 'f', 2, 1],
-  ['No', 'Nobelium',     '[Rn] 5f¹⁴ 7s²',                      '[Rn]', 'f', 2, 0],
-  ['Lr', 'Lawrencium',   '[Rn] 5f¹⁴ 7s² 7p¹',                  '[Rn]', 'd', 2, 1],
-  ['Rf', 'Rutherfordium','[Rn] 5f¹⁴ 6d² 7s²',                  '[Rn]', 'd', 2, 2],
-  ['Db', 'Dubnium',      '[Rn] 5f¹⁴ 6d³ 7s²',                  '[Rn]', 'd', 2, 3],
-  ['Sg', 'Seaborgium',   '[Rn] 5f¹⁴ 6d⁴ 7s²',                  '[Rn]', 'd', 2, 4],
-  ['Bh', 'Bohrium',      '[Rn] 5f¹⁴ 6d⁵ 7s²',                  '[Rn]', 'd', 2, 5],
-  ['Hs', 'Hassium',      '[Rn] 5f¹⁴ 6d⁶ 7s²',                  '[Rn]', 'd', 2, 4],
-  ['Mt', 'Meitnerium',   '[Rn] 5f¹⁴ 6d⁷ 7s²',                  '[Rn]', 'd', 2, 3],
-  ['Ds', 'Darmstadtium', '[Rn] 5f¹⁴ 6d⁸ 7s²',                  '[Rn]', 'd', 2, 2],
-  ['Rg', 'Roentgenium',  '[Rn] 5f¹⁴ 6d⁹ 7s²',                  '[Rn]', 'd', 2, 1],
-  ['Cn', 'Copernicium',  '[Rn] 5f¹⁴ 6d¹⁰ 7s²',                 '[Rn]', 'd', 2, 0],
-  ['Nh', 'Nihonium',     '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹',             '[Rn]', 'p', 3, 1],
-  ['Fl', 'Flerovium',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²',             '[Rn]', 'p', 4, 2],
-  ['Mc', 'Moscovium',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³',             '[Rn]', 'p', 5, 3],
-  ['Lv', 'Livermorium',  '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴',             '[Rn]', 'p', 6, 2],
-  ['Ts', 'Tennessine',   '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵',             '[Rn]', 'p', 7, 1],
-  ['Og', 'Oganesson',    '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶',             '[Rn]', 'p', 8, 0],
+  ['H',  'Hydrogen',     '1s1',                                    '',      's', 1, 1],
+  ['He', 'Helium',       '1s2',                                    '',      's', 2, 0],
+  ['Li', 'Lithium',      '1s2 2s1',                                '[He]',  's', 1, 1],
+  ['Be', 'Beryllium',    '1s2 2s2',                                '[He]',  's', 2, 0],
+  ['B',  'Boron',        '1s2 2s2 2p1',                           '[He]',  'p', 3, 1],
+  ['C',  'Carbon',       '1s2 2s2 2p2',                           '[He]',  'p', 4, 2],
+  ['N',  'Nitrogen',     '1s2 2s2 2p3',                           '[He]',  'p', 5, 3],
+  ['O',  'Oxygen',       '1s2 2s2 2p4',                           '[He]',  'p', 6, 2],
+  ['F',  'Fluorine',     '1s2 2s2 2p5',                           '[He]',  'p', 7, 1],
+  ['Ne', 'Neon',         '1s2 2s2 2p6',                           '[He]',  'p', 8, 0],
+  ['Na', 'Sodium',       '1s2 2s2 2p6 3s1',                      '[Ne]',  's', 1, 1],
+  ['Mg', 'Magnesium',    '1s2 2s2 2p6 3s2',                      '[Ne]',  's', 2, 0],
+  ['Al', 'Aluminum',     '1s2 2s2 2p6 3s2 3p1',                  '[Ne]',  'p', 3, 1],
+  ['Si', 'Silicon',      '1s2 2s2 2p6 3s2 3p2',                  '[Ne]',  'p', 4, 2],
+  ['P',  'Phosphorus',   '1s2 2s2 2p6 3s2 3p3',                  '[Ne]',  'p', 5, 3],
+  ['S',  'Sulfur',       '1s2 2s2 2p6 3s2 3p4',                  '[Ne]',  'p', 6, 2],
+  ['Cl', 'Chlorine',     '1s2 2s2 2p6 3s2 3p5',                  '[Ne]',  'p', 7, 1],
+  ['Ar', 'Argon',        '1s2 2s2 2p6 3s2 3p6',                  '[Ne]',  'p', 8, 0],
+  ['K',  'Potassium',    '1s2 2s2 2p6 3s2 3p6 4s1',              '[Ar]',  's', 1, 1],
+  ['Ca', 'Calcium',      '1s2 2s2 2p6 3s2 3p6 4s2',              '[Ar]',  's', 2, 0],
+  ['Sc', 'Scandium',     '1s2 2s2 2p6 3s2 3p6 4s2 3d1',         '[Ar]',  'd', 2, 1],
+  ['Ti', 'Titanium',     '1s2 2s2 2p6 3s2 3p6 4s2 3d2',         '[Ar]',  'd', 2, 2],
+  ['V',  'Vanadium',     '1s2 2s2 2p6 3s2 3p6 4s2 3d3',         '[Ar]',  'd', 2, 3],
+  ['Cr', 'Chromium',     '1s2 2s2 2p6 3s2 3p6 4s1 3d5 ★',       '[Ar]',  'd', 1, 6],
+  ['Mn', 'Manganese',    '1s2 2s2 2p6 3s2 3p6 4s2 3d5',         '[Ar]',  'd', 2, 5],
+  ['Fe', 'Iron',         '1s2 2s2 2p6 3s2 3p6 4s2 3d6',         '[Ar]',  'd', 2, 4],
+  ['Co', 'Cobalt',       '1s2 2s2 2p6 3s2 3p6 4s2 3d7',         '[Ar]',  'd', 2, 3],
+  ['Ni', 'Nickel',       '1s2 2s2 2p6 3s2 3p6 4s2 3d8',         '[Ar]',  'd', 2, 2],
+  ['Cu', 'Copper',       '1s2 2s2 2p6 3s2 3p6 4s1 3d10 ★',      '[Ar]',  'd', 1, 1],
+  ['Zn', 'Zinc',         '1s2 2s2 2p6 3s2 3p6 4s2 3d10',        '[Ar]',  'd', 2, 0],
+  ['Ga', 'Gallium',      '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p1',    '[Ar]',  'p', 3, 1],
+  ['Ge', 'Germanium',    '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p2',    '[Ar]',  'p', 4, 2],
+  ['As', 'Arsenic',      '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p3',    '[Ar]',  'p', 5, 3],
+  ['Se', 'Selenium',     '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p4',    '[Ar]',  'p', 6, 2],
+  ['Br', 'Bromine',      '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p5',    '[Ar]',  'p', 7, 1],
+  ['Kr', 'Krypton',      '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6',    '[Ar]',  'p', 8, 0],
+  ['Rb', 'Rubidium',     '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1','[Kr]',  's', 1, 1],
+  ['Sr', 'Strontium',    '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2','[Kr]',  's', 2, 0],
+  ['Y',  'Yttrium',      '[Kr] 5s2 4d1',                           '[Kr]',  'd', 2, 1],
+  ['Zr', 'Zirconium',    '[Kr] 5s2 4d2',                           '[Kr]',  'd', 2, 2],
+  ['Nb', 'Niobium',      '[Kr] 5s1 4d4 ★',                        '[Kr]',  'd', 1, 5],
+  ['Mo', 'Molybdenum',   '[Kr] 5s1 4d5 ★',                        '[Kr]',  'd', 1, 6],
+  ['Tc', 'Technetium',   '[Kr] 5s2 4d5',                           '[Kr]',  'd', 2, 5],
+  ['Ru', 'Ruthenium',    '[Kr] 5s1 4d7 ★',                        '[Kr]',  'd', 1, 7],
+  ['Rh', 'Rhodium',      '[Kr] 5s1 4d8 ★',                        '[Kr]',  'd', 1, 8],
+  ['Pd', 'Palladium',    '[Kr] 4d10 ★',                           '[Kr]',  'd', 0, 0],
+  ['Ag', 'Silver',       '[Kr] 5s1 4d10 ★',                       '[Kr]',  'd', 1, 1],
+  ['Cd', 'Cadmium',      '[Kr] 5s2 4d10',                         '[Kr]',  'd', 2, 0],
+  ['In', 'Indium',       '[Kr] 5s2 4d10 5p1',                     '[Kr]',  'p', 3, 1],
+  ['Sn', 'Tin',          '[Kr] 5s2 4d10 5p2',                     '[Kr]',  'p', 4, 2],
+  ['Sb', 'Antimony',     '[Kr] 5s2 4d10 5p3',                     '[Kr]',  'p', 5, 3],
+  ['Te', 'Tellurium',    '[Kr] 5s2 4d10 5p4',                     '[Kr]',  'p', 6, 2],
+  ['I',  'Iodine',       '[Kr] 5s2 4d10 5p5',                     '[Kr]',  'p', 7, 1],
+  ['Xe', 'Xenon',        '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6', '[Kr]', 'p', 8, 0],
+  ['Cs', 'Cesium',       '[Xe] 6s1',                          '[Xe]', 's', 1, 1],
+  ['Ba', 'Barium',       '[Xe] 6s2',                          '[Xe]', 's', 2, 0],
+  ['La', 'Lanthanum',    '[Xe] 5d1 6s2',                      '[Xe]', 'f', 2, 1],
+  ['Ce', 'Cerium',       '[Xe] 4f1 5d1 6s2',                  '[Xe]', 'f', 2, 2],
+  ['Pr', 'Praseodymium', '[Xe] 4f3 6s2',                      '[Xe]', 'f', 2, 3],
+  ['Nd', 'Neodymium',    '[Xe] 4f4 6s2',                      '[Xe]', 'f', 2, 4],
+  ['Pm', 'Promethium',   '[Xe] 4f5 6s2',                      '[Xe]', 'f', 2, 5],
+  ['Sm', 'Samarium',     '[Xe] 4f6 6s2',                      '[Xe]', 'f', 2, 6],
+  ['Eu', 'Europium',     '[Xe] 4f7 6s2',                      '[Xe]', 'f', 2, 7],
+  ['Gd', 'Gadolinium',   '[Xe] 4f7 5d1 6s2',                  '[Xe]', 'f', 2, 8],
+  ['Tb', 'Terbium',      '[Xe] 4f9 6s2',                      '[Xe]', 'f', 2, 3],
+  ['Dy', 'Dysprosium',   '[Xe] 4f10 6s2',                     '[Xe]', 'f', 2, 4],
+  ['Ho', 'Holmium',      '[Xe] 4f11 6s2',                     '[Xe]', 'f', 2, 3],
+  ['Er', 'Erbium',       '[Xe] 4f12 6s2',                     '[Xe]', 'f', 2, 2],
+  ['Tm', 'Thulium',      '[Xe] 4f13 6s2',                     '[Xe]', 'f', 2, 1],
+  ['Yb', 'Ytterbium',    '[Xe] 4f14 6s2',                     '[Xe]', 'f', 2, 0],
+  ['Lu', 'Lutetium',     '[Xe] 4f14 5d1 6s2',                 '[Xe]', 'd', 2, 1],
+  ['Hf', 'Hafnium',      '[Xe] 4f14 5d2 6s2',                 '[Xe]', 'd', 2, 2],
+  ['Ta', 'Tantalum',     '[Xe] 4f14 5d3 6s2',                 '[Xe]', 'd', 2, 3],
+  ['W',  'Tungsten',     '[Xe] 4f14 5d4 6s2',                 '[Xe]', 'd', 2, 4],
+  ['Re', 'Rhenium',      '[Xe] 4f14 5d5 6s2',                 '[Xe]', 'd', 2, 5],
+  ['Os', 'Osmium',       '[Xe] 4f14 5d6 6s2',                 '[Xe]', 'd', 2, 4],
+  ['Ir', 'Iridium',      '[Xe] 4f14 5d7 6s2',                 '[Xe]', 'd', 2, 3],
+  ['Pt', 'Platinum',     '[Xe] 4f14 5d9 6s1 ★',               '[Xe]', 'd', 1, 1],
+  ['Au', 'Gold',         '[Xe] 4f14 5d10 6s1 ★',              '[Xe]', 'd', 1, 1],
+  ['Hg', 'Mercury',      '[Xe] 4f14 5d10 6s2',                '[Xe]', 'd', 2, 0],
+  ['Tl', 'Thallium',     '[Xe] 4f14 5d10 6p1',                '[Xe]', 'p', 3, 1],
+  ['Pb', 'Lead',         '[Xe] 4f14 5d10 6p2',                '[Xe]', 'p', 4, 2],
+  ['Bi', 'Bismuth',      '[Xe] 4f14 5d10 6p3',                '[Xe]', 'p', 5, 3],
+  ['Po', 'Polonium',     '[Xe] 4f14 5d10 6p4',                '[Xe]', 'p', 6, 2],
+  ['At', 'Astatine',     '[Xe] 4f14 5d10 6p5',                '[Xe]', 'p', 7, 1],
+  ['Rn', 'Radon',        '[Xe] 4f14 5d10 6p6',                '[Xe]', 'p', 8, 0],
+  ['Fr', 'Francium',     '[Rn] 7s1',                           '[Rn]', 's', 1, 1],
+  ['Ra', 'Radium',       '[Rn] 7s2',                           '[Rn]', 's', 2, 0],
+  ['Ac', 'Actinium',     '[Rn] 6d1 7s2',                       '[Rn]', 'f', 2, 1],
+  ['Th', 'Thorium',      '[Rn] 6d2 7s2',                       '[Rn]', 'f', 2, 2],
+  ['Pa', 'Protactinium', '[Rn] 5f2 6d1 7s2',                   '[Rn]', 'f', 2, 3],
+  ['U',  'Uranium',      '[Rn] 5f3 6d1 7s2',                   '[Rn]', 'f', 2, 4],
+  ['Np', 'Neptunium',    '[Rn] 5f4 6d1 7s2',                   '[Rn]', 'f', 2, 5],
+  ['Pu', 'Plutonium',    '[Rn] 5f6 7s2',                       '[Rn]', 'f', 2, 6],
+  ['Am', 'Americium',    '[Rn] 5f7 7s2',                       '[Rn]', 'f', 2, 7],
+  ['Cm', 'Curium',       '[Rn] 5f7 6d1 7s2',                   '[Rn]', 'f', 2, 8],
+  ['Bk', 'Berkelium',    '[Rn] 5f9 7s2',                       '[Rn]', 'f', 2, 3],
+  ['Cf', 'Californium',  '[Rn] 5f10 7s2',                      '[Rn]', 'f', 2, 4],
+  ['Es', 'Einsteinium',  '[Rn] 5f11 7s2',                      '[Rn]', 'f', 2, 3],
+  ['Fm', 'Fermium',      '[Rn] 5f12 7s2',                      '[Rn]', 'f', 2, 2],
+  ['Md', 'Mendelevium',  '[Rn] 5f13 7s2',                      '[Rn]', 'f', 2, 1],
+  ['No', 'Nobelium',     '[Rn] 5f14 7s2',                      '[Rn]', 'f', 2, 0],
+  ['Lr', 'Lawrencium',   '[Rn] 5f14 7s2 7p1',                  '[Rn]', 'd', 2, 1],
+  ['Rf', 'Rutherfordium','[Rn] 5f14 6d2 7s2',                  '[Rn]', 'd', 2, 2],
+  ['Db', 'Dubnium',      '[Rn] 5f14 6d3 7s2',                  '[Rn]', 'd', 2, 3],
+  ['Sg', 'Seaborgium',   '[Rn] 5f14 6d4 7s2',                  '[Rn]', 'd', 2, 4],
+  ['Bh', 'Bohrium',      '[Rn] 5f14 6d5 7s2',                  '[Rn]', 'd', 2, 5],
+  ['Hs', 'Hassium',      '[Rn] 5f14 6d6 7s2',                  '[Rn]', 'd', 2, 4],
+  ['Mt', 'Meitnerium',   '[Rn] 5f14 6d7 7s2',                  '[Rn]', 'd', 2, 3],
+  ['Ds', 'Darmstadtium', '[Rn] 5f14 6d8 7s2',                  '[Rn]', 'd', 2, 2],
+  ['Rg', 'Roentgenium',  '[Rn] 5f14 6d9 7s2',                  '[Rn]', 'd', 2, 1],
+  ['Cn', 'Copernicium',  '[Rn] 5f14 6d10 7s2',                 '[Rn]', 'd', 2, 0],
+  ['Nh', 'Nihonium',     '[Rn] 5f14 6d10 7s2 7p1',             '[Rn]', 'p', 3, 1],
+  ['Fl', 'Flerovium',    '[Rn] 5f14 6d10 7s2 7p2',             '[Rn]', 'p', 4, 2],
+  ['Mc', 'Moscovium',    '[Rn] 5f14 6d10 7s2 7p3',             '[Rn]', 'p', 5, 3],
+  ['Lv', 'Livermorium',  '[Rn] 5f14 6d10 7s2 7p4',             '[Rn]', 'p', 6, 2],
+  ['Ts', 'Tennessine',   '[Rn] 5f14 6d10 7s2 7p5',             '[Rn]', 'p', 7, 1],
+  ['Og', 'Oganesson',    '[Rn] 5f14 6d10 7s2 7p6',             '[Rn]', 'p', 8, 0],
 ];
 
 const C_LIGHT = 3.00e8;
@@ -1105,117 +1147,117 @@ const hydrogenPrompts = [
 
 const diagCases = [
   {
-    prompt: 'Sulfur student work: [Ne] 3s² 3p⁴ with orbital boxes shown as ↑↓ | ↑ | empty.',
+    prompt: 'Sulfur student work: [Ne] 3s2 3p4 with orbital boxes shown as ↑↓ | ↑ | empty.',
     mistake: 'hund',
-    corrected: '[Ne] 3s² 3p⁴',
-    explanation: 'The shorthand is fine, but the orbital diagram pairs too early. In 3p⁴ the electrons must spread out first, then one pairs.'
+    corrected: '[Ne] 3s2 3p4',
+    explanation: 'The shorthand is fine, but the orbital diagram pairs too early. In 3p4 the electrons must spread out first, then one pairs.'
   },
   {
-    prompt: 'Iron student work: [Ar] 3d⁶ 4s²',
+    prompt: 'Iron student work: [Ar] 3d6 4s2',
     mistake: 'aufbau',
-    corrected: '[Ar] 4s² 3d⁶',
+    corrected: '[Ar] 4s2 3d6',
     explanation: 'For neutral atoms in this course, 4s fills before 3d. The student listed the filled sublevels in the wrong Aufbau order.'
   },
   {
-    prompt: 'Chromium student work: [Ar] 4s² 3d⁴',
+    prompt: 'Chromium student work: [Ar] 4s2 3d4',
     mistake: 'exception',
-    corrected: '[Ar] 4s¹ 3d⁵',
+    corrected: '[Ar] 4s1 3d5',
     explanation: 'Chromium is a classic exception. One electron shifts so the d sublevel becomes half-filled and more stable.'
   },
   {
-    prompt: 'Calcium student work: [Ne] 4s²',
+    prompt: 'Calcium student work: [Ne] 4s2',
     mistake: 'core',
-    corrected: '[Ar] 4s²',
+    corrected: '[Ar] 4s2',
     explanation: 'The previous noble gas before calcium is argon, not neon. The shorthand core must include all inner electrons.'
   },
   {
     prompt: 'Oxygen student work uses one orbital with ↑↑.',
     mistake: 'pauli',
-    corrected: '[He] 2s² 2p⁴',
+    corrected: '[He] 2s2 2p4',
     explanation: 'Two electrons in the same orbital must have opposite spins. Two spin-up electrons in one orbital violate Pauli exclusion.'
   },
   {
-    prompt: 'Phosphorus student work: [Ne] 3s² 3p³ with orbital boxes shown as ↑↓ | ↑ | empty.',
+    prompt: 'Phosphorus student work: [Ne] 3s2 3p3 with orbital boxes shown as ↑↓ | ↑ | empty.',
     mistake: 'hund',
-    corrected: '[Ne] 3s² 3p³',
-    explanation: 'In 3p³, the three electrons should occupy the three p orbitals singly before any pairing happens.'
+    corrected: '[Ne] 3s2 3p3',
+    explanation: 'In 3p3, the three electrons should occupy the three p orbitals singly before any pairing happens.'
   },
   {
-    prompt: 'Nickel student work: [Ar] 3d⁸ 4s²',
+    prompt: 'Nickel student work: [Ar] 3d8 4s2',
     mistake: 'aufbau',
-    corrected: '[Ar] 4s² 3d⁸',
+    corrected: '[Ar] 4s2 3d8',
     explanation: 'For neutral atoms in this course sequence, the 4s sublevel is written as filling before 3d.'
   },
   {
-    prompt: 'Potassium student work: [Ne] 4s¹',
+    prompt: 'Potassium student work: [Ne] 4s1',
     mistake: 'core',
-    corrected: '[Ar] 4s¹',
+    corrected: '[Ar] 4s1',
     explanation: 'The noble-gas core before potassium is argon. Neon leaves out too many inner electrons.'
   },
   {
-    prompt: 'Magnesium student work shows a single orbital box with ↑↑ for 3s².',
+    prompt: 'Magnesium student work shows a single orbital box with ↑↑ for 3s2.',
     mistake: 'pauli',
-    corrected: '[Ne] 3s²',
+    corrected: '[Ne] 3s2',
     explanation: 'If two electrons share the same orbital, they must have opposite spins. An ↑↑ pair is not allowed.'
   },
   {
-    prompt: 'Copper student work: [Ar] 4s² 3d⁹',
+    prompt: 'Copper student work: [Ar] 4s2 3d9',
     mistake: 'exception',
-    corrected: '[Ar] 4s¹ 3d¹⁰',
+    corrected: '[Ar] 4s1 3d10',
     explanation: 'Copper is another common exception. One electron shifts to make the d sublevel completely filled and more stable.'
   },
   {
-    prompt: 'Carbon student work: [He] 2s² 2p² with orbital boxes shown as ↑↓ | empty | empty.',
+    prompt: 'Carbon student work: [He] 2s2 2p2 with orbital boxes shown as ↑↓ | empty | empty.',
     mistake: 'hund',
-    corrected: '[He] 2s² 2p²',
+    corrected: '[He] 2s2 2p2',
     explanation: 'The two 2p electrons should go into separate equal-energy p orbitals before any pairing.'
   },
   {
-    prompt: 'Bromine student work: [Ar] 3d¹⁰ 4s² 4p⁵',
+    prompt: 'Bromine student work: [Ar] 3d10 4s2 4p5',
     mistake: 'aufbau',
-    corrected: '[Ar] 4s² 3d¹⁰ 4p⁵',
+    corrected: '[Ar] 4s2 3d10 4p5',
     explanation: 'The filled sublevels should follow the course Aufbau order with 4s filled before 3d.'
   },
   {
-    prompt: 'Strontium student work: [Kr] 5s² with one 5s box drawn as ↑↑.',
+    prompt: 'Strontium student work: [Kr] 5s2 with one 5s box drawn as ↑↑.',
     mistake: 'pauli',
-    corrected: '[Kr] 5s²',
+    corrected: '[Kr] 5s2',
     explanation: 'A single orbital can hold two electrons only if they have opposite spins, so ↑↑ in one box violates Pauli exclusion.'
   },
   {
-    prompt: 'Silicon student work: [He] 3s² 3p²',
+    prompt: 'Silicon student work: [He] 3s2 3p2',
     mistake: 'core',
-    corrected: '[Ne] 3s² 3p²',
+    corrected: '[Ne] 3s2 3p2',
     explanation: 'The shorthand core before silicon is neon, not helium. The noble-gas core must include all inner electrons.'
   },
   {
-    prompt: 'Manganese student work: [Ar] 3d⁵ 4s²',
+    prompt: 'Manganese student work: [Ar] 3d5 4s2',
     mistake: 'aufbau',
-    corrected: '[Ar] 4s² 3d⁵',
+    corrected: '[Ar] 4s2 3d5',
     explanation: 'The electron count is fine, but the filled sublevels are written out of the course Aufbau order.'
   },
   {
     prompt: 'Nitrogen student work uses one 2p orbital with ↑↑ and leaves another 2p orbital empty.',
     mistake: 'pauli',
-    corrected: '[He] 2s² 2p³',
+    corrected: '[He] 2s2 2p3',
     explanation: 'The same-spin pair is the clearest rule break. Pauli exclusion is violated before you even finish applying Hund’s rule.'
   }
 ];
 
 const ecState = { currentZ: 16, orbitalStates: [], diagIndex: -1 };
 const orbitalChoicePrompts = [
-  { label: 'Nitrogen 2p³', sublevel: '2p', electrons: 3, ruleFocus: 'hund' },
-  { label: 'Sulfur 3p⁴', sublevel: '3p', electrons: 4, ruleFocus: 'hund' },
-  { label: 'Iron 3d⁶', sublevel: '3d', electrons: 6, ruleFocus: 'hund' },
-  { label: 'Bromine 4p⁵', sublevel: '4p', electrons: 5, ruleFocus: 'pauli' },
-  { label: 'Carbon 2p²', sublevel: '2p', electrons: 2, ruleFocus: 'hund' },
-  { label: 'Oxygen 2p⁴', sublevel: '2p', electrons: 4, ruleFocus: 'pauli' },
-  { label: 'Phosphorus 3p³', sublevel: '3p', electrons: 3, ruleFocus: 'hund' },
-  { label: 'Chlorine 3p⁵', sublevel: '3p', electrons: 5, ruleFocus: 'pauli' },
-  { label: 'Cobalt 3d⁷', sublevel: '3d', electrons: 7, ruleFocus: 'hund' },
-  { label: 'Nickel 3d⁸', sublevel: '3d', electrons: 8, ruleFocus: 'pauli' },
-  { label: 'Aluminum 3p¹', sublevel: '3p', electrons: 1, ruleFocus: 'hund' },
-  { label: 'Arsenic 4p³', sublevel: '4p', electrons: 3, ruleFocus: 'hund' }
+  { label: 'Nitrogen 2p3', sublevel: '2p', electrons: 3, ruleFocus: 'hund' },
+  { label: 'Sulfur 3p4', sublevel: '3p', electrons: 4, ruleFocus: 'hund' },
+  { label: 'Iron 3d6', sublevel: '3d', electrons: 6, ruleFocus: 'hund' },
+  { label: 'Bromine 4p5', sublevel: '4p', electrons: 5, ruleFocus: 'pauli' },
+  { label: 'Carbon 2p2', sublevel: '2p', electrons: 2, ruleFocus: 'hund' },
+  { label: 'Oxygen 2p4', sublevel: '2p', electrons: 4, ruleFocus: 'pauli' },
+  { label: 'Phosphorus 3p3', sublevel: '3p', electrons: 3, ruleFocus: 'hund' },
+  { label: 'Chlorine 3p5', sublevel: '3p', electrons: 5, ruleFocus: 'pauli' },
+  { label: 'Cobalt 3d7', sublevel: '3d', electrons: 7, ruleFocus: 'hund' },
+  { label: 'Nickel 3d8', sublevel: '3d', electrons: 8, ruleFocus: 'pauli' },
+  { label: 'Aluminum 3p1', sublevel: '3p', electrons: 1, ruleFocus: 'hund' },
+  { label: 'Arsenic 4p3', sublevel: '4p', electrons: 3, ruleFocus: 'hund' }
 ];
 const phState = { index: 0, region: '', trend: '' };
 const hyState = { index: 0, transition: '', sign: '', region: '', compare: '' };
@@ -1327,6 +1369,53 @@ function toSuperscriptDigits(text) {
   return String(text).replace(/\d/g, function (ch) { return NORMAL_TO_SUPERSCRIPT[ch] || ch; });
 }
 
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function formatElectronToken(token) {
+  const normalized = toNormalDigits(token);
+  const sublevelMatch = normalized.match(/^(\d)([spdf])(\d+)$/i);
+  if (sublevelMatch) {
+    return `<span class="chem-token">${sublevelMatch[1]}${sublevelMatch[2]}<span class="ec-count">${sublevelMatch[3]}</span></span>`;
+  }
+  if (/^\[[A-Za-z]{1,2}\]$/.test(normalized)) {
+    return `<span class="chem-token">${escapeHtml(normalized)}</span>`;
+  }
+  return escapeHtml(token);
+}
+
+function formatElectronConfig(config) {
+  return String(config || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(formatElectronToken)
+    .join(' ');
+}
+
+function formatElectronText(text) {
+  return escapeHtml(text || '').replace(/\[[A-Za-z]{1,2}\]|\d[spdf][⁰¹²³⁴⁵⁶⁷⁸⁹0-9]+/g, function (match) {
+    return formatElectronToken(match);
+  });
+}
+
+function normalizeElementConfigData() {
+  for (let z = 1; z < ELEMENTS.length; z++) {
+    if (!ELEMENTS[z]) continue;
+    ELEMENTS[z][2] = toNormalDigits(stripConfigDecorations(ELEMENTS[z][2]));
+  }
+  diagCases.forEach(function (item) {
+    item.prompt = toNormalDigits(item.prompt);
+    item.corrected = toNormalDigits(item.corrected);
+  });
+}
+
 function normalizeConfigInput(text) {
   return toNormalDigits((text || '').trim())
     .replace(/\s+/g, ' ')
@@ -1350,10 +1439,12 @@ function buildShorthandConfig(cleanConfig, core) {
   }
   if (count !== coreCount) return cleanConfig;
   const tail = parts.slice(startIndex).map(function (part) {
-    return `${part.name}${toSuperscriptDigits(part.count)}`;
+    return `${part.name}${part.count}`;
   }).join(' ');
   return `${core}${tail ? ` ${tail}` : ''}`.trim();
 }
+
+normalizeElementConfigData();
 
 function renderElectronSublevelChoices(correctValue) {
   const wrap = document.getElementById('ecSublevelChoices');
@@ -1460,7 +1551,7 @@ function nextElectronDiagnosis() {
 
 function loadElectronDiagnosis() {
   const diag = diagCases[ecState.diagIndex];
-  document.getElementById('ecDiagPrompt').innerHTML = `<strong>Find the broken rule.</strong><p>${diag.prompt}</p>`;
+  document.getElementById('ecDiagPrompt').innerHTML = `<strong>Find the broken rule.</strong><p>${formatElectronText(diag.prompt)}</p>`;
   document.getElementById('ecDiagMistakeSelect').value = '';
   resetToolState('ecDiagFeedback', 'ecDiagAnswer', 'ecDiagRevealBtn', 'ecDiagNextBtn', 'Choose the broken rule, then click Check.');
 }
@@ -1496,7 +1587,7 @@ function checkElectronDiagnosis() {
   } else if (diag.mistake === 'core') {
     setFeedback('ecDiagFeedback', `Right — the noble-gas core is wrong. Rule: shorthand must include all inner electrons from the previous noble gas.`, 'good');
   } else {
-    setFeedback('ecDiagFeedback', `Right — this misses a common exception. Rule: chromium uses the more stable 4s¹ 3d⁵ arrangement.`, 'good');
+    setFeedback('ecDiagFeedback', 'Right — this misses a common exception. Rule: chromium uses the more stable 4s1 3d5 arrangement.', 'good');
   }
 }
 
@@ -1504,7 +1595,7 @@ function revealElectronDiagnosis() {
   const diag = diagCases[ecState.diagIndex];
   const answer = document.getElementById('ecDiagAnswer');
   showToolReveal('ecDiagAnswer');
-  answer.innerHTML = `<div class="icon">▸</div><div class="key-fact-copy"><p class="key-fact-title">Reasoning and correction</p><ul class="key-fact-list"><li><strong>Corrected work:</strong> ${diag.corrected}</li><li>${diag.explanation}</li></ul></div>`;
+  answer.innerHTML = `<div class="icon">▸</div><div class="key-fact-copy"><p class="key-fact-title">Reasoning and correction</p><ul class="key-fact-list"><li><strong>Corrected work:</strong> <span class="electron-config-inline">${formatElectronConfig(diag.corrected)}</span></li><li>${escapeHtml(diag.explanation)}</li></ul></div>`;
 }
 
 function initOrbitalChoiceChallenge() {
@@ -1521,7 +1612,7 @@ function nextOrbitalChoicePrompt() {
   orbState.selected = '';
   const prompt = orbitalChoicePrompts[orbState.index];
   document.getElementById('orbPrompt').innerHTML =
-    `<strong>${prompt.label}</strong>` +
+    `<strong>${formatElectronText(prompt.label)}</strong>` +
     `<p>Choose the orbital diagram that correctly places <strong>${prompt.electrons} electrons</strong> in the <strong>${prompt.sublevel}</strong> sublevel.</p>`;
   orbState.options = buildOrbitalChoiceOptions(prompt);
   renderOrbitalChoiceOptions();
@@ -1608,8 +1699,10 @@ function renderOrbitalChoiceOptions() {
     card.dataset.value = option.id;
     card.setAttribute('aria-pressed', 'false');
     card.innerHTML =
-      `<strong>${option.label}</strong>` +
-      `<span>${prompt.sublevel} orbital diagram</span>` +
+      `<div class="orb-choice-heading">` +
+        `<strong class="orb-choice-letter">${option.label}:</strong>` +
+        `<span class="orb-choice-title">${prompt.sublevel} orbital diagram</span>` +
+      `</div>` +
       renderOrbitalRowMarkup(prompt.sublevel, option.states);
     card.addEventListener('click', function () {
       orbState.selected = option.id;

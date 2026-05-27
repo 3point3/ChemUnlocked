@@ -253,6 +253,43 @@
   padding: 0.12em 0.18em 0;
 }
 
+.math-exp,
+.unit-exp {
+  display: inline-block;
+  font-size: 0.72em;
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.48em;
+}
+
+.math-sub {
+  display: inline-block;
+  font-size: 0.72em;
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.28em;
+}
+
+.page-unit sup,
+.page-unit sub {
+  display: inline-block;
+  font-size: 0.72em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.page-unit sup {
+  position: relative;
+  top: -0.48em;
+}
+
+.page-unit sub {
+  position: relative;
+  top: 0.28em;
+}
+
 .chem-frac sup {
   font-size: 0.72em;
 }
@@ -951,6 +988,7 @@ pre,
 
 .ice-table {
   margin-top: 0.9rem;
+  min-width: 480px;
 }
 
 .ice-table th,
@@ -1207,7 +1245,17 @@ pre,
 }
 
 .tool-scenario-prompt .tool-scenario-text strong {
+  display: block;
+  margin-bottom: 0.38rem;
   color: #0f172a;
+}
+
+.tool-scenario-prompt .tool-scenario-text .eq-display {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .tool-prompt > :last-child {
@@ -1246,6 +1294,11 @@ pre,
 
 .tool-action-row {
   margin-top: 0;
+}
+
+.tool-action-row .btn,
+.tool-action-row .segment-btn {
+  min-width: 0;
 }
 
 .btn-primary,
@@ -1444,6 +1497,19 @@ pre,
   margin-inline: auto;
 }
 
+.concept-panel-svg-mobile {
+  display: none;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap {
+  margin-top: 0.4rem;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap > svg {
+  min-width: 600px;
+  max-width: none;
+}
+
 .concept-panel-title {
   font-size: 0.85rem;
   font-weight: 700;
@@ -1461,6 +1527,20 @@ pre,
   .tool-grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .tool-action-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    align-items: stretch;
+  }
+
+  .tool-action-row .btn,
+  .tool-action-row .segment-btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1474,13 +1554,16 @@ pre,
   }
 
   .tool-action-row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .tool-actions .btn,
   .tool-action-row .btn,
   .tool-action-row .segment-btn {
+    flex: 1 1 100%;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .tool-primary-action,
@@ -1496,6 +1579,40 @@ pre,
   }
 }
 
+/* ── Scrollable chart/diagram wrapper (authored in HTML; JS adds hint pill) ── */
+.overflow-scroll-wrap,
+.chart-scroll-wrap {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  transition: box-shadow 0.2s ease;
+}
+.chart-scroll-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+.overflow-scroll-wrap.has-overflow,
+.chart-scroll-wrap.has-overflow {
+  box-shadow: inset -56px 0 30px -20px rgba(255, 255, 255, 0.96);
+}
+.chart-scroll-wrap > img,
+.chart-scroll-wrap > svg {
+  min-width: 960px;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+/* ── Responsive sub-chart SVGs (inline, section-specific diagrams) ── */
+.sub-chart {
+  width: 100%;
+  max-width: 460px;
+  height: auto;          /* preserves viewBox aspect ratio */
+  display: block;
+  margin: 1.25rem auto 0;
+  overflow: visible;     /* let drop-shadows breathe outside viewBox */
+}
+
 /* ===================== TABLES ===================== */
 /* ── Scrollable table wrapper (injected by chem.js) ── */
 .table-scroll-wrap {
@@ -1503,6 +1620,7 @@ pre,
   overflow-x: auto;
   margin-top: 1rem;
   border-radius: 4px;
+  -webkit-overflow-scrolling: touch;
   transition: box-shadow 0.2s ease;
 }
 
@@ -1523,11 +1641,20 @@ pre,
 /* Hint line below the table — only shown when overflow detected */
 .table-scroll-hint {
   display: none;
-  font-size: 0.75rem;
-  color: var(--dim, #888);
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff7bf, #ffe78a);
+  border: 1px solid rgba(176, 122, 0, 0.28);
+  box-shadow: 0 6px 16px rgba(176, 122, 0, 0.12);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #6f4d00;
   text-align: center;
-  margin: 0.3rem 0 0.6rem;
-  letter-spacing: 0.04em;
+  margin: 0.4rem auto 0.75rem;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -1634,6 +1761,79 @@ td {
   .u02-separation-table td:nth-child(3) {
     width: 30%;
   }
+
+  .mobile-stack-table,
+  .mobile-stack-table caption,
+  .mobile-stack-table tbody,
+  .mobile-stack-table tr,
+  .mobile-stack-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Reset any desktop column widths once a table switches to stacked cards. */
+  .mobile-stack-table th,
+  .mobile-stack-table td {
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .mobile-stack-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .mobile-stack-table {
+    border: 0;
+    background: transparent;
+  }
+
+  .mobile-stack-table tbody {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .mobile-stack-table tr {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .mobile-stack-table td {
+    position: relative;
+    min-height: 3rem;
+    padding: 0.72rem 0.85rem 0.72rem 7.3rem;
+    border-bottom: 1px solid rgba(217, 200, 180, 0.6);
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .mobile-stack-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-stack-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0.72rem;
+    left: 0.85rem;
+    width: 5.6rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 }
 
 /* ===================== FORMULA / STEPS ===================== */
@@ -1661,6 +1861,49 @@ td {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.45rem;
+}
+
+.chem-sub {
+  display: inline-block;
+  position: relative;
+  top: 0.3em;
+  font-size: 0.68em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.chem-charge {
+  display: inline-block;
+  position: relative;
+  top: -0.46em;
+  font-size: 0.66em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.ion-group,
+.chem-token {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.chem-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.28rem 0.45rem;
+}
+
+.chem-op {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--dim);
+}
+
+.chem-eq .formula-frac {
+  white-space: nowrap;
 }
 
 .formula-box strong {
@@ -2640,6 +2883,547 @@ td {
   background: #fff;
 }
 
+.unit-figure.unit-figure-svg-narrow svg {
+  display: block;
+  width: min(100%, 400px);
+  margin: 0 auto;
+}
+
+.page-12-learn-chemistry-gas .gas-law-panel {
+  margin-top: 1rem;
+}
+
+.page-12-learn-chemistry-gas .gas-law-conditions {
+  max-width: 38rem;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  text-align: center;
+}
+
+.page-12-learn-chemistry-gas .gas-law-conditions-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #c2410c;
+}
+
+.page-12-learn-chemistry-gas .gas-law-conditions p:last-child {
+  margin: 0;
+}
+
+.page-12-learn-chemistry-gas .gas-law-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-card,
+.page-12-learn-chemistry-gas .gas-law-connector-card {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 1rem;
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-kicker {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-card h3,
+.page-12-learn-chemistry-gas .gas-law-connector-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-card p,
+.page-12-learn-chemistry-gas .gas-law-connector-card p {
+  margin: 0.45rem 0 0;
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-card svg {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0.85rem auto 0;
+  overflow: visible;
+}
+
+.page-12-learn-chemistry-gas .gas-law-stage-note {
+  color: var(--muted);
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-card {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  text-align: center;
+  align-self: center;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-eq {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-eq .formula-frac {
+  font-size: 1em;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-eq .chem-sub {
+  top: 0.2em;
+  font-size: 0.62em;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-arrow {
+  margin: 0.55rem 0;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #4f46e5;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-chip,
+.page-12-learn-chemistry-gas .gas-law-kelvin-note {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.45rem auto 0;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.page-12-learn-chemistry-gas .gas-law-chip-down {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+}
+
+.page-12-learn-chemistry-gas .gas-law-chip-up {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #7c3aed;
+}
+
+.page-12-learn-chemistry-gas .gas-law-chip-temp {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+}
+
+.page-12-learn-chemistry-gas .gas-law-chip-moles {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #4338ca;
+}
+
+.page-12-learn-chemistry-gas .gas-law-chip-volume {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+}
+
+.page-12-learn-chemistry-gas .gas-law-kelvin-note {
+  border-radius: 14px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+
+.page-12-learn-chemistry-gas .gas-law-connector-note {
+  color: var(--muted);
+}
+
+.page-12-learn-chemistry-gas .gas-law-panel-caption {
+  margin: 0.8rem auto 0;
+  max-width: 62ch;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.page-12-learn-chemistry-gas .unit-figure.unit-figure-svg-gas-law svg {
+  display: block;
+  width: min(100%, 430px);
+  margin: 0 auto;
+}
+
+.page-12-learn-chemistry-gas .unit-figure.unit-figure-svg-gas-law figcaption {
+  max-width: 52ch;
+  margin: 0.7rem auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-solubility svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.page-13-learn-chemistry-solutions .solubility-scroll-wrap {
+  overflow-x: auto;
+}
+
+.page-13-learn-chemistry-solutions .solubility-scroll-wrap > svg {
+  width: 860px;
+  min-width: 860px;
+  max-width: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-solubility figcaption {
+  max-width: 58ch;
+  margin: 0.7rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molarity-reference svg {
+  display: block;
+  width: min(100%, 360px);
+  margin: 1rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molarity-reference figcaption {
+  max-width: 56ch;
+  margin: 0.7rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molality-reference svg {
+  display: block;
+  width: min(100%, 360px);
+  margin: 1rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molality-reference figcaption {
+  max-width: 58ch;
+  margin: 0.7rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .molality-two-col {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .molality-two-col-main,
+.page-13-learn-chemistry-solutions .molality-two-col-side {
+  min-width: 0;
+}
+
+.page-13-learn-chemistry-solutions .dilution-panel {
+  margin-top: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .dilution-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-card,
+.page-13-learn-chemistry-solutions .dilution-connector-card {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-kicker {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-card h3,
+.page-13-learn-chemistry-solutions .dilution-connector-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-card p,
+.page-13-learn-chemistry-solutions .dilution-connector-card p {
+  margin: 0.45rem 0 0;
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-card svg {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0.85rem auto 0;
+}
+
+.page-13-learn-chemistry-solutions .dilution-stage-note,
+.page-13-learn-chemistry-solutions .dilution-connector-note,
+.page-13-learn-chemistry-solutions .dilution-panel-caption {
+  color: var(--muted);
+}
+
+.page-13-learn-chemistry-solutions .dilution-connector-card {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  text-align: center;
+  align-self: center;
+}
+
+.page-13-learn-chemistry-solutions .dilution-connector-eq {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.page-13-learn-chemistry-solutions .dilution-connector-arrow {
+  margin: 0.55rem 0;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #4f46e5;
+}
+
+.page-13-learn-chemistry-solutions .dilution-connector-chip {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.45rem auto 0;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.page-13-learn-chemistry-solutions .dilution-chip-solvent {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #4338ca;
+}
+
+.page-13-learn-chemistry-solutions .dilution-chip-volume {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+}
+
+.page-13-learn-chemistry-solutions .dilution-chip-molarity {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+}
+
+.page-13-learn-chemistry-solutions .dilution-panel-caption {
+  margin: 0.8rem auto 0;
+  max-width: 62ch;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.page-13-learn-chemistry-solutions .molarity-two-col {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .molarity-two-col-main,
+.page-13-learn-chemistry-solutions .molarity-two-col-side {
+  min-width: 0;
+}
+
+.page-13-learn-chemistry-solutions .molality-card-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .molality-card {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .molality-card--formula .formula-box {
+  margin-top: 0;
+}
+
+.page-13-learn-chemistry-solutions .molality-support-note {
+  margin: 1rem 0 0;
+}
+
+.page-13-learn-chemistry-solutions .key-fact--molality-difference {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #fff7ed, rgba(251, 146, 60, 0.08));
+  border-color: #fed7aa;
+}
+
+.page-13-learn-chemistry-solutions .key-fact--molality-difference .icon {
+  color: #ea580c;
+}
+
+.page-13-learn-chemistry-solutions .key-fact--molality-difference .key-fact-title {
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.86rem;
+}
+
+@media (min-width: 980px) {
+  .page-13-learn-chemistry-solutions .molarity-two-col {
+    grid-template-columns: minmax(0, 1fr) 380px;
+    align-items: start;
+    column-gap: 1.4rem;
+  }
+
+  .page-13-learn-chemistry-solutions .molarity-two-col-main + .molarity-two-col-main {
+    grid-column: 1;
+  }
+
+  .page-13-learn-chemistry-solutions .molarity-two-col-side {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molarity-reference {
+    margin-top: 0;
+  }
+
+  .page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molarity-reference svg {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 0;
+  }
+
+  .page-13-learn-chemistry-solutions .dilution-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molality-reference {
+    margin-top: 0.15rem;
+  }
+
+  .page-13-learn-chemistry-solutions .unit-figure.unit-figure-svg-molality-reference svg {
+    width: 100%;
+    max-width: 520px;
+    margin-top: 0;
+  }
+
+  .page-13-learn-chemistry-solutions .molality-card-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    max-width: 980px;
+    margin-inline: auto;
+  }
+
+  .page-13-learn-chemistry-solutions .molality-card {
+    height: 100%;
+  }
+
+  .page-13-learn-chemistry-solutions .key-fact--molality-difference {
+    max-width: 980px;
+    margin-inline: auto;
+    margin-top: 1rem;
+  }
+}
+
+.page-13-learn-chemistry-solutions svg.solubility-figure-desktop {
+  display: block !important;
+  width: 860px;
+}
+
+.page-12-learn-chemistry-gas .gas-law-panel--charles .gas-law-stage-card svg {
+  margin-top: 1.2rem;
+}
+
+@media (min-width: 980px) {
+  .page-12-learn-chemistry-gas .gas-law-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px) minmax(0, 1fr);
+    align-items: stretch;
+  }
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual {
+  display: block;
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-copy {
+  min-width: 0;
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-figure {
+  margin: 0;
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-note {
+  min-width: 0;
+  color: var(--muted);
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-note p {
+  margin: 0;
+  max-width: 32ch;
+  line-height: 1.65;
+}
+
+.page-11-learn-chemistry-energy-thermochemistry .phase-change-flow-wrap > svg.phase-change-flow-svg {
+  min-width: 840px;
+}
+
+@media (min-width: 980px) {
+  .page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-grid {
+    grid-template-columns: minmax(240px, 300px) minmax(300px, 400px) minmax(220px, 260px);
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.2rem;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-copy .formula-rule-list {
+    max-width: 17rem;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-figure {
+    justify-self: center;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-figure svg {
+    width: 100%;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .formula-box-visual-note {
+    justify-self: start;
+  }
+}
+
 .unit-figure figcaption {
   margin-top: 0.65rem;
   text-align: center;
@@ -2926,6 +3710,13 @@ td {
 }
 
 .lesson-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.lesson-figure svg {
   width: 100%;
   height: auto;
   display: block;
@@ -3887,6 +4678,21 @@ td {
   margin-top: 1.25rem;
 }
 
+.example-figure-wide {
+  max-width: 560px;
+  flex: 1 1 560px;
+}
+
+.example-figure-wide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.example-figure-wide .eq-caption {
+  max-width: 34rem;
+}
+
 .cyl-tip {
   padding: 0.75rem;
   background: #fff;
@@ -4389,6 +5195,56 @@ td {
   color: var(--text);
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-01-learn-intro-to-chemistry-and-lab-safety .equipment-row {
+    justify-content: center;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .equip-box {
+    flex: 1 1 100%;
+    max-width: 19rem;
+  }
+
+  .example-figure-wide {
+    max-width: 100%;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.8rem 0.85rem 0.85rem;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.28rem;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .safety-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .formula-box {
+    padding: 0.95rem 0.95rem 1rem;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .unit01-formula-scroll {
+    overflow-x: auto;
+    margin-top: 0.35rem;
+    border-radius: 12px;
+  }
+
+  .page-01-learn-intro-to-chemistry-and-lab-safety .unit01-formula-scroll > .formula-box,
+  .page-01-learn-intro-to-chemistry-and-lab-safety .unit01-formula-scroll > .formula-rule {
+    min-width: max-content;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
 }
 
 /* ===================== INDEX PAGE — HERO ===================== */
@@ -4972,43 +5828,27 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
 .starfield::after {
   content: "";
   position: absolute;
-  aspect-ratio: 960 / 260;
-  background: url("images/nitrate_resonance.svg") center / contain no-repeat;
   pointer-events: none;
 }
 
 .starfield::before {
-  top: 8rem;
-  right: -4rem;
-  width: min(820px, 82vw);
-  opacity: 0.04;
-  transform: rotate(-4deg);
+  display: none;
 }
 
 .starfield::after {
-  left: -8rem;
-  bottom: 7rem;
-  width: min(620px, 72vw);
-  opacity: 0.03;
-  transform: rotate(7deg);
+  display: none;
 }
 
 .page-unit .starfield {
-  opacity: 0.62;
+  opacity: 1;
 }
 
 .page-unit .starfield::before {
-  top: 9rem;
-  right: -6rem;
-  width: min(760px, 76vw);
-  opacity: 0.08;
+  display: none;
 }
 
 .page-unit .starfield::after {
-  left: -10rem;
-  bottom: 8rem;
-  width: min(560px, 62vw);
-  opacity: 0.04;
+  display: none;
 }
 
 .unit-label,
@@ -6210,6 +7050,15 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   border-radius: 999px;
   flex-shrink: 0;
 }
+@media (max-width: 560px) {
+  .game-card-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .game-tag {
+    margin-left: 0;
+  }
+}
 .game-steps {
   counter-reset: game-step;
   list-style: none;
@@ -7176,6 +8025,19 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   .stat-num        { font-size: 1.75rem; }
   .access-summary  { flex-direction: column; }
   .bottom-cta      { flex-direction: column; align-items: flex-start; }
+  .practice-card-top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .practice-problem-count,
+  .practice-card-setsizes,
+  .meta-pill {
+    white-space: normal;
+  }
+  .meta-pill {
+    line-height: 1.25;
+    text-align: center;
+  }
 }
 .home-brand {
   margin-bottom: 1.25rem;
@@ -7195,6 +8057,47 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   flex-wrap: wrap;
   margin: 0.5rem 0;
 }
+.electron-config-inline,
+.electron-config-line {
+  align-items: baseline;
+  gap: 0.14rem 0.36rem;
+  max-width: 100%;
+}
+
+.electron-config-inline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: baseline;
+}
+
+.electron-config-line {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-04-learn-electron-configuration .ec-count {
+  display: inline-block;
+  position: relative;
+  top: -0.46em;
+  font-size: 0.66em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.page-04-learn-electron-configuration .electron-config-inline .chem-token,
+.page-04-learn-electron-configuration .electron-config-line .chem-token {
+  font-weight: 650;
+}
+
+.page-04-learn-electron-configuration .formula-box .electron-config-line {
+  line-height: 1.5;
+}
+
+.page-04-learn-electron-configuration .mobile-stack-table td[data-label="Configuration shown"],
+.page-04-learn-electron-configuration .mobile-stack-table td[data-label="Noble-gas shorthand"] {
+  overflow-wrap: anywhere;
+}
+
 .page-04-learn-electron-configuration .orb-box {
   width: 38px;
   height: 38px;
@@ -7210,6 +8113,25 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .page-04-learn-electron-configuration .orb-box.full { border-color: #93c5fd; background: #eff6ff; }
 .page-04-learn-electron-configuration .orb-box.up-only { border-color: #a7f3d0; background: #ecfdf5; }
 .page-04-learn-electron-configuration .orb-box.empty { border-color: var(--border); background: #f8fafc; }
+.page-04-learn-electron-configuration .orb-choice-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.page-04-learn-electron-configuration .orb-choice-letter {
+  font-size: 0.94rem;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+}
+
+.page-04-learn-electron-configuration .orb-choice-title {
+  font-weight: 650;
+  color: var(--ink);
+}
+
 .arrow-up-el { color: #1d4ed8; font-size: 1rem; line-height: 1; }
 .arrow-down-el { color: #0f766e; font-size: 1rem; line-height: 1; }
 .sublevel-name {
@@ -7290,6 +8212,8 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   line-height: 1.2;
   font-weight: 700;
   color: #fff;
+  white-space: normal;
+  word-break: normal;
 }
 
 .em-segment.gamma { background: #581c87; }
@@ -7308,10 +8232,32 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 0.45rem;
 }
 
+.em-spectrum-scale span {
+  white-space: nowrap;
+}
+
 .em-spectrum-note {
   margin: 0.7rem 0 0;
   font-size: 0.92rem;
   color: #355b56;
+}
+
+.spectrum-scroll-hint {
+  display: none;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.55rem 0 0 auto;
+  padding: 0.24rem 0.68rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff7bf, #ffe78a);
+  border: 1px solid rgba(176, 122, 0, 0.28);
+  box-shadow: 0 6px 16px rgba(176, 122, 0, 0.12);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #6f4d00;
+  text-align: right;
+  line-height: 1.2;
 }
 
 .visible-spectrum-detail {
@@ -7360,6 +8306,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   font-size: 0.76rem;
   line-height: 1.2;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .visible-color.violet { background: #6d28d9; color: #f5f3ff; }
@@ -7374,8 +8321,42 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 @media (max-width: 760px) {
+  .page-04-learn-electron-configuration .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.78rem 0.85rem 0.8rem;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    min-width: 0;
+    margin-bottom: 0.32rem;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Configuration shown"],
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Noble-gas shorthand"],
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="First appears at"] {
+    padding-top: 0.78rem;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Configuration shown"] .electron-config-inline,
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Noble-gas shorthand"] .electron-config-inline,
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="First appears at"] .electron-config-inline {
+    row-gap: 0.2rem;
+  }
+
+  .page-04-learn-electron-configuration .orbital-row {
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .page-04-learn-electron-configuration .orbital-detail,
+  .page-04-learn-electron-configuration .orbital-label {
+    flex-basis: 100%;
+  }
+
   .em-spectrum-topline,
-  .em-spectrum-scale,
   .visible-spectrum-direction,
   .visible-spectrum-head {
     flex-direction: column;
@@ -7383,19 +8364,69 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     gap: 0.25rem;
   }
 
+  .em-spectrum-scale {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+    align-items: end;
+    gap: 0.45rem;
+    font-size: 0.72rem;
+  }
+
   .em-spectrum-band {
     grid-template-columns: repeat(7, minmax(70px, 1fr));
     overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .visible-spectrum-bar {
     grid-template-columns: repeat(6, minmax(92px, 1fr));
     overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .spectrum-scroll-hint {
+    display: block;
   }
 
   .em-segment,
   .visible-color {
     min-height: 84px;
+  }
+}
+
+ .page-04-learn-electron-configuration .unit-figure img[src*="iron_aufbau_v2.svg"] {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 520px) {
+  .page-04-learn-electron-configuration .unit-figure img[src*="iron_aufbau_v2.svg"] {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td {
+    padding: 0.74rem 0.82rem 0.78rem;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td::before {
+    margin-bottom: 0.28rem;
+  }
+
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Configuration shown"],
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="Noble-gas shorthand"],
+  .page-04-learn-electron-configuration .mobile-stack-table td[data-label="First appears at"] {
+    padding-top: 0.78rem;
+  }
+
+  .page-04-learn-electron-configuration .orb-choice-heading {
+    gap: 0.22rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -7714,6 +8745,74 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   color: var(--text);
 }
 
+.page-05-learn-periodic-table-and-trends .chem-sub {
+  display: inline-block;
+  position: relative;
+  top: 0.3em;
+  font-size: 0.68em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.page-05-learn-periodic-table-and-trends .chem-charge {
+  display: inline-block;
+  position: relative;
+  top: -0.46em;
+  font-size: 0.66em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.page-05-learn-periodic-table-and-trends .ion-group,
+.page-05-learn-periodic-table-and-trends .chem-token {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.page-05-learn-periodic-table-and-trends .ec-count {
+  display: inline-block;
+  position: relative;
+  top: -0.46em;
+  font-size: 0.66em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.page-05-learn-periodic-table-and-trends .chem-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.28rem 0.45rem;
+}
+
+.page-05-learn-periodic-table-and-trends .chem-op {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--dim);
+}
+
+.page-05-learn-periodic-table-and-trends .chem-compare-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.32rem;
+  row-gap: 0.18rem;
+}
+
+.page-05-learn-periodic-table-and-trends .lewis-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+}
+
+.page-05-learn-periodic-table-and-trends .lewis-dot svg {
+  display: block;
+  overflow: visible;
+}
+
 /* Periodic table mini-grid for the tool */
 .pt-tool-grid {
   display: grid;
@@ -7930,6 +9029,104 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 1.5rem;
 }
 
+@media (max-width: 640px) {
+  .page-05-learn-periodic-table-and-trends .stack-table,
+  .page-05-learn-periodic-table-and-trends .stack-table caption,
+  .page-05-learn-periodic-table-and-trends .stack-table tbody,
+  .page-05-learn-periodic-table-and-trends .stack-table tr,
+  .page-05-learn-periodic-table-and-trends .stack-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table {
+    border: 0;
+    background: transparent;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table tbody {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table tr {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table td {
+    border-bottom: 1px solid rgba(217, 200, 180, 0.6);
+    padding: 0.72rem 0.85rem 0.78rem;
+    min-height: 0;
+    white-space: normal;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table td::before {
+    content: attr(data-label);
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.32rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table td[data-label="Dot structure dots"] {
+    padding-left: 0.85rem;
+  }
+
+  .page-05-learn-periodic-table-and-trends .stack-table .lewis-dot {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .page-05-learn-periodic-table-and-trends .tool-choice-row {
+    gap: 0.55rem;
+  }
+
+  .page-05-learn-periodic-table-and-trends .tool-choice-row .segment-btn {
+    flex: 1 1 10rem;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .page-05-learn-periodic-table-and-trends .tool-action-row .segment-btn {
+    flex: 1 1 8.6rem;
+  }
+
+  .page-05-learn-periodic-table-and-trends .tool-scenario-prompt .tool-scenario-text .chem-compare-badge {
+    display: flex;
+    width: 100%;
+    margin-top: 0.12rem;
+  }
+
+  .page-05-learn-periodic-table-and-trends .practice-banner-features span,
+  .page-05-learn-periodic-table-and-trends .pt-legend-item {
+    white-space: normal;
+  }
+}
+
 /* ── 06_Learn_Chemistry_Nomenclature.html ── */
 /* Nomenclature tool styles */
 .naming-tool-grid {
@@ -8054,6 +9251,68 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     padding: 0.56rem 0.58rem;
     font-size: 0.88rem;
   }
+}
+
+@media (max-width: 720px) {
+  .page-06-learn-chemistry-nomenclature .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.72rem 0.85rem;
+  }
+
+  .page-06-learn-chemistry-nomenclature .unit06-subchart-scroll {
+    margin-top: 1.25rem;
+  }
+
+  .page-06-learn-chemistry-nomenclature .unit06-subchart-scroll > .sub-chart {
+    width: 420px;
+    min-width: 420px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .page-06-learn-chemistry-nomenclature .unit06-scroll-hint {
+    display: block;
+    margin-top: 0.45rem;
+  }
+
+  .page-06-learn-chemistry-nomenclature .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.38rem;
+  }
+
+  .page-06-learn-chemistry-nomenclature .polyatomic-ion-table tr {
+    grid-template-columns: 1fr;
+  }
+
+  .page-06-learn-chemistry-nomenclature .polyatomic-ion-table td {
+    display: block;
+    border-right: 0;
+    border-bottom: 1px solid rgba(217, 200, 180, 0.72);
+    padding: 0.68rem 0.75rem;
+  }
+
+  .page-06-learn-chemistry-nomenclature .polyatomic-ion-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.32rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .page-06-learn-chemistry-nomenclature .polyatomic-ion-table td:last-child {
+    border-bottom: 0;
+    justify-content: flex-start;
+  }
+}
+
+.page-06-learn-chemistry-nomenclature .unit06-scroll-hint {
+  display: none;
 }
 
 .mt-075 { margin-top: 0.75rem; }
@@ -8324,11 +9583,23 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: 0.9rem;
+}
+.mole-wheel-visual-tile,
+.mole-wheel-control-tile {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.mole-wheel-visual-tile {
+  padding: 0.8rem 0.9rem 0.95rem;
 }
 .mole-wheel-svg {
   width: 100%;
-  max-width: 340px;
+  max-width: none;
   overflow: visible;
 }
 .mole-wheel-node {
@@ -8336,13 +9607,9 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 .mole-wheel-panel {
   width: 100%;
-  max-width: 500px;
   min-height: 120px;
-  margin-top: 0.5rem;
   padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  max-width: 560px;
 }
 .mole-wheel-title {
   margin-bottom: 0.5rem;
@@ -8381,6 +9648,89 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-bottom: 6px;
   font-size: 0.78rem;
   color: var(--dim);
+}
+/* mole wheel v2 — FROM/TO picker */
+.mw73-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.mw73-picker-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 3.5rem;
+  flex-shrink: 0;
+}
+.mw73-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.mw73-chip {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.mw73-route-header {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.2rem;
+}
+.mw73-route-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.mw73-step-box {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.mw73-step-num {
+  font-size: 0.74rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.mw73-step-formula {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 2;
+  margin-bottom: 2px;
+}
+.mw73-step-tip {
+  font-size: 0.73rem;
+  color: var(--dim);
+  margin-top: 2px;
+}
+.mw73-fbox {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 2px;
+  font-size: 0.8em;
+}
+.mw73-fn {
+  border-bottom: 1px solid currentColor;
+  padding: 0 3px 1px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.mw73-fd {
+  padding: 1px 3px 0;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 .composition-result-start {
   color: var(--text);
@@ -8434,6 +9784,19 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     font-size: 0.82rem;
     padding: 0.58rem 0.55rem;
   }
+  .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td {
+    min-height: 0;
+    padding: 1.8rem 0.8rem 0.72rem;
+  }
+  .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td::before {
+    top: 0.48rem;
+    left: 0.8rem;
+    width: auto;
+  }
+  .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td[data-label="Calculation"],
+  .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td[data-label="What to Use"] {
+    line-height: 1.45;
+  }
 }
 @media (max-width: 760px) {
   .particle-summary-grid,
@@ -8457,6 +9820,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   padding: 0.22rem 0.6rem;
   border-radius: 999px;
   margin-right: 0.35rem;
+  white-space: nowrap;
 }
 .badge-precip  { background: #fef3c7; color: #92400e; }
 .badge-acid    { background: #ecfdf5; color: #065f46; }
@@ -8708,6 +10072,23 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
 .page-02-learn-chemistry-matter .u02-svg-block {
   display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.page-02-learn-chemistry-matter .u02-properties-compare-mobile {
+  display: none;
+}
+
+.page-02-learn-chemistry-matter .u02-svg-sub {
+  font-size: 0.66em;
+  baseline-shift: sub;
+}
+
+.page-02-learn-chemistry-matter .u02-svg-charge {
+  font-size: 0.66em;
+  baseline-shift: super;
 }
 
 .page-02-learn-chemistry-matter .u02-mt-12 {
@@ -8728,6 +10109,108 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   color: #475569;
 }
 
+.page-02-learn-chemistry-matter .u02-svg-scroll {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .page-02-learn-chemistry-matter .u02-properties-compare-desktop {
+    display: none;
+  }
+
+  .page-02-learn-chemistry-matter .u02-properties-compare-mobile {
+    display: block;
+  }
+
+  .page-02-learn-chemistry-matter .formula-box {
+    padding: 0.95rem 0.9rem;
+  }
+
+  .page-02-learn-chemistry-matter .formula-rule {
+    line-height: 1.78;
+  }
+
+  .page-02-learn-chemistry-matter .formula-rule-note {
+    line-height: 1.95;
+  }
+
+  .page-02-learn-chemistry-matter .u02-svg-block {
+    margin-inline: auto;
+  }
+
+  .page-02-learn-chemistry-matter .u02-svg-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0.2rem 0.35rem;
+    margin: 0.75rem -0.2rem 0;
+  }
+
+  .page-02-learn-chemistry-matter .u02-svg-scroll .u02-svg-block {
+    width: auto;
+    max-width: none;
+  }
+
+  .page-02-learn-chemistry-matter .u02-flowchart-svg {
+    min-width: 760px;
+  }
+
+  .page-02-learn-chemistry-matter .u02-annotated-formula-svg,
+  .page-02-learn-chemistry-matter .u02-mixture-compare-svg,
+  .page-02-learn-chemistry-matter .u02-change-compare-svg {
+    min-width: 560px;
+  }
+
+  .page-02-learn-chemistry-matter .mobile-stack-table tbody {
+    gap: 0.9rem;
+  }
+
+  .page-02-learn-chemistry-matter .mobile-stack-table td {
+    min-height: auto;
+    padding: 0.82rem 0.9rem 0.88rem;
+  }
+
+  .page-02-learn-chemistry-matter .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.32rem;
+    white-space: normal;
+  }
+
+  .page-02-learn-chemistry-matter .practice-banner-features span,
+  .page-02-learn-chemistry-matter .cu-quiz-chip,
+  .page-02-learn-chemistry-matter .segment-btn {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-02-learn-chemistry-matter .card,
+  .page-02-learn-chemistry-matter .tool-section {
+    padding: 1.15rem 0.95rem;
+  }
+
+  .page-02-learn-chemistry-matter .step {
+    gap: 0.7rem;
+  }
+
+  .page-02-learn-chemistry-matter .mobile-stack-table td {
+    padding: 0.8rem 0.82rem 0.84rem;
+  }
+
+  .page-02-learn-chemistry-matter .practice-banner-features {
+    gap: 0.55rem;
+  }
+
+  .page-02-learn-chemistry-matter .practice-banner-features span {
+    width: 100%;
+  }
+
+  .page-02-learn-chemistry-matter #tools .tool-action-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .page-03-learn-atomic-structure .tool1-prompt-min {
   min-height: 5.25rem;
 }
@@ -8746,6 +10229,47 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 0.5rem;
 }
 
+@media (max-width: 640px) {
+  .page-03-learn-atomic-structure .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.72rem 0.85rem;
+  }
+
+  .page-03-learn-atomic-structure .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin: 0 0 0.32rem;
+  }
+
+  .page-03-learn-atomic-structure .gold-foil-figure {
+    padding: 1.15rem 1rem;
+  }
+
+  .page-03-learn-atomic-structure .gold-foil-figure img {
+    width: calc(100% - 0.5rem);
+    margin: 0 auto;
+  }
+
+  .page-03-learn-atomic-structure .gold-foil-scroll-wrap {
+    overflow-x: auto;
+    margin: 0.2rem -0.2rem 0.4rem;
+    padding: 0 0.2rem 0.35rem;
+  }
+
+  .page-03-learn-atomic-structure .gold-foil-scroll-wrap > .gold-foil-diagram {
+    width: auto;
+    max-width: none;
+    min-width: 960px;
+    margin: 0;
+  }
+
+  .page-03-learn-atomic-structure .tool3-formula-select,
+  .page-03-learn-atomic-structure .tool2-scenario-control {
+    max-width: 100%;
+  }
+}
+
 .page-09-learn-chemistry-stoichiometry .sto-mt-08 {
   margin-top: 0.8rem;
 }
@@ -8762,6 +10286,101 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 0.7rem;
 }
 
+.page-09-learn-chemistry-stoichiometry .stoich-particle-svg-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mini-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .vocab-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .vocab-term {
+    white-space: normal;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .road-map {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .road-step {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .road-arrow {
+    align-self: center;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .effect-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .tool-choice-row {
+    gap: 0.65rem;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .tool-choice-row .segment-btn {
+    flex-basis: 100%;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .tool-action-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .ratio-choice-fraction {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .stoich-particle-svg-desktop {
+    display: none;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .stoich-particle-svg-mobile {
+    display: block;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .stoich-particle-figure {
+    padding: 0.8rem;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .ratio-choice-num,
+  .page-09-learn-chemistry-stoichiometry .ratio-choice-den,
+  .page-09-learn-chemistry-stoichiometry .inline-frac-num,
+  .page-09-learn-chemistry-stoichiometry .inline-frac-den,
+  .page-09-learn-chemistry-stoichiometry .fl-chain,
+  .page-09-learn-chemistry-stoichiometry .fl-cancel {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-09-learn-chemistry-stoichiometry .inline-frac {
+    min-width: 0;
+    width: 100%;
+    margin: 0.1rem 0;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .formula-box {
+    padding: 0.95rem 0.9rem;
+  }
+
+  .page-09-learn-chemistry-stoichiometry .card,
+  .page-09-learn-chemistry-stoichiometry .tool-section {
+    padding: 1.15rem 0.95rem;
+  }
+}
+
 .page-14-learn-chemistry-equilibrium #beam-group {
   transform-origin: 320px 248px;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -8769,6 +10388,70 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
 .page-14-learn-chemistry-equilibrium #shift-arrow {
   transition: opacity 0.4s;
+}
+
+@media (max-width: 700px) {
+  .page-14-learn-chemistry-equilibrium .mobile-stack-table tbody {
+    gap: 0.82rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.74rem 0.95rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin: 0 0 0.34rem;
+    white-space: normal;
+  }
+
+  .page-14-learn-chemistry-equilibrium .ice-table.mobile-stack-table td[data-label="CO(g)"],
+  .page-14-learn-chemistry-equilibrium .ice-table.mobile-stack-table td[data-label="H2O(g)"],
+  .page-14-learn-chemistry-equilibrium .ice-table.mobile-stack-table td[data-label="CO2(g)"],
+  .page-14-learn-chemistry-equilibrium .ice-table.mobile-stack-table td[data-label="H2(g)"],
+  .page-14-learn-chemistry-equilibrium .mobile-stack-table td[data-label="System response"],
+  .page-14-learn-chemistry-equilibrium .mobile-stack-table td[data-label="Effect on K"] {
+    padding-top: 0.82rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .formula-box.tool-context-box {
+    padding: 0.95rem 0.9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-15-learn-chemistry-acid-base .mobile-stack-table tbody {
+    gap: 0.82rem;
+  }
+
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.74rem 0.95rem;
+  }
+
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin: 0 0 0.34rem;
+    white-space: normal;
+  }
+
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="Relative strength"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="pH at Equivalence Point"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="Why"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[CH3COOH]"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[H3O+]"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[CH3COO-]"] {
+    padding-top: 0.82rem;
+  }
+
+  .page-15-learn-chemistry-acid-base .formula-box.tool-context-box {
+    padding: 0.95rem 0.9rem;
+  }
 }
 
 .strategy-guides-label {
@@ -8891,12 +10574,77 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-inline: auto;
 }
 
+.page-10-learn-chemistry-bonding .diagram-grid-2--dipoles {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.15rem;
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+  align-items: stretch;
+}
+
+.page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 1.1rem 1rem 1.15rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card-title {
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card svg {
+  width: min(100%, 280px);
+}
+
+.page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card-note {
+  max-width: 30ch;
+}
+
 .page-10-learn-chemistry-bonding .hb-water-svg {
   max-width: 460px;
 }
 
 .page-10-learn-chemistry-bonding .center-note.center-note-narrow {
   max-width: 34rem;
+}
+
+@media (max-width: 640px) {
+  .page-10-learn-chemistry-bonding .mobile-stack-table tbody {
+    gap: 0.9rem;
+  }
+
+  .page-10-learn-chemistry-bonding .mobile-stack-table td {
+    min-height: 0;
+    padding: 0.82rem 0.9rem 0.88rem;
+  }
+
+  .page-10-learn-chemistry-bonding .mobile-stack-table td::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.32rem;
+    white-space: normal;
+  }
+
+  .page-10-learn-chemistry-bonding .mobile-stack-table td[data-label="Bonds"],
+  .page-10-learn-chemistry-bonding .mobile-stack-table td[data-label="Dipoles cancel?"],
+  .page-10-learn-chemistry-bonding .mobile-stack-table td[data-label="Key requirement"],
+  .page-10-learn-chemistry-bonding .mobile-stack-table td[data-label="Example molecules"] {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-10-learn-chemistry-bonding .mobile-stack-table td {
+    padding: 0.8rem 0.82rem 0.84rem;
+  }
 }
 
 .page-13-learn-chemistry-solutions .sol-mt-075 {
@@ -8916,20 +10664,102 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   line-height: 1.9;
 }
 
+.page-13-learn-chemistry-solutions .sol-precip-equation {
+  margin: 0.9rem 0 1rem;
+}
+
+.page-13-learn-chemistry-solutions .particle-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.page-13-learn-chemistry-solutions .particle-grid--svg {
+  gap: 0.75rem;
+}
+
+.page-13-learn-chemistry-solutions .particle-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 1rem;
+  height: 100%;
+}
+
+.page-13-learn-chemistry-solutions .particle-box--svg {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0 0.15rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-13-learn-chemistry-solutions .particle-svg-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.page-13-learn-chemistry-solutions .particle-svg-wrap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-13-learn-chemistry-solutions .particle-box .particle-card-svg {
+  max-width: unset;
+  margin: 0;
+}
+
+.page-13-learn-chemistry-solutions .particle-box canvas {
+  display: block;
+  width: 100%;
+  max-width: 236px;
+  height: auto;
+  margin: 0 auto;
+  image-rendering: auto;
+}
+
+.page-13-learn-chemistry-solutions .particle-box strong {
+  font-size: 0.92rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.page-13-learn-chemistry-solutions .particle-box p {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .page-13-learn-chemistry-solutions .legend-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem 0.9rem;
+  gap: 0.5rem 0.9rem;
   align-items: center;
+  justify-content: center;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .page-13-learn-chemistry-solutions .legend-title {
-  color: var(--text);
+  color: var(--muted);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  width: 100%;
-  margin-bottom: 0.1rem;
+  width: auto;
+  margin-bottom: 0;
 }
 
 .page-13-learn-chemistry-solutions .legend-dot {
@@ -8942,13 +10772,626 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 .page-13-learn-chemistry-solutions .legend-dot.legend-na { background: #3b82f6; }
-.page-13-learn-chemistry-solutions .legend-dot.legend-cl { background: #ef4444; }
+.page-13-learn-chemistry-solutions .legend-dot.legend-water {
+  background: #dbeafe;
+  border: 1.5px solid #93c5fd;
+}
+.page-13-learn-chemistry-solutions .legend-dot.legend-cl { background: #C0DD97; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-glucose { background: #10b981; }
-.page-13-learn-chemistry-solutions .legend-dot.legend-ag { background: #8b5cf6; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-no3 { background: #f97316; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-agcl {
-  background: #d1d5db;
-  border: 1.5px solid #6b7280;
+  background: #888780;
+  border: 1.5px solid #444441;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  .page-13-learn-chemistry-solutions .mobile-stack-table tbody {
+    gap: 0.8rem;
+  }
+
+  .page-13-learn-chemistry-solutions .mobile-stack-table td {
+    padding-left: 1rem;
+    padding-top: 2.15rem;
+    min-height: 0;
+  }
+
+  .page-13-learn-chemistry-solutions .mobile-stack-table td::before {
+    left: 1rem;
+    top: 0.76rem;
+    width: auto;
+    max-width: none;
+    white-space: normal;
+  }
+
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Definition"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Example"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Formula"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Units"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Use"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Molarity (M)"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Molality (m)"],
+  .page-13-learn-chemistry-solutions .mobile-stack-table td[data-label="Relative effect size"] {
+    padding-top: 2.5rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .page-13-learn-chemistry-solutions .particle-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.page-08-learn-chemical-reactions .equation-visual {
+  margin: 1rem 0 1.1rem;
+  padding: 1rem;
+  border: 1px solid rgba(147, 197, 253, 0.9);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+}
+
+.page-08-learn-chemical-reactions .equation-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-08-learn-chemical-reactions .equation-visual figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.page-08-learn-chemical-reactions .haber-balance-figure {
+  margin-top: 1.1rem;
+}
+
+.page-08-learn-chemical-reactions .haber-balance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-08-learn-chemical-reactions .haber-step-card {
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96)),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 34%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.page-08-learn-chemical-reactions .haber-step-card h3 {
+  margin: 0.2rem 0 0.75rem;
+  font-size: 1.08rem;
+}
+
+.page-08-learn-chemical-reactions .haber-step-card-final {
+  background:
+    linear-gradient(180deg, rgba(240, 253, 244, 0.98), rgba(248, 250, 252, 0.96)),
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 38%);
+}
+
+.page-08-learn-chemical-reactions .haber-step-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-08-learn-chemical-reactions .haber-equation {
+  margin: 0.4rem 0 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  background: #fff;
+  text-align: center;
+  color: #0f172a;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.page-08-learn-chemical-reactions .haber-equation span {
+  position: relative;
+  top: 0.34em;
+  font-size: 0.56em;
+}
+
+.page-08-learn-chemical-reactions .haber-equation strong {
+  color: #2563eb;
+}
+
+.page-08-learn-chemical-reactions .haber-equation-unbalanced {
+  box-shadow: inset 0 0 0 2px rgba(248, 113, 113, 0.18);
+}
+
+.page-08-learn-chemical-reactions .haber-equation-progress {
+  box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.page-08-learn-chemical-reactions .haber-equation-balanced {
+  box-shadow: inset 0 0 0 2px rgba(34, 197, 94, 0.18);
+}
+
+.page-08-learn-chemical-reactions .haber-step-copy {
+  margin: 0;
+  color: var(--dim);
+  line-height: 1.65;
+}
+
+.page-08-learn-chemical-reactions .haber-mini-note {
+  margin-top: 0.5rem;
+  color: #475569;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.page-08-learn-chemical-reactions .haber-count-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.page-08-learn-chemical-reactions .haber-count-col {
+  padding: 0.9rem 0.8rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.page-08-learn-chemical-reactions .haber-count-title,
+.page-08-learn-chemical-reactions .haber-adjust-title {
+  margin: 0 0 0.65rem;
+  color: #0f172a;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.page-08-learn-chemical-reactions .haber-count-arrow {
+  color: #dc2626;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.page-08-learn-chemical-reactions .haber-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  font-weight: 800;
+  margin: 0.18rem 0.35rem 0.18rem 0;
+}
+
+.page-08-learn-chemical-reactions .haber-chip-n {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.page-08-learn-chemical-reactions .haber-chip-h {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.page-08-learn-chemical-reactions .haber-adjust-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.85rem;
+}
+
+.page-08-learn-chemical-reactions .haber-adjust-box {
+  padding: 0.85rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.page-08-learn-chemical-reactions .haber-adjust-box p:last-child,
+.page-08-learn-chemical-reactions .haber-check-row {
+  margin-bottom: 0;
+}
+
+.page-08-learn-chemical-reactions .haber-check-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.85rem;
+}
+
+.page-08-learn-chemical-reactions .dr-figure {
+  margin-top: 1.05rem;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-intro {
+  margin: 1rem 0 0.2rem;
+  color: var(--dim);
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-card {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-scroll {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-scroll img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text .eq-display {
+  white-space: normal;
+  overflow: visible;
+}
+
+.page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text .eq-display .chem-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.55rem;
+}
+
+.page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text .eq-display .chem-op {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-card-guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.99)),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 34%);
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-card-guide h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.08rem;
+}
+
+.page-08-learn-chemical-reactions .reaction-guide-kicker {
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-08-learn-chemical-reactions .reaction-guide-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.page-08-learn-chemical-reactions .reaction-guide-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.page-08-learn-chemical-reactions .reaction-guide-row strong {
+  color: #0f172a;
+  font-size: 0.96rem;
+  text-align: right;
+}
+
+.page-08-learn-chemical-reactions .reaction-guide-note {
+  margin: 0;
+  color: var(--dim);
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-card figcaption {
+  margin-top: 0.75rem;
+}
+
+.page-08-learn-chemical-reactions .reaction-visual-card .rxn-badge {
+  margin-right: 0.45rem;
+  vertical-align: middle;
+}
+
+.page-08-learn-chemical-reactions .dr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-08-learn-chemical-reactions .dr-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 250, 252, 0.96)),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 34%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.page-08-learn-chemical-reactions .dr-card h3 {
+  margin: 0.2rem 0 0.75rem;
+  font-size: 1.06rem;
+  min-height: 3.2em;
+}
+
+.page-08-learn-chemical-reactions .dr-card-final {
+  background:
+    linear-gradient(180deg, rgba(240, 253, 244, 0.98), rgba(248, 250, 252, 0.96)),
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 38%);
+}
+
+.page-08-learn-chemical-reactions .dr-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-08-learn-chemical-reactions .dr-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.1em;
+  margin: 0.4rem 0 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  background: #fff;
+  color: #0f172a;
+  text-align: center;
+  font-size: clamp(1.12rem, 1.9vw, 1.56rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.page-08-learn-chemical-reactions .dr-equation .chem-sub {
+  position: relative;
+  top: 0.32em;
+  font-size: 0.62em;
+}
+
+.page-08-learn-chemical-reactions .ion-group {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.page-08-learn-chemical-reactions .ion-pair {
+  white-space: nowrap;
+}
+
+.page-08-learn-chemical-reactions .chem-charge {
+  position: relative;
+  top: -0.5em;
+  font-size: 0.62em;
+  vertical-align: baseline;
+}
+
+.page-08-learn-chemical-reactions .dr-chip .chem-sub,
+.page-08-learn-chemical-reactions .dr-net-ionic .chem-sub,
+.page-08-learn-chemical-reactions .dr-copy .chem-sub,
+.page-08-learn-chemical-reactions .dr-check .chem-sub,
+.page-08-learn-chemical-reactions .lesson-figure figcaption .chem-sub,
+.page-08-learn-chemical-reactions .haber-step-copy .chem-sub,
+.page-08-learn-chemical-reactions .haber-adjust-box .chem-sub,
+.page-08-learn-chemical-reactions .haber-check-row .chem-sub {
+  position: relative;
+  top: 0.22em;
+  font-size: 0.72em;
+}
+
+.page-08-learn-chemical-reactions .dr-chip .chem-charge,
+.page-08-learn-chemical-reactions .dr-net-ionic .chem-charge,
+.page-08-learn-chemical-reactions .dr-copy .chem-charge,
+.page-08-learn-chemical-reactions .dr-check .chem-charge,
+.page-08-learn-chemical-reactions .lesson-figure figcaption .chem-charge {
+  font-size: 0.72em;
+}
+
+.page-08-learn-chemical-reactions .dr-equation strong {
+  color: #2563eb;
+}
+
+.page-08-learn-chemical-reactions .dr-equation-nowrap {
+  white-space: nowrap;
+}
+
+.page-08-learn-chemical-reactions .dr-equation-neutral {
+  font-size: clamp(1rem, 1.4vw, 1.28rem);
+}
+
+.page-08-learn-chemical-reactions .dr-equation-neutral-swap {
+  font-size: clamp(0.9rem, 1.18vw, 1.12rem);
+}
+
+.page-08-learn-chemical-reactions .dr-equation-tight {
+  font-size: clamp(0.98rem, 1.45vw, 1.28rem);
+  white-space: nowrap;
+}
+
+.page-08-learn-chemical-reactions .dr-copy {
+  margin: 0;
+  color: var(--dim);
+  line-height: 1.65;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-row,
+.page-08-learn-chemical-reactions .dr-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.page-08-learn-chemical-reactions .dr-chip,
+.page-08-learn-chemical-reactions .dr-check,
+.page-08-learn-chemical-reactions .dr-swap-note,
+.page-08-learn-chemical-reactions .dr-net-ionic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.72rem;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-silver {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-nitrate {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-sodium {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-chloride {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-hydrogen {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.page-08-learn-chemical-reactions .dr-chip-hydroxide {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.page-08-learn-chemical-reactions .dr-swap-note {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  margin-top: 0.75rem;
+  background: #eff6ff;
+  color: #1e3a8a;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+}
+
+.page-08-learn-chemical-reactions .dr-check-good {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.page-08-learn-chemical-reactions .dr-check-bad {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.page-08-learn-chemical-reactions .dr-check-muted {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.page-08-learn-chemical-reactions .dr-net-ionic {
+  display: block;
+  width: 100%;
+  margin-top: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.page-08-learn-chemical-reactions .dr-net-ionic-eq {
+  white-space: nowrap;
+}
+
+.page-08-learn-chemical-reactions .balance-audit-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.65rem;
+}
+
+.page-08-learn-chemical-reactions .balance-audit-row {
+  display: grid;
+  grid-template-columns: minmax(3.6rem, 0.55fr) minmax(6.5rem, 1fr) minmax(6.5rem, 1fr) minmax(8rem, 1.1fr);
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.page-08-learn-chemical-reactions .balance-audit-cell-label {
+  font-weight: 800;
+  color: var(--accent2);
+}
+
+.page-08-learn-chemical-reactions .balance-audit-cell-status {
+  font-weight: 800;
+}
+
+.page-08-learn-chemical-reactions .balance-audit-cell-status.is-match {
+  color: var(--green);
+}
+
+.page-08-learn-chemical-reactions .balance-audit-cell-status.is-mismatch {
+  color: var(--red);
 }
 
 .resonance-row--nitrate {
@@ -8970,6 +11413,17 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: block;
 }
 
+.page-10-learn-chemistry-bonding .resonance-structure--nitrate-panel {
+  max-width: 420px;
+  margin: 1rem auto 0.6rem;
+}
+
+.page-10-learn-chemistry-bonding .resonance-structure--nitrate-panel svg {
+  width: min(100%, 420px);
+  height: auto;
+  margin-inline: auto;
+}
+
 .resonance-arrow {
   flex: 0 0 auto;
   color: #2563eb;
@@ -8985,6 +11439,203 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 @media (max-width: 480px) {
+  .page-08-learn-chemical-reactions .reaction-type-table,
+  .page-08-learn-chemical-reactions .reaction-type-table thead,
+  .page-08-learn-chemical-reactions .reaction-type-table tbody,
+  .page-08-learn-chemical-reactions .reaction-type-table tr,
+  .page-08-learn-chemical-reactions .reaction-type-table th,
+  .page-08-learn-chemical-reactions .reaction-type-table td {
+    display: block;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table {
+    margin-top: 0.9rem;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table thead {
+    display: none;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table tr {
+    margin-bottom: 0.9rem;
+    padding: 0.85rem 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table td {
+    padding: 0;
+    border-bottom: none;
+    font-size: 0.95rem;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table td + td {
+    margin-top: 0.55rem;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.16rem;
+    color: #0f766e;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table td:first-child::before {
+    margin-bottom: 0.28rem;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-type-table .rxn-badge {
+    font-size: 0.76rem;
+    padding: 0.28rem 0.62rem;
+    margin-right: 0;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-guide-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-visual-scroll img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-08-learn-chemical-reactions .reaction-guide-row strong {
+    text-align: left;
+  }
+
+  .page-08-learn-chemical-reactions .equation-visual {
+    padding: 0.75rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-step-card,
+  .page-08-learn-chemical-reactions .dr-card {
+    padding: 0.8rem;
+    border-radius: 16px;
+  }
+
+  .page-08-learn-chemical-reactions .haber-step-card h3,
+  .page-08-learn-chemical-reactions .dr-card h3 {
+    min-height: 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-step-label,
+  .page-08-learn-chemical-reactions .dr-label {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 0.32rem 0.55rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+  }
+
+  .page-08-learn-chemical-reactions .haber-equation,
+  .page-08-learn-chemical-reactions .dr-equation {
+    min-height: 0;
+    padding: 0.7rem 0.78rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-equation {
+    font-size: 1.3rem;
+  }
+
+  .page-08-learn-chemical-reactions .dr-equation,
+  .page-08-learn-chemical-reactions .dr-equation-neutral,
+  .page-08-learn-chemical-reactions .dr-equation-tight,
+  .page-08-learn-chemical-reactions .dr-equation-neutral-swap {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+
+  .page-08-learn-chemical-reactions .dr-equation-nowrap,
+  .page-08-learn-chemical-reactions .dr-net-ionic-eq,
+  .page-08-learn-chemical-reactions .eq-display,
+  .page-08-learn-chemical-reactions .fl-chain {
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text strong {
+    margin-bottom: 0;
+  }
+
+  .page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text .eq-display {
+    white-space: normal;
+    overflow: visible;
+    font-size: 0.98rem;
+    padding: 0.72rem 0.82rem;
+  }
+
+  .page-08-learn-chemical-reactions .tool-scenario-prompt .tool-scenario-text .eq-display .chem-eq {
+    gap: 0.38rem 0.48rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-step-copy,
+  .page-08-learn-chemical-reactions .dr-copy {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  .page-08-learn-chemical-reactions .haber-mini-note,
+  .page-08-learn-chemical-reactions .haber-count-title,
+  .page-08-learn-chemical-reactions .haber-adjust-title,
+  .page-08-learn-chemical-reactions .dr-swap-note,
+  .page-08-learn-chemical-reactions .dr-net-ionic {
+    font-size: 0.94rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-chip,
+  .page-08-learn-chemical-reactions .dr-chip,
+  .page-08-learn-chemical-reactions .dr-check {
+    padding: 0.4rem 0.62rem;
+    font-size: 0.92rem;
+  }
+
+  .page-08-learn-chemical-reactions .dr-chip-row,
+  .page-08-learn-chemical-reactions .dr-checklist,
+  .page-08-learn-chemical-reactions .haber-check-row {
+    gap: 0.38rem;
+  }
+
+  .page-08-learn-chemical-reactions .haber-balance-grid,
+  .page-08-learn-chemical-reactions .haber-adjust-row,
+  .page-08-learn-chemical-reactions .dr-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-08-learn-chemical-reactions .haber-count-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-08-learn-chemical-reactions .haber-count-arrow {
+    justify-self: center;
+    font-size: 1.5rem;
+  }
+
+  .page-08-learn-chemical-reactions .balance-audit-row {
+    grid-template-columns: 1fr;
+    gap: 0.38rem;
+  }
+
   .page-10-learn-chemistry-bonding .lewis-diagram {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -9036,10 +11687,49 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     display: block;
   }
 
+  .page-10-learn-chemistry-bonding .diagram-grid-2--dipoles {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card {
+    padding: 1rem 0.95rem 1.05rem;
+  }
+
+  .page-10-learn-chemistry-bonding .diagram-grid-2--dipoles .diagram-card svg {
+    width: min(100%, 300px);
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel svg {
+    max-width: 100%;
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel-svg-mobile {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap .concept-panel-svg-desktop {
+    display: block;
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap .concept-panel-svg-mobile {
+    display: none;
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap > svg {
+    min-width: 600px;
+  }
+
   .page-10-learn-chemistry-bonding .resonance-structure svg {
     width: min(100%, 148px);
     height: auto;
     margin-inline: auto;
+  }
+
+  .page-10-learn-chemistry-bonding .resonance-structure--nitrate-panel svg {
+    width: min(100%, 420px);
   }
 
   .resonance-row--nitrate {
@@ -9051,5 +11741,54 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
   .resonance-arrow {
     transform: rotate(90deg);
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table tbody {
+    gap: 0.78rem;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table td {
+    padding-left: 1rem;
+    padding-top: 2.1rem;
+    min-height: 0;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table td::before {
+    left: 1rem;
+    top: 0.78rem;
+    width: auto;
+    max-width: none;
+    white-space: normal;
+  }
+
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table td[data-label="Example"],
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table td[data-label="Common use"],
+  .page-11-learn-chemistry-energy-thermochemistry .mobile-stack-table td[data-label="Energy direction"] {
+    padding-top: 2.5rem;
+  }
+
+  .page-12-learn-chemistry-gas .mobile-stack-table tbody {
+    gap: 0.82rem;
+  }
+
+  .page-12-learn-chemistry-gas .mobile-stack-table td {
+    padding-left: 1rem;
+    padding-top: 2.15rem;
+    min-height: 0;
+  }
+
+  .page-12-learn-chemistry-gas .mobile-stack-table td::before {
+    left: 1rem;
+    top: 0.76rem;
+    width: auto;
+    max-width: none;
+    white-space: normal;
+  }
+
+  .page-12-learn-chemistry-gas .mobile-stack-table td[data-label="Common Use"],
+  .page-12-learn-chemistry-gas .mobile-stack-table td[data-label="Held Constant"],
+  .page-12-learn-chemistry-gas .mobile-stack-table td[data-label="Graph of"],
+  .page-12-learn-chemistry-gas .mobile-stack-table td[data-label="Shape"] {
+    padding-top: 2.5rem;
   }
 }

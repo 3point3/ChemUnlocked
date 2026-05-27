@@ -5,6 +5,10 @@ argument-hint: "Optional: file path, unit file name, or focus area (e.g. schema,
 agent: "agent"
 ---
 
+Before running this overlay, load and apply `.github/prompts/audit-baseline.md`.
+
+This overlay is for data-bank integrity and render-helper correctness, not page layout/mobile CSS checks.
+
 Perform a thorough audit and debug of the current file (or the file path in $args if provided). This prompt is for problem-bank data files such as `netlify/lib/data/unit01-problems.js`.
 
 Work through each category in order. Fix issues directly in-file where possible. Do not only list issues.

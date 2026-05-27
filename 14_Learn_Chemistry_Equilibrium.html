@@ -132,14 +132,14 @@
       </div>
       <p>When that ratio is calculated using <em>equilibrium</em> concentrations, it becomes the <strong>equilibrium constant K</strong>. For one reaction at one temperature, K has one fixed value.</p>
       <p><strong>Concrete read:</strong> if K = 4.0 × 10<sup>3</sup>, products are strongly favored at equilibrium. If K = 2.0 × 10<sup>−5</sup>, reactants are strongly favored. If this feels shaky, read K as a snapshot of which side wins out at equilibrium.</p>
-      <table class="concept-table">
+      <table class="concept-table mobile-stack-table">
         <thead>
           <tr><th>Comparison</th><th>Meaning</th><th>Direction of Shift</th></tr>
         </thead>
         <tbody>
-          <tr><td>Q &lt; K</td><td>Too many reactants relative to equilibrium</td><td>Forward (→) to make more products</td></tr>
-          <tr><td>Q = K</td><td>System is at equilibrium</td><td>No net shift</td></tr>
-          <tr><td>Q &gt; K</td><td>Too many products relative to equilibrium</td><td>Reverse (←) to make more reactants</td></tr>
+          <tr><td data-label="Comparison">Q &lt; K</td><td data-label="Meaning">Too many reactants relative to equilibrium</td><td data-label="Direction">Forward (→) to make more products</td></tr>
+          <tr><td data-label="Comparison">Q = K</td><td data-label="Meaning">System is at equilibrium</td><td data-label="Direction">No net shift</td></tr>
+          <tr><td data-label="Comparison">Q &gt; K</td><td data-label="Meaning">Too many products relative to equilibrium</td><td data-label="Direction">Reverse (←) to make more reactants</td></tr>
         </tbody>
       </table>
       <div class="key-fact">
@@ -158,8 +158,8 @@
       <h2 class="card-title"><span class="num">14.3</span> Which Substances Go Into K and Which Ones Stay Out</h2>
       <p>In a <strong>homogeneous equilibrium</strong>, all species are in the same phase, such as all gases or all aqueous ions. In a <strong>heterogeneous equilibrium</strong>, more than one phase is present.</p>
       <p>The most commonly skipped rule: <strong>pure solids and pure liquids are omitted from the K expression</strong>. Their concentrations do not meaningfully change, so they are built into the constant itself.</p>
-      <p><strong>Concrete check:</strong> for CaCO₃(s) ⇌ CaO(s) + CO₂(g), both solids stay out, so CO₂ is the only term that appears in K.</p>
-      <table class="concept-table">
+      <p><strong>Concrete check:</strong> for <span class="ion-group">CaCO<span class="chem-sub">3</span></span>(s) ⇌ <span class="ion-group">CaO</span>(s) + <span class="ion-group">CO<span class="chem-sub">2</span></span>(g), both solids stay out, so <span class="ion-group">CO<span class="chem-sub">2</span></span> is the only term that appears in K.</p>
+      <table class="concept-table mobile-stack-table">
   <thead>
     <tr>
       <th>Example Reaction</th>
@@ -169,31 +169,31 @@
   </thead>
   <tbody>
     <tr>
-      <td>CaCO₃(s) ⇌ CaO(s) + CO₂(g)</td>
-      <td>K = [CO₂]</td>
-      <td>Both solids omitted</td>
+      <td data-label="Example Reaction"><span class="ion-group">CaCO<span class="chem-sub">3</span></span>(s) ⇌ CaO(s) + <span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</td>
+      <td data-label="K Expression">K = [<span class="ion-group">CO<span class="chem-sub">2</span></span>]</td>
+      <td data-label="Why?">Both solids omitted</td>
     </tr>
     <tr>
-      <td>C(s) + O₂(g) ⇌ CO₂(g)</td>
-      <td>
+      <td data-label="Example Reaction">C(s) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) ⇌ <span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</td>
+      <td data-label="K Expression">
         K =
         <span class="formula-frac">
-          <span class="formula-frac-n">[CO₂]</span>
-          <span class="formula-frac-d">[O₂]</span>
+          <span class="formula-frac-n">[<span class="ion-group">CO<span class="chem-sub">2</span></span>]</span>
+          <span class="formula-frac-d">[<span class="ion-group">O<span class="chem-sub">2</span></span>]</span>
         </span>
       </td>
-      <td>Solid C omitted</td>
+      <td data-label="Why?">Solid C omitted</td>
     </tr>
     <tr>
-      <td>N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</td>
-      <td>
+      <td data-label="Example Reaction"><span class="ion-group">N<span class="chem-sub">2</span></span>(g) + 3<span class="ion-group">H<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">NH<span class="chem-sub">3</span></span>(g)</td>
+      <td data-label="K Expression">
         K =
         <span class="formula-frac">
-          <span class="formula-frac-n">[NH₃]²</span>
-          <span class="formula-frac-d">[N₂][H₂]³</span>
+          <span class="formula-frac-n">[<span class="ion-group">NH<span class="chem-sub">3</span></span>]<sup>2</sup></span>
+          <span class="formula-frac-d">[<span class="ion-group">N<span class="chem-sub">2</span></span>][<span class="ion-group">H<span class="chem-sub">2</span></span>]<sup>3</sup></span>
         </span>
       </td>
-      <td>All gases included</td>
+      <td data-label="Why?">All gases included</td>
     </tr>
   </tbody>
 </table>
@@ -204,36 +204,36 @@
       <p><strong>Le Châtelier's Principle:</strong> when a system at equilibrium is stressed, it shifts in the direction that partly reduces that stress.</p>
       <p>Start with the stress. Then ask what change would counter it. That thinking will carry you through concentration changes, pressure changes, and temperature changes without memorizing random arrows.</p>
       <p><strong>Concentration changes</strong></p>
-      <table class="concept-table">
+      <table class="concept-table mobile-stack-table">
         <thead>
           <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
         </thead>
         <tbody>
-          <tr><td>Add a reactant</td><td>Shift right to use some of the added reactant</td><td>K unchanged</td></tr>
-          <tr><td>Remove a reactant</td><td>Shift left to replace some of the reactant</td><td>K unchanged</td></tr>
-          <tr><td>Add a product</td><td>Shift left to use some of the added product</td><td>K unchanged</td></tr>
-          <tr><td>Remove a product</td><td>Shift right to replace some of the product</td><td>K unchanged</td></tr>
+          <tr><td data-label="Change">Add a reactant</td><td data-label="System response">Shift right to use some of the added reactant</td><td data-label="Effect on K">K unchanged</td></tr>
+          <tr><td data-label="Change">Remove a reactant</td><td data-label="System response">Shift left to replace some of the reactant</td><td data-label="Effect on K">K unchanged</td></tr>
+          <tr><td data-label="Change">Add a product</td><td data-label="System response">Shift left to use some of the added product</td><td data-label="Effect on K">K unchanged</td></tr>
+          <tr><td data-label="Change">Remove a product</td><td data-label="System response">Shift right to replace some of the product</td><td data-label="Effect on K">K unchanged</td></tr>
         </tbody>
       </table>
       <p><strong>Pressure or volume changes (gases only)</strong></p>
-      <table class="concept-table">
+      <table class="concept-table mobile-stack-table">
         <thead>
           <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
         </thead>
         <tbody>
-          <tr><td>Increase pressure by decreasing volume</td><td>Shift toward the side with fewer moles of gas</td><td>K unchanged</td></tr>
-          <tr><td>Decrease pressure by increasing volume</td><td>Shift toward the side with more moles of gas</td><td>K unchanged</td></tr>
-          <tr><td>Same total moles of gas on both sides</td><td>No shift</td><td>K unchanged</td></tr>
+          <tr><td data-label="Change">Increase pressure by decreasing volume</td><td data-label="System response">Shift toward the side with fewer moles of gas</td><td data-label="Effect on K">K unchanged</td></tr>
+          <tr><td data-label="Change">Decrease pressure by increasing volume</td><td data-label="System response">Shift toward the side with more moles of gas</td><td data-label="Effect on K">K unchanged</td></tr>
+          <tr><td data-label="Change">Same total moles of gas on both sides</td><td data-label="System response">No shift</td><td data-label="Effect on K">K unchanged</td></tr>
         </tbody>
       </table>
       <p><strong>Temperature changes</strong></p>
-      <table class="concept-table">
+      <table class="concept-table mobile-stack-table">
         <thead>
           <tr><th>Change</th><th>System response</th><th>Effect on K</th></tr>
         </thead>
         <tbody>
-          <tr><td>Increase temperature</td><td>Shift in the endothermic direction</td><td>K changes</td></tr>
-          <tr><td>Decrease temperature</td><td>Shift in the exothermic direction</td><td>K changes</td></tr>
+          <tr><td data-label="Change">Increase temperature</td><td data-label="System response">Shift in the endothermic direction</td><td data-label="Effect on K">K changes</td></tr>
+          <tr><td data-label="Change">Decrease temperature</td><td data-label="System response">Shift in the exothermic direction</td><td data-label="Effect on K">K changes</td></tr>
         </tbody>
       </table>
       <p>Treat heat as part of the reaction. If the forward reaction is exothermic, heat acts like a product. If the forward reaction is endothermic, heat acts like a reactant. This connects directly to the energy ideas from <a href="/11_learn_chemistry_energy_thermochemistry">thermochemistry</a>.</p>
@@ -301,41 +301,41 @@
         <div class="formula-box">
           <span class="label">Worked ICE Setup</span>
           <div class="formula-rule-list">
-            <div class="formula-rule">CO(g) + H<sub>2</sub>O(g) ⇌ CO<sub>2</sub>(g) + H<sub>2</sub>(g)</div>
-            <div class="formula-rule">K = <span class="formula-frac"><span class="formula-frac-n">[CO<sub>2</sub>][H<sub>2</sub>]</span><span class="formula-frac-d">[CO][H<sub>2</sub>O]</span></span></div>
+          <div class="formula-rule"><span class="ion-group">CO</span>(g) + <span class="ion-group">H<span class="chem-sub">2</span>O</span>(g) ⇌ <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) + <span class="ion-group">H<span class="chem-sub">2</span></span>(g)</div>
+          <div class="formula-rule">K = <span class="formula-frac"><span class="formula-frac-n">[<span class="ion-group">CO<span class="chem-sub">2</span></span>][<span class="ion-group">H<span class="chem-sub">2</span></span>]</span><span class="formula-frac-d">[<span class="ion-group">CO</span>][<span class="ion-group">H<span class="chem-sub">2</span>O</span>]</span></span></div>
           </div>
         </div>
         <table class="concept-table ice-table">
           <thead>
             <tr>
               <th>Row</th>
-              <th>CO(g)</th>
-              <th>H<sub>2</sub>O(g)</th>
-              <th>CO<sub>2</sub>(g)</th>
-              <th>H<sub>2</sub>(g)</th>
+              <th><span class="ion-group">CO</span>(g)</th>
+              <th><span class="ion-group">H<span class="chem-sub">2</span>O</span>(g)</th>
+              <th><span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</th>
+              <th><span class="ion-group">H<span class="chem-sub">2</span></span>(g)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Initial</strong></td>
-              <td>0.100 M</td>
-              <td>0.100 M</td>
-              <td>0 M</td>
-              <td>0 M</td>
+              <td data-label="Row"><strong>Initial</strong></td>
+              <td data-label="CO(g)">0.100 M</td>
+              <td data-label="H2O(g)">0.100 M</td>
+              <td data-label="CO2(g)">0 M</td>
+              <td data-label="H2(g)">0 M</td>
             </tr>
             <tr>
-              <td><strong>Change</strong></td>
-              <td>−x</td>
-              <td>−x</td>
-              <td>+x</td>
-              <td>+x</td>
+              <td data-label="Row"><strong>Change</strong></td>
+              <td data-label="CO(g)">−x</td>
+              <td data-label="H2O(g)">−x</td>
+              <td data-label="CO2(g)">+x</td>
+              <td data-label="H2(g)">+x</td>
             </tr>
             <tr>
-              <td><strong>Equilibrium</strong></td>
-              <td>0.100 − x</td>
-              <td>0.100 − x</td>
-              <td>x</td>
-              <td>x</td>
+              <td data-label="Row"><strong>Equilibrium</strong></td>
+              <td data-label="CO(g)">0.100 − x</td>
+              <td data-label="H2O(g)">0.100 − x</td>
+              <td data-label="CO2(g)">x</td>
+              <td data-label="H2(g)">x</td>
             </tr>
           </tbody>
         </table>
@@ -347,7 +347,7 @@
               <strong>Then substitute the equilibrium row into K</strong>
               <p>Every concentration in the equilibrium expression must come from the <strong>E</strong> row of the ICE table.</p>
               <div class="fl-chain">
-                K = <span class="formula-frac"><span class="formula-frac-n">[CO<sub>2</sub>][H<sub>2</sub>]</span><span class="formula-frac-d">[CO][H<sub>2</sub>O]</span></span>
+                K = <span class="formula-frac"><span class="formula-frac-n">[<span class="ion-group">CO<span class="chem-sub">2</span></span>][<span class="ion-group">H<span class="chem-sub">2</span></span>]</span><span class="formula-frac-d">[<span class="ion-group">CO</span>][<span class="ion-group">H<span class="chem-sub">2</span>O</span>]</span></span>
               </div>
               <div class="fl-chain">
                 K = <span class="formula-frac"><span class="formula-frac-n">(x)(x)</span><span class="formula-frac-d">(0.100 − x)(0.100 − x)</span></span>
@@ -498,7 +498,7 @@
       <p class="tool-scenario-text"><strong>Scenario:</strong> Use the reaction and the pressure stress below to predict the net shift.</p>
       </div>
       <div class="formula-box tool-context-box tool-context-grid">
-        <div><strong>Reaction:</strong> <span id="pressure-reaction-label">N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</span></div>
+        <div><strong>Reaction:</strong> <span id="pressure-reaction-label"><span class="ion-group">N<span class="chem-sub">2</span></span>(g) + 3<span class="ion-group">H<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">NH<span class="chem-sub">3</span></span>(g)</span></div>
         <div><strong>Stress:</strong> <span id="pressure-stress-label">Pressure increases because volume decreases</span></div>
       </div>
       <div id="pressure-choice-buttons" class="segment-controls tool-choice-row" role="group" aria-label="Pressure shift answer choices"></div>
@@ -556,20 +556,20 @@
           </g>
 
           <rect x="78" y="70" width="128" height="34" rx="10" fill="#ffffff" opacity="0.9"/>
-          <text x="142" y="92" text-anchor="middle" fill="#1d4ed8" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700" id="reactant-label">Reactants</text>
+          <text x="142" y="92" text-anchor="middle" fill="#1d4ed8" font-size="16" font-family="system-ui, -apple-system, sans-serif" font-weight="700" id="reactant-label">Reactants</text>
           <rect x="434" y="70" width="128" height="34" rx="10" fill="#ffffff" opacity="0.9"/>
-          <text x="498" y="92" text-anchor="middle" fill="#047857" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700" id="product-label">Products</text>
+          <text x="498" y="92" text-anchor="middle" fill="#047857" font-size="16" font-family="system-ui, -apple-system, sans-serif" font-weight="700" id="product-label">Products</text>
 
           <!-- Tilt arrow overlay (appears on shift) -->
           <g id="shift-arrow" opacity="0">
-            <text id="shift-arrow-text" x="320" y="140" text-anchor="middle" fill="#d97706" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700">⟶</text>
+            <text id="shift-arrow-text" x="320" y="140" text-anchor="middle" fill="#d97706" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="700">⟶</text>
           </g>
 
           <!-- Ground line -->
           <line x1="60" y1="282" x2="580" y2="282" stroke="#cbd5e1" stroke-width="2"/>
 
           <!-- Equilibrium label -->
-          <text x="320" y="298" text-anchor="middle" fill="#475569" font-size="12" font-family="Arial, Helvetica, sans-serif" id="eq-state-label">Level until you check your answer</text>
+          <text x="320" y="298" text-anchor="middle" fill="#475569" font-size="12" font-family="system-ui, -apple-system, sans-serif" id="eq-state-label">Level until you check your answer</text>
         </svg>
           </div>
           </div>
@@ -595,7 +595,7 @@
       <p class="tool-scenario-text"><strong>Problem:</strong> Use the reaction type and temperature change below to predict what happens to the equilibrium constant.</p>
       </div>
       <div class="formula-box tool-context-box tool-context-grid">
-        <div><strong>Reaction:</strong> <span id="temp-reaction-label">2SO₂(g) + O₂(g) ⇌ 2SO₃(g)</span></div>
+        <div><strong>Reaction:</strong> <span id="temp-reaction-label">2<span class="ion-group">SO<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">SO<span class="chem-sub">3</span></span>(g)</span></div>
         <div><strong>Forward reaction:</strong> <span id="temp-type-label">Exothermic</span></div>
         <div><strong>Change:</strong> <span id="temp-change-label">Temperature increases</span></div>
       </div>
@@ -635,15 +635,15 @@
       <h2 class="card-title">Example 1 · Writing the K Expression</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Write the equilibrium-constant expression.</p>
-        <p><strong>Given:</strong> 2NO(g) + O₂(g) ⇌ 2NO₂(g)</p>
+        <p><strong>Given:</strong> 2<span class="ion-group">NO</span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">NO<span class="chem-sub">2</span></span>(g)</p>
         <p><strong>Find:</strong> K expression</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Identify products and reactants with coefficients</strong>
-            <p>Products: NO₂ with coefficient 2. Reactants: NO with coefficient 2, O₂ with coefficient 1.</p>
+            <strong>Step 1 — Start with the equilibrium-constant pattern: products over reactants, with coefficients as exponents</strong>
+            <p>Products: <span class="ion-group">NO<span class="chem-sub">2</span></span> with coefficient 2. Reactants: <span class="ion-group">NO</span> with coefficient 2, <span class="ion-group">O<span class="chem-sub">2</span></span> with coefficient 1.</p>
           </div>
         </div>
         <div class="step">
@@ -651,7 +651,7 @@
           <div class="step-content">
             <strong>Step 2 — Write K as a fraction with products on top and reactants on the bottom, each raised to its coefficient</strong>
             <div class="fl-chain">
-              K = <span class="fl-frac"><span class="fl-num">[NO₂]²</span><span class="fl-den">[NO]²[O₂]</span></span>
+              K = <span class="fl-frac"><span class="fl-num">[<span class="ion-group">NO<span class="chem-sub">2</span></span>]<sup>2</sup></span><span class="fl-den">[<span class="ion-group">NO</span>]<sup>2</sup>[<span class="ion-group">O<span class="chem-sub">2</span></span>]</span></span>
             </div>
           </div>
         </div>
@@ -662,7 +662,7 @@
             <p>There are no pure solids or liquids to omit.</p>
             <p>Final answer:</p>
             <div class="fl-chain">
-              <span class="fl-result">K = <span class="fl-frac"><span class="fl-num">[NO₂]²</span><span class="fl-den">[NO]²[O₂]</span></span></span>
+              <span class="fl-result">K = <span class="fl-frac"><span class="fl-num">[<span class="ion-group">NO<span class="chem-sub">2</span></span>]<sup>2</sup></span><span class="fl-den">[<span class="ion-group">NO</span>]<sup>2</sup>[<span class="ion-group">O<span class="chem-sub">2</span></span>]</span></span></span>
             </div>
           </div>
         </div>
@@ -673,7 +673,7 @@
       <h2 class="card-title">Example 2 · Comparing Q to K to Predict Shift Direction</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Compare Q to K to predict the shift direction.</p>
-        <p><strong>Given:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g), K = 6.0 × 10⁻², [N₂] = 1.0 M, [H₂] = 2.0 M, [NH₃] = 3.0 M</p>
+        <p><strong>Given:</strong> <span class="ion-group">N<span class="chem-sub">2</span></span>(g) + 3<span class="ion-group">H<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">NH<span class="chem-sub">3</span></span>(g), K = 6.0 × 10⁻², [<span class="ion-group">N<span class="chem-sub">2</span></span>] = 1.0 M, [<span class="ion-group">H<span class="chem-sub">2</span></span>] = 2.0 M, [<span class="ion-group">NH<span class="chem-sub">3</span></span>] = 3.0 M</p>
         <p><strong>Find:</strong> direction of shift</p>
       </div>
       <div class="steps">
@@ -682,7 +682,7 @@
           <div class="step-content">
             <strong>Step 1 — Write the Q expression (same form as K)</strong>
             <div class="fl-chain">
-              Q = <span class="fl-frac"><span class="fl-num">[NH₃]²</span><span class="fl-den">[N₂][H₂]³</span></span>
+              Q = <span class="fl-frac"><span class="fl-num">[<span class="ion-group">NH<span class="chem-sub">3</span></span>]<sup>2</sup></span><span class="fl-den">[<span class="ion-group">N<span class="chem-sub">2</span></span>][<span class="ion-group">H<span class="chem-sub">2</span></span>]<sup>3</sup></span></span>
             </div>
           </div>
         </div>
@@ -710,7 +710,7 @@
       <h2 class="card-title">Example 3 · ICE Table — Finding Equilibrium Concentrations</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Use an ICE table to find equilibrium concentrations.</p>
-        <p><strong>Given:</strong> H₂(g) + I₂(g) ⇌ 2HI(g), K = 49.0, [H₂]₀ = 0.500 M, [I₂]₀ = 0.500 M, [HI]₀ = 0 M</p>
+        <p><strong>Given:</strong> <span class="ion-group">H<span class="chem-sub">2</span></span>(g) + <span class="ion-group">I<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">HI</span>(g), K = 49.0, [<span class="ion-group">H<span class="chem-sub">2</span></span>]<sub>0</sub> = 0.500 M, [<span class="ion-group">I<span class="chem-sub">2</span></span>]<sub>0</sub> = 0.500 M, [<span class="ion-group">HI</span>]<sub>0</sub> = 0 M</p>
         <p><strong>Find:</strong> equilibrium concentrations of all species</p>
       </div>
       <div class="steps">
@@ -719,7 +719,7 @@
           <div class="step-content">
             <strong>Step 1 — Write the K expression that matches the balanced equation</strong>
             <div class="fl-chain">
-              K = <span class="fl-frac"><span class="fl-num">[HI]²</span><span class="fl-den">[H₂][I₂]</span></span>
+              K = <span class="fl-frac"><span class="fl-num">[<span class="ion-group">HI</span>]<sup>2</sup></span><span class="fl-den">[<span class="ion-group">H<span class="chem-sub">2</span></span>][<span class="ion-group">I<span class="chem-sub">2</span></span>]</span></span>
             </div>
             <p>This tells you exactly which equilibrium-row expressions must be substituted later.</p>
           </div>
@@ -728,20 +728,20 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 2 — Decide the direction first</strong>
-            <p>At the start, [HI] = 0, so Q = 0.</p>
-            <p>Since Q &lt; K, the reaction shifts right to make more HI.</p>
+            <p>At the start, [<span class="ion-group">HI</span>] = 0, so Q = 0.</p>
+            <p>Since Q &lt; K, the reaction shifts right to make more <span class="ion-group">HI</span>.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 3 — Set up the ICE table</strong>
-            <table class="concept-table">
-              <thead><tr><th></th><th>H₂</th><th>I₂</th><th>HI</th></tr></thead>
+            <table class="concept-table ice-table">
+              <thead><tr><th></th><th><span class="ion-group">H<span class="chem-sub">2</span></span></th><th><span class="ion-group">I<span class="chem-sub">2</span></span></th><th><span class="ion-group">HI</span></th></tr></thead>
               <tbody>
-                <tr><td><strong>I</strong></td><td>0.500</td><td>0.500</td><td>0</td></tr>
-                <tr><td><strong>C</strong></td><td>−x</td><td>−x</td><td>+2x</td></tr>
-                <tr><td><strong>E</strong></td><td>0.500−x</td><td>0.500−x</td><td>2x</td></tr>
+                <tr><td data-label="Row"><strong>I</strong></td><td data-label="H2">0.500</td><td data-label="I2">0.500</td><td data-label="HI">0</td></tr>
+                <tr><td data-label="Row"><strong>C</strong></td><td data-label="H2">−x</td><td data-label="I2">−x</td><td data-label="HI">+2x</td></tr>
+                <tr><td data-label="Row"><strong>E</strong></td><td data-label="H2">0.500−x</td><td data-label="I2">0.500−x</td><td data-label="HI">2x</td></tr>
               </tbody>
             </table>
           </div>
@@ -751,9 +751,9 @@
           <div class="step-content">
             <strong>Step 4 — Substitute E expressions into K</strong>
             <div class="fl-chain">
-              K = <span class="fl-frac"><span class="fl-num">[HI]²</span><span class="fl-den">[H₂][I₂]</span></span>
+              K = <span class="fl-frac"><span class="fl-num">[<span class="ion-group">HI</span>]<sup>2</sup></span><span class="fl-den">[<span class="ion-group">H<span class="chem-sub">2</span></span>][<span class="ion-group">I<span class="chem-sub">2</span></span>]</span></span>
             </div>
-            <p>The <strong>column heading stays HI</strong>. The coefficient 2 appears in the change row as <strong>+2x</strong> and in the equilibrium expression as the exponent on [HI].</p>
+            <p>The <strong>column heading stays <span class="ion-group">HI</span></strong>. The coefficient 2 appears in the change row as <strong>+2x</strong> and in the equilibrium expression as the exponent on [<span class="ion-group">HI</span>].</p>
             <div class="fl-chain">
               K = <span class="fl-frac"><span class="fl-num">(2x)²</span><span class="fl-den">(0.500−x)²</span></span> = 49.0
             </div>
@@ -775,9 +775,9 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 6 — Calculate equilibrium concentrations</strong>
-            <p>[H₂] = 0.500 − 0.389 = <span class="fl-result">0.111 M</span></p>
-            <p>[I₂] = <span class="fl-result">0.111 M</span></p>
-            <p>[HI] = 2(0.389) = <span class="fl-result">0.778 M</span></p>
+            <p>[<span class="ion-group">H<span class="chem-sub">2</span></span>] = 0.500 − 0.389 = <span class="fl-result">0.111 M</span></p>
+            <p>[<span class="ion-group">I<span class="chem-sub">2</span></span>] = <span class="fl-result">0.111 M</span></p>
+            <p>[<span class="ion-group">HI</span>] = 2(0.389) = <span class="fl-result">0.778 M</span></p>
             <p>Check:</p>
             <div class="fl-chain">
               K = <span class="fl-frac"><span class="fl-num">(0.778)²</span><span class="fl-den">(0.111)²</span></span>
@@ -793,15 +793,15 @@
       <h2 class="card-title">Example 4 · Le Châtelier's Principle — Pressure Change</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Predict the effect of a pressure increase using Le Châtelier's principle.</p>
-        <p><strong>Given:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g); total pressure increases because volume decreases</p>
+        <p><strong>Given:</strong> <span class="ion-group">N<span class="chem-sub">2</span></span>(g) + 3<span class="ion-group">H<span class="chem-sub">2</span></span>(g) ⇌ 2<span class="ion-group">NH<span class="chem-sub">3</span></span>(g); total pressure increases because volume decreases</p>
         <p><strong>Find:</strong> direction of shift</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
-            <strong>Step 1 — Count moles of gas on each side</strong>
-            <p>Reactants: 1 mol N₂ + 3 mol H₂ = <strong>4 mol gas</strong>. Products: 2 mol NH₃ = <strong>2 mol gas</strong>.</p>
+            <strong>Step 1 — Use the pressure rule first: higher pressure favors the side with fewer moles of gas</strong>
+            <p>Now count the gas moles on each side. Reactants: 1 mol <span class="ion-group">N<span class="chem-sub">2</span></span> + 3 mol <span class="ion-group">H<span class="chem-sub">2</span></span> = <strong>4 mol gas</strong>. Products: 2 mol <span class="ion-group">NH<span class="chem-sub">3</span></span> = <strong>2 mol gas</strong>.</p>
           </div>
         </div>
         <div class="step">
@@ -815,8 +815,8 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 3 — State the result</strong>
-            <p>The reaction shifts <span class="fl-result">forward (→)</span>, producing more NH₃ and reducing the total number of gas molecules.</p>
-            <p>This is why the Haber process is run at high pressure: it improves NH₃ yield.</p>
+            <p>The reaction shifts <span class="fl-result">forward (→)</span>, producing more <span class="ion-group">NH<span class="chem-sub">3</span></span> and reducing the total number of gas molecules.</p>
+            <p>This is why the Haber process is run at high pressure: it improves <span class="ion-group">NH<span class="chem-sub">3</span></span> yield.</p>
             <p>Important check: pressure only changes the equilibrium position if the two sides have different total moles of gas. If the gas moles are equal on both sides, there is no shift, and <strong>K still stays the same</strong>.</p>
           </div>
         </div>
@@ -1105,7 +1105,7 @@ const qkCards = [
 
 const pressureCards = [
   {
-    reaction: 'N₂(g) + 3H₂(g) ⇌ 2NH₃(g)',
+    reaction: 'N2(g) + 3H2(g) ⇌ 2NH3(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'Shift right',
     tilt: -1,
@@ -1114,7 +1114,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — count the gas moles on each side first. Pressure favors the side with fewer moles of gas, so compare the two totals and then choose the shift.'
   },
   {
-    reaction: 'N₂(g) + O₂(g) ⇌ 2NO(g)',
+    reaction: 'N2(g) + O2(g) ⇌ 2NO(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'No shift',
     tilt: 0,
@@ -1123,7 +1123,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — pressure only changes the equilibrium position when the gas mole totals are different. Count both sides first, then compare them.'
   },
   {
-    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    reaction: 'PCl5(g) ⇌ PCl3(g) + Cl2(g)',
     stress: 'Pressure decreases because volume increases',
     correct: 'Shift right',
     tilt: -1,
@@ -1132,7 +1132,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — for a pressure decrease, look for the side with more gas moles. Count both sides, then choose the shift.'
   },
   {
-    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    reaction: '2SO2(g) + O2(g) ⇌ 2SO3(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'Shift right',
     tilt: -1,
@@ -1141,7 +1141,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — compare the gas moles. Higher pressure favors fewer moles.'
   },
   {
-    reaction: 'H₂(g) + I₂(g) ⇌ 2HI(g)',
+    reaction: 'H2(g) + I2(g) ⇌ 2HI(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'No shift',
     tilt: 0,
@@ -1150,7 +1150,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — if gas moles match on both sides, pressure does not shift equilibrium.'
   },
   {
-    reaction: '2NO₂(g) ⇌ N₂O₄(g)',
+    reaction: '2NO2(g) ⇌ N2O4(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'Shift right',
     tilt: -1,
@@ -1159,7 +1159,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — count the gas moles. Higher pressure favors fewer moles.'
   },
   {
-    reaction: '2NH₃(g) ⇌ N₂(g) + 3H₂(g)',
+    reaction: '2NH3(g) ⇌ N2(g) + 3H2(g)',
     stress: 'Pressure decreases because volume increases',
     correct: 'Shift right',
     tilt: -1,
@@ -1168,7 +1168,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — for lower pressure, look for the side with more gas moles.'
   },
   {
-    reaction: 'CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g)',
+    reaction: 'CO(g) + H2O(g) ⇌ CO2(g) + H2(g)',
     stress: 'Pressure decreases because volume increases',
     correct: 'No shift',
     tilt: 0,
@@ -1177,7 +1177,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — if the gas totals match, there is no pressure shift.'
   },
   {
-    reaction: '2SO₃(g) ⇌ 2SO₂(g) + O₂(g)',
+    reaction: '2SO3(g) ⇌ 2SO2(g) + O2(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'Shift left',
     tilt: 1,
@@ -1186,7 +1186,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — higher pressure favors the side with fewer gas moles.'
   },
   {
-    reaction: 'N₂O₄(g) ⇌ 2NO₂(g)',
+    reaction: 'N2O4(g) ⇌ 2NO2(g)',
     stress: 'Pressure decreases because volume increases',
     correct: 'Shift right',
     tilt: -1,
@@ -1195,7 +1195,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — lower pressure favors more gas moles.'
   },
   {
-    reaction: 'H₂(g) + Cl₂(g) ⇌ 2HCl(g)',
+    reaction: 'H2(g) + Cl2(g) ⇌ 2HCl(g)',
     stress: 'Pressure decreases because volume increases',
     correct: 'No shift',
     tilt: 0,
@@ -1204,7 +1204,7 @@ const pressureCards = [
     incorrectFeedback: 'Not quite — equal gas totals mean no pressure shift.'
   },
   {
-    reaction: '2CO(g) + O₂(g) ⇌ 2CO₂(g)',
+    reaction: '2CO(g) + O2(g) ⇌ 2CO2(g)',
     stress: 'Pressure increases because volume decreases',
     correct: 'Shift right',
     tilt: -1,
@@ -1216,7 +1216,7 @@ const pressureCards = [
 
 const temperatureCards = [
   {
-    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    reaction: '2SO2(g) + O2(g) ⇌ 2SO3(g)',
     type: 'Exothermic',
     change: 'Temperature increases',
     correct: 'K decreases',
@@ -1225,7 +1225,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — temperature is the one common stress that changes K. First decide whether heat acts like a reactant or a product, then decide whether adding heat makes products more or less favored.'
   },
   {
-    reaction: 'N₂(g) + O₂(g) ⇌ 2NO(g)',
+    reaction: 'N2(g) + O2(g) ⇌ 2NO(g)',
     type: 'Endothermic',
     change: 'Temperature increases',
     correct: 'K increases',
@@ -1234,7 +1234,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — temperature changes K. Decide whether heat is acting like a reactant or a product first, then ask which side is favored when heat is added.'
   },
   {
-    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    reaction: 'PCl5(g) ⇌ PCl3(g) + Cl2(g)',
     type: 'Endothermic',
     change: 'Temperature decreases',
     correct: 'K decreases',
@@ -1243,7 +1243,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — when temperature changes, K changes too. Treat heat like a reactant or product first, then decide whether lowering temperature makes products more or less favored.'
   },
   {
-    reaction: '2NO₂(g) ⇌ N₂O₄(g)',
+    reaction: '2NO2(g) ⇌ N2O4(g)',
     type: 'Exothermic',
     change: 'Temperature increases',
     correct: 'K decreases',
@@ -1252,7 +1252,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — in an exothermic forward reaction, heat acts like a product.'
   },
   {
-    reaction: 'CaCO₃(s) ⇌ CaO(s) + CO₂(g)',
+    reaction: 'CaCO3(s) ⇌ CaO(s) + CO2(g)',
     type: 'Endothermic',
     change: 'Temperature increases',
     correct: 'K increases',
@@ -1261,7 +1261,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for an endothermic forward reaction, increasing temperature increases K.'
   },
   {
-    reaction: '2SO₃(g) ⇌ 2SO₂(g) + O₂(g)',
+    reaction: '2SO3(g) ⇌ 2SO2(g) + O2(g)',
     type: 'Endothermic',
     change: 'Temperature decreases',
     correct: 'K decreases',
@@ -1270,7 +1270,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for endothermic reactions, lowering temperature decreases K.'
   },
   {
-    reaction: 'N₂(g) + 3H₂(g) ⇌ 2NH₃(g)',
+    reaction: 'N2(g) + 3H2(g) ⇌ 2NH3(g)',
     type: 'Exothermic',
     change: 'Temperature decreases',
     correct: 'K increases',
@@ -1279,7 +1279,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for exothermic reactions, lowering temperature increases K.'
   },
   {
-    reaction: 'H₂(g) + I₂(g) ⇌ 2HI(g)',
+    reaction: 'H2(g) + I2(g) ⇌ 2HI(g)',
     type: 'Endothermic',
     change: 'Temperature increases',
     correct: 'K increases',
@@ -1288,7 +1288,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for endothermic reactions, increasing temperature increases K.'
   },
   {
-    reaction: '2SO₂(g) + O₂(g) ⇌ 2SO₃(g)',
+    reaction: '2SO2(g) + O2(g) ⇌ 2SO3(g)',
     type: 'Exothermic',
     change: 'Temperature decreases',
     correct: 'K increases',
@@ -1297,7 +1297,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for exothermic reactions, lower temperature increases K.'
   },
   {
-    reaction: 'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g)',
+    reaction: 'PCl5(g) ⇌ PCl3(g) + Cl2(g)',
     type: 'Endothermic',
     change: 'Temperature increases',
     correct: 'K increases',
@@ -1306,7 +1306,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — if the forward reaction is endothermic, adding heat increases K.'
   },
   {
-    reaction: '2NO(g) + O₂(g) ⇌ 2NO₂(g)',
+    reaction: '2NO(g) + O2(g) ⇌ 2NO2(g)',
     type: 'Exothermic',
     change: 'Temperature increases',
     correct: 'K decreases',
@@ -1315,7 +1315,7 @@ const temperatureCards = [
     incorrectFeedback: 'Not quite — for an exothermic forward reaction, adding heat decreases K.'
   },
   {
-    reaction: 'CaCO₃(s) ⇌ CaO(s) + CO₂(g)',
+    reaction: 'CaCO3(s) ⇌ CaO(s) + CO2(g)',
     type: 'Endothermic',
     change: 'Temperature decreases',
     correct: 'K decreases',
@@ -1326,6 +1326,29 @@ const temperatureCards = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
+  function formatReactionFormula(formula) {
+    return formula.replace(/([A-Za-z\)])(\d+)/g, '$1<span class="chem-sub">$2</span>');
+  }
+
+  function formatReactionToken(token) {
+    const trimmed = token.trim();
+    if (!trimmed || trimmed === '+' || trimmed === '⇌') return trimmed;
+    const match = trimmed.match(/^(\d+)?([A-Za-z0-9()]+)(\([a-z]+\))$/i);
+    if (!match) return trimmed;
+    const [, coefficient = '', formula, state] = match;
+    return `${coefficient}<span class="ion-group">${formatReactionFormula(formula)}</span>${state}`;
+  }
+
+  function formatReactionText(text) {
+    return text
+      .split(/(\s+\+\s+|\s+⇌\s+)/)
+      .map(part => {
+        if (/^\s+\+\s+$/.test(part) || /^\s+⇌\s+$/.test(part)) return part;
+        return formatReactionToken(part);
+      })
+      .join('');
+  }
+
   function setFeedbackState(id, text) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -1559,7 +1582,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pressureState.index = getNextCardIndex(pressureState, pressureCards.length);
     }
     const card = pressureCards[pressureState.index];
-    document.getElementById('pressure-reaction-label').textContent = card.reaction;
+    document.getElementById('pressure-reaction-label').innerHTML = formatReactionText(card.reaction);
     document.getElementById('pressure-stress-label').textContent = card.stress;
     pressureState.choiceOrder = setChoiceButtons('pressure-choice-buttons', pressureChoices, null, pressureState.choiceOrder);
     pressureState.selected = null;
@@ -1613,7 +1636,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tempState.index = getNextCardIndex(tempState, temperatureCards.length);
     }
     const card = temperatureCards[tempState.index];
-    document.getElementById('temp-reaction-label').textContent = card.reaction;
+    document.getElementById('temp-reaction-label').innerHTML = formatReactionText(card.reaction);
     document.getElementById('temp-type-label').textContent = card.type;
     document.getElementById('temp-change-label').textContent = card.change;
     tempState.choiceOrder = setChoiceButtons('temp-choice-buttons', temperatureChoices, null, tempState.choiceOrder);

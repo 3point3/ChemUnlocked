@@ -1,0 +1,80 @@
+<svg width="100%" height="auto" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Decomposition reaction particle model</title>
+  <desc id="desc">Calcium carbonate breaks apart into calcium oxide and carbon dioxide in a decomposition particle model.</desc>
+  <defs>
+    <radialGradient id="calcium-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="60%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </radialGradient>
+    <radialGradient id="carbon-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+    <radialGradient id="oxygen-grad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff8787"/>
+      <stop offset="60%" stop-color="#fa5252"/>
+      <stop offset="100%" stop-color="#c92a2a"/>
+    </radialGradient>
+    <style>
+      .bg-panel { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5px; rx: 16px; }
+      .header-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #64748b; letter-spacing: 0.1em; }
+      .atom-label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+      .ca-label, .c-label, .o-label { fill: #ffffff; }
+      .math-symbol { font-family: system-ui, -apple-system, sans-serif; font-size: 28px; font-weight: 500; fill: #94a3b8; text-anchor: middle; dominant-baseline: central; }
+      .formula-text { font-family: system-ui, -apple-system, sans-serif; font-size: 26px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .subscript { font-size: 16px; baseline-shift: sub; fill: #475569; }
+      .state-symbol { font-size: 16px; fill: #64748b; font-weight: 500; }
+      .divider { stroke: #f1f5f9; stroke-width: 2px; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+
+  <rect class="bg-panel" x="10" y="10" width="880" height="400" />
+  <text x="450" y="36" class="header-text" text-anchor="middle">PARTICLE LEVEL REACTION MODEL</text>
+  <line x1="40" y1="255" x2="860" y2="255" class="divider" />
+
+  <g transform="translate(200, 140)">
+    <circle cx="0" cy="12" r="24" fill="url(#carbon-grad)" stroke="#1e293b" stroke-width="1.2" />
+    <text x="0" y="12" class="atom-label c-label">C</text>
+    <circle cx="-36" cy="22" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="-36" y="22" class="atom-label o-label">O</text>
+    <circle cx="36" cy="22" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="36" y="22" class="atom-label o-label">O</text>
+    <circle cx="0" cy="-26" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="0" y="-26" class="atom-label o-label">O</text>
+    <circle cx="0" cy="-66" r="24" fill="url(#calcium-grad)" stroke="#334155" stroke-width="1.2" />
+    <text x="0" y="-66" class="atom-label ca-label">Ca</text>
+  </g>
+
+  <g transform="translate(420, 140)">
+    <path d="M -20,0 L 20,0 M 8,-8 L 21,0 L 8,8" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <g transform="translate(560, 140)">
+    <circle cx="-20" cy="0" r="24" fill="url(#calcium-grad)" stroke="#334155" stroke-width="1.2" />
+    <text x="-20" y="0" class="atom-label ca-label">Ca</text>
+    <circle cx="20" cy="0" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="20" y="0" class="atom-label o-label">O</text>
+  </g>
+
+  <text x="670" y="140" class="math-symbol">+</text>
+
+  <g transform="translate(770, 140)">
+    <circle cx="0" cy="0" r="24" fill="url(#carbon-grad)" stroke="#1e293b" stroke-width="1.2" />
+    <text x="0" y="0" class="atom-label c-label">C</text>
+    <circle cx="-38" cy="0" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="-38" y="0" class="atom-label o-label">O</text>
+    <circle cx="38" cy="0" r="24" fill="url(#oxygen-grad)" stroke="#991b1b" stroke-width="1.2" />
+    <text x="38" y="0" class="atom-label o-label">O</text>
+  </g>
+
+  <g transform="translate(0, 300)">
+    <text x="200" y="0" class="formula-text">CaCO<tspan class="subscript">3</tspan> <tspan class="state-symbol">(s)</tspan></text>
+    <text x="420" y="-4" class="math-symbol" font-size="24">→</text>
+    <text x="560" y="0" class="formula-text">CaO <tspan class="state-symbol">(s)</tspan></text>
+    <text x="670" y="-4" class="math-symbol" font-size="24">+</text>
+    <text x="770" y="0" class="formula-text">CO<tspan class="subscript">2</tspan> <tspan class="state-symbol">(g)</tspan></text>
+  </g>
+
+</svg>

@@ -9,9 +9,28 @@
      initPremiumPractice({ unit: '04', containerId: 'problemContainer' });
    ===================================================== */
 
+const SUBSCRIPT_DIGITS = '₀₁₂₃₄₅₆₇₈₉';
+const SUPERSCRIPT_MAP = {
+  '⁰': '0',
+  '¹': '1',
+  '²': '2',
+  '³': '3',
+  '⁴': '4',
+  '⁵': '5',
+  '⁶': '6',
+  '⁷': '7',
+  '⁸': '8',
+  '⁹': '9',
+  '⁺': '+',
+  '⁻': '−'
+};
+
 function normalize(s) {
   return String(s)
-    .replace(/[₀₁₂₃₄₅₆₇₈₉]/g, d => '0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(d)])
+    .replace(/[₀₁₂₃₄₅₆₇₈₉]/g, d => '0123456789'[SUBSCRIPT_DIGITS.indexOf(d)])
+    .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, ch => SUPERSCRIPT_MAP[ch] || ch)
+    .replace(/⁺/g, '+')
+    .replace(/[⁻−]/g, '-')
     .replace(/\s+/g, '')
     .toLowerCase()
     .trim();
@@ -29,6 +48,64 @@ function formatAnswerForFeedback(answer) {
     return answer.join(' or ');
   }
   return String(answer);
+}
+
+function decodeSubscripts(text) {
+  return String(text).replace(/[₀₁₂₃₄₅₆₇₈₉]/g, d => '0123456789'[SUBSCRIPT_DIGITS.indexOf(d)]);
+}
+
+function decodeSuperscripts(text) {
+  return String(text).replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻]/g, ch => SUPERSCRIPT_MAP[ch] || ch);
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function normalizeNotationText(text) {
+  if (!text) return escapeHtml(text);
+
+  const hasUnicodeNotation = /[₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻]/.test(text);
+  const hasAsciiNotation = /(?:[A-Z][a-z]?\d+|\^[+-]?\d+[+-]?|\^[+-])/.test(text);
+  if (!hasUnicodeNotation && !hasAsciiNotation) return escapeHtml(text);
+
+  return escapeHtml(text)
+    .replace(/(^|[\s([{])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)(?=[A-Z][a-z]?)/g, (_, prefix, digits) => `${prefix}<sup>${decodeSuperscripts(digits)}</sup>`)
+    .replace(/([A-Za-z\)])([₀₁₂₃₄₅₆₇₈₉]+)/g, (_, lead, digits) => `${lead}<span class="chem-sub">${decodeSubscripts(digits)}</span>`)
+    .replace(/((?:\([A-Za-z][A-Za-z0-9]*?(?:<span class="chem-sub">\d+<\/span>)*\)|[A-Z][a-z]?(?:<span class="chem-sub">\d+<\/span>)?)+)([⁰¹²³⁴⁵⁶⁷⁸⁹]*[⁺⁻])/g, (_, formula, charge) => `<span class="ion-group">${formula}<span class="chem-charge">${decodeSuperscripts(charge)}</span></span>`)
+    .replace(/([₀₁₂₃₄₅₆₇₈₉]+)/g, digits => `<sub>${decodeSubscripts(digits)}</sub>`)
+    .replace(/([⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻]+)/g, marks => `<sup>${decodeSuperscripts(marks)}</sup>`)
+    .replace(/([A-Z][a-z]?|\))(\d+)/g, (_, lead, digits) => `${lead}<span class="chem-sub">${digits}</span>`)
+    .replace(/(<\/span>|[A-Za-z0-9)\]])\^([+-]?\d+[+-]?|[+-])/g, (_, base, exponent) => `${base}<sup>${exponent}</sup>`)
+    .replace(/((?:\([A-Za-z][A-Za-z0-9]*?(?:<span class="chem-sub">\d+<\/span>)*\)|[A-Z][a-z]?(?:<span class="chem-sub">\d+<\/span>)?)+)<sup>(\d*[+-])<\/sup>/g, (_, formula, charge) => `<span class="ion-group">${formula}<span class="chem-charge">${charge}</span></span>`);
+}
+
+function normalizeNotationHtml(html) {
+  if (!html) return String(html);
+  const hasUnicodeNotation = /[₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻]/.test(html);
+  const hasAsciiNotation = /(?:[A-Z][a-z]?\d+|\^[+-]?\d+[+-]?|\^[+-])/.test(html);
+  if (!hasUnicodeNotation && !hasAsciiNotation) return String(html);
+
+  const template = document.createElement('template');
+  template.innerHTML = String(html);
+  const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(node => {
+    const normalized = normalizeNotationText(node.textContent);
+    if (normalized === escapeHtml(node.textContent)) return;
+    const fragment = document.createRange().createContextualFragment(normalized);
+    node.replaceWith(fragment);
+  });
+
+  return template.innerHTML;
 }
 
 export async function initPremiumPractice({ unit, containerId = 'problemContainer', filter = 'all', count = 12 } = {}) {
@@ -79,7 +156,7 @@ function renderProblems(problems, container) {
 
     if (p.choices) {
       answerHTML = `<div class="prob-choices">${p.choices.map((c, ci) =>
-        `<button class="choice-btn" data-prob="${p.id}" data-idx="${ci}" data-correct="${p.correct}" aria-pressed="false">${c}</button>`
+        `<button class="choice-btn" data-prob="${p.id}" data-idx="${ci}" data-correct="${p.correct}" aria-pressed="false">${normalizeNotationHtml(c)}</button>`
       ).join('')}</div>`;
     } else {
       const unitLabel = p.unit ? ` <span class="unit-label-inline">${p.unit}</span>` : '';
@@ -102,10 +179,10 @@ function renderProblems(problems, container) {
           <span class="prob-num">#${i + 1}</span>
           <span class="prob-tag ${tagClass}">${p.tag}</span>
         </div>
-        <div class="prob-q">${p.q}</div>
+        <div class="prob-q">${normalizeNotationHtml(p.q)}</div>
         ${answerHTML}
         <div class="feedback" id="fb-${p.id}" aria-live="polite" hidden></div>
-        <div class="solution" id="sol-${p.id}" hidden>${p.solution}</div>
+        <div class="solution" id="sol-${p.id}" hidden>${normalizeNotationHtml(p.solution)}</div>
       </div>`;
   });
 
@@ -132,7 +209,7 @@ function ensureInteractionHandler(container) {
       choiceBtn.classList.add(isCorrect ? 'correct' : 'incorrect');
       if (!isCorrect) btns[correct].classList.add('reveal-correct');
       fb.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-      fb.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+      fb.innerHTML = isCorrect ? '✓ Correct!' : '✗ Incorrect';
       fb.hidden = false;
       document.getElementById(`sol-${probId}`).hidden = false;
       return;
@@ -157,7 +234,9 @@ function ensureInteractionHandler(container) {
       }
       inputEl.disabled = true;
       fb.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-      fb.textContent = isCorrect ? '✓ Correct!' : `✗ Incorrect — answer: ${formatAnswerForFeedback(answer)}`;
+      fb.innerHTML = isCorrect
+        ? '✓ Correct!'
+        : `✗ Incorrect — answer: ${normalizeNotationHtml(formatAnswerForFeedback(answer))}`;
       fb.hidden = false;
       document.getElementById(`sol-${probId}`).hidden = false;
     }

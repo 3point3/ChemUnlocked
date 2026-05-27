@@ -102,14 +102,14 @@
     <p>This vocabulary matters because later calculations depend on it. Mixing up solute, solvent, and solution mass or volume is the most common early mistake — fix that here.</p>
     <p>In a solution, the solute is spread evenly throughout the solvent.</p>
     <p>"Like dissolves like" is the key rule: polar solvents dissolve polar solutes, and nonpolar solvents dissolve nonpolar solutes.</p>
-    <table>
+    <table class="mobile-stack-table">
       <thead><tr><th>Term</th><th>Definition</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td><strong>Solute</strong></td><td>Substance being dissolved (usually smaller amount)</td><td>NaCl in saltwater</td></tr>
-        <tr><td><strong>Solvent</strong></td><td>Substance doing the dissolving (usually larger amount)</td><td>H₂O in saltwater</td></tr>
-        <tr><td><strong>Aqueous solution</strong></td><td>Water is the solvent</td><td>Most biological fluids</td></tr>
-        <tr><td><strong>Electrolyte</strong></td><td>Solute that dissociates into ions, conducts electricity</td><td>NaCl → Na⁺ + Cl⁻</td></tr>
-        <tr><td><strong>Nonelectrolyte</strong></td><td>Solute that stays as molecules, does not conduct</td><td>Glucose, C₆H₁₂O₆</td></tr>
+        <tr><td data-label="Term"><strong>Solute</strong></td><td data-label="Definition">Substance being dissolved (usually smaller amount)</td><td data-label="Example">NaCl in saltwater</td></tr>
+        <tr><td data-label="Term"><strong>Solvent</strong></td><td data-label="Definition">Substance doing the dissolving (usually larger amount)</td><td data-label="Example"><span class="ion-group">H<span class="chem-sub">2</span>O</span> in saltwater</td></tr>
+        <tr><td data-label="Term"><strong>Aqueous solution</strong></td><td data-label="Definition">Water is the solvent</td><td data-label="Example">Most biological fluids</td></tr>
+        <tr><td data-label="Term"><strong>Electrolyte</strong></td><td data-label="Definition">Solute that dissociates into ions, conducts electricity</td><td data-label="Example">NaCl → <span class="ion-group">Na<span class="chem-charge">+</span></span> + <span class="ion-group">Cl<span class="chem-charge">−</span></span></td></tr>
+        <tr><td data-label="Term"><strong>Nonelectrolyte</strong></td><td data-label="Definition">Solute that stays as molecules, does not conduct</td><td data-label="Example">Glucose, <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></td></tr>
       </tbody>
     </table>
     <div class="key-fact">
@@ -152,14 +152,235 @@
         </div>
       </div>
     </div>
+    <figure class="unit-figure unit-figure-svg-solubility">
+      <div class="chart-scroll-wrap solubility-scroll-wrap">
+      <svg class="solubility-figure-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 610" width="100%" height="auto" role="img" aria-label="Comparison of unsaturated, saturated, and supersaturated solutions with a temperature note">
+        <defs>
+          <style>
+            .card-bg { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; }
+            .panel-bg { fill: #f8fafc; stroke: #dbeafe; stroke-width: 1.5; }
+            .rule-bg { fill: #fff7ed; stroke: #fed7aa; stroke-width: 1.5; }
+            .warn-bg { fill: #fef2f2; stroke: #fca5a5; stroke-width: 1.5; }
+            .title { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+            .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+            .panel-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #64748b; text-anchor: middle; }
+            .panel-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+            .warn-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #b91c1c; text-anchor: middle; }
+            .rule-title { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 800; fill: #c2410c; text-anchor: middle; }
+            .rule-head { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+            .rule-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #475569; text-anchor: middle; }
+            .beaker { fill: #ffffff; stroke: #475569; stroke-width: 4; }
+            .waterline { fill: #e0f2fe; stroke: #7dd3fc; stroke-width: 1.2; }
+            .solvent { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1.2; opacity: 0.95; }
+            .solute { fill: #f59e0b; stroke: #d97706; stroke-width: 1.8; }
+            .crystal { fill: #f97316; stroke: #c2410c; stroke-width: 1.6; }
+            .temp-pill { fill: #eff6ff; stroke: #bfdbfe; stroke-width: 1.2; }
+            .temp-text { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; fill: #2563eb; text-anchor: middle; }
+            .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+          </style>
+        </defs>
+
+        <rect x="10" y="10" width="840" height="590" rx="18" class="card-bg"/>
+        <text x="430" y="48" class="title">Solubility States at One Temperature</text>
+
+        <g transform="translate(30, 78)">
+          <rect x="0" y="0" width="250" height="336" rx="18" class="panel-bg"/>
+          <text x="125" y="30" class="panel-title">Unsaturated</text>
+          <text x="125" y="50" class="panel-sub">below the limit</text>
+          <rect x="86" y="66" width="78" height="24" rx="12" class="temp-pill"/>
+          <text x="125" y="82" class="temp-text">25°C</text>
+          <rect x="78" y="108" width="94" height="150" rx="16" class="beaker"/>
+          <path d="M 82 164 H 168 V 237 Q 168 252 154 252 H 96 Q 82 252 82 237 Z" class="waterline"/>
+          <g class="solvent">
+            <circle cx="104" cy="188" r="9"/><circle cx="126" cy="176" r="9"/><circle cx="148" cy="192" r="9"/>
+            <circle cx="98" cy="216" r="9"/><circle cx="128" cy="206" r="9"/><circle cx="152" cy="220" r="9"/>
+            <circle cx="112" cy="234" r="9"/><circle cx="142" cy="226" r="9"/><circle cx="126" cy="244" r="9"/>
+          </g>
+          <g class="solute">
+            <circle cx="114" cy="204" r="11"/><circle cx="140" cy="222" r="11"/><circle cx="126" cy="238" r="11"/>
+          </g>
+          <text x="125" y="286" class="panel-text">all solute dissolved</text>
+          <text x="125" y="304" class="panel-text">more can still dissolve</text>
+          <rect x="52" y="320" width="146" height="30" rx="12" fill="#ecfdf5" stroke="#86efac" stroke-width="1.4"/>
+          <text x="125" y="335" class="badge-text" fill="#15803d">extra solute fits</text>
+        </g>
+
+        <g transform="translate(305, 78)">
+          <rect x="0" y="0" width="250" height="336" rx="18" class="panel-bg"/>
+          <text x="125" y="30" class="panel-title">Saturated</text>
+          <text x="125" y="50" class="panel-sub">at the limit</text>
+          <rect x="86" y="66" width="78" height="24" rx="12" class="temp-pill"/>
+          <text x="125" y="82" class="temp-text">25°C</text>
+          <rect x="78" y="108" width="94" height="150" rx="16" class="beaker"/>
+          <path d="M 82 164 H 168 V 237 Q 168 252 154 252 H 96 Q 82 252 82 237 Z" class="waterline"/>
+          <g class="solvent">
+            <circle cx="104" cy="188" r="9"/><circle cx="126" cy="176" r="9"/><circle cx="148" cy="192" r="9"/>
+            <circle cx="98" cy="214" r="9"/><circle cx="126" cy="206" r="9"/><circle cx="150" cy="220" r="9"/>
+            <circle cx="112" cy="234" r="9"/><circle cx="142" cy="226" r="9"/><circle cx="126" cy="244" r="9"/>
+          </g>
+          <g class="solute">
+            <circle cx="104" cy="202" r="10.5"/><circle cx="130" cy="188" r="10.5"/><circle cx="148" cy="212" r="10.5"/>
+            <circle cx="112" cy="226" r="10.5"/><circle cx="144" cy="236" r="10.5"/>
+          </g>
+          <g class="crystal">
+            <circle cx="110" cy="244" r="8"/><circle cx="126" cy="244" r="8"/><circle cx="142" cy="244" r="8"/>
+          </g>
+          <text x="125" y="286" class="panel-text">dissolved amount is maxed out</text>
+          <text x="125" y="304" class="panel-text">extra solute stays solid</text>
+          <rect x="38" y="320" width="174" height="30" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.4"/>
+          <text x="125" y="335" class="badge-text" fill="#c2410c">undissolved solid remains</text>
+        </g>
+
+        <g transform="translate(580, 78)">
+          <rect x="0" y="0" width="250" height="336" rx="18" class="panel-bg"/>
+          <text x="125" y="30" class="panel-title">Supersaturated</text>
+          <text x="125" y="50" class="panel-sub">above the usual limit</text>
+          <rect x="86" y="66" width="78" height="24" rx="12" class="temp-pill"/>
+          <text x="125" y="82" class="temp-text">25°C</text>
+          <rect x="78" y="108" width="94" height="150" rx="16" class="beaker"/>
+          <path d="M 82 164 H 168 V 237 Q 168 252 154 252 H 96 Q 82 252 82 237 Z" class="waterline"/>
+          <g class="solvent">
+            <circle cx="104" cy="188" r="9"/><circle cx="126" cy="176" r="9"/><circle cx="148" cy="192" r="9"/>
+            <circle cx="98" cy="214" r="9"/><circle cx="126" cy="206" r="9"/><circle cx="152" cy="220" r="9"/>
+            <circle cx="112" cy="236" r="9"/><circle cx="142" cy="226" r="9"/><circle cx="126" cy="244" r="9"/>
+          </g>
+          <g class="solute">
+            <circle cx="100" cy="204" r="10.5"/><circle cx="126" cy="192" r="10.5"/><circle cx="148" cy="204" r="10.5"/>
+            <circle cx="112" cy="224" r="10.5"/><circle cx="138" cy="232" r="10.5"/><circle cx="110" cy="238" r="10.5"/>
+            <circle cx="140" cy="238" r="10.5"/>
+          </g>
+          <text x="125" y="286" class="panel-text">more dissolved than normal</text>
+          <text x="125" y="304" class="panel-text">can crystallize if disturbed</text>
+          <rect x="56" y="320" width="138" height="30" rx="12" class="warn-bg"/>
+          <text x="125" y="335" class="badge-text" fill="#b91c1c">unstable state</text>
+        </g>
+
+        <g transform="translate(30, 458)">
+          <rect x="0" y="0" width="800" height="116" rx="16" class="rule-bg"/>
+          <text x="400" y="26" class="rule-title">Temperature changes the solubility limit</text>
+          <g transform="translate(24, 42)">
+            <rect x="0" y="0" width="360" height="54" rx="12" fill="#ffffff" stroke="#fed7aa" stroke-width="1.2"/>
+            <text x="180" y="18" class="rule-head">Most solids in water</text>
+            <text x="180" y="36" class="rule-text">higher temperature usually means higher solubility</text>
+          </g>
+          <g transform="translate(416, 42)">
+            <rect x="0" y="0" width="360" height="54" rx="12" fill="#ffffff" stroke="#fed7aa" stroke-width="1.2"/>
+            <text x="180" y="18" class="rule-head">Gases in liquids</text>
+            <text x="180" y="36" class="rule-text">higher temperature usually means lower solubility</text>
+          </g>
+        </g>
+      </svg>
+      </div>
+      <figcaption>Compare how much solute is dissolved to the solubility limit at the same temperature. That is what determines whether a solution is unsaturated, saturated, or supersaturated.</figcaption>
+    </figure>
     <p class="sol-mt-075"><strong>Temperature matters:</strong> For most solid solutes in water, solubility <em>increases</em> as temperature increases. For gases dissolved in liquids, solubility usually <em>decreases</em> as temperature increases.</p>
   </div>
 
   <!-- 13.3 -->
   <div class="card">
-    <h2 class="card-title"><span class="num">13.3</span> Molarity: Moles per Liter of Solution</h2>
+    <h2 class="card-title"><span class="num">13.3</span> Particle Diagrams: What Dissolved Solutions Look Like Microscopically</h2>
+    <p>Particle diagrams show solute and solvent particles at the microscopic level. Key features to represent accurately:</p>
+    <p>This is where the vocabulary, conductivity ideas, and particle-count ideas all come together. If the diagram is wrong, the chemistry interpretation will be wrong too.</p>
+    <ul class="particle-list">
+      <li><strong>Ionic solutes</strong> (NaCl): show separate <span class="ion-group">Na<span class="chem-charge">+</span></span> and <span class="ion-group">Cl<span class="chem-charge">−</span></span> ions dispersed through water molecules.</li>
+      <li><strong>Molecular solutes</strong> (glucose): show intact molecules, no ions.</li>
+      <li><strong>Insoluble precipitates</strong> (AgCl): show solid clusters at the bottom, separate from dissolved ions.</li>
+      <li><strong>Net ionic</strong>: spectator ions disappear; only the precipitate and reacting ions remain.</li>
+    </ul>
+    <p>These particle diagrams help you predict three things: whether the solution conducts electricity, how many dissolved particles are present, and whether a precipitate forms.</p>
+
+    <div class="particle-grid particle-grid--svg">
+      <div class="particle-box particle-box--svg">
+        <div class="particle-svg-wrap">
+          <svg class="particle-card-svg" viewBox="0 0 180 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NaCl aqueous particle diagram showing separated ions dispersed through solution">
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="#f8fafc"/>
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+            <circle cx="25" cy="22" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="60" cy="14" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="98" cy="24" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="135" cy="16" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="164" cy="22" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="14" cy="50" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="48" cy="58" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="84" cy="46" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="120" cy="54" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="160" cy="48" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="32" cy="82" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="70" cy="90" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="108" cy="78" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="148" cy="86" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="170" cy="74" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="18" cy="114" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="56" cy="122" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="94" cy="110" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="132" cy="118" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="166" cy="108" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="28" cy="148" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="66" cy="156" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="104" cy="144" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="142" cy="152" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="168" cy="140" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="16" cy="180" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="52" cy="188" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="90" cy="176" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="128" cy="184" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="165" cy="174" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="38" cy="212" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="76" cy="220" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="114" cy="208" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="152" cy="216" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="44" cy="34" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="44" y="38" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="148" cy="62" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="148" y="66" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="52" cy="130" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="52" y="134" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="150" cy="162" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="150" y="166" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="36" cy="200" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="36" y="204" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="138" cy="222" r="11" fill="#378ADD" stroke="#185FA5" stroke-width="1.5"/><text x="138" y="226" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">Na⁺</text>
+            <circle cx="112" cy="28" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="112" y="32" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+            <circle cx="22" cy="96" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="22" y="100" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+            <circle cx="162" cy="110" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="162" y="114" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+            <circle cx="22" cy="152" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="22" y="156" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+            <circle cx="96" cy="172" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="96" y="176" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+            <circle cx="158" cy="210" r="14" fill="#C0DD97" stroke="#27500A" stroke-width="1.5"/><text x="158" y="214" text-anchor="middle" font-size="9" font-family="system-ui, -apple-system, sans-serif" fill="#173404" font-weight="600">Cl⁻</text>
+          </svg>
+        </div>
+        <strong>NaCl(aq)</strong>
+        <p><span class="ion-group">Na<span class="chem-charge">+</span></span> and <span class="ion-group">Cl<span class="chem-charge">−</span></span> ions fully dissociated, dispersed throughout</p>
+      </div>
+      <div class="particle-box particle-box--svg">
+        <div class="particle-svg-wrap">
+          <svg class="particle-card-svg" viewBox="0 0 180 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Glucose aqueous particle diagram showing intact molecules in solution">
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="#f8fafc"/>
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+            <circle cx="25" cy="22" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="60" cy="14" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="98" cy="24" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="135" cy="16" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="164" cy="22" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="14" cy="50" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="168" cy="58" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="20" cy="110" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="162" cy="100" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="16" cy="168" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="164" cy="158" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="30" cy="228" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="152" cy="222" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="58" cy="46" r="22" fill="#FAC775" stroke="#633806" stroke-width="1.5"/><text x="58" y="42" text-anchor="middle" font-size="6.5" font-family="system-ui, -apple-system, sans-serif" fill="#412402" font-weight="700">C₆H₁₂O₆</text>
+            <circle cx="132" cy="58" r="22" fill="#FAC775" stroke="#633806" stroke-width="1.5"/><text x="132" y="54" text-anchor="middle" font-size="6.5" font-family="system-ui, -apple-system, sans-serif" fill="#412402" font-weight="700">C₆H₁₂O₆</text>
+            <circle cx="48" cy="130" r="22" fill="#FAC775" stroke="#633806" stroke-width="1.5"/><text x="48" y="126" text-anchor="middle" font-size="6.5" font-family="system-ui, -apple-system, sans-serif" fill="#412402" font-weight="700">C₆H₁₂O₆</text>
+            <circle cx="138" cy="142" r="22" fill="#FAC775" stroke="#633806" stroke-width="1.5"/><text x="138" y="138" text-anchor="middle" font-size="6.5" font-family="system-ui, -apple-system, sans-serif" fill="#412402" font-weight="700">C₆H₁₂O₆</text>
+            <circle cx="90" cy="208" r="22" fill="#FAC775" stroke="#633806" stroke-width="1.5"/><text x="90" y="204" text-anchor="middle" font-size="6.5" font-family="system-ui, -apple-system, sans-serif" fill="#412402" font-weight="700">C₆H₁₂O₆</text>
+          </svg>
+        </div>
+        <strong>Glucose(aq)</strong>
+        <p>Intact <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span> molecules, no ions form</p>
+      </div>
+      <div class="particle-box particle-box--svg">
+        <div class="particle-svg-wrap">
+          <svg class="particle-card-svg" viewBox="0 0 180 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Particle diagram after precipitation showing nitrate ions in solution and silver chloride solid at bottom">
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="#f8fafc"/>
+            <rect x="0" y="0" width="180" height="240" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+            <circle cx="25" cy="20" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="62" cy="12" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="100" cy="22" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="138" cy="14" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="168" cy="20" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="18" cy="52" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="56" cy="60" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="96" cy="48" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="136" cy="56" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="170" cy="46" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="30" cy="86" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="70" cy="94" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="110" cy="82" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="150" cy="90" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="20" cy="120" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="60" cy="128" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="100" cy="116" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="140" cy="124" r="4" fill="#B5D4F4" opacity="0.4"/><circle cx="170" cy="112" r="4" fill="#B5D4F4" opacity="0.4"/>
+            <circle cx="44" cy="34" r="11" fill="#AFA9EC" stroke="#3C3489" stroke-width="1.5"/><text x="44" y="38" text-anchor="middle" font-size="7.5" font-family="system-ui, -apple-system, sans-serif" fill="#26215C" font-weight="600">NO₃⁻</text>
+            <circle cx="152" cy="44" r="11" fill="#AFA9EC" stroke="#3C3489" stroke-width="1.5"/><text x="152" y="48" text-anchor="middle" font-size="7.5" font-family="system-ui, -apple-system, sans-serif" fill="#26215C" font-weight="600">NO₃⁻</text>
+            <circle cx="24" cy="100" r="11" fill="#AFA9EC" stroke="#3C3489" stroke-width="1.5"/><text x="24" y="104" text-anchor="middle" font-size="7.5" font-family="system-ui, -apple-system, sans-serif" fill="#26215C" font-weight="600">NO₃⁻</text>
+            <circle cx="118" cy="96" r="11" fill="#AFA9EC" stroke="#3C3489" stroke-width="1.5"/><text x="118" y="100" text-anchor="middle" font-size="7.5" font-family="system-ui, -apple-system, sans-serif" fill="#26215C" font-weight="600">NO₃⁻</text>
+            <line x1="0" y1="148" x2="180" y2="148" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="90" y="143" text-anchor="middle" font-size="7" font-family="system-ui, -apple-system, sans-serif" fill="#64748b">solution above</text>
+            <polygon points="10,155 22,152 26,163 14,166" fill="#D3D1C7" stroke="#888780" stroke-width="0.8"/><polygon points="28,153 42,150 46,162 32,165" fill="#C8C6BC" stroke="#888780" stroke-width="0.8"/><polygon points="48,155 60,151 65,162 52,166" fill="#D8D6CC" stroke="#888780" stroke-width="0.8"/><polygon points="66,152 80,149 85,162 70,165" fill="#C8C6BC" stroke="#888780" stroke-width="0.8"/><polygon points="86,154 100,150 104,163 90,166" fill="#D3D1C7" stroke="#888780" stroke-width="0.8"/><polygon points="104,151 118,148 123,162 108,165" fill="#CCC9BF" stroke="#888780" stroke-width="0.8"/><polygon points="124,153 138,150 142,163 128,166" fill="#D3D1C7" stroke="#888780" stroke-width="0.8"/><polygon points="142,152 157,149 161,162 146,165" fill="#C8C6BC" stroke="#888780" stroke-width="0.8"/><polygon points="160,154 174,151 176,163 163,166" fill="#D8D6CC" stroke="#888780" stroke-width="0.8"/>
+            <polygon points="4,167 18,164 22,177 8,179" fill="#B8B6AC" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="20,165 36,162 40,176 24,179" fill="#C0BEB4" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="38,167 54,163 58,177 42,180" fill="#B4B2A8" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="56,164 72,161 76,176 60,179" fill="#BCBAB0" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="74,166 90,163 94,177 78,180" fill="#B8B6AC" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="92,164 108,161 112,176 96,179" fill="#C0BEB4" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="110,166 126,163 130,177 114,180" fill="#B4B2A8" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="128,164 144,161 148,176 132,179" fill="#B8B6AC" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="146,166 162,163 166,177 150,180" fill="#BCBAB0" stroke="#5F5E5A" stroke-width="0.8"/><polygon points="164,165 176,162 178,177 167,180" fill="#B4B2A8" stroke="#5F5E5A" stroke-width="0.8"/>
+            <polygon points="2,180 18,177 22,191 6,193" fill="#A8A6A0" stroke="#444441" stroke-width="0.8"/><polygon points="18,178 34,175 38,191 22,194" fill="#A4A29C" stroke="#444441" stroke-width="0.8"/><polygon points="36,180 52,177 56,191 40,194" fill="#ACAAA4" stroke="#444441" stroke-width="0.8"/><polygon points="54,178 70,175 74,191 58,194" fill="#A8A6A0" stroke="#444441" stroke-width="0.8"/><polygon points="72,180 88,177 92,192 76,194" fill="#A4A29C" stroke="#444441" stroke-width="0.8"/><polygon points="90,178 106,175 110,191 94,194" fill="#ACAAA4" stroke="#444441" stroke-width="0.8"/><polygon points="108,180 124,177 128,191 112,194" fill="#A8A6A0" stroke="#444441" stroke-width="0.8"/><polygon points="126,178 142,175 146,191 130,194" fill="#A4A29C" stroke="#444441" stroke-width="0.8"/><polygon points="144,180 160,177 164,191 148,194" fill="#ACAAA4" stroke="#444441" stroke-width="0.8"/><polygon points="162,179 176,176 178,191 165,194" fill="#A8A6A0" stroke="#444441" stroke-width="0.8"/>
+            <rect x="0" y="193" width="180" height="47" fill="#888780"/>
+            <polygon points="5,197 15,195 18,205 8,207" fill="#9A9890" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="22,196 34,194 37,205 25,207" fill="#928E86" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="40,197 52,195 55,206 43,208" fill="#9A9890" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="58,196 70,194 73,205 61,207" fill="#928E86" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="76,197 88,195 91,206 79,208" fill="#9A9890" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="94,196 106,194 109,205 97,208" fill="#928E86" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="112,197 124,194 127,206 115,208" fill="#9A9890" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="130,196 142,194 145,205 133,207" fill="#928E86" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="148,197 160,195 163,206 151,208" fill="#9A9890" stroke="#5F5E5A" stroke-width="0.5"/><polygon points="166,196 178,194 178,206 168,208" fill="#928E86" stroke="#5F5E5A" stroke-width="0.5"/>
+            <text x="90" y="220" text-anchor="middle" font-size="10" font-family="system-ui, -apple-system, sans-serif" fill="#fff" font-weight="600">AgCl(s) precipitate</text>
+          </svg>
+        </div>
+        <strong>After Precipitation</strong>
+        <p>AgCl(s) settles as granular solid, while <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span> stays in solution above</p>
+      </div>
+    </div>
+    <div class="legend-row">
+      <strong class="legend-title">Key</strong>
+      <span><span class="legend-dot legend-water"></span>H<span class="chem-sub">2</span>O</span>
+      <span><span class="legend-dot legend-na"></span><span class="ion-group">Na<span class="chem-charge">+</span></span></span>
+      <span><span class="legend-dot legend-cl"></span><span class="ion-group">Cl<span class="chem-charge">−</span></span></span>
+      <span><span class="legend-dot legend-glucose"></span><span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span></span>
+      <span><span class="legend-dot legend-no3"></span><span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></span>
+      <span><span class="legend-dot legend-agcl legend-dot-square"></span>AgCl(s)</span>
+    </div>
+  </div>
+
+  <!-- 13.4 -->
+  <div class="card">
+    <h2 class="card-title"><span class="num">13.4</span> Molarity: Moles per Liter of Solution</h2>
     <p>The most common concentration unit in chemistry. Molarity expresses moles of solute per liter of <em>solution</em> (not solvent).</p>
     <p>This is the concentration idea you will use most in reaction problems. The usual mistake is simple but costly: forgetting to convert mL to L.</p>
+    <div class="molarity-two-col">
+      <div class="molarity-two-col-main">
     <div class="formula-box">
       <span class="label">Formula</span>
       <div class="formula-rule-list">
@@ -173,6 +394,107 @@
         <span class="formula-rule"><strong>L solution = <span class="formula-frac"><span class="formula-frac-n">mol</span><span class="formula-frac-d">M</span></span></strong></span>
       </div>
     </div>
+      </div>
+      <div class="molarity-two-col-side">
+    <figure class="unit-figure unit-figure-svg-molarity-reference">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" width="100%" height="auto" role="img" aria-label="Molarity reference showing the particle-level meaning of molarity and the milliliter-to-liter warning">
+        <title>Molarity: Concentration Concept and Formula Reference</title>
+        <desc>A compact chemistry reference card clarifying the particle-level meaning of molarity and the milliliter-to-liter conversion warning.</desc>
+        
+        <defs>
+          <style>
+            .bg-card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; rx: 16px; }
+            .title-main { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0f172a; }
+            .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #64748b; }
+            .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+            .panel-accent { fill: #eff6ff; stroke: #bfdbfe; stroke-width: 1.5; rx: 12px; }
+            .beaker-glass { fill: #f1f5f9; fill-opacity: 0.6; stroke: #94a3b8; stroke-width: 3; stroke-linecap: round; }
+            .beaker-fluid { fill: #e0f2fe; fill-opacity: 0.8; stroke: #38bdf8; stroke-width: 1.5; }
+            .label-section { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; letter-spacing: 0.5px; }
+            .label-important { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #ea580c; letter-spacing: 0.5px; }
+            .math-molarity { font-family: system-ui, -apple-system, sans-serif; font-size: 32px; font-weight: 800; fill: #2563eb; text-anchor: middle; }
+            .math-formula { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+            .math-subscript { font-size: 11px; font-weight: 600; fill: #475569; }
+            .math-equals { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+            .math-rearrange { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; }
+            .text-body { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #475569; }
+            .text-bold { font-weight: 700; fill: #0f172a; }
+            .atom-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+            .line-fraction { stroke: #0f172a; stroke-width: 2.5; stroke-linecap: round; }
+            .line-connector { stroke: #4f46e5; stroke-width: 1.5; stroke-dasharray: 3 3; }
+          </style>
+
+          <radialGradient id="solute-cation" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#e9d5ff" />
+            <stop offset="60%" stop-color="#c084fc" />
+            <stop offset="100%" stop-color="#7e22ce" />
+          </radialGradient>
+          <radialGradient id="solute-anion" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#86efac" />
+            <stop offset="60%" stop-color="#4ade80" />
+            <stop offset="100%" stop-color="#15803d" />
+          </radialGradient>
+        </defs>
+
+        <rect x="2" y="2" width="396" height="456" class="bg-card" />
+
+        <g transform="translate(24, 20)">
+          <text x="0" y="24" class="title-main">Molarity (M)</text>
+          <text x="0" y="44" class="subtitle">Moles of Solute per Liter of Solution</text>
+          <line x1="0" y1="56" x2="352" y2="56" stroke="#e2e8f0" stroke-width="1" />
+        </g>
+
+        <g transform="translate(24, 100)">
+          <rect x="0" y="0" width="352" height="330" class="panel-bg" />
+          <text x="16" y="24" class="label-section">PARTICLE-LEVEL CONCEPT</text>
+          
+          <g transform="translate(25, 55)">
+            <path d="M 10 52 Q 10 160 20 160 L 110 160 Q 120 160 120 52 Z" class="beaker-fluid" />
+            <path d="M 5 10 L 10 10 L 10 160 Q 10 170 20 170 L 110 170 Q 120 170 120 160 L 120 10 L 125 10" class="beaker-glass" />
+            <line x1="95" y1="52" x2="115" y2="52" stroke="#94a3b8" stroke-width="1.5" />
+            <text x="90" y="55" font-family="system-ui" font-size="9px" font-weight="700" fill="#64748b" text-anchor="end">1.0 Liter</text>
+            <circle cx="35" cy="95" r="14" fill="url(#solute-cation)" stroke="#7e22ce" stroke-width="1" />
+            <text x="35" y="95" class="atom-text">K+</text>
+            <circle cx="90" cy="110" r="14" fill="url(#solute-cation)" stroke="#7e22ce" stroke-width="1" />
+            <text x="90" y="110" class="atom-text">K+</text>
+            <circle cx="45" cy="140" r="14" fill="url(#solute-cation)" stroke="#7e22ce" stroke-width="1" />
+            <text x="45" y="140" class="atom-text">K+</text>
+            <circle cx="70" cy="85" r="14" fill="url(#solute-anion)" stroke="#15803d" stroke-width="1" />
+            <text x="70" y="85" class="atom-text">Cl-</text>
+            <circle cx="35" cy="120" r="14" fill="url(#solute-anion)" stroke="#15803d" stroke-width="1" />
+            <text x="35" y="120" class="atom-text">Cl-</text>
+            <circle cx="85" cy="140" r="14" fill="url(#solute-anion)" stroke="#15803d" stroke-width="1" />
+            <text x="85" y="140" class="atom-text">Cl-</text>
+          </g>
+
+          <g transform="translate(175, 85)">
+            <line x1="-70" y1="45" x2="5" y2="10" class="line-connector" />
+            <circle cx="-70" cy="45" r="3" fill="#4f46e5" />
+            <text x="10" y="10" class="text-bold" font-size="12px" fill="#7e22ce">Solute Moles</text>
+            <text x="10" y="26" class="text-body">Count of dissolved particles</text>
+            <text x="10" y="38" class="text-body" font-size="10px" fill="#64748b">(for example, 3 pairs of K+ / Cl-)</text>
+          </g>
+
+          <g transform="translate(175, 170)">
+            <line x1="-45" y1="-25" x2="5" y2="0" class="line-connector" />
+            <circle cx="-45" cy="-25" r="3" fill="#4f46e5" />
+            <text x="10" y="0" class="text-bold" font-size="12px" fill="#0d9488">Total Solution Volume</text>
+            <text x="10" y="16" class="text-body">Measured in <tspan class="text-bold" fill="#0f172a">Liters (L)</tspan></text>
+            <text x="10" y="28" class="text-body" font-size="10px" fill="#64748b">Entire mix, not just water</text>
+          </g>
+
+          <g transform="translate(16, 250)">
+            <rect x="0" y="0" width="320" height="75" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5" rx="8" />
+            <text x="12" y="20" class="label-important">CRITICAL PITFALL WARNING</text>
+            <text x="12" y="40" class="text-body">Always convert milliliters (<tspan class="text-bold">mL</tspan>) to liters (<tspan class="text-bold">L</tspan>):</text>
+            <text x="12" y="58" class="text-bold" font-size="12px" fill="#ea580c">1000 mL = 1 L</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption>The denominator in molarity is liters of <em>solution</em>, and that is why mL-to-L conversion is the most common setup mistake.</figcaption>
+    </figure>
+      </div>
+      <div class="molarity-two-col-main">
     <div class="key-fact">
         <div class="icon">⚠</div>
         <div class="key-fact-copy">
@@ -184,41 +506,95 @@
           </ul>
         </div>
       </div>
-  </div>
-
-  <!-- 13.4 -->
-  <div class="card">
-    <h2 class="card-title"><span class="num">13.4</span> Dilution: Same Solute, Bigger Volume, Lower Concentration</h2>
-    <p>Dilution is the process of adding solvent to reduce the concentration of a solution. The number of moles of solute stays constant — only the volume increases.</p>
-    <p>Start here if dilution problems keep fooling you. The key idea is that dilution is not a reaction. No new solute appears and none disappears.</p>
-    <div class="formula-box">
-      <span class="label">Dilution Equation</span>
-      <div class="formula-rule-list">
-        <span class="formula-rule"><strong>C₁V₁ = C₂V₂</strong></span>
-        <span class="formula-rule">C = molarity and V = volume, using the <strong>same units on both sides</strong></span>
       </div>
-    </div>
-    <div class="info-callout warn">
-      <strong>⚠ Critical Trap: V₂ is the FINAL volume</strong>
-      <ul>
-        <li>V₂ is NOT the volume of water you added — it's the total final volume of the diluted solution.</li>
-        <li>If a problem says "add 450 mL of water to 50 mL of solution," the final volume V₂ = 500 mL.</li>
-        <li>Always ask: "Is this the total volume, or the volume added?" before plugging in.</li>
-      </ul>
     </div>
   </div>
 
   <!-- 13.5 -->
   <div class="card">
-    <h2 class="card-title"><span class="num">13.5</span> Percent Concentration: m/m, m/v, and v/v</h2>
+    <h2 class="card-title"><span class="num">13.5</span> Dilution: Same Solute, Bigger Volume, Lower Concentration</h2>
+    <p>Dilution is the process of adding solvent to reduce the concentration of a solution. The number of moles of solute stays constant — only the volume increases.</p>
+    <p>Start here if dilution problems keep fooling you. The key idea is that dilution is not a reaction. No new solute appears and none disappears.</p>
+    <div class="formula-box">
+      <span class="label">Dilution Equation</span>
+      <div class="formula-rule-list">
+        <span class="formula-rule"><strong>C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub></strong></span>
+        <span class="formula-rule">C = molarity and V = volume, using the <strong>same units on both sides</strong></span>
+      </div>
+    </div>
+    <div class="dilution-panel">
+      <div class="dilution-grid">
+        <div class="dilution-stage-card">
+          <p class="dilution-stage-kicker">Initial State</p>
+          <h3>Small Volume, Higher Molarity</h3>
+          <p>The same solute is packed into less solution, so the particles are more crowded.</p>
+          <svg viewBox="0 0 220 240" role="img" aria-label="Initial concentrated solution with smaller volume and the same six solute particles">
+            <path d="M 58 92 L 58 176 Q 58 188 70 188 L 150 188 Q 162 188 162 176 L 162 92" fill="#e0f2fe" stroke="#bae6fd" stroke-width="2"/>
+            <path d="M 54 42 L 58 42 L 58 176 Q 58 192 72 192 L 148 192 Q 162 192 162 176 L 162 42 L 166 42" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#a855f7" stroke="#7e22ce" stroke-width="1.5">
+              <circle cx="82" cy="164" r="11"/><circle cx="104" cy="168" r="11"/><circle cx="126" cy="160" r="11"/>
+              <circle cx="146" cy="166" r="11"/><circle cx="96" cy="144" r="11"/><circle cx="136" cy="140" r="11"/>
+            </g>
+            <rect x="67" y="206" width="86" height="24" rx="12" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2"/>
+            <text x="110" y="222" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#c2410c">n = 6 moles</text>
+          </svg>
+          <p class="dilution-stage-note">`V₁` smaller, `C₁` larger.</p>
+        </div>
+
+        <div class="dilution-connector-card">
+          <h3 class="dilution-connector-title">Same Solute, More Solvent</h3>
+          <div class="dilution-connector-eq">
+            <span>C<span class="chem-sub">1</span>V<span class="chem-sub">1</span></span>
+            <span>=</span>
+            <span>C<span class="chem-sub">2</span>V<span class="chem-sub">2</span></span>
+          </div>
+          <div class="dilution-connector-arrow">↓</div>
+          <div class="dilution-connector-chip dilution-chip-solvent">add solvent</div>
+          <div class="dilution-connector-chip dilution-chip-volume">volume increases</div>
+          <div class="dilution-connector-chip dilution-chip-molarity">molarity decreases</div>
+          <p class="dilution-connector-note">Dilution is not a reaction. The solute amount stays constant, so <strong>n<span class="chem-sub">1</span> = n<span class="chem-sub">2</span></strong>.</p>
+        </div>
+
+        <div class="dilution-stage-card">
+          <p class="dilution-stage-kicker">Final State</p>
+          <h3>Large Volume, Lower Molarity</h3>
+          <p>The same six solute moles are spread through more solution, so the concentration drops.</p>
+          <svg viewBox="0 0 220 240" role="img" aria-label="Diluted solution with larger volume and the same six solute particles spread out">
+            <path d="M 58 74 L 58 176 Q 58 188 70 188 L 150 188 Q 162 188 162 176 L 162 74" fill="#e0f2fe" stroke="#bae6fd" stroke-width="2"/>
+            <path d="M 54 42 L 58 42 L 58 176 Q 58 192 72 192 L 148 192 Q 162 192 162 176 L 162 42 L 166 42" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#a855f7" stroke="#7e22ce" stroke-width="1.5">
+              <circle cx="78" cy="164" r="11"/><circle cx="122" cy="172" r="11"/><circle cx="146" cy="154" r="11"/>
+              <circle cx="96" cy="118" r="11"/><circle cx="138" cy="122" r="11"/><circle cx="74" cy="138" r="11"/>
+            </g>
+            <rect x="67" y="206" width="86" height="24" rx="12" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2"/>
+            <text x="110" y="222" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#c2410c">n = 6 moles</text>
+          </svg>
+          <p class="dilution-stage-note">`V₂` larger, `C₂` smaller.</p>
+        </div>
+      </div>
+      <p class="dilution-panel-caption">Dilution spreads the same solute moles through a larger solution volume, so concentration decreases while the amount of solute stays constant.</p>
+    </div>
+    <div class="info-callout warn">
+      <strong>⚠ Critical Trap: V<sub>2</sub> is the FINAL volume</strong>
+      <ul>
+        <li>V<sub>2</sub> is NOT the volume of water you added — it's the total final volume of the diluted solution.</li>
+        <li>If a problem says "add 450 mL of water to 50 mL of solution," the final volume V<sub>2</sub> = 500 mL.</li>
+        <li>Always ask: "Is this the total volume, or the volume added?" before plugging in.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 13.6 -->
+  <div class="card">
+    <h2 class="card-title"><span class="num">13.6</span> Percent Concentration: m/m, m/v, and v/v</h2>
     <p>Three common percent-based concentration expressions used in labs and industry:</p>
     <p>Notice that the denominator changes depending on the type. The percent sign is easy to remember — what it is actually comparing is where the setup breaks.</p>
-    <table>
+    <table class="mobile-stack-table">
       <thead><tr><th>Type</th><th>Formula</th><th>Units</th><th>Use</th></tr></thead>
       <tbody>
-        <tr><td>% mass/mass (% m/m)</td><td>(g solute / g solution) × 100</td><td>% (dimensionless)</td><td>Solid solutes, concentrated acids</td></tr>
-        <tr><td>% mass/volume (% m/v)</td><td>(g solute / mL solution) × 100</td><td>g per 100 mL</td><td>IV bags, pharmaceuticals</td></tr>
-        <tr><td>% volume/volume (% v/v)</td><td>(mL solute / mL solution) × 100</td><td>% (dimensionless)</td><td>Alcohol content, mixtures of liquids</td></tr>
+        <tr><td data-label="Type">% mass/mass (% m/m)</td><td data-label="Formula">(g solute / g solution) × 100</td><td data-label="Units">% (dimensionless)</td><td data-label="Use">Solid solutes, concentrated acids</td></tr>
+        <tr><td data-label="Type">% mass/volume (% m/v)</td><td data-label="Formula">(g solute / mL solution) × 100</td><td data-label="Units">g per 100 mL</td><td data-label="Use">IV bags, pharmaceuticals</td></tr>
+        <tr><td data-label="Type">% volume/volume (% v/v)</td><td data-label="Formula">(mL solute / mL solution) × 100</td><td data-label="Units">% (dimensionless)</td><td data-label="Use">Alcohol content, mixtures of liquids</td></tr>
       </tbody>
     </table>
     <div class="key-fact">
@@ -234,40 +610,110 @@
       </div>
   </div>
 
-  <!-- 13.6 -->
+  <!-- 13.7 -->
   <div class="card">
-    <h2 class="card-title"><span class="num">13.6</span> Molality: Moles per Kilogram of Solvent</h2>
-    <p>Molality is moles of solute per <em>kilogram of solvent</em> (not solution). It is temperature-independent because it is based on mass, not volume — making it essential for colligative property calculations.</p>
-    <p>If this feels too similar to molarity, slow down and compare the denominator. That one difference is the whole reason the two units are used in different places.</p>
-    <div class="formula-box">
-      <span class="label">Formula</span>
-      <div class="formula-rule-list">
-        <span class="formula-rule"><strong>m = <span class="formula-frac"><span class="formula-frac-n">mol solute</span><span class="formula-frac-d">kg solvent</span></span></strong></span>
+    <h2 class="card-title"><span class="num">13.7</span> Molality: Moles per Kilogram of Solvent</h2>
+    <p>Molality is moles of solute per <em>kilogram of solvent</em> (not solution). It is not related to temperature because it is based on mass, not volume — making it very important for colligative property calculations. Two very important colligative properties are freezing point depression and boiling point elevation.</p>
+    <div class="molality-card-grid">
+      <div class="molality-card molality-card--formula">
+        <div class="formula-box">
+          <span class="label">Formula</span>
+          <div class="formula-rule-list">
+            <span class="formula-rule"><strong>m = <span class="formula-frac"><span class="formula-frac-n">mol solute</span><span class="formula-frac-d">kg solvent</span></span></strong></span>
+          </div>
+        </div>
+        <p class="molality-support-note">Watch out because molality looks and sounds a lot like molarity, but the denominator is different. Instead of liters of solution, molality uses kilograms of solvent. That is also why molality stays dependable when temperature changes the solution volume.</p>
+      </div>
+      <div class="molality-card molality-card--visual">
+        <figure class="unit-figure unit-figure-svg-molality-reference">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" width="100%" height="auto" role="img" aria-label="Molality reference showing a larger beaker and a solvent-mass callout">
+          <title>Molality Beaker Model</title>
+          <desc>A beaker model emphasizing that molality uses the mass of solvent in kilograms.</desc>
+          <defs>
+            <style>
+              .card-bg { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; rx: 16px; }
+              .title-text { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+              .body-annot { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #64748b; }
+              .mass-label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #0d9488; }
+              .mass-note { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #0f766e; }
+              .beaker-line { fill: none; stroke: #94a3b8; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+              .beaker-grad { fill: #94a3b8; font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; }
+              .liquid-solvent { fill: #eff6ff; fill-opacity: 0.95; }
+              .solute-sphere { fill: url(#sphere-grad); stroke: #1d4ed8; stroke-width: 1.5; }
+              .arrow-line { fill: none; stroke: #0d9488; stroke-width: 3; stroke-linecap: round; }
+            </style>
+            <radialGradient id="sphere-grad" cx="35%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#3b82f6" />
+              <stop offset="70%" stop-color="#1d4ed8" />
+              <stop offset="100%" stop-color="#1e3a8a" />
+            </radialGradient>
+            <marker id="molality-arrowhead" markerWidth="6" markerHeight="6" refX="5.2" refY="3" orient="auto">
+              <polygon points="0 0, 6 3, 0 6" fill="#0d9488" />
+            </marker>
+            <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.05" />
+            </filter>
+          </defs>
+          <rect x="18" y="18" width="484" height="324" class="card-bg" filter="url(#card-shadow)" />
+          <g transform="translate(42, 48)">
+            <text class="title-text" x="0" y="0">Molality (m)</text>
+            <text class="body-annot" x="0" y="18">Concentration based strictly on mass of solvent</text>
+          </g>
+          <g transform="translate(54, 90)">
+            <path d="M 18,190 L 18,66 L 206,66 L 206,190 C 206,208 18,208 18,190 Z" class="liquid-solvent" />
+            <path d="M 12,26 L 18,26 L 18,190 C 18,212 206,212 206,190 L 206,26 L 212,26" class="beaker-line" />
+            <line x1="148" y1="66" x2="180" y2="66" stroke="#cbd5e1" stroke-width="1.5" />
+            <line x1="142" y1="118" x2="180" y2="118" stroke="#94a3b8" stroke-width="1.5" />
+            <text x="136" y="121" text-anchor="end" class="beaker-grad">500 mL</text>
+            <line x1="142" y1="162" x2="180" y2="162" stroke="#94a3b8" stroke-width="1.5" />
+            <text x="136" y="165" text-anchor="end" class="beaker-grad">250 mL</text>
+            <circle cx="78" cy="108" r="17" class="solute-sphere" />
+            <circle cx="138" cy="98" r="17" class="solute-sphere" />
+            <circle cx="96" cy="162" r="17" class="solute-sphere" />
+            <circle cx="132" cy="152" r="17" class="solute-sphere" />
+          </g>
+          <g transform="translate(318, 116)">
+            <text class="mass-label" x="0" y="0">Mass of solvent only</text>
+            <text class="mass-note" x="0" y="24">Use kilograms (kg), not liters</text>
+            <text class="body-annot" x="0" y="44">The denominator tracks</text>
+            <text class="body-annot" x="0" y="60">solvent mass, so molality</text>
+            <text class="body-annot" x="0" y="76">does not shift when</text>
+            <text class="body-annot" x="0" y="92">temperature changes</text>
+            <text class="body-annot" x="0" y="108">the solution volume.</text>
+          </g>
+          </svg>
+        </figure>
       </div>
     </div>
-    <p>These two units look almost the same. The difference is the denominator — and that one difference determines when each unit is used.</p>
-    <table class="conc-table conc-table-spaced">
+    <div class="key-fact key-fact--molality-difference">
+      <div class="icon">▸</div>
+      <div class="key-fact-copy">
+        <p class="key-fact-title">Key difference</p>
+        <p>Molality uses <strong>kg of solvent only</strong> in the denominator. Solute is still counted in <strong>moles</strong>, but the denominator is based on solvent mass rather than solution volume.</p>
+      </div>
+    </div>
+    <table class="conc-table conc-table-spaced mobile-stack-table">
       <thead><tr><th>Property</th><th>Molarity (M)</th><th>Molality (m)</th></tr></thead>
       <tbody>
-        <tr><td>Denominator</td><td>L of <em>solution</em></td><td>kg of <em>solvent</em></td></tr>
-        <tr><td>Temperature dependent?</td><td>Yes (volume changes)</td><td>No (mass is constant)</td></tr>
-        <tr><td>Use for</td><td>Stoichiometry, reactions</td><td>Colligative properties</td></tr>
+        <tr><td data-label="Property">Denominator</td><td data-label="Molarity (M)">L of <em>solution</em></td><td data-label="Molality (m)">kg of <em>solvent</em></td></tr>
+        <tr><td data-label="Property">Temperature dependent?</td><td data-label="Molarity (M)">Yes (volume changes)</td><td data-label="Molality (m)">No (mass is constant)</td></tr>
+        <tr><td data-label="Property">Use for</td><td data-label="Molarity (M)">Stoichiometry, reactions</td><td data-label="Molality (m)">Colligative properties</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 13.7 -->
+  <!-- 13.8 -->
   <div class="card">
-    <h2 class="card-title"><span class="num">13.7</span> Colligative Properties: Count Particles, Not Chemical Names</h2>
+    <h2 class="card-title"><span class="num">13.8</span> Colligative Properties: Count Particles, Not Chemical Names</h2>
     <p>Colligative properties depend on how many dissolved particles are present in a given amount of solvent, not on the chemical identity of those particles.</p>
     <p>This is where the electrolyte idea from the start of the unit starts to matter. More dissolved particles means a larger effect, which is why the van 't Hoff factor matters.</p>
     <p>The three rows below show how particle count multiplies the colligative effect at the same molality.</p>
-    <table>
+    <table class="mobile-stack-table">
       <thead><tr><th>Same molality</th><th><em>i</em></th><th>Relative effect size</th></tr></thead>
       <tbody>
-        <tr><td>1.0 m glucose</td><td>1</td><td>baseline</td></tr>
-        <tr><td>1.0 m NaCl</td><td>2</td><td>about 2× larger</td></tr>
-        <tr><td>1.0 m CaCl₂</td><td>3</td><td>about 3× larger</td></tr>
+        <tr><td data-label="Same molality">1.0 m glucose</td><td data-label="i">1</td><td data-label="Relative effect size">baseline</td></tr>
+        <tr><td data-label="Same molality">1.0 m NaCl</td><td data-label="i">2</td><td data-label="Relative effect size">about 2× larger</td></tr>
+        <tr><td data-label="Same molality">1.0 m CaCl<span class="chem-sub">2</span></td><td data-label="i">3</td><td data-label="Relative effect size">about 3× larger</td></tr>
       </tbody>
     </table>
     <p>This is the key comparison: at the same molality, the solution that makes more dissolved particles shows the larger colligative effect.</p>
@@ -275,27 +721,27 @@
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Boiling Point Elevation (ΔTb)</strong>
+          <strong>Boiling Point Elevation (ΔTb) - Water will boil above 100 °C at 1 atm pressure</strong>
           <div class="formula-box">
             <div class="formula-rule-list">
               <span class="formula-rule"><strong>ΔTb = Kb × m × i</strong></span>
               <span class="formula-rule">Kb(water) = 0.512 °C·kg/mol</span>
             </div>
           </div>
-          <p>Solute particles disrupt escape of solvent molecules; more energy needed → higher boiling point.</p>
+          <p>What does this happen?Solute particles disrupt escape of solvent molecules; more energy needed → higher boiling point.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Freezing Point Depression (ΔTf)</strong>
+          <strong>Freezing Point Depression (ΔTf) - Water will freeze below 0 °C at 1 atm pressure</strong>
           <div class="formula-box">
             <div class="formula-rule-list">
               <span class="formula-rule"><strong>ΔTf = Kf × m × i</strong></span>
               <span class="formula-rule">Kf(water) = 1.86 °C·kg/mol</span>
             </div>
           </div>
-          <p>Solute particles interfere with lattice formation; the solution freezes at a <em>lower</em> temperature. New fp = 0 − ΔTf.</p>
+          <p>This is great for cold weather environmenets where salt and beet solutions melt snow and ice before it warms to above 0 °C. Why does this happen? Solute particles interfere with lattice formation; the solution freezes at a <em>lower</em> temperature. New fp = 0 − ΔTf.</p>
         </div>
       </div>
       <div class="step">
@@ -324,17 +770,17 @@
         <div class="key-fact-copy">
           <ul class="key-fact-list">
           <li>The van 't Hoff factor <strong>i</strong> = number of dissolved particles per formula unit after dissociation.</li>
-          <li>NaCl: i = 2 (Na⁺ + Cl⁻).</li>
-          <li>CaCl₂: i = 3 (Ca²⁺ + 2 Cl⁻).</li>
+          <li>NaCl: i = 2 (<span class="ion-group">Na<span class="chem-charge">+</span></span> + <span class="ion-group">Cl<span class="chem-charge">−</span></span>).</li>
+          <li><span class="ion-group">CaCl<span class="chem-sub">2</span></span>: i = 3 (<span class="ion-group">Ca<span class="chem-charge">2+</span></span> + 2 <span class="ion-group">Cl<span class="chem-charge">−</span></span>).</li>
           <li>Glucose: i = 1 (no dissociation).</li>
           </ul>
         </div>
       </div>
   </div>
 
-  <!-- 13.8 -->
+  <!-- 13.9 -->
   <div class="card">
-    <h2 class="card-title"><span class="num">13.8</span> Solution Stoichiometry: Turn Concentration into Moles First</h2>
+    <h2 class="card-title"><span class="num">13.9</span> Solution Stoichiometry: Turn Concentration into Moles First</h2>
     <p>Solution stoichiometry uses the same mole ratios as any other stoichiometry problem.</p>
     <p>Do not rush past the first move. In solution stoichiometry, the setup almost always starts with <strong>mol = M × L</strong>. If you skip that, the rest of the problem falls apart.</p>
     <p>The first move is to convert solution data into moles using <strong>mol = M × L</strong>. Then use the balanced equation or net ionic equation to relate those moles to the substance you need.</p>
@@ -353,9 +799,9 @@
       </div>
     </div>
     <p class="sol-mt-075"><strong>For precipitation reactions, identify the insoluble product first.</strong></p>
-    <div class="formula-box">
-      AgNO₃(aq) + NaCl(aq) → AgCl(s) ↓ + NaNO₃(aq)
-      <br>Identify the precipitate using solubility rules. Net ionic: Ag⁺(aq) + Cl⁻(aq) → AgCl(s)
+    <div class="formula-box sol-precip-equation">
+      AgNO<span class="chem-sub">3</span>(aq) + NaCl(aq) → AgCl(s) ↓ + NaNO<span class="chem-sub">3</span>(aq)
+      <br>Identify the precipitate using solubility rules. Net ionic: <span class="ion-group">Ag<span class="chem-charge">+</span></span>(aq) + <span class="ion-group">Cl<span class="chem-charge">−</span></span>(aq) → AgCl(s)
     </div>
     <div class="info-callout">
       <strong>Refresher: Stoichiometric Relationships</strong>
@@ -364,44 +810,6 @@
         <li>For solutions: moles = M × L before and after every stoichiometric step.</li>
         <li>For limiting reagent in solution: find mol of each reactant, compare with mol ratio.</li>
       </ul>
-    </div>
-  </div>
-
-  <!-- 13.9 -->
-  <div class="card">
-    <h2 class="card-title"><span class="num">13.9</span> Particle Diagrams: What Dissolved Solutions Look Like Microscopically</h2>
-    <p>Particle diagrams show solute and solvent particles at the microscopic level. Key features to represent accurately:</p>
-    <p>This is where the vocabulary, conductivity ideas, and particle-count ideas all come together. If the diagram is wrong, the chemistry interpretation will be wrong too.</p>
-    <ul class="particle-list">
-      <li><strong>Ionic solutes</strong> (NaCl): show separate Na⁺ and Cl⁻ ions dispersed through water molecules.</li>
-      <li><strong>Molecular solutes</strong> (glucose): show intact molecules, no ions.</li>
-      <li><strong>Insoluble precipitates</strong> (AgCl): show solid clusters at the bottom, separate from dissolved ions.</li>
-      <li><strong>Net ionic</strong>: spectator ions disappear; only the precipitate and reacting ions remain.</li>
-    </ul>
-    <p>These particle diagrams help you predict three things: whether the solution conducts electricity, how many dissolved particles are present, and whether a precipitate forms.</p>
-
-    <div class="particle-grid">
-      <div class="particle-box">
-        <canvas id="cvNaCl" width="220" height="280"></canvas>
-        <p>NaCl(aq) — ions dispersed throughout</p>
-      </div>
-      <div class="particle-box">
-        <canvas id="cvGluc" width="220" height="280"></canvas>
-        <p>Glucose(aq) — intact molecules, no ions</p>
-      </div>
-      <div class="particle-box">
-        <canvas id="cvPpt" width="220" height="280"></canvas>
-        <p>After precipitation — AgCl(s) solid at bottom</p>
-      </div>
-    </div>
-    <div class="legend-row">
-      <strong class="legend-title">Key</strong>
-      <span><span class="legend-dot legend-na"></span>Na⁺</span>
-      <span><span class="legend-dot legend-cl"></span>Cl⁻</span>
-      <span><span class="legend-dot legend-glucose"></span>Glucose molecule</span>
-      <span><span class="legend-dot legend-ag"></span>Ag⁺</span>
-      <span><span class="legend-dot legend-no3"></span>NO₃⁻</span>
-      <span><span class="legend-dot legend-agcl"></span>AgCl(s) precipitate</span>
     </div>
   </div>
 
@@ -499,7 +907,7 @@
       <div class="tool-prompt tool-scenario-prompt">
         <p class="tool-focus-label">Read This First</p>
         <p class="tool-scenario-title"><strong id="dilutionTitle">Choose the correct final volume before using the dilution equation.</strong></p>
-        <p class="tool-hint" id="dilutionHint">In dilution problems, <strong>V₂</strong> means the final total volume after the solvent has been added.</p>
+        <p class="tool-hint" id="dilutionHint">In dilution problems, <strong>V<sub>2</sub></strong> means the final total volume after the solvent has been added.</p>
         <p class="tool-scenario-text"><strong id="dilutionLabel">Scenario:</strong> <span id="dilutionScenario"></span></p>
       </div>
       <div class="segment-controls tool-choice-row" role="group" aria-label="Dilution volume choices">
@@ -614,32 +1022,32 @@
 
   <!-- Ex 2: Dilution -->
   <div class="card">
-    <h2 class="card-title">Example 2 — Dilution (C₁V₁ = C₂V₂)</h2>
+    <h2 class="card-title">Example 2 — Dilution (C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>)</h2>
     <div class="example-setup">
       <p><strong>Problem:</strong> Find the volume of stock acid needed for a dilution.</p>
-      <p><strong>Given:</strong> C₁ = 12.0 M, C₂ = 0.500 M, V₂ = 250.0 mL</p>
-      <p><strong>Find:</strong> V₁</p>
+      <p><strong>Given:</strong> C<sub>1</sub> = 12.0 M, C<sub>2</sub> = 0.500 M, V<sub>2</sub> = 250.0 mL</p>
+      <p><strong>Find:</strong> V<sub>1</sub></p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Identify variables</strong>
-          <p>C₁ = 12.0 M, C₂ = 0.500 M, V₂ = 250.0 mL (the FINAL volume), V₁ = ?</p>
+          <strong>Step 1 — Use the dilution equation C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> and identify the known values</strong>
+          <p>C<sub>1</sub> = 12.0 M, C<sub>2</sub> = 0.500 M, V<sub>2</sub> = 250.0 mL (the FINAL volume), V<sub>1</sub> = ?</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Solve for V₁</strong>
+          <strong>Step 2 — Solve the dilution equation for V<sub>1</sub></strong>
           <div class="fl-chain">
-            V₁ = <span class="fl-frac">
-              <span class="fl-num">C₂ × V₂</span>
-              <span class="fl-den">C₁</span>
+            V<sub>1</sub> = <span class="fl-frac">
+              <span class="fl-num">C<sub>2</sub> × V<sub>2</sub></span>
+              <span class="fl-den">C<sub>1</sub></span>
             </span>
             = <span class="fl-frac">
-              <span class="fl-num">0.500 M × 250.0 mL</span>
-              <span class="fl-den">12.0 M</span>
+              <span class="fl-num">0.500 <span class="cancel-mark cancel-blue">M</span> × 250.0 mL</span>
+              <span class="fl-den">12.0 <span class="cancel-mark cancel-blue">M</span></span>
             </span>
             = <span class="fl-result">10.4 mL</span>
           </div>
@@ -668,28 +1076,28 @@
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Moles of NaCl</strong>
+          <strong>Step 1 — Use ΔT<sub>f</sub> = K<sub>f</sub>mi, so find moles first and then molality</strong>
           <div class="fl-chain">25.0 g ÷ 58.44 g/mol = <span class="fl-result">0.4277 mol</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Calculate molality</strong>
+          <strong>Step 2 — Calculate molality</strong>
           <div class="fl-chain">m = 0.4277 mol ÷ 0.2000 kg = <span class="fl-result">2.139 m</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Calculate the freezing-point change</strong>
+          <strong>Step 3 — Calculate the freezing-point change</strong>
           <div class="fl-chain">ΔTf = Kf × m × i = 1.86 × 2.139 × 2 = <span class="fl-result">7.96 °C</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>New freezing point</strong>
+          <strong>Step 4 — Subtract the freezing-point change from pure water</strong>
           <div class="fl-chain">fp = 0 °C − 7.96 °C = <span class="fl-result">−7.96 °C</span></div>
         </div>
       </div>
@@ -701,29 +1109,29 @@
     <h2 class="card-title">Example 4 — Precipitation Stoichiometry</h2>
     <div class="example-setup">
       <p><strong>Problem:</strong> Use solution stoichiometry to find the mass of precipitate formed.</p>
-      <p><strong>Given:</strong> 50.0 mL of 0.200 M AgNO₃, excess NaCl, M(AgCl) = 143.32 g/mol</p>
+      <p><strong>Given:</strong> 50.0 mL of 0.200 M AgNO<span class="chem-sub">3</span>, excess NaCl, M(AgCl) = 143.32 g/mol</p>
       <p><strong>Find:</strong> grams of AgCl precipitate</p>
     </div>
-    <p class="sol-mt-05"><strong>Balanced equation:</strong> AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</p>
+    <p class="sol-mt-05"><strong>Balanced equation:</strong> AgNO<span class="chem-sub">3</span>(aq) + NaCl(aq) → AgCl(s) + NaNO<span class="chem-sub">3</span>(aq)</p>
     <div class="steps">
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Moles of AgNO₃</strong>
-          <div class="fl-chain">mol = 0.200 M × 0.0500 L = <span class="fl-result">0.0100 mol AgNO₃</span></div>
+          <strong>Step 1 — Use solution stoichiometry, so convert molarity and volume to moles first</strong>
+          <div class="fl-chain">mol = 0.200 M × 0.0500 L = <span class="fl-result">0.0100 mol AgNO<span class="chem-sub">3</span></span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Mole ratio: 1 AgNO₃ : 1 AgCl</strong>
-          <div class="fl-chain">0.0100 mol AgNO₃ × (1 mol AgCl / 1 mol AgNO₃) = <span class="fl-result">0.0100 mol AgCl</span></div>
+          <strong>Step 2 — Apply the 1:1 mole ratio from the balanced equation</strong>
+          <div class="fl-chain">0.0100 mol <span class="cancel-mark cancel-blue">AgNO<span class="chem-sub">3</span></span> × <span class="fl-frac"><span class="fl-num">1 mol AgCl</span><span class="fl-den">1 mol <span class="cancel-mark cancel-blue">AgNO<span class="chem-sub">3</span></span></span></span> = <span class="fl-result">0.0100 mol AgCl</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Convert mol → grams</strong>
+          <strong>Step 3 — Convert moles of precipitate to grams</strong>
           <div class="fl-chain">0.0100 mol × 143.32 g/mol = <span class="fl-result">1.43 g AgCl</span></div>
         </div>
       </div>
@@ -735,22 +1143,22 @@
     <h2 class="card-title">Example 5 — Reading a Solubility Curve</h2>
     <div class="example-setup">
       <p><strong>Problem:</strong> Use the solubility limit to classify the mixture and predict what remains undissolved.</p>
-      <p><strong>Given:</strong> 80 g KNO₃ added to 100 g H₂O at 40 °C; solubility = 63 g KNO₃ per 100 g H₂O</p>
-      <p><strong>Find:</strong> solution classification and grams of undissolved KNO₃</p>
+      <p><strong>Given:</strong> 80 g KNO<span class="chem-sub">3</span> added to 100 g H<span class="chem-sub">2</span>O at 40 °C; solubility = 63 g KNO<span class="chem-sub">3</span> per 100 g H<span class="chem-sub">2</span>O</p>
+      <p><strong>Find:</strong> solution classification and grams of undissolved KNO<span class="chem-sub">3</span></p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Compare to solubility limit</strong>
-          <p>The solubility at 40 °C is about 63 g KNO₃ per 100 g H₂O. Since 80 g &gt; 63 g, not all of the KNO₃ can dissolve.</p>
+          <strong>Step 1 — Use the solubility limit at the stated temperature as the governing comparison</strong>
+          <p>The solubility at 40 °C is about 63 g KNO<span class="chem-sub">3</span> per 100 g H<span class="chem-sub">2</span>O. Since 80 g &gt; 63 g, not all of the KNO<span class="chem-sub">3</span> can dissolve.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num"></div>
         <div class="step-content">
-          <strong>Classify</strong>
-          <p>The solution is <strong>saturated</strong>, and 80 − 63 = <strong>17 g of undissolved KNO₃</strong> remains as solid at the bottom.</p>
+          <strong>Step 2 — Classify the mixture and find what remains undissolved</strong>
+          <p>The solution is <strong>saturated</strong>, and 80 − 63 = <strong>17 g of undissolved KNO<span class="chem-sub">3</span></strong> remains as solid at the bottom.</p>
         </div>
       </div>
     </div>
@@ -810,6 +1218,92 @@
    PARTICLE DIAGRAMS — beaker style
 ════════════════════════════════ */
 function drawParticles() {
+  if (!document.getElementById('cvNaCl') || !document.getElementById('cvGluc') || !document.getElementById('cvPpt')) {
+    return;
+  }
+
+  function setupHiDPICanvas(cv) {
+    const logicalW = Number(cv.getAttribute('width')) || cv.width;
+    const logicalH = Number(cv.getAttribute('height')) || cv.height;
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = logicalW * dpr;
+    cv.height = logicalH * dpr;
+    cv.style.width = logicalW + 'px';
+    cv.style.height = logicalH + 'px';
+    const ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.__logicalW = logicalW;
+    ctx.__logicalH = logicalH;
+    return { ctx, W: logicalW, H: logicalH };
+  }
+
+  const subscriptMap = {
+    '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4',
+    '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9'
+  };
+  const superscriptMap = {
+    '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4',
+    '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9',
+    '⁺': '+', '⁻': '−'
+  };
+
+  function splitChemLabel(label) {
+    let charge = '';
+    let main = label;
+    const chargeMatch = label.match(/([⁰¹²³⁴⁵⁶⁷⁸⁹]*[⁺⁻])$/);
+    if (chargeMatch) {
+      charge = chargeMatch[1].replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻]/g, function (char) {
+        return superscriptMap[char] || char;
+      });
+      main = label.slice(0, -chargeMatch[1].length);
+    }
+
+    const segments = [];
+    for (let i = 0; i < main.length; i += 1) {
+      const char = main[i];
+      if (subscriptMap[char]) {
+        segments.push({ text: subscriptMap[char], kind: 'sub' });
+      } else {
+        segments.push({ text: char, kind: 'base' });
+      }
+    }
+    if (charge) segments.push({ text: charge, kind: 'sup' });
+    return segments;
+  }
+
+  function drawChemLabel(ctx, x, y, label, color, radius) {
+    const segments = splitChemLabel(label);
+    const baseSize = Math.max(9, radius * 0.72);
+    const subSize = baseSize * 0.72;
+    const supSize = baseSize * 0.68;
+
+    const measured = segments.map(function (segment) {
+      const fontSize = segment.kind === 'base' ? baseSize : (segment.kind === 'sub' ? subSize : supSize);
+      ctx.font = `bold ${fontSize}px DM Mono, monospace`;
+      return {
+        text: segment.text,
+        kind: segment.kind,
+        width: ctx.measureText(segment.text).width,
+        fontSize
+      };
+    });
+
+    const totalWidth = measured.reduce(function (sum, segment) {
+      return sum + segment.width;
+    }, 0);
+
+    let cursorX = x - totalWidth / 2;
+    measured.forEach(function (segment) {
+      ctx.font = `bold ${segment.fontSize}px DM Mono, monospace`;
+      let drawY = y + 1;
+      if (segment.kind === 'sub') drawY += baseSize * 0.18;
+      if (segment.kind === 'sup') drawY -= baseSize * 0.34;
+      ctx.fillStyle = color || '#fff';
+      ctx.fillText(segment.text, cursorX + segment.width / 2, drawY);
+      cursorX += segment.width;
+    });
+  }
+
 
   /* Helper: draw a glass beaker outline on a canvas context.
      Returns the inner solution region {x, y, w, h, solutionTop}
@@ -817,18 +1311,16 @@ function drawParticles() {
   function drawBeaker(ctx, bx, by, bw, bh, fillFraction, fillColor, labelTop) {
     const wall = 6;       // wall thickness px
     const baseH = 10;     // base height
-    const lipH = 14;      // lip protrusion above body
     const lipW = 10;      // lip overhang on each side
-    const spoutW = 22;    // pouring spout width
 
     // ----- background (page color) -----
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.clearRect(0, 0, ctx.__logicalW || ctx.canvas.width, ctx.__logicalH || ctx.canvas.height);
 
     // ----- beaker label at top -----
     ctx.fillStyle = '#1e293b';
     ctx.font = 'bold 13px DM Sans, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(labelTop, ctx.canvas.width / 2, by - 6);
+    ctx.fillText(labelTop, (ctx.__logicalW || ctx.canvas.width) / 2, by - 6);
 
     // ----- solution fill -----
     const innerX = bx + wall;
@@ -843,7 +1335,7 @@ function drawParticles() {
     ctx.fill();
 
     // ----- water surface line -----
-    ctx.strokeStyle = 'rgba(148,163,184,0.6)';
+    ctx.strokeStyle = 'rgba(148,163,184,0.55)';
     ctx.lineWidth = 1.5;
     ctx.setLineDash([4, 3]);
     ctx.beginPath();
@@ -853,7 +1345,7 @@ function drawParticles() {
     ctx.setLineDash([]);
 
     // ----- beaker glass body -----
-    ctx.strokeStyle = '#475569';
+    ctx.strokeStyle = '#4b5563';
     ctx.lineWidth = wall;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
@@ -884,18 +1376,10 @@ function drawParticles() {
     ctx.lineTo(bx - lipW, by);
     ctx.stroke();
 
-    // right lip with spout curve
+    // right lip
     ctx.beginPath();
     ctx.moveTo(bx + bw - wall/2, by);
     ctx.lineTo(bx + bw + lipW, by);
-    ctx.stroke();
-
-    // spout notch on right side (optional cosmetic)
-    ctx.lineWidth = wall * 0.5;
-    ctx.strokeStyle = '#64748b';
-    ctx.beginPath();
-    ctx.moveTo(bx + bw + lipW - spoutW, by - lipH * 0.3);
-    ctx.quadraticCurveTo(bx + bw + lipW, by - lipH * 0.5, bx + bw + lipW + 4, by - lipH * 0.1);
     ctx.stroke();
 
     return { innerX, solutionTop, innerW, solutionH, innerBottom };
@@ -903,38 +1387,25 @@ function drawParticles() {
 
   /* Draw a single particle circle with label */
   function drawParticle(ctx, x, y, r, color, label, labelColor) {
-    // shadow
-    ctx.shadowColor = 'rgba(0,0,0,0.18)';
-    ctx.shadowBlur = 4;
-    ctx.shadowOffsetY = 2;
     ctx.beginPath();
     ctx.arc(x, y, r, 0, Math.PI * 2);
     ctx.fillStyle = color;
     ctx.fill();
-    ctx.shadowColor = 'transparent';
-    ctx.shadowBlur = 0;
-    ctx.shadowOffsetY = 0;
-
-    // highlight
-    ctx.beginPath();
-    ctx.arc(x - r * 0.28, y - r * 0.28, r * 0.32, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255,255,255,0.45)';
-    ctx.fill();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(15,23,42,0.16)';
+    ctx.stroke();
 
     // label
-    ctx.fillStyle = labelColor || '#fff';
-    ctx.font = `bold ${Math.max(9, r * 0.72)}px DM Mono, monospace`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(label, x, y + 1);
+    drawChemLabel(ctx, x, y, label, labelColor || '#fff', r);
   }
 
   /* ── Beaker 1: NaCl(aq) ── */
   (function () {
     const cv = document.getElementById('cvNaCl');
     if (!cv) return;
-    const ctx = cv.getContext('2d');
-    const W = cv.width, H = cv.height;
+    const { ctx, W, H } = setupHiDPICanvas(cv);
     const bx = 20, by = 30, bw = W - 40, bh = H - 50;
 
     const reg = drawBeaker(ctx, bx, by, bw, bh, 0.78, 'rgba(219,234,254,0.55)', 'NaCl(aq)');
@@ -945,18 +1416,18 @@ function drawParticles() {
     ctx.rect(reg.innerX, reg.solutionTop, reg.innerW, reg.innerBottom - reg.solutionTop);
     ctx.clip();
     const ions = [
-      {x:55,  y:reg.solutionTop+18, c:'#3b82f6', l:'Na⁺'},
-      {x:130, y:reg.solutionTop+12, c:'#ef4444', l:'Cl⁻'},
-      {x:90,  y:reg.solutionTop+38, c:'#3b82f6', l:'Na⁺'},
-      {x:50,  y:reg.solutionTop+62, c:'#ef4444', l:'Cl⁻'},
-      {x:148, y:reg.solutionTop+50, c:'#3b82f6', l:'Na⁺'},
-      {x:110, y:reg.solutionTop+80, c:'#ef4444', l:'Cl⁻'},
-      {x:60,  y:reg.solutionTop+98, c:'#3b82f6', l:'Na⁺'},
-      {x:155, y:reg.solutionTop+108,c:'#ef4444', l:'Cl⁻'},
-      {x:95,  y:reg.solutionTop+125,c:'#3b82f6', l:'Na⁺'},
-      {x:45,  y:reg.solutionTop+140,c:'#ef4444', l:'Cl⁻'},
-      {x:140, y:reg.solutionTop+140,c:'#3b82f6', l:'Na⁺'},
-      {x:80,  y:reg.solutionTop+158,c:'#ef4444', l:'Cl⁻'},
+      {x:55,  y:reg.solutionTop+18, c:'#3b82f6', l:'Na+'},
+      {x:130, y:reg.solutionTop+12, c:'#ef4444', l:'Cl-'},
+      {x:90,  y:reg.solutionTop+38, c:'#3b82f6', l:'Na+'},
+      {x:50,  y:reg.solutionTop+62, c:'#ef4444', l:'Cl-'},
+      {x:148, y:reg.solutionTop+50, c:'#3b82f6', l:'Na+'},
+      {x:110, y:reg.solutionTop+80, c:'#ef4444', l:'Cl-'},
+      {x:60,  y:reg.solutionTop+98, c:'#3b82f6', l:'Na+'},
+      {x:155, y:reg.solutionTop+108,c:'#ef4444', l:'Cl-'},
+      {x:95,  y:reg.solutionTop+125,c:'#3b82f6', l:'Na+'},
+      {x:45,  y:reg.solutionTop+140,c:'#ef4444', l:'Cl-'},
+      {x:140, y:reg.solutionTop+140,c:'#3b82f6', l:'Na+'},
+      {x:80,  y:reg.solutionTop+158,c:'#ef4444', l:'Cl-'},
     ];
     ions.forEach(p => drawParticle(ctx, p.x, p.y, 16, p.c, p.l));
     ctx.restore();
@@ -966,8 +1437,7 @@ function drawParticles() {
   (function () {
     const cv = document.getElementById('cvGluc');
     if (!cv) return;
-    const ctx = cv.getContext('2d');
-    const W = cv.width, H = cv.height;
+    const { ctx, W, H } = setupHiDPICanvas(cv);
     const bx = 20, by = 30, bw = W - 40, bh = H - 50;
 
     const reg = drawBeaker(ctx, bx, by, bw, bh, 0.78, 'rgba(209,250,229,0.5)', 'Glucose(aq)');
@@ -997,14 +1467,11 @@ function drawParticles() {
     ctx.clip();
 
     mols.forEach(p => {
-      // Shadow + circle
-      ctx.shadowColor = 'rgba(0,0,0,0.18)'; ctx.shadowBlur = 4; ctx.shadowOffsetY = 2;
       ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
       ctx.fillStyle = '#10b981'; ctx.fill();
-      ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
-      // Highlight
-      ctx.beginPath(); ctx.arc(p.x - r*0.28, p.y - r*0.28, r*0.32, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(255,255,255,0.42)'; ctx.fill();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(15,23,42,0.16)';
+      ctx.stroke();
       // Label
       ctx.fillStyle = '#fff';
       ctx.font = 'bold 9px DM Mono, monospace';
@@ -1015,12 +1482,11 @@ function drawParticles() {
     ctx.restore();
   })();
 
-  /* ── Beaker 3: After precipitation (AgNO₃ + NaCl) ── */
+  /* ── Beaker 3: After precipitation (AgNO3 + NaCl) ── */
   (function () {
     const cv = document.getElementById('cvPpt');
     if (!cv) return;
-    const ctx = cv.getContext('2d');
-    const W = cv.width, H = cv.height;
+    const { ctx, W, H } = setupHiDPICanvas(cv);
     const bx = 20, by = 30, bw = W - 40, bh = H - 50;
 
     const reg = drawBeaker(ctx, bx, by, bw, bh, 0.78, 'rgba(237,233,254,0.45)', 'After Precipitation');
@@ -1039,11 +1505,9 @@ function drawParticles() {
       {x:136, y:pileY-32},
     ];
     pileParticles.forEach(p => {
-      ctx.shadowColor = 'rgba(0,0,0,0.15)'; ctx.shadowBlur = 3;
       ctx.beginPath(); ctx.arc(p.x, p.y, 11, 0, Math.PI*2);
       ctx.fillStyle = '#d1d5db'; ctx.fill();
       ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.stroke();
-      ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0;
       ctx.fillStyle = '#374151';
       ctx.font = 'bold 7.5px DM Mono, monospace';
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
@@ -1060,14 +1524,14 @@ function drawParticles() {
     const topZone = reg.solutionTop;
     const bottomZone = pileY - 44;   // stop above the pile
     const ions = [
-      {x:52,  y:topZone+16, c:'#3b82f6', l:'Na⁺'},
-      {x:148, y:topZone+12, c:'#3b82f6', l:'Na⁺'},
-      {x:95,  y:topZone+34, c:'#f97316', l:'NO₃⁻'},
-      {x:55,  y:topZone+58, c:'#f97316', l:'NO₃⁻'},
-      {x:152, y:topZone+52, c:'#3b82f6', l:'Na⁺'},
-      {x:100, y:topZone+78, c:'#3b82f6', l:'Na⁺'},
-      {x:55,  y:topZone+100,c:'#f97316', l:'NO₃⁻'},
-      {x:148, y:topZone+98, c:'#f97316', l:'NO₃⁻'},
+      {x:52,  y:topZone+16, c:'#3b82f6', l:'Na+'},
+      {x:148, y:topZone+12, c:'#3b82f6', l:'Na+'},
+      {x:95,  y:topZone+34, c:'#f97316', l:'NO3-'},
+      {x:55,  y:topZone+58, c:'#f97316', l:'NO3-'},
+      {x:152, y:topZone+52, c:'#3b82f6', l:'Na+'},
+      {x:100, y:topZone+78, c:'#3b82f6', l:'Na+'},
+      {x:55,  y:topZone+100,c:'#f97316', l:'NO3-'},
+      {x:148, y:topZone+98, c:'#f97316', l:'NO3-'},
     ].filter(p => p.y < bottomZone);
     ions.forEach(p => drawParticle(ctx, p.x, p.y, 16, p.c, p.l));
   })();
@@ -1077,51 +1541,51 @@ function drawParticles() {
    EXPLORE TOOLS
 ════════════════════════════════ */
 const SOL_DATA = {
-  'KNO₃':    { color:'#2563eb', pts:[[0,13],[10,21],[20,32],[30,45],[40,63],[50,85],[60,110],[70,138],[80,169],[90,202],[100,240]] },
-  'NaNO₃':   { color:'#16a34a', pts:[[0,73],[10,80],[20,88],[30,96],[40,104],[50,114],[60,124],[70,136],[80,148],[90,163],[100,180]] },
+  'KNO3':    { color:'#2563eb', pts:[[0,13],[10,21],[20,32],[30,45],[40,63],[50,85],[60,110],[70,138],[80,169],[90,202],[100,240]] },
+  'NaNO3':   { color:'#16a34a', pts:[[0,73],[10,80],[20,88],[30,96],[40,104],[50,114],[60,124],[70,136],[80,148],[90,163],[100,180]] },
   'KCl':     { color:'#dc2626', pts:[[0,28],[10,31],[20,34],[30,37],[40,40],[50,43],[60,46],[70,48],[80,51],[90,54],[100,57]] },
   'NaCl':    { color:'#7c3aed', pts:[[0,35.7],[10,35.8],[20,36],[30,36.3],[40,36.6],[50,37],[60,37.3],[70,37.8],[80,38.4],[90,39],[100,39.8]] },
-  'KClO₃':  { color:'#ea580c', pts:[[0,3.3],[10,5],[20,7.4],[30,10.5],[40,14.0],[50,18.5],[60,24],[70,30],[80,37.5],[90,46],[100,56]] },
-  'NH₄Cl':  { color:'#0891b2', pts:[[0,29.4],[10,33],[20,37.2],[30,41.4],[40,45.8],[50,50.4],[60,55.2],[70,60.2],[80,65.5],[90,71],[100,77.3]] },
-  'Ce₂(SO₄)₃':{ color:'#be185d', pts:[[0,20],[10,16],[20,11],[30,7.5],[40,5.5],[50,4.1],[60,3.4],[70,3],[80,2.7],[90,2.4],[100,2.2]] },
+  'KClO3':  { color:'#ea580c', pts:[[0,3.3],[10,5],[20,7.4],[30,10.5],[40,14.0],[50,18.5],[60,24],[70,30],[80,37.5],[90,46],[100,56]] },
+  'NH4Cl':  { color:'#0891b2', pts:[[0,29.4],[10,33],[20,37.2],[30,41.4],[40,45.8],[50,50.4],[60,55.2],[70,60.2],[80,65.5],[90,71],[100,77.3]] },
+  'Ce2(SO4)3':{ color:'#be185d', pts:[[0,20],[10,16],[20,11],[30,7.5],[40,5.5],[50,4.1],[60,3.4],[70,3],[80,2.7],[90,2.4],[100,2.2]] },
 };
 
 const SOLUBILITY_SCENARIOS = [
   {
-    compound: 'KNO₃',
+    compound: 'KNO3',
     temperature: 40,
     amountAdded: 80,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount added: 80 g.<br>Since 80 g is greater than 63 g, only 63 g dissolves. The rest stays solid, so the mixture is saturated with excess undissolved solid.'
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H2O.<br>Amount added: 80 g.<br>Since 80 g is greater than 63 g, only 63 g dissolves. The rest stays solid, so the mixture is saturated with excess undissolved solid.'
   },
   {
     compound: 'KCl',
     temperature: 40,
     amountAdded: 30,
     answer: 'unsaturated',
-    reveal: 'Solubility limit at 40 °C: 40 g per 100 g H₂O.<br>Amount added: 30 g.<br>Since 30 g is below 40 g, all of the KCl can dissolve and more could still dissolve. The solution is unsaturated.'
+    reveal: 'Solubility limit at 40 °C: 40 g per 100 g H2O.<br>Amount added: 30 g.<br>Since 30 g is below 40 g, all of the KCl can dissolve and more could still dissolve. The solution is unsaturated.'
   },
   {
-    compound: 'KNO₃',
+    compound: 'KNO3',
     temperature: 40,
     amountAdded: 80,
     answer: 'supersaturated',
     promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
-    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 80 g.<br>Because more than the usual 40 °C limit is still dissolved, this is a supersaturated solution. It is unstable and can crystallize if disturbed.'
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H2O.<br>Amount dissolved after careful cooling: 80 g.<br>Because more than the usual 40 °C limit is still dissolved, this is a supersaturated solution. It is unstable and can crystallize if disturbed.'
   },
   {
     compound: 'NaCl',
     temperature: 40,
     amountAdded: 20,
     answer: 'unsaturated',
-    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 20 g.<br>Because 20 g is below the solubility limit, more could still dissolve. The solution is unsaturated.'
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H2O.<br>Amount added: 20 g.<br>Because 20 g is below the solubility limit, more could still dissolve. The solution is unsaturated.'
   },
   {
     compound: 'NaCl',
     temperature: 40,
     amountAdded: 40,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 40 g.<br>Because the amount added is above the limit, some stays undissolved and the mixture is saturated.'
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H2O.<br>Amount added: 40 g.<br>Because the amount added is above the limit, some stays undissolved and the mixture is saturated.'
   },
   {
     compound: 'NaCl',
@@ -1129,14 +1593,14 @@ const SOLUBILITY_SCENARIOS = [
     amountAdded: 40,
     answer: 'supersaturated',
     promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
-    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 40 g.<br>Because more than the normal 40 °C limit remains dissolved, this is supersaturated.'
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H2O.<br>Amount dissolved after careful cooling: 40 g.<br>Because more than the normal 40 °C limit remains dissolved, this is supersaturated.'
   },
   {
     compound: 'KCl',
     temperature: 40,
     amountAdded: 55,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount added: 55 g.<br>Because the amount added is above the limit, the mixture is saturated with extra solid present.'
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H2O.<br>Amount added: 55 g.<br>Because the amount added is above the limit, the mixture is saturated with extra solid present.'
   },
   {
     compound: 'KCl',
@@ -1144,42 +1608,42 @@ const SOLUBILITY_SCENARIOS = [
     amountAdded: 55,
     answer: 'supersaturated',
     promptNote: 'This sample was dissolved hot and then cooled carefully to 40 °C without being disturbed.',
-    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount dissolved after careful cooling: 55 g.<br>Because more than the usual limit remains dissolved, the solution is supersaturated.'
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H2O.<br>Amount dissolved after careful cooling: 55 g.<br>Because more than the usual limit remains dissolved, the solution is supersaturated.'
   },
   {
-    compound: 'KNO₃',
+    compound: 'KNO3',
     temperature: 40,
     amountAdded: 40,
     answer: 'unsaturated',
-    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount added: 40 g.<br>Since 40 g is below 63 g, more KNO₃ could still dissolve. The solution is unsaturated.'
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H2O.<br>Amount added: 40 g.<br>Since 40 g is below 63 g, more KNO3 could still dissolve. The solution is unsaturated.'
   },
   {
     compound: 'KCl',
     temperature: 40,
     amountAdded: 40,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H₂O.<br>Amount added: 40 g.<br>Because the amount added is right at the limit, the solution is saturated.'
+    reveal: 'Solubility limit at 40 °C: about 40 g per 100 g H2O.<br>Amount added: 40 g.<br>Because the amount added is right at the limit, the solution is saturated.'
   },
   {
     compound: 'NaCl',
     temperature: 40,
     amountAdded: 36,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H₂O.<br>Amount added: 36 g.<br>That matches the solubility limit, so the solution is saturated.'
+    reveal: 'Solubility limit at 40 °C: about 36 g per 100 g H2O.<br>Amount added: 36 g.<br>That matches the solubility limit, so the solution is saturated.'
   },
   {
-    compound: 'KNO₃',
+    compound: 'KNO3',
     temperature: 40,
     amountAdded: 63,
     answer: 'saturated',
-    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H₂O.<br>Amount added: 63 g.<br>That matches the solubility limit exactly, so the solution is saturated.'
+    reveal: 'Solubility limit at 40 °C: 63 g per 100 g H2O.<br>Amount added: 63 g.<br>That matches the solubility limit exactly, so the solution is saturated.'
   }
 ];
 
 const SOL_FEEDBACK = {
   correct: {
     unsaturated: 'Right — the amount added is below the solubility limit at this temperature, so the solution is unsaturated and more solute could still dissolve.',
-    saturated: 'Right — the amount added is above the solubility limit at 40 °C, so the solution is saturated and extra KNO₃ stays undissolved.',
+    saturated: 'Right — the amount added is above the solubility limit at 40 °C, so the solution is saturated and extra KNO3 stays undissolved.',
     supersaturated: 'Right — the sample was dissolved hot and cooled carefully, so more than the usual limit is still dissolved at 40 °C. That makes it supersaturated.'
   },
   incorrect: {
@@ -1234,7 +1698,7 @@ function drawSolChart() {
   ctx.textAlign='right'; ctx.textBaseline='middle';
   for(let y=0;y<=250;y+=50) ctx.fillText(y, pad.l-6, ty(y));
   ctx.save(); ctx.translate(14, pad.t+ph/2); ctx.rotate(-Math.PI/2);
-  ctx.textAlign='center'; ctx.fillText('g solute / 100 g H₂O', 0, 0);
+  ctx.textAlign='center'; ctx.fillText(formatPlainChemLabel('g solute / 100 g H2O'), 0, 0);
   ctx.restore();
   ctx.textAlign='center'; ctx.textBaseline='alphabetic';
   ctx.fillText('Temperature (°C)', pad.l+pw/2, H-5);
@@ -1248,7 +1712,7 @@ function drawSolChart() {
   ctx.fillStyle = dat.color;
   ctx.font = 'bold 12px DM Sans,sans-serif';
   ctx.textAlign = 'left';
-  ctx.fillText(scenario.compound, tx(dat.pts[dat.pts.length - 1][0]) - 8, ty(dat.pts[dat.pts.length - 1][1]) - 8);
+  ctx.fillText(formatPlainChemLabel(scenario.compound), tx(dat.pts[dat.pts.length - 1][0]) - 8, ty(dat.pts[dat.pts.length - 1][1]) - 8);
 
   ctx.setLineDash([6,4]);
   ctx.strokeStyle = '#a78bfa';
@@ -1298,7 +1762,47 @@ function showFeedback(node, isCorrect, text) {
   let state = isCorrect ? 'correct' : 'incorrect';
   if (/click Check\.?$|first\.?$/i.test(text)) state = 'pending';
   node.dataset.state = state;
-  node.innerHTML = text;
+  node.innerHTML = normalizeNotationHtml(text);
+}
+
+function normalizeNotationHtml(text) {
+  if (!text) return text;
+  return text
+    .replace(/C₁|C1/g, 'C<sub>1</sub>')
+    .replace(/C₂|C2/g, 'C<sub>2</sub>')
+    .replace(/V₁|V1/g, 'V<sub>1</sub>')
+    .replace(/V₂|V2/g, 'V<sub>2</sub>')
+    .replace(/ΔT<sub>f<\/sub>/g, 'ΔT<sub>f</sub>')
+    .replace(/ΔT<sub>b<\/sub>/g, 'ΔT<sub>b</sub>')
+    .replace(/H₂O|H2O/g, 'H<span class="chem-sub">2</span>O')
+    .replace(/KNO₃|KNO3/g, 'KNO<span class="chem-sub">3</span>')
+    .replace(/NaNO₃|NaNO3/g, 'NaNO<span class="chem-sub">3</span>')
+    .replace(/Fe\(NO₃\)₃|Fe\(NO3\)3/g, 'Fe(NO<span class="chem-sub">3</span>)<span class="chem-sub">3</span>')
+    .replace(/KMnO₄|KMnO4/g, 'KMnO<span class="chem-sub">4</span>')
+    .replace(/CuSO₄|CuSO4/g, 'CuSO<span class="chem-sub">4</span>')
+    .replace(/KClO₃|KClO3/g, 'KClO<span class="chem-sub">3</span>')
+    .replace(/NH₄Cl|NH4Cl/g, 'NH<span class="chem-sub">4</span>Cl')
+    .replace(/Ce₂\(SO₄\)₃|Ce2\(SO4\)3/g, 'Ce<span class="chem-sub">2</span>(SO<span class="chem-sub">4</span>)<span class="chem-sub">3</span>')
+    .replace(/CaCl₂|CaCl2/g, 'CaCl<span class="chem-sub">2</span>')
+    .replace(/MgCl₂|MgCl2/g, 'MgCl<span class="chem-sub">2</span>')
+    .replace(/AlCl₃|AlCl3/g, 'AlCl<span class="chem-sub">3</span>')
+    .replace(/Ca\(NO₃\)₂|Ca\(NO3\)2/g, 'Ca(NO<span class="chem-sub">3</span>)<span class="chem-sub">2</span>')
+    .replace(/Na⁺|Na\+/g, '<span class="ion-group">Na<span class="chem-charge">+</span></span>')
+    .replace(/Cl⁻|Cl-/g, '<span class="ion-group">Cl<span class="chem-charge">−</span></span>')
+    .replace(/NO₃⁻|NO3-/g, '<span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span>');
+}
+
+function formatPlainChemLabel(text) {
+  return text
+    .replace(/KNO₃/g, 'KNO3')
+    .replace(/NaNO₃/g, 'NaNO3')
+    .replace(/KClO₃/g, 'KClO3')
+    .replace(/NH₄Cl/g, 'NH4Cl')
+    .replace(/Ce₂\(SO₄\)₃/g, 'Ce2(SO4)3')
+    .replace(/H₂O/g, 'H2O')
+    .replace(/Na⁺/g, 'Na+')
+    .replace(/Cl⁻/g, 'Cl-')
+    .replace(/NO₃⁻/g, 'NO3-');
 }
 
 function initSolubilityTool() {
@@ -1316,7 +1820,7 @@ function initSolubilityTool() {
     const scenario = SOLUBILITY_SCENARIOS[currentSolScenarioIndex];
     currentSolSelection = '';
     solHasChecked = false;
-    scenarioText.innerHTML = `At ${scenario.temperature} °C, ${scenario.amountAdded} g of ${scenario.compound} is mixed with 100 g of water. ${scenario.promptNote ? `<br><em>${scenario.promptNote}</em>` : ''}`;
+    scenarioText.innerHTML = normalizeNotationHtml(`At ${scenario.temperature} °C, ${scenario.amountAdded} g of ${scenario.compound} is mixed with 100 g of water. ${scenario.promptNote ? `<br><em>${scenario.promptNote}</em>` : ''}`);
     feedback.dataset.state = 'pending';
     feedback.innerHTML = 'Choose one classification, then click Check.';
     revealBox.hidden = true;
@@ -1357,7 +1861,7 @@ function initSolubilityTool() {
     revealBox.hidden = false;
     const supportBox = document.getElementById('solSupport');
     if (supportBox) supportBox.hidden = false;
-    revealText.innerHTML = SOLUBILITY_SCENARIOS[currentSolScenarioIndex].reveal;
+    revealText.innerHTML = normalizeNotationHtml(SOLUBILITY_SCENARIOS[currentSolScenarioIndex].reveal);
   });
 
   nextBtn.addEventListener('click', () => {
@@ -1409,7 +1913,7 @@ function initChoiceTool(rootId, config) {
 
   function setList(node, items) {
     if (!node) return;
-    node.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+    node.innerHTML = items.map(item => `<li>${normalizeNotationHtml(item)}</li>`).join('');
   }
 
   function loadScenario() {
@@ -1417,15 +1921,15 @@ function initChoiceTool(rootId, config) {
     if (!scenario) return;
     selection = '';
     checked = false;
-    if (titleNode) titleNode.innerHTML = scenario.title;
-    if (hintNode) hintNode.innerHTML = scenario.hint;
+    if (titleNode) titleNode.innerHTML = normalizeNotationHtml(scenario.title);
+    if (hintNode) hintNode.innerHTML = normalizeNotationHtml(scenario.hint);
     if (labelNode) labelNode.textContent = scenario.label || 'Scenario:';
-    if (scenarioNode) scenarioNode.innerHTML = scenario.prompt;
+    if (scenarioNode) scenarioNode.innerHTML = normalizeNotationHtml(scenario.prompt);
     shuffleArray(scenario.choices).forEach((choice, index) => {
       const btn = choiceButtons[index];
       if (choice) {
         btn.hidden = false;
-        btn.innerHTML = choice.label;
+        btn.innerHTML = normalizeNotationHtml(choice.label);
         btn.dataset.choice = choice.value;
       } else {
         btn.hidden = true;
@@ -1753,7 +2257,7 @@ function initUnit13Visuals() {
         title: 'Choose the correct final volume before using the dilution equation.',
         hint: 'The final volume is the whole diluted mixture, not just the solvent you poured in.',
         label: 'Scenario:',
-        prompt: '40.0 mL of stock KNO₃ solution is diluted by adding 160.0 mL of water. What is the final volume (V₂)?',
+        prompt: '40.0 mL of stock KNO3 solution is diluted by adding 160.0 mL of water. What is the final volume (V₂)?',
         choices: [
           { value: 'a', label: '200.0 mL' },
           { value: 'b', label: '160.0 mL' }
@@ -1981,7 +2485,7 @@ function initUnit13Visuals() {
         support: [
           'glucose: i = 1',
           'NaCl: i = 2',
-          'CaCl₂: i = 3'
+          'CaCl2: i = 3'
         ]
       },
       {
@@ -1991,16 +2495,16 @@ function initUnit13Visuals() {
         prompt: 'Both solutions are 0.50 m in water. Which solution should have the higher boiling point?',
         choices: [
           { value: 'a', label: '0.50 m NaCl' },
-          { value: 'b', label: '0.50 m CaCl₂' }
+          { value: 'b', label: '0.50 m CaCl2' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — CaCl₂ produces more dissolved particles than NaCl at the same molality, so the boiling-point elevation is larger.',
+        correct: 'Right — CaCl2 produces more dissolved particles than NaCl at the same molality, so the boiling-point elevation is larger.',
         incorrect: 'Not quite — both concentrations are the same, so the deciding factor is how many particles each formula unit makes in solution.',
         reveal: [
           'NaCl gives about 2 dissolved particles per formula unit.',
-          'CaCl₂ gives about 3 dissolved particles per formula unit.',
-          'A larger particle count causes a larger boiling-point elevation, so CaCl₂ leads to the higher boiling point.'
+          'CaCl2 gives about 3 dissolved particles per formula unit.',
+          'A larger particle count causes a larger boiling-point elevation, so CaCl2 leads to the higher boiling point.'
         ],
         support: [
           'ΔTb = Kbmi',
@@ -2014,16 +2518,16 @@ function initUnit13Visuals() {
         prompt: 'Which solution should create the larger osmotic pressure at the same temperature?',
         choices: [
           { value: 'a', label: '0.60 M glucose' },
-          { value: 'b', label: '0.60 M CaCl₂' }
+          { value: 'b', label: '0.60 M CaCl2' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — the concentrations match, so the larger van \'t Hoff factor controls the comparison and CaCl₂ gives the larger osmotic pressure.',
+        correct: 'Right — the concentrations match, so the larger van \'t Hoff factor controls the comparison and CaCl2 gives the larger osmotic pressure.',
         incorrect: 'Not quite — because the molarity is the same, you need to compare how many dissolved particles each solute produces.',
         reveal: [
           'Osmotic pressure depends on iMRT, so both M and i matter.',
           'Both solutions are 0.60 M, so concentration is tied.',
-          'CaCl₂ has the larger i value, so it produces the larger osmotic pressure.'
+          'CaCl2 has the larger i value, so it produces the larger osmotic pressure.'
         ],
         support: [
           'For equal M, the larger i gives the larger osmotic pressure.',
@@ -2037,20 +2541,20 @@ function initUnit13Visuals() {
         prompt: 'Both solutions are 0.80 m in water. Which one should have the lower vapor pressure?',
         choices: [
           { value: 'a', label: '0.80 m sucrose' },
-          { value: 'b', label: '0.80 m MgCl₂' }
+          { value: 'b', label: '0.80 m MgCl2' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — MgCl₂ produces more dissolved particles than sucrose at the same molality, so it lowers vapor pressure more.',
+        correct: 'Right — MgCl2 produces more dissolved particles than sucrose at the same molality, so it lowers vapor pressure more.',
         incorrect: 'Not quite — the larger vapor-pressure lowering comes from the solution with the larger particle count.',
         reveal: [
           'Sucrose is a nonelectrolyte, so i = 1.',
-          'MgCl₂ separates into about 3 particles, so i = 3.',
-          'More particles create the larger colligative effect, so MgCl₂ gives the lower vapor pressure.'
+          'MgCl2 separates into about 3 particles, so i = 3.',
+          'More particles create the larger colligative effect, so MgCl2 gives the lower vapor pressure.'
         ],
         support: [
           'Nonelectrolytes: i ≈ 1',
-          'MgCl₂: i ≈ 3'
+          'MgCl2: i ≈ 3'
         ]
       },
       {
@@ -2082,17 +2586,17 @@ function initUnit13Visuals() {
         label: 'Scenario:',
         prompt: 'Which solution should have the higher boiling point?',
         choices: [
-          { value: 'a', label: '0.30 m CaCl₂' },
+          { value: 'a', label: '0.30 m CaCl2' },
           { value: 'b', label: '0.30 m NaCl' }
         ],
         answer: 'a',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — at the same molality, CaCl₂ has the larger i value and gives the bigger boiling-point elevation.',
+        correct: 'Right — at the same molality, CaCl2 has the larger i value and gives the bigger boiling-point elevation.',
         incorrect: 'Not quite — the concentrations match, so the larger i value decides the comparison.',
         reveal: [
-          'NaCl has i ≈ 2, while CaCl₂ has i ≈ 3.',
+          'NaCl has i ≈ 2, while CaCl2 has i ≈ 3.',
           'At equal molality, the larger i produces the larger ΔTb.',
-          'So 0.30 m CaCl₂ has the higher boiling point.'
+          'So 0.30 m CaCl2 has the higher boiling point.'
         ],
         support: [
           'ΔTb = Kbmi',
@@ -2105,8 +2609,8 @@ function initUnit13Visuals() {
         label: 'Scenario:',
         prompt: 'At the same temperature, which solution should have the larger osmotic pressure?',
         choices: [
-          { value: 'a', label: '0.20 M NaNO₃' },
-          { value: 'b', label: '0.50 M NaNO₃' }
+          { value: 'a', label: '0.20 M NaNO3' },
+          { value: 'b', label: '0.50 M NaNO3' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
@@ -2128,21 +2632,21 @@ function initUnit13Visuals() {
         label: 'Problem:',
         prompt: 'Both solutions are 1.0 m. Which should show the greater freezing-point depression?',
         choices: [
-          { value: 'a', label: '1.0 m AlCl₃' },
+          { value: 'a', label: '1.0 m AlCl3' },
           { value: 'b', label: '1.0 m NaCl' }
         ],
         answer: 'a',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — AlCl₃ produces more dissolved particles than NaCl at the same molality.',
+        correct: 'Right — AlCl3 produces more dissolved particles than NaCl at the same molality.',
         incorrect: 'Not quite — because the molality is the same, the larger particle count gives the larger effect.',
         reveal: [
           'NaCl separates into about 2 particles.',
-          'AlCl₃ separates into about 4 particles.',
-          'The larger i value gives the larger freezing-point depression, so AlCl₃ wins.'
+          'AlCl3 separates into about 4 particles.',
+          'The larger i value gives the larger freezing-point depression, so AlCl3 wins.'
         ],
         support: [
           'NaCl: i ≈ 2',
-          'AlCl₃: i ≈ 4'
+          'AlCl3: i ≈ 4'
         ]
       },
       {
@@ -2175,20 +2679,20 @@ function initUnit13Visuals() {
         prompt: 'Both solutions are 0.40 m. Which one should have the lower vapor pressure?',
         choices: [
           { value: 'a', label: '0.40 m KBr' },
-          { value: 'b', label: '0.40 m Ca(NO₃)₂' }
+          { value: 'b', label: '0.40 m Ca(NO3)2' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — Ca(NO₃)₂ produces more dissolved particles than KBr, so it lowers vapor pressure more.',
+        correct: 'Right — Ca(NO3)2 produces more dissolved particles than KBr, so it lowers vapor pressure more.',
         incorrect: 'Not quite — when molality is the same, the larger i value causes the larger vapor-pressure lowering.',
         reveal: [
           'KBr separates into about 2 particles.',
-          'Ca(NO₃)₂ separates into about 3 particles.',
-          'More particles mean a stronger colligative effect, so Ca(NO₃)₂ has the lower vapor pressure.'
+          'Ca(NO3)2 separates into about 3 particles.',
+          'More particles mean a stronger colligative effect, so Ca(NO3)2 has the lower vapor pressure.'
         ],
         support: [
           'KBr: i ≈ 2',
-          'Ca(NO₃)₂: i ≈ 3'
+          'Ca(NO3)2: i ≈ 3'
         ]
       },
       {
@@ -2197,17 +2701,17 @@ function initUnit13Visuals() {
         label: 'Scenario:',
         prompt: 'Which solution should create the larger osmotic pressure at the same temperature?',
         choices: [
-          { value: 'a', label: '0.30 M CaCl₂' },
+          { value: 'a', label: '0.30 M CaCl2' },
           { value: 'b', label: '0.50 M glucose' }
         ],
         answer: 'a',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — CaCl₂ produces about 3 particles, so 0.30 × 3 gives a larger particle concentration than 0.50 × 1 for glucose.',
+        correct: 'Right — CaCl2 produces about 3 particles, so 0.30 × 3 gives a larger particle concentration than 0.50 × 1 for glucose.',
         incorrect: 'Not quite — osmotic pressure depends on total dissolved particle concentration, so compare i × M.',
         reveal: [
           'Glucose has i = 1, so its effective particle concentration is about 0.50.',
-          'CaCl₂ has i ≈ 3, so its effective particle concentration is about 0.90.',
-          'The larger iM value gives the larger osmotic pressure, so CaCl₂ is larger.'
+          'CaCl2 has i ≈ 3, so its effective particle concentration is about 0.90.',
+          'The larger iM value gives the larger osmotic pressure, so CaCl2 is larger.'
         ],
         support: [
           'For π, compare i × M.',
@@ -2220,17 +2724,17 @@ function initUnit13Visuals() {
         label: 'Problem:',
         prompt: 'Which solution should have the lower freezing point?',
         choices: [
-          { value: 'a', label: '0.20 m MgCl₂' },
+          { value: 'a', label: '0.20 m MgCl2' },
           { value: 'b', label: '0.50 m sucrose' }
         ],
         answer: 'a',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — MgCl₂ gives the larger effective particle concentration, so it creates the larger freezing-point depression and the lower freezing point.',
-        incorrect: 'Not quite — compare i × m for each solution before deciding. MgCl₂ produces more total dissolved particles here.',
+        correct: 'Right — MgCl2 gives the larger effective particle concentration, so it creates the larger freezing-point depression and the lower freezing point.',
+        incorrect: 'Not quite — compare i × m for each solution before deciding. MgCl2 produces more total dissolved particles here.',
         reveal: [
           'Sucrose has i = 1, so its effective particle concentration is 0.50.',
-          'MgCl₂ has i ≈ 3, so its effective particle concentration is 0.60.',
-          'Because 0.60 is larger than 0.50, MgCl₂ should have the lower freezing point.'
+          'MgCl2 has i ≈ 3, so its effective particle concentration is 0.60.',
+          'Because 0.60 is larger than 0.50, MgCl2 should have the lower freezing point.'
         ],
         support: [
           'For ΔTf, compare i × m.',
@@ -2244,16 +2748,16 @@ function initUnit13Visuals() {
         prompt: 'Which solution should have the higher boiling point?',
         choices: [
           { value: 'a', label: '0.40 m KCl' },
-          { value: 'b', label: '0.25 m AlCl₃' }
+          { value: 'b', label: '0.25 m AlCl3' }
         ],
         answer: 'b',
         pending: 'Choose one answer, then click Check.',
-        correct: 'Right — KCl gives about 0.80 particle-molality units, while AlCl₃ gives about 1.00, so AlCl₃ produces the larger boiling-point elevation.',
+        correct: 'Right — KCl gives about 0.80 particle-molality units, while AlCl3 gives about 1.00, so AlCl3 produces the larger boiling-point elevation.',
         incorrect: 'Not quite — compare i × m to decide which solution has more dissolved particles overall.',
         reveal: [
           'KCl has i ≈ 2, so 0.40 × 2 = 0.80.',
-          'AlCl₃ has i ≈ 4, so 0.25 × 4 = 1.00.',
-          'The larger effective particle concentration gives the higher boiling point, so 0.25 m AlCl₃ wins.'
+          'AlCl3 has i ≈ 4, so 0.25 × 4 = 1.00.',
+          'The larger effective particle concentration gives the higher boiling point, so 0.25 m AlCl3 wins.'
         ],
         support: [
           'For ΔTb, compare i × m.',

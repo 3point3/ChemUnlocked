@@ -63,18 +63,18 @@
     <path d="M108 192H1038"/>
     <path d="M108 312H1038"/>
 
-    <path d="M108 132 L 555 132 Q 570 132 590 100 L 680 -20"/>
+    <path d="M108 132 L 555 132 Q 570 132 590 100 L 680 28"/>
 
     <path d="M108 252 L 558 252 Q 570 252 540 300 L 380 500"/>
 
-    <path d="M108 372 L 555 372 Q 570 372 590 404 L 680 540"/>
+    <path d="M108 372 L 555 372 Q 570 372 590 404 L 680 492"/>
   </g>
 
   <g fill="#d97706">
     <polygon points="1026,183 1054,192 1026,201"/> 
     <polygon points="1026,303 1054,312 1026,321"/>
     
-    <g transform="translate(685,-30) rotate(-52)">
+    <g transform="translate(685,18) rotate(-52)">
       <polygon points="-18,-12 12,0 -18,12"/>
     </g>
     
@@ -82,7 +82,7 @@
       <polygon points="-18,-12 12,0 -18,12"/>
     </g>
     
-    <g transform="translate(685,535) rotate(52)">
+    <g transform="translate(680,492) rotate(44)">
       <polygon points="-18,-12 12,0 -18,12"/>
     </g>
   </g>

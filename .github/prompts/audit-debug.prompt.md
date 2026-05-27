@@ -5,6 +5,10 @@ argument-hint: "Optional: file path or specific area to focus on (e.g. accessibi
 agent: "agent"
 ---
 
+Before running this overlay, load and apply `.github/prompts/audit-baseline.md`.
+
+If the target file is chemistry-heavy (formula markup, ionic notation, equation wrapping, chemistry SVGs, or mobile notation issues), also apply the chemistry overlay in `AGENTS.md`.
+
 Perform a thorough audit and debug of the current file (or the file path in $args if provided). Work through each category below in order. Fix issues directly — do not just list them.
 
 ## 1. Functional Bugs (fix first)

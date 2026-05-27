@@ -96,11 +96,11 @@
     <p><strong>Heat</strong> is energy transferred because of a temperature difference. <strong>Temperature</strong> is a measure of the average kinetic energy of particles. They are related but not the same thing.</p>
     <p>Get this straight first: temperature tells you how energetic particles are on average; heat is energy moving from one place to another.</p>
     <p>The two rows below show exactly how heat and temperature differ — and why a large mass of warm water can hold more total energy than a tiny cup of hotter water.</p>
-    <table>
+    <table class="mobile-stack-table">
       <thead><tr><th>Idea</th><th>Meaning</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td>Heat</td><td>Energy moving from hotter to colder matter</td><td>A hot metal block warms cooler water</td></tr>
-        <tr><td>Temperature</td><td>How energetic particles are on average</td><td>100&deg;C water and 100&deg;C steam have the same temperature but different total heat content</td></tr>
+        <tr><td data-label="Idea">Heat</td><td data-label="Meaning">Energy moving from hotter to colder matter</td><td data-label="Example">A hot metal block warms cooler water</td></tr>
+        <tr><td data-label="Idea">Temperature</td><td data-label="Meaning">How energetic particles are on average</td><td data-label="Example">100&deg;C water and 100&deg;C steam have the same temperature but different total heat content</td></tr>
       </tbody>
     </table>
     <div class="key-fact">
@@ -126,13 +126,13 @@
         <span class="formula-rule">1 food Calorie = 1 kcal</span>
       </div>
     </div>
-    <table>
+    <table class="mobile-stack-table">
       <thead><tr><th>Unit</th><th>Name</th><th>Common use</th></tr></thead>
       <tbody>
-        <tr><td>J</td><td>joule</td><td>SI energy unit</td></tr>
-        <tr><td>kJ</td><td>kilojoule</td><td>Reaction enthalpy</td></tr>
-        <tr><td>cal</td><td>calorie</td><td>Older heat unit</td></tr>
-        <tr><td>kcal or Calorie</td><td>kilocalorie</td><td>Food energy labels</td></tr>
+        <tr><td data-label="Unit">J</td><td data-label="Name">joule</td><td data-label="Common use">SI energy unit</td></tr>
+        <tr><td data-label="Unit">kJ</td><td data-label="Name">kilojoule</td><td data-label="Common use">Reaction enthalpy</td></tr>
+        <tr><td data-label="Unit">cal</td><td data-label="Name">calorie</td><td data-label="Common use">Older heat unit</td></tr>
+        <tr><td data-label="Unit">kcal or Calorie</td><td data-label="Name">kilocalorie</td><td data-label="Common use">Food energy labels</td></tr>
       </tbody>
     </table>
   </div>
@@ -149,14 +149,123 @@
       </ul>
     </div>
     <p>When a substance changes temperature <em>without</em> changing phase, use the specific heat equation:</p>
-    <div class="formula-box">
+    <div class="formula-box formula-box-visual formula-box-visual-specific-heat">
       <span class="label">Temperature-change equation</span>
-      <div class="formula-rule-list">
-        <span class="formula-rule"><strong>q = mc&Delta;T</strong></span>
-        <span class="formula-rule">q = heat (J)</span>
-        <span class="formula-rule">m = mass (g)</span>
-        <span class="formula-rule">c = specific heat (J/g&deg;C)</span>
-        <span class="formula-rule">&Delta;T = T<sub>final</sub> &minus; T<sub>initial</sub></span>
+      <div class="formula-box-visual-grid">
+        <div class="formula-box-visual-copy">
+          <div class="formula-rule-list">
+            <span class="formula-rule"><strong>q = mc&Delta;T</strong></span>
+            <span class="formula-rule">q = heat (J)</span>
+            <span class="formula-rule">m = mass (g)</span>
+            <span class="formula-rule">c = specific heat (J/g&deg;C)</span>
+            <span class="formula-rule">&Delta;T = T<sub>final</sub> &minus; T<sub>initial</sub></span>
+          </div>
+        </div>
+        <figure class="unit-figure unit-figure-svg-narrow formula-box-visual-figure">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 490" width="100%" height="auto" role="img" aria-label="Specific heat capacity of water showing that 4.184 joules raises 1 gram of water by 1 degree Celsius">
+            <title>Specific Heat Capacity of Water</title>
+            <desc>Diagram illustrating the energy transfer required to raise the temperature of water by 1 degree Celsius.</desc>
+
+            <defs>
+              <linearGradient id="flameInner" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#ea580c" />
+                <stop offset="50%" stop-color="#f97316" />
+                <stop offset="100%" stop-color="#facc15" />
+              </linearGradient>
+              <linearGradient id="flameOuter" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#2563eb" stop-opacity="0.8"/>
+                <stop offset="40%" stop-color="#3b82f6" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+              </linearGradient>
+
+              <marker id="energyArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed"/>
+              </marker>
+
+              <style>
+                .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+                .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+                .bold-highlight { font-weight: 700; fill: #0f172a; }
+                .constant-val { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 800; fill: #2563eb; }
+                .unit-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #475569; }
+                .temp-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #ef4444; }
+                .math-sub { font-size: 10px; fill: #64748b; }
+                .energy-label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #7c3aed; }
+              </style>
+            </defs>
+
+            <rect width="100%" height="100%" fill="#ffffff" rx="16" stroke="#e2e8f0" stroke-width="1"/>
+
+            <g transform="translate(24, 36)">
+              <text class="title" x="0" y="0">Specific Heat Capacity of Water</text>
+              <rect x="0" y="8" width="40" height="3" fill="#2563eb" rx="1.5"/>
+            </g>
+
+            <g id="lab-setup">
+              <path d="M 190 120 L 265 112" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+              <g transform="translate(265, 95)">
+                <rect x="0" y="0" width="55" height="34" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+                <text class="temp-text" x="27" y="21" text-anchor="middle">+1.0°C</text>
+              </g>
+
+              <rect x="160" y="120" width="100" height="92" rx="2" fill="none" stroke="#475569" stroke-width="2.5"/>
+              <path d="M 162 145 L 258 145 L 258 210 L 162 210 Z" fill="#e0f2fe" opacity="0.8"/>
+              <line x1="162" y1="145" x2="258" y2="145" stroke="#0ea5e9" stroke-width="1.5"/>
+
+              <rect x="180" y="75" width="10" height="125" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+              <circle cx="185" cy="195" r="9" fill="#ef4444"/>
+              <rect x="183" y="90" width="4" height="105" fill="#ef4444"/>
+              <line x1="190" y1="110" x2="193" y2="110" stroke="#475569" stroke-width="1"/>
+              <line x1="190" y1="125" x2="193" y2="125" stroke="#475569" stroke-width="1"/>
+              <line x1="190" y1="140" x2="193" y2="140" stroke="#475569" stroke-width="1"/>
+              <line x1="190" y1="150" x2="193" y2="150" stroke="#475569" stroke-width="1"/>
+              <line x1="190" y1="165" x2="193" y2="165" stroke="#475569" stroke-width="1"/>
+
+              <line x1="130" y1="212" x2="290" y2="212" stroke="#334155" stroke-width="3"/>
+
+              <path d="M 205 270 L 205 310 L 215 310 L 215 270 Z" fill="#94a3b8" stroke="#64748b" stroke-width="1"/>
+              <rect x="200" y="310" width="20" height="12" rx="2" fill="#64748b"/>
+              <path d="M 175 334 L 192 322 L 228 322 L 245 334 Z" fill="#475569"/>
+
+              <path d="M 210 270 C 190 250 202 215 210 219 C 218 215 230 250 210 270 Z" fill="url(#flameOuter)"/>
+              <path d="M 210 270 C 200 258 204 233 210 231 C 216 233 220 258 210 270 Z" fill="url(#flameInner)"/>
+
+              <path d="M 195 240 C 120 230 120 175 156 166" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#energyArrow)"/>
+              <g transform="translate(75, 195)">
+                <text class="energy-label" x="0" y="0" text-anchor="middle">+4.184 J</text>
+                <text class="body-text" x="0" y="14" font-size="10" text-anchor="middle">Heat Energy</text>
+              </g>
+            </g>
+
+            <line x1="24" y1="355" x2="396" y2="355" stroke="#e2e8f0" stroke-width="1"/>
+
+            <g transform="translate(24, 370)">
+              <rect width="372" height="96" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+              <g transform="translate(20, 42)">
+                <text class="constant-val" x="0" y="0">C<tspan class="math-sub" dy="5">s</tspan><tspan dy="-5" font-weight="600"> = 4.184</tspan></text>
+
+                <g transform="translate(138, -20)">
+                  <text class="unit-text" x="20" y="12" text-anchor="middle">J</text>
+                  <line x1="0" y1="17" x2="40" y2="17" stroke="#475569" stroke-width="1.5"/>
+                  <text class="unit-text" x="20" y="32" text-anchor="middle">g·°C</text>
+                </g>
+              </g>
+
+              <line x1="205" y1="12" x2="205" y2="84" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>
+
+              <g transform="translate(220, 16)">
+                <text class="body-text" x="0" y="12"><tspan class="bold-highlight" fill="#2563eb">4.184 Joules</tspan> raises</text>
+                <text class="body-text" x="0" y="30">the temperature of</text>
+                <text class="body-text" x="0" y="48"><tspan class="bold-highlight">1 gram</tspan> of liquid water</text>
+                <text class="body-text" x="0" y="66">by exactly <tspan class="bold-highlight" fill="#ef4444">1°C</tspan>.</text>
+              </g>
+            </g>
+          </svg>
+        </figure>
+        <div class="formula-box-visual-note">
+          <p>Water’s specific heat is high: it takes <strong>4.184 joules</strong> to raise <strong>1 gram</strong> of water by <strong>1&deg;C</strong>, which is why water resists rapid temperature change.</p>
+        </div>
       </div>
     </div>
     <p>In a <strong>calorimetry</strong> experiment, energy is conserved.</p>
@@ -190,13 +299,142 @@
         <span class="formula-rule"><strong>q = m&Delta;H<sub>vap</sub></strong> for boiling or condensation</span>
       </div>
     </div>
-    <table>
+    <div class="chart-scroll-wrap phase-change-flow-wrap">
+      <svg class="phase-change-flow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 560" width="100%" height="auto" role="img" aria-label="Horizontal thermodynamic phase change model showing particle states, left-right heat arrows, and constant temperature equations">
+        <title>Phase Changes, Constant Temperature, and Heat Flow</title>
+
+        <defs>
+          <marker id="arrow-gain-right" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#ea580c"/>
+          </marker>
+          <marker id="arrow-loss-left" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+          </marker>
+
+          <style>
+            .main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; }
+            .phase-lbl-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #1e293b; text-anchor: middle; letter-spacing: 0.5px; }
+            .eq-section-lbl { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; letter-spacing: 0.5px; }
+            .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; line-height: 20px; }
+            .bold-gain { font-weight: 700; fill: #ea580c; }
+            .bold-loss { font-weight: 700; fill: #2563eb; }
+            .bold-dark { font-weight: 700; fill: #0f172a; }
+            .eq-text { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+            .subscript { font-size: 11px; font-weight: 700; fill: #4f46e5; }
+            .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
+          </style>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#ffffff" rx="16" stroke="#e2e8f0" stroke-width="1"/>
+
+        <g transform="translate(30, 40)">
+          <text class="main-title" x="0" y="0">Energy Dynamics &amp; Phase Changes</text>
+          <rect x="0" y="10" width="60" height="4" fill="#4f46e5" rx="2"/>
+        </g>
+
+        <g transform="translate(30, 95)">
+          <text class="phase-lbl-text" x="65" y="-12">SOLID</text>
+          <rect width="130" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+          <g fill="#bae6fd" stroke="#0ea5e9" stroke-width="1.2">
+            <circle cx="35" cy="25" r="8"/> <circle cx="65" cy="25" r="8"/> <circle cx="95" cy="25" r="8"/>
+            <circle cx="35" cy="55" r="8"/> <circle cx="65" cy="55" r="8"/> <circle cx="95" cy="55" r="8"/>
+            <circle cx="35" cy="85" r="8"/> <circle cx="65" cy="85" r="8"/> <circle cx="95" cy="85" r="8"/>
+          </g>
+          <path d="M35,25 L95,25 M35,55 L95,55 M35,85 L95,85 M35,25 L35,85 M65,25 L65,85 M95,25 L95,85" stroke="#0ea5e9" stroke-width="0.5" opacity="0.25"/>
+        </g>
+
+        <g transform="translate(175, 95)">
+          <path d="M 0 35 L 100 35" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#arrow-gain-right)"/>
+          <text class="badge-text" x="50" y="26" fill="#ea580c">+q (Melting)</text>
+
+          <path d="M 100 75 L 0 75" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-loss-left)"/>
+          <text class="badge-text" x="50" y="92" fill="#2563eb">-q (Freezing)</text>
+        </g>
+
+        <g transform="translate(290, 95)">
+          <text class="phase-lbl-text" x="65" y="-12">LIQUID</text>
+          <rect width="130" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+          <g fill="#bae6fd" stroke="#0ea5e9" stroke-width="1.2">
+            <circle cx="30" cy="88" r="8"/> <circle cx="56" cy="90" r="8"/> <circle cx="82" cy="85" r="8"/> <circle cx="106" cy="88" r="8"/>
+            <circle cx="42" cy="66" r="8"/> <circle cx="68" cy="68" r="8"/> <circle cx="94" cy="64" r="8"/>
+            <circle cx="32" cy="44" r="8"/> <circle cx="58" cy="42" r="8"/> <circle cx="84" cy="45" r="8"/>
+          </g>
+        </g>
+
+        <g transform="translate(435, 95)">
+          <path d="M 0 35 L 100 35" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#arrow-gain-right)"/>
+          <text class="badge-text" x="50" y="26" fill="#ea580c">+q (Boiling)</text>
+
+          <path d="M 100 75 L 0 75" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-loss-left)"/>
+          <text class="badge-text" x="50" y="92" fill="#2563eb">-q (Condense)</text>
+        </g>
+
+        <g transform="translate(550, 95)">
+          <text class="phase-lbl-text" x="65" y="-12">GAS</text>
+          <rect width="130" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+          <g fill="#bae6fd" stroke="#0ea5e9" stroke-width="1.2">
+            <circle cx="35" cy="35" r="8"/>
+            <circle cx="100" cy="45" r="8"/>
+            <circle cx="50" cy="80" r="8"/>
+            <circle cx="95" cy="85" r="8"/>
+          </g>
+          <path d="M22,30 L27,32 M109,51 L114,53 M58,85 L63,88 M85,80 L88,77" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+        </g>
+
+        <g transform="translate(700, 95)">
+          <g>
+            <rect width="110" height="50" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+            <text class="eq-text" x="55" y="32">q = m·ΔH<tspan class="subscript" dy="2">fus</tspan></text>
+          </g>
+          <g transform="translate(0, 60)">
+            <rect width="110" height="50" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+            <text class="eq-text" x="55" y="32">q = m·ΔH<tspan class="subscript" dy="2">vap</tspan></text>
+          </g>
+        </g>
+
+        <g transform="translate(30, 240)">
+          <rect width="780" height="290" rx="12" fill="#fff7ed" stroke="#ffedd5" stroke-width="1.5"/>
+
+          <g transform="translate(24, 28)">
+            <rect x="0" y="2" width="4" height="16" fill="#ea580c" rx="2"/>
+            <text class="main-title" x="14" y="16" font-size="16px" fill="#ea580c">Phase Changes maintain CONSTANT TEMPERATURE</text>
+          </g>
+
+          <g transform="translate(24, 75)">
+            <text class="body-text" x="0" y="0">
+              During melting/freezing or boiling/condensing, <tspan class="bold-dark">temperature does not rise</tspan> even though heat energy is
+            </text>
+            <text class="body-text" x="0" y="22">
+              continuously being added or removed.
+            </text>
+
+            <text class="body-text" x="0" y="60">
+              The added heat energy <tspan class="bold-gain">(+q)</tspan> all goes breaking the <tspan class="bold-dark">intermolecular forces (IMFs)</tspan> holding particles together.
+            </text>
+            <text class="body-text" x="0" y="82">
+              During freezing or condensation, energy is <tspan class="bold-loss">released (-q)</tspan> when intermolecular forces bring molecules together.
+            </text>
+
+            <g transform="translate(0, 130)">
+              <rect width="732" height="65" rx="8" fill="#ffffff" stroke="#fed7aa" stroke-width="1.2"/>
+
+              <text class="body-text bold-dark" x="20" y="38" font-size="13px" fill="#c2410c">
+                ⚠️ WHY THERE IS NO ΔT IN THE EQUATIONS:
+                <tspan font-weight="500" fill="#334155">Because temperature change is zero, you can't use </tspan>
+                <tspan font-family="monospace" font-weight="800" fill="#0f172a" font-size="14px">q = mcΔT</tspan>
+              </text>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <table class="mobile-stack-table">
       <thead><tr><th>Process</th><th>Energy direction</th><th>Type</th></tr></thead>
       <tbody>
-        <tr><td>Melting</td><td>Absorbs heat</td><td>Endothermic</td></tr>
-        <tr><td>Freezing</td><td>Releases heat</td><td>Exothermic</td></tr>
-        <tr><td>Boiling or evaporation</td><td>Absorbs heat</td><td>Endothermic</td></tr>
-        <tr><td>Condensation</td><td>Releases heat</td><td>Exothermic</td></tr>
+        <tr><td data-label="Process">Melting</td><td data-label="Energy direction">Absorbs heat</td><td data-label="Type">Endothermic</td></tr>
+        <tr><td data-label="Process">Freezing</td><td data-label="Energy direction">Releases heat</td><td data-label="Type">Exothermic</td></tr>
+        <tr><td data-label="Process">Boiling or evaporation</td><td data-label="Energy direction">Absorbs heat</td><td data-label="Type">Endothermic</td></tr>
+        <tr><td data-label="Process">Condensation</td><td data-label="Energy direction">Releases heat</td><td data-label="Type">Exothermic</td></tr>
       </tbody>
     </table>
   </div>
@@ -282,14 +520,14 @@
           <line x1="60" y1="300" x2="60" y2="20" stroke="black" stroke-width="3" marker-end="url(#axis-arrow)" />
           <line x1="60" y1="300" x2="560" y2="300" stroke="black" stroke-width="3" marker-end="url(#axis-arrow)" />
 
-          <text x="30" y="160" transform="rotate(-90 30 160)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
-          <text x="310" y="325" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
+          <text x="30" y="160" transform="rotate(-90 30 160)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
+          <text x="310" y="325" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
 
           <line x1="310" y1="60" x2="310" y2="150" stroke="#ff66cc" stroke-width="3" />
-          <text x="320" y="115" fill="#d97706" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">E<tspan dy="4" font-size="14">A</tspan></text>
+          <text x="320" y="115" fill="#d97706" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">E<tspan dy="4" font-size="14">A</tspan></text>
 
           <line x1="490" y1="150" x2="490" y2="250" stroke="#4cd3d6" stroke-width="3" />
-          <text x="500" y="205" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">ΔH<tspan dy="4" font-size="12">rxn</tspan><tspan dy="-4"> &gt; 0 J</tspan></text>
+          <text x="500" y="205" fill="#0369a1" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">ΔH<tspan dy="4" font-size="12">rxn</tspan><tspan dy="-4"> &gt; 0 J</tspan></text>
         </svg>
         </div>
       </div>
@@ -312,14 +550,14 @@
           <line x1="60" y1="320" x2="60" y2="20" stroke="black" stroke-width="3" marker-end="url(#axis-arrow-exo)" />
           <line x1="60" y1="320" x2="560" y2="320" stroke="black" stroke-width="3" marker-end="url(#axis-arrow-exo)" />
 
-          <text x="30" y="170" transform="rotate(-90 30 170)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
-          <text x="310" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
+          <text x="30" y="170" transform="rotate(-90 30 170)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
+          <text x="310" y="345" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
 
           <line x1="230" y1="30" x2="230" y2="90" stroke="#ff66cc" stroke-width="3" />
-          <text x="235" y="70" fill="#d97706" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">E<tspan dy="4" font-size="14">A</tspan></text>
+          <text x="235" y="70" fill="#d97706" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">E<tspan dy="4" font-size="14">A</tspan></text>
 
           <line x1="500" y1="90" x2="500" y2="280" stroke="#4cd3d6" stroke-width="3" />
-          <text x="505" y="195" fill="#0369a1" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">ΔH<tspan dy="4" font-size="12">rxn</tspan><tspan dy="-4"> &lt; 0 J</tspan></text>
+          <text x="505" y="195" fill="#0369a1" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">ΔH<tspan dy="4" font-size="12">rxn</tspan><tspan dy="-4"> &lt; 0 J</tspan></text>
         </svg>
         </div>
       </div>
@@ -351,19 +589,19 @@
           <path d="M60,130 L160,130 C190,130 220,80 270,80 C320,80 340,230 400,230 L520,230" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
 
           <line x1="60" y1="270" x2="60" y2="20" stroke="#000" stroke-width="3" marker-end="url(#axisArrow)"/>
-          <text x="25" y="150" transform="rotate(-90 25,150)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
+          <text x="25" y="150" transform="rotate(-90 25,150)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Potential Energy</text>
 
           <line x1="60" y1="270" x2="590" y2="270" stroke="#000" stroke-width="3" marker-end="url(#axisArrow)"/>
-          <text x="325" y="295" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
+          <text x="325" y="295" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
 
           <line x1="280" y1="130" x2="280" y2="20" stroke="#ec4899" stroke-width="3"/>
-          <text x="285" y="70" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#d97706">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan></text>
+          <text x="285" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#d97706">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan></text>
           
           <line x1="315" y1="130" x2="315" y2="80" stroke="#4ade80" stroke-width="3"/>
           
           <line x1="375" y1="65" x2="320" y2="105" stroke="#4ade80" stroke-width="1.5" marker-end="url(#pointerArrow)"/>
 
-          <text x="380" y="60" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#047857">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan> with catalyst</text>
+          <text x="380" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#047857">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan> with catalyst</text>
           
           <line x1="565" y1="130" x2="565" y2="230" stroke="#0891b2" stroke-width="3"/>
           <text x="570" y="180" font-family="sans-serif" font-size="18" font-weight="700" fill="#0891b2">ΔH<tspan baseline-shift="sub" font-size="0.75em">rxn</tspan> &lt; 0 J</text>
@@ -391,27 +629,27 @@
     <p><strong>Both methods are Hess&rsquo;s law.</strong> Method 1 adds known thermochemical equations. Method 2 uses a table of formation reactions so the addition is built into one shortcut formula.</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Method 1 example: Find &Delta;H for C(graphite) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO(g)</strong>
+        <strong>Method 1 example: Find &Delta;H for C(graphite) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; CO(g)</strong>
         <p><strong>Given equations:</strong></p>
-        <div class="fl-chain">1. C(graphite) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
-        <div class="fl-chain">2. CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;283.0 kJ</div>
+        <div class="fl-chain">1. C(graphite) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
+        <div class="fl-chain">2. CO(g) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp;&Delta;H = &minus;283.0 kJ</div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Step 1: Reverse the equation that has CO on the wrong side</strong>
         <p>The target reaction needs <strong>CO as a product</strong>, but equation 2 has CO as a reactant. Reverse equation 2 and reverse the sign of &Delta;H.</p>
-        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = <span class="fl-result">+283.0 kJ</span></div>
+        <div class="fl-chain"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp;&Delta;H = <span class="fl-result">+283.0 kJ</span></div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Step 2: Add the equations</strong>
-        <p>Now add equation 1 and the reversed equation 2. CO<sub>2</sub> cancels because it appears once on each side.</p>
-        <div class="fl-chain">C(graphite) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
-        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &nbsp;&nbsp;&Delta;H = +283.0 kJ</div>
+        <p>Now add equation 1 and the reversed equation 2. <span class="ion-group">CO<span class="chem-sub">2</span></span> cancels because it appears once on each side.</p>
+        <div class="fl-chain">C(graphite) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp;&Delta;H = &minus;393.5 kJ</div>
+        <div class="fl-chain"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp;&Delta;H = +283.0 kJ</div>
         <div class="fl-chain fl-cancel-demo">
           <strong>Visual cancellation:</strong><br>
-          C(graphite) + O<sub>2</sub>(g) &rarr; <span class="cancel-mark cancel-blue">CO<sub>2</sub>(g)</span><br>
-          <span class="cancel-mark cancel-blue">CO<sub>2</sub>(g)</span> &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g)
+          C(graphite) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="cancel-mark cancel-blue"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</span><br>
+          <span class="cancel-mark cancel-blue"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</span> &rarr; CO(g) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g)
         </div>
-        <div class="fl-chain"><strong>Overall:</strong> C(graphite) + <sup>1</sup>&frasl;<sub>2</sub>O<sub>2</sub>(g) &rarr; CO(g)</div>
+        <div class="fl-chain"><strong>Overall:</strong> C(graphite) + <sup>1</sup>&frasl;<sub>2</sub><span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; CO(g)</div>
         <div class="fl-chain">&Delta;H = &minus;393.5 kJ + 283.0 kJ = <span class="fl-result">&minus;110.5 kJ</span></div>
       </div></div>
     </div>
@@ -430,27 +668,27 @@
     </div>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Method 2 example: Find &Delta;H&deg;<sub>rxn</sub> for CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)</strong>
+        <strong>Method 2 example: Find &Delta;H&deg;<sub>rxn</sub> for <span class="ion-group">CH<span class="chem-sub">4</span></span>(g) + 2<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) + 2<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l)</strong>
         <p>Use standard heats of formation at 25&deg;C from a data table.</p>
-        <table>
+        <table class="mobile-stack-table">
           <thead><tr><th>Substance</th><th>&Delta;H&deg;<sub>f</sub> (kJ/mol)</th></tr></thead>
           <tbody>
-            <tr><td>CH<sub>4</sub>(g)</td><td>&minus;74.8</td></tr>
-            <tr><td>O<sub>2</sub>(g)</td><td>0</td></tr>
-            <tr><td>CO<sub>2</sub>(g)</td><td>&minus;393.5</td></tr>
-            <tr><td>H<sub>2</sub>O(l)</td><td>&minus;285.8</td></tr>
+            <tr><td data-label="Substance"><span class="ion-group">CH<span class="chem-sub">4</span></span>(g)</td><td data-label="ΔHf (kJ/mol)">&minus;74.8</td></tr>
+            <tr><td data-label="Substance"><span class="ion-group">O<span class="chem-sub">2</span></span>(g)</td><td data-label="ΔHf (kJ/mol)">0</td></tr>
+            <tr><td data-label="Substance"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g)</td><td data-label="ΔHf (kJ/mol)">&minus;393.5</td></tr>
+            <tr><td data-label="Substance"><span class="ion-group">H<span class="chem-sub">2</span>O</span>(l)</td><td data-label="ΔHf (kJ/mol)">&minus;285.8</td></tr>
           </tbody>
         </table>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Step 1: Add the products side</strong>
-        <p>Multiply each formation enthalpy by its coefficient in the balanced equation.</p>
+        <strong>Step 1: Start with the products-minus-reactants rule and evaluate the products side first</strong>
+        <p>Use <strong>&Delta;H&deg;<sub>rxn</sub> = &Sigma; n&Delta;H&deg;<sub>f, products</sub> &minus; &Sigma; n&Delta;H&deg;<sub>f, reactants</sub></strong>, then multiply each product formation enthalpy by its coefficient.</p>
         <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, products</sub> = [1(&minus;393.5)] + [2(&minus;285.8)]</div>
         <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, products</sub> = <span class="fl-result">&minus;965.1 kJ</span></div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Step 2: Add the reactants side</strong>
-        <p>Remember that O<sub>2</sub>(g) is an element in its standard state, so its &Delta;H&deg;<sub>f</sub> is zero.</p>
+        <p>Remember that <span class="ion-group">O<span class="chem-sub">2</span></span>(g) is an element in its standard state, so its &Delta;H&deg;<sub>f</sub> is zero.</p>
         <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, reactants</sub> = [1(&minus;74.8)] + [2(0)]</div>
         <div class="fl-chain">&Sigma; n&Delta;H&deg;<sub>f, reactants</sub> = <span class="fl-result">&minus;74.8 kJ</span></div>
       </div></div>
@@ -466,7 +704,7 @@
         <div class="key-fact-copy">
           <ul class="key-fact-list">
           <li>Elements in their standard states have &Delta;H&deg;<sub>f</sub> = 0 by definition.</li>
-          <li>Examples include O<sub>2</sub>(g), Fe(s), and C(graphite).</li>
+          <li>Examples include <span class="ion-group">O<span class="chem-sub">2</span></span>(g), Fe(s), and C(graphite).</li>
           <li>That means they contribute nothing to the Hess&rsquo;s law sum in a formation-enthalpy calculation.</li>
           <li>If a problem gives full equations, use reverse-scale-add. If it gives a &Delta;H&deg;<sub>f</sub> table, use products minus reactants.</li>
           </ul>
@@ -482,9 +720,9 @@
     <div class="formula-box">
       <span class="label">Reading &Delta;H from a Balanced Equation</span>
       <div class="formula-rule-list">
-        <div class="formula-rule">2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l), &Delta;H = &minus;572 kJ</div>
-        <div class="formula-rule-note">As written, 2 mol H<sub>2</sub> releases 572 kJ.</div>
-        <div class="formula-rule-note">So 1 mol H<sub>2</sub> releases 286 kJ.</div>
+        <div class="formula-rule">2<span class="ion-group">H<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l), &Delta;H = &minus;572 kJ</div>
+        <div class="formula-rule-note">As written, 2 mol <span class="ion-group">H<span class="chem-sub">2</span></span> releases 572 kJ.</div>
+        <div class="formula-rule-note">So 1 mol <span class="ion-group">H<span class="chem-sub">2</span></span> releases 286 kJ.</div>
       </div>
     </div>
     <div class="key-fact">
@@ -713,7 +951,7 @@
     </div>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Identify the given values</strong>
+        <strong>Step 1 &mdash; Use q = mc&Delta;T because the sample stays liquid while its temperature changes</strong>
         <p>m = 125 g &nbsp;&nbsp; c = 4.184 J/g&deg;C &nbsp;&nbsp; &Delta;T = 68.0 &minus; 20.0 = 48.0&deg;C</p>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
@@ -727,14 +965,14 @@
     <h2 class="card-title">Example 2 &mdash; Multi-step Heating Curve</h2>
     <div class="example-setup">
       <p><strong>Problem:</strong> Find the total heat for a multi-step heating process.</p>
-      <p><strong>Given:</strong> 20.0 g H₂O, 25.0&deg;C liquid → 100.0&deg;C liquid → boil completely → 118.0&deg;C steam</p>
+      <p><strong>Given:</strong> 20.0 g <span class="ion-group">H<span class="chem-sub">2</span>O</span>, 25.0&deg;C liquid → 100.0&deg;C liquid → boil completely → 118.0&deg;C steam</p>
       <p><strong>Find:</strong> q<sub>total</sub></p>
     </div>
     <p><strong>Constants:</strong> c<sub>water</sub> = 4.184 J/g&deg;C, &Delta;H<sub>vap</sub> = 2260 J/g, c<sub>steam</sub> = 2.01 J/g&deg;C</p>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Step 1 &mdash; Warm liquid water from 25.0&deg;C to 100.0&deg;C</strong>
-        <p>Liquid water + temperature change, so use <strong>q = mc&Delta;T</strong>.</p>
+        <strong>Step 1 &mdash; Use q = mc&Delta;T for the liquid-warming segment</strong>
+        <p>Liquid water stays in the same phase while the temperature rises, so this segment uses <strong>q = mc&Delta;T</strong>.</p>
         <div class="fl-chain">q<sub>1</sub> = mc&Delta;T = (20.0)(4.184)(75.0) = <span class="fl-result">6276 J</span></div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
@@ -758,17 +996,17 @@
     <h2 class="card-title">Example 3 &mdash; Thermochemical Stoichiometry</h2>
     <div class="example-setup">
       <p><strong>Problem:</strong> Use a thermochemical equation to find the heat released.</p>
-      <p><strong>Given:</strong> 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l), &Delta;H = &minus;572 kJ; 5.00 mol H<sub>2</sub></p>
+      <p><strong>Given:</strong> 2<span class="ion-group">H<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l), &Delta;H = &minus;572 kJ; 5.00 mol <span class="ion-group">H<span class="chem-sub">2</span></span></p>
       <p><strong>Find:</strong> heat released</p>
     </div>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Read the mole ratio from the balanced equation</strong>
-        <p>2 mol H<sub>2</sub> releases 572 kJ as written.</p>
+        <strong>Step 1 &mdash; Use the balanced thermochemical equation as the conversion rule</strong>
+        <p>As written, 2 mol <span class="ion-group">H<span class="chem-sub">2</span></span> releases 572 kJ, so the equation provides the heat-per-mole ratio.</p>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Scale using enthalpy as a conversion factor</strong>
-        <div class="fl-chain">5.00 mol H<sub>2</sub> &times; <span class="fl-frac"><span class="fl-num">572 kJ</span><span class="fl-den">2 mol H<sub>2</sub></span></span> = <span class="fl-result">1430 kJ released</span></div>
+        <div class="fl-chain">5.00 mol <span class="cancel-mark cancel-blue"><span class="ion-group">H<span class="chem-sub">2</span></span></span> &times; <span class="fl-frac"><span class="fl-num">572 kJ</span><span class="fl-den">2 mol <span class="cancel-mark cancel-blue"><span class="ion-group">H<span class="chem-sub">2</span></span></span></span></span> = <span class="fl-result">1430 kJ released</span></div>
         <p>Because the reaction releases heat, the enthalpy change for this amount is <strong>&Delta;H = &minus;1430 kJ</strong>.</p>
       </div></div>
     </div>
@@ -777,22 +1015,22 @@
   <div class="card">
     <h2 class="card-title">Example 4 &mdash; Hess&rsquo;s Law</h2>
     <div class="example-setup">
-      <p><strong>Problem:</strong> Find &Delta;H for C(s) + &frac12;O<sub>2</sub>(g) &rarr; CO(g).</p>
-      <p><strong>Given:</strong> Reaction 1: C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g), &Delta;H = &minus;393.5 kJ; Reaction 2: CO(g) + &frac12;O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g), &Delta;H = &minus;283.0 kJ</p>
+      <p><strong>Problem:</strong> Find &Delta;H for C(s) + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; CO(g).</p>
+      <p><strong>Given:</strong> Reaction 1: C(s) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g), &Delta;H = &minus;393.5 kJ; Reaction 2: CO(g) + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g), &Delta;H = &minus;283.0 kJ</p>
       <p><strong>Find:</strong> &Delta;H for the target reaction</p>
     </div>
-    <div class="fl-chain">Reaction 1: C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;393.5 kJ</div>
-    <div class="fl-chain">Reaction 2: CO(g) + &frac12;O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;283.0 kJ</div>
+    <div class="fl-chain">Reaction 1: C(s) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp; &Delta;H = &minus;393.5 kJ</div>
+    <div class="fl-chain">Reaction 2: CO(g) + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp; &Delta;H = &minus;283.0 kJ</div>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-content">
-        <strong>Reverse Reaction 2</strong>
-        <p>CO must be a product. In Reaction 2 it is a reactant, so reverse the equation and change the sign of &Delta;H.</p>
-        <div class="fl-chain">CO<sub>2</sub>(g) &rarr; CO(g) + &frac12;O<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = <span class="fl-result">+283.0 kJ</span></div>
+        <strong>Step 1 &mdash; Apply Hess&rsquo;s law by matching the target equation first</strong>
+        <p>CO must be a product in the target reaction. In Reaction 2 it is a reactant, so reverse Reaction 2 and change the sign of &Delta;H.</p>
+        <div class="fl-chain"><span class="ion-group">CO<span class="chem-sub">2</span></span>(g) &rarr; CO(g) + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &nbsp;&nbsp; &Delta;H = <span class="fl-result">+283.0 kJ</span></div>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Add Reaction 1 and the reversed Reaction 2</strong>
-        <div class="fl-chain">C + O<sub>2</sub> &rarr; CO<sub>2</sub> &nbsp;&nbsp; (&minus;393.5 kJ)<br>CO<sub>2</sub> &rarr; CO + &frac12;O<sub>2</sub> &nbsp;&nbsp; (+283.0 kJ)</div>
-        <p>CO<sub>2</sub> cancels. Net: C(s) + &frac12;O<sub>2</sub>(g) &rarr; CO(g)</p>
+        <div class="fl-chain">C + <span class="ion-group">O<span class="chem-sub">2</span></span> &rarr; <span class="cancel-mark cancel-blue"><span class="ion-group">CO<span class="chem-sub">2</span></span></span> &nbsp;&nbsp; (&minus;393.5 kJ)<br><span class="cancel-mark cancel-blue"><span class="ion-group">CO<span class="chem-sub">2</span></span></span> &rarr; CO + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span> &nbsp;&nbsp; (+283.0 kJ)</div>
+        <p><span class="ion-group">CO<span class="chem-sub">2</span></span> cancels. Net: C(s) + &frac12;<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; CO(g)</p>
       </div></div>
       <div class="step"><div class="step-num"></div><div class="step-content">
         <strong>Sum the enthalpies</strong>
@@ -1382,105 +1620,105 @@ function cycleReactionProfile() {
 // ── 4. EXOTHERMIC OR ENDOTHERMIC CLASSIFIER ──────────────────
 const THERMO_CLASSIFY_CASES = [
   {
-    prompt: 'CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l), &Delta;H<sub>rxn</sub> = &minus;890 kJ',
+    prompt: '<span class="ion-group">CH<span class="chem-sub">4</span></span>(g) + 2<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g) + 2<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l), &Delta;H<sub>rxn</sub> = &minus;890 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; a negative &Delta;H means the reaction releases heat, so it is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; the sign of &Delta;H is negative here. Negative &Delta;H means heat is released. Next, check whether the enthalpy value is below zero or above zero.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Reaction:</strong> combustion of methane<br><strong>Clue:</strong> &Delta;H<sub>rxn</sub> = &minus;890 kJ is negative.<br><strong>Rule:</strong> A negative &Delta;H means heat leaves the system, so the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: 'N<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2NO(g), &Delta;H<sub>rxn</sub> = +180.5 kJ',
+    prompt: '<span class="ion-group">N<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2NO(g), &Delta;H<sub>rxn</sub> = +180.5 kJ',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; a positive &Delta;H means the reaction absorbs heat, so it is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; the sign of &Delta;H is positive here. Positive &Delta;H means heat is absorbed. Next, check whether the enthalpy value is above zero.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Reaction:</strong> formation of nitric oxide from nitrogen and oxygen<br><strong>Clue:</strong> &Delta;H<sub>rxn</sub> = +180.5 kJ is positive.<br><strong>Rule:</strong> A positive &Delta;H means heat enters the system, so the reaction is <strong>endothermic</strong>.'
   },
   {
-    prompt: 'C<sub>2</sub>H<sub>5</sub>OH(l) + 3O<sub>2</sub>(g) &rarr; 2CO<sub>2</sub>(g) + 3H<sub>2</sub>O(l) + 1367 kJ',
+    prompt: '<span class="ion-group">C<span class="chem-sub">2</span>H<span class="chem-sub">5</span>OH</span>(l) + 3<span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2<span class="ion-group">CO<span class="chem-sub">2</span></span>(g) + 3<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l) + 1367 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; heat is written on the product side, so the reaction releases heat and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; when heat appears on the product side, the reaction gives off heat. Next, look at which side of the equation the energy is written on.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Reaction:</strong> combustion of ethanol<br><strong>Clue:</strong> 1367 kJ is written on the <strong>product</strong> side.<br><strong>Rule:</strong> Heat on the product side means the reaction releases heat, so it is <strong>exothermic</strong>.'
   },
   {
-    prompt: 'CaCO<sub>3</sub>(s) + 178 kJ &rarr; CaO(s) + CO<sub>2</sub>(g)',
+    prompt: '<span class="ion-group">CaCO<span class="chem-sub">3</span></span>(s) + 178 kJ &rarr; CaO(s) + <span class="ion-group">CO<span class="chem-sub">2</span></span>(g)',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; heat is written on the reactant side, so the reaction absorbs heat and is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; when heat appears on the reactant side, the reaction takes in heat. Next, check whether the energy is written with the reactants or the products.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Reaction:</strong> thermal decomposition of calcium carbonate<br><strong>Clue:</strong> 178 kJ is written on the <strong>reactant</strong> side.<br><strong>Rule:</strong> Heat on the reactant side means the reaction absorbs heat, so it is <strong>endothermic</strong>.'
   },
   {
-    prompt: '2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l) + 572 kJ',
+    prompt: '2<span class="ion-group">H<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l) + 572 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; heat is written on the product side, so the reaction releases energy and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; the energy is written with the products, which means heat is being released.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 572 kJ appears on the product side.<br><strong>Rule:</strong> Heat written as a product means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: '2KClO<sub>3</sub>(s) + heat &rarr; 2KCl(s) + 3O<sub>2</sub>(g)',
+    prompt: '2<span class="ion-group">KClO<span class="chem-sub">3</span></span>(s) + heat &rarr; 2KCl(s) + 3<span class="ion-group">O<span class="chem-sub">2</span></span>(g)',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; heat is a reactant, so the reaction must absorb energy and is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; heat is on the reactant side, so the system takes in energy.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Heat is written with the reactants.<br><strong>Rule:</strong> If heat is a reactant, the reaction is <strong>endothermic</strong>.'
   },
   {
-    prompt: 'H<sub>2</sub>(g) + Cl<sub>2</sub>(g) &rarr; 2HCl(g), &Delta;H<sub>rxn</sub> = &minus;184.6 kJ',
+    prompt: '<span class="ion-group">H<span class="chem-sub">2</span></span>(g) + <span class="ion-group">Cl<span class="chem-sub">2</span></span>(g) &rarr; 2HCl(g), &Delta;H<sub>rxn</sub> = &minus;184.6 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; the enthalpy change is negative, so the reaction releases heat and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; a negative &Delta;H means the system releases energy.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is negative.<br><strong>Rule:</strong> Negative enthalpy change means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: 'NH<sub>4</sub>NO<sub>3</sub>(s) &rarr; NH<sub>4</sub><sup>+</sup>(aq) + NO<sub>3</sub><sup>&minus;</sup>(aq), &Delta;H<sub>soln</sub> = +25.7 kJ',
+    prompt: '<span class="ion-group">NH<span class="chem-sub">4</span>NO<span class="chem-sub">3</span></span>(s) &rarr; <span class="ion-group">NH<span class="chem-sub">4</span><span class="chem-charge">+</span></span>(aq) + <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">&minus;</span></span>(aq), &Delta;H<sub>soln</sub> = +25.7 kJ',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; the positive enthalpy change means heat is absorbed, so the process is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; positive &Delta;H means the system absorbs heat.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> &Delta;H is positive.<br><strong>Rule:</strong> Positive enthalpy change means the process is <strong>endothermic</strong>.'
   },
   {
-    prompt: '2SO<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2SO<sub>3</sub>(g) + 198 kJ',
+    prompt: '2<span class="ion-group">SO<span class="chem-sub">2</span></span>(g) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; 2<span class="ion-group">SO<span class="chem-sub">3</span></span>(g) + 198 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; heat appears on the product side, so the reaction gives off energy and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; energy written as a product means the reaction releases heat.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 198 kJ is shown as a product.<br><strong>Rule:</strong> Heat on the product side means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: 'N<sub>2</sub>O<sub>4</sub>(g) + 57.2 kJ &rarr; 2NO<sub>2</sub>(g)',
+    prompt: '<span class="ion-group">N<span class="chem-sub">2</span>O<span class="chem-sub">4</span></span>(g) + 57.2 kJ &rarr; 2<span class="ion-group">NO<span class="chem-sub">2</span></span>(g)',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; heat is a reactant, so the process absorbs energy and is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; because the energy is on the left side, the system is taking in heat.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> 57.2 kJ is written on the reactant side.<br><strong>Rule:</strong> Heat as a reactant means the process is <strong>endothermic</strong>.'
   },
   {
-    prompt: 'C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g), &Delta;H<sub>rxn</sub> = &minus;393.5 kJ',
+    prompt: 'C(s) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g) &rarr; <span class="ion-group">CO<span class="chem-sub">2</span></span>(g), &Delta;H<sub>rxn</sub> = &minus;393.5 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; the negative &Delta;H shows the reaction releases heat and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; the sign of &Delta;H is negative, which means energy leaves the system.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is below zero.<br><strong>Rule:</strong> Negative enthalpy change means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: '6CO<sub>2</sub>(g) + 6H<sub>2</sub>O(l) + light energy &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(s) + 6O<sub>2</sub>(g)',
+    prompt: '6<span class="ion-group">CO<span class="chem-sub">2</span></span>(g) + 6<span class="ion-group">H<span class="chem-sub">2</span>O</span>(l) + light energy &rarr; <span class="ion-group">C<span class="chem-sub">6</span>H<span class="chem-sub">12</span>O<span class="chem-sub">6</span></span>(s) + 6<span class="ion-group">O<span class="chem-sub">2</span></span>(g)',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; energy is required on the reactant side, so the process is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; when energy is needed as a reactant, the process absorbs heat or energy.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Light energy is listed with the reactants.<br><strong>Rule:</strong> Required energy on the reactant side means the process is <strong>endothermic</strong>.'
   },
   {
-    prompt: '2Al(s) + Fe<sub>2</sub>O<sub>3</sub>(s) &rarr; Al<sub>2</sub>O<sub>3</sub>(s) + 2Fe(l) + 851 kJ',
+    prompt: '2Al(s) + <span class="ion-group">Fe<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span>(s) &rarr; <span class="ion-group">Al<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span>(s) + 2Fe(l) + 851 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; heat is on the product side, so the thermite reaction is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; the energy is written as a product, which means the reaction releases heat.',
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> 851 kJ appears on the product side.<br><strong>Rule:</strong> Heat as a product means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: '2HgO(s) + heat &rarr; 2Hg(l) + O<sub>2</sub>(g)',
+    prompt: '2HgO(s) + heat &rarr; 2Hg(l) + <span class="ion-group">O<span class="chem-sub">2</span></span>(g)',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; because heat is a reactant, the decomposition absorbs energy and is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; energy appears with the reactants here, so the process is endothermic.',
     reveal: '<strong>Why this is endothermic</strong><br><strong>Clue:</strong> Heat is placed on the reactant side.<br><strong>Rule:</strong> That means the reaction absorbs energy and is <strong>endothermic</strong>.'
   },
   {
-    prompt: 'HCl(aq) + NaOH(aq) &rarr; NaCl(aq) + H<sub>2</sub>O(l), &Delta;H<sub>rxn</sub> = &minus;57.3 kJ',
+    prompt: 'HCl(aq) + NaOH(aq) &rarr; NaCl(aq) + <span class="ion-group">H<span class="chem-sub">2</span>O</span>(l), &Delta;H<sub>rxn</sub> = &minus;57.3 kJ',
     answer: 'exo',
     feedbackCorrect: 'Right &mdash; a negative enthalpy change means the neutralization releases heat and is exothermic.',
     feedbackIncorrect: 'Not quite &mdash; this &Delta;H value is negative, so energy is released.',

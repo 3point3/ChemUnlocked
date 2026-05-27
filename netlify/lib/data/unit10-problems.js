@@ -70,7 +70,7 @@ export const ALL_PROBLEMS = [
 
   {id:'p11', type:'concept', tag:'NASBU',
    q:'The <strong>S</strong> step in NASBU tells you to:',
-   choices:['Calculate shared electrons with N − A','Solve for formal charge on every atom','Switch all single bonds to double bonds','Select the most electronegative atom as the central atom'],
+   choices:['Calculate shared electrons with N - A','Solve for formal charge on every atom','Switch all single bonds to double bonds','Select the most electronegative atom as the central atom'],
    correct:0,
    solution:'<p>S = <strong>Shared</strong> electrons. Use the formula S = N &#8722; A. The result tells you how many electrons must be shared in covalent bonds.</p>'},
 
@@ -249,7 +249,7 @@ export const ALL_PROBLEMS = [
    solution:'<p>When formal charges cannot all be zero, place the negative formal charge on the more electronegative atom. This is energetically favorable because electronegative atoms attract electrons and are better able to "handle" extra electron density.</p>'},
 
   {id:'p41', type:'concept', tag:'Resonance',
-   q:'How many resonance structures can be drawn for carbonate (CO&#8323;²&#8722;)?',
+   q:'How many resonance structures can be drawn for carbonate (CO&#8323;^2&#8722;)?',
    choices:['1','2','3','4'],
    correct:2,
    solution:'<p>The carbonate ion has a central C bonded to three O atoms. The double bond can be placed between C and any one of the three oxygens, giving 3 resonance structures. The real ion is a hybrid with all C&#8211;O bonds equal (bond order ≈ 1.33).</p>'},
