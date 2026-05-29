@@ -16,7 +16,7 @@ const SUPERSCRIPT_MAP = {
   '⁸': '8',
   '⁹': '9',
   '⁺': '+',
-  '⁻': '−'
+  '⁻': '-'
 };
 
 /* ── Text normalizer (matches full practice engine) ── */

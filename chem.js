@@ -647,7 +647,134 @@
     });
   }
 
+  function reportWebVital(metric) {
+    if (!metric || !metric.name || typeof metric.value !== 'number') return;
+
+    const payload = {
+      name: metric.name,
+      value: Number(metric.value.toFixed(2)),
+      rating: metric.rating,
+      id: metric.id,
+      path: window.location.pathname,
+      navType: performance.getEntriesByType('navigation')[0]?.type || 'navigate',
+      ts: Date.now()
+    };
+
+    const body = JSON.stringify(payload);
+    const endpoint = '/.netlify/functions/report-web-vitals';
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([body], { type: 'application/json' });
+      navigator.sendBeacon(endpoint, blob);
+      return;
+    }
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+      keepalive: true
+    }).catch(() => {});
+  }
+
+  function shouldSampleWebVitals() {
+    const params = new URLSearchParams(window.location.search || '');
+    if (params.get('cwv') === '1') return true;
+
+    const configuredRate = Number(window.CU_WEB_VITALS_SAMPLE_RATE);
+    const sampleRate = Number.isFinite(configuredRate) && configuredRate >= 0 && configuredRate <= 1
+      ? configuredRate
+      : 0.3;
+
+    const key = 'cu-web-vitals-sampled';
+    try {
+      const existing = sessionStorage.getItem(key);
+      if (existing === '1') return true;
+      if (existing === '0') return false;
+
+      const sampled = Math.random() < sampleRate;
+      sessionStorage.setItem(key, sampled ? '1' : '0');
+      return sampled;
+    } catch {
+      return Math.random() < sampleRate;
+    }
+  }
+
+  function setupWebVitalsReporting() {
+    if (window.__cuWebVitalsReady) return;
+    window.__cuWebVitalsReady = true;
+
+    const supportsObserver = typeof PerformanceObserver === 'function';
+    if (!supportsObserver) return;
+    if (!shouldSampleWebVitals()) return;
+
+    const sessionId = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    const metrics = {
+      CLS: { name: 'CLS', value: 0, id: `cls-${sessionId}`, rating: 'good' },
+      LCP: { name: 'LCP', value: 0, id: `lcp-${sessionId}`, rating: 'good' },
+      INP: { name: 'INP', value: 0, id: `inp-${sessionId}`, rating: 'good' }
+    };
+
+    function rate(name, value) {
+      if (name === 'LCP') return value <= 2500 ? 'good' : value <= 4000 ? 'needs-improvement' : 'poor';
+      if (name === 'CLS') return value <= 0.1 ? 'good' : value <= 0.25 ? 'needs-improvement' : 'poor';
+      if (name === 'INP') return value <= 200 ? 'good' : value <= 500 ? 'needs-improvement' : 'poor';
+      return 'good';
+    }
+
+    try {
+      const lcpObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const last = entries[entries.length - 1];
+        if (!last) return;
+        metrics.LCP.value = last.startTime;
+        metrics.LCP.rating = rate('LCP', metrics.LCP.value);
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch {}
+
+    try {
+      let clsValue = 0;
+      const clsObserver = new PerformanceObserver((entryList) => {
+        entryList.getEntries().forEach((entry) => {
+          if (entry.hadRecentInput) return;
+          clsValue += entry.value;
+        });
+        metrics.CLS.value = clsValue;
+        metrics.CLS.rating = rate('CLS', metrics.CLS.value);
+      });
+      clsObserver.observe({ type: 'layout-shift', buffered: true });
+    } catch {}
+
+    try {
+      const inpObserver = new PerformanceObserver((entryList) => {
+        entryList.getEntries().forEach((entry) => {
+          if (entry.interactionId && entry.duration > metrics.INP.value) {
+            metrics.INP.value = entry.duration;
+            metrics.INP.rating = rate('INP', metrics.INP.value);
+          }
+        });
+      });
+      inpObserver.observe({ type: 'event', buffered: true, durationThreshold: 40 });
+    } catch {}
+
+    let sent = false;
+    function flushWebVitals() {
+      if (sent) return;
+      sent = true;
+      Object.values(metrics).forEach((metric) => {
+        if (metric.value > 0) reportWebVital(metric);
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushWebVitals();
+    });
+    window.addEventListener('pagehide', flushWebVitals);
+  }
+
   function init() {
+    setupWebVitalsReporting();
     injectFonts();
     addBodyPageClasses();
     injectHeader();

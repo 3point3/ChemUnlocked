@@ -13,10 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Gas Laws: Boyle's, Charles's &amp; Ideal Gas Law preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gas Laws: Boyle's, Charles's &amp; Ideal Gas Law | ChemUnlocked">
 <meta name="twitter:description" content="Apply Boyle's, Charles's, Gay-Lussac's, and Avogadro's Laws, solve PV = nRT problems, and calculate partial pressures with Dalton's Law — step by step.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Gas Laws: Boyle's, Charles's &amp; Ideal Gas Law preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -1910,7 +1915,7 @@ function renderChemFormula(formula){
 if(!formula)return '';
 const chargeMatch=formula.match(/^(.*?)(\d*)([+-])$/);
 const coreFormula=chargeMatch?chargeMatch[1]:formula;
-const chargeText=chargeMatch?`${chargeMatch[2]||''}${chargeMatch[3]==='-'?'−':'+'}`:'';
+const chargeText=chargeMatch?`${chargeMatch[2]||''}${chargeMatch[3]==='-'?'-':'+'}`:'';
 const coreMarkup=coreFormula.replace(/(\d+)/g,'<span class="chem-sub">$1</span>');
 return `<span class="ion-group">${coreMarkup}${chargeText?`<span class="chem-charge">${chargeText}</span>`:''}</span>`;
 }

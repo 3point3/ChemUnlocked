@@ -116,7 +116,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link id="cu-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<link id="cu-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="chem.css?v=20260514d">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon">
@@ -256,12 +258,12 @@
         </div>
         <div class="practice-stats" aria-label="Practice hub highlights">
           <dl class="practice-stat">
-            <dd>1,277</dd>
             <dt>practice problems</dt>
+            <dd>1,277</dd>
           </dl>
           <dl class="practice-stat">
-            <dd>15</dd>
             <dt>unit banks</dt>
+            <dd>15</dd>
           </dl>
           <dl class="practice-stat practice-stat--sets">
             <div><dd>3</dd><dt>quick</dt></div>
@@ -406,6 +408,6 @@
     </div>
   </main>
 
-  <script src="chem.js?v=20260509"></script>
+  <script defer src="chem.js?v=20260509"></script>
 </body>
 </html>

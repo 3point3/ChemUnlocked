@@ -13,10 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Thermochemistry: Enthalpy &amp; Hess's Law preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Thermochemistry: Enthalpy &amp; Hess's Law | ChemUnlocked">
 <meta name="twitter:description" content="Calculate heat transfer with q = mcΔT, interpret heating curves, apply Hess's Law to find ΔH, and solve thermochemical stoichiometry problems — step by step.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Thermochemistry: Enthalpy &amp; Hess's Law preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -162,7 +167,7 @@
           </div>
         </div>
         <figure class="unit-figure unit-figure-svg-narrow formula-box-visual-figure">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 490" width="100%" height="auto" role="img" aria-label="Specific heat capacity of water showing that 4.184 joules raises 1 gram of water by 1 degree Celsius">
+          <svg class="u11-shc-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 490" width="100%" height="auto" role="img" aria-label="Specific heat capacity of water showing that 4.184 joules raises 1 gram of water by 1 degree Celsius">
             <title>Specific Heat Capacity of Water</title>
             <desc>Diagram illustrating the energy transfer required to raise the temperature of water by 1 degree Celsius.</desc>
 
@@ -184,7 +189,7 @@
 
               <style>
                 .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
-                .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+                .u11-shc-svg .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
                 .bold-highlight { font-weight: 700; fill: #0f172a; }
                 .constant-val { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 800; fill: #2563eb; }
                 .unit-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #475569; }
@@ -315,7 +320,7 @@
             .main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; }
             .phase-lbl-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #1e293b; text-anchor: middle; letter-spacing: 0.5px; }
             .eq-section-lbl { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; letter-spacing: 0.5px; }
-            .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; line-height: 20px; }
+            .phase-change-flow-svg .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; line-height: 20px; }
             .bold-gain { font-weight: 700; fill: #ea580c; }
             .bold-loss { font-weight: 700; fill: #2563eb; }
             .bold-dark { font-weight: 700; fill: #0f172a; }
@@ -1669,7 +1674,7 @@ const THERMO_CLASSIFY_CASES = [
     reveal: '<strong>Why this is exothermic</strong><br><strong>Clue:</strong> &Delta;H is negative.<br><strong>Rule:</strong> Negative enthalpy change means the reaction is <strong>exothermic</strong>.'
   },
   {
-    prompt: '<span class="ion-group">NH<span class="chem-sub">4</span>NO<span class="chem-sub">3</span></span>(s) &rarr; <span class="ion-group">NH<span class="chem-sub">4</span><span class="chem-charge">+</span></span>(aq) + <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">&minus;</span></span>(aq), &Delta;H<sub>soln</sub> = +25.7 kJ',
+    prompt: '<span class="ion-group">NH<span class="chem-sub">4</span>NO<span class="chem-sub">3</span></span>(s) &rarr; <span class="ion-group">NH<span class="chem-sub">4</span><span class="chem-charge">+</span></span>(aq) + <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">-</span></span>(aq), &Delta;H<sub>soln</sub> = +25.7 kJ',
     answer: 'endo',
     feedbackCorrect: 'Right &mdash; the positive enthalpy change means heat is absorbed, so the process is endothermic.',
     feedbackIncorrect: 'Not quite &mdash; positive &Delta;H means the system absorbs heat.',

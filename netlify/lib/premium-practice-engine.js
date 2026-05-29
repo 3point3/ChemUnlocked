@@ -22,7 +22,7 @@ const SUPERSCRIPT_MAP = {
   '⁸': '8',
   '⁹': '9',
   '⁺': '+',
-  '⁻': '−'
+  '⁻': '-'
 };
 
 function normalize(s) {

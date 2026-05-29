@@ -12,11 +12,16 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://chemunlocked.com/04_learn_electron_configuration">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Electron Configuration &amp; Orbital Diagrams preview">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Electron Configuration &amp; Orbital Diagrams | ChemUnlocked">
 <meta name="twitter:description" content="Write electron configurations and orbital diagrams using Aufbau, Pauli, and Hund's rules, use the periodic table for noble-gas notation, and connect Bohr energy levels to atomic emission spectra.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Electron Configuration &amp; Orbital Diagrams preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -143,13 +148,13 @@
           <span>Higher frequency and energy</span>
         </div>
         <div class="em-spectrum-band" role="img" aria-label="Electromagnetic spectrum from gamma rays to radio waves, with visible light marked as a narrow band">
-          <div class="em-segment gamma">Gamma rays</div>
+          <div class="em-segment gamma">Gamma<br>rays</div>
           <div class="em-segment xray">X-rays</div>
-          <div class="em-segment uv">Ultraviolet</div>
-          <div class="em-segment visible">Visible light</div>
+          <div class="em-segment uv">Ultra-<br>violet</div>
+          <div class="em-segment visible">Visible<br>light</div>
           <div class="em-segment ir">Infrared</div>
-          <div class="em-segment micro">Microwaves</div>
-          <div class="em-segment radio">Radio waves</div>
+          <div class="em-segment micro">Micro-<br>waves</div>
+          <div class="em-segment radio">Radio<br>waves</div>
         </div>
         <p class="spectrum-scroll-hint" aria-hidden="true">&larr; swipe to see more &rarr;</p>
         <div class="em-spectrum-scale">
@@ -220,6 +225,60 @@
       <h2 class="card-title"><span class="num">4.3</span> Atomic Emission Spectra, Bohr, and What n Means</h2>
       <p>When a gas is heated or electrically excited, its atoms absorb energy and electrons jump to <strong>higher energy levels</strong> (excited states). When those electrons fall back to lower levels, they release that energy as light — but only at specific wavelengths. This produces a <strong>line emission spectrum</strong>, not a continuous rainbow.</p>
       <p>Niels Bohr explained this by proposing that electrons can occupy only certain allowed energy levels. In Bohr's model, the number <strong>n</strong> labels those levels: <strong>n = 1, 2, 3, ...</strong></p>
+      <figure class="lesson-figure bohr-emission-figure">
+        <svg class="bohr-emission-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto" role="img" aria-labelledby="u04-bohr-emission-title u04-bohr-emission-desc">
+          <title id="u04-bohr-emission-title">Bohr Model Emission</title>
+          <desc id="u04-bohr-emission-desc">An electron drops from a higher Bohr energy level to a lower one and emits a photon equal to the energy difference.</desc>
+          <defs>
+            <marker id="u04-arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+            </marker>
+            <style>
+              .bg-card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; }
+              .orbit { fill: none; stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 6 6; }
+              .header-title { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+              .header-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+              .bohr-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #64748b; }
+              .label-n { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #94a3b8; text-anchor: middle; }
+              .label-photon { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #d97706; }
+              .label-eq { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #d97706; font-style: italic; }
+              .nucleus-text { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+              .electron-text { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+            </style>
+            <filter id="u04-bohr-shadow" x="-2%" y="-2%" width="104%" height="104%">
+              <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.05" />
+            </filter>
+          </defs>
+          <rect x="10" y="10" width="780" height="480" rx="16" class="bg-card" filter="url(#u04-bohr-shadow)" />
+          <text x="400" y="55" class="header-title">BOHR MODEL: EMISSION</text>
+          <text x="400" y="80" class="header-subtitle">An electron drops to a lower energy level,</text>
+          <text x="400" y="100" class="header-subtitle">releasing the energy difference as a photon.</text>
+          <g transform="translate(300, 260)">
+            <circle cx="0" cy="0" r="60" class="orbit" />
+            <circle cx="0" cy="0" r="130" class="orbit" />
+            <circle cx="0" cy="0" r="200" class="orbit" />
+            <text x="0" y="75" class="label-n">n=1</text>
+            <text x="0" y="145" class="label-n">n=2</text>
+            <text x="0" y="215" class="label-n">n=3</text>
+            <circle cx="0" cy="0" r="20" fill="#ef4444" />
+            <text x="0" y="2" class="nucleus-text">+</text>
+            <circle cx="130" cy="0" r="12" fill="#3b82f6" />
+            <text x="130" y="-1" class="electron-text">-</text>
+            <circle cx="200" cy="0" r="12" fill="#3b82f6" opacity="0.2" />
+            <text x="200" y="-1" class="electron-text" opacity="0.4">-</text>
+            <line x1="185" y1="0" x2="145" y2="0" stroke="#3b82f6" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#u04-arrow-blue)" />
+            <g transform="rotate(-40 165 0)">
+              <path d="M 165 0 q 10 -15, 20 0 t 20 0 t 20 0 t 20 0 t 20 0 t 20 0 t 20 0" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <polygon points="305,-6 315,0 305,6" fill="#f59e0b" />
+            </g>
+          </g>
+          <text x="548" y="140" class="label-photon">Photon Emitted</text>
+          <text x="548" y="160" class="label-eq">E = hν</text>
+          <text x="548" y="185" class="bohr-subtitle" fill="#94a3b8">Energy equals the difference</text>
+          <text x="548" y="205" class="bohr-subtitle" fill="#94a3b8">between the two levels.</text>
+        </svg>
+        <figcaption>In Bohr’s model, emission happens when an excited electron falls to a lower allowed energy level. The released photon carries exactly that energy gap.</figcaption>
+      </figure>
       <p>This is the key bridge for the whole unit: the <strong>principal quantum number n</strong> is the label for the main energy level, also called a <strong>shell</strong>. So when you hear shell 1, energy level 1, or <em>n</em> = 1, those all refer to the same main level.</p>
 
       <div class="formula-box">
@@ -253,6 +312,106 @@
       <p>Each main energy level, or <strong>shell</strong>, contains smaller parts called <strong>sublevels</strong>. The sublevels are named <strong>s, p, d,</strong> and <strong>f</strong>.</p>
       <p>Each sublevel contains <strong>orbitals</strong>, and each orbital can hold up to <strong>2 electrons</strong>. Start here with the structure: <strong>shell → sublevel → orbital → electrons</strong>.</p>
       <p>The number of sublevels in a shell equals the value of <em>n</em>. So shell 1 has only one sublevel (1s), shell 2 has two sublevels (2s and 2p), shell 3 has three (3s, 3p, 3d), and so on.</p>
+      <figure class="lesson-figure hierarchy-figure">
+        <div class="chart-scroll-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 480" width="100%" height="auto" role="img" aria-labelledby="u04-hierarchy-title u04-hierarchy-desc">
+            <title id="u04-hierarchy-title">Electron Organization Hierarchy</title>
+            <desc id="u04-hierarchy-desc">A flowchart diagram showing that shells contain sublevels, sublevels contain orbitals, and orbitals hold up to 2 electrons.</desc>
+            <defs>
+              <style>
+                .hier-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; }
+                .header-main { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+                .header-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+                .card-title-1 { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #2563eb; text-anchor: middle; letter-spacing: 0.5px; }
+                .card-title-2 { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0d9488; text-anchor: middle; letter-spacing: 0.5px; }
+                .card-title-3 { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #d97706; text-anchor: middle; letter-spacing: 0.5px; }
+                .card-title-4 { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #e11d48; text-anchor: middle; letter-spacing: 0.5px; }
+                .hier-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #334155; text-anchor: middle; }
+                .note { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+                .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; fill: #94a3b8; text-anchor: middle; letter-spacing: 1px; }
+                .divider { stroke: #e2e8f0; stroke-width: 2px; stroke-dasharray: 4 4; stroke-linecap: round; }
+                .box-text { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; fill: #64748b; text-anchor: middle; dominant-baseline: central; }
+                .box-text-teal { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; fill: #0f766e; text-anchor: middle; dominant-baseline: central; }
+              </style>
+              <filter id="u04-hierarchy-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+              </filter>
+              <marker id="u04-hierarchy-arrowhead" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#94a3b8" />
+              </marker>
+            </defs>
+            <rect x="10" y="10" width="1100" height="460" rx="16" class="hier-card-base" filter="url(#u04-hierarchy-card-shadow)" />
+            <g id="u04-hierarchy-header">
+              <text x="560" y="55" class="header-main">ELECTRON ORGANIZATION HIERARCHY</text>
+              <text x="560" y="80" class="header-sub">Like nesting boxes: Shells hold Sublevels, Sublevels hold Orbitals, and Orbitals hold Electrons.</text>
+            </g>
+            <g id="u04-hierarchy-card-1-shell">
+              <rect x="80" y="140" width="180" height="270" rx="12" class="hier-card-base" />
+              <text x="170" y="175" class="card-title-1">1. SHELL</text>
+              <text x="170" y="205" class="hier-subtitle">Main Energy Level</text>
+              <text x="170" y="225" class="note">(n = 1, 2, 3...)</text>
+              <line x1="115" y1="245" x2="225" y2="245" class="divider" />
+              <circle cx="170" cy="340" r="6" fill="#0f172a"/>
+              <path d="M 150 340 A 20 20 0 0 1 190 340" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 130 340 A 40 40 0 0 1 210 340" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+              <path d="M 110 340 A 60 60 0 0 1 230 340" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+              <text x="170" y="385" class="note" fill="#3b82f6">e.g., Shell 2</text>
+            </g>
+            <g id="u04-hierarchy-card-2-sublevel">
+              <rect x="340" y="140" width="180" height="270" rx="12" class="hier-card-base" />
+              <text x="430" y="175" class="card-title-2">2. SUBLEVEL</text>
+              <text x="430" y="205" class="hier-subtitle">Shape Type</text>
+              <text x="430" y="225" class="note">(s, p, d, f)</text>
+              <line x1="375" y1="245" x2="485" y2="245" class="divider" />
+              <rect x="390" y="340" width="80" height="20" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="430" y="350" class="box-text">s</text>
+              <rect x="390" y="310" width="80" height="20" rx="4" fill="#ccfbf1" stroke="#14b8a6" stroke-width="3"/>
+              <text x="430" y="320" class="box-text-teal">p</text>
+              <rect x="390" y="280" width="80" height="20" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="430" y="290" class="box-text">d</text>
+              <rect x="390" y="250" width="80" height="20" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="430" y="260" class="box-text">f</text>
+              <text x="430" y="380" class="note" fill="#0d9488">e.g., p sublevel</text>
+            </g>
+            <g id="u04-hierarchy-card-3-orbital">
+              <rect x="600" y="140" width="180" height="270" rx="12" class="hier-card-base" />
+              <text x="690" y="175" class="card-title-3">3. ORBITAL</text>
+              <text x="690" y="205" class="hier-subtitle">Specific Region</text>
+              <text x="690" y="225" class="note">(s=1, p=3, d=5...)</text>
+              <line x1="635" y1="245" x2="745" y2="245" class="divider" />
+              <rect x="630" y="300" width="30" height="30" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" rx="4"/>
+              <rect x="675" y="300" width="30" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="4"/>
+              <rect x="720" y="300" width="30" height="30" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" rx="4"/>
+              <text x="690" y="360" class="note" fill="#d97706">1 orbital selected</text>
+            </g>
+            <g id="u04-hierarchy-card-4-electrons">
+              <rect x="860" y="140" width="180" height="270" rx="12" class="hier-card-base" />
+              <text x="950" y="175" class="card-title-4">4. ELECTRONS</text>
+              <text x="950" y="205" class="hier-subtitle">Individual Particles</text>
+              <text x="950" y="225" class="note">(Opposite spins)</text>
+              <line x1="895" y1="245" x2="1005" y2="245" class="divider" />
+              <rect x="920" y="290" width="60" height="60" fill="#fff1f2" stroke="#e11d48" stroke-width="3" rx="6"/>
+              <path d="M 935 335 L 935 305 M 935 305 L 928 312 M 935 305 L 942 312" fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 965 305 L 965 335 M 965 335 L 958 328 M 965 335 L 972 328" fill="none" stroke="#e11d48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="950" y="380" class="note" fill="#e11d48">Max 2 per orbital</text>
+            </g>
+            <g id="u04-hierarchy-connector-1">
+              <line x1="260" y1="310" x2="340" y2="310" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#u04-hierarchy-arrowhead)"/>
+              <text x="300" y="295" class="arrow-text">CONTAINS</text>
+            </g>
+            <g id="u04-hierarchy-connector-2">
+              <line x1="520" y1="310" x2="600" y2="310" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#u04-hierarchy-arrowhead)"/>
+              <text x="560" y="295" class="arrow-text">CONTAINS</text>
+            </g>
+            <g id="u04-hierarchy-connector-3">
+              <line x1="780" y1="310" x2="860" y2="310" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#u04-hierarchy-arrowhead)"/>
+              <text x="820" y="295" class="arrow-text">HOLDS</text>
+            </g>
+          </svg>
+        </div>
+        <p class="table-scroll-hint" aria-hidden="true">&larr; swipe to see more &rarr;</p>
+        <figcaption>Read this left to right. A shell contains sublevels, a sublevel contains orbitals, and each orbital can hold at most 2 electrons.</figcaption>
+      </figure>
       <div class="formula-box">
         <span class="label">One concrete picture</span>
         <span class="electron-config-inline"><span class="chem-token">2p<span class="ec-count">4</span></span></span> means <strong>shell 2</strong>, <strong>p sublevel</strong>, and <strong>4 electrons</strong> placed across <strong>3 p orbitals</strong>.
@@ -339,6 +498,110 @@
             <div class="formula-box">
               Filling order: <span class="electron-config-inline"><span class="chem-token">1s</span> <span class="chem-op">→</span> <span class="chem-token">2s</span> <span class="chem-op">→</span> <span class="chem-token">2p</span> <span class="chem-op">→</span> <span class="chem-token">3s</span> <span class="chem-op">→</span> <span class="chem-token">3p</span> <span class="chem-op">→</span> <strong><span class="chem-token">4s</span> <span class="chem-op">→</span> <span class="chem-token">3d</span></strong> <span class="chem-op">→</span> <span class="chem-token">4p</span> <span class="chem-op">→</span> <strong><span class="chem-token">5s</span> <span class="chem-op">→</span> <span class="chem-token">4d</span></strong> <span class="chem-op">→</span> <span class="chem-token">5p</span></span>
             </div>
+            <figure class="lesson-figure diagonal-rule-figure">
+              <svg class="diagonal-rule-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 600" width="100%" height="auto" role="img" aria-labelledby="u04-aufbau-title u04-aufbau-desc">
+                <title id="u04-aufbau-title">Aufbau Principle Diagonal Rule</title>
+                <desc id="u04-aufbau-desc">A diagonal diagram showing the order in which electrons fill atomic orbitals, starting from 1s and moving through 7p.</desc>
+                <defs>
+                  <style>
+                    .diag-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; }
+                    .title-main { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+                    .title-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+                    .node-text { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+                    .node-s { fill: #3b82f6; stroke: #1d4ed8; stroke-width: 2px; }
+                    .node-p { fill: #14b8a6; stroke: #0f766e; stroke-width: 2px; }
+                    .node-d { fill: #f97316; stroke: #c2410c; stroke-width: 2px; }
+                    .node-f { fill: #a855f7; stroke: #7e22ce; stroke-width: 2px; }
+                    .arrow-line { fill: none; stroke: #cbd5e1; stroke-width: 3px; stroke-linecap: round; }
+                    .legend-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2px; }
+                    .legend-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; letter-spacing: 0.5px; }
+                    .legend-text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #334155; dominant-baseline: central; }
+                    .legend-e { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #0f172a; dominant-baseline: central; }
+                  </style>
+                  <filter id="u04-diagonal-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+                  </filter>
+                  <filter id="u04-diagonal-node-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.15" />
+                  </filter>
+                  <marker id="u04-diagonal-arrowhead" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                    <polygon points="0 0, 6 3, 0 6" fill="#cbd5e1" />
+                  </marker>
+                </defs>
+                <rect x="10" y="10" width="500" height="580" rx="16" class="diag-card-base" filter="url(#u04-diagonal-card-shadow)" />
+                <g id="u04-diagonal-header">
+                  <text x="260" y="55" class="title-main">THE DIAGONAL RULE</text>
+                  <text x="260" y="75" class="title-sub">Follow the arrows to find the electron filling order</text>
+                </g>
+                <g id="u04-diagonal-arrows">
+                  <line x1="160" y1="90" x2="80" y2="150" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="160" y1="150" x2="80" y2="210" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="240" y1="150" x2="80" y2="270" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="240" y1="210" x2="80" y2="330" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="320" y1="210" x2="80" y2="390" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="320" y1="270" x2="80" y2="450" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="400" y1="270" x2="80" y2="510" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                  <line x1="400" y1="330" x2="160" y2="510" class="arrow-line" marker-end="url(#u04-diagonal-arrowhead)" />
+                </g>
+                <g id="u04-diagonal-orbital-nodes">
+                  <circle cx="120" cy="120" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="121" class="node-text">1s</text>
+                  <circle cx="120" cy="180" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="181" class="node-text">2s</text>
+                  <circle cx="200" cy="180" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="181" class="node-text">2p</text>
+                  <circle cx="120" cy="240" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="241" class="node-text">3s</text>
+                  <circle cx="200" cy="240" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="241" class="node-text">3p</text>
+                  <circle cx="280" cy="240" r="22" class="node-d" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="280" y="241" class="node-text">3d</text>
+                  <circle cx="120" cy="300" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="301" class="node-text">4s</text>
+                  <circle cx="200" cy="300" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="301" class="node-text">4p</text>
+                  <circle cx="280" cy="300" r="22" class="node-d" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="280" y="301" class="node-text">4d</text>
+                  <circle cx="360" cy="300" r="22" class="node-f" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="360" y="301" class="node-text">4f</text>
+                  <circle cx="120" cy="360" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="361" class="node-text">5s</text>
+                  <circle cx="200" cy="360" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="361" class="node-text">5p</text>
+                  <circle cx="280" cy="360" r="22" class="node-d" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="280" y="361" class="node-text">5d</text>
+                  <circle cx="360" cy="360" r="22" class="node-f" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="360" y="361" class="node-text">5f</text>
+                  <circle cx="120" cy="420" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="421" class="node-text">6s</text>
+                  <circle cx="200" cy="420" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="421" class="node-text">6p</text>
+                  <circle cx="280" cy="420" r="22" class="node-d" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="280" y="421" class="node-text">6d</text>
+                  <circle cx="120" cy="480" r="22" class="node-s" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="120" y="481" class="node-text">7s</text>
+                  <circle cx="200" cy="480" r="22" class="node-p" filter="url(#u04-diagonal-node-shadow)" />
+                  <text x="200" y="481" class="node-text">7p</text>
+                </g>
+                <g id="u04-diagonal-legend" transform="translate(340, 420)">
+                  <rect x="0" y="0" width="140" height="135" rx="12" class="legend-bg" />
+                  <text x="15" y="25" class="legend-title">MAX ELECTRONS</text>
+                  <circle cx="25" cy="50" r="8" fill="#3b82f6" />
+                  <text x="45" y="51" class="legend-text">s subshell =</text>
+                  <text x="115" y="51" class="legend-e">2</text>
+                  <circle cx="25" cy="72" r="8" fill="#14b8a6" />
+                  <text x="45" y="73" class="legend-text">p subshell =</text>
+                  <text x="115" y="73" class="legend-e">6</text>
+                  <circle cx="25" cy="94" r="8" fill="#f97316" />
+                  <text x="45" y="95" class="legend-text">d subshell =</text>
+                  <text x="115" y="95" class="legend-e">10</text>
+                  <circle cx="25" cy="116" r="8" fill="#a855f7" />
+                  <text x="45" y="117" class="legend-text">f subshell =</text>
+                  <text x="115" y="117" class="legend-e">14</text>
+                </g>
+              </svg>
+              <figcaption>Use the diagonal arrows to trace Aufbau filling order. This gives the same sequence you use when writing configurations, including the key jump from 3p to 4s before 3d.</figcaption>
+            </figure>
             <figure class="unit-figure">
               <img src="images/iron_aufbau_v2.svg" alt="Aufbau filling diagram for iron showing electrons filling sublevels through 4s before 3d." loading="lazy" decoding="async">
               <figcaption>

@@ -73,7 +73,7 @@
           <span class="prob-num">#4</span>
           <span class="prob-tag tag-calc">Weak Acid pH</span>
         </div>
-        <div class="prob-q">Calculate the pH of a 0.100 M acetic acid solution. (Ka = 1.8 × 10⁻⁵)</div>
+        <div class="prob-q">Calculate the pH of a 0.100 M acetic acid solution. (Ka = 1.8 × 10^-5)</div>
         <div class="prob-answer-area">
           <input class="prob-input" type="text" placeholder="Your answer…" disabled aria-hidden="true">
           <div class="prob-btns"><button class="btn btn-sm" disabled>Check</button></div>
@@ -84,12 +84,12 @@
           <span class="prob-num">#5</span>
           <span class="prob-tag tag-concept">Conjugate Pairs</span>
         </div>
-        <div class="prob-q">In the reaction HCO₃⁻ + H₂O ⇌ H₂CO₃ + OH⁻, which pair is a conjugate acid-base pair?</div>
+        <div class="prob-q">In the reaction HCO3- + H2O ⇌ H2CO3 + OH-, which pair is a conjugate acid-base pair?</div>
         <div class="prob-choices">
-          <button class="choice-btn" disabled>A. HCO₃⁻ and H₂CO₃</button>
-          <button class="choice-btn" disabled>B. H₂O and OH⁻</button>
-          <button class="choice-btn" disabled>C. HCO₃⁻ and OH⁻</button>
-          <button class="choice-btn" disabled>D. H₂O and H₂CO₃</button>
+          <button class="choice-btn" disabled>A. HCO3- and H2CO3</button>
+          <button class="choice-btn" disabled>B. H2O and OH-</button>
+          <button class="choice-btn" disabled>C. HCO3- and OH-</button>
+          <button class="choice-btn" disabled>D. H2O and H2CO3</button>
         </div>
       </div>
       <div class="problem">
@@ -152,20 +152,20 @@ const SAMPLE_PROBLEMS = [
     id:'s15_01', type:'calc', tag:'Strong Acid pH',
     q:'Calculate the pH of a 0.010 M HCl solution. (HCl is a strong acid — it ionizes completely.)',
     answer:2.00, tolerance:0.05,
-    solution:'<p>HCl is a strong acid → [H₃O⁺] = [HCl] = 0.010 M<br>pH = −log[H₃O⁺] = −log(0.010) = −log(10⁻²) = <strong>2.00</strong></p>'
+    solution:'<p>HCl is a strong acid -> [H3O+] = [HCl] = 0.010 M<br>pH = -log[H3O+] = -log(0.010) = -log(10^-2) = <strong>2.00</strong></p>'
   },
   {
     id:'s15_02', type:'concept', tag:'Brønsted-Lowry Acid',
-    q:'In the reaction NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺, which species is the Brønsted-Lowry acid?',
-    choices:['NH₄⁺','H₂O','NH₃','H₃O⁺'],
+    q:'In the reaction NH4+ + H2O ⇌ NH3 + H3O+, which species is the Brønsted-Lowry acid?',
+    choices:['NH4+','H2O','NH3','H3O+'],
     correct:0,
-    solution:'<p><strong>A — NH₄⁺.</strong> A Brønsted-Lowry acid is a proton (H⁺) donor. NH₄⁺ donates a proton to H₂O, forming NH₃ and H₃O⁺. NH₃ is the conjugate base of NH₄⁺. H₂O acts as the Brønsted-Lowry base (proton acceptor) in this reaction.</p>'
+    solution:'<p><strong>A - NH4+.</strong> A Brønsted-Lowry acid is a proton (H+) donor. NH4+ donates a proton to H2O, forming NH3 and H3O+. NH3 is the conjugate base of NH4+. H2O acts as the Brønsted-Lowry base (proton acceptor) in this reaction.</p>'
   },
   {
     id:'s15_03', type:'multi', tag:'Mass → Molarity → pH',
     q:'0.365 g of HCl (molar mass = 36.46 g/mol) is dissolved in enough water to make 500.0 mL of solution. Calculate the pH of the resulting solution.',
     answer:1.70, tolerance:0.05,
-    solution:'<p><strong>Step 1 — moles HCl:</strong> 0.365 g ÷ 36.46 g/mol = 0.01001 mol<br><strong>Step 2 — molarity:</strong> 0.01001 mol ÷ 0.5000 L = 0.02002 M<br><strong>Step 3 — pH (strong acid, 100% ionization):</strong><br>pH = −log(0.02002) = <strong>1.70</strong></p>'
+    solution:'<p><strong>Step 1 - moles HCl:</strong> 0.365 g / 36.46 g/mol = 0.01001 mol<br><strong>Step 2 - molarity:</strong> 0.01001 mol / 0.5000 L = 0.02002 M<br><strong>Step 3 - pH (strong acid, 100% ionization):</strong><br>pH = -log(0.02002) = <strong>1.70</strong></p>'
   }
 ];
 

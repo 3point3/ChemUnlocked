@@ -13,10 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Periodic Table Trends: Electronegativity preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Periodic Table Trends: Electronegativity | ChemUnlocked">
 <meta name="twitter:description" content="Predict and rank atomic radius, ionization energy, electronegativity, and ionic radius trends using the periodic table — with worked examples and interactive tools.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Periodic Table Trends: Electronegativity preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <link rel="stylesheet" href="chem.css?v=20260514d">
@@ -145,13 +150,13 @@
           <tr><th>Region</th><th>Location</th><th>Examples</th><th>Key traits</th></tr>
         </thead>
         <tbody>
-          <tr><td data-label="Region"><strong>Alkali metals</strong> (Group 1)</td><td data-label="Location">Far left column</td><td data-label="Examples">Li, Na, K</td><td data-label="Key traits">1 valence e<span class="chem-charge">−</span>, very reactive, soft metals</td></tr>
-          <tr><td data-label="Region"><strong>Alkaline earth metals</strong> (Group 2)</td><td data-label="Location">Second column</td><td data-label="Examples">Be, Mg, Ca</td><td data-label="Key traits">2 valence e<span class="chem-charge">−</span>, reactive metals</td></tr>
+          <tr><td data-label="Region"><strong>Alkali metals</strong> (Group 1)</td><td data-label="Location">Far left column</td><td data-label="Examples">Li, Na, K</td><td data-label="Key traits">1 valence e<span class="chem-charge">-</span>, very reactive, soft metals</td></tr>
+          <tr><td data-label="Region"><strong>Alkaline earth metals</strong> (Group 2)</td><td data-label="Location">Second column</td><td data-label="Examples">Be, Mg, Ca</td><td data-label="Key traits">2 valence e<span class="chem-charge">-</span>, reactive metals</td></tr>
           <tr><td data-label="Region"><strong>Transition metals</strong></td><td data-label="Location">Middle block (Groups 3–12)</td><td data-label="Examples">Fe, Cu, Zn</td><td data-label="Key traits">Typical metals that often form more than one ion charge</td></tr>
           <tr><td data-label="Region"><strong>Metalloids</strong></td><td data-label="Location">Staircase border</td><td data-label="Examples">Si, Ge, As</td><td data-label="Key traits">Properties between metals and nonmetals</td></tr>
           <tr><td data-label="Region"><strong>Nonmetals</strong></td><td data-label="Location">Upper right</td><td data-label="Examples">C, N, O, S</td><td data-label="Key traits">Poor conductors, gain electrons</td></tr>
-          <tr><td data-label="Region"><strong>Halogens</strong> (Group 17)</td><td data-label="Location">Second to last column</td><td data-label="Examples">F, Cl, Br</td><td data-label="Key traits">7 valence e<span class="chem-charge">−</span>, very reactive nonmetals</td></tr>
-          <tr><td data-label="Region"><strong>Noble gases</strong> (Group 18)</td><td data-label="Location">Far right column</td><td data-label="Examples">He, Ne, Ar</td><td data-label="Key traits">8 valence e<span class="chem-charge">−</span> (He: 2), almost no reactivity</td></tr>
+          <tr><td data-label="Region"><strong>Halogens</strong> (Group 17)</td><td data-label="Location">Second to last column</td><td data-label="Examples">F, Cl, Br</td><td data-label="Key traits">7 valence e<span class="chem-charge">-</span>, very reactive nonmetals</td></tr>
+          <tr><td data-label="Region"><strong>Noble gases</strong> (Group 18)</td><td data-label="Location">Far right column</td><td data-label="Examples">He, Ne, Ar</td><td data-label="Key traits">8 valence e<span class="chem-charge">-</span> (He: 2), almost no reactivity</td></tr>
         </tbody>
       </table>
       <div id="diag-families" class="pt-diag-outer" aria-label="Periodic table diagram showing element families"></div>
@@ -336,6 +341,153 @@
       <h2 class="card-title"><span class="num">5.6</span> Electronegativity</h2>
       <p><strong>Electronegativity (EN)</strong> measures how strongly an atom pulls shared electrons toward itself in a bond. Fluorine (F) is the most electronegative element at 3.98.</p>
       <p>Electronegativity is <strong>not</strong> the same as ionization energy. Ionization energy is about removing an electron; electronegativity is about pulling on shared electrons in a bond.</p>
+      <figure class="lesson-figure lesson-figure-split">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 860" width="100%" height="auto" role="img" aria-labelledby="u05-en-table-title u05-en-table-desc">
+          <title id="u05-en-table-title">Electronegativity of the first three periods</title>
+          <desc id="u05-en-table-desc">A mobile-optimized reference card showing electronegativity values for periods 1, 2, and 3 using the Pauling scale with periodic-table spacing.</desc>
+          <defs>
+            <style>
+              .bg-card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; rx: 16px; }
+              .period-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1; rx: 12px; }
+              .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; text-anchor: middle; }
+              .en-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #64748b; text-anchor: middle; }
+              .period-header { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+              .group-label { font-family: system-ui, -apple-system, sans-serif; font-size: 8px; font-weight: 700; fill: #94a3b8; text-anchor: middle; }
+              .gap-label { font-family: system-ui, -apple-system, sans-serif; font-size: 8px; font-weight: 600; fill: #cbd5e1; text-anchor: middle; }
+              .sym { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; text-anchor: middle; }
+              .en-num { font-family: system-ui, -apple-system, sans-serif; font-size: 8px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+              .val { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 800; text-anchor: middle; }
+              .legend-title { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; fill: #475569; }
+              .legend-text { font-family: system-ui, -apple-system, sans-serif; font-size: 9px; font-weight: 500; fill: #64748b; }
+              .en-low { fill: #eff6ff; stroke: #bfdbfe; stroke-width: 1.5; rx: 6px; }
+              .en-mid { fill: #ccfbf1; stroke: #99f6e4; stroke-width: 1.5; rx: 6px; }
+              .en-high { fill: #ffedd5; stroke: #fed7aa; stroke-width: 1.5; rx: 6px; }
+              .en-vhigh { fill: #fee2e2; stroke: #fecaca; stroke-width: 1.5; rx: 6px; }
+              .en-none { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.5; rx: 6px; }
+              .txt-low { fill: #1e40af; }
+              .txt-mid { fill: #0f766e; }
+              .txt-high { fill: #c2410c; }
+              .txt-vhigh { fill: #b91c1c; }
+              .txt-none { fill: #475569; }
+              .arrow { stroke: #4f46e5; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+              .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; fill: #4f46e5; }
+            </style>
+            <marker id="u05-en-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="#4f46e5"/>
+            </marker>
+          </defs>
+
+          <rect x="2" y="2" width="396" height="856" class="bg-card"/>
+
+          <g transform="translate(0, 10)">
+            <text x="200" y="32" class="title">Electronegativity Values</text>
+            <text x="200" y="52" class="en-subtitle">First Three Periods (Pauling Scale)</text>
+            <line x1="30" y1="65" x2="370" y2="65" stroke="#e2e8f0" stroke-width="1"/>
+          </g>
+
+          <g transform="translate(16, 85)">
+            <text x="4" y="20" class="period-header">Period 1</text>
+            <rect x="0" y="30" width="368" height="95" class="period-bg"/>
+            <text x="26" y="46" class="group-label">1 (IA)</text>
+            <text x="342" y="46" class="group-label">18 (VIIIA)</text>
+            <g transform="translate(6, 54)">
+              <rect width="40" height="60" class="en-mid"/>
+              <text x="20" y="14" class="en-num">1</text>
+              <text x="20" y="33" class="sym txt-mid">H</text>
+              <text x="20" y="50" class="val txt-mid">2.2</text>
+            </g>
+            <g transform="translate(322, 54)">
+              <rect width="40" height="60" class="en-none"/>
+              <text x="20" y="14" class="en-num">2</text>
+              <text x="20" y="33" class="sym txt-none">He</text>
+              <text x="20" y="50" class="val txt-none">—</text>
+            </g>
+            <line x1="52" y1="84" x2="316" y2="84" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1"/>
+            <rect x="134" y="74" width="100" height="20" fill="#f8fafc"/>
+            <text x="184" y="87" class="gap-label">Periodic Gap</text>
+          </g>
+
+          <g transform="translate(16, 200)">
+            <text x="4" y="20" class="period-header">Period 2</text>
+            <rect x="0" y="30" width="368" height="150" class="period-bg"/>
+            <text x="24" y="47" class="group-label">1</text>
+            <text x="64" y="47" class="group-label">2</text>
+            <text x="111" y="47" class="gap-label" fill="#94a3b8">3–12</text>
+            <text x="158" y="47" class="group-label">13</text>
+            <text x="198" y="47" class="group-label">14</text>
+            <text x="238" y="47" class="group-label">15</text>
+            <text x="278" y="47" class="group-label">16</text>
+            <text x="318" y="47" class="group-label">17</text>
+            <text x="350" y="47" class="group-label">18</text>
+            <g transform="translate(6, 54)"><rect width="36" height="54" class="en-low"/><text x="18" y="13" class="en-num">3</text><text x="18" y="30" class="sym txt-low">Li</text><text x="18" y="46" class="val txt-low">1.0</text></g>
+            <g transform="translate(46, 54)"><rect width="36" height="54" class="en-low"/><text x="18" y="13" class="en-num">4</text><text x="18" y="30" class="sym txt-low">Be</text><text x="18" y="46" class="val txt-low">1.5</text></g>
+            <g transform="translate(86, 54)"><rect width="50" height="54" fill="none" stroke="#cbd5e1" stroke-dasharray="3 3" rx="6"/><text x="25" y="31" class="gap-label">Gap</text></g>
+            <g transform="translate(140, 54)"><rect width="36" height="54" class="en-mid"/><text x="18" y="13" class="en-num">5</text><text x="18" y="30" class="sym txt-mid">B</text><text x="18" y="46" class="val txt-mid">2.0</text></g>
+            <g transform="translate(180, 54)"><rect width="36" height="54" class="en-high"/><text x="18" y="13" class="en-num">6</text><text x="18" y="30" class="sym txt-high">C</text><text x="18" y="46" class="val txt-high">2.5</text></g>
+            <g transform="translate(220, 54)"><rect width="36" height="54" class="en-vhigh"/><text x="18" y="13" class="en-num">7</text><text x="18" y="30" class="sym txt-vhigh">N</text><text x="18" y="46" class="val txt-vhigh">3.0</text></g>
+            <g transform="translate(260, 54)"><rect width="36" height="54" class="en-vhigh"/><text x="18" y="13" class="en-num">8</text><text x="18" y="30" class="sym txt-vhigh">O</text><text x="18" y="46" class="val txt-vhigh">3.4</text></g>
+            <g transform="translate(300, 54)"><rect width="36" height="54" class="en-vhigh"/><text x="18" y="13" class="en-num">9</text><text x="18" y="30" class="sym txt-vhigh">F</text><text x="18" y="46" class="val txt-vhigh">4.0</text></g>
+            <g transform="translate(340, 54)"><rect width="22" height="54" class="en-none"/><text x="11" y="13" class="en-num">10</text><text x="11" y="30" class="sym txt-none">Ne</text><text x="11" y="46" class="val txt-none">—</text></g>
+            <g transform="translate(0, 122)">
+              <line x1="12" y1="12" x2="352" y2="12" class="arrow" marker-end="url(#u05-en-arrowhead)"/>
+              <text x="184" y="28" class="arrow-text" text-anchor="middle">Electronegativity Increases →</text>
+            </g>
+          </g>
+
+          <g transform="translate(16, 370)">
+            <text x="4" y="20" class="period-header">Period 3</text>
+            <rect x="0" y="30" width="368" height="116" class="period-bg"/>
+            <g transform="translate(6, 44)"><rect width="36" height="54" class="en-low"/><text x="18" y="13" class="en-num">11</text><text x="18" y="30" class="sym txt-low">Na</text><text x="18" y="46" class="val txt-low">0.9</text></g>
+            <g transform="translate(46, 44)"><rect width="36" height="54" class="en-low"/><text x="18" y="13" class="en-num">12</text><text x="18" y="30" class="sym txt-low">Mg</text><text x="18" y="46" class="val txt-low">1.2</text></g>
+            <g transform="translate(86, 44)"><rect width="50" height="54" fill="none" stroke="#cbd5e1" stroke-dasharray="3 3" rx="6"/><text x="25" y="31" class="gap-label">Gap</text></g>
+            <g transform="translate(140, 44)"><rect width="36" height="54" class="en-low"/><text x="18" y="13" class="en-num">13</text><text x="18" y="30" class="sym txt-low">Al</text><text x="18" y="46" class="val txt-low">1.6</text></g>
+            <g transform="translate(180, 44)"><rect width="36" height="54" class="en-mid"/><text x="18" y="13" class="en-num">14</text><text x="18" y="30" class="sym txt-mid">Si</text><text x="18" y="46" class="val txt-mid">1.9</text></g>
+            <g transform="translate(220, 44)"><rect width="36" height="54" class="en-mid"/><text x="18" y="13" class="en-num">15</text><text x="18" y="30" class="sym txt-mid">P</text><text x="18" y="46" class="val txt-mid">2.2</text></g>
+            <g transform="translate(260, 44)"><rect width="36" height="54" class="en-high"/><text x="18" y="13" class="en-num">16</text><text x="18" y="30" class="sym txt-high">S</text><text x="18" y="46" class="val txt-high">2.6</text></g>
+            <g transform="translate(300, 44)"><rect width="36" height="54" class="en-vhigh"/><text x="18" y="13" class="en-num">17</text><text x="18" y="30" class="sym txt-vhigh">Cl</text><text x="18" y="46" class="val txt-vhigh">3.2</text></g>
+            <g transform="translate(340, 44)"><rect width="22" height="54" class="en-none"/><text x="11" y="13" class="en-num">18</text><text x="11" y="30" class="sym txt-none">Ar</text><text x="11" y="46" class="val txt-none">—</text></g>
+          </g>
+
+          <g transform="translate(16, 505)">
+            <rect x="0" y="0" width="368" height="54" class="period-bg"/>
+            <line x1="30" y1="27" x2="338" y2="27" class="arrow" marker-end="url(#u05-en-arrowhead)"/>
+            <text x="184" y="44" class="arrow-text" text-anchor="middle">Electronegativity Decreases Down a Group</text>
+          </g>
+
+          <g transform="translate(16, 580)">
+            <rect x="0" y="0" width="368" height="250" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+            <text x="20" y="26" class="legend-title">Element Cell Key</text>
+            <g transform="translate(20, 40)">
+              <rect width="50" height="65" class="en-vhigh"/>
+              <text x="25" y="14" class="en-num">9</text>
+              <text x="25" y="34" class="sym txt-vhigh">F</text>
+              <text x="25" y="54" class="val txt-vhigh">4.0</text>
+              <line x1="55" y1="11" x2="90" y2="11" stroke="#94a3b8" stroke-width="1"/>
+              <text x="96" y="14" class="legend-text">Atomic Number</text>
+              <line x1="55" y1="31" x2="90" y2="31" stroke="#94a3b8" stroke-width="1"/>
+              <text x="96" y="35" class="legend-text">Element Symbol</text>
+              <line x1="55" y1="51" x2="90" y2="51" stroke="#94a3b8" stroke-width="1"/>
+              <text x="96" y="55" class="legend-text">Electronegativity Value</text>
+            </g>
+            <line x1="16" y1="125" x2="352" y2="125" stroke="#e2e8f0" stroke-width="1"/>
+            <text x="20" y="148" class="legend-title">Electronegativity Range</text>
+            <rect x="20" y="162" width="24" height="16" class="en-low"/>
+            <text x="54" y="174" class="legend-text">0.9 – 1.5 (Low / Electropositive)</text>
+            <rect x="20" y="184" width="24" height="16" class="en-mid"/>
+            <text x="54" y="196" class="legend-text">1.6 – 2.4 (Intermediate)</text>
+            <rect x="20" y="206" width="24" height="16" class="en-high"/>
+            <text x="54" y="218" class="legend-text">2.5 – 2.9 (High Nonmetals)</text>
+            <rect x="20" y="228" width="24" height="16" class="en-vhigh"/>
+            <text x="54" y="240" class="legend-text">3.0 – 4.0 (Highly Electronegative)</text>
+            <rect x="245" y="162" width="22" height="16" class="en-none"/>
+            <text x="274" y="174" class="legend-text" font-weight="700">Inert Gas</text>
+            <text x="245" y="200" class="legend-text" font-size="9" fill="#94a3b8">He, Ne, and Ar omit</text>
+            <text x="245" y="212" class="legend-text" font-size="9" fill="#94a3b8">Pauling values because</text>
+            <text x="245" y="224" class="legend-text" font-size="9" fill="#94a3b8">they rarely form bonds.</text>
+          </g>
+        </svg>
+        <figcaption><strong>This reference keeps the electronegativity trend tied to real periodic-table positions.</strong> EN increases toward fluorine across a period and decreases as you move down a group.</figcaption>
+      </figure>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
@@ -410,7 +562,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Nonmetals GAIN electrons → anions (negative ions) → LARGER than the atom</strong>
-            <p>Cl atom: 99 pm &nbsp;→&nbsp; <span class="ion-group">Cl<span class="chem-charge">−</span></span> ion: 181 pm &nbsp;(83% bigger!)</p>
+            <p>Cl atom: 99 pm &nbsp;→&nbsp; <span class="ion-group">Cl<span class="chem-charge">-</span></span> ion: 181 pm &nbsp;(83% bigger!)</p>
             <p>Reason: More electrons, same number of protons. Electrons repel each other and spread out.</p>
           </div>
         </div>
@@ -422,9 +574,9 @@
           <ul class="key-fact-list">
           <li>Ions with the same electron count can be compared by proton count.</li>
           <li>More protons = smaller ion.</li>
-          <li><span class="ion-group">N<span class="chem-charge">3−</span></span>, <span class="ion-group">O<span class="chem-charge">2−</span></span>, <span class="ion-group">F<span class="chem-charge">−</span></span>, Ne, <span class="ion-group">Na<span class="chem-charge">+</span></span>, <span class="ion-group">Mg<span class="chem-charge">2+</span></span>, <span class="ion-group">Al<span class="chem-charge">3+</span></span> all have 10 electrons.</li>
+          <li><span class="ion-group">N<span class="chem-charge">3-</span></span>, <span class="ion-group">O<span class="chem-charge">2-</span></span>, <span class="ion-group">F<span class="chem-charge">-</span></span>, Ne, <span class="ion-group">Na<span class="chem-charge">+</span></span>, <span class="ion-group">Mg<span class="chem-charge">2+</span></span>, <span class="ion-group">Al<span class="chem-charge">3+</span></span> all have 10 electrons.</li>
           <li><span class="ion-group">Al<span class="chem-charge">3+</span></span> (13 protons) is the smallest.</li>
-          <li><span class="ion-group">N<span class="chem-charge">3−</span></span> (7 protons) is the largest.</li>
+          <li><span class="ion-group">N<span class="chem-charge">3-</span></span> (7 protons) is the largest.</li>
           </ul>
         </div>
       </div>
@@ -438,7 +590,7 @@
           <tr><td data-label="Species">Na</td><td data-label="What changed?">Neutral atom</td><td data-label="Radius">186 pm</td><td data-label="What the size change tells you">Still has its 3rd energy level.</td></tr>
           <tr><td data-label="Species"><span class="ion-group">Na<span class="chem-charge">+</span></span></td><td data-label="What changed?">Lost 1 electron</td><td data-label="Radius">102 pm</td><td data-label="What the size change tells you">Losing the 3s electron removes the outer level, so the ion gets much smaller.</td></tr>
           <tr><td data-label="Species">Cl</td><td data-label="What changed?">Neutral atom</td><td data-label="Radius">99 pm</td><td data-label="What the size change tells you">Has 17 electrons balancing 17 protons.</td></tr>
-          <tr><td data-label="Species"><span class="ion-group">Cl<span class="chem-charge">−</span></span></td><td data-label="What changed?">Gained 1 electron</td><td data-label="Radius">181 pm</td><td data-label="What the size change tells you">Adding an electron increases repulsion in the valence shell, so the ion gets larger.</td></tr>
+          <tr><td data-label="Species"><span class="ion-group">Cl<span class="chem-charge">-</span></span></td><td data-label="What changed?">Gained 1 electron</td><td data-label="Radius">181 pm</td><td data-label="What the size change tells you">Adding an electron increases repulsion in the valence shell, so the ion gets larger.</td></tr>
         </tbody>
       </table>
       <div class="formula-box">
@@ -937,7 +1089,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!match) return species;
     const [, symbol, magnitude, sign] = match;
     if (!sign) return symbol;
-    const charge = `${magnitude || ''}${sign === '-' ? '−' : sign}`;
+    const charge = `${magnitude || ''}${sign === '-' ? '-' : sign}`;
     return `<span class="ion-group">${symbol}<span class="chem-charge">${charge}</span></span>`;
   }
 
@@ -1497,13 +1649,13 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['Cl', 'Cl−'],
-      options: ['Cl', 'Cl−'],
-      answer: 'Cl−',
-      correct: 'Right — Cl− is larger. Gaining an electron to form an anion makes the species larger.',
-      incorrect: 'Not quite — Cl− is an anion. Anions form by gaining electrons, so electron-electron repulsion increases and the ion becomes larger. Compare the pair again with that rule.',
-      support: 'Cl gains one electron to form Cl−, so the extra repulsion spreads the outer electrons farther out.',
-      revealAnswer: 'Answer: Cl−',
+      pair: ['Cl', 'Cl-'],
+      options: ['Cl', 'Cl-'],
+      answer: 'Cl-',
+      correct: 'Right — Cl- is larger. Gaining an electron to form an anion makes the species larger.',
+      incorrect: 'Not quite — Cl- is an anion. Anions form by gaining electrons, so electron-electron repulsion increases and the ion becomes larger. Compare the pair again with that rule.',
+      support: 'Cl gains one electron to form Cl-, so the extra repulsion spreads the outer electrons farther out.',
+      revealAnswer: 'Answer: Cl-',
       revealWhy: 'Why: adding an electron increases repulsion in the valence shell, so chloride is larger than neutral chlorine.'
     },
     {
@@ -1519,14 +1671,14 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['O', 'O2−'],
-      options: ['O', 'O2−'],
-      answer: 'O2−',
-      correct: 'Right — O2− is larger. Gaining electrons to form an anion makes the species larger.',
-      incorrect: 'Not quite — O2− is an anion. Anions gain electrons, so extra repulsion makes them larger than the neutral atom.',
+      pair: ['O', 'O2-'],
+      options: ['O', 'O2-'],
+      answer: 'O2-',
+      correct: 'Right — O2- is larger. Gaining electrons to form an anion makes the species larger.',
+      incorrect: 'Not quite — O2- is an anion. Anions gain electrons, so extra repulsion makes them larger than the neutral atom.',
       support: 'O gains two electrons to form oxide, so the added electron-electron repulsion expands the outer electron cloud.',
-      revealAnswer: 'Answer: O2−',
-      revealWhy: 'Why: oxygen gains electrons to form O2−, so the extra electrons increase repulsion and make the ion larger.'
+      revealAnswer: 'Answer: O2-',
+      revealWhy: 'Why: oxygen gains electrons to form O2-, so the extra electrons increase repulsion and make the ion larger.'
     },
     {
       prompt: 'Which species is larger?',
@@ -1541,13 +1693,13 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['F', 'F−'],
-      options: ['F', 'F−'],
-      answer: 'F−',
-      correct: 'Right — F− is larger because gaining an electron to form an anion makes it larger.',
-      incorrect: 'Not quite — F− is an anion, so extra electron-electron repulsion makes it larger.',
+      pair: ['F', 'F-'],
+      options: ['F', 'F-'],
+      answer: 'F-',
+      correct: 'Right — F- is larger because gaining an electron to form an anion makes it larger.',
+      incorrect: 'Not quite — F- is an anion, so extra electron-electron repulsion makes it larger.',
       support: 'F gains one electron to form fluoride.',
-      revealAnswer: 'Answer: F−',
+      revealAnswer: 'Answer: F-',
       revealWhy: 'Why: added electron repulsion expands the ion.'
     },
     {
@@ -1563,13 +1715,13 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['S', 'S2−'],
-      options: ['S', 'S2−'],
-      answer: 'S2−',
-      correct: 'Right — S2− is larger because anions are larger than their neutral atoms.',
+      pair: ['S', 'S2-'],
+      options: ['S', 'S2-'],
+      answer: 'S2-',
+      correct: 'Right — S2- is larger because anions are larger than their neutral atoms.',
       incorrect: 'Not quite — sulfur gains electrons to form sulfide, so the ion becomes larger.',
-      support: 'S gains two electrons to form S2−.',
-      revealAnswer: 'Answer: S2−',
+      support: 'S gains two electrons to form S2-.',
+      revealAnswer: 'Answer: S2-',
       revealWhy: 'Why: extra electron repulsion expands sulfide.'
     },
     {
@@ -1585,13 +1737,13 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['Br', 'Br−'],
-      options: ['Br', 'Br−'],
-      answer: 'Br−',
-      correct: 'Right — Br− is larger because bromide is an anion.',
+      pair: ['Br', 'Br-'],
+      options: ['Br', 'Br-'],
+      answer: 'Br-',
+      correct: 'Right — Br- is larger because bromide is an anion.',
       incorrect: 'Not quite — bromine gains an electron to form bromide, and anions are larger.',
-      support: 'Br gains one electron to form Br−.',
-      revealAnswer: 'Answer: Br−',
+      support: 'Br gains one electron to form Br-.',
+      revealAnswer: 'Answer: Br-',
       revealWhy: 'Why: extra electron repulsion makes bromide larger.'
     },
     {
@@ -1607,13 +1759,13 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       prompt: 'Which species is larger?',
-      pair: ['N', 'N3−'],
-      options: ['N', 'N3−'],
-      answer: 'N3−',
-      correct: 'Right — N3− is larger because nitride is an anion.',
+      pair: ['N', 'N3-'],
+      options: ['N', 'N3-'],
+      answer: 'N3-',
+      correct: 'Right — N3- is larger because nitride is an anion.',
       incorrect: 'Not quite — nitrogen gains electrons to form nitride, and anions are larger than the neutral atom.',
-      support: 'N gains three electrons to form N3−.',
-      revealAnswer: 'Answer: N3−',
+      support: 'N gains three electrons to form N3-.',
+      revealAnswer: 'Answer: N3-',
       revealWhy: 'Why: the added electrons increase repulsion and expand the ion.'
     }
   ];

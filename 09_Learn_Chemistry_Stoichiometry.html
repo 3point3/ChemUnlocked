@@ -13,10 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Stoichiometry: Mole Ratios &amp; Percent Yield preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Stoichiometry: Mole Ratios &amp; Percent Yield | ChemUnlocked">
 <meta name="twitter:description" content="Use mole ratios to solve grams-to-grams problems, identify the limiting reactant, calculate theoretical yield, and find percent yield — step by step.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Stoichiometry: Mole Ratios &amp; Percent Yield preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -115,7 +120,7 @@
 
       <figure class="lesson-figure lesson-figure-split stoich-particle-figure">
         <svg class="stoich-particle-svg stoich-particle-svg-desktop" viewBox="0 0 920 112" role="img" aria-label="Particle models: two H2 molecules and one O2 molecule combine to form two H2O molecules" xmlns="http://www.w3.org/2000/svg">
-          <title>Particle model: 2H₂ + O₂ → 2H₂O</title>
+          <title>Particle model showing 2 H2 molecules plus 1 O2 molecule forming 2 H2O molecules</title>
           <rect x="8" y="4" width="904" height="104" rx="16" fill="rgba(255,255,255,0.97)" stroke="#bfdbfe" stroke-width="1.5"></rect>
           <text x="460" y="21" text-anchor="middle" font-size="12" font-weight="700" font-family="system-ui, -apple-system, sans-serif" fill="#64748b" letter-spacing="0.07em">PARTICLE MODEL</text>
           <circle cx="254" cy="57" r="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"></circle>
@@ -149,7 +154,7 @@
           <text x="630" y="88" text-anchor="middle" font-size="11" font-weight="700" font-family="system-ui, -apple-system, sans-serif" fill="#0f172a">2H<tspan dy="3" font-size="9">2</tspan><tspan dy="-3">O</tspan></text>
         </svg>
         <svg class="stoich-particle-svg stoich-particle-svg-mobile" viewBox="0 0 320 258" role="img" aria-label="Mobile particle model showing two H2 molecules plus one O2 molecule forming two H2O molecules" xmlns="http://www.w3.org/2000/svg">
-          <title>Mobile particle model: 2H₂ + O₂ → 2H₂O</title>
+          <title>Mobile particle model showing 2 H2 molecules plus 1 O2 molecule forming 2 H2O molecules</title>
           <rect x="8" y="6" width="304" height="246" rx="18" fill="rgba(255,255,255,0.98)" stroke="#bfdbfe" stroke-width="1.5"></rect>
           <text x="160" y="24" text-anchor="middle" font-size="11" font-weight="700" font-family="system-ui, -apple-system, sans-serif" fill="#64748b" letter-spacing="0.07em">PARTICLE MODEL</text>
           <text x="160" y="46" text-anchor="middle" font-size="12" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#0f172a">Reactants</text>
@@ -219,16 +224,21 @@
     </div>
 
     <!-- 9.2 Mole Ratios and Stoichiometric Factors -->
-    <div class="card">
+    <div class="card card-limiting-reactant">
       <h2 class="card-title"><span class="num">9.2</span> Mole Ratios: The Conversion Tool That Drives the Whole Unit</h2>
       <p>A <strong>mole ratio</strong> (also called a <strong>stoichiometric factor</strong>) is a fraction you build from the coefficients in a balanced equation. You use it like a unit conversion — it lets you switch from moles of one substance to moles of another.</p>
       <p>Notice what usually goes wrong here: grabbing numbers from subscripts or molar masses instead of the equation. Do not do that. The mole ratio comes only from the coefficients in the balanced equation.</p>
 
       <div class="formula-box">
         <span class="label">General Stoichiometric Factor</span>
-        mol of substance A
-        ─────────────────── = mole ratio
-        mol of substance B
+        <div class="stoich-factor-box">
+          <span class="inline-frac">
+            <span class="inline-frac-num">mol of wanted substance</span>
+            <span class="inline-frac-bar"></span>
+            <span class="inline-frac-den">mol of given substance</span>
+          </span>
+          <span class="stoich-factor-equals">= stoichiometric factor</span>
+        </div>
       </div>
 
       <p class="sto-mt-08">From the equation <strong><span class="ion-group">N<span class="chem-sub">2</span></span> + 3 <span class="ion-group">H<span class="chem-sub">2</span></span> → 2 <span class="ion-group">NH<span class="chem-sub">3</span></span></strong>, you can write these mole ratios:</p>
@@ -264,172 +274,161 @@
       <p>If this feels shaky, slow down and label the path before you calculate. Most mistakes in stoichiometry happen before the arithmetic even starts.</p>
 
       <figure class="lesson-figure lesson-figure-split stoich-roadmap-figure">
-        <svg width="100%" height="auto" viewBox="0 0 400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="stoich-roadmap-title stoich-roadmap-desc">
-          <title id="stoich-roadmap-title">Stoichiometry roadmap for grams to grams conversions</title>
-          <desc id="stoich-roadmap-desc">A vertical stoichiometry roadmap showing grams of substance A to moles of A, across the mole ratio bridge to moles of B, then to grams of B, followed by a factor-label chain.</desc>
-          <defs>
-            <filter id="mobile-shadow" x="-10%" y="-10%" width="120%" height="125%">
-              <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
-            </filter>
-            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="100%" stop-color="#f8fafc"/>
-            </linearGradient>
-            <linearGradient id="substance-a" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#0284c7"/>
-              <stop offset="100%" stop-color="#0369a1"/>
-            </linearGradient>
-            <linearGradient id="substance-b" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#0f766e"/>
-              <stop offset="100%" stop-color="#115e59"/>
-            </linearGradient>
-            <style>
-              .canvas { fill: url(#bg-grad); stroke: #e2e8f0; stroke-width: 1.5px; rx: 16px; }
-              .main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; letter-spacing: -0.02em; }
-              .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #64748b; }
-              .card-a { fill: url(#substance-a); rx: 10px; }
-              .card-b { fill: url(#substance-b); rx: 10px; }
-              .card-text-main { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
-              .card-text-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #e0f2fe; text-anchor: middle; opacity: 0.95; }
-              .card-text-sub-b { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #ccfbf1; text-anchor: middle; opacity: 0.95; }
-              .path-line { stroke: #cbd5e1; stroke-width: 2.5px; stroke-dasharray: 4 4; stroke-linecap: round; fill: none; }
-              .arrow-shaft { stroke: #6366f1; stroke-width: 3.5px; stroke-linecap: round; fill: none; }
-              .arrow-head { fill: #6366f1; }
-              .step-badge { fill: #4f46e5; }
-              .step-badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
-              .op-box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1px; rx: 6px; }
-              .op-text-action { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 800; fill: #4f46e5; }
-              .op-text-value { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #475569; }
-              .warning-bg { fill: #fff7ed; stroke: #ffedd5; stroke-width: 1px; rx: 8px; }
-              .warning-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #c2410c; }
-              .warning-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10.5px; font-weight: 500; fill: #9a3412; }
-              .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; letter-spacing: 0.05em; }
-              .math-text { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; }
-              .math-ghost { fill: #64748b; font-weight: 500; }
-              .math-unit-a { fill: #0284c7; font-weight: 700; }
-              .math-unit-b { fill: #0d9488; font-weight: 700; }
-              .math-op { fill: #6366f1; font-weight: 700; text-anchor: middle; }
-              .fraction-line { stroke: #334155; stroke-width: 1.5px; }
-            </style>
-          </defs>
+        <div class="stoich-roadmap-layout">
+          <svg class="stoich-roadmap-svg stoich-roadmap-panel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 540" width="100%" height="auto" role="img" aria-labelledby="roadmap-title roadmap-desc">
+            <title id="roadmap-title">Stoichiometry Roadmap</title>
+            <desc id="roadmap-desc">A vertical roadmap showing conversions from Grams A to Moles A, across the mole ratio bridge to Moles B, and to Grams B.</desc>
 
-          <rect class="canvas" x="10" y="10" width="380" height="840" />
+            <defs>
+              <style>
+                .u09-road-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; }
+                .title-main { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+                .title-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+                .warn-bg { fill: #fff7ed; stroke: #ffedd5; stroke-width: 2px; }
+                .warn-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #ea580c; }
+                .warn-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11.5px; font-weight: 600; fill: #9a3412; }
+                .node-a-bg { fill: #3b82f6; stroke: #1d4ed8; stroke-width: 1.5px; }
+                .node-b-bg { fill: #2dd4bf; stroke: #0f766e; stroke-width: 1.5px; }
+                .node-text-lg { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #ffffff; text-anchor: middle; }
+                .node-text-sm { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #eff6ff; text-anchor: middle; }
+                .node-text-sm-b { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #f0fdfa; text-anchor: middle; }
+                .arrow-line { fill: none; stroke: #4f46e5; stroke-width: 3.5px; stroke-linecap: round; }
+                .badge-bg { fill: #4f46e5; }
+                .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+                .op-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+                .op-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #64748b; }
+              </style>
 
-          <g transform="translate(24, 40)">
-            <text x="0" y="0" class="main-title">The Stoichiometry Roadmap</text>
-            <text x="0" y="18" class="subtitle">Grams-to-Grams Conversions Step-by-Step</text>
-          </g>
+              <filter id="roadmap-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+              </filter>
 
-          <g transform="translate(24, 75)">
-            <rect class="warning-bg" x="0" y="0" width="352" height="50" />
-            <path d="M 20,16 L 28,30 L 12,30 Z" fill="#ea580c" stroke="#ea580c" stroke-width="2" stroke-linejoin="round"/>
-            <text x="20" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">!</text>
-            <text x="38" y="20" class="warning-title">CRITICAL CHECKPOINT</text>
-            <text x="38" y="34" class="warning-text">Verify your chemical equation is balanced first!</text>
-          </g>
+              <filter id="roadmap-node-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.15" />
+              </filter>
 
-          <path d="M 85,190 L 85,610" class="path-line" />
+              <marker id="roadmap-arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                <polygon points="0 0, 7 3.5, 0 7" fill="#4f46e5" />
+              </marker>
+            </defs>
 
-          <g transform="translate(24, 150)" filter="url(#mobile-shadow)">
-            <rect class="card-a" x="0" y="0" width="122" height="54" />
-            <text x="61" y="26" class="card-text-main">Grams A</text>
-            <text x="61" y="42" class="card-text-sub">Given Substance</text>
-          </g>
+            <rect x="4" y="4" width="502" height="532" rx="16" class="u09-road-card-base" filter="url(#roadmap-card-shadow)" />
 
-          <g transform="translate(85, 230)">
-            <path d="M 0,-25 L 0,25" class="arrow-shaft" />
-            <polygon points="-4,20 0,28 4,20" class="arrow-head" />
-            <circle cx="0" cy="0" r="10" class="step-badge" />
-            <text x="0" y="0" class="step-badge-text">1</text>
-            <g transform="translate(28, -18)" filter="url(#mobile-shadow)">
-              <rect class="op-box" x="0" y="0" width="165" height="36" />
-              <text x="12" y="15" class="op-text-action">÷ BY MOLAR MASS</text>
-              <text x="12" y="27" class="op-text-value">Convert Grams A → Moles A</text>
+            <g id="header">
+              <text x="255" y="45" class="title-main">STOICHIOMETRY ROADMAP</text>
+              <text x="255" y="65" class="title-sub">Grams-to-Grams Conversions Step-by-Step</text>
             </g>
-          </g>
 
-          <g transform="translate(24, 280)" filter="url(#mobile-shadow)">
-            <rect class="card-a" x="0" y="0" width="122" height="54" />
-            <text x="61" y="26" class="card-text-main">Moles A</text>
-            <text x="61" y="42" class="card-text-sub">Key Intermediate</text>
-          </g>
-
-          <g transform="translate(85, 360)">
-            <path d="M 0,-25 L 0,25" class="arrow-shaft" />
-            <polygon points="-4,20 0,28 4,20" class="arrow-head" />
-            <circle cx="0" cy="0" r="10" class="step-badge" />
-            <text x="0" y="0" class="step-badge-text">2</text>
-            <g transform="translate(28, -18)" filter="url(#mobile-shadow)">
-              <rect class="op-box" x="0" y="0" width="165" height="36" />
-              <text x="12" y="15" class="op-text-action">× MOLE RATIO BRIDGE</text>
-              <text x="12" y="27" class="op-text-value">Coefficients: Mol B / Mol A</text>
+            <g id="warning-box" transform="translate(0, 80)">
+              <rect x="55" y="0" width="400" height="44" rx="8" class="warn-bg" />
+              <path d="M 71 30 L 81 10 L 91 30 Z" fill="#ea580c" />
+              <text x="81" y="27" font-family="system-ui" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">!</text>
+              <text x="105" y="19" class="warn-title">CRITICAL CHECKPOINT</text>
+              <text x="105" y="34" class="warn-text">Verify your chemical equation is balanced first!</text>
             </g>
-          </g>
 
-          <g transform="translate(24, 410)" filter="url(#mobile-shadow)">
-            <rect class="card-b" x="0" y="0" width="122" height="54" />
-            <text x="61" y="26" class="card-text-main">Moles B</text>
-            <text x="61" y="42" class="card-text-sub-b">Target Intermediate</text>
-          </g>
+            <g id="roadmap">
+              <rect x="40" y="145" width="130" height="52" rx="12" class="node-a-bg" filter="url(#roadmap-node-shadow)" />
+              <text x="105" y="167" class="node-text-lg">Grams A</text>
+              <text x="105" y="184" class="node-text-sm">Given Mass</text>
 
-          <g transform="translate(85, 490)">
-            <path d="M 0,-25 L 0,25" class="arrow-shaft" />
-            <polygon points="-4,20 0,28 4,20" class="arrow-head" />
-            <circle cx="0" cy="0" r="10" class="step-badge" />
-            <text x="0" y="0" class="step-badge-text">3</text>
-            <g transform="translate(28, -18)" filter="url(#mobile-shadow)">
-              <rect class="op-box" x="0" y="0" width="165" height="36" />
-              <text x="12" y="15" class="op-text-action">× BY MOLAR MASS</text>
-              <text x="12" y="27" class="op-text-value">Convert Moles B → Grams B</text>
+              <path d="M 105 200 L 105 220" class="arrow-line" />
+              <path d="M 105 254 L 105 274" class="arrow-line" marker-end="url(#roadmap-arrowhead)" />
+              <circle cx="105" cy="237" r="15" class="badge-bg" />
+              <text x="105" y="238" class="badge-text">1</text>
+
+              <text x="135" y="233" class="op-title" text-anchor="start">÷ by Molar Mass A</text>
+              <text x="135" y="249" class="op-sub" text-anchor="start">Convert to moles</text>
+
+              <rect x="40" y="280" width="130" height="52" rx="12" class="node-a-bg" filter="url(#roadmap-node-shadow)" />
+              <text x="105" y="302" class="node-text-lg">Moles A</text>
+              <text x="105" y="319" class="node-text-sm">Intermediate</text>
+
+              <path d="M 175 306 L 235 306" class="arrow-line" />
+              <path d="M 275 306 L 334 306" class="arrow-line" marker-end="url(#roadmap-arrowhead)" />
+              <circle cx="255" cy="306" r="15" class="badge-bg" />
+              <text x="255" y="307" class="badge-text">2</text>
+
+              <text x="255" y="284" class="op-title" text-anchor="middle">× Mole Ratio (B/A)</text>
+              <text x="255" y="336" class="op-sub" text-anchor="middle">Coefficients from equation</text>
+
+              <rect x="340" y="280" width="130" height="52" rx="12" class="node-b-bg" filter="url(#roadmap-node-shadow)" />
+              <text x="405" y="302" class="node-text-lg">Moles B</text>
+              <text x="405" y="319" class="node-text-sm-b">Target Base</text>
+
+              <path d="M 405 336 L 405 356" class="arrow-line" />
+              <path d="M 405 390 L 405 410" class="arrow-line" marker-end="url(#roadmap-arrowhead)" />
+              <circle cx="405" cy="373" r="15" class="badge-bg" />
+              <text x="405" y="374" class="badge-text">3</text>
+
+              <text x="375" y="369" class="op-title" text-anchor="end">× by Molar Mass B</text>
+              <text x="375" y="385" class="op-sub" text-anchor="end">Convert to grams</text>
+
+              <rect x="340" y="415" width="130" height="52" rx="12" class="node-b-bg" filter="url(#roadmap-node-shadow)" />
+              <text x="405" y="437" class="node-text-lg">Grams B</text>
+              <text x="405" y="454" class="node-text-sm-b">Final Answer</text>
             </g>
-          </g>
+          </svg>
 
-          <g transform="translate(24, 540)" filter="url(#mobile-shadow)">
-            <rect class="card-b" x="0" y="0" width="122" height="54" stroke="#2dd4bf" stroke-width="1" />
-            <text x="61" y="26" class="card-text-main">Grams B</text>
-            <text x="61" y="42" class="card-text-sub-b">Your Final Answer</text>
-          </g>
+          <svg class="stoich-roadmap-svg stoich-factor-panel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 230" width="100%" height="auto" role="img" aria-labelledby="factor-title factor-desc">
+            <title id="factor-title">The Factor-Label Chain</title>
+            <desc id="factor-desc">A factor-label equation layout demonstrating the conversion from Grams A to Grams B.</desc>
 
-          <line x1="24" y1="620" x2="376" y2="620" class="path-line" />
+            <defs>
+              <style>
+                .u09-factor-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; }
+                .section-label { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 800; fill: #475569; letter-spacing: 1px; text-anchor: middle; }
+                .math-main { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; }
+                .math-ghost { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+                .math-op { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #4f46e5; text-anchor: middle; }
+                .unit-a { fill: #2563eb; font-weight: 800; }
+                .unit-b { fill: #0d9488; font-weight: 800; }
+                .fraction-line { stroke: #0f172a; stroke-width: 2px; stroke-linecap: round; }
+                .tip-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2px; }
+                .tip-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; }
+                .tip-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11.5px; font-weight: 500; fill: #64748b; }
+              </style>
 
-          <g transform="translate(24, 640)">
-            <text x="0" y="0" class="section-title">THE FACTOR-LABEL CHAIN</text>
-            <g transform="translate(0, 18)" class="math-text">
-              <g transform="translate(10, 5)">
-                <text x="0" y="20" class="math-unit-a">g A</text>
-                <text x="45" y="20" class="math-op">×</text>
-                <g transform="translate(65, 0)">
-                  <text x="35" y="10" text-anchor="middle">1 mol A</text>
-                  <line x1="0" y1="16" x2="70" y2="16" class="fraction-line" />
-                  <text x="35" y="30" text-anchor="middle" class="math-ghost">Molar Mass A</text>
-                </g>
-                <text x="155" y="20" class="math-op">×</text>
-              </g>
+              <filter id="factor-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+              </filter>
+            </defs>
 
-              <g transform="translate(10, 65)">
-                <g transform="translate(0, 0)">
-                  <text x="35" y="10" text-anchor="middle" class="math-unit-b">mol B</text>
-                  <line x1="0" y1="16" x2="70" y2="16" class="fraction-line" />
-                  <text x="35" y="30" text-anchor="middle" class="math-unit-a">mol A</text>
-                </g>
-                <text x="85" y="20" class="math-op">×</text>
-                <g transform="translate(105, 0)">
-                  <text x="35" y="10" text-anchor="middle" class="math-ghost">Molar Mass B</text>
-                  <line x1="0" y1="16" x2="70" y2="16" class="fraction-line" />
-                  <text x="35" y="30" text-anchor="middle">1 mol B</text>
-                </g>
-                <text x="192" y="20" class="math-op">=</text>
-                <text x="215" y="20" class="math-unit-b">g B</text>
-              </g>
+            <rect x="4" y="4" width="502" height="222" rx="16" class="u09-factor-card-base" filter="url(#factor-card-shadow)" />
+
+            <text x="255" y="40" class="section-label">THE FACTOR-LABEL CHAIN</text>
+
+            <g id="equation-layout" transform="translate(0, 100)">
+              <text x="45" y="5" class="math-main unit-a">g A</text>
+              <text x="80" y="6" class="math-op">×</text>
+
+              <line x1="105" y1="0" x2="180" y2="0" class="fraction-line" />
+              <text x="142.5" y="-12" class="math-main"><tspan fill="#0f172a">1 </tspan><tspan class="unit-a">mol A</tspan></text>
+              <text x="142.5" y="20" class="math-ghost">Molar Mass A</text>
+
+              <text x="205" y="6" class="math-op">×</text>
+
+              <line x1="230" y1="0" x2="295" y2="0" class="fraction-line" />
+              <text x="262.5" y="-12" class="math-main unit-b">mol B</text>
+              <text x="262.5" y="20" class="math-main unit-a">mol A</text>
+
+              <text x="320" y="6" class="math-op">×</text>
+
+              <line x1="345" y1="0" x2="420" y2="0" class="fraction-line" />
+              <text x="382.5" y="-12" class="math-ghost">Molar Mass B</text>
+              <text x="382.5" y="20" class="math-main"><tspan fill="#0f172a">1 </tspan><tspan class="unit-b">mol B</tspan></text>
+
+              <text x="445" y="6" class="math-op">=</text>
+              <text x="475" y="5" class="math-main unit-b">g B</text>
             </g>
-          </g>
 
-          <g transform="translate(24, 765)">
-            <rect fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" x="0" y="0" width="352" height="50" rx="6" />
-            <text x="10" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#475569">PRO-TIP</text>
-            <text x="10" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#64748b">Slow down and lay out your path before starting calculation choices!</text>
-          </g>
-        </svg>
+            <g id="pro-tip" transform="translate(55, 150)">
+              <rect x="0" y="0" width="400" height="50" rx="10" class="tip-bg" />
+              <text x="20" y="20" class="tip-title">PRO-TIP</text>
+              <text x="20" y="38" class="tip-text">Map the path (<tspan fill="#2563eb" font-weight="700">g A</tspan> → <tspan fill="#2563eb" font-weight="700">mol A</tspan> → <tspan fill="#0d9488" font-weight="700">mol B</tspan> → <tspan fill="#0d9488" font-weight="700">g B</tspan>) before you calculate.</text>
+            </g>
+          </svg>
+        </div>
         <figcaption><strong>The roadmap shows the full grams-to-grams logic in one place.</strong> Convert the given grams to moles, cross the balanced-equation mole-ratio bridge, then convert the target moles back to grams only if the problem asks for mass.</figcaption>
       </figure>
 
@@ -513,6 +512,97 @@
       <div class="highlight-box">
         <strong>Example:</strong> If stoichiometry says you should make 10.0 g of product (theoretical yield), but you only collect 8.5 g in lab (actual yield), your percent yield = (8.5 ÷ 10.0) × 100% = <strong>85%</strong>.
       </div>
+
+      <figure class="unit09-inline-svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="100%" height="auto" role="img" aria-labelledby="u09-yield-title u09-yield-desc" text-rendering="optimizeLegibility">
+          <title id="u09-yield-title">Limiting reactant and theoretical yield stoichiometry example</title>
+          <desc id="u09-yield-desc">A worked stoichiometry pathway showing two reactants compared in parallel to identify the limiting reactant and then convert to theoretical yield mass.</desc>
+          <defs>
+            <style>
+              .u09-yield-bg-canvas { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5px; rx: 16px; }
+              .u09-yield-main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+              .u09-yield-section-head { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #475569; text-anchor: middle; letter-spacing: 0.5px; }
+              .u09-yield-equation-sans { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: 700; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+              .u09-yield-meta-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+              .u09-yield-card-teal { fill: #f0fdf4; stroke: #16a34a; stroke-width: 1.5px; rx: 12px; }
+              .u09-yield-card-orange { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.5px; rx: 12px; }
+              .u09-yield-path-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+              .u09-yield-text-teal-dark { fill: #115e59; }
+              .u09-yield-text-orange-dark { fill: #9a3412; }
+              .u09-yield-step-label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+              .u09-yield-math-track { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #1e293b; }
+              .u09-yield-badge-amber { fill: #fef3c7; stroke: #d97706; stroke-width: 2px; rx: 20px; filter: drop-shadow(0 4px 6px rgba(217, 119, 6, 0.15)); }
+              .u09-yield-text-amber-dark { fill: #78350f; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; letter-spacing: 0.5px; }
+              .u09-yield-badge-yield { fill: #eff6ff; stroke: #2563eb; stroke-width: 2px; rx: 12px; }
+              .u09-yield-text-yield-dark { fill: #1e40af; font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; text-anchor: middle; }
+              .u09-yield-sub { font-size: 0.7em; baseline-shift: sub; }
+            </style>
+
+            <filter id="u09-yield-block-shadow" x="-5%" y="-5%" width="110%" height="110%">
+              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(15, 23, 42, 0.06)"></feDropShadow>
+            </filter>
+
+            <marker id="u09-yield-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 2 L 7 5 L 0 8 z" fill="#94a3b8"></path>
+            </marker>
+          </defs>
+
+          <rect x="15" y="15" width="970" height="690" class="u09-yield-bg-canvas"></rect>
+          <text x="500" y="50" class="u09-yield-main-title">LIMITING REACTANT &amp; THEORETICAL YIELD STOICHIOMETRY</text>
+
+          <g transform="translate(200, 75)" filter="url(#u09-yield-block-shadow)">
+            <rect width="600" height="105" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" rx="12"></rect>
+            <text x="300" y="26" class="u09-yield-section-head">STEP 1: INITIAL STOICHIOMETRIC BALANCED EQUATION</text>
+            <text x="300" y="62" class="u09-yield-equation-sans">4 NH<tspan class="u09-yield-sub">3</tspan>  +  5 O<tspan class="u09-yield-sub">2</tspan>   →   4 NO  +  6 H<tspan class="u09-yield-sub">2</tspan>O</text>
+            <text x="180" y="88" class="u09-yield-meta-text">Given: 17.0 g  |  MM: 17.03 g/mol</text>
+            <text x="315" y="88" class="u09-yield-meta-text">Given: 32.0 g  |  MM: 32.00 g/mol</text>
+            <text x="445" y="88" class="u09-yield-meta-text">Target Product  |  MM: 30.01 g/mol</text>
+          </g>
+
+          <text x="500" y="215" class="u09-yield-main-title" style="font-size: 15px; fill: #475569;">STEP 2: PARALLEL REACTANT PATHWAY ANALYSIS</text>
+
+          <g transform="translate(45, 240)" filter="url(#u09-yield-block-shadow)">
+            <rect width="435" height="265" class="u09-yield-card-teal"></rect>
+            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-teal-dark">Pathway A: NH<tspan class="u09-yield-sub">3</tspan> Performance Limit</text>
+            <line x1="20" y1="42" x2="415" y2="42" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"></line>
+            <text x="25" y="68" class="u09-yield-step-label">1. Solve Initial Component Moles:</text>
+            <text x="40" y="92" class="u09-yield-math-track">17.0 g NH<tspan class="u09-yield-sub">3</tspan>  ×  ( 1 mol / 17.03 g )  =  1.00 mol NH<tspan class="u09-yield-sub">3</tspan></text>
+            <line x1="217" y1="112" x2="217" y2="132" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#u09-yield-arrow)"></line>
+            <text x="25" y="158" class="u09-yield-step-label">2. Extrapolate Yield Potential for Product (NO):</text>
+            <text x="40" y="182" class="u09-yield-math-track">1.00 mol NH<tspan class="u09-yield-sub">3</tspan>  ×  ( 4 mol NO / 4 mol NH<tspan class="u09-yield-sub">3</tspan> )  =  1.00 mol NO</text>
+            <rect x="25" y="212" width="385" height="34" fill="#ffffff" stroke="#16a34a" stroke-width="1" rx="6"></rect>
+            <text x="217" y="234" class="u09-yield-path-title u09-yield-text-teal-dark" style="font-size: 13px;">Max Available Yield Target: 1.00 mol NO</text>
+          </g>
+
+          <g transform="translate(520, 240)" filter="url(#u09-yield-block-shadow)">
+            <rect width="435" height="265" class="u09-yield-card-orange"></rect>
+            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-orange-dark">Pathway B: O<tspan class="u09-yield-sub">2</tspan> Performance Limit</text>
+            <line x1="20" y1="42" x2="415" y2="42" stroke="#ea580c" stroke-width="1" stroke-dasharray="3 3"></line>
+            <text x="25" y="68" class="u09-yield-step-label">1. Solve Initial Component Moles:</text>
+            <text x="40" y="92" class="u09-yield-math-track">32.0 g O<tspan class="u09-yield-sub">2</tspan>  ×  ( 1 mol / 32.00 g )  =  1.00 mol O<tspan class="u09-yield-sub">2</tspan></text>
+            <line x1="217" y1="112" x2="217" y2="132" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#u09-yield-arrow)"></line>
+            <text x="25" y="158" class="u09-yield-step-label">2. Extrapolate Yield Potential for Product (NO):</text>
+            <text x="40" y="182" class="u09-yield-math-track">1.00 mol O<tspan class="u09-yield-sub">2</tspan>  ×  ( 4 mol NO / 5 mol O<tspan class="u09-yield-sub">2</tspan> )  =  0.80 mol NO</text>
+            <rect x="25" y="212" width="385" height="34" fill="#ffffff" stroke="#ea580c" stroke-width="1" rx="6"></rect>
+            <text x="217" y="234" class="u09-yield-path-title u09-yield-text-orange-dark" style="font-size: 13px;">Max Available Yield Target: 0.80 mol NO</text>
+          </g>
+
+          <path d="M 262,505 L 262,526 Q 262,542 410,542" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="2 2"></path>
+          <path d="M 737,505 L 737,526 Q 737,542 590,542" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#u09-yield-arrow)"></path>
+
+          <g transform="translate(330, 522)" filter="url(#u09-yield-block-shadow)">
+            <rect width="340" height="40" class="u09-yield-badge-amber"></rect>
+            <text x="170" y="25" class="u09-yield-text-amber-dark">LIMITING REACTANT IDENTIFIED: O<tspan class="u09-yield-sub">2</tspan></text>
+          </g>
+
+          <g transform="translate(150, 595)" filter="url(#u09-yield-block-shadow)">
+            <rect width="700" height="90" class="u09-yield-badge-yield"></rect>
+            <text x="350" y="24" class="u09-yield-section-head" style="fill: #2563eb;">STEP 3: CONVERT STRUCTURAL LIMIT TO THEORETICAL YIELD MASS</text>
+            <text x="350" y="58" class="u09-yield-text-yield-dark">0.80 mol NO  ×  ( 30.01 g NO / 1 mol )  =  24.0 g NO (Theoretical Yield)</text>
+          </g>
+        </svg>
+        <figcaption><strong>This yield map shows the full limiting-reactant logic in one picture.</strong> Convert each reactant to moles, ask how much product each one could make, choose the smaller product amount as the limiting path, then convert that product amount into the theoretical yield mass.</figcaption>
+      </figure>
 
       <div class="key-fact">
         <div class="icon">▸</div>
@@ -934,7 +1024,7 @@ function renderChemSpecies(species) {
   const charge = chargeMatch ? (chargeMatch[1] || chargeMatch[2] || '') : '';
   core = chargeMatch ? core.slice(0, -chargeMatch[0].length).trim() : core;
   const renderedCore = core.replace(/([A-Za-z\)])(\d+)/g, '$1<span class="chem-sub">$2</span>');
-  const renderedCharge = charge ? `<span class="chem-charge">${charge.replace('-', '−')}</span>` : '';
+  const renderedCharge = charge ? `<span class="chem-charge">${charge}</span>` : '';
   return `<span class="ion-group">${renderedCore}${renderedCharge}</span>${state}`;
 }
 

@@ -12,11 +12,16 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://chemunlocked.com/03_learn_atomic_structure">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Atomic Structure: Subatomic Particles preview">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Atomic Structure: Subatomic Particles | ChemUnlocked">
 <meta name="twitter:description" content="Count protons, neutrons, and electrons from nuclear symbols, calculate average atomic mass from isotope data, write correct ionic symbols, and read chemical formulas step by step.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Atomic Structure: Subatomic Particles preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -572,7 +577,7 @@
           </tr>
           <tr>
             <td data-label="Particle">Electron</td>
-            <td data-label="Symbol"><span class="ion-group">e<span class="chem-charge">−</span></span></td>
+            <td data-label="Symbol"><span class="ion-group">e<span class="chem-charge">-</span></span></td>
             <td data-label="Charge">−1</td>
             <td data-label="Mass (amu)">0.00055</td>
             <td data-label="Location">Outside nucleus</td>
@@ -731,11 +736,11 @@
         <div class="formula-rule-list">
           <div class="formula-rule">Electrons = atomic number (Z) − charge</div>
           <div class="formula-rule-note"><span class="ion-group">Na<span class="chem-charge">+</span></span>: Z = 11, charge = +1, so electrons = 11 − 1 = 10</div>
-          <div class="formula-rule-note"><span class="ion-group">Cl<span class="chem-charge">−</span></span>: Z = 17, charge = −1, so electrons = 17 − (−1) = 18</div>
+          <div class="formula-rule-note"><span class="ion-group">Cl<span class="chem-charge">-</span></span>: Z = 17, charge = −1, so electrons = 17 − (−1) = 18</div>
           <div class="formula-rule-note"><span class="ion-group">Ca<span class="chem-charge">2+</span></span>: Z = 20, charge = +2, so electrons = 20 − 2 = 18</div>
         </div>
       </div>
-      <p>Notice the sign on <span class="ion-group">Cl<span class="chem-charge">−</span></span>: you are subtracting a negative number, so the electron count goes up, not down. That is where most arithmetic mistakes happen.</p>
+      <p>Notice the sign on <span class="ion-group">Cl<span class="chem-charge">-</span></span>: you are subtracting a negative number, so the electron count goes up, not down. That is where most arithmetic mistakes happen.</p>
       <div class="key-fact">
         <div class="icon">▸</div>
         <div class="key-fact-copy">
@@ -1364,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function buildTool1NotationMarkup(data) {
-    const chargeMarkup = data.charge === 0 ? '' : `<span class="nuclear-notation-charge">${data.charge > 0 ? `${data.charge}+` : `${Math.abs(data.charge)}−`}</span>`;
+    const chargeMarkup = data.charge === 0 ? '' : `<span class="nuclear-notation-charge">${data.charge > 0 ? `${data.charge}+` : `${Math.abs(data.charge)}-`}</span>`;
     return `<div class="tool-notation-preview">
       <span class="nuclear-notation" aria-label="${data.symbol} with mass number ${data.A}, atomic number ${data.Z}${data.charge === 0 ? '' : `, ${data.chargeStr}`}">
         <span class="nuclear-notation-stack"><span>${data.A}</span><span>${data.Z}</span></span><span class="nuclear-notation-symbol">${data.symbol}</span>${chargeMarkup}
@@ -1391,7 +1396,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const charge = getRandomItem(base.charges);
     const neutrons = A - base.Z;
     const electrons = base.Z - charge;
-    const chargeStr = charge === 0 ? 'neutral atom' : (charge > 0 ? `${charge}+ ion` : `${Math.abs(charge)}− ion`);
+    const chargeStr = charge === 0 ? 'neutral atom' : (charge > 0 ? `${charge}+ ion` : `${Math.abs(charge)}- ion`);
     return {
       ...base,
       A,
@@ -1714,7 +1719,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const chargeMatch = formula.match(/^(.*?)(\d*)([+-])$/);
     const coreFormula = chargeMatch ? chargeMatch[1] : formula;
     const chargeText = chargeMatch
-      ? `${chargeMatch[2] || ''}${chargeMatch[3] === '-' ? '−' : '+'}`
+      ? `${chargeMatch[2] || ''}${chargeMatch[3] === '-' ? '-' : '+'}`
       : '';
     const coreMarkup = coreFormula.replace(/(\d+)/g, '<span class="chem-sub">$1</span>');
     return `<span class="ion-group">${coreMarkup}${chargeText ? `<span class="chem-charge">${chargeText}</span>` : ''}</span>`;

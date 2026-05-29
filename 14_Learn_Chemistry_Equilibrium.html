@@ -12,11 +12,16 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://chemunlocked.com/14_learn_chemistry_equilibrium">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Chemical Equilibrium: K, Q &amp; Le Châtelier's preview">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chemical Equilibrium: K, Q &amp; Le Châtelier's | ChemUnlocked">
 <meta name="twitter:description" content="Write equilibrium expressions, compare Q and K to predict shifts, apply Le Châtelier's Principle, and solve ICE table problems — step by step.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Chemical Equilibrium: K, Q &amp; Le Châtelier's preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <script type="application/ld+json">
@@ -203,6 +208,86 @@
       <h2 class="card-title"><span class="num">14.4</span> Le Châtelier's Principle: Predicting How Equilibrium Responds</h2>
       <p><strong>Le Châtelier's Principle:</strong> when a system at equilibrium is stressed, it shifts in the direction that partly reduces that stress.</p>
       <p>Start with the stress. Then ask what change would counter it. That thinking will carry you through concentration changes, pressure changes, and temperature changes without memorizing random arrows.</p>
+      <div class="concept-panel concept-panel--equilibrium-seesaw">
+        <div class="concept-panel-title">Le Châtelier See-Saw: Match the Stress to the Shift</div>
+        <div class="lc-ss" aria-labelledby="lc-ss-title">
+          <h3 class="sr-only" id="lc-ss-title">Le Châtelier's principle interactive see-saw</h3>
+
+          <div class="lc-step-hint">
+            <span class="lc-step-badge">Step 1</span>
+            <span class="lc-step-text">Choose a reaction</span>
+          </div>
+
+          <div class="lc-custom-select" id="lcCustomSelect">
+            <div class="lc-cs-trigger" id="lcCsTrigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lc-cs-label" id="lcCsLabel">Select a reaction</span>
+              <span class="lc-cs-chevron" id="lcCsChevron">&#8964;</span>
+            </div>
+            <div class="lc-cs-menu" id="lcCsMenu" role="listbox" aria-label="Choose reaction" title="Choose reaction">
+              <div class="lc-cs-option selected" data-value="0" data-reaction="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" role="option" aria-selected="true" aria-label="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" title="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)"></div>
+              <div class="lc-cs-option" data-value="1" data-reaction="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" role="option" aria-selected="false" aria-label="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" title="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)"></div>
+              <div class="lc-cs-option" data-value="2" data-reaction="PCl5 ⇌ PCl3 + Cl2 (endothermic)" role="option" aria-selected="false" aria-label="PCl5 ⇌ PCl3 + Cl2 (endothermic)" title="PCl5 ⇌ PCl3 + Cl2 (endothermic)"></div>
+              <div class="lc-cs-option" data-value="3" data-reaction="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" role="option" aria-selected="false" aria-label="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" title="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)"></div>
+              <div class="lc-cs-option" data-value="4" data-reaction="H2 + I2 ⇌ 2HI (Δn = 0)" role="option" aria-selected="false" aria-label="H2 + I2 ⇌ 2HI (Δn = 0)" title="H2 + I2 ⇌ 2HI (Δn = 0)"></div>
+            </div>
+          </div>
+
+          <div class="lc-step-hint">
+            <span class="lc-step-badge">Step 2</span>
+            <span class="lc-step-text">Apply a disturbance, then use the same button again to clear it</span>
+          </div>
+
+          <div class="lc-stress-section">
+            <div class="lc-stress-lbl">Concentration</div>
+            <div class="lc-stress-row" id="lcConcRow"></div>
+          </div>
+          <div class="lc-stress-section">
+            <div class="lc-stress-lbl">Pressure and Temperature</div>
+            <div class="lc-stress-row" id="lcPtRow"></div>
+          </div>
+          <div class="lc-stress-section">
+            <div class="lc-stress-lbl">Catalyst</div>
+            <div class="lc-stress-row" id="lcCatRow"></div>
+          </div>
+
+          <svg id="lcSeesaw" viewBox="0 0 560 300" width="100%" aria-label="Le Châtelier see-saw showing equilibrium shifts">
+            <defs>
+              <marker id="lc-a-fwd" markerWidth="9" markerHeight="8" refX="7" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#639922"></path>
+              </marker>
+              <marker id="lc-a-rev" markerWidth="9" markerHeight="8" refX="2" refY="3" orient="auto">
+                <path d="M9,0 L9,6 L0,3 z" fill="#D85A30"></path>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="560" height="300" rx="12" fill="#f8fbfd" stroke="#d8e3ea" stroke-width="1.5"></rect>
+            <text id="lcRxnLine" x="280" y="26" text-anchor="middle" font-size="14" font-family="var(--font-sans,sans-serif)" font-weight="500" fill="var(--color-text-primary)"></text>
+            <g id="lcLegendG" transform="translate(280,50)"></g>
+            <line id="lcShiftLine" x1="280" y1="100" x2="280" y2="100" stroke="#639922" stroke-width="2.5" stroke-linecap="round" marker-end="url(#lc-a-fwd)" opacity="0"></line>
+            <text id="lcShiftTxt" x="280" y="88" text-anchor="middle" font-size="13" font-family="var(--font-sans,sans-serif)" font-weight="500" fill="#639922" opacity="0"></text>
+            <text id="lcEqLbl" x="280" y="88" text-anchor="middle" font-size="12" font-family="var(--font-sans,sans-serif)" fill="var(--color-text-secondary)">balanced — at equilibrium</text>
+            <polygon points="280,248 263,272 297,272" fill="#c7d2da"></polygon>
+            <rect x="252" y="272" width="56" height="8" rx="3" fill="#c7d2da"></rect>
+            <g id="lcBeamGroup">
+              <rect x="58" y="242" width="444" height="11" rx="5" fill="#4b9af0"></rect>
+              <rect x="60" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
+              <rect x="388" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
+              <text x="116" y="160" text-anchor="middle" font-size="11" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="600">reactants</text>
+              <text x="444" y="160" text-anchor="middle" font-size="11" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="600">products</text>
+              <g id="lcLeftBalls"></g>
+              <g id="lcRightBalls"></g>
+            </g>
+            <line x1="38" y1="280" x2="522" y2="280" stroke="#d7dee5" stroke-width="1.5"></line>
+          </svg>
+
+          <div class="lc-readout">
+            <div class="lc-ro"><div class="lc-ro-lbl">after disturbance</div><div class="lc-ro-val" id="lcRoQk">Q = K</div></div>
+            <div class="lc-ro"><div class="lc-ro-lbl">net shift</div><div class="lc-ro-val" id="lcRoShift">none</div></div>
+            <div class="lc-ro"><div class="lc-ro-lbl">K changes?</div><div class="lc-ro-val" id="lcRoKchg">no</div></div>
+          </div>
+          <div class="lc-explain" id="lcExplainBox">Choose a reaction, then tap a disturbance button.</div>
+          <button class="lc-reset-btn" id="lcResetBtn" type="button">reset to equilibrium</button>
+        </div>
+      </div>
       <p><strong>Concentration changes</strong></p>
       <table class="concept-table mobile-stack-table">
         <thead>
@@ -1687,6 +1772,460 @@ document.addEventListener('DOMContentLoaded', function () {
   renderTempCard();
 });
 
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.querySelector('.page-14-learn-chemistry-equilibrium .lc-ss');
+  if (!root) return;
+
+  const COLORS = {
+    N2: { fill: '#85B7EB', stroke: '#185FA5' },
+    H2: { fill: '#F7C1C1', stroke: '#A32D2D' },
+    NH3: { fill: '#FAC775', stroke: '#633806' },
+    SO2: { fill: '#F09595', stroke: '#791F1F' },
+    O2: { fill: '#9FE1CB', stroke: '#085041' },
+    SO3: { fill: '#AFA9EC', stroke: '#3C3489' },
+    PCl5: { fill: '#FAC775', stroke: '#633806' },
+    PCl3: { fill: '#F5C4B3', stroke: '#712B13' },
+    Cl2: { fill: '#C0DD97', stroke: '#27500A' },
+    NO: { fill: '#F4C0D1', stroke: '#72243E' },
+    I2: { fill: '#CECBF6', stroke: '#26215C' },
+    HI: { fill: '#9FE1CB', stroke: '#04342C' }
+  };
+
+  const REACTIONS = [
+    {
+      eq: 'N2 + 3H2 ⇌ 2NH3 + Energy',
+      label: 'N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)',
+      reactants: [{ s: 'N2', n: 1 }, { s: 'H2', n: 3 }],
+      products: [{ s: 'NH3', n: 2 }],
+      reactMol: 4,
+      prodMol: 2,
+      exo: true
+    },
+    {
+      eq: '2SO2 + O2 ⇌ 2SO3 + Energy',
+      label: '2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)',
+      reactants: [{ s: 'SO2', n: 2 }, { s: 'O2', n: 1 }],
+      products: [{ s: 'SO3', n: 2 }],
+      reactMol: 3,
+      prodMol: 2,
+      exo: true
+    },
+    {
+      eq: 'PCl5 + Energy ⇌ PCl3 + Cl2',
+      label: 'PCl5 ⇌ PCl3 + Cl2 (endothermic)',
+      reactants: [{ s: 'PCl5', n: 1 }],
+      products: [{ s: 'PCl3', n: 1 }, { s: 'Cl2', n: 1 }],
+      reactMol: 1,
+      prodMol: 2,
+      exo: false
+    },
+    {
+      eq: 'N2 + O2 + Energy ⇌ 2NO',
+      label: 'N2 + O2 ⇌ 2NO (endothermic, Δn = 0)',
+      reactants: [{ s: 'N2', n: 1 }, { s: 'O2', n: 1 }],
+      products: [{ s: 'NO', n: 2 }],
+      reactMol: 2,
+      prodMol: 2,
+      exo: false
+    },
+    {
+      eq: 'H2 + I2 ⇌ 2HI',
+      label: 'H2 + I2 ⇌ 2HI (Δn = 0)',
+      reactants: [{ s: 'H2', n: 1 }, { s: 'I2', n: 1 }],
+      products: [{ s: 'HI', n: 2 }],
+      reactMol: 2,
+      prodMol: 2,
+      exo: false
+    }
+  ];
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const OPPOSITE = {
+    'add-r': 'rem-r',
+    'rem-r': 'add-r',
+    'add-p': 'rem-p',
+    'rem-p': 'add-p',
+    'P-up': 'P-dn',
+    'P-dn': 'P-up',
+    'T-up': 'T-dn',
+    'T-dn': 'T-up',
+    cat: 'cat'
+  };
+
+  function byId(id) {
+    return document.getElementById(id);
+  }
+
+  function formatFormulaHtml(formula) {
+    return formula.replace(/([A-Za-z\)])(\d+)/g, '$1<span class="chem-sub">$2</span>');
+  }
+
+  function renderReactionHtml(text) {
+    return text
+      .split(/(\s+\+\s+|\s+⇌\s+)/)
+      .map(function (part) {
+        if (/^\s+\+\s+$/.test(part) || /^\s+⇌\s+$/.test(part)) return part;
+        return part.replace(/([A-Za-z\)])(\d+)/g, '$1<span class="chem-sub">$2</span>');
+      })
+      .join('');
+  }
+
+  function setSvgTextWithChemistry(el, text) {
+    el.textContent = '';
+    const parts = text.split(/([A-Za-z][A-Za-z0-9()]*)/);
+    parts.forEach(function (part) {
+      if (!part) return;
+      if (!/^[A-Za-z][A-Za-z0-9()]*$/.test(part)) {
+        el.appendChild(document.createTextNode(part));
+        return;
+      }
+      const fragments = part.match(/[A-Za-z()]+|\d+/g) || [part];
+      fragments.forEach(function (fragment) {
+        const span = document.createElementNS(NS, 'tspan');
+        span.textContent = fragment;
+        if (/^\d+$/.test(fragment)) {
+          span.setAttribute('baseline-shift', 'sub');
+          span.setAttribute('font-size', '72%');
+        }
+        el.appendChild(span);
+      });
+    });
+  }
+
+  function getBase(type) {
+    if (type.startsWith('add-r')) return 'add-r';
+    if (type.startsWith('rem-r')) return 'rem-r';
+    if (type.startsWith('add-p')) return 'add-p';
+    if (type.startsWith('rem-p')) return 'rem-p';
+    return type;
+  }
+
+  function shiftInfo(base, rxn) {
+    const { reactMol, prodMol, exo } = rxn;
+    const dn = prodMol - reactMol;
+    switch (base) {
+      case 'add-r':
+        return { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'no', explain: 'Adding a reactant makes Q < K. The system shifts forward (→) to consume it and restore Q = K.' };
+      case 'rem-r':
+        return { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'no', explain: 'Removing a reactant makes Q > K. The system shifts reverse (←) to replace it and restore Q = K.' };
+      case 'add-p':
+        return { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'no', explain: 'Adding a product makes Q > K. The system shifts reverse (←) to consume it and restore Q = K.' };
+      case 'rem-p':
+        return { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'no', explain: 'Removing a product makes Q < K. The system shifts forward (→) to replace it.' };
+      case 'P-up':
+        if (dn === 0) return { tilt: 0, qk: 'Q = K', shift: 'no shift', kChg: 'no', explain: 'Both sides have the same total moles of gas, so a pressure change does not favor either side.' };
+        return dn < 0
+          ? { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'no', explain: `Reactants: ${reactMol} mol gas, Products: ${prodMol} mol gas. Higher pressure favors fewer moles, so the system shifts forward (→).` }
+          : { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'no', explain: `Reactants: ${reactMol} mol gas, Products: ${prodMol} mol gas. Higher pressure favors fewer moles, so the system shifts reverse (←).` };
+      case 'P-dn':
+        if (dn === 0) return { tilt: 0, qk: 'Q = K', shift: 'no shift', kChg: 'no', explain: 'Both sides have the same total moles of gas, so a pressure change does not favor either side.' };
+        return dn > 0
+          ? { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'no', explain: `Lower pressure favors more moles. Products have ${prodMol} mol gas versus ${reactMol} on the reactant side, so the system shifts forward (→).` }
+          : { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'no', explain: `Lower pressure favors more moles. Reactants have ${reactMol} mol gas versus ${prodMol} on the product side, so the system shifts reverse (←).` };
+      case 'T-up':
+        return exo
+          ? { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'yes — K decreases', explain: 'For an exothermic forward reaction, heat acts like a product. Adding heat drives the system in the reverse direction and decreases K.' }
+          : { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'yes — K increases', explain: 'For an endothermic forward reaction, heat acts like a reactant. Adding heat drives the system forward and increases K.' };
+      case 'T-dn':
+        return exo
+          ? { tilt: -1, qk: 'Q < K', shift: 'forward →', kChg: 'yes — K increases', explain: 'For an exothermic forward reaction, removing heat removes a product, so the system shifts forward and K increases.' }
+          : { tilt: 1, qk: 'Q > K', shift: 'reverse ←', kChg: 'yes — K decreases', explain: 'For an endothermic forward reaction, removing heat removes a reactant, so the system shifts reverse and K decreases.' };
+      case 'cat':
+        return { tilt: 0, qk: 'Q = K', shift: 'no shift', kChg: 'no', explain: 'A catalyst speeds the forward and reverse reactions equally. It helps the system reach equilibrium faster, but it does not change the equilibrium position or K.' };
+      default:
+        return { tilt: 0, qk: 'Q = K', shift: 'none', kChg: 'no', explain: '' };
+    }
+  }
+
+  function makeBalls(species, side) {
+    const group = byId(side === 'left' ? 'lcLeftBalls' : 'lcRightBalls');
+    group.innerHTML = '';
+    const all = [];
+    species.forEach(function (sp) {
+      for (let i = 0; i < sp.n; i += 1) all.push(sp.s);
+    });
+    const count = all.length;
+    const cols = Math.min(count, 4);
+    const rows = Math.ceil(count / cols);
+    const cx0 = side === 'left' ? 116 : 444;
+    const spacing = 32;
+    const sx = cx0 - ((cols - 1) * spacing) / 2;
+    const sy = 215 - (rows - 1) * spacing;
+
+    all.forEach(function (sym, i) {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const cx = sx + col * spacing;
+      const cy = sy + row * spacing;
+      const color = COLORS[sym] || { fill: '#D3D1C7', stroke: '#5F5E5A' };
+
+      const circle = document.createElementNS(NS, 'circle');
+      circle.setAttribute('cx', cx);
+      circle.setAttribute('cy', cy);
+      circle.setAttribute('r', '13');
+      circle.setAttribute('fill', color.fill);
+      circle.setAttribute('stroke', color.stroke);
+      circle.setAttribute('stroke-width', '1.5');
+      group.appendChild(circle);
+
+      const text = document.createElementNS(NS, 'text');
+      text.setAttribute('x', cx);
+      text.setAttribute('y', cy + 4);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('font-size', '8');
+      text.setAttribute('font-family', 'var(--font-sans,sans-serif)');
+      text.setAttribute('fill', color.stroke);
+      text.setAttribute('font-weight', '500');
+      setSvgTextWithChemistry(text, sym);
+      group.appendChild(text);
+    });
+  }
+
+  function buildLegend(rxn) {
+    const legend = byId('lcLegendG');
+    legend.innerHTML = '';
+    const seen = new Set();
+    const items = [];
+    rxn.reactants.concat(rxn.products).forEach(function (sp) {
+      if (!seen.has(sp.s)) {
+        seen.add(sp.s);
+        items.push(sp.s);
+      }
+    });
+    const itemWidth = 72;
+    const total = items.length * itemWidth;
+    const startX = -total / 2 + 10;
+
+    items.forEach(function (sym, i) {
+      const color = COLORS[sym] || { fill: '#D3D1C7', stroke: '#5F5E5A' };
+      const x = startX + i * itemWidth;
+
+      const circle = document.createElementNS(NS, 'circle');
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', '0');
+      circle.setAttribute('r', '7');
+      circle.setAttribute('fill', color.fill);
+      circle.setAttribute('stroke', color.stroke);
+      circle.setAttribute('stroke-width', '1.5');
+      legend.appendChild(circle);
+
+      const text = document.createElementNS(NS, 'text');
+      text.setAttribute('x', x + 12);
+      text.setAttribute('y', '4');
+      text.setAttribute('font-size', '11');
+      text.setAttribute('font-family', 'var(--font-sans,sans-serif)');
+      text.setAttribute('fill', 'var(--color-text-secondary)');
+      setSvgTextWithChemistry(text, sym);
+      legend.appendChild(text);
+    });
+  }
+
+  function applyTilt(tilt) {
+    const beam = byId('lcBeamGroup');
+    const line = byId('lcShiftLine');
+    const text = byId('lcShiftTxt');
+    const label = byId('lcEqLbl');
+    const forward = '#639922';
+    const reverse = '#D85A30';
+
+    if (tilt === -1) {
+      beam.style.transform = 'rotate(-11deg)';
+      line.setAttribute('x1', '195');
+      line.setAttribute('y1', '100');
+      line.setAttribute('x2', '268');
+      line.setAttribute('y2', '100');
+      line.setAttribute('stroke', forward);
+      line.setAttribute('marker-end', 'url(#lc-a-fwd)');
+      line.setAttribute('opacity', '1');
+      text.setAttribute('x', '230');
+      text.setAttribute('y', '88');
+      text.textContent = 'forward →';
+      text.setAttribute('fill', forward);
+      text.setAttribute('opacity', '1');
+      label.setAttribute('opacity', '0');
+    } else if (tilt === 1) {
+      beam.style.transform = 'rotate(11deg)';
+      line.setAttribute('x1', '365');
+      line.setAttribute('y1', '100');
+      line.setAttribute('x2', '292');
+      line.setAttribute('y2', '100');
+      line.setAttribute('stroke', reverse);
+      line.setAttribute('marker-end', 'url(#lc-a-rev)');
+      line.setAttribute('opacity', '1');
+      text.setAttribute('x', '330');
+      text.setAttribute('y', '88');
+      text.textContent = '← reverse';
+      text.setAttribute('fill', reverse);
+      text.setAttribute('opacity', '1');
+      label.setAttribute('opacity', '0');
+    } else {
+      beam.style.transform = 'rotate(0deg)';
+      line.setAttribute('opacity', '0');
+      text.setAttribute('opacity', '0');
+      label.textContent = 'balanced — at equilibrium';
+      label.setAttribute('fill', 'var(--color-text-secondary)');
+      label.setAttribute('opacity', '1');
+    }
+  }
+
+  function setReadout(info) {
+    const forward = '#639922';
+    const reverse = '#D85A30';
+    const even = '#1D9E75';
+    byId('lcRoQk').textContent = info.qk;
+    const shift = byId('lcRoShift');
+    shift.textContent = info.shift;
+    shift.style.color = info.tilt === -1 ? forward : info.tilt === 1 ? reverse : even;
+    const kChange = byId('lcRoKchg');
+    kChange.textContent = info.kChg;
+    kChange.style.color = info.kChg.indexOf('yes') === 0 ? reverse : even;
+    byId('lcExplainBox').textContent = info.explain;
+  }
+
+  function resetReadout() {
+    byId('lcRoQk').textContent = 'Q = K';
+    const shift = byId('lcRoShift');
+    shift.textContent = 'none';
+    shift.style.color = 'var(--color-text-primary)';
+    const kChange = byId('lcRoKchg');
+    kChange.textContent = 'no';
+    kChange.style.color = 'var(--color-text-primary)';
+    byId('lcExplainBox').textContent = 'Choose a reaction, then tap a disturbance button.';
+  }
+
+  let activeBtn = null;
+
+  function goEquilibrium() {
+    if (activeBtn) activeBtn.classList.remove('active');
+    activeBtn = null;
+    applyTilt(0);
+    resetReadout();
+  }
+
+  function makeBtn(label, type, cls, container, rxn) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.innerHTML = label;
+    btn.className = 'lc-sbtn ' + cls;
+    const base = getBase(type);
+    btn.dataset.base = base;
+    btn.addEventListener('click', function () {
+      if (activeBtn === btn) {
+        goEquilibrium();
+        return;
+      }
+      if (activeBtn && OPPOSITE[getBase(activeBtn.dataset.base)] === base) {
+        goEquilibrium();
+        return;
+      }
+      if (activeBtn) activeBtn.classList.remove('active');
+      activeBtn = btn;
+      btn.classList.add('active');
+      const info = shiftInfo(base, rxn);
+      applyTilt(info.tilt);
+      setReadout(info);
+    });
+    container.appendChild(btn);
+  }
+
+  function buildButtons(index) {
+    const rxn = REACTIONS[index];
+    activeBtn = null;
+    const conc = byId('lcConcRow');
+    conc.innerHTML = '';
+    rxn.reactants.forEach(function (sp) {
+      makeBtn('+ ' + formatFormulaHtml(sp.s), 'add-r:' + sp.s, 'lc-s-addr', conc, rxn);
+      makeBtn('− ' + formatFormulaHtml(sp.s), 'rem-r:' + sp.s, 'lc-s-remr', conc, rxn);
+    });
+    rxn.products.forEach(function (sp) {
+      makeBtn('+ ' + formatFormulaHtml(sp.s), 'add-p:' + sp.s, 'lc-s-addp', conc, rxn);
+      makeBtn('− ' + formatFormulaHtml(sp.s), 'rem-p:' + sp.s, 'lc-s-remp', conc, rxn);
+    });
+
+    const pt = byId('lcPtRow');
+    pt.innerHTML = '';
+    [
+      ['↑ pressure', 'P-up', 'lc-s-pup'],
+      ['↓ pressure', 'P-dn', 'lc-s-pdn'],
+      ['↑ temperature', 'T-up', 'lc-s-tup'],
+      ['↓ temperature', 'T-dn', 'lc-s-tdn']
+    ].forEach(function (item) {
+      makeBtn(item[0], item[1], item[2], pt, rxn);
+    });
+
+    const cat = byId('lcCatRow');
+    cat.innerHTML = '';
+    makeBtn('add catalyst', 'cat', 'lc-s-cat', cat, rxn);
+  }
+
+  function initReaction(index) {
+    const rxn = REACTIONS[index];
+    setSvgTextWithChemistry(byId('lcRxnLine'), rxn.eq);
+    buildLegend(rxn);
+    makeBalls(rxn.reactants, 'left');
+    makeBalls(rxn.products, 'right');
+    buildButtons(index);
+    applyTilt(0);
+    resetReadout();
+  }
+
+  let selectedIndex = 0;
+  const trigger = byId('lcCsTrigger');
+  const menu = byId('lcCsMenu');
+  const label = byId('lcCsLabel');
+  const chevron = byId('lcCsChevron');
+  const options = menu.querySelectorAll('.lc-cs-option');
+
+  options.forEach(function (opt) {
+    opt.innerHTML = renderReactionHtml(opt.dataset.reaction);
+  });
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    chevron.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  trigger.addEventListener('click', function (event) {
+    event.stopPropagation();
+    menu.classList.toggle('open');
+    chevron.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
+  });
+
+  trigger.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      trigger.click();
+    }
+  });
+
+  options.forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      selectedIndex = parseInt(opt.dataset.value, 10);
+      label.innerHTML = renderReactionHtml(REACTIONS[selectedIndex].label);
+      options.forEach(function (option) {
+        option.classList.remove('selected');
+        option.setAttribute('aria-selected', 'false');
+      });
+      opt.classList.add('selected');
+      opt.setAttribute('aria-selected', 'true');
+      closeMenu();
+      initReaction(selectedIndex);
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!root.contains(event.target)) closeMenu();
+  });
+
+  byId('lcResetBtn').addEventListener('click', goEquilibrium);
+
+  label.innerHTML = renderReactionHtml(REACTIONS[0].label);
+  initReaction(0);
+});
 </script>
 </body>
 </html>

@@ -13,10 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked Chemistry Nomenclature: Naming Compounds preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chemistry Nomenclature: Naming Compounds | ChemUnlocked">
 <meta name="twitter:description" content="Name ionic compounds (including transition metals and polyatomic ions), molecular compounds, and acids — and write correct formulas from chemical names.">
 <meta name="twitter:image" content="https://chemunlocked.com/images/chem-unlocked-logo.png">
+<meta name="twitter:image:alt" content="ChemUnlocked Chemistry Nomenclature: Naming Compounds preview">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <link rel="stylesheet" href="chem.css?v=20260524a">
@@ -111,71 +116,103 @@
       </div>
       <p class="mt-075"><strong>Note on (aq):</strong> The symbol (aq) just means a compound is dissolved in water. Both acids <em>and</em> ionic compounds appear with (aq) — for example, NaCl(aq) and Ca(NO<span class="chem-sub">3</span>)<span class="chem-sub">2</span>(aq) are ionic, not acids. Use <em>H written first in the formula</em> — not (aq) — to spot an acid.</p>
       <div class="chart-scroll-wrap unit06-subchart-scroll">
-      <svg viewBox="0 0 420 316" class="sub-chart" role="img"
-           aria-label="Decision flowchart: Does the formula start with H (nonmetals only)? → acid. Is a metal or NH4+ present? → ionic. Otherwise → molecular. Trap: (aq) does not mean acid."
+      <svg viewBox="0 0 480 400" class="sub-chart" role="img"
+           aria-label="Decision flowchart: Does the formula start with H (nonmetals only)? Yes means acid. If not, is a metal or NH4+ present? Yes means ionic. Otherwise the compound is molecular."
            text-rendering="optimizeLegibility" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="sh-sort" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.11)"/>
+          <style>
+            .card-base { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5px; rx: 12px; }
+            .header-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.8px; }
+            .node-amber { fill: #fffbeb; stroke: #f59e0b; stroke-width: 1.5px; rx: 8px; }
+            .node-red { fill: #fef2f2; stroke: #ef4444; stroke-width: 1.5px; rx: 8px; }
+            .text-title-red { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #dc2626; text-anchor: middle; }
+            .node-blue { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5px; rx: 8px; }
+            .text-title-blue { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #1d4ed8; text-anchor: middle; }
+            .node-green { fill: #f0fdf4; stroke: #22c55e; stroke-width: 1.5px; rx: 8px; }
+            .text-title-green { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; fill: #15803d; text-anchor: middle; }
+            .card-text { font-family: system-ui, -apple-system, sans-serif; font-size: 9.5px; fill: #1c1917; text-anchor: middle; }
+            .rule-text { font-family: system-ui, -apple-system, sans-serif; font-size: 8px; fill: #475569; text-anchor: middle; }
+            .ref-section { font-family: system-ui, -apple-system, sans-serif; font-size: 8px; fill: #64748b; text-anchor: middle; }
+            .arrow-line { fill: none; stroke: #94a3b8; stroke-width: 1.5px; stroke-linecap: round; }
+            .pill-text { font-family: system-ui, -apple-system, sans-serif; font-size: 6.5px; font-weight: 700; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+          </style>
+          <filter id="u06-node-shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.11)" />
           </filter>
-          <marker id="arr-sort" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/>
+          <marker id="u06-arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8" />
           </marker>
         </defs>
-        <rect width="420" height="316" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-        <rect width="420" height="32" rx="12" fill="#0f172a"/>
-        <rect y="20" width="420" height="12" fill="#0f172a"/>
-        <text x="210" y="22" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="0.8">CLASSIFY THE COMPOUND</text>
-        <g transform="translate(10,42)" filter="url(#sh-sort)">
-          <rect width="222" height="66" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-          <text x="111" y="17" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#92400e" letter-spacing="0.5">QUESTION 1</text>
-          <text x="111" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1c1917">Does the formula start with H</text>
-          <text x="111" y="54" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1c1917">(only nonmetals follow)?</text>
+
+        <rect x="20" y="20" width="440" height="360" rx="12" class="card-base" />
+        <text x="240" y="42" class="header-title">CLASSIFY THE COMPOUND</text>
+
+        <g id="u06-decision-tree">
+          <g transform="translate(34, 68)" filter="url(#u06-node-shadow)">
+            <rect width="200" height="60" class="node-amber" />
+            <text x="100" y="27" class="card-text">
+              Does the formula start with H
+              <tspan x="100" dy="1.1em">(only nonmetals follow)?</tspan>
+            </text>
+          </g>
+
+          <g transform="translate(300, 68)" filter="url(#u06-node-shadow)">
+            <rect width="146" height="60" class="node-red" />
+            <text x="73" y="20" class="text-title-red">ACID</text>
+            <text x="73" y="36" class="rule-text">Acid naming rules</text>
+            <text x="73" y="52" class="ref-section">→ Sections 6.6 – 6.7</text>
+          </g>
+
+          <g transform="translate(34, 162)" filter="url(#u06-node-shadow)">
+            <rect width="200" height="60" class="node-amber" />
+            <text x="100" y="27" class="card-text">
+              Is a metal or NH<tspan baseline-shift="sub" font-size="10px">4</tspan><tspan baseline-shift="super" font-size="10px">+</tspan> present
+              <tspan x="100" dy="1.1em">in the formula?</tspan>
+            </text>
+          </g>
+
+          <g transform="translate(300, 162)" filter="url(#u06-node-shadow)">
+            <rect width="146" height="60" class="node-blue" />
+            <text x="73" y="20" class="text-title-blue">IONIC</text>
+            <text x="73" y="36" class="rule-text">Ionic naming rules</text>
+            <text x="73" y="52" class="ref-section">→ Sections 6.2 – 6.4</text>
+          </g>
+
+          <g transform="translate(34, 258)" filter="url(#u06-node-shadow)">
+            <rect width="412" height="70" rx="8" class="node-green" />
+            <text x="206" y="20" class="text-title-green">MOLECULAR</text>
+            <text x="206" y="35" class="rule-text">
+              Only nonmetals — H is not first
+              <tspan x="206" dy="1.1em">Use prefix naming rules</tspan>
+            </text>
+            <text x="206" y="58" class="ref-section">→ Section 6.5</text>
+          </g>
         </g>
-        <g transform="translate(276,42)" filter="url(#sh-sort)">
-          <rect width="134" height="66" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="67" y="22" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#dc2626">ACID</text>
-          <text x="67" y="40" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#7f1d1d">Acid naming rules</text>
-          <text x="67" y="56" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#991b1b">→ Sections 6.6 – 6.7</text>
+
+        <g id="u06-connectors">
+          <line x1="234" y1="98" x2="300" y2="98" class="arrow-line" marker-end="url(#u06-arrowhead)" />
+          <line x1="134" y1="128" x2="134" y2="162" class="arrow-line" marker-end="url(#u06-arrowhead)" />
+          <line x1="234" y1="192" x2="300" y2="192" class="arrow-line" marker-end="url(#u06-arrowhead)" />
+          <line x1="134" y1="222" x2="134" y2="258" class="arrow-line" marker-end="url(#u06-arrowhead)" />
         </g>
-        <g transform="translate(10,130)" filter="url(#sh-sort)">
-          <rect width="222" height="66" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-          <text x="111" y="17" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#92400e" letter-spacing="0.5">QUESTION 2</text>
-          <text x="111" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1c1917">Is a metal or NH&#x2084;&#x207a; present</text>
-          <text x="111" y="54" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1c1917">in the formula?</text>
-        </g>
-        <g transform="translate(276,130)" filter="url(#sh-sort)">
-          <rect width="134" height="66" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
-          <text x="67" y="22" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8">IONIC</text>
-          <text x="67" y="40" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#1e3a8a">Ionic naming rules</text>
-          <text x="67" y="56" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#1e3a8a">→ Sections 6.2 – 6.4</text>
-        </g>
-        <g transform="translate(10,220)" filter="url(#sh-sort)">
-          <rect width="400" height="76" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
-          <text x="200" y="24" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#15803d">MOLECULAR</text>
-          <text x="200" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#14532d">Only nonmetals — H is not first</text>
-          <text x="200" y="58" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#14532d">Use prefix naming rules</text>
-          <text x="200" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#166534">→ Section 6.5</text>
-        </g>
-        <line x1="232" y1="75" x2="274" y2="75" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-sort)"/>
-        <line x1="121" y1="108" x2="121" y2="128" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-sort)"/>
-        <line x1="232" y1="163" x2="274" y2="163" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-sort)"/>
-        <line x1="121" y1="196" x2="121" y2="218" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-sort)"/>
-        <g transform="translate(235,64)">
-          <rect width="30" height="17" rx="8.5" fill="#16a34a"/>
-          <text x="15" y="12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="white">YES</text>
-        </g>
-        <g transform="translate(108,109)">
-          <rect width="26" height="17" rx="8.5" fill="#dc2626"/>
-          <text x="13" y="12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="white">NO</text>
-        </g>
-        <g transform="translate(235,152)">
-          <rect width="30" height="17" rx="8.5" fill="#16a34a"/>
-          <text x="15" y="12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="white">YES</text>
-        </g>
-        <g transform="translate(108,197)">
-          <rect width="26" height="17" rx="8.5" fill="#dc2626"/>
-          <text x="13" y="12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="white">NO</text>
+
+        <g id="u06-pills">
+          <g transform="translate(256, 79)">
+            <rect width="27" height="15" rx="7.5" fill="#16a34a" />
+            <text x="13.5" y="7.5" class="pill-text">YES</text>
+          </g>
+          <g transform="translate(108, 132)">
+            <rect width="23" height="15" rx="7.5" fill="#dc2626" />
+            <text x="11.5" y="7.5" class="pill-text">NO</text>
+          </g>
+          <g transform="translate(256, 173)">
+            <rect width="27" height="15" rx="7.5" fill="#16a34a" />
+            <text x="13.5" y="7.5" class="pill-text">YES</text>
+          </g>
+          <g transform="translate(108, 228)">
+            <rect width="23" height="15" rx="7.5" fill="#dc2626" />
+            <text x="11.5" y="7.5" class="pill-text">NO</text>
+          </g>
         </g>
       </svg>
       </div>
@@ -233,6 +270,148 @@
       </div>
     </div>
 
+    <figure class="lesson-figure unit06-balance-figure">
+      <div class="unit06-balance-grid">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto" role="img" aria-labelledby="u06-bal-title u06-bal-desc">
+          <title id="u06-bal-title">Formula with No Parentheses (Aluminum Fluoride)</title>
+          <desc id="u06-bal-desc">A visual guide for aluminum fluoride, showing charge balance and explaining why no parentheses are required for single atom ions.</desc>
+          <defs>
+            <style>
+              .u06-bal-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; rx: 16px; }
+              .u06-bal-header-title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+              .u06-bal-header-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+              .u06-bal-pill-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #ffffff; text-anchor: middle; letter-spacing: 1px; }
+              .u06-bal-pill-text-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; text-anchor: middle; letter-spacing: 1px; }
+              .u06-bal-card-text { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #334155; text-anchor: middle; }
+              .u06-bal-formula-main { font-family: system-ui, -apple-system, sans-serif; font-size: 32px; font-weight: 800; text-anchor: middle; }
+              .u06-bal-formula-num { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; }
+              .u06-bal-bold-metal { fill: #1d4ed8; }
+              .u06-bal-bold-nonmetal { fill: #dc2626; }
+              .u06-bal-pill-amber { fill: #f59e0b; rx: 12px; }
+              .u06-bal-inner-card { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5px; rx: 10px; }
+              .u06-bal-divider { stroke: #e2e8f0; stroke-width: 1.5px; }
+              .u06-bal-arrow-line { fill: none; stroke: #94a3b8; stroke-width: 2px; stroke-linecap: round; }
+              .u06-bal-ion-charge { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; text-anchor: middle; }
+              .u06-bal-exp-box { fill: #f0fdf4; stroke: #4ade80; stroke-width: 2px; rx: 8px; }
+              .u06-bal-exp-title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #166534; text-anchor: middle; }
+              .u06-bal-exp-text { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; fill: #14532d; text-anchor: middle; }
+            </style>
+            <filter id="u06-shadow-bal" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.08)" />
+            </filter>
+            <marker id="u06-arr-bal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8" />
+            </marker>
+          </defs>
+          <rect x="10" y="10" width="780" height="460" rx="16" class="u06-bal-card-base" />
+          <rect x="265" y="30" width="270" height="26" class="u06-bal-pill-amber" />
+          <text x="400" y="48" class="u06-bal-pill-text">FORMULA FROM NAME</text>
+          <text x="400" y="85" class="u06-bal-header-title">WHEN NO PARENTHESES ARE NEEDED</text>
+          <text x="400" y="108" class="u06-bal-header-subtitle">Aluminum Fluoride consists of a single-element nonmetal.</text>
+          <g transform="translate(400, 160)">
+            <rect x="-90" y="-35" width="180" height="70" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#u06-shadow-bal)" />
+            <text x="0" y="12" class="u06-bal-formula-main">
+              <tspan class="u06-bal-bold-metal">Al</tspan><tspan class="u06-bal-bold-nonmetal">F</tspan><tspan class="u06-bal-formula-num u06-bal-bold-nonmetal" baseline-shift="sub">3</tspan>
+            </text>
+          </g>
+          <g transform="translate(115, 230)" filter="url(#u06-shadow-bal)">
+            <rect width="230" height="110" class="u06-bal-inner-card" />
+            <text x="115" y="30" class="u06-bal-bold-nonmetal u06-bal-ion-charge">3 × Fluoride (F<tspan baseline-shift="super" font-size="14px">-</tspan>)</text>
+            <line x1="20" y1="45" x2="210" y2="45" class="u06-bal-divider" />
+            <text x="115" y="70" class="u06-bal-card-text">Charge (-1) × 3 ions</text>
+            <text x="115" y="95" class="u06-bal-formula-num u06-bal-bold-nonmetal">-3 <tspan font-size="14px" font-weight="600" fill="#64748b">total</tspan></text>
+          </g>
+          <line x1="345" y1="285" x2="445" y2="285" class="u06-bal-arrow-line" marker-end="url(#u06-arr-bal)" />
+          <rect x="345" y="273" width="110" height="24" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+          <text x="400" y="290" class="u06-bal-pill-text-dark">MUST EQUAL</text>
+          <g transform="translate(455, 230)" filter="url(#u06-shadow-bal)">
+            <rect width="230" height="110" class="u06-bal-inner-card" />
+            <text x="115" y="30" class="u06-bal-bold-metal u06-bal-ion-charge">1 × Aluminum (Al<tspan baseline-shift="super" font-size="14px">3+</tspan>)</text>
+            <line x1="20" y1="45" x2="210" y2="45" class="u06-bal-divider" />
+            <text x="115" y="70" class="u06-bal-card-text">Charge (+3) × 1 ion</text>
+            <text x="115" y="95" class="u06-bal-formula-num u06-bal-bold-metal">+3 <tspan font-size="14px" font-weight="600" fill="#64748b">total</tspan></text>
+          </g>
+          <g transform="translate(400, 365)">
+            <rect x="-360" y="0" width="720" height="85" class="u06-bal-exp-box" />
+            <text x="0" y="25" class="u06-bal-exp-title">WHY NO PARENTHESES?</text>
+            <text x="0" y="48" class="u06-bal-exp-text">Fluoride is made of only a single element, so there is no group to wrap.</text>
+            <text x="0" y="71" class="u06-bal-exp-text">The subscript <tspan font-weight="800">3</tspan> applies directly and unambiguously to the fluorine atom.</text>
+          </g>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto" role="img" aria-labelledby="u06-rom-title u06-rom-desc">
+          <title id="u06-rom-title">Formula with Parentheses (Aluminum Sulfate)</title>
+          <desc id="u06-rom-desc">A visual guide for aluminum sulfate, breaking down the charge balance and explaining why parentheses wrap the polyatomic sulfate ion.</desc>
+          <defs>
+            <style>
+              .u06-rom-card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2px; rx: 16px; }
+              .u06-rom-header-title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #0f172a; text-anchor: middle; letter-spacing: 0.5px; }
+              .u06-rom-header-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+              .u06-rom-pill-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #ffffff; text-anchor: middle; letter-spacing: 1px; }
+              .u06-rom-pill-text-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #475569; text-anchor: middle; letter-spacing: 1px; }
+              .u06-rom-card-text { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; fill: #334155; text-anchor: middle; }
+              .u06-rom-rule-text { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+              .u06-rom-formula-main { font-family: system-ui, -apple-system, sans-serif; font-size: 32px; font-weight: 800; text-anchor: middle; }
+              .u06-rom-formula-num { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; }
+              .u06-rom-bold-metal { fill: #1d4ed8; }
+              .u06-rom-bold-nonmetal { fill: #dc2626; }
+              .u06-rom-highlight-paren { fill: #d97706; }
+              .u06-rom-pill-amber { fill: #f59e0b; rx: 12px; }
+              .u06-rom-inner-card { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5px; rx: 10px; }
+              .u06-rom-divider { stroke: #e2e8f0; stroke-width: 1.5px; }
+              .u06-rom-arrow-line { fill: none; stroke: #94a3b8; stroke-width: 2px; stroke-linecap: round; }
+              .u06-rom-ion-charge { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; text-anchor: middle; }
+              .u06-rom-exp-box { fill: #fffbeb; stroke: #fcd34d; stroke-width: 2px; rx: 8px; }
+              .u06-rom-exp-title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #92400e; text-anchor: middle; }
+              .u06-rom-exp-text { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; fill: #78350f; text-anchor: middle; }
+              .u06-rom-exp-wrong { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 800; fill: #dc2626; text-anchor: middle; }
+            </style>
+            <filter id="u06-shadow-rom" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.08)" />
+            </filter>
+            <marker id="u06-arr-rom" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8" />
+            </marker>
+          </defs>
+          <rect x="10" y="10" width="780" height="460" rx="16" class="u06-rom-card-base" />
+          <rect x="265" y="30" width="270" height="26" class="u06-rom-pill-amber" />
+          <text x="400" y="48" class="u06-rom-pill-text">FORMULA FROM NAME</text>
+          <text x="400" y="85" class="u06-rom-header-title">WHEN PARENTHESES ARE NEEDED</text>
+          <text x="400" y="108" class="u06-rom-header-subtitle">Aluminum Sulfate requires multiple polyatomic ions to balance.</text>
+          <g transform="translate(400, 160)">
+            <rect x="-110" y="-35" width="220" height="70" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#u06-shadow-rom)" />
+            <text x="0" y="12" class="u06-rom-formula-main">
+              <tspan class="u06-rom-bold-metal">Al</tspan><tspan class="u06-rom-formula-num u06-rom-bold-metal" baseline-shift="sub">2</tspan><tspan class="u06-rom-highlight-paren">(</tspan><tspan class="u06-rom-bold-nonmetal">SO</tspan><tspan class="u06-rom-formula-num u06-rom-bold-nonmetal" baseline-shift="sub">4</tspan><tspan class="u06-rom-highlight-paren">)</tspan><tspan class="u06-rom-formula-num u06-rom-highlight-paren" baseline-shift="sub">3</tspan>
+            </text>
+          </g>
+          <g transform="translate(115, 230)" filter="url(#u06-shadow-rom)">
+            <rect width="230" height="110" class="u06-rom-inner-card" />
+            <text x="115" y="30" class="u06-rom-bold-nonmetal u06-rom-ion-charge">3 × Sulfate (SO<tspan baseline-shift="sub" font-size="14px">4</tspan><tspan baseline-shift="super" font-size="14px">2-</tspan>)</text>
+            <line x1="20" y1="45" x2="210" y2="45" class="u06-rom-divider" />
+            <text x="115" y="70" class="u06-rom-card-text">Charge (-2) × 3 ions</text>
+            <text x="115" y="95" class="u06-rom-formula-num u06-rom-bold-nonmetal">-6 <tspan font-size="14px" font-weight="600" fill="#64748b">total</tspan></text>
+          </g>
+          <line x1="345" y1="285" x2="445" y2="285" class="u06-rom-arrow-line" marker-end="url(#u06-arr-rom)" />
+          <rect x="345" y="273" width="110" height="24" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+          <text x="400" y="290" class="u06-rom-pill-text-dark">MUST EQUAL</text>
+          <g transform="translate(455, 230)" filter="url(#u06-shadow-rom)">
+            <rect width="230" height="110" class="u06-rom-inner-card" />
+            <text x="115" y="30" class="u06-rom-bold-metal u06-rom-ion-charge">2 × Aluminum (Al<tspan baseline-shift="super" font-size="14px">3+</tspan>)</text>
+            <line x1="20" y1="45" x2="210" y2="45" class="u06-rom-divider" />
+            <text x="115" y="70" class="u06-rom-card-text">Charge (+3) × 2 ions</text>
+            <text x="115" y="95" class="u06-rom-formula-num u06-rom-bold-metal">+6 <tspan font-size="14px" font-weight="600" fill="#64748b">total</tspan></text>
+          </g>
+          <g transform="translate(400, 365)">
+            <rect x="-360" y="0" width="720" height="85" class="u06-rom-exp-box" />
+            <text x="0" y="25" class="u06-rom-exp-title">WHY DO WE NEED PARENTHESES?</text>
+            <text x="0" y="48" class="u06-rom-exp-text">We need 3 whole sulfate groups. Parentheses group the atoms together.</text>
+            <text x="0" y="71" class="u06-rom-exp-text">Without them, writing <tspan class="u06-rom-exp-wrong">Al2SO43</tspan> incorrectly looks like <tspan font-weight="800">43 oxygen atoms.</tspan></text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Use these as a formula-writing check: single-atom ions take direct subscripts, but repeated polyatomic ions must stay grouped in parentheses before the outside subscript is applied.</figcaption>
+    </figure>
+
     <!-- 6.3 Transition Metals — Roman Numerals -->
     <div class="card">
       <h2 class="card-title"><span class="num">6.3</span> Transition Metals: When You Need Roman Numerals</h2>
@@ -261,12 +440,12 @@
 
       <div class="scaffold-box">
         <div class="scaffold-label">💡 How to Find the Roman Numeral</div>
-        Use the total charge of the nonmetal to figure out the metal charge. In <span class="ion-group">FeCl<span class="chem-sub">2</span></span>: each Cl has a −1 charge. Two <span class="ion-group">Cl<span class="chem-charge">−</span></span> ions = −2 total. The iron must be +2 to balance. So we write iron(II).
+        Use the total charge of the nonmetal to figure out the metal charge. In <span class="ion-group">FeCl<span class="chem-sub">2</span></span>: each Cl has a -1 charge. Two <span class="ion-group">Cl<span class="chem-charge">-</span></span> ions = -2 total. The iron must be +2 to balance. So we write iron(II).
       </div>
 
       <div class="formula-box">
         <span class="label">Charge-balance snapshot</span>
-        <span class="ion-group">Fe<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span> → 3 oxide ions = 3 × (−2) = −6 total, so 2 iron ions must = +6 total, and each iron ion is +3 → <strong>iron(III) oxide</strong>
+        <span class="ion-group">Fe<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span> → 3 oxide ions = 3 × (-2) = -6 total, so 2 iron ions must = +6 total, and each iron ion is +3 → <strong>iron(III) oxide</strong>
       </div>
 
       <div class="key-fact">
@@ -293,29 +472,29 @@
         </thead>
         <tbody>
           <tr><td data-label="Ion"><span class="ion-group">NH<span class="chem-sub">4</span><span class="chem-charge">+</span></span></td><td data-label="Name">ammonium</td><td data-label="Charge">1+</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">OH<span class="chem-charge">−</span></span></td><td data-label="Name">hydroxide</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></td><td data-label="Name">nitrate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">−</span></span></td><td data-label="Name">nitrite</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span></td><td data-label="Name">sulfate</td><td data-label="Charge">2−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2−</span></span></td><td data-label="Name">sulfite</td><td data-label="Charge">2−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">CO<span class="chem-sub">3</span><span class="chem-charge">2−</span></span></td><td data-label="Name">carbonate</td><td data-label="Charge">2−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">HCO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></td><td data-label="Name">hydrogen carbonate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">PO<span class="chem-sub">4</span><span class="chem-charge">3−</span></span></td><td data-label="Name">phosphate</td><td data-label="Charge">3−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">4</span><span class="chem-charge">−</span></span></td><td data-label="Name">perchlorate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></td><td data-label="Name">chlorate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">2</span><span class="chem-charge">−</span></span></td><td data-label="Name">chlorite</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-charge">−</span></span></td><td data-label="Name">hypochlorite</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">MnO<span class="chem-sub">4</span><span class="chem-charge">−</span></span></td><td data-label="Name">permanganate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">CrO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span></td><td data-label="Name">chromate</td><td data-label="Charge">2−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">Cr<span class="chem-sub">2</span>O<span class="chem-sub">7</span><span class="chem-charge">2−</span></span></td><td data-label="Name">dichromate</td><td data-label="Charge">2−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">C<span class="chem-sub">2</span>H<span class="chem-sub">3</span>O<span class="chem-sub">2</span><span class="chem-charge">−</span></span></td><td data-label="Name">acetate</td><td data-label="Charge">1−</td></tr>
-          <tr><td data-label="Ion"><span class="ion-group">CN<span class="chem-charge">−</span></span></td><td data-label="Name">cyanide</td><td data-label="Charge">1−</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">OH<span class="chem-charge">-</span></span></td><td data-label="Name">hydroxide</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">-</span></span></td><td data-label="Name">nitrate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">-</span></span></td><td data-label="Name">nitrite</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span></td><td data-label="Name">sulfate</td><td data-label="Charge">2-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2-</span></span></td><td data-label="Name">sulfite</td><td data-label="Charge">2-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">CO<span class="chem-sub">3</span><span class="chem-charge">2-</span></span></td><td data-label="Name">carbonate</td><td data-label="Charge">2-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">HCO<span class="chem-sub">3</span><span class="chem-charge">-</span></span></td><td data-label="Name">hydrogen carbonate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">PO<span class="chem-sub">4</span><span class="chem-charge">3-</span></span></td><td data-label="Name">phosphate</td><td data-label="Charge">3-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">4</span><span class="chem-charge">-</span></span></td><td data-label="Name">perchlorate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">3</span><span class="chem-charge">-</span></span></td><td data-label="Name">chlorate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-sub">2</span><span class="chem-charge">-</span></span></td><td data-label="Name">chlorite</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">ClO<span class="chem-charge">-</span></span></td><td data-label="Name">hypochlorite</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">MnO<span class="chem-sub">4</span><span class="chem-charge">-</span></span></td><td data-label="Name">permanganate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">CrO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span></td><td data-label="Name">chromate</td><td data-label="Charge">2-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">Cr<span class="chem-sub">2</span>O<span class="chem-sub">7</span><span class="chem-charge">2-</span></span></td><td data-label="Name">dichromate</td><td data-label="Charge">2-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">C<span class="chem-sub">2</span>H<span class="chem-sub">3</span>O<span class="chem-sub">2</span><span class="chem-charge">-</span></span></td><td data-label="Name">acetate</td><td data-label="Charge">1-</td></tr>
+          <tr><td data-label="Ion"><span class="ion-group">CN<span class="chem-charge">-</span></span></td><td data-label="Name">cyanide</td><td data-label="Charge">1-</td></tr>
         </tbody>
       </table>
 
       <div class="scaffold-box">
         <div class="scaffold-label">💡 Pattern Tip — -ate vs. -ite</div>
-        Ions ending in <strong>-ate</strong> have <em>more oxygen</em>. Ions ending in <strong>-ite</strong> have <em>fewer oxygen</em>. Example: nitrate (<span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span>) has 3 oxygens; nitrite (<span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">−</span></span>) has 2 oxygens.
+        Ions ending in <strong>-ate</strong> have <em>more oxygen</em>. Ions ending in <strong>-ite</strong> have <em>fewer oxygen</em>. Example: nitrate (<span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">-</span></span>) has 3 oxygens; nitrite (<span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">-</span></span>) has 2 oxygens.
       </div>
 
       <p class="mt-075">When naming a compound with a polyatomic ion, use the name of the ion directly. Do <strong>not</strong> change it to "-ide."</p>
@@ -323,7 +502,7 @@
 
       <div class="scaffold-box">
         <div class="scaffold-label">🔁 Reverse Direction</div>
-        To write a formula from a name, write each ion with its charge, balance to zero, and use parentheses if a polyatomic ion needs a subscript greater than 1. Example: aluminum sulfate → <span class="ion-group">Al<span class="chem-charge">3+</span></span> and <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span> → <strong><span class="ion-group">Al<span class="chem-sub">2</span>(SO<span class="chem-sub">4</span>)<span class="chem-sub">3</span></span></strong>.
+        To write a formula from a name, write each ion with its charge, balance to zero, and use parentheses if a polyatomic ion needs a subscript greater than 1. Example: aluminum sulfate → <span class="ion-group">Al<span class="chem-charge">3+</span></span> and <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span> → <strong><span class="ion-group">Al<span class="chem-sub">2</span>(SO<span class="chem-sub">4</span>)<span class="chem-sub">3</span></span></strong>.
       </div>
       <div class="chart-scroll-wrap unit06-subchart-scroll">
       <svg viewBox="0 0 420 314" class="sub-chart" role="img"
@@ -598,16 +777,16 @@
           <tr><th>Ion Inside</th><th>Ion Name</th><th>Acid</th><th>Acid Name</th></tr>
         </thead>
         <tbody>
-          <tr><td data-label="Ion Inside"><span class="ion-group">CO<span class="chem-sub">3</span><span class="chem-charge">2−</span></span></td><td data-label="Ion Name">carbonate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>CO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">carbonic acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span></td><td data-label="Ion Name">sulfate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">sulfuric acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2−</span></span></td><td data-label="Ion Name">sulfite (–ite)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">sulfurous acid (–ous)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></td><td data-label="Ion Name">nitrate (–ate)</td><td data-label="Acid"><span class="ion-group">HNO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">nitric acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">−</span></span></td><td data-label="Ion Name">nitrite (–ite)</td><td data-label="Acid"><span class="ion-group">HNO<span class="chem-sub">2</span></span></td><td data-label="Acid Name">nitrous acid (–ous)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">PO<span class="chem-sub">4</span><span class="chem-charge">3−</span></span></td><td data-label="Ion Name">phosphate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">3</span>PO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">phosphoric acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">4</span><span class="chem-charge">−</span></span></td><td data-label="Ion Name">perchlorate (–ate)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">perchloric acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">3</span><span class="chem-charge">−</span></span></td><td data-label="Ion Name">chlorate (–ate)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">chloric acid (–ic)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">2</span><span class="chem-charge">−</span></span></td><td data-label="Ion Name">chlorite (–ite)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">2</span></span></td><td data-label="Acid Name">chlorous acid (–ous)</td></tr>
-          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-charge">−</span></span></td><td data-label="Ion Name">hypochlorite (–ite)</td><td data-label="Acid">HClO</td><td data-label="Acid Name">hypochlorous acid (–ous)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">CO<span class="chem-sub">3</span><span class="chem-charge">2-</span></span></td><td data-label="Ion Name">carbonate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>CO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">carbonic acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span></td><td data-label="Ion Name">sulfate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">sulfuric acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2-</span></span></td><td data-label="Ion Name">sulfite (–ite)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">sulfurous acid (–ous)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">-</span></span></td><td data-label="Ion Name">nitrate (–ate)</td><td data-label="Acid"><span class="ion-group">HNO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">nitric acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">NO<span class="chem-sub">2</span><span class="chem-charge">-</span></span></td><td data-label="Ion Name">nitrite (–ite)</td><td data-label="Acid"><span class="ion-group">HNO<span class="chem-sub">2</span></span></td><td data-label="Acid Name">nitrous acid (–ous)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">PO<span class="chem-sub">4</span><span class="chem-charge">3-</span></span></td><td data-label="Ion Name">phosphate (–ate)</td><td data-label="Acid"><span class="ion-group">H<span class="chem-sub">3</span>PO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">phosphoric acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">4</span><span class="chem-charge">-</span></span></td><td data-label="Ion Name">perchlorate (–ate)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">4</span></span></td><td data-label="Acid Name">perchloric acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">3</span><span class="chem-charge">-</span></span></td><td data-label="Ion Name">chlorate (–ate)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">3</span></span></td><td data-label="Acid Name">chloric acid (–ic)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-sub">2</span><span class="chem-charge">-</span></span></td><td data-label="Ion Name">chlorite (–ite)</td><td data-label="Acid"><span class="ion-group">HClO<span class="chem-sub">2</span></span></td><td data-label="Acid Name">chlorous acid (–ous)</td></tr>
+          <tr><td data-label="Ion Inside"><span class="ion-group">ClO<span class="chem-charge">-</span></span></td><td data-label="Ion Name">hypochlorite (–ite)</td><td data-label="Acid">HClO</td><td data-label="Acid Name">hypochlorous acid (–ous)</td></tr>
         </tbody>
       </table>
 
@@ -713,7 +892,7 @@
           <div class="step-content">
             <strong>Simple ionic — metal + –ide ending, no Roman numeral</strong>
             <p>Write each ion with its charge. Find the smallest whole-number ratio that makes the total charge exactly zero. Those ratios are the subscripts — drop any subscript of 1.</p>
-            <p>Example: <em>potassium oxide</em> → <span class="ion-group">K<span class="chem-charge">+</span></span> and <span class="ion-group">O<span class="chem-charge">2−</span></span>. Need 2 K<span class="chem-charge">+</span> to cancel 1 O<span class="chem-charge">2−</span> → <strong><span class="ion-group">K<span class="chem-sub">2</span>O</span></strong></p>
+            <p>Example: <em>potassium oxide</em> → <span class="ion-group">K<span class="chem-charge">+</span></span> and <span class="ion-group">O<span class="chem-charge">2-</span></span>. Need 2 K<span class="chem-charge">+</span> to cancel 1 O<span class="chem-charge">2-</span> → <strong><span class="ion-group">K<span class="chem-sub">2</span>O</span></strong></p>
           </div>
         </div>
         <div class="step">
@@ -721,7 +900,7 @@
           <div class="step-content">
             <strong>Variable-charge ionic — Roman numeral present</strong>
             <p>The Roman numeral is the metal's charge — use it directly. Write the metal ion with that charge, write the anion with its charge, then balance to zero for the subscripts.</p>
-            <p>Example: <em>copper(II) oxide</em> → <span class="ion-group">Cu<span class="chem-charge">2+</span></span> and <span class="ion-group">O<span class="chem-charge">2−</span></span>. Equal and opposite charges, 1:1 ratio → <strong>CuO</strong></p>
+            <p>Example: <em>copper(II) oxide</em> → <span class="ion-group">Cu<span class="chem-charge">2+</span></span> and <span class="ion-group">O<span class="chem-charge">2-</span></span>. Equal and opposite charges, 1:1 ratio → <strong>CuO</strong></p>
           </div>
         </div>
         <div class="step">
@@ -729,7 +908,7 @@
           <div class="step-content">
             <strong>Ionic with polyatomic ion</strong>
             <p>Look up the polyatomic ion's formula and charge in the 6.4 table. Balance it against the cation charge to get subscripts. If the polyatomic ion needs a subscript greater than 1, enclose the whole ion in parentheses before adding the subscript.</p>
-            <p>Example: <em>calcium nitrate</em> → <span class="ion-group">Ca<span class="chem-charge">2+</span></span> and <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">−</span></span>. Need 2 nitrate ions to cancel one calcium → <strong><span class="ion-group">Ca(NO<span class="chem-sub">3</span>)<span class="chem-sub">2</span></span></strong></p>
+            <p>Example: <em>calcium nitrate</em> → <span class="ion-group">Ca<span class="chem-charge">2+</span></span> and <span class="ion-group">NO<span class="chem-sub">3</span><span class="chem-charge">-</span></span>. Need 2 nitrate ions to cancel one calcium → <strong><span class="ion-group">Ca(NO<span class="chem-sub">3</span>)<span class="chem-sub">2</span></span></strong></p>
           </div>
         </div>
         <div class="step">
@@ -744,9 +923,9 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Acids — name ends in "…acid"</strong>
-            <p><em>Binary acid (starts with "hydro-"):</em> strip "hydro-" and "-ic acid," match the remaining root to its element, then write H + that element. Use charge balance for the subscript — most are 1:1 (HCl, HBr, HI, HF) except hydrosulfuric acid where sulfur is 2− so two H are needed.</p>
+            <p><em>Binary acid (starts with "hydro-"):</em> strip "hydro-" and "-ic acid," match the remaining root to its element, then write H + that element. Use charge balance for the subscript — most are 1:1 (HCl, HBr, HI, HF) except hydrosulfuric acid where sulfur is 2- so two H are needed.</p>
             <p><em>Oxyacid (no "hydro-"):</em> –ic acid means the ion inside ends in –ate; –ous acid means the ion ends in –ite. Look up that polyatomic ion's formula and charge in the 6.4 table. Add enough H<span class="chem-charge">+</span> (each +1) to make the total charge zero.</p>
-            <p>Example: <em>sulfuric acid</em> → –ic acid, no hydro- → sulfate = <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span>. Need 2 H<span class="chem-charge">+</span> to balance −2 → <strong><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">4</span></span></strong></p>
+            <p>Example: <em>sulfuric acid</em> → –ic acid, no hydro- → sulfate = <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span>. Need 2 H<span class="chem-charge">+</span> to balance -2 → <strong><span class="ion-group">H<span class="chem-sub">2</span>SO<span class="chem-sub">4</span></span></strong></p>
           </div>
         </div>
       </div>
@@ -843,7 +1022,7 @@
           <div class="icon">▸</div>
           <div class="key-fact-copy">
             <p class="key-fact-title">Useful ion charges</p>
-            <p>chloride = −1, oxide = −2, sulfide = −2, nitrate = −1, sulfate = −2.</p>
+            <p>chloride = -1, oxide = -2, sulfide = -2, nitrate = -1, sulfate = -2.</p>
           </div>
         </div>
 
@@ -1000,7 +1179,7 @@
       <h2 class="card-title">Example 2 · Naming an Ionic Compound with a Transition Metal</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Name the ionic compound and determine the Roman numeral.</p>
-        <p><strong>Given:</strong> Formula = <span class="ion-group">Fe<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span>; oxide = <span class="ion-group">O<span class="chem-charge">2−</span></span></p>
+        <p><strong>Given:</strong> Formula = <span class="ion-group">Fe<span class="chem-sub">2</span>O<span class="chem-sub">3</span></span>; oxide = <span class="ion-group">O<span class="chem-charge">2-</span></span></p>
         <p><strong>Find:</strong> Compound name</p>
       </div>
       <div class="steps">
@@ -1008,14 +1187,14 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Use the transition-metal charge-balance rule first</strong>
-            <p>Because Fe is a transition metal, the naming rule is: find the metal charge from total charge balance before writing the Roman numeral. O is the oxide ion, <span class="ion-group">O<span class="chem-charge">2−</span></span>.</p>
+            <p>Because Fe is a transition metal, the naming rule is: find the metal charge from total charge balance before writing the Roman numeral. O is the oxide ion, <span class="ion-group">O<span class="chem-charge">2-</span></span>.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Find the iron charge using balance</strong>
-            <p>Total negative charge: 3 oxide ions × (−2) = −6. Two iron atoms must supply +6 total. +6 ÷ 2 = <strong>+3 per iron atom</strong>. Roman numeral = III.</p>
+            <p>Total negative charge: 3 oxide ions × (-2) = -6. Two iron atoms must supply +6 total. +6 ÷ 2 = <strong>+3 per iron atom</strong>. Roman numeral = III.</p>
           </div>
         </div>
         <div class="step">
@@ -1035,7 +1214,7 @@
       <h2 class="card-title">Example 3 · Naming a Compound with a Polyatomic Ion</h2>
       <div class="example-setup">
         <p><strong>Problem:</strong> Name the compound that contains a polyatomic ion.</p>
-        <p><strong>Given:</strong> Formula = <span class="ion-group">Cr<span class="chem-sub">2</span>(SO<span class="chem-sub">4</span>)<span class="chem-sub">3</span></span>; sulfate = <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span></p>
+        <p><strong>Given:</strong> Formula = <span class="ion-group">Cr<span class="chem-sub">2</span>(SO<span class="chem-sub">4</span>)<span class="chem-sub">3</span></span>; sulfate = <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span></p>
         <p><strong>Find:</strong> Compound name</p>
       </div>
       <div class="steps">
@@ -1043,14 +1222,14 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Use the polyatomic-ion naming rule first</strong>
-            <p>The rule is: keep the memorized polyatomic ion name, then use charge balance to find the transition-metal Roman numeral. <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span> is sulfate, and Cr is a variable-charge metal.</p>
+            <p>The rule is: keep the memorized polyatomic ion name, then use charge balance to find the transition-metal Roman numeral. <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span> is sulfate, and Cr is a variable-charge metal.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Find the chromium charge</strong>
-            <p>3 sulfate ions × (−2) = −6 total. 2 chromium atoms = +6 total. +6 ÷ 2 = <strong>+3</strong>. Roman numeral = III.</p>
+            <p>3 sulfate ions × (-2) = -6 total. 2 chromium atoms = +6 total. +6 ÷ 2 = <strong>+3</strong>. Roman numeral = III.</p>
           </div>
         </div>
         <div class="step">
@@ -1148,7 +1327,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Identify the polyatomic ion inside</strong>
-            <p><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2−</span></span> = sulfite (ends in –ite).</p>
+            <p><span class="ion-group">SO<span class="chem-sub">3</span><span class="chem-charge">2-</span></span> = sulfite (ends in –ite).</p>
           </div>
         </div>
         <div class="step">
@@ -1175,14 +1354,14 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Use ionic charge balance first</strong>
-            <p>The rule is: write each ion with its charge, then balance total positive and negative charge to zero. Aluminum forms <span class="ion-group">Al<span class="chem-charge">3+</span></span>, and sulfate is <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2−</span></span>.</p>
+            <p>The rule is: write each ion with its charge, then balance total positive and negative charge to zero. Aluminum forms <span class="ion-group">Al<span class="chem-charge">3+</span></span>, and sulfate is <span class="ion-group">SO<span class="chem-sub">4</span><span class="chem-charge">2-</span></span>.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Balance the total charge to zero</strong>
-            <p>The least common total charge is 6, so use 2 aluminum ions for +6 and 3 sulfate ions for −6.</p>
+            <p>The least common total charge is 6, so use 2 aluminum ions for +6 and 3 sulfate ions for -6.</p>
           </div>
         </div>
         <div class="step">
@@ -1303,7 +1482,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const charge = chargeMatch ? chargeMatch[1] : '';
     core = chargeMatch ? core.slice(0, -chargeMatch[0].length) : core;
     const renderedCore = core.replace(/(\d+)/g, '<span class="chem-sub">$1</span>');
-    const renderedCharge = charge ? `<span class="chem-charge">${charge.replace('-', '−')}</span>` : '';
+    const renderedCharge = charge ? `<span class="chem-charge">${charge.replace('-', '-')}</span>` : '';
     return `<span class="ion-group">${renderedCore}${renderedCharge}</span>${state}`;
   }
 

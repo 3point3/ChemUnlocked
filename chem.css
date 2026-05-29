@@ -10674,10 +10674,6 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 1rem;
 }
 
-.page-13-learn-chemistry-solutions .particle-grid--svg {
-  gap: 0.75rem;
-}
-
 .page-13-learn-chemistry-solutions .particle-box {
   display: flex;
   flex-direction: column;
@@ -10689,34 +10685,12 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   height: 100%;
 }
 
-.page-13-learn-chemistry-solutions .particle-box--svg {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  padding: 0 0.15rem;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.page-13-learn-chemistry-solutions .particle-svg-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 3 / 4;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.page-13-learn-chemistry-solutions .particle-svg-wrap svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .page-13-learn-chemistry-solutions .particle-box .particle-card-svg {
-  max-width: unset;
-  margin: 0;
+  display: block;
+  width: 100%;
+  max-width: 236px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .page-13-learn-chemistry-solutions .particle-box canvas {
@@ -10728,38 +10702,27 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   image-rendering: auto;
 }
 
-.page-13-learn-chemistry-solutions .particle-box strong {
-  font-size: 0.92rem;
-  color: var(--text);
-  text-align: center;
-}
-
 .page-13-learn-chemistry-solutions .particle-box p {
-  margin: 0;
+  margin: 0.85rem 0 0;
   text-align: center;
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
 }
 
 .page-13-learn-chemistry-solutions .legend-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 0.9rem;
+  gap: 0.55rem 0.9rem;
   align-items: center;
-  justify-content: center;
   margin-top: 0.9rem;
-  font-size: 0.8rem;
-  color: var(--muted);
 }
 
 .page-13-learn-chemistry-solutions .legend-title {
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  width: auto;
-  margin-bottom: 0;
+  width: 100%;
+  margin-bottom: 0.1rem;
 }
 
 .page-13-learn-chemistry-solutions .legend-dot {
@@ -10780,9 +10743,8 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-glucose { background: #10b981; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-no3 { background: #f97316; }
 .page-13-learn-chemistry-solutions .legend-dot.legend-agcl {
-  background: #888780;
-  border: 1.5px solid #444441;
-  border-radius: 2px;
+  background: #d1d5db;
+  border: 1.5px solid #6b7280;
 }
 
 @media (max-width: 700px) {

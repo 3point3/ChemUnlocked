@@ -73,7 +73,7 @@
           <span class="prob-num">#4</span>
           <span class="prob-tag tag-calc">Mole Conversion</span>
         </div>
-        <div class="prob-q">How many grams are in 3.50 mol of calcium carbonate (CaCO₃)? (Molar mass = 100.09 g/mol)</div>
+        <div class="prob-q">How many grams are in 3.50 mol of calcium carbonate (CaCO3)? (Molar mass = 100.09 g/mol)</div>
         <div class="prob-answer-area">
           <input class="prob-input" type="text" placeholder="Your answer…" disabled aria-hidden="true">
           <div class="prob-btns"><button class="btn btn-sm" disabled>Check</button></div>
@@ -84,7 +84,7 @@
           <span class="prob-num">#5</span>
           <span class="prob-tag tag-concept">Avogadro's Number</span>
         </div>
-        <div class="prob-q">What does Avogadro's number (6.022 × 10²³) represent?</div>
+        <div class="prob-q">What does Avogadro's number (6.022 × 1023) represent?</div>
         <div class="prob-choices">
           <button class="choice-btn" disabled>A. The mass of one mole in grams</button>
           <button class="choice-btn" disabled>B. The number of particles in one mole of any substance</button>
@@ -99,10 +99,10 @@
         </div>
         <div class="prob-q">A compound contains 40.0% C, 6.7% H, and 53.3% O by mass. What is its empirical formula? (Atomic masses: C = 12.01, H = 1.008, O = 16.00)</div>
         <div class="prob-choices">
-          <button class="choice-btn" disabled>A. CH₂O</button>
-          <button class="choice-btn" disabled>B. C₂H₄O₂</button>
+          <button class="choice-btn" disabled>A. CH2O</button>
+          <button class="choice-btn" disabled>B. C2H4O2</button>
           <button class="choice-btn" disabled>C. CHO</button>
-          <button class="choice-btn" disabled>D. C₂H₄O</button>
+          <button class="choice-btn" disabled>D. C2H4O</button>
         </div>
       </div>
     </div>
@@ -152,22 +152,22 @@
 const SAMPLE_PROBLEMS = [
   {
     id:'s07_01', type:'calc', tag:'Gram–Mol',
-    q:'How many moles are in 45.0 g of water (H₂O)? (Molar mass of H₂O = 18.015 g/mol)',
+    q:'How many moles are in 45.0 g of water (H2O)? (Molar mass of H2O = 18.015 g/mol)',
     answer:2.499, tolerance:0.02, unit:'mol',
-    solution:'<p>First find the molar mass of water: MM(H₂O) = 2(1.008) + 15.999 = 18.015 g/mol.</p><p>Then convert grams to moles with n = mass ÷ molar mass.</p><p>45.0 g ÷ 18.015 g/mol = <strong>2.499 mol</strong></p>'
+    solution:'<p>First find the molar mass of water: MM(H2O) = 2(1.008) + 15.999 = 18.015 g/mol.</p><p>Then convert grams to moles with n = mass ÷ molar mass.</p><p>45.0 g ÷ 18.015 g/mol = <strong>2.499 mol</strong></p>'
   },
   {
     id:'s07_02', type:'concept', tag:'Mole Concept',
     q:'Two different samples each contain exactly 1.00 mol of their respective compounds. Which statement is correct?',
     choices:['Both samples have the same mass','Both samples contain the same number of formula units','Both samples occupy the same volume','Both samples have the same density'],
     correct:1,
-    solution:'<p><strong>B — same number of formula units.</strong></p><p>One mole of <em>any</em> substance contains 6.022 × 10²³ particles. That count is fixed by Avogadro\'s number.</p><p>The masses can differ because different substances have different molar masses, but the particle count at 1 mol is always the same.</p>'
+    solution:'<p><strong>B — same number of formula units.</strong></p><p>One mole of <em>any</em> substance contains 6.022 × 1023 particles. That count is fixed by Avogadro\'s number.</p><p>The masses can differ because different substances have different molar masses, but the particle count at 1 mol is always the same.</p>'
   },
   {
     id:'s07_03', type:'multi', tag:'Empirical Formula',
     q:'Combustion analysis of a hydrocarbon shows that it contains only carbon and hydrogen in a 1:2 mole ratio (C:H). What is the empirical formula of this compound?',
     answer:'CH2', isText:true,
-    solution:'<p>The empirical formula shows the simplest whole-number ratio of atoms.</p><p>Here the ratio C : H = 1 : 2, so the empirical formula is <strong>CH₂</strong>.</p><p>Many different molecules can reduce to this same simplest ratio, such as C₂H₄ or C₃H₆.</p>'
+    solution:'<p>The empirical formula shows the simplest whole-number ratio of atoms.</p><p>Here the ratio C : H = 1 : 2, so the empirical formula is <strong>CH2</strong>.</p><p>Many different molecules can reduce to this same simplest ratio, such as C2H4 or C3H6.</p>'
   }
 ];
 
