@@ -41,7 +41,7 @@
   "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260514d">
+<link rel="stylesheet" href="chem.css?v=20260529b">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -98,8 +98,11 @@
 
   <div class="card">
     <h2 class="card-title"><span class="num">11.1</span>Start Here: Heat vs. Temperature</h2>
-    <p><strong>Heat</strong> is energy transferred because of a temperature difference. <strong>Temperature</strong> is a measure of the average kinetic energy of particles. They are related but not the same thing.</p>
-    <p>Get this straight first: temperature tells you how energetic particles are on average; heat is energy moving from one place to another.</p>
+    <p>Get this straight first: these two ideas are not the same.</p>
+    <ul>
+      <li><strong>Heat</strong> is energy transferred because of a temperature difference.</li>
+      <li><strong>Temperature</strong> is a measure of the average kinetic energy of particles.</li>
+    </ul>
     <p>The two rows below show exactly how heat and temperature differ — and why a large mass of warm water can hold more total energy than a tiny cup of hotter water.</p>
     <table class="mobile-stack-table">
       <thead><tr><th>Idea</th><th>Meaning</th><th>Example</th></tr></thead>
@@ -123,7 +126,7 @@
   <div class="card">
     <h2 class="card-title"><span class="num">11.2</span>Energy Units: Know What the Number Means</h2>
     <p>Thermochemistry uses several related energy units. Make sure you can convert between them before solving problems.</p>
-    <p>If this feels shaky, fix it now. A correct setup can still fail if you mix up joules, calories, kilojoules, and food Calories.</p>
+    <p>If you are confused on units, fix it now. A correct setup can still fail if you mix up joules, calories, kilojoules, and food Calories.</p>
     <div class="formula-box">
       <div class="formula-rule-list">
         <span class="formula-rule">1 cal = 4.184 J</span>
@@ -509,7 +512,7 @@
         <h3>Endothermic Profile</h3>
       
         <div class="graph-wrapper">
-           <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+           <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Endothermic energy profile diagram showing reactants at lower energy than products">
           <defs>
             <marker id="axis-arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
               <path d="M0,0 L8,4 L0,8 Z" fill="black" />
@@ -539,7 +542,7 @@
       <div class="diagram-card">
         <h3>Exothermic Profile</h3>
         <div class="graph-wrapper">
-          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exothermic energy profile diagram showing products at lower energy than reactants">
           <defs>
             <marker id="axis-arrow-exo" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
               <path d="M0,0 L8,4 L0,8 Z" fill="black" />
@@ -574,7 +577,7 @@
     <p>A <strong>catalyst</strong> lowers activation energy by providing an alternate reaction pathway. It does <em>not</em> change &Delta;H &mdash; the reactant and product energy levels stay exactly the same.</p>
     <p>Do not miss this distinction: catalysts change how hard it is to start the reaction, not where the reaction starts or ends energetically.</p>
     <div class="graph-wrapper">
-     <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+     <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy profile diagram comparing activation energy with and without a catalyst">
           <defs>
             <marker id="axisArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
               <path d="M0,6 L6,3 L0,0 Z" fill="#000"/>
@@ -600,16 +603,16 @@
           <text x="325" y="295" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0f172a">reaction progress</text>
 
           <line x1="280" y1="130" x2="280" y2="20" stroke="#ec4899" stroke-width="3"/>
-          <text x="285" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#d97706">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan></text>
+          <text x="285" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#d97706">E<tspan dy="5" font-size="0.75em">A</tspan></text>
           
           <line x1="315" y1="130" x2="315" y2="80" stroke="#4ade80" stroke-width="3"/>
           
           <line x1="375" y1="65" x2="320" y2="105" stroke="#4ade80" stroke-width="1.5" marker-end="url(#pointerArrow)"/>
 
-          <text x="380" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#047857">E<tspan baseline-shift="sub" font-size="0.75em">A</tspan> with catalyst</text>
+          <text x="380" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#047857">E<tspan dy="5" font-size="0.75em">A</tspan><tspan dy="-5"> with catalyst</tspan></text>
           
           <line x1="565" y1="130" x2="565" y2="230" stroke="#0891b2" stroke-width="3"/>
-          <text x="570" y="180" font-family="sans-serif" font-size="18" font-weight="700" fill="#0891b2">ΔH<tspan baseline-shift="sub" font-size="0.75em">rxn</tspan> &lt; 0 J</text>
+          <text x="570" y="180" font-family="sans-serif" font-size="18" font-weight="700" fill="#0891b2">ΔH<tspan dy="5" font-size="0.75em">rxn</tspan><tspan dy="-5"> &lt; 0 J</tspan></text>
 
         </svg>
     </div>
@@ -721,7 +724,11 @@
     <h2 class="card-title"><span class="num">11.9</span>Thermochemical Stoichiometry: Using &Delta;H Like a Conversion Factor</h2>
     <p>When a &Delta;H value is attached to a balanced equation, it applies to that reaction <strong>as written</strong> &mdash; for the exact molar amounts shown by the coefficients.</p>
     <p>This connects straight back to <a href="/09_learn_chemistry_stoichiometry">Unit 09</a>. The only new idea is that the balanced equation now carries an energy amount along with the mole ratio.</p>
-    <p>If the reaction releases heat, the enthalpy change is negative. If the reaction absorbs heat, the enthalpy change is positive. Treat the enthalpy ratio like any other stoichiometric conversion factor after you convert to moles.</p>
+    <ul>
+      <li>If the reaction releases heat, the enthalpy change is negative.</li>
+      <li>If the reaction absorbs heat, the enthalpy change is positive.</li>
+    </ul>
+    <p>Treat the enthalpy ratio like any other stoichiometric conversion factor after you convert to moles.</p>
     <div class="formula-box">
       <span class="label">Reading &Delta;H from a Balanced Equation</span>
       <div class="formula-rule-list">
@@ -1088,7 +1095,7 @@
 <div class="scroll-hint">Introductory General Chemistry &middot; Unit 11 &middot; Energy &amp; Thermochemistry</div>
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260509"></script>
+<script src="chem.js?v=20260529b"></script>
 <script>
 function setToolFeedback(target, html, state) {
   const el = typeof target === 'string' ? document.getElementById(target) : target;

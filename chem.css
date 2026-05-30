@@ -661,7 +661,6 @@ pre,
 .formula-box,
 .fl-chain,
 .fl-cancel,
-#dimAnalysis,
 .conv-result {
   font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -818,6 +817,50 @@ pre,
   font-size: 0.9rem;
 }
 
+.jump-top-btn {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right, 0px) + 0.8rem);
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px) + 0.8rem);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgba(217, 200, 180, 0.96);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.84);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 24px rgba(69, 54, 35, 0.14);
+  color: var(--accent2);
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(0.6rem);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.jump-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.jump-top-btn:hover {
+  background: rgba(232, 247, 242, 0.96);
+  border-color: rgba(15, 138, 122, 0.26);
+}
+
+.jump-top-btn:focus-visible {
+  outline: 3px solid rgba(20, 184, 166, 0.2);
+  outline-offset: 2px;
+}
+
 .footer-links {
   margin-bottom: 0.35rem;
 }
@@ -868,6 +911,21 @@ pre,
   .site-nav a {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .jump-top-btn {
+    right: max(0.8rem, env(safe-area-inset-right, 0px) + 0.65rem);
+    bottom: max(0.8rem, env(safe-area-inset-bottom, 0px) + 0.65rem);
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.02rem;
+    box-shadow: 0 8px 18px rgba(69, 54, 35, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jump-top-btn {
+    transition: none;
   }
 }
 
@@ -1274,8 +1332,7 @@ pre,
 }
 
 .tool-primary-action,
-.tool-secondary-actions,
-.tool-action-row {
+.tool-secondary-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -1289,10 +1346,6 @@ pre,
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 0;
-}
-
-.tool-action-row {
   margin-top: 0;
 }
 
@@ -1501,15 +1554,6 @@ pre,
   display: none;
 }
 
-.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap {
-  margin-top: 0.4rem;
-}
-
-.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap > svg {
-  min-width: 600px;
-  max-width: none;
-}
-
 .concept-panel-title {
   font-size: 0.85rem;
   font-weight: 700;
@@ -1596,7 +1640,7 @@ pre,
   box-shadow: inset -56px 0 30px -20px rgba(255, 255, 255, 0.96);
 }
 .chart-scroll-wrap > img,
-.chart-scroll-wrap > svg {
+.chart-scroll-wrap > svg:not(.sub-chart) {
   min-width: 960px;
   max-width: none;
   height: auto;
@@ -2315,13 +2359,69 @@ td {
   display: block;
 }
 
+.concept-jump-disclosure {
+  margin: -0.1rem 0 1.15rem;
+  border: 1px solid var(--border-warm);
+  border-radius: 16px;
+  background: rgba(255, 252, 246, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(69, 54, 35, 0.05);
+}
+
+.concept-jump-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  list-style: none;
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(180deg, rgba(20, 165, 144, 0.16), rgba(11, 117, 105, 0.12));
+  border-radius: 15px;
+}
+
+.concept-jump-summary::-webkit-details-marker {
+  display: none;
+}
+
+.concept-jump-summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  color: var(--accent2);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.concept-jump-disclosure[open] .concept-jump-summary::after {
+  content: '−';
+}
+
+.concept-jump-summary:focus-visible {
+  outline: 3px solid rgba(20, 184, 166, 0.18);
+  outline-offset: 2px;
+  border-radius: 14px;
+}
+
+.concept-jump-summary-text {
+  flex: 1 1 auto;
+  color: var(--accent2);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.concept-jump-summary .concept-jump-label {
+  color: #0b6f63;
+}
+
 .concept-jump-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
   align-items: center;
-  margin: -0.25rem 0 1.15rem;
-  padding: 0.75rem 0;
+  margin: 0;
+  padding: 0.5rem 1rem 0.8rem;
 }
 
 .concept-jump-label {
@@ -2350,6 +2450,11 @@ td {
   color: var(--accent2);
   background: #f0f7ff;
   text-decoration: none;
+}
+
+.concept-jump-nav a:focus-visible {
+  outline: 3px solid rgba(20, 184, 166, 0.18);
+  outline-offset: 2px;
 }
 
 .unit-bottom-nav {
@@ -5812,17 +5917,6 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
   .unit-feature:not(:last-child)::after { display: none; }
 }
 
-/* Practice page specific styles */
-/* Unit 02 specific styles */
-#dInput {
-  display: none;
-}
-
-#densityResult {
-  display: none;
-  margin-top: 0.75rem;
-}
-
 /* ===== Warm tutoring visual refresh — non-duplicate rules retained below ===== */
 .starfield::before,
 .starfield::after {
@@ -8075,6 +8169,13 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   flex-wrap: wrap;
 }
 
+/* ==========================================================================
+   UNIT 04 · ELECTRON CONFIGURATION
+   Keep these rules page-scoped. This unit has custom spectrum, figure-cap,
+   orbital-choice, and mobile table behavior that should not fall back to
+   generic SVG/layout rules.
+   ========================================================================== */
+
 .page-04-learn-electron-configuration .ec-count {
   display: inline-block;
   position: relative;
@@ -8142,7 +8243,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   font-weight: 500;
 }
 
-/* ── Spectrum bar ── */
+/* Unit 04: legacy spectrum strip plus EM-spectrum teaching card */
 .spectrum-bar {
   height: 18px;
   border-radius: 6px;
@@ -8216,17 +8317,17 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   word-break: normal;
 }
 
-.em-segment.gamma { background: #581c87; }
-.em-segment.xray { background: #1d4ed8; }
-.em-segment.uv { background: #0891b2; }
+.page-04-learn-electron-configuration .em-segment.gamma { background: #111827; color: #f8fafc; }
+.page-04-learn-electron-configuration .em-segment.xray { background: #374151; color: #f8fafc; }
+.page-04-learn-electron-configuration .em-segment.uv { background: #6b7280; color: #f9fafb; }
 .em-segment.visible {
   background: linear-gradient(90deg, #6d28d9 0%, #2563eb 18%, #0891b2 35%, #16a34a 52%, #facc15 68%, #f97316 83%, #dc2626 100%);
   color: #1f2937;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
 }
-.em-segment.ir { background: #b45309; }
-.em-segment.micro { background: #475569; }
-.em-segment.radio { background: #1f2937; }
+.page-04-learn-electron-configuration .em-segment.ir { background: #9ca3af; color: #111827; }
+.page-04-learn-electron-configuration .em-segment.micro { background: #d1d5db; color: #111827; }
+.page-04-learn-electron-configuration .em-segment.radio { background: #f3f4f6; color: #111827; }
 
 .em-spectrum-scale {
   margin-top: 0.45rem;
@@ -8320,6 +8421,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   margin-top: 0.45rem;
 }
 
+/* Unit 04: mobile table layout and narrow-screen spectrum behavior */
 @media (max-width: 760px) {
   .page-04-learn-electron-configuration .mobile-stack-table td {
     min-height: 0;
@@ -8395,21 +8497,17 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   }
 }
 
- .page-04-learn-electron-configuration .unit-figure img[src*="iron_aufbau_v2.svg"] {
+/* Unit 04: desktop caps for inserted teaching figures */
+.page-04-learn-electron-configuration .unit-figure img[src*="iron_aufbau_v2.svg"] {
+  display: block;
   width: 100%;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Unit 04: extra-tight phone overrides */
 @media (max-width: 520px) {
-  .page-04-learn-electron-configuration .unit-figure img[src*="iron_aufbau_v2.svg"] {
-    width: 100%;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .page-04-learn-electron-configuration .mobile-stack-table td {
     padding: 0.74rem 0.82rem 0.78rem;
   }
@@ -8517,6 +8615,23 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .pt-cell.f-blk { background: #fce7f3; color: #831843; border: 1px solid #f9a8d4; }
 .pt-cell:hover:not(.empty) { filter: brightness(0.92); transform: scale(1.1); z-index: 5; }
 .page-04-learn-electron-configuration .pt-cell.selected { outline: 2px solid var(--accent2); outline-offset: 1px; }
+
+/* Unit 04: page-scoped caps for larger inline SVG figures */
+.page-04-learn-electron-configuration .bohr-emission-figure svg {
+  display: block;
+  width: 100%;
+  max-width: 52rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-04-learn-electron-configuration .diagonal-rule-figure svg {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin: 0 auto;
+}
 .pt-tooltip {
   display: none;
   position: fixed;
@@ -9315,6 +9430,20 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: none;
 }
 
+.page-06-learn-chemistry-nomenclature .unit06-balance-figure {
+  margin-top: 1.5rem;
+}
+
+.page-06-learn-chemistry-nomenclature .unit06-balance-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+
 .mt-075 { margin-top: 0.75rem; }
 .mt-1 { margin-top: 1rem; }
 .comp-type-select { margin-bottom: 0.75rem; }
@@ -9778,6 +9907,51 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   color: var(--muted);
   font-weight: 700;
 }
+
+.page-07-learn-chemistry-moles .unit07-efmf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1rem 0 1.25rem;
+}
+
+.page-07-learn-chemistry-moles .unit07-inline-svg-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 840px;
+  margin-inline: auto;
+}
+
+.page-07-learn-chemistry-moles .unit07-efmf-grid > .unit07-inline-svg-figure {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-07-learn-chemistry-moles .unit07-efmf-grid > .unit07-inline-svg-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-07-learn-chemistry-moles .unit07-efmf-grid > .unit07-inline-svg-figure figcaption {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  min-height: 4.5em;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
 @media (max-width: 720px) {
   .molar-mass-table-mobile th,
   .molar-mass-table-mobile td {
@@ -9796,6 +9970,19 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td[data-label="Calculation"],
   .page-07-learn-chemistry-moles .molar-mass-table-mobile.mobile-stack-table td[data-label="What to Use"] {
     line-height: 1.45;
+  }
+
+  .page-07-learn-chemistry-moles .unit07-efmf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-07-learn-chemistry-moles .unit07-efmf-grid > .unit07-inline-svg-figure {
+    padding: 0.9rem;
+  }
+
+  .page-07-learn-chemistry-moles .unit07-efmf-grid > .unit07-inline-svg-figure figcaption {
+    min-height: 0;
+    padding-top: 0.75rem;
   }
 }
 @media (max-width: 760px) {
@@ -10073,8 +10260,13 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .page-02-learn-chemistry-matter .u02-svg-block {
   display: block;
   width: 100%;
-  max-width: 100%;
+  max-width: 580px;
+  margin-inline: auto;
   overflow: visible;
+}
+
+.page-02-learn-chemistry-matter .u02-flowchart-svg {
+  max-width: 100%;
 }
 
 .page-02-learn-chemistry-matter .u02-properties-compare-mobile {
@@ -10083,12 +10275,10 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
 .page-02-learn-chemistry-matter .u02-svg-sub {
   font-size: 0.66em;
-  baseline-shift: sub;
 }
 
 .page-02-learn-chemistry-matter .u02-svg-charge {
   font-size: 0.66em;
-  baseline-shift: super;
 }
 
 .page-02-learn-chemistry-matter .u02-mt-12 {
@@ -10100,7 +10290,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 .page-02-learn-chemistry-matter .u02-my-10 {
-  margin: 10px 0;
+  margin-block: 10px;
 }
 
 .page-02-learn-chemistry-matter .u02-note-caption {
@@ -10134,9 +10324,6 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     line-height: 1.95;
   }
 
-  .page-02-learn-chemistry-matter .u02-svg-block {
-    margin-inline: auto;
-  }
 
   .page-02-learn-chemistry-matter .u02-svg-scroll {
     overflow-x: auto;
@@ -10290,6 +10477,27 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: none;
 }
 
+.page-09-learn-chemistry-stoichiometry .stoich-particle-svg-desktop {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.page-09-learn-chemistry-stoichiometry .stoich-roadmap-layout {
+  max-width: 510px;
+  margin-inline: auto;
+}
+
+.page-09-learn-chemistry-stoichiometry .unit09-inline-svg-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
 @media (max-width: 640px) {
   .mini-visual-grid {
     grid-template-columns: 1fr;
@@ -10381,6 +10589,12 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   }
 }
 
+/* ==========================================================================
+   UNIT 14 · EQUILIBRIUM
+   Keep these rules page-scoped. This unit includes multiple equilibrium
+   interactives with distinct SVG IDs plus custom mobile ICE-table behavior.
+   ========================================================================== */
+
 .page-14-learn-chemistry-equilibrium #beam-group {
   transform-origin: 320px 248px;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -10390,7 +10604,321 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   transition: opacity 0.4s;
 }
 
+.page-14-learn-chemistry-equilibrium #lcBeamGroup {
+  transform-origin: 280px 248px;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.page-14-learn-chemistry-equilibrium #lcShiftLine,
+.page-14-learn-chemistry-equilibrium #lcShiftTxt {
+  transition: opacity 0.4s;
+}
+
+/* Unit 14: desktop layout shell for the Le Châtelier widget */
+.page-14-learn-chemistry-equilibrium .concept-panel--equilibrium-seesaw {
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 1.1rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ss {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ss-grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.84fr) minmax(24rem, 1.16fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ss-card {
+  border: 1px solid #d8e3ea;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ss-card--controls {
+  min-width: 0;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ss-card--visual {
+  min-width: 0;
+}
+
+/* Unit 14: step hints and custom reaction selector */
+.page-14-learn-chemistry-equilibrium .lc-step-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 1rem 0 0.65rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.1rem;
+  padding: 0.26rem 0.65rem;
+  border-radius: 999px;
+  background: #e0ecff;
+  color: #185fa5;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-step-text {
+  color: var(--color-text-secondary);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-custom-select {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.92rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-chevron {
+  flex: 0 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-chevron.open {
+  transform: rotate(180deg);
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  right: 0;
+  z-index: 8;
+  display: none;
+  padding: 0.4rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-menu.open {
+  display: block;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-option {
+  padding: 0.72rem 0.78rem;
+  border-radius: 10px;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-cs-option:hover,
+.page-14-learn-chemistry-equilibrium .lc-cs-option.selected {
+  background: #eef5ff;
+}
+
+/* Unit 14: stress-control buttons */
+.page-14-learn-chemistry-equilibrium .lc-stress-section {
+  margin-top: 1rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-stress-lbl {
+  margin-bottom: 0.42rem;
+  color: var(--color-text-primary);
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-stress-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-sbtn {
+  appearance: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  padding: 0.55rem 0.85rem;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-sbtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.page-14-learn-chemistry-equilibrium .lc-sbtn.active {
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.page-14-learn-chemistry-equilibrium .lc-s-addr,
+.page-14-learn-chemistry-equilibrium .lc-s-remp {
+  border-color: #c9e7d8;
+  background: #eefbf3;
+  color: #166534;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-s-remr,
+.page-14-learn-chemistry-equilibrium .lc-s-addp {
+  border-color: #f1d0c3;
+  background: #fff3ee;
+  color: #9a3412;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-s-pup,
+.page-14-learn-chemistry-equilibrium .lc-s-pdn,
+.page-14-learn-chemistry-equilibrium .lc-s-tup,
+.page-14-learn-chemistry-equilibrium .lc-s-tdn,
+.page-14-learn-chemistry-equilibrium .lc-s-cat {
+  border-color: #d4deea;
+  background: #f8fbfd;
+  color: #334155;
+}
+
+/* Unit 14: visual panel, readout cards, and explanation */
+.page-14-learn-chemistry-equilibrium #lcSeesaw {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-readout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ro {
+  border: 1px solid #d8e3ea;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 0.95rem 1rem;
+  text-align: center;
+  min-width: 0;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ro-lbl {
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-ro-val {
+  margin-top: 0.3rem;
+  color: var(--color-text-primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-explain {
+  margin-top: 0.85rem;
+  border: 1px solid #d8e3ea;
+  border-radius: 14px;
+  background: #f8fbfd;
+  color: var(--color-text-secondary);
+  padding: 0.9rem 1rem;
+  line-height: 1.55;
+}
+
+.page-14-learn-chemistry-equilibrium .lc-reset-btn {
+  margin-top: 0.85rem;
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background: #185fa5;
+  color: #ffffff;
+  padding: 0.72rem 1rem;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Unit 14: mobile collapse for the widget and stacked equilibrium tables */
 @media (max-width: 700px) {
+  .page-14-learn-chemistry-equilibrium .concept-panel--equilibrium-seesaw {
+    padding: 0.9rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-ss-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-ss-card {
+    padding: 0.9rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-step-hint {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-cs-trigger {
+    padding: 0.82rem 0.9rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-cs-label {
+    font-size: 0.95rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-sbtn {
+    padding: 0.52rem 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .page-14-learn-chemistry-equilibrium .lc-readout {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
   .page-14-learn-chemistry-equilibrium .mobile-stack-table tbody {
     gap: 0.82rem;
   }
@@ -10422,6 +10950,57 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   }
 }
 
+/* ── 15_Learn_Chemistry_Acid_Base.html ── */
+/* ==========================================================================
+   UNIT 15 · ACID / BASE
+   Keep these rules page-scoped. This unit relies on custom SVG grids and
+   mobile stacked-table treatments for ICE and titration content.
+   ========================================================================== */
+
+.page-15-learn-chemistry-acid-base .conjugate-pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(18rem, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.page-15-learn-chemistry-acid-base .conjugate-pairs-grid > * {
+  min-width: 0;
+}
+
+/* Unit 15: shared SVG sizing for conjugate-pair, roadmap, and titration figures */
+.page-15-learn-chemistry-acid-base .conjugate-pair-svg,
+.page-15-learn-chemistry-acid-base .autoionization-svg,
+.page-15-learn-chemistry-acid-base .ph-roadmap-svg,
+.page-15-learn-chemistry-acid-base .titration-step-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-15-learn-chemistry-acid-base .autoionization-figure svg {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.page-15-learn-chemistry-acid-base .ph-roadmap-figure svg {
+  max-width: 31rem;
+  margin: 0 auto;
+}
+
+/* Unit 15: desktop grid for titration-step cards */
+.page-15-learn-chemistry-acid-base .titration-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(16rem, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.page-15-learn-chemistry-acid-base .titration-steps-grid > * {
+  min-width: 0;
+}
+
+/* Unit 15: mobile stacked-table treatment and narrow-screen grid collapse */
 @media (max-width: 700px) {
   .page-15-learn-chemistry-acid-base .mobile-stack-table tbody {
     gap: 0.82rem;
@@ -10443,6 +11022,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="Relative strength"],
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="pH at Equivalence Point"],
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="Why"],
+  .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="Row"],
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[CH3COOH]"],
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[H3O+]"],
   .page-15-learn-chemistry-acid-base .mobile-stack-table td[data-label="[CH3COO-]"] {
@@ -10451,6 +11031,11 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 
   .page-15-learn-chemistry-acid-base .formula-box.tool-context-box {
     padding: 0.95rem 0.9rem;
+  }
+
+  .page-15-learn-chemistry-acid-base .conjugate-pairs-grid,
+  .page-15-learn-chemistry-acid-base .titration-steps-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -10472,6 +11057,13 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 /* ── 10_Learn_Chemistry_Bonding.html ── */
+/* ==========================================================================
+   UNIT 10 · BONDING
+   Keep these rules page-scoped. This unit has the densest SVG/layout cascade
+   in the repo: EN reference split layout, Lewis cards, concept-panel desktop/
+   mobile swaps, scroll-wrap SVGs, dipole diagrams, and water H-bond sizing.
+   ========================================================================== */
+
 .page-10-learn-chemistry-bonding {
   --vsepr-b-fill: #eff6ff;
   --vsepr-b-stroke: #3b82f6;
@@ -10553,6 +11145,214 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   height: auto;
 }
 
+.page-10-learn-chemistry-bonding .en-reference-grid,
+.page-05-learn-periodic-table-and-trends .en-reference-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 26rem) minmax(18rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+  max-width: 58rem;
+  margin: 0 auto;
+}
+
+.page-10-learn-chemistry-bonding .en-reference-panel,
+.page-10-learn-chemistry-bonding .en-key-card,
+.page-05-learn-periodic-table-and-trends .en-reference-panel,
+.page-05-learn-periodic-table-and-trends .en-key-card {
+  min-width: 0;
+}
+
+.page-10-learn-chemistry-bonding .en-reference-panel svg,
+.page-05-learn-periodic-table-and-trends .en-reference-panel svg {
+  display: block;
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-10-learn-chemistry-bonding .en-key-card,
+.page-05-learn-periodic-table-and-trends .en-key-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-10-learn-chemistry-bonding .en-key-card-inner,
+.page-05-learn-periodic-table-and-trends .en-key-card-inner {
+  padding: 1rem 1rem 1.05rem;
+}
+
+.page-10-learn-chemistry-bonding .en-key-heading,
+.page-05-learn-periodic-table-and-trends .en-key-heading {
+  margin: 0 0 0.8rem;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.page-10-learn-chemistry-bonding .en-key-heading-small,
+.page-05-learn-periodic-table-and-trends .en-key-heading-small {
+  font-size: 0.9rem;
+}
+
+.page-10-learn-chemistry-bonding .en-key-sample-row,
+.page-10-learn-chemistry-bonding .en-range-grid,
+.page-05-learn-periodic-table-and-trends .en-key-sample-row,
+.page-05-learn-periodic-table-and-trends .en-range-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.page-10-learn-chemistry-bonding .en-key-sample-box,
+.page-05-learn-periodic-table-and-trends .en-key-sample-box {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: center;
+  padding: 0.95rem 0.8rem;
+  border-radius: 16px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.page-10-learn-chemistry-bonding .en-key-sample-num,
+.page-05-learn-periodic-table-and-trends .en-key-sample-num {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.page-10-learn-chemistry-bonding .en-key-sample-symbol,
+.page-05-learn-periodic-table-and-trends .en-key-sample-symbol {
+  color: #b91c1c;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.page-10-learn-chemistry-bonding .en-key-sample-value,
+.page-05-learn-periodic-table-and-trends .en-key-sample-value {
+  color: #b91c1c;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.page-10-learn-chemistry-bonding .en-key-lines,
+.page-10-learn-chemistry-bonding .en-range-col,
+.page-05-learn-periodic-table-and-trends .en-key-lines,
+.page-05-learn-periodic-table-and-trends .en-range-col {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.page-10-learn-chemistry-bonding .en-key-line,
+.page-10-learn-chemistry-bonding .en-range-item,
+.page-05-learn-periodic-table-and-trends .en-key-line,
+.page-05-learn-periodic-table-and-trends .en-range-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.page-10-learn-chemistry-bonding .en-key-line-rule,
+.page-05-learn-periodic-table-and-trends .en-key-line-rule {
+  width: 1.5rem;
+  height: 1px;
+  background: #94a3b8;
+  flex: 0 0 auto;
+}
+
+.page-10-learn-chemistry-bonding .en-key-divider,
+.page-05-learn-periodic-table-and-trends .en-key-divider {
+  height: 1px;
+  margin: 0.95rem 0;
+  background: #e2e8f0;
+}
+
+.page-10-learn-chemistry-bonding .en-range-note,
+.page-05-learn-periodic-table-and-trends .en-range-note {
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.page-10-learn-chemistry-bonding .en-range-note p,
+.page-05-learn-periodic-table-and-trends .en-range-note p {
+  margin: 0.55rem 0 0;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.page-10-learn-chemistry-bonding .en-range-item-inert,
+.page-05-learn-periodic-table-and-trends .en-range-item-inert {
+  font-weight: 700;
+  color: #475569;
+}
+
+.page-10-learn-chemistry-bonding .en-range-swatch,
+.page-05-learn-periodic-table-and-trends .en-range-swatch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  flex: 0 0 auto;
+}
+
+.page-10-learn-chemistry-bonding .en-range-swatch-low,
+.page-05-learn-periodic-table-and-trends .en-range-swatch-low { background: #eff6ff; border-color: #bfdbfe; }
+.page-10-learn-chemistry-bonding .en-range-swatch-mid,
+.page-05-learn-periodic-table-and-trends .en-range-swatch-mid { background: #ccfbf1; border-color: #99f6e4; }
+.page-10-learn-chemistry-bonding .en-range-swatch-high,
+.page-05-learn-periodic-table-and-trends .en-range-swatch-high { background: #ffedd5; border-color: #fed7aa; }
+.page-10-learn-chemistry-bonding .en-range-swatch-vhigh,
+.page-05-learn-periodic-table-and-trends .en-range-swatch-vhigh { background: #fee2e2; border-color: #fecaca; }
+.page-10-learn-chemistry-bonding .en-range-swatch-none,
+.page-05-learn-periodic-table-and-trends .en-range-swatch-none { background: #f1f5f9; border-color: #cbd5e1; }
+
+.page-10-learn-chemistry-bonding .lewis-diagram {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.8rem;
+  max-width: 880px;
+  margin: 1rem auto 1.25rem;
+}
+
+.page-10-learn-chemistry-bonding .lewis-box {
+  max-width: none;
+  min-height: 180px;
+  padding: 12px 10px;
+  border-radius: 16px;
+}
+
+.page-10-learn-chemistry-bonding .lewis-box svg {
+  width: min(100%, 102px);
+}
+
+.page-10-learn-chemistry-bonding .lb-name {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.page-10-learn-chemistry-bonding .lb-formula {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.page-10-learn-chemistry-bonding .unit-figure.unit-figure-svg-lewis-examples svg {
+  display: block;
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  margin: 0 auto;
+}
+
 .vsepr-example-card {
   max-width: 360px;
   margin: 1rem auto 0;
@@ -10607,12 +11407,35 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   max-width: 30ch;
 }
 
-.page-10-learn-chemistry-bonding .hb-water-svg {
-  max-width: 460px;
-}
-
 .page-10-learn-chemistry-bonding .center-note.center-note-narrow {
   max-width: 34rem;
+}
+
+/* Unit 10 concept-panel SVG behavior */
+.page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-desktop {
+  display: block;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-mobile {
+  display: none;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap {
+  margin-top: 0.4rem;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap > svg {
+  min-width: 600px;
+  max-width: none;
+}
+
+.page-10-learn-chemistry-bonding .concept-panel-scroll-wrap--hb-water > .hb-water-svg {
+  width: min(100%, 34rem);
+  min-width: 0;
+  max-width: 34rem;
+  margin-inline: auto;
 }
 
 @media (max-width: 640px) {
@@ -10798,6 +11621,8 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: block;
   width: 100%;
   height: auto;
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 .page-08-learn-chemical-reactions .equation-visual figcaption {
@@ -10829,6 +11654,10 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .page-08-learn-chemical-reactions .haber-step-card h3 {
   margin: 0.2rem 0 0.75rem;
   font-size: 1.08rem;
+}
+
+.page-08-learn-chemical-reactions .haber-step-card svg {
+  max-width: 440px;
 }
 
 .page-08-learn-chemical-reactions .haber-step-card-final {
@@ -11604,6 +12433,20 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     margin: 18px auto;
   }
 
+  .page-10-learn-chemistry-bonding .en-reference-grid,
+  .page-10-learn-chemistry-bonding .en-key-sample-row,
+  .page-10-learn-chemistry-bonding .en-range-grid,
+  .page-05-learn-periodic-table-and-trends .en-reference-grid,
+  .page-05-learn-periodic-table-and-trends .en-key-sample-row,
+  .page-05-learn-periodic-table-and-trends .en-range-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-10-learn-chemistry-bonding .en-reference-panel svg,
+  .page-05-learn-periodic-table-and-trends .en-reference-panel svg {
+    max-width: 24rem;
+  }
+
   .page-10-learn-chemistry-bonding .lewis-box {
     min-height: 0;
     max-width: none;
@@ -11662,26 +12505,30 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
     width: min(100%, 300px);
   }
 
-  .page-10-learn-chemistry-bonding .concept-panel svg {
+  .page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-desktop,
+  .page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-mobile {
     max-width: 100%;
   }
 
-  .page-10-learn-chemistry-bonding .concept-panel-svg-mobile {
+  .page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-mobile {
     display: block;
     width: 100%;
     max-width: 360px;
+    margin-inline: auto;
   }
 
-  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap .concept-panel-svg-desktop {
-    display: block;
-  }
-
-  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap .concept-panel-svg-mobile {
+  .page-10-learn-chemistry-bonding .concept-panel > svg.concept-panel-svg-desktop {
     display: none;
   }
 
   .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap > svg {
     min-width: 600px;
+  }
+
+  .page-10-learn-chemistry-bonding .concept-panel-scroll-wrap--hb-water > .hb-water-svg {
+    width: min(100%, 340px);
+    min-width: 340px;
+    max-width: 340px;
   }
 
   .page-10-learn-chemistry-bonding .resonance-structure svg {

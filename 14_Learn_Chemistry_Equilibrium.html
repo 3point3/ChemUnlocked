@@ -41,7 +41,7 @@
   "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260514d">
+<link rel="stylesheet" href="chem.css?v=20260529b">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -136,7 +136,7 @@
         </div>
       </div>
       <p>When that ratio is calculated using <em>equilibrium</em> concentrations, it becomes the <strong>equilibrium constant K</strong>. For one reaction at one temperature, K has one fixed value.</p>
-      <p><strong>Concrete read:</strong> if K = 4.0 × 10<sup>3</sup>, products are strongly favored at equilibrium. If K = 2.0 × 10<sup>−5</sup>, reactants are strongly favored. If this feels shaky, read K as a snapshot of which side wins out at equilibrium.</p>
+      <p><strong>Concrete read:</strong> if K = 4.0 × 10<sup>3</sup>, products are strongly favored at equilibrium. If K = 2.0 × 10<sup>−5</sup>, reactants are strongly favored. If you are confused, read K as a snapshot of which side wins out at equilibrium.</p>
       <table class="concept-table mobile-stack-table">
         <thead>
           <tr><th>Comparison</th><th>Meaning</th><th>Direction of Shift</th></tr>
@@ -212,80 +212,83 @@
         <div class="concept-panel-title">Le Châtelier See-Saw: Match the Stress to the Shift</div>
         <div class="lc-ss" aria-labelledby="lc-ss-title">
           <h3 class="sr-only" id="lc-ss-title">Le Châtelier's principle interactive see-saw</h3>
+          <div class="lc-ss-grid">
+            <div class="lc-ss-card lc-ss-card--controls">
+              <div class="lc-step-hint">
+                <span class="lc-step-badge">Step 1</span>
+                <span class="lc-step-text">Choose a reaction</span>
+              </div>
 
-          <div class="lc-step-hint">
-            <span class="lc-step-badge">Step 1</span>
-            <span class="lc-step-text">Choose a reaction</span>
-          </div>
+              <div class="lc-custom-select" id="lcCustomSelect">
+                <div class="lc-cs-trigger" id="lcCsTrigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="lc-cs-label" id="lcCsLabel">Select a reaction</span>
+                  <span class="lc-cs-chevron" id="lcCsChevron">&#8964;</span>
+                </div>
+                <div class="lc-cs-menu" id="lcCsMenu" role="listbox" aria-label="Choose reaction" title="Choose reaction">
+                  <div class="lc-cs-option selected" data-value="0" data-reaction="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" role="option" aria-selected="true" aria-label="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" title="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)"></div>
+                  <div class="lc-cs-option" data-value="1" data-reaction="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" role="option" aria-selected="false" aria-label="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" title="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)"></div>
+                  <div class="lc-cs-option" data-value="2" data-reaction="PCl5 ⇌ PCl3 + Cl2 (endothermic)" role="option" aria-selected="false" aria-label="PCl5 ⇌ PCl3 + Cl2 (endothermic)" title="PCl5 ⇌ PCl3 + Cl2 (endothermic)"></div>
+                  <div class="lc-cs-option" data-value="3" data-reaction="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" role="option" aria-selected="false" aria-label="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" title="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)"></div>
+                  <div class="lc-cs-option" data-value="4" data-reaction="H2 + I2 ⇌ 2HI (Δn = 0)" role="option" aria-selected="false" aria-label="H2 + I2 ⇌ 2HI (Δn = 0)" title="H2 + I2 ⇌ 2HI (Δn = 0)"></div>
+                </div>
+              </div>
 
-          <div class="lc-custom-select" id="lcCustomSelect">
-            <div class="lc-cs-trigger" id="lcCsTrigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lc-cs-label" id="lcCsLabel">Select a reaction</span>
-              <span class="lc-cs-chevron" id="lcCsChevron">&#8964;</span>
+              <div class="lc-step-hint">
+                <span class="lc-step-badge">Step 2</span>
+                <span class="lc-step-text">Apply a change, then use the same button again to clear it</span>
+              </div>
+
+              <div class="lc-stress-section">
+                <div class="lc-stress-lbl">Concentration</div>
+                <div class="lc-stress-row" id="lcConcRow"></div>
+              </div>
+              <div class="lc-stress-section">
+                <div class="lc-stress-lbl">Pressure and Temperature</div>
+                <div class="lc-stress-row" id="lcPtRow"></div>
+              </div>
+              <div class="lc-stress-section">
+                <div class="lc-stress-lbl">Catalyst</div>
+                <div class="lc-stress-row" id="lcCatRow"></div>
+              </div>
             </div>
-            <div class="lc-cs-menu" id="lcCsMenu" role="listbox" aria-label="Choose reaction" title="Choose reaction">
-              <div class="lc-cs-option selected" data-value="0" data-reaction="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" role="option" aria-selected="true" aria-label="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)" title="N2 + 3H2 ⇌ 2NH3 (Haber process, exothermic)"></div>
-              <div class="lc-cs-option" data-value="1" data-reaction="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" role="option" aria-selected="false" aria-label="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)" title="2SO2 + O2 ⇌ 2SO3 (contact process, exothermic)"></div>
-              <div class="lc-cs-option" data-value="2" data-reaction="PCl5 ⇌ PCl3 + Cl2 (endothermic)" role="option" aria-selected="false" aria-label="PCl5 ⇌ PCl3 + Cl2 (endothermic)" title="PCl5 ⇌ PCl3 + Cl2 (endothermic)"></div>
-              <div class="lc-cs-option" data-value="3" data-reaction="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" role="option" aria-selected="false" aria-label="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)" title="N2 + O2 ⇌ 2NO (endothermic, Δn = 0)"></div>
-              <div class="lc-cs-option" data-value="4" data-reaction="H2 + I2 ⇌ 2HI (Δn = 0)" role="option" aria-selected="false" aria-label="H2 + I2 ⇌ 2HI (Δn = 0)" title="H2 + I2 ⇌ 2HI (Δn = 0)"></div>
+            <div class="lc-ss-card lc-ss-card--visual">
+              <svg id="lcSeesaw" viewBox="0 0 560 300" width="100%" role="img" aria-label="Le Châtelier see-saw showing equilibrium shifts">
+                <defs>
+                  <marker id="lc-a-fwd" markerWidth="9" markerHeight="8" refX="7" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#639922"></path>
+                  </marker>
+                  <marker id="lc-a-rev" markerWidth="9" markerHeight="8" refX="2" refY="3" orient="auto">
+                    <path d="M9,0 L9,6 L0,3 z" fill="#D85A30"></path>
+                  </marker>
+                </defs>
+                <rect x="0" y="0" width="560" height="300" rx="12" fill="#f8fbfd" stroke="#d8e3ea" stroke-width="1.5"></rect>
+                <text id="lcRxnLine" x="280" y="28" text-anchor="middle" font-size="17" font-family="var(--font-sans,sans-serif)" font-weight="600" fill="var(--color-text-primary)"></text>
+                <g id="lcLegendG" transform="translate(280,50)"></g>
+                <line id="lcShiftLine" x1="280" y1="100" x2="280" y2="100" stroke="#639922" stroke-width="2.5" stroke-linecap="round" marker-end="url(#lc-a-fwd)" opacity="0"></line>
+                <text id="lcShiftTxt" x="280" y="92" text-anchor="middle" font-size="15" font-family="var(--font-sans,sans-serif)" font-weight="600" fill="#639922" opacity="0"></text>
+                <text id="lcEqLbl" x="280" y="92" text-anchor="middle" font-size="15" font-family="var(--font-sans,sans-serif)" fill="var(--color-text-secondary)">balanced — at equilibrium</text>
+                <polygon points="280,248 263,272 297,272" fill="#c7d2da"></polygon>
+                <rect x="252" y="272" width="56" height="8" rx="3" fill="#c7d2da"></rect>
+                <g id="lcBeamGroup">
+                  <rect x="58" y="242" width="444" height="11" rx="5" fill="#4b9af0"></rect>
+                  <rect x="60" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
+                  <rect x="388" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
+                  <text x="116" y="160" text-anchor="middle" font-size="14" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="700">reactants</text>
+                  <text x="444" y="160" text-anchor="middle" font-size="14" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="700">products</text>
+                  <g id="lcLeftBalls"></g>
+                  <g id="lcRightBalls"></g>
+                </g>
+              </svg>
+
+              <div class="lc-explain" id="lcExplainBox">Choose a reaction, then tap a disturbance button.</div>
+              <div class="lc-readout">
+                <div class="lc-ro"><div class="lc-ro-lbl">after change</div><div class="lc-ro-val" id="lcRoQk">Q = K</div></div>
+                <div class="lc-ro"><div class="lc-ro-lbl">net shift</div><div class="lc-ro-val" id="lcRoShift">none</div></div>
+                <div class="lc-ro"><div class="lc-ro-lbl">K changes?</div><div class="lc-ro-val" id="lcRoKchg">no</div></div>
+              </div>
+              <button class="lc-reset-btn" id="lcResetBtn" type="button">reset to equilibrium</button>
             </div>
           </div>
-
-          <div class="lc-step-hint">
-            <span class="lc-step-badge">Step 2</span>
-            <span class="lc-step-text">Apply a disturbance, then use the same button again to clear it</span>
-          </div>
-
-          <div class="lc-stress-section">
-            <div class="lc-stress-lbl">Concentration</div>
-            <div class="lc-stress-row" id="lcConcRow"></div>
-          </div>
-          <div class="lc-stress-section">
-            <div class="lc-stress-lbl">Pressure and Temperature</div>
-            <div class="lc-stress-row" id="lcPtRow"></div>
-          </div>
-          <div class="lc-stress-section">
-            <div class="lc-stress-lbl">Catalyst</div>
-            <div class="lc-stress-row" id="lcCatRow"></div>
-          </div>
-
-          <svg id="lcSeesaw" viewBox="0 0 560 300" width="100%" aria-label="Le Châtelier see-saw showing equilibrium shifts">
-            <defs>
-              <marker id="lc-a-fwd" markerWidth="9" markerHeight="8" refX="7" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L9,3 z" fill="#639922"></path>
-              </marker>
-              <marker id="lc-a-rev" markerWidth="9" markerHeight="8" refX="2" refY="3" orient="auto">
-                <path d="M9,0 L9,6 L0,3 z" fill="#D85A30"></path>
-              </marker>
-            </defs>
-            <rect x="0" y="0" width="560" height="300" rx="12" fill="#f8fbfd" stroke="#d8e3ea" stroke-width="1.5"></rect>
-            <text id="lcRxnLine" x="280" y="26" text-anchor="middle" font-size="14" font-family="var(--font-sans,sans-serif)" font-weight="500" fill="var(--color-text-primary)"></text>
-            <g id="lcLegendG" transform="translate(280,50)"></g>
-            <line id="lcShiftLine" x1="280" y1="100" x2="280" y2="100" stroke="#639922" stroke-width="2.5" stroke-linecap="round" marker-end="url(#lc-a-fwd)" opacity="0"></line>
-            <text id="lcShiftTxt" x="280" y="88" text-anchor="middle" font-size="13" font-family="var(--font-sans,sans-serif)" font-weight="500" fill="#639922" opacity="0"></text>
-            <text id="lcEqLbl" x="280" y="88" text-anchor="middle" font-size="12" font-family="var(--font-sans,sans-serif)" fill="var(--color-text-secondary)">balanced — at equilibrium</text>
-            <polygon points="280,248 263,272 297,272" fill="#c7d2da"></polygon>
-            <rect x="252" y="272" width="56" height="8" rx="3" fill="#c7d2da"></rect>
-            <g id="lcBeamGroup">
-              <rect x="58" y="242" width="444" height="11" rx="5" fill="#4b9af0"></rect>
-              <rect x="60" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
-              <rect x="388" y="231" width="112" height="11" rx="4" fill="#276fbe"></rect>
-              <text x="116" y="160" text-anchor="middle" font-size="11" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="600">reactants</text>
-              <text x="444" y="160" text-anchor="middle" font-size="11" font-family="var(--font-sans,sans-serif)" fill="#5f6d7a" font-weight="600">products</text>
-              <g id="lcLeftBalls"></g>
-              <g id="lcRightBalls"></g>
-            </g>
-            <line x1="38" y1="280" x2="522" y2="280" stroke="#d7dee5" stroke-width="1.5"></line>
-          </svg>
-
-          <div class="lc-readout">
-            <div class="lc-ro"><div class="lc-ro-lbl">after disturbance</div><div class="lc-ro-val" id="lcRoQk">Q = K</div></div>
-            <div class="lc-ro"><div class="lc-ro-lbl">net shift</div><div class="lc-ro-val" id="lcRoShift">none</div></div>
-            <div class="lc-ro"><div class="lc-ro-lbl">K changes?</div><div class="lc-ro-val" id="lcRoKchg">no</div></div>
-          </div>
-          <div class="lc-explain" id="lcExplainBox">Choose a reaction, then tap a disturbance button.</div>
-          <button class="lc-reset-btn" id="lcResetBtn" type="button">reset to equilibrium</button>
         </div>
       </div>
       <p><strong>Concentration changes</strong></p>
@@ -336,7 +339,7 @@
 
     <div class="card">
       <h2 class="card-title"><span class="num">14.5</span> ICE Tables: Setting Up Equilibrium Problems Step by Step</h2>
-      <p>If this feels shaky, slow down and make the setup do the thinking for you. Use an <strong>ICE table</strong> only after you know which way the reaction must move. ICE stands for <strong>I</strong>nitial concentrations, <strong>C</strong>hange in concentrations, and <strong>E</strong>quilibrium concentrations.</p>
+      <p>If you are confused, slow down and make the setup do the thinking for you. Use an <strong>ICE table</strong> only after you know which way the reaction must move. ICE stands for <strong>I</strong>nitial concentrations, <strong>C</strong>hange in concentrations, and <strong>E</strong>quilibrium concentrations.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
@@ -390,7 +393,7 @@
           <div class="formula-rule">K = <span class="formula-frac"><span class="formula-frac-n">[<span class="ion-group">CO<span class="chem-sub">2</span></span>][<span class="ion-group">H<span class="chem-sub">2</span></span>]</span><span class="formula-frac-d">[<span class="ion-group">CO</span>][<span class="ion-group">H<span class="chem-sub">2</span>O</span>]</span></span></div>
           </div>
         </div>
-        <table class="concept-table ice-table">
+        <table class="concept-table ice-table mobile-stack-table">
           <thead>
             <tr>
               <th>Row</th>
@@ -600,7 +603,7 @@
           <div id="pressure-reveal-text"></div>
           <div class="tool-visual-panel">
           <div class="tool-visual-svg-wrap">
-          <svg id="seesaw-svg" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+          <svg id="seesaw-svg" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le Châtelier equilibrium seesaw tool">
           <defs>
             <linearGradient id="seesaw-bg" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#f8fbff"/>
@@ -821,7 +824,7 @@
           <div class="step-num"></div>
           <div class="step-content">
             <strong>Step 3 — Set up the ICE table</strong>
-            <table class="concept-table ice-table">
+            <table class="concept-table ice-table mobile-stack-table">
               <thead><tr><th></th><th><span class="ion-group">H<span class="chem-sub">2</span></span></th><th><span class="ion-group">I<span class="chem-sub">2</span></span></th><th><span class="ion-group">HI</span></th></tr></thead>
               <tbody>
                 <tr><td data-label="Row"><strong>I</strong></td><td data-label="H2">0.500</td><td data-label="I2">0.500</td><td data-label="HI">0</td></tr>
@@ -958,7 +961,7 @@
 </main>
 
 
-<script src="chem.js?v=20260509"></script>
+<script src="chem.js?v=20260529b"></script>
 <script>
 // ── 1. TOOL LOGIC ─────────────────────────────────────────────────────────
 
@@ -1874,11 +1877,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function setSvgTextWithChemistry(el, text) {
     el.textContent = '';
+    const parentSize = parseFloat(el.getAttribute('font-size') || '16');
+    const subDy = Math.round(parentSize * 0.3);
     const parts = text.split(/([A-Za-z][A-Za-z0-9()]*)/);
+    let pendingReset = false;
     parts.forEach(function (part) {
       if (!part) return;
       if (!/^[A-Za-z][A-Za-z0-9()]*$/.test(part)) {
-        el.appendChild(document.createTextNode(part));
+        const span = document.createElementNS(NS, 'tspan');
+        span.textContent = part;
+        if (pendingReset) {
+          span.setAttribute('dy', String(-subDy));
+          pendingReset = false;
+        }
+        el.appendChild(span);
         return;
       }
       const fragments = part.match(/[A-Za-z()]+|\d+/g) || [part];
@@ -1886,8 +1898,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const span = document.createElementNS(NS, 'tspan');
         span.textContent = fragment;
         if (/^\d+$/.test(fragment)) {
-          span.setAttribute('baseline-shift', 'sub');
+          if (!pendingReset) {
+            span.setAttribute('dy', String(subDy));
+          }
           span.setAttribute('font-size', '72%');
+          pendingReset = true;
+        } else {
+          if (pendingReset) {
+            span.setAttribute('dy', String(-subDy));
+            pendingReset = false;
+          }
         }
         el.appendChild(span);
       });
@@ -1964,7 +1984,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const circle = document.createElementNS(NS, 'circle');
       circle.setAttribute('cx', cx);
       circle.setAttribute('cy', cy);
-      circle.setAttribute('r', '13');
+      circle.setAttribute('r', '14');
       circle.setAttribute('fill', color.fill);
       circle.setAttribute('stroke', color.stroke);
       circle.setAttribute('stroke-width', '1.5');
@@ -1972,12 +1992,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const text = document.createElementNS(NS, 'text');
       text.setAttribute('x', cx);
-      text.setAttribute('y', cy + 4);
+      text.setAttribute('y', cy + 4.5);
       text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('font-size', '8');
+      text.setAttribute('font-size', '9');
       text.setAttribute('font-family', 'var(--font-sans,sans-serif)');
       text.setAttribute('fill', color.stroke);
-      text.setAttribute('font-weight', '500');
+      text.setAttribute('font-weight', '600');
       setSvgTextWithChemistry(text, sym);
       group.appendChild(text);
     });
@@ -1994,7 +2014,7 @@ document.addEventListener('DOMContentLoaded', function () {
         items.push(sp.s);
       }
     });
-    const itemWidth = 72;
+    const itemWidth = 88;
     const total = items.length * itemWidth;
     const startX = -total / 2 + 10;
 
@@ -2005,18 +2025,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const circle = document.createElementNS(NS, 'circle');
       circle.setAttribute('cx', x);
       circle.setAttribute('cy', '0');
-      circle.setAttribute('r', '7');
+      circle.setAttribute('r', '9');
       circle.setAttribute('fill', color.fill);
       circle.setAttribute('stroke', color.stroke);
-      circle.setAttribute('stroke-width', '1.5');
+      circle.setAttribute('stroke-width', '2');
       legend.appendChild(circle);
 
       const text = document.createElementNS(NS, 'text');
-      text.setAttribute('x', x + 12);
-      text.setAttribute('y', '4');
-      text.setAttribute('font-size', '11');
+      text.setAttribute('x', x + 15);
+      text.setAttribute('y', '5');
+      text.setAttribute('font-size', '14');
       text.setAttribute('font-family', 'var(--font-sans,sans-serif)');
       text.setAttribute('fill', 'var(--color-text-secondary)');
+      text.setAttribute('font-weight', '600');
       setSvgTextWithChemistry(text, sym);
       legend.appendChild(text);
     });

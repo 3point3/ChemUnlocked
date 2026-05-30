@@ -41,7 +41,7 @@
   "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260514d">
+<link rel="stylesheet" href="chem.css?v=20260529b">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -147,7 +147,7 @@
       <div class="particle-wrapper">
         <div class="particle-summary-box">
           <strong>Carbon Atom</strong>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="45" fill="black"></circle>
             <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, sans-serif" font-size="35" fill="white">C</text>
           </svg>
@@ -160,7 +160,7 @@
         
         <div class="particle-summary-box">
           <strong>Oxygen Molecule</strong>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 55">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 55" aria-hidden="true">
             <circle cx="27" cy="27" r="23" fill="red" />
             <circle cx="73" cy="27" r="23" fill="red" />
             <text x="27" y="27" text-anchor="middle" dominant-baseline="central" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold">O</text>
@@ -239,12 +239,15 @@
       <h2 class="card-title"><span class="num">7.2</span> Molar Mass: The Bridge Between Grams and Moles</h2>
       <p>Moles connect particle counting to mass. The <strong>molar mass</strong> (symbol: MM) is the number that makes that connection. It tells you the mass of exactly one mole of a substance in g/mol.</p>
       <p>Start here when a problem gives you grams. Grams come from the balance, but chemistry comparisons usually happen in moles first. Molar mass is the bridge that lets you switch between those two ideas without losing the meaning of the substance.</p>
-      <p>For an element, the molar mass is its atomic mass from the periodic table written in g/mol. For a compound, you find the total by adding the mass contribution from each element in the formula.</p>
+      <ul>
+        <li>For an element, the molar mass is its atomic mass from the periodic table written in g/mol.</li>
+        <li>For a compound, find the total by adding the mass contribution from each element in the formula.</li>
+      </ul>
 
       <div class="key-fact">
         <div class="icon">↗</div>
         <div class="key-fact-copy">
-          <p class="key-fact-title">If this part feels shaky</p>
+          <p class="key-fact-title">If you are confused here</p>
           <ul class="key-fact-list">
             <li>If atomic mass values feel unfamiliar, review <a href="/03_learn_atomic_structure">Unit 03 · Atomic Structure</a>.</li>
             <li>If you need help locating and comparing element data, revisit <a href="/05_learn_periodic_table_and_trends">Unit 05 · Periodic Table &amp; Trends</a>.</li>
@@ -340,8 +343,7 @@
           <g transform="translate(420, 135)">
             <rect x="-200" y="-20" width="400" height="80" class="u07-mm-formula-box" filter="url(#u07-mm-shadow)"></rect>
             <text x="0" y="15" class="u07-mm-formula-main">
-              <tspan class="u07-mm-text-al">Al</tspan><tspan class="u07-mm-formula-sub u07-mm-text-al" baseline-shift="sub">2</tspan>
-              <tspan fill="#64748b">(</tspan><tspan class="u07-mm-text-s">S</tspan><tspan class="u07-mm-text-o">O</tspan><tspan class="u07-mm-formula-sub u07-mm-text-o" baseline-shift="sub">4</tspan><tspan fill="#64748b">)</tspan><tspan class="u07-mm-formula-sub" fill="#d97706" baseline-shift="sub">3</tspan>
+              <tspan class="u07-mm-text-al">Al</tspan><tspan class="u07-mm-formula-sub u07-mm-text-al" dy="8">2</tspan><tspan dy="-8" fill="#64748b">(</tspan><tspan class="u07-mm-text-s">S</tspan><tspan class="u07-mm-text-o">O</tspan><tspan class="u07-mm-formula-sub u07-mm-text-o" dy="8">4</tspan><tspan dy="-8" fill="#64748b">)</tspan><tspan class="u07-mm-formula-sub" fill="#d97706" dy="8">3</tspan>
             </text>
             <text x="-120" y="42" class="u07-mm-count-text u07-mm-text-al">2 Al atoms</text>
             <text x="0" y="42" class="u07-mm-count-text u07-mm-text-s">3 S atoms</text>
@@ -682,8 +684,8 @@
                 <line x1="353" y1="264" x2="455" y2="323" stroke="#993C1D" stroke-width="3" marker-start="url(#arrow-moles)" marker-end="url(#arrow-particles)"></line>
                 <g transform="translate(410, 280)">
                   <rect x="-55" y="-20" width="110" height="40" rx="8" fill="#ffffff" stroke="#993C1D" stroke-width="1"></rect>
-                  <text y="-3" font-size="13" font-weight="600" fill="#993C1D" text-anchor="middle">÷ or × N<tspan font-size="10" baseline-shift="sub">A</tspan></text>
-                  <text y="13" font-size="10" fill="#993C1D" text-anchor="middle">(6.022 × 10<tspan font-size="8" baseline-shift="super">23</tspan>)</text>
+                  <text y="-3" font-size="13" font-weight="600" fill="#993C1D" text-anchor="middle">÷ or × N<tspan font-size="10" dy="4">A</tspan></text>
+                  <text y="13" font-size="10" fill="#993C1D" text-anchor="middle">(6.022 × 10<tspan font-size="8" dy="-4">23</tspan><tspan dy="4">)</tspan></text>
                 </g>
               </g>
 
@@ -987,7 +989,7 @@
                 .u07-emp-math-track { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #1e293b; }
                 .u07-emp-badge-teal { fill: #dcfce7; stroke: #22c55e; stroke-width: 2px; rx: 20px; filter: drop-shadow(0 4px 6px rgba(34, 197, 94, 0.15)); }
                 .u07-emp-text-badge-teal { fill: #14532d; font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; text-anchor: middle; letter-spacing: 0.5px; }
-                .u07-emp-sub { font-size: 0.8em; baseline-shift: sub; }
+                .u07-emp-sub { font-size: 0.8em; }
               </style>
               <filter id="u07-emp-block-shadow" x="-5%" y="-5%" width="110%" height="110%">
                 <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(15, 23, 42, 0.06)"></feDropShadow>
@@ -1030,7 +1032,7 @@
 
             <g transform="translate(100, 645)">
               <rect width="300" height="40" class="u07-emp-badge-teal"></rect>
-              <text x="150" y="26" class="u07-emp-text-badge-teal">EMPIRICAL FORMULA: C<tspan class="u07-emp-sub">3</tspan>H<tspan class="u07-emp-sub">4</tspan>O<tspan class="u07-emp-sub">3</tspan></text>
+              <text x="150" y="26" class="u07-emp-text-badge-teal">EMPIRICAL FORMULA: C<tspan class="u07-emp-sub" dy="5">3</tspan><tspan dy="-5">H</tspan><tspan class="u07-emp-sub" dy="5">4</tspan><tspan dy="-5">O</tspan><tspan class="u07-emp-sub" dy="5">3</tspan></text>
             </g>
           </svg>
           <figcaption>Start with the percent data, assume a 100 g sample, convert each element to moles, and reduce the mole ratio to the smallest whole-number formula.</figcaption>
@@ -1052,7 +1054,7 @@
                 .u07-mol-math-note { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #64748b; font-style: italic; }
                 .u07-mol-badge-orange { fill: #ffedd5; stroke: #f97316; stroke-width: 2px; rx: 20px; filter: drop-shadow(0 4px 6px rgba(249, 115, 22, 0.15)); }
                 .u07-mol-text-badge-orange { fill: #7c2d12; font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; text-anchor: middle; letter-spacing: 0.5px; }
-                .u07-mol-sub { font-size: 0.8em; baseline-shift: sub; }
+                .u07-mol-sub { font-size: 0.8em; }
               </style>
               <filter id="u07-mol-block-shadow" x="-5%" y="-5%" width="110%" height="110%">
                 <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(15, 23, 42, 0.06)"></feDropShadow>
@@ -1065,13 +1067,13 @@
             <g transform="translate(35, 70)" filter="url(#u07-mol-block-shadow)">
               <rect width="430" height="55" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" rx="10"></rect>
               <text x="215" y="22" class="u07-mol-section-head">CARRY-OVER DATA</text>
-              <text x="215" y="42" class="u07-mol-banner-text">Empirical: C<tspan class="u07-mol-sub">3</tspan>H<tspan class="u07-mol-sub">4</tspan>O<tspan class="u07-mol-sub">3</tspan>  |  Molar Mass: 176.12 g/mol</text>
+              <text x="215" y="42" class="u07-mol-banner-text">Empirical: C<tspan class="u07-mol-sub" dy="5">3</tspan><tspan dy="-5">H</tspan><tspan class="u07-mol-sub" dy="5">4</tspan><tspan dy="-5">O</tspan><tspan class="u07-mol-sub" dy="5">3</tspan>  |  Molar Mass: 176.12 g/mol</text>
             </g>
 
             <g transform="translate(35, 145)" filter="url(#u07-mol-block-shadow)">
               <rect width="430" height="420" class="u07-mol-card-orange"></rect>
 
-              <text x="25" y="35" class="u07-mol-step-label">4. Calculate the Empirical Mass of C<tspan class="u07-mol-sub">3</tspan>H<tspan class="u07-mol-sub">4</tspan>O<tspan class="u07-mol-sub">3</tspan>:</text>
+              <text x="25" y="35" class="u07-mol-step-label">4. Calculate the Empirical Mass of C<tspan class="u07-mol-sub" dy="4">3</tspan><tspan dy="-4">H</tspan><tspan class="u07-mol-sub" dy="4">4</tspan><tspan dy="-4">O</tspan><tspan class="u07-mol-sub" dy="4">3</tspan><tspan dy="-4">:</tspan></text>
               <text x="40" y="60" class="u07-mol-math-track">Mass = 3(12.01) + 4(1.008) + 3(16.00)</text>
               <text x="40" y="90" class="u07-mol-math-track">Empirical Mass = 88.06 g/mol</text>
 
@@ -1087,7 +1089,7 @@
               <polygon points="210,298 220,298 215,306" fill="#94a3b8"></polygon>
 
               <text x="25" y="335" class="u07-mol-step-label">6. Multiply Empirical Subscripts by n:</text>
-              <text x="40" y="360" class="u07-mol-math-track">(C<tspan class="u07-mol-sub">3</tspan>H<tspan class="u07-mol-sub">4</tspan>O<tspan class="u07-mol-sub">3</tspan>) × 2</text>
+              <text x="40" y="360" class="u07-mol-math-track">(C<tspan class="u07-mol-sub" dy="4">3</tspan><tspan dy="-4">H</tspan><tspan class="u07-mol-sub" dy="4">4</tspan><tspan dy="-4">O</tspan><tspan class="u07-mol-sub" dy="4">3</tspan><tspan dy="-4">) × 2</tspan></text>
               <text x="160" y="360" class="u07-mol-math-track">C: 3 × 2 = 6</text>
               <text x="160" y="385" class="u07-mol-math-track">H: 4 × 2 = 8</text>
               <text x="160" y="410" class="u07-mol-math-track">O: 3 × 2 = 6</text>
@@ -1095,21 +1097,21 @@
 
             <g transform="translate(100, 545)">
               <rect width="300" height="40" class="u07-mol-badge-orange"></rect>
-              <text x="150" y="26" class="u07-mol-text-badge-orange">MOLECULAR FORMULA: C<tspan class="u07-mol-sub">6</tspan>H<tspan class="u07-mol-sub">8</tspan>O<tspan class="u07-mol-sub">6</tspan></text>
+              <text x="150" y="26" class="u07-mol-text-badge-orange">MOLECULAR FORMULA: C<tspan class="u07-mol-sub" dy="5">6</tspan><tspan dy="-5">H</tspan><tspan class="u07-mol-sub" dy="5">8</tspan><tspan dy="-5">O</tspan><tspan class="u07-mol-sub" dy="5">6</tspan></text>
             </g>
           </svg>
           <figcaption>After you know the empirical formula, compare its mass to the actual molar mass to find the whole-number multiplier that produces the molecular formula.</figcaption>
         </figure>
       </div>
 
-      <p>If this feels shaky, go back to 7.3: masses are not the ratio that matters — you must convert to moles before you decide what the subscripts should be.</p>
+      <p>If you are confused here, go back to 7.3: masses are not the ratio that matters — you must convert to moles before you decide what the subscripts should be.</p>
 
       <div class="key-fact">
         <div class="icon">↗</div>
         <div class="key-fact-copy">
           <p class="key-fact-title">Common sticking point</p>
           <ul class="key-fact-list">
-            <li>If formula subscripts still feel shaky, review <a href="/06_learn_chemistry_nomenclature">Unit 06 · Nomenclature</a> before pushing through empirical-formula problems.</li>
+            <li>If formula subscripts are still unclear, review <a href="/06_learn_chemistry_nomenclature">Unit 06 · Nomenclature</a> before pushing through empirical-formula problems.</li>
             <li>If the mass values themselves are the issue, go back to <a href="/05_learn_periodic_table_and_trends">Unit 05 · Periodic Table &amp; Trends</a> and practice reading atomic masses quickly.</li>
           </ul>
         </div>
@@ -1609,7 +1611,7 @@
 </div><!-- end container -->
 </main>
 
-<script src="chem.js?v=20260509"></script>
+<script src="chem.js?v=20260529b"></script>
 <script>
 // ===================== LOCAL TAB NAV =====================
 

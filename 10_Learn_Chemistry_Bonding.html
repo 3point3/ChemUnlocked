@@ -41,7 +41,7 @@
   "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260514d">
+<link rel="stylesheet" href="chem.css?v=20260529b">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -308,7 +308,7 @@
       <div class="lewis-diagram">
           <div class="lewis-box">
             <div class="lb-name">Hydrogen</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">H</text>
               <circle cx="11" cy="30" r="3.5" fill="#2563eb"></circle>
             </svg>
@@ -317,7 +317,7 @@
           
           <div class="lewis-box">
             <div class="lb-name">Carbon</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">C</text>
               <circle cx="30" cy="11" r="3.5" fill="#2563eb"></circle>
               <circle cx="49" cy="30" r="3.5" fill="#2563eb"></circle>
@@ -329,7 +329,7 @@
           
           <div class="lewis-box">
             <div class="lb-name">Nitrogen</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">N</text>
               <circle cx="30" cy="11" r="3.5" fill="#2563eb"></circle>
               <circle cx="49" cy="30" r="3.5" fill="#2563eb"></circle>
@@ -342,7 +342,7 @@
           
           <div class="lewis-box">
             <div class="lb-name">Oxygen</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">O</text>
               <circle cx="23" cy="11" r="3.5" fill="#dc2626"></circle>
               <circle cx="37" cy="11" r="3.5" fill="#dc2626"></circle>
@@ -356,7 +356,7 @@
           
           <div class="lewis-box">
             <div class="lb-name">Fluorine</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
               <circle cx="23" cy="11" r="3.5" fill="#059669"></circle>
               <circle cx="37" cy="11" r="3.5" fill="#059669"></circle>
@@ -371,7 +371,7 @@
           
           <div class="lewis-box">
             <div class="lb-name">Neon</div>
-            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible">
+            <svg width="60" height="60" viewBox="0 0 60 60" overflow="visible" aria-hidden="true">
               <text x="30" y="38" font-size="20" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" fill="#0f172a" text-anchor="middle">Ne</text>
               <circle cx="23" cy="11" r="3.5" fill="#7c3aed"></circle>
               <circle cx="37" cy="11" r="3.5" fill="#7c3aed"></circle>
@@ -487,7 +487,7 @@
               .u10-lewis-svg .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #64748b; text-anchor: middle; dominant-baseline: central; }
               .u10-lewis-svg .name { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #475569; text-anchor: middle; dominant-baseline: central; }
               .u10-lewis-svg .formula { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #64748b; text-anchor: middle; dominant-baseline: central; }
-              .u10-lewis-svg .formula-sub { font-size: 9px; font-weight: 700; baseline-shift: sub; }
+              .u10-lewis-svg .formula-sub { font-size: 9px; font-weight: 700; }
               .u10-lewis-svg .elem { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; text-anchor: middle; dominant-baseline: central; }
               .u10-lewis-svg .bond { stroke: #334155; stroke-width: 2.5; stroke-linecap: round; }
               .u10-lewis-svg .lone-pair { fill: #0f172a; }
@@ -503,7 +503,7 @@
           <rect class="box-bg" x="12" y="60" width="182" height="150" />
           <g transform="translate(103, 135)">
             <text y="-55" class="name">Water</text>
-            <text y="55" class="formula">H<tspan class="formula-sub">2</tspan>O · 8 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="55" class="formula">H<tspan class="formula-sub" dy="3">2</tspan><tspan dy="-3">O · 8 total e</tspan><tspan font-size="9" dy="-4">-</tspan></text>
 
             <text class="elem">O</text>
             <text x="-25" y="25" class="elem">H</text>
@@ -521,7 +521,7 @@
           <rect class="box-bg" x="206" y="60" width="182" height="150" />
           <g transform="translate(297, 135)">
             <text y="-55" class="name">Ammonia</text>
-            <text y="55" class="formula">NH<tspan class="formula-sub">3</tspan> · 8 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="55" class="formula">NH<tspan class="formula-sub" dy="3">3</tspan><tspan dy="-3"> · 8 total e</tspan><tspan font-size="9" dy="-4">-</tspan></text>
 
             <text class="elem">N</text>
             <text x="-25" y="25" class="elem">H</text>
@@ -539,7 +539,7 @@
           <rect class="box-bg" x="12" y="222" width="182" height="140" />
           <g transform="translate(103, 292)">
             <text y="-50" class="name">Carbon Dioxide</text>
-            <text y="50" class="formula">CO<tspan class="formula-sub">2</tspan> · 16 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="50" class="formula">CO<tspan class="formula-sub" dy="3">2</tspan><tspan dy="-3"> · 16 total e</tspan><tspan font-size="9" dy="-4">-</tspan></text>
 
             <text class="elem">C</text>
             <text x="-42" class="elem">O</text>
@@ -564,7 +564,7 @@
           <rect class="box-bg" x="206" y="222" width="182" height="140" />
           <g transform="translate(297, 292)">
             <text y="-50" class="name">Hydrogen Cyanide</text>
-            <text y="50" class="formula">HCN · 10 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="50" class="formula">HCN · 10 total e<tspan font-size="9" dy="-4">-</tspan></text>
 
             <text class="elem">C</text>
             <text x="-38" class="elem">H</text>
@@ -582,7 +582,7 @@
           <rect class="box-bg" x="12" y="374" width="182" height="162" />
           <g transform="translate(103, 448)">
             <text y="-55" class="name">Sulfur Dioxide</text>
-            <text y="60" class="formula">SO<tspan class="formula-sub">2</tspan> · 18 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="60" class="formula">SO<tspan class="formula-sub" dy="3">2</tspan><tspan dy="-3"> · 18 total e</tspan><tspan font-size="9" dy="-4">-</tspan></text>
             <text y="74" class="note">(resonance form)</text>
 
             <text y="-8" class="elem">S</text>
@@ -612,7 +612,7 @@
           <rect class="box-bg" x="206" y="374" width="182" height="162" />
           <g transform="translate(297, 448)">
             <text y="-65" class="name">Boron Trifluoride</text>
-            <text y="70" class="formula">BF<tspan class="formula-sub">3</tspan> · 24 total e<tspan font-size="9" baseline-shift="super">-</tspan></text>
+            <text y="70" class="formula">BF<tspan class="formula-sub" dy="3">3</tspan><tspan dy="-3"> · 24 total e</tspan><tspan font-size="9" dy="-4">-</tspan></text>
 
             <text y="-2" class="elem">B</text>
             <text y="-38" class="elem">F</text>
@@ -678,7 +678,7 @@
           <rect width="400" height="700" class="card-bg" />
 
           <g transform="translate(200, 35)">
-            <text class="title" y="0">Nitrate Ion (NO<tspan class="formula-sub">3</tspan><tspan font-size="14" baseline-shift="super">-</tspan>) Lewis Structures</text>
+            <text class="title" y="0">Nitrate Ion (NO<tspan class="formula-sub" dy="4">3</tspan><tspan font-size="14" dy="-9">-</tspan><tspan dy="5">) Lewis Structures</tspan></text>
             <text class="subtitle" y="20">Traditional line-and-dot skeletal representation</text>
           </g>
 
@@ -828,7 +828,7 @@
     <div class="card">
       <h2 class="card-title"><span class="num">10.6</span> VSEPR Theory: Predicting Molecular Shape from Electron Groups</h2>
       <p><strong>VSEPR</strong> stands for Valence Shell Electron Pair Repulsion. The core idea is simple: electron pairs (both bonding pairs and lone pairs) around a central atom repel each other and spread out as far apart as possible. This repulsion determines the geometry around the central atom.</p>
-      <p>If this feels shaky, start by counting electron groups, not by memorizing shape names. One double bond still counts as one group. One triple bond still counts as one group.</p>
+      <p>If you are confused, start by counting electron groups, not by memorizing shape names. One double bond still counts as one group. One triple bond still counts as one group.</p>
       <p>There are two different geometry labels for every molecule:</p>
       <ul class="content-list">
         <li><strong>Electron geometry</strong> — the shape described by all electron pairs, including lone pairs. This is what VSEPR theory predicts first.</li>
@@ -1316,7 +1316,7 @@
 
           <!-- e- shift arrow -->
           <line x1="280" y1="80" x2="240" y2="80" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#ldf-arr-l)"/>
-          <text x="260" y="74" font-size="9" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="260" y="74" font-size="9" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
 
           <circle cx="223" cy="105" r="20" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
           <text x="223" y="105" font-size="12" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
@@ -1338,7 +1338,7 @@
           <ellipse cx="392" cy="90" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
           <ellipse cx="382" cy="90" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
           <line x1="414" y1="66" x2="386" y2="66" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l)"/>
-          <text x="400" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="400" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
           <line x1="389" y1="90" x2="419" y2="90" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
           <circle cx="379" cy="90" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
           <text x="379" y="90" font-size="10" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
@@ -1354,7 +1354,7 @@
           <ellipse cx="494" cy="90" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
           <ellipse cx="484" cy="90" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
           <line x1="516" y1="66" x2="488" y2="66" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l)"/>
-          <text x="502" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="502" y="60" font-size="7.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
           <line x1="491" y1="90" x2="521" y2="90" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
           <circle cx="483" cy="90" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
           <text x="483" y="90" font-size="10" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
@@ -1393,7 +1393,7 @@
           <ellipse cx="138" cy="305" rx="28" ry="20" fill="#ddd6fe" stroke="none" opacity="0.55"/>
           <line x1="133" y1="305" x2="183" y2="305" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="194" y1="280" x2="158" y2="280" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#ldf-arr-l-mobile)"/>
-          <text x="176" y="270" font-size="10" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="176" y="270" font-size="10" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
           <circle cx="120" cy="305" r="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
           <text x="120" y="305" font-size="12" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
           <circle cx="196" cy="305" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
@@ -1407,7 +1407,7 @@
           <ellipse cx="118" cy="510" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
           <ellipse cx="108" cy="510" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
           <line x1="140" y1="486" x2="112" y2="486" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l-mobile)"/>
-          <text x="126" y="476" font-size="8.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="126" y="476" font-size="8.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
           <line x1="113" y1="510" x2="143" y2="510" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
           <circle cx="103" cy="510" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
           <text x="103" y="510" font-size="10" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
@@ -1421,7 +1421,7 @@
           <ellipse cx="222" cy="510" rx="42" ry="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.7"/>
           <ellipse cx="212" cy="510" rx="20" ry="15" fill="#ddd6fe" stroke="none" opacity="0.5"/>
           <line x1="244" y1="486" x2="216" y2="486" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ldf-arr-l-mobile)"/>
-          <text x="230" y="476" font-size="8.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan baseline-shift="super">-</tspan> shift</text>
+          <text x="230" y="476" font-size="8.5" fill="#7c3aed" text-anchor="middle" font-weight="700">e<tspan dy="-3">-</tspan><tspan dy="3"> shift</tspan></text>
           <line x1="217" y1="510" x2="247" y2="510" stroke="#334155" stroke-width="2.3" stroke-linecap="round"/>
           <circle cx="207" cy="510" r="15" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
           <text x="207" y="510" font-size="10" font-weight="800" font-family="system-ui, -apple-system, sans-serif" fill="#166534" text-anchor="middle" dominant-baseline="central">Cl</text>
@@ -2260,7 +2260,7 @@
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260509"></script>
+<script src="chem.js?v=20260529b"></script>
 <script>
 // ===================== ELECTRONEGATIVITY DATA (Pauling scale) =====================
 const EN_DATA = [

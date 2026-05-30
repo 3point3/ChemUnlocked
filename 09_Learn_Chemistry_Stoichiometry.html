@@ -41,7 +41,7 @@
   "isPartOf": { "@type": "WebSite", "name": "ChemUnlocked", "url": "https://chemunlocked.com/" }
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260514e">
+<link rel="stylesheet" href="chem.css?v=20260529b">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -271,7 +271,7 @@
       <h2 class="card-title"><span class="num">9.3</span> The Stoichiometry Roadmap: What to Do Step by Step</h2>
       <p>Many stoichiometry problems follow this path when you start with grams and need grams of a different substance. First identify what you are given and what you are asked to find. Then use only the steps you need.</p>
       <p><strong>Always check that the equation is balanced before using any mole ratio.</strong> If the coefficients are wrong, every later conversion will also be wrong.</p>
-      <p>If this feels shaky, slow down and label the path before you calculate. Most mistakes in stoichiometry happen before the arithmetic even starts.</p>
+      <p>If you are confused, slow down and label the path before you calculate. Most mistakes in stoichiometry happen before the arithmetic even starts.</p>
 
       <figure class="lesson-figure lesson-figure-split stoich-roadmap-figure">
         <div class="stoich-roadmap-layout">
@@ -535,7 +535,7 @@
               .u09-yield-text-amber-dark { fill: #78350f; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; letter-spacing: 0.5px; }
               .u09-yield-badge-yield { fill: #eff6ff; stroke: #2563eb; stroke-width: 2px; rx: 12px; }
               .u09-yield-text-yield-dark { fill: #1e40af; font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; text-anchor: middle; }
-              .u09-yield-sub { font-size: 0.7em; baseline-shift: sub; }
+              .u09-yield-sub { font-size: 0.7em; }
             </style>
 
             <filter id="u09-yield-block-shadow" x="-5%" y="-5%" width="110%" height="110%">
@@ -553,7 +553,7 @@
           <g transform="translate(200, 75)" filter="url(#u09-yield-block-shadow)">
             <rect width="600" height="105" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" rx="12"></rect>
             <text x="300" y="26" class="u09-yield-section-head">STEP 1: INITIAL STOICHIOMETRIC BALANCED EQUATION</text>
-            <text x="300" y="62" class="u09-yield-equation-sans">4 NH<tspan class="u09-yield-sub">3</tspan>  +  5 O<tspan class="u09-yield-sub">2</tspan>   →   4 NO  +  6 H<tspan class="u09-yield-sub">2</tspan>O</text>
+            <text x="300" y="62" class="u09-yield-equation-sans">4 NH<tspan class="u09-yield-sub" dy="5">3</tspan><tspan dy="-5">  +  5 O</tspan><tspan class="u09-yield-sub" dy="5">2</tspan><tspan dy="-5">   →   4 NO  +  6 H</tspan><tspan class="u09-yield-sub" dy="5">2</tspan><tspan dy="-5">O</tspan></text>
             <text x="180" y="88" class="u09-yield-meta-text">Given: 17.0 g  |  MM: 17.03 g/mol</text>
             <text x="315" y="88" class="u09-yield-meta-text">Given: 32.0 g  |  MM: 32.00 g/mol</text>
             <text x="445" y="88" class="u09-yield-meta-text">Target Product  |  MM: 30.01 g/mol</text>
@@ -563,26 +563,26 @@
 
           <g transform="translate(45, 240)" filter="url(#u09-yield-block-shadow)">
             <rect width="435" height="265" class="u09-yield-card-teal"></rect>
-            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-teal-dark">Pathway A: NH<tspan class="u09-yield-sub">3</tspan> Performance Limit</text>
+            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-teal-dark">Pathway A: NH<tspan class="u09-yield-sub" dy="4">3</tspan><tspan dy="-4"> Is it limiting?</tspan></text>
             <line x1="20" y1="42" x2="415" y2="42" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"></line>
             <text x="25" y="68" class="u09-yield-step-label">1. Solve Initial Component Moles:</text>
-            <text x="40" y="92" class="u09-yield-math-track">17.0 g NH<tspan class="u09-yield-sub">3</tspan>  ×  ( 1 mol / 17.03 g )  =  1.00 mol NH<tspan class="u09-yield-sub">3</tspan></text>
+            <text x="40" y="92" class="u09-yield-math-track">17.0 g NH<tspan class="u09-yield-sub" dy="4">3</tspan><tspan dy="-4">  ×  ( 1 mol / 17.03 g )  =  1.00 mol NH</tspan><tspan class="u09-yield-sub" dy="4">3</tspan></text>
             <line x1="217" y1="112" x2="217" y2="132" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#u09-yield-arrow)"></line>
             <text x="25" y="158" class="u09-yield-step-label">2. Extrapolate Yield Potential for Product (NO):</text>
-            <text x="40" y="182" class="u09-yield-math-track">1.00 mol NH<tspan class="u09-yield-sub">3</tspan>  ×  ( 4 mol NO / 4 mol NH<tspan class="u09-yield-sub">3</tspan> )  =  1.00 mol NO</text>
+            <text x="40" y="182" class="u09-yield-math-track">1.00 mol NH<tspan class="u09-yield-sub" dy="4">3</tspan><tspan dy="-4">  ×  ( 4 mol NO / 4 mol NH</tspan><tspan class="u09-yield-sub" dy="4">3</tspan><tspan dy="-4"> )  =  1.00 mol NO</tspan></text>
             <rect x="25" y="212" width="385" height="34" fill="#ffffff" stroke="#16a34a" stroke-width="1" rx="6"></rect>
             <text x="217" y="234" class="u09-yield-path-title u09-yield-text-teal-dark" style="font-size: 13px;">Max Available Yield Target: 1.00 mol NO</text>
           </g>
 
           <g transform="translate(520, 240)" filter="url(#u09-yield-block-shadow)">
             <rect width="435" height="265" class="u09-yield-card-orange"></rect>
-            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-orange-dark">Pathway B: O<tspan class="u09-yield-sub">2</tspan> Performance Limit</text>
+            <text x="217" y="28" class="u09-yield-path-title u09-yield-text-orange-dark">Pathway B: O<tspan class="u09-yield-sub" dy="4">2</tspan><tspan dy="-4"> Is it limiting?</tspan></text>
             <line x1="20" y1="42" x2="415" y2="42" stroke="#ea580c" stroke-width="1" stroke-dasharray="3 3"></line>
             <text x="25" y="68" class="u09-yield-step-label">1. Solve Initial Component Moles:</text>
-            <text x="40" y="92" class="u09-yield-math-track">32.0 g O<tspan class="u09-yield-sub">2</tspan>  ×  ( 1 mol / 32.00 g )  =  1.00 mol O<tspan class="u09-yield-sub">2</tspan></text>
+            <text x="40" y="92" class="u09-yield-math-track">32.0 g O<tspan class="u09-yield-sub" dy="4">2</tspan><tspan dy="-4">  ×  ( 1 mol / 32.00 g )  =  1.00 mol O</tspan><tspan class="u09-yield-sub" dy="4">2</tspan></text>
             <line x1="217" y1="112" x2="217" y2="132" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#u09-yield-arrow)"></line>
             <text x="25" y="158" class="u09-yield-step-label">2. Extrapolate Yield Potential for Product (NO):</text>
-            <text x="40" y="182" class="u09-yield-math-track">1.00 mol O<tspan class="u09-yield-sub">2</tspan>  ×  ( 4 mol NO / 5 mol O<tspan class="u09-yield-sub">2</tspan> )  =  0.80 mol NO</text>
+            <text x="40" y="182" class="u09-yield-math-track">1.00 mol O<tspan class="u09-yield-sub" dy="4">2</tspan><tspan dy="-4">  ×  ( 4 mol NO / 5 mol O</tspan><tspan class="u09-yield-sub" dy="4">2</tspan><tspan dy="-4"> )  =  0.80 mol NO</tspan></text>
             <rect x="25" y="212" width="385" height="34" fill="#ffffff" stroke="#ea580c" stroke-width="1" rx="6"></rect>
             <text x="217" y="234" class="u09-yield-path-title u09-yield-text-orange-dark" style="font-size: 13px;">Max Available Yield Target: 0.80 mol NO</text>
           </g>
@@ -592,7 +592,7 @@
 
           <g transform="translate(330, 522)" filter="url(#u09-yield-block-shadow)">
             <rect width="340" height="40" class="u09-yield-badge-amber"></rect>
-            <text x="170" y="25" class="u09-yield-text-amber-dark">LIMITING REACTANT IDENTIFIED: O<tspan class="u09-yield-sub">2</tspan></text>
+            <text x="170" y="25" class="u09-yield-text-amber-dark">LIMITING REACTANT IDENTIFIED: O<tspan class="u09-yield-sub" dy="4">2</tspan></text>
           </g>
 
           <g transform="translate(150, 595)" filter="url(#u09-yield-block-shadow)">
@@ -1003,7 +1003,7 @@
 
 </div><!-- end .container -->
 </main>
-<script src="chem.js?v=20260509"></script>
+<script src="chem.js?v=20260529b"></script>
 <script>
 function escapeHtml(text) {
   return String(text)

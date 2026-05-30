@@ -438,7 +438,7 @@
   }
 
   function addConceptJumpNav() {
-    if (document.querySelector('.concept-jump-nav')) return;
+    if (document.querySelector('.concept-jump-nav, .concept-jump-disclosure')) return;
     const concepts = document.getElementById('concepts');
     const tabs = document.querySelector('.nav-tabs');
     if (!concepts || !tabs) return;
@@ -446,14 +446,17 @@
     const headings = Array.from(concepts.querySelectorAll('.card-title')).filter(heading => heading.textContent.trim());
     if (headings.length < 4) return;
 
+    const details = document.createElement('details');
+    details.className = 'concept-jump-disclosure';
+
+    const summary = document.createElement('summary');
+    summary.className = 'concept-jump-summary';
+    summary.innerHTML = '<span class="concept-jump-label">Jump to</span><span class="concept-jump-summary-text">a concept</span>';
+    details.appendChild(summary);
+
     const nav = document.createElement('nav');
     nav.className = 'concept-jump-nav';
     nav.setAttribute('aria-label', 'Jump to unit concepts');
-
-    const label = document.createElement('span');
-    label.className = 'concept-jump-label';
-    label.textContent = 'Jump to';
-    nav.appendChild(label);
 
     const usedIds = new Set();
     headings.forEach((heading, index) => {
@@ -480,9 +483,15 @@
       nav.appendChild(link);
     });
 
+    details.appendChild(nav);
+
     const firstCard = concepts.querySelector('.card');
-    const insertAfter = firstCard || tabs;
-    insertAfter.insertAdjacentElement('afterend', nav);
+    if (firstCard) {
+      firstCard.insertAdjacentElement('beforebegin', details);
+      return;
+    }
+
+    tabs.insertAdjacentElement('afterend', details);
   }
 
   function makeUnitNavLink(kicker, data, href, fallbackTitle) {
@@ -647,6 +656,51 @@
     });
   }
 
+  function setupJumpToTopButton() {
+    if (document.querySelector('.jump-top-btn')) return;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'jump-top-btn';
+    button.setAttribute('aria-label', 'Jump to top');
+    button.setAttribute('title', 'Jump to top');
+    button.textContent = '↑';
+    document.body.appendChild(button);
+
+    let rafId = 0;
+
+    function getRevealThreshold() {
+      return Math.max(720, Math.round(window.innerHeight * 1.2));
+    }
+
+    function updateVisibility() {
+      rafId = 0;
+      const canScrollFar = document.documentElement.scrollHeight - window.innerHeight > getRevealThreshold() * 0.7;
+      const shouldShow = canScrollFar && window.scrollY >= getRevealThreshold();
+      button.classList.toggle('is-visible', shouldShow);
+      button.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+    }
+
+    function queueVisibilityUpdate() {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(updateVisibility);
+    }
+
+    button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', queueVisibilityUpdate, { passive: true });
+    window.addEventListener('resize', queueVisibilityUpdate, { passive: true });
+    window.addEventListener('orientationchange', queueVisibilityUpdate);
+    window.addEventListener('load', queueVisibilityUpdate);
+
+    queueVisibilityUpdate();
+  }
+
   function reportWebVital(metric) {
     if (!metric || !metric.name || typeof metric.value !== 'number') return;
 
@@ -780,6 +834,7 @@
     injectHeader();
     injectFooter();
     wireAnchorOffsets();
+    setupJumpToTopButton();
 
     if (document.querySelector('.nav-tabs')) {
       normalizeTabs();
