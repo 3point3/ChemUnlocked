@@ -1,4 +1,6 @@
 [build]
+  command = "npm run publish:prep"
+  publish = "publish"
   functions = "netlify/functions"
 
 [functions]
@@ -537,4 +539,3 @@
   for = "/02_tools.js"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
