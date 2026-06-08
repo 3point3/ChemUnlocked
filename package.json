@@ -12,6 +12,9 @@
     "audit:seo": "node ./scripts/seo-audit.js",
     "audit:site": "npm run audit:html && npm run audit:seo",
     "check:learn-pages": "sh ./check_files.sh",
+    "copydecks:refresh": "node ./scripts/generate-copydecks.js",
+    "publish:prep": "mkdir -p publish && rsync -av --delete --exclude='publish/***' --exclude='.git/***' --exclude='.github/***' --exclude='.claude/***' --exclude='.projects/***' --exclude='.netlify/***' --exclude='node_modules/***' --exclude='scripts/***' --exclude='__pycache__/***' --include='*/' --include='*.html' --include='*.css' --include='*.js' --include='*.xml' --include='*.txt' --include='*.ico' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='images/***' --exclude='*' ./ publish/ && rsync -av --delete ./netlify/functions/ publish/netlify/functions/",
+    "deploy:prod": "npm run publish:prep && netlify deploy --prod --dir=publish",
     "test": "npm run audit:site"
   },
   "keywords": [],

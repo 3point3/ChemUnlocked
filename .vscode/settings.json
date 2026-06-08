@@ -1,0 +1,24 @@
+{
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 100,
+  "editor.wrappingIndent": "same",
+  "editor.minimap.enabled": true,
+  "editor.guides.indentation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}

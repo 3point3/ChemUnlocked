@@ -5,6 +5,9 @@
 # Local Netlify folder
 .netlify
 
+# Publish artifact folder
+publish/
+
 # Claude worktrees
 .claude/worktrees/
 

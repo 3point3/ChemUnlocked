@@ -437,21 +437,61 @@
       .slice(0, 64);
   }
 
+  function getDirectCardTitle(card) {
+    if (!card) return null;
+    return Array.from(card.children).find(child => child.classList && child.classList.contains('card-title')) || null;
+  }
+
+  function buildConceptJumpLabel(numText, titleText) {
+    const compactTitle = (titleText || '')
+      .replace(/^start here:\s*/i, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!numText) return compactTitle;
+    if (!compactTitle) return numText;
+    return `${numText} ${compactTitle}`;
+  }
+
   function addConceptJumpNav() {
     if (document.querySelector('.concept-jump-nav, .concept-jump-disclosure')) return;
     const concepts = document.getElementById('concepts');
     const tabs = document.querySelector('.nav-tabs');
     if (!concepts || !tabs) return;
 
-    const headings = Array.from(concepts.querySelectorAll('.card-title')).filter(heading => heading.textContent.trim());
-    if (headings.length < 4) return;
+    const cards = Array.from(concepts.children).filter(child => child.classList && child.classList.contains('card'));
+    const sections = cards
+      .map((card, index) => {
+        const heading = getDirectCardTitle(card);
+        if (!heading) return null;
+
+        const numSpan = heading.querySelector('.num');
+        const numText = numSpan ? numSpan.textContent.replace(/\s+/g, ' ').trim() : '';
+        if (!/^\d+\.\d+[A-Za-z]?$/.test(numText)) return null;
+
+        const fullTitle = heading.textContent.replace(/\s+/g, ' ').trim();
+        const titleWithoutNum = numSpan
+          ? fullTitle.replace(numSpan.textContent, '').replace(/\s+/g, ' ').trim()
+          : fullTitle;
+
+        return {
+          card,
+          index,
+          numText,
+          titleWithoutNum,
+          label: buildConceptJumpLabel(numText, titleWithoutNum)
+        };
+      })
+      .filter(Boolean);
+
+    if (sections.length < 4) return;
 
     const details = document.createElement('details');
     details.className = 'concept-jump-disclosure';
 
     const summary = document.createElement('summary');
     summary.className = 'concept-jump-summary';
-    summary.innerHTML = '<span class="concept-jump-label">Jump to</span><span class="concept-jump-summary-text">a concept</span>';
+    summary.innerHTML = '<span class="concept-jump-summary-text">Jump to a Concept</span>';
     details.appendChild(summary);
 
     const nav = document.createElement('nav');
@@ -459,9 +499,9 @@
     nav.setAttribute('aria-label', 'Jump to unit concepts');
 
     const usedIds = new Set();
-    headings.forEach((heading, index) => {
-      if (!heading.id) {
-        let id = slugify(heading.textContent) || `concept-${index + 1}`;
+    sections.forEach(({ card, index, numText, titleWithoutNum, label }) => {
+      if (!card.id) {
+        let id = slugify(`${numText} ${titleWithoutNum}`) || `concept-${index + 1}`;
         if (!/^concept-/.test(id)) id = `concept-${id}`;
         let uniqueId = id;
         let suffix = 2;
@@ -469,17 +509,13 @@
           uniqueId = `${id}-${suffix}`;
           suffix += 1;
         }
-        heading.id = uniqueId;
+        card.id = uniqueId;
       }
-      usedIds.add(heading.id);
+      usedIds.add(card.id);
 
       const link = document.createElement('a');
-      link.href = `#${heading.id}`;
-      const numSpan = heading.querySelector('.num');
-      const rawText = numSpan
-        ? heading.textContent.replace(numSpan.textContent, '')
-        : heading.textContent;
-      link.textContent = rawText.replace(/\s+/g, ' ').trim();
+      link.href = `#${card.id}`;
+      link.textContent = label;
       nav.appendChild(link);
     });
 

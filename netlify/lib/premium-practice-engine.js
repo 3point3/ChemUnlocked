@@ -182,7 +182,7 @@ function renderProblems(problems, container) {
         <div class="prob-q">${normalizeNotationHtml(p.q)}</div>
         ${answerHTML}
         <div class="feedback" id="fb-${p.id}" aria-live="polite" hidden></div>
-        <div class="solution" id="sol-${p.id}" hidden>${normalizeNotationHtml(p.solution)}</div>
+        <div class="solution solution--${p.type}" id="sol-${p.id}" hidden>${normalizeNotationHtml(p.solution)}</div>
       </div>`;
   });
 
