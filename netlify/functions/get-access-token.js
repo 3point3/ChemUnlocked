@@ -1,23 +1,20 @@
 /* =====================================================
    get-access-token.js — Netlify Serverless Function
    Called by subscription-success.html after Stripe redirect.
-   Polls until the webhook has written the subscriber row,
-   then returns the access token so the browser can store it.
+   Looks up the subscriber in Stripe by email, verifies they
+   have an active subscription, and returns the Stripe
+   Customer ID as the access token.
+
+   No database required — Stripe is the source of truth.
 
    Expected query params:
      email — the subscriber's email address
 
    Required environment variables:
-     SUPABASE_URL
-     SUPABASE_SERVICE_ROLE_KEY
+     STRIPE_SECRET_KEY
    ===================================================== */
 
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 function json(statusCode, payload) {
   return {
@@ -35,24 +32,34 @@ exports.handler = async function (event) {
   }
 
   try {
-    const { data, error } = await supabase
-      .from('subscribers')
-      .select('access_token, status, token_expires_at')
-      .eq('email', email)
-      .single();
+    /* ── Find Stripe customer by email ── */
+    const customers = await stripe.customers.list({ email, limit: 1 });
 
-    if (error || !data) {
-      /* Subscriber row not written yet — tell the client to retry */
+    if (!customers.data.length) {
+      /* Customer record not created yet — tell the client to retry */
       return json(404, { error: 'Subscription not confirmed yet. Please wait.' });
     }
 
-    if (data.status !== 'active' && data.status !== 'trialing') {
-      return json(403, { error: 'Subscription is not active.' });
+    const customer = customers.data[0];
+
+    /* ── Check for an active or trialing subscription ── */
+    const [activeSubs, trialingSubs] = await Promise.all([
+      stripe.subscriptions.list({ customer: customer.id, status: 'active',   limit: 1 }),
+      stripe.subscriptions.list({ customer: customer.id, status: 'trialing', limit: 1 }),
+    ]);
+
+    const hasAccess = activeSubs.data.length > 0 || trialingSubs.data.length > 0;
+
+    if (!hasAccess) {
+      /* Checkout completed but subscription not active yet — retry */
+      return json(404, { error: 'Subscription not confirmed yet. Please wait.' });
     }
 
-    return json(200, { token: data.access_token });
+    /* ── Return the Stripe Customer ID as the access token ── */
+    return json(200, { token: customer.id });
+
   } catch (err) {
-    console.error('[get-access-token] Error:', err.message);
+    console.error('[get-access-token] Stripe error:', err.message);
     return json(500, { error: 'Server error. Please try again.' });
   }
 };

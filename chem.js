@@ -1220,3 +1220,37 @@
     init();
   }
 })();
+
+/* ── Email capture (Formspree AJAX) ── */
+(function () {
+  function initEmailCapture() {
+    document.querySelectorAll('.email-capture-form').forEach(function (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        try {
+          var res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.hidden = true;
+            var success = form.parentElement.querySelector('.email-capture-success');
+            if (success) success.hidden = false;
+          } else {
+            if (btn) { btn.disabled = false; btn.textContent = 'Notify me'; }
+          }
+        } catch (_) {
+          form.submit(); // fallback to full page submit
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEmailCapture);
+  } else {
+    initEmailCapture();
+  }
+})();

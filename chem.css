@@ -388,19 +388,19 @@
   --radius-lg: 18px;
 
   /* Color overlays and surface opacity variants */
-  --white-90: var(--white-90);
-  --white-88: var(--white-88);
-  --white-92: var(--white-92);
-  --white-82: var(--white-82);
+  --white-90: rgba(255, 255, 255, 0.90);
+  --white-88: rgba(255, 255, 255, 0.88);
+  --white-92: rgba(255, 255, 255, 0.92);
+  --white-82: rgba(255, 255, 255, 0.82);
   --white-12: rgba(255, 255, 255, 0.12);
   --dark-5: rgba(15, 23, 42, 0.05);
-  --dark-6: var(--dark-6);
-  --border-warm: var(--border-warm);
+  --dark-6: rgba(15, 23, 42, 0.06);
+  --border-warm: #e8dcc8;
   --border-cool: rgba(219, 228, 238, 0.92);
-  --border-slate: var(--border-slate);
-  --accent-8: var(--accent-8);
-  --accent-18: var(--accent-18);
-  --accent-22: var(--accent-22);
+  --border-slate: rgba(148, 163, 184, 0.40);
+  --accent-8: rgba(15, 138, 122, 0.08);
+  --accent-18: rgba(15, 138, 122, 0.18);
+  --accent-22: rgba(15, 138, 122, 0.22);
   --accent-38: rgba(15, 138, 122, 0.38);
   --accent2-14: rgba(15, 118, 110, 0.14);
   --orange-14: rgba(234, 88, 12, 0.14);
@@ -3153,6 +3153,68 @@ td {
   text-align: center;
   margin-top: 2rem;
   letter-spacing: 0.04em;
+}
+
+/* ── Email capture opt-in ── */
+.email-capture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0 0;
+  text-align: center;
+}
+
+.email-capture h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.35rem;
+}
+
+.email-capture > p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+.email-capture-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.email-capture-row input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.email-capture-row input[type="email"]:focus {
+  border-color: var(--accent);
+}
+
+.email-capture-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.6rem 0 0;
+}
+
+.email-capture-success {
+  font-size: 0.97rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0.5rem 0;
 }
 
 /* ── Info callouts (Learning Objectives / Common Mistakes) ── */
@@ -6004,7 +6066,7 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
   flex-direction: column;
   gap: 0.5rem;
   text-decoration: none;
-  background: var(--white-88);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.1rem 1.2rem;
@@ -7978,6 +8040,39 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   color: var(--dim);
   margin: 0;
   max-width: 600px;
+}
+
+/* Blog intro body — full-width prose section */
+.blog-intro-body {
+  margin: 0 0 2.5rem;
+}
+
+.blog-intro-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1.1rem;
+}
+
+.blog-intro-body p {
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--dim);
+  margin: 0 0 1rem;
+  max-width: 680px;
+}
+
+.blog-intro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bridge sentence between intro and guide cards */
+.skills-blog-bridge {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0.35rem 0 1.75rem;
+  max-width: 640px;
 }
 
 /* Author / about card */

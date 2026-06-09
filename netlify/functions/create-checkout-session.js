@@ -71,9 +71,19 @@ exports.handler = async function (event) {
   const cancelUrl  = `${siteUrl}/${practiceSlug}?checkout=cancelled`;
 
   try {
+    /* ── Re-use existing Stripe customer if one already exists for this email ──
+       This prevents duplicate customer records when someone re-subscribes after
+       cancelling. If no customer exists yet, fall back to customer_email so
+       Stripe creates one automatically at checkout.                           */
+    let customerField = { customer_email: email };
+    const existing = await stripe.customers.list({ email: email.toLowerCase(), limit: 1 });
+    if (existing.data.length > 0) {
+      customerField = { customer: existing.data[0].id };
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
-      customer_email: email,
+      ...customerField,
 
       line_items: [
         {

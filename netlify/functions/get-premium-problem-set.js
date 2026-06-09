@@ -1,7 +1,10 @@
 /* =====================================================
    get-premium-problem-set.js — Netlify Serverless Function
-   Authenticates via access token (single DB lookup),
-   then returns a randomized problem set.
+   Authenticates via Stripe Customer ID (stored in localStorage
+   as cu_token), verifies an active subscription directly with
+   Stripe, then returns a randomized problem set.
+
+   No database required — Stripe is the source of truth.
 
    Expected query params:
      unit   — e.g. "05"
@@ -9,19 +12,13 @@
      count  — number of problems to return (default 3)
 
    Required headers:
-     x-access-token — opaque token stored in localStorage
+     x-access-token — Stripe Customer ID (cus_xxxx) stored in localStorage
 
    Required environment variables:
-     SUPABASE_URL
-     SUPABASE_SERVICE_ROLE_KEY
+     STRIPE_SECRET_KEY
    ===================================================== */
 
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const UNIT_MODULES = {
   '01': () => import('../lib/data/unit01-problems.js'),
@@ -49,19 +46,16 @@ function clampRequestedCount(rawCount) {
   return Math.min(Math.max(parsed, 1), 50);
 }
 
-async function isAuthorized(token) {
-  if (!token || token.length < 10) return false;
-  try {
-    const { data, error } = await supabase
-      .from('subscribers')
-      .select('status, token_expires_at')
-      .eq('access_token', token)
-      .single();
+async function isAuthorized(customerId) {
+  /* Must look like a Stripe customer ID */
+  if (!customerId || !customerId.startsWith('cus_')) return false;
 
-    if (error || !data) return false;
-    if (data.status !== 'active' && data.status !== 'trialing') return false;
-    if (data.token_expires_at && new Date(data.token_expires_at) < new Date()) return false;
-    return true;
+  try {
+    const [activeSubs, trialingSubs] = await Promise.all([
+      stripe.subscriptions.list({ customer: customerId, status: 'active',   limit: 1 }),
+      stripe.subscriptions.list({ customer: customerId, status: 'trialing', limit: 1 }),
+    ]);
+    return activeSubs.data.length > 0 || trialingSubs.data.length > 0;
   } catch {
     return false;
   }
@@ -75,6 +69,7 @@ exports.handler = async function (event) {
     headers['X-Access-Token'] ||
     ''
   ).trim();
+
   const authorized = await isAuthorized(token);
 
   if (!authorized) {
@@ -89,10 +84,10 @@ exports.handler = async function (event) {
   }
 
   /* ── Validate params ── */
-  const query = event.queryStringParameters || {};
-  const unit = String(query.unit || '').trim();
+  const query  = event.queryStringParameters || {};
+  const unit   = String(query.unit   || '').trim();
   const filter = String(query.filter || 'all').trim();
-  const count = clampRequestedCount(query.count || '3');
+  const count  = clampRequestedCount(query.count || '3');
 
   if (!ALLOWED_FILTERS.has(filter)) {
     return {

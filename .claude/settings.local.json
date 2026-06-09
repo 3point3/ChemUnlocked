@@ -58,7 +58,29 @@
       "Bash(git -C \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked\" diff --stat HEAD)",
       "Bash(git -C \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked\" diff HEAD -- chem.js)",
       "Bash(git -C \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked\" diff HEAD -- chem.css)",
-      "Bash(git -C \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked\" diff HEAD -- \"01_practice.html\")"
+      "Bash(git -C \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked\" diff HEAD -- \"01_practice.html\")",
+      "Bash(npm uninstall *)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/images/chem-unlocked-logo.png\")",
+      "Bash(grep -l 'rel=\"preload\" as=\"style\".*fonts.googleapis' 0*_Learn_*.html 1*_Learn_*.html study_skills_*.html how-it-works.html)",
+      "Bash(grep -l 'images/chem-unlocked-logo.png' 0*_Learn_*.html 1*_Learn_*.html study_skills_*.html how-it-works.html)",
+      "Bash(grep -l '\"dateModified\": \"2026-05-13\"' 0*_Learn_*.html 1*_Learn_*.html study_skills_*.html how-it-works.html)",
+      "Bash(grep -L '| ChemUnlocked' 0*_Learn_*.html 1*_Learn_*.html study_skills_*.html how-it-works.html)",
+      "Bash(grep -rl 'images/chem-unlocked-logo.png' *.html)",
+      "Bash(grep -rl '\"dateModified\": \"2026-05-13\"' *.html)",
+      "Bash(grep -rL '| ChemUnlocked' 0*_Learn_*.html 1*_Learn_*.html study_skills_*.html how-it-works.html)",
+      "Bash(sed -i '' 's|<title>The Mole: Grams to Moles, Molar Mass &amp; Formulas</title>|<title>The Mole: Grams to Moles, Molar Mass \\\\&amp; Formulas | ChemUnlocked</title>|' 07_Learn_Chemistry_Moles.html)",
+      "Bash(sed -i '' 's|<title>Stoichiometry: Limiting Reactant, Yield &amp; Mole Ratios</title>|<title>Stoichiometry: Limiting Reactant, Yield \\\\&amp; Mole Ratios | ChemUnlocked</title>|' 09_Learn_Chemistry_Stoichiometry.html)",
+      "Bash(sed -i '' 's|<title>Chemical Bonding: Lewis Structures, VSEPR &amp; Polarity</title>|<title>Chemical Bonding: Lewis Structures, VSEPR \\\\&amp; Polarity | ChemUnlocked</title>|' 10_Learn_Chemistry_Bonding.html)",
+      "Bash(sed -i '' 's|<title>Chemical Equilibrium: Q vs K, ICE Tables &amp; Shifts</title>|<title>Chemical Equilibrium: Q vs K, ICE Tables \\\\&amp; Shifts | ChemUnlocked</title>|' 14_Learn_Chemistry_Equilibrium.html)",
+      "Bash(sed -i '' 's|<title>Acids and Bases: pH, Ka, Buffers &amp; Titrations</title>|<title>Acids and Bases: pH, Ka, Buffers \\\\&amp; Titrations | ChemUnlocked</title>|' 15_Learn_Chemistry_Acid_Base.html)",
+      "Bash(grep -rL '| ChemUnlocked' 07_Learn_Chemistry_Moles.html 09_Learn_Chemistry_Stoichiometry.html 10_Learn_Chemistry_Bonding.html 14_Learn_Chemistry_Equilibrium.html 15_Learn_Chemistry_Acid_Base.html study_skills_practice_tests.html)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(awk 'length > 200' 10_Learn_Chemistry_Bonding.html)",
+      "Bash(awk 'length > 300 {print NR\": \"length\" chars: \"substr\\($0,1,120\\)}' 10_Learn_Chemistry_Bonding.html)",
+      "Bash(awk '{print $5\"KB\", $9}')",
+      "Bash(npm run *)",
+      "Bash(npx serve *)",
+      "Bash(npm install *)"
     ]
   }
 }
