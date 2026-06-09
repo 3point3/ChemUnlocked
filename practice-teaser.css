@@ -66,10 +66,22 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.premium-overlay-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+
 .premium-overlay-title {
   font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0 0 1rem;
+  max-width: 420px;
+  line-height: 1.45;
 }
 
 /* ── CTA section ── */
@@ -111,6 +123,14 @@
   gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.teaser-cancel-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 /* ── What's included list ── */

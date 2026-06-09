@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@supabase/supabase-js": "^2.103.3",
     "stripe": "^22.0.2"
   },
   "name": "chemistry-unlocked---chemunlocked.com",
@@ -13,12 +12,15 @@
     "audit:site": "npm run audit:html && npm run audit:seo",
     "check:learn-pages": "sh ./check_files.sh",
     "copydecks:refresh": "node ./scripts/generate-copydecks.js",
-    "publish:prep": "mkdir -p publish && rsync -av --delete --exclude='publish/***' --exclude='.git/***' --exclude='.github/***' --exclude='.claude/***' --exclude='.projects/***' --exclude='.netlify/***' --exclude='node_modules/***' --exclude='scripts/***' --exclude='__pycache__/***' --include='*/' --include='*.html' --include='*.css' --include='*.js' --include='*.xml' --include='*.txt' --include='*.ico' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='images/***' --exclude='*' ./ publish/ && rsync -av --delete ./netlify/functions/ publish/netlify/functions/",
+    "publish:prep": "mkdir -p publish && rsync -av --delete --exclude='publish/***' --exclude='.git/***' --exclude='.github/***' --exclude='.claude/***' --exclude='.projects/***' --exclude='.netlify/***' --exclude='node_modules/***' --exclude='scripts/***' --exclude='__pycache__/***' --include='*/' --include='*.html' --include='*.css' --include='*.js' --include='*.xml' --include='*.txt' --include='*.ico' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='images/***' --exclude='*' ./ publish/ && rsync -av --delete ./netlify/functions/ publish/netlify/functions/ && npx cleancss -o publish/chem.css publish/chem.css && npx cleancss -o publish/practice-teaser.css publish/practice-teaser.css",
     "deploy:prod": "npm run publish:prep && netlify deploy --prod --dir=publish",
     "test": "npm run audit:site"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
 }
