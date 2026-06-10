@@ -7014,6 +7014,18 @@ textarea:focus-visible {
 }
 
 @media (max-width: 700px) {
+  .hero-note {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .hero-note span {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
   .approach-strip {
     grid-template-columns: 1fr;
     gap: 0.45rem;
@@ -7025,6 +7037,8 @@ textarea:focus-visible {
     padding: 0.7rem 1rem;
   }
   .approach-mark {
+    justify-content: center;
+    min-width: 11.25rem;
     white-space: nowrap;
     flex-shrink: 0;
   }
