@@ -7059,6 +7059,10 @@ textarea:focus-visible {
   box-shadow: 0 16px 44px rgba(11, 111, 99, 0.2);
 }
 
+.practice-panel--promise {
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+}
+
 .practice-panel h2,
 .practice-panel p {
   color: #fff;
@@ -7107,6 +7111,10 @@ textarea:focus-visible {
   gap: 0.55rem;
 }
 
+.practice-panel .practice-stats.practice-stats--promise {
+  grid-template-columns: 1fr;
+}
+
 .practice-stat {
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 12px;
@@ -7127,11 +7135,51 @@ textarea:focus-visible {
   margin: 0;
 }
 
+.practice-stat--text dd {
+  font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1.55rem, 1.1vw + 1.15rem, 1.95rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
 .practice-stat dt {
   display: block;
   margin-top: 0.3rem;
   font-size: 0.72rem;
   opacity: 0.88;
+}
+
+.practice-stat--promise {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  text-align: left;
+}
+
+.practice-stat--promise dt {
+  margin-top: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  opacity: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d1fae5;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+}
+
+.practice-stat--promise dd {
+  font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1.1rem, 1.15vw + 0.8rem, 1.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .practice-stat--sets {
@@ -7239,6 +7287,11 @@ textarea:focus-visible {
     flex-shrink: 0;
   }
 
+  .practice-stat--text dd {
+    font-size: 1.32rem;
+    line-height: 1.08;
+  }
+
   .practice-stat dt {
     margin-top: 0;
     font-size: 0.8rem;
@@ -7265,6 +7318,25 @@ textarea:focus-visible {
   .practice-stat--sets dt {
     text-align: left;
     margin-top: 0;
+  }
+
+  .practice-stats--promise {
+    gap: 0.5rem;
+  }
+
+  .practice-stat--promise {
+    gap: 0.5rem;
+  }
+
+  .practice-stat--promise dd {
+    font-size: 0.98rem;
+    line-height: 1.28;
+    text-align: left;
+  }
+
+  .practice-stat--promise dt {
+    font-size: 0.66rem;
+    text-align: left;
   }
 }
 
@@ -8307,9 +8379,10 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 /* Stats strip */
 .stats-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
-  margin-bottom: 1.75rem;
+  max-width: 760px;
+  margin: 0 auto 1.75rem;
 }
 
 .stat-tile {
