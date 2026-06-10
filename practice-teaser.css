@@ -44,7 +44,7 @@
   pointer-events: none;
   -webkit-user-select: none;
   user-select: none;
-  opacity: 0.65;
+  opacity: 0.74;
 }
 
 .premium-preview-blur .problem {
@@ -58,7 +58,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.97) 70%);
+  background:
+    linear-gradient(to bottom,
+      rgba(255,255,255,0.26) 0%,
+      rgba(255,255,255,0.86) 24%,
+      rgba(255,255,255,0.965) 52%,
+      rgba(255,255,255,0.99) 100%);
   border-radius: 18px;
   padding: 2rem 1.5rem 2.5rem;
   text-align: center;
@@ -142,6 +147,13 @@
   font-size: 0.93rem;
   color: var(--muted);
   display: inline-block;
+  max-width: 36rem;
+  line-height: 1.58;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.premium-includes li {
+  margin-bottom: 0.45rem;
 }
 
 .premium-includes li::before {
