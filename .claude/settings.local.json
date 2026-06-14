@@ -80,7 +80,16 @@
       "Bash(awk '{print $5\"KB\", $9}')",
       "Bash(npm run *)",
       "Bash(npx serve *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(perl -i -pe 's/src=\"\\(\\\\d\\\\d_tools|practice-teaser|practice-premium|contact\\)\\\\.js\"/src=\"$1.js?v=20260611\"/g' *.html)",
+      "Bash(perl -i -pe 's/<lastmod>2026-06-08<\\\\/lastmod>/<lastmod>2026-06-11<\\\\/lastmod>/g' sitemap.xml)",
+      "Bash(rsync -avn --delete --exclude='publish/***' --exclude='.git/***' --exclude='.github/***' --exclude='.claude/***' --exclude='.projects/***' --exclude='.netlify/***' --exclude='node_modules/***' --exclude='scripts/***' --exclude='__pycache__/***' --exclude='check_*' --exclude='validate_*' --exclude='validation_*' --exclude='detect_duplicates.mjs' --exclude='extract-problem-bank.js' --include='*/' --include='*.html' --include='*.css' --include='*.js' --include='*.xml' --include='*.txt' --include='*.ico' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.svg' --include='images/***' --exclude='*' ./ publish/)",
+      "Bash(sh check_files.sh)",
+      "Bash(bash check_units.sh)",
+      "Bash(awk -F: '{print $1}')",
+      "Bash(echo \"check_files exit: $?\")",
+      "Bash(echo \"check_units exit: $?\")",
+      "Bash(awk '/<script/{print FILENAME\": \"NR\": \"substr\\($0,1,160\\)} /<\\\\/head>/{exit}' 03_Learn_Atomic_Structure.html)"
     ]
   }
 }

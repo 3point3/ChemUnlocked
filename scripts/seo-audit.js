@@ -83,6 +83,7 @@ function expectedCanonical(file) {
     'study_skills_blog.html': `${siteOrigin}/study_skills_blog`,
     'study_skills_flashcards.html': `${siteOrigin}/study_skills_flashcards`,
     'study_skills_practice_tests.html': `${siteOrigin}/study_skills_practice_tests`,
+    'study_skills_practice_vs_ai_answers.html': `${siteOrigin}/study_skills_practice_vs_ai_answers`,
     'study_skills_smarter_not_longer.html': `${siteOrigin}/study_skills_smarter_not_longer`,
     'subscription-success.html': `${siteOrigin}/subscription-success`,
     '01_practice.html': `${siteOrigin}/01_practice`,

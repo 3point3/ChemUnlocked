@@ -65,8 +65,8 @@ exports.handler = async function (event) {
   /* ── Build redirect URLs ── */
   const siteUrl      = process.env.URL || 'https://chemunlocked.com';
   const practiceSlug = unit ? `${unit}_practice` : 'practice';
-  // Success: go to the activation page which polls for the access token,
-  // then redirects to the premium page once the webhook confirms the subscription.
+  // Success: go to the activation page which polls Stripe for the access token,
+  // then redirects to the premium page once the subscription is visible.
   const successUrl = `${siteUrl}/subscription-success?email=${encodeURIComponent(email)}&unit=${encodeURIComponent(unit)}`;
   const cancelUrl  = `${siteUrl}/${practiceSlug}?checkout=cancelled`;
 
@@ -99,7 +99,7 @@ exports.handler = async function (event) {
       /* Allow customers to enter a coupon or promotion code at checkout. */
       allow_promotion_codes: true,
 
-      /* Store plan and unit in metadata for use in webhook. */
+      /* Store plan and unit in metadata for future Stripe-side inspection. */
       metadata: {
         plan,
         unit,

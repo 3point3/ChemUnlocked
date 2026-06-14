@@ -6,9 +6,6 @@
 [functions]
   node_bundler = "esbuild"
 
-[functions."stripe-webhook"]
-  raw_body = true
-
 [[redirects]]
   from = "/index.html"
   to = "/"
@@ -376,6 +373,18 @@
   force = true
 
 [[redirects]]
+  from = "/study_skills_practice_vs_ai_answers.html"
+  to = "/study_skills_practice_vs_ai_answers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study-skills-practice-vs-ai-answers.html"
+  to = "/study_skills_practice_vs_ai_answers"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/study_skills_smarter_not_longer.html"
   to = "/study_skills_smarter_not_longer"
   status = 301
@@ -511,31 +520,11 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/chem.css"
+  for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 [[headers]]
-  for = "/chem.js"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-[[headers]]
-  for = "/practice-teaser.js"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-[[headers]]
-  for = "/practice-premium.js"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-[[headers]]
-  for = "/01_tools.js"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-[[headers]]
-  for = "/02_tools.js"
+  for = "/*.js"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

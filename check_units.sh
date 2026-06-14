@@ -19,7 +19,7 @@ for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
     grep -q "theme-color" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (theme-color)")
     grep -q "starfield" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (starfield)")
     grep "tool-feedback" "$LEARN_FILE" | grep -q "aria-live" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (tool-feedback aria-live)")
-    grep -q "href=\"${i}_practice.html\"" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (practice-banner mismatch)")
+    grep -q "href=\"/${i}_practice\"" "$LEARN_FILE" || fail_learn=$(append_fail "$fail_learn" "$LEARN_FILE (practice-banner mismatch)")
   else
     fail_learn=$(append_fail "$fail_learn" "Unit $i Learn page NOT FOUND")
   fi
@@ -36,7 +36,7 @@ for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
   fi
 
   if ! grep -Fq "from = \"/${i}_premium.html\"" "$NETLIFY_CONFIG" || \
-     ! grep -Fq "to = \"/premium.html?unit=${i}\"" "$NETLIFY_CONFIG"; then
+     ! grep -Fq "to = \"/premium?unit=${i}\"" "$NETLIFY_CONFIG"; then
     fail_premium=$(append_fail "$fail_premium" "${i}_premium.html redirect missing from netlify.toml")
   fi
 done

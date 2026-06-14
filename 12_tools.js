@@ -16,74 +16,6 @@ ctx.save();ctx.translate(11,H/2);ctx.rotate(-Math.PI/2);ctx.fillText(yL,0,0);ctx
 }
 function dot(ctx,x,y,lbl){ctx.fillStyle='#dc2626';ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();ctx.fillStyle='#1e3a8a';ctx.font='bold 10px DM Mono,monospace';ctx.textAlign='left';ctx.fillText(lbl,x+10,y-6);}
 
-function updateBoyle(){
-const pInput=document.getElementById('boyleP');
-const kInput=document.getElementById('boyleK');
-const pVal=document.getElementById('boylePVal');
-const kVal=document.getElementById('boyleKVal');
-const readout=document.getElementById('boyleReadout');
-if(!pInput||!kInput||!pVal||!kVal||!readout)return;
-const p=parseFloat(pInput.value);
-const k=parseFloat(kInput.value);
-pVal.textContent=p.toFixed(2)+' atm';
-kVal.textContent='k = '+k.toFixed(1);
-const v=k/p;
-readout.textContent='P = '+p.toFixed(3)+' atm  |  V = '+v.toFixed(3)+' L  |  P×V = '+(p*v).toFixed(3)+' L·atm (constant)';
-const g=sc('boyleCanvas');if(!g)return;
-const{ctx,W,H}=g;const pad={l:55,r:20,t:15,b:36};
-const pMax=6,vMax=Math.min(k/0.18+1,45);
-const scX=x=>pad.l+(x/vMax)*(W-pad.l-pad.r);const scY=y=>H-pad.b-(y/pMax)*(H-pad.t-pad.b);
-axes(ctx,W,H,pad,vMax,pMax,'Volume (L)','Pressure (atm)',vMax/5,1);
-ctx.strokeStyle='#2563eb';ctx.lineWidth=2.5;ctx.beginPath();let f=true;
-for(let v2=k/pMax;v2<=vMax;v2+=0.05){const p2=k/v2;if(p2>pMax)continue;if(f){ctx.moveTo(scX(v2),scY(p2));f=false;}else ctx.lineTo(scX(v2),scY(p2));}
-ctx.stroke();
-if(v>0&&v<=vMax&&p<=pMax)dot(ctx,scX(v),scY(p),'('+v.toFixed(2)+'L, '+p.toFixed(2)+'atm)');
-}
-
-function updateCharles(){
-const tInput=document.getElementById('charlesT');
-const kInput=document.getElementById('charlesK');
-const tVal=document.getElementById('charlesTVal');
-const kVal=document.getElementById('charlesKVal');
-const readout=document.getElementById('charlesReadout');
-if(!tInput||!kInput||!tVal||!kVal||!readout)return;
-const T=parseFloat(tInput.value);
-const k=parseFloat(kInput.value);
-tVal.textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
-kVal.textContent='k = '+k.toFixed(3);
-const V=k*T;
-readout.textContent='T = '+T+' K  |  V = '+V.toFixed(3)+' L  |  V/T = '+k.toFixed(4)+' L/K (constant)';
-const g=sc('charlesCanvas');if(!g)return;
-const{ctx,W,H}=g;const pad={l:55,r:20,t:15,b:36};
-const Tmax=750,Vmax=k*Tmax*1.1;
-const scX=t=>pad.l+(t/Tmax)*(W-pad.l-pad.r);const scY=v=>H-pad.b-(v/Vmax)*(H-pad.t-pad.b);
-axes(ctx,W,H,pad,Tmax,Vmax,'Temperature (K)','Volume (L)',150,Vmax/5);
-ctx.strokeStyle='#059669';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(scX(0),scY(0));ctx.lineTo(scX(Tmax),scY(k*Tmax));ctx.stroke();
-if(T<=Tmax&&V<=Vmax)dot(ctx,scX(T),scY(V),'('+T+'K, '+V.toFixed(2)+'L)');
-}
-
-function updateGay(){
-const tInput=document.getElementById('gayT');
-const kInput=document.getElementById('gayK');
-const tVal=document.getElementById('gayTVal');
-const kVal=document.getElementById('gayKVal');
-const readout=document.getElementById('gayReadout');
-if(!tInput||!kInput||!tVal||!kVal||!readout)return;
-const T=parseFloat(tInput.value);
-const k=parseFloat(kInput.value);
-tVal.textContent=T+' K ('+(T-273).toFixed(1)+'°C)';
-kVal.textContent='k = '+k.toFixed(4);
-const P=k*T;
-readout.textContent='T = '+T+' K  |  P = '+P.toFixed(4)+' atm  |  P/T = '+k.toFixed(5)+' atm/K (constant)';
-const g=sc('gayCanvas');if(!g)return;
-const{ctx,W,H}=g;const pad={l:65,r:20,t:15,b:36};
-const Tmax=750,Pmax=k*Tmax*1.1;
-const scX=t=>pad.l+(t/Tmax)*(W-pad.l-pad.r);const scY=p=>H-pad.b-(p/Pmax)*(H-pad.t-pad.b);
-axes(ctx,W,H,pad,Tmax,Pmax,'Temperature (K)','Pressure (atm)',150,Pmax/5);
-ctx.strokeStyle='#7c3aed';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(scX(0),scY(0));ctx.lineTo(scX(Tmax),scY(k*Tmax));ctx.stroke();
-if(T<=Tmax&&P<=Pmax)dot(ctx,scX(T),scY(P),'('+T+'K, '+P.toFixed(4)+'atm)');
-}
-
 const toolState={law:null,setup:null,avog:null,water:null,ideal:null};
 const scenarioOrderState={
 law:{order:[],position:0,lastIndex:null},
@@ -1176,5 +1108,5 @@ document.getElementById('idealSliderReadout').textContent='n = 1.000 mol  |  V =
 updateIdealBase(true);
 }
 
-window.addEventListener('load',()=>{updateBoyle();updateCharles();updateGay();renderLawTool();renderSetupTool();renderAvogTool();renderWaterTool();renderIdealTool();});
-window.addEventListener('resize',()=>{updateBoyle();updateCharles();updateGay();updateIdealBase(document.getElementById('idealSliderPanel')&&!document.getElementById('idealSliderPanel').hidden);});
+window.addEventListener('load',()=>{renderLawTool();renderSetupTool();renderAvogTool();renderWaterTool();renderIdealTool();});
+window.addEventListener('resize',()=>{updateIdealBase(document.getElementById('idealSliderPanel')&&!document.getElementById('idealSliderPanel').hidden);});

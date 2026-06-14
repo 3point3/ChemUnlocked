@@ -35,13 +35,21 @@ for f in $FILES; do
   fi
 done
 
-print_header "inline executable script in <head> (excluding ld+json)"
+print_header "inline executable script in <head> (excluding ld+json and gtag bootstrap)"
 for f in $FILES; do
   if awk '
-    BEGIN { in_head=1; bad=0 }
+    BEGIN { in_head=1; in_script=0; bad=0 }
     /<\/head>/ { in_head=0 }
-    in_head && /<script/ {
-      if ($0 !~ /application\/ld\+json/) bad=1
+    in_head && !in_script && /<script/ {
+      if ($0 ~ /application\/ld\+json/ || $0 ~ /src=/) next
+      in_script=1; buf=$0
+    }
+    in_head && in_script {
+      if (buf != $0) buf = buf $0
+      if ($0 ~ /<\/script>/) {
+        if (buf !~ /gtag|dataLayer/) bad=1
+        in_script=0
+      }
     }
     END { exit bad ? 0 : 1 }
   ' "$f"; then
@@ -69,8 +77,8 @@ done
 print_header "practice-banner href mismatch"
 for f in $FILES; do
   UNIT=$(echo "$f" | cut -c1-2)
-  EXPECTED="${UNIT}_practice.html"
-  ACTUAL=$(grep -o 'href="[0-9][0-9]_practice\.html"' "$f" | head -1 | cut -d'"' -f2)
+  EXPECTED="/${UNIT}_practice"
+  ACTUAL=$(grep -o 'href="/[0-9][0-9]_practice"' "$f" | head -1 | cut -d'"' -f2)
   if [ -z "$ACTUAL" ]; then
     mark_fail "$f (missing practice banner href)"
   elif [ "$ACTUAL" != "$EXPECTED" ]; then
