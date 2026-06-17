@@ -2,6 +2,9 @@
 .DS_Store
 **/.DS_Store
 
+# Dependencies (restored via `npm install` from package-lock.json)
+node_modules/
+
 # Local Netlify folder
 .netlify
 
