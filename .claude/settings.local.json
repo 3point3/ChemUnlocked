@@ -89,7 +89,10 @@
       "Bash(awk -F: '{print $1}')",
       "Bash(echo \"check_files exit: $?\")",
       "Bash(echo \"check_units exit: $?\")",
-      "Bash(awk '/<script/{print FILENAME\": \"NR\": \"substr\\($0,1,160\\)} /<\\\\/head>/{exit}' 03_Learn_Atomic_Structure.html)"
+      "Bash(awk '/<script/{print FILENAME\": \"NR\": \"substr\\($0,1,160\\)} /<\\\\/head>/{exit}' 03_Learn_Atomic_Structure.html)",
+      "WebSearch",
+      "WebFetch(domain:www.conductor.com)",
+      "Bash(echo \"=== exit: $? ===\")"
     ]
   }
 }
