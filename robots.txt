@@ -4,5 +4,6 @@ Disallow: /netlify/
 Disallow: /footer.html
 Disallow: /header.html
 Disallow: /*.zip
+Disallow: /nclex/
 
 Sitemap: https://chemunlocked.com/sitemap.xml
