@@ -6,6 +6,12 @@
 [functions]
   node_bundler = "esbuild"
 
+# MyMentals SPA — serve index.html for all /mymentals/* routes so React Router can handle them
+[[redirects]]
+  from = "/mymentals/*"
+  to = "/mymentals/index.html"
+  status = 200
+
 [[redirects]]
   from = "/index.html"
   to = "/"
