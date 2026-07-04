@@ -23,12 +23,17 @@
 <meta property="og:site_name" content="ChemUnlocked">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://chemunlocked.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChemUnlocked chemistry help and study hub preview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ChemUnlocked">
 <meta name="twitter:creator" content="@ChemUnlocked">
 <meta name="twitter:title" content="Premium Practice | ChemUnlocked">
 <meta name="twitter:description" content="Randomized chemistry practice by unit, with full worked solutions that show exactly where your thinking was right — and where it went off track.">
 <meta name="twitter:image" content="https://chemunlocked.com/og-image.png">
+<meta name="twitter:image:alt" content="ChemUnlocked chemistry help and study hub preview">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,7 +63,7 @@
   <main id="main-content">
   <div class="container">
   <header>
-    <div class="unit-label" id="unitLabel">Introductory General Chemistry &nbsp;&middot;&nbsp; Premium Practice</div>
+    <div class="unit-label" id="unitLabel">General Chemistry &nbsp;&middot;&nbsp; Premium Practice</div>
     <h1 id="unitTitle">Premium Practice</h1>
     <p class="subtitle" id="unitSubtitle">Work through a set of randomized problems, check your reasoning against the full worked solutions, and find out exactly what needs another look before your next test.</p>
   </header>
@@ -94,7 +99,7 @@
     <a href="#main-content" class="btn btn-outline">Back to Top</a>
   </div>
 
-  <div class="scroll-hint" id="scrollHint">Introductory General Chemistry &middot; Premium Practice</div>
+  <div class="scroll-hint" id="scrollHint">General Chemistry &middot; Premium Practice</div>
   </div>
   </main>
 
@@ -174,11 +179,11 @@ if (!unit) {
   const unitMeta = UNIT_CONFIG[unit];
   const debugLoader = UNIT_LOADERS[unit];
 
-  unitLabel.textContent = `Introductory General Chemistry · Unit ${unit} Premium Practice`;
+  unitLabel.textContent = `General Chemistry · Unit ${unit} Premium Practice`;
   unitTitle.textContent = unitMeta.title;
   unitSubtitle.textContent = `Choose Quick Sets (3 at a time), Standard Sets (9 at a time), or Extended Sets (18 at a time) from the ${unitMeta.problemCount}-problem bank. Work the problems, then use the full worked solutions to see exactly where your thinking was right — and where it went off track.`;
   teaserLink.href = `/${unit}_practice`;
-  scrollHint.textContent = `Introductory General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
+  scrollHint.textContent = `General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
   document.title = `Unit ${unit}: ${unitMeta.title} | ChemUnlocked Premium`;
   setSizeSelect.value = String(initialSetSize);
   filterSelect.value = initialFilter;

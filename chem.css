@@ -940,7 +940,8 @@ pre,
 
 /* ===================== SHARED CARD / PANEL SYSTEM ===================== */
 .card,
-.tool-section {
+.tool-section,
+.problem {
   background: var(--white-82);
   border: 1px solid rgba(219, 228, 238, 0.92);
   border-radius: var(--radius-lg);

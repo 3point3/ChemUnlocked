@@ -45,7 +45,7 @@
         <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="/terms-of-service">Terms of Service</a>
       </div>
-      © 2026 ChemUnlocked &nbsp;·&nbsp; Introductory General Chemistry
+      © 2026 ChemUnlocked &nbsp;·&nbsp; General Chemistry
     </footer>
   `;
 
@@ -603,10 +603,10 @@
           name: title,
           description: description ? description.content : unit.title,
           learningResourceType: resourceType,
-          educationalLevel: 'Introductory General Chemistry',
+          educationalLevel: 'Introductory',
           isPartOf: {
             '@type': 'Course',
-            name: 'ChemUnlocked Introductory General Chemistry'
+            name: 'ChemUnlocked General Chemistry'
           },
           provider: {
             '@type': 'Organization',
