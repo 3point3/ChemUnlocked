@@ -99,7 +99,8 @@
       "Bash(xargs -0 git rm --cached --quiet)",
       "Bash(git check-ignore *)",
       "Bash(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -T git@github.com)",
-      "Bash(pip3 install *)"
+      "Bash(pip3 install *)",
+      "mcp__claude-in-chrome__tabs_context_mcp"
     ]
   }
 }
