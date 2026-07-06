@@ -100,7 +100,19 @@
       "Bash(git check-ignore *)",
       "Bash(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -T git@github.com)",
       "Bash(pip3 install *)",
-      "mcp__claude-in-chrome__tabs_context_mcp"
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "Bash(echo \"exit code: $?\")",
+      "Bash(identify images/chem-unlocked-small-logo.png images/chem-unlocked-logo.png)",
+      "Bash(curl -sI https://chemunlocked.com/)",
+      "Bash(curl -sI https://chemunlocked.com/01_Learn_Intro_to_Chemistry_and_Lab_Safety.html)",
+      "Bash(curl -sI https://www.chemunlocked.com/)",
+      "Bash(curl -sI http://chemunlocked.com/)",
+      "Bash(curl -s https://chemunlocked.com/robots.txt)",
+      "Bash(curl -sI https://chemunlocked.com/sitemap.xml)",
+      "Bash(curl -sI -H \"Accept-Encoding: gzip, br\" https://chemunlocked.com/chem.css)",
+      "Bash(curl -s -H \"Accept-Encoding: gzip, br\" -o /dev/null -w \"downloaded/compressed size: %{size_download} bytes\\\\n\" https://chemunlocked.com/chem.css)",
+      "Bash(curl -s -H \"Accept-Encoding: gzip, br\" -o /dev/null -w \"size: %{size_download} bytes, time: %{time_total}s\\\\n\" https://chemunlocked.com/chem.js)",
+      "Bash(curl -s -o /dev/null -w \"TTFB: %{time_starttransfer}s | total: %{time_total}s\\\\n\" https://chemunlocked.com/)"
     ]
   }
 }
