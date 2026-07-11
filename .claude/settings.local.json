@@ -112,7 +112,26 @@
       "Bash(curl -sI -H \"Accept-Encoding: gzip, br\" https://chemunlocked.com/chem.css)",
       "Bash(curl -s -H \"Accept-Encoding: gzip, br\" -o /dev/null -w \"downloaded/compressed size: %{size_download} bytes\\\\n\" https://chemunlocked.com/chem.css)",
       "Bash(curl -s -H \"Accept-Encoding: gzip, br\" -o /dev/null -w \"size: %{size_download} bytes, time: %{time_total}s\\\\n\" https://chemunlocked.com/chem.js)",
-      "Bash(curl -s -o /dev/null -w \"TTFB: %{time_starttransfer}s | total: %{time_total}s\\\\n\" https://chemunlocked.com/)"
+      "Bash(curl -s -o /dev/null -w \"TTFB: %{time_starttransfer}s | total: %{time_total}s\\\\n\" https://chemunlocked.com/)",
+      "WebFetch(domain:general.chemistrysteps.com)",
+      "Bash(curl -s https://chemunlocked.com/chem.js -o /tmp/live_chem.js)",
+      "Bash(curl -s -o /tmp/header_fragment.html -w \"HTTP %{http_code}\\\\n\" https://chemunlocked.com/header.html)",
+      "Bash(curl -s -o /tmp/live_learn01.html -w \"HTTP %{http_code}\\\\n\" \"https://chemunlocked.com/01_Learn_Intro_to_Chemistry_and_Lab_Safety\")",
+      "Bash(curl -s -L -o /tmp/live_learn01.html -w \"Final URL effect, HTTP %{http_code}\\\\n\" \"https://chemunlocked.com/01_Learn_Intro_to_Chemistry_and_Lab_Safety\")",
+      "Bash(curl -s -I \"https://chemunlocked.com/01_Learn_Intro_to_Chemistry_and_Lab_Safety\")",
+      "Bash(curl -s https://chemunlocked.com/ -o /tmp/live_index2.html)",
+      "Bash(curl -s -o /tmp/live_footer.html https://chemunlocked.com/footer.html)",
+      "Bash(npx cleancss *)",
+      "Bash(sed 's/const UNUSED = computeUnusedClasses\\(original\\);/const UNUSED = new Set\\(\\);/' scripts/remove-unused-css.js)",
+      "Bash(mv chem.css.proposed /tmp/chem.roundtrip.css)",
+      "Bash(rm -f scripts/_roundtrip-test.js chem.css.proposed)",
+      "Bash(git checkout *)",
+      "Bash(awk '/\\\\.problem/{print NR\": \"$0}' chem.css.proposed)",
+      "Bash(python3 -m http.server 8791)",
+      "Bash(curl -s -o /dev/null -w \"index: %{http_code}\\\\n\" http://localhost:8791/index.html)",
+      "Bash(curl -s -o /dev/null -w \"01_practice: %{http_code}\\\\n\" http://localhost:8791/01_practice.html)",
+      "Bash(curl -s -o /dev/null -w \"chem.css: %{http_code}\\\\n\" http://localhost:8791/chem.css)",
+      "Bash(pkill -f \"http.server 8791\")"
     ]
   }
 }

@@ -5,50 +5,6 @@
    ============================================================ */
 
 (function () {
-  const FALLBACK_HEADER_HTML = `
-    <header class="site-header">
-      <div class="site-header-inner">
-        <a href="/" class="site-logo" aria-label="ChemUnlocked home">
-          <span class="logo-chem">Chem</span><span class="logo-unlock">Unlocked</span>
-        </a>
-        <button
-          class="site-menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Open main menu">
-          <span class="site-menu-toggle-bar" aria-hidden="true"></span>
-          <span class="site-menu-toggle-bar" aria-hidden="true"></span>
-          <span class="site-menu-toggle-bar" aria-hidden="true"></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-          <a href="/#units">Learning Hub</a>
-          <a href="/practice">Practice Hub</a>
-          <a href="/study_skills_blog">Study Skills</a>
-          <a href="/how-it-works">How It Works</a>
-          <a href="/contact_chemunlocked">Contact</a>
-        </nav>
-      </div>
-    </header>
-  `;
-
-  const FALLBACK_FOOTER_HTML = `
-    <footer class="site-footer">
-      <div class="footer-links">
-        <a href="/#units">Learning Hub</a> &nbsp;·&nbsp;
-        <a href="/practice">Practice Hub</a> &nbsp;·&nbsp;
-        <a href="/study_skills_blog">Study Skills</a> &nbsp;·&nbsp;
-        <a href="/how-it-works">How It Works</a> &nbsp;·&nbsp;
-        <a href="/contact_chemunlocked">Contact</a>
-      </div>
-      <div class="footer-links-legal">
-        <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
-        <a href="/terms-of-service">Terms of Service</a>
-      </div>
-      © 2026 ChemUnlocked &nbsp;·&nbsp; General Chemistry
-    </footer>
-  `;
-
   function injectFonts() {
     if (document.getElementById('cu-fonts')) return;
 
@@ -72,52 +28,11 @@
   }
 
   function injectHeader() {
-    if (document.querySelector('.site-header')) {
-      const existingHeader = document.querySelector('.site-header');
-      setupHeaderMenu(existingHeader);
-      highlightActiveNav();
-      updateStickyOffset();
-      return;
-    }
-
-    fetch('/header.html')
-      .then(r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.text();
-      })
-      .then(html => {
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = html;
-        const header = wrapper.querySelector('.site-header');
-        if (!header) return;
-
-        const main = document.querySelector('main');
-        const target = main && main.parentNode === document.body
-          ? main
-          : document.body.firstElementChild;
-
-        document.body.insertBefore(header, target);
-        setupHeaderMenu(header);
-        highlightActiveNav();
-        updateStickyOffset();
-      })
-      .catch(error => {
-        console.warn('ChemUnlocked: failed to load header fragment, using fallback.', error);
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = FALLBACK_HEADER_HTML;
-        const header = wrapper.querySelector('.site-header');
-        if (!header) return;
-
-        const main = document.querySelector('main');
-        const target = main && main.parentNode === document.body
-          ? main
-          : document.body.firstElementChild;
-
-        document.body.insertBefore(header, target);
-        setupHeaderMenu(header);
-        highlightActiveNav();
-        updateStickyOffset();
-      });
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    setupHeaderMenu(header);
+    highlightActiveNav();
+    updateStickyOffset();
   }
 
   function setupHeaderMenu(header) {
@@ -184,35 +99,6 @@
     const headerRect = header.getBoundingClientRect();
     const navRect = nav.getBoundingClientRect();
     return Math.max(0, Math.ceil(navRect.bottom - headerRect.bottom));
-  }
-
-  function injectFooter() {
-    if (document.querySelector('.site-footer')) return;
-
-    fetch('/footer.html')
-      .then(r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.text();
-      })
-      .then(html => {
-        const container = document.querySelector('.container');
-        if (!container) return;
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = html;
-        const footer = wrapper.firstElementChild;
-        if (!footer) return;
-        container.appendChild(footer);
-      })
-      .catch(error => {
-        console.warn('ChemUnlocked: failed to load footer fragment, using fallback.', error);
-        const container = document.querySelector('.container');
-        if (!container) return;
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = FALLBACK_FOOTER_HTML;
-        const footer = wrapper.querySelector('.site-footer');
-        if (!footer) return;
-        container.appendChild(footer);
-      });
   }
 
   function highlightActiveNav() {
@@ -868,7 +754,6 @@
     injectFonts();
     addBodyPageClasses();
     injectHeader();
-    injectFooter();
     wireAnchorOffsets();
     setupJumpToTopButton();
 
