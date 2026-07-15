@@ -131,7 +131,15 @@
       "Bash(curl -s -o /dev/null -w \"index: %{http_code}\\\\n\" http://localhost:8791/index.html)",
       "Bash(curl -s -o /dev/null -w \"01_practice: %{http_code}\\\\n\" http://localhost:8791/01_practice.html)",
       "Bash(curl -s -o /dev/null -w \"chem.css: %{http_code}\\\\n\" http://localhost:8791/chem.css)",
-      "Bash(pkill -f \"http.server 8791\")"
+      "Bash(pkill -f \"http.server 8791\")",
+      "Bash(xargs sed -i '' 's/chem\\\\.js?v=20260529b/chem.js?v=20260714/g; s/chem\\\\.css?v=20260529b/chem.css?v=20260714/g')",
+      "Bash(nohup python3 -m http.server 8791)",
+      "Bash(disown)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8791/05_practice.html)",
+      "mcp__claude-in-chrome__navigate",
+      "Bash(npm ls *)",
+      "Bash(awk '/<svg class=\"bohr-emission-svg\"/,/<\\\\/svg>/' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/04_Learn_Electron_Configuration.html\")",
+      "Bash(rsvg-convert -w 1200 bohr.svg -o bohr.png)"
     ]
   }
 }

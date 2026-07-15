@@ -43,7 +43,7 @@
   "url": "https://chemunlocked.com/subscription-success"
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260529b">
+<link rel="stylesheet" href="chem.css?v=20260714">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -125,7 +125,7 @@
 </div>
   </main>
 
-<script src="chem.js?v=20260529b"></script>
+<script src="chem.js?v=20260714"></script>
 <script>
 (async function () {
   const params = new URLSearchParams(window.location.search);
@@ -149,6 +149,11 @@
     return;
   }
 
+  /* Save the email right away so a refresh mid-poll (or a closed tab)
+     can still be recovered via the "restore access" form on the practice
+     gate pages, even if the token itself never arrives. */
+  localStorage.setItem('cu_email', email);
+
   const statusMsg = document.getElementById('status-msg');
   const MAX_ATTEMPTS = 15;
   let attempts = 0;
@@ -165,7 +170,6 @@
 
       if (res.ok && data.token) {
         localStorage.setItem('cu_token', data.token);
-        localStorage.setItem('cu_email', email);
         statusMsg.textContent = 'Subscription confirmed! Redirecting…';
         setTimeout(() => window.location.replace(`/premium?unit=${encodeURIComponent(unit)}`), 600);
         return;

@@ -1139,3 +1139,80 @@
     initEmailCapture();
   }
 })();
+
+/* ── Restore premium access (lost token after checkout) ── */
+(function () {
+  function getUnitFromPath() {
+    const match = window.location.pathname.match(/^\/?(\d{2})_practice/);
+    return match ? match[1] : null;
+  }
+
+  function initAccessRestore() {
+    const container = document.getElementById('accessMessage');
+    if (!container) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const access = params.get('access');
+    if (access !== 'no_token' && access !== 'expired') return;
+
+    const unit       = getUnitFromPath();
+    const savedEmail = localStorage.getItem('cu_email') || '';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'access-restore';
+    wrap.innerHTML =
+      '<form class="access-restore-form email-capture-row" novalidate>' +
+        '<input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>' +
+        '<button type="submit" class="btn btn-sm">Restore access</button>' +
+      '</form>' +
+      '<p class="access-restore-status" role="status" aria-live="polite"></p>';
+    container.appendChild(wrap);
+
+    const form   = wrap.querySelector('form');
+    const input  = wrap.querySelector('input[type="email"]');
+    const status = wrap.querySelector('.access-restore-status');
+    const button = wrap.querySelector('button');
+    if (savedEmail) input.value = savedEmail;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = input.value.trim().toLowerCase();
+      if (!email) return;
+
+      button.disabled = true;
+      button.textContent = 'Checking…';
+      status.textContent = '';
+
+      try {
+        const res  = await fetch(`/.netlify/functions/get-access-token?email=${encodeURIComponent(email)}`);
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.token) {
+          localStorage.setItem('cu_token', data.token);
+          localStorage.setItem('cu_email', email);
+          status.textContent = 'Access restored! Redirecting…';
+          setTimeout(function () {
+            window.location.replace(unit ? `/premium?unit=${encodeURIComponent(unit)}` : '/practice');
+          }, 500);
+          return;
+        }
+
+        status.textContent = data.error || 'No active subscription found for that email.';
+      } catch (err) {
+        status.textContent = 'Could not check subscription. Please try again.';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Restore access';
+    });
+  }
+
+  /* Deferred to window 'load' (not 'DOMContentLoaded'): the practice pages'
+     own inline scripts overwrite #accessMessage's innerHTML on
+     DOMContentLoaded, which would wipe this form out if it ran first. */
+  if (document.readyState === 'complete') {
+    initAccessRestore();
+  } else {
+    window.addEventListener('load', initAccessRestore);
+  }
+})();
