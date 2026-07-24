@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Student Practice</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="chem.css?v=20260714">
+<link rel="stylesheet" href="practice-teaser.css?v=20260509">
+<style>
+  body.page-hidden-student-practice {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top, rgba(20, 184, 166, 0.16), transparent 38%),
+      linear-gradient(180deg, #f6fffd 0%, #ecfdf8 42%, #f8fafc 100%);
+  }
+
+  .page-hidden-student-practice .starfield {
+    opacity: 0.42;
+  }
+
+  .hidden-practice-shell {
+    width: min(1080px, 100%);
+    margin: 0 auto;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .hidden-practice-hero {
+    margin: 0 0 1.25rem;
+    padding: clamp(1.35rem, 3.2vw, 2rem);
+    border: 1px solid rgba(15, 118, 110, 0.16);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .hidden-practice-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.7rem;
+    color: #0f766e;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hidden-practice-hero h1 {
+    margin: 0 0 0.55rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .hidden-practice-hero p {
+    max-width: 72ch;
+    margin: 0;
+    color: var(--dim, #334155);
+  }
+
+  .hidden-practice-controls,
+  .hidden-practice-note {
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+  }
+
+  .hidden-practice-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.9rem;
+    align-items: end;
+    margin: 0 0 1rem;
+    padding: 1rem;
+  }
+
+  .hidden-practice-field {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .hidden-practice-field label {
+    color: #0f172a;
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .hidden-practice-field input,
+  .hidden-practice-field select {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #0f172a;
+    font: inherit;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .hidden-practice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .hidden-practice-actions .btn {
+    min-height: 46px;
+  }
+
+  .hidden-practice-note {
+    margin: 0 0 1.2rem;
+    padding: 0.95rem 1rem;
+    color: var(--dim, #334155);
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .hidden-practice-note strong {
+    color: #0f172a;
+  }
+
+  .hidden-practice-status {
+    margin: 0 0 0.2rem;
+    color: #0f172a;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .hidden-practice-status span {
+    color: #0f766e;
+  }
+
+  @media (max-width: 640px) {
+    .hidden-practice-shell {
+      padding: 1rem;
+    }
+
+    .hidden-practice-controls {
+      grid-template-columns: 1fr;
+    }
+
+    .hidden-practice-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hidden-practice-actions .btn {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body class="page-unit page-hidden-student-practice">
+  <div class="starfield" aria-hidden="true"></div>
+
+  <main id="main-content" class="hidden-practice-shell">
+    <section class="hidden-practice-hero">
+      <div class="hidden-practice-kicker">Private Student Practice</div>
+      <h1 id="pageTitle">Unit Practice Set</h1>
+      <p id="pageSubtitle">This hidden page pulls directly from an existing ChemUnlocked unit problem bank. It is marked <strong>noindex, nofollow</strong> and is intended for direct sharing only.</p>
+    </section>
+
+    <section class="hidden-practice-controls" aria-label="Practice controls">
+      <div class="hidden-practice-field">
+        <label for="unitSelect">Unit</label>
+        <select id="unitSelect">
+          <option value="01">Unit 01</option>
+          <option value="02">Unit 02</option>
+          <option value="03">Unit 03</option>
+          <option value="04">Unit 04</option>
+          <option value="05">Unit 05</option>
+          <option value="06">Unit 06</option>
+          <option value="07">Unit 07</option>
+          <option value="08">Unit 08</option>
+          <option value="09">Unit 09</option>
+          <option value="10">Unit 10</option>
+          <option value="11">Unit 11</option>
+          <option value="12">Unit 12</option>
+          <option value="13">Unit 13</option>
+          <option value="14">Unit 14</option>
+          <option value="15">Unit 15</option>
+        </select>
+      </div>
+
+      <div class="hidden-practice-field">
+        <label for="filterSelect">Problem Type</label>
+        <select id="filterSelect">
+          <option value="all">All Types</option>
+          <option value="concept">Concept</option>
+          <option value="calc">Calculation</option>
+          <option value="multi">Multi-Step</option>
+        </select>
+      </div>
+
+      <div class="hidden-practice-field">
+        <label for="countInput">Problem Count</label>
+        <input id="countInput" type="number" min="1" max="81" step="1" value="12">
+      </div>
+
+      <div class="hidden-practice-actions">
+        <button class="btn" id="buildSetBtn" type="button">Build Set</button>
+        <button class="btn btn-outline" id="shuffleBtn" type="button">Shuffle Again</button>
+      </div>
+    </section>
+
+    <div class="hidden-practice-note">
+      <p class="hidden-practice-status" id="statusLine">Ready to load a set.</p>
+      <strong>How it works:</strong> students answer each problem on-page, then the worked solution appears after they check it. To share a fixed hidden URL, use query parameters like <code>?unit=10&amp;count=18&amp;filter=all</code>.
+    </div>
+
+    <div id="problemContainer" aria-live="polite"></div>
+  </main>
+
+  <script type="module">
+    import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
+
+    const UNIT_LABELS = {
+      '01': 'Introduction to Chemistry and Lab Safety',
+      '02': 'Matter and Change',
+      '03': 'Atomic Structure',
+      '04': 'Electron Configuration',
+      '05': 'Periodic Table and Trends',
+      '06': 'Nomenclature',
+      '07': 'Moles',
+      '08': 'Chemical Reactions',
+      '09': 'Stoichiometry',
+      '10': 'Chemical Bonding',
+      '11': 'Thermochemistry',
+      '12': 'Gases',
+      '13': 'Solutions',
+      '14': 'Equilibrium',
+      '15': 'Acids and Bases'
+    };
+
+    const DEFAULT_UNIT = '10';
+    const params = new URLSearchParams(window.location.search);
+
+    const unitSelect = document.getElementById('unitSelect');
+    const filterSelect = document.getElementById('filterSelect');
+    const countInput = document.getElementById('countInput');
+    const pageTitle = document.getElementById('pageTitle');
+    const pageSubtitle = document.getElementById('pageSubtitle');
+    const statusLine = document.getElementById('statusLine');
+    const buildSetBtn = document.getElementById('buildSetBtn');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+
+    let cachedProblems = [];
+
+    function sanitizeUnit(unit) {
+      return Object.prototype.hasOwnProperty.call(UNIT_LABELS, unit) ? unit : DEFAULT_UNIT;
+    }
+
+    function sanitizeFilter(filter) {
+      return ['all', 'concept', 'calc', 'multi'].includes(filter) ? filter : 'all';
+    }
+
+    function sanitizeCount(rawCount, maxCount) {
+      const parsed = Number.parseInt(rawCount, 10);
+      if (!Number.isFinite(parsed)) return Math.min(12, maxCount);
+      return Math.max(1, Math.min(parsed, maxCount));
+    }
+
+    function shuffledCopy(list) {
+      const copy = [...list];
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    async function loadUnitBank(unit) {
+      const modulePath = `./netlify/lib/data/unit${unit}-problems.js`;
+      const mod = await import(modulePath);
+      return Array.isArray(mod.ALL_PROBLEMS) ? mod.ALL_PROBLEMS : [];
+    }
+
+    function updatePageCopy(unit, filter, count, available) {
+      const unitLabel = UNIT_LABELS[unit];
+      const filterLabel = filter === 'all' ? 'mixed' : filter;
+      pageTitle.textContent = `Unit ${unit} Practice: ${unitLabel}`;
+      pageSubtitle.innerHTML = `This hidden page pulls directly from the existing Unit ${unit} bank and is marked <strong>noindex, nofollow</strong>. Current set: <strong>${count}</strong> ${filterLabel} problem${count === 1 ? '' : 's'} from <strong>${available}</strong> available.`;
+      document.title = `Private Practice - Unit ${unit} ${unitLabel}`;
+    }
+
+    function writeUrl(unit, filter, count) {
+      const next = new URL(window.location.href);
+      next.searchParams.set('unit', unit);
+      next.searchParams.set('filter', filter);
+      next.searchParams.set('count', count);
+      window.history.replaceState({}, '', next);
+    }
+
+    async function renderSet() {
+      const unit = sanitizeUnit(unitSelect.value);
+      const filter = sanitizeFilter(filterSelect.value);
+
+      statusLine.innerHTML = `Loading <span>Unit ${unit}</span> bank...`;
+
+      try {
+        cachedProblems = await loadUnitBank(unit);
+        const pool = filter === 'all'
+          ? cachedProblems
+          : cachedProblems.filter(problem => problem.type === filter);
+
+        if (!pool.length) {
+          document.getElementById('problemContainer').innerHTML = '<p class="premium-status premium-status--error">No problems were found for that filter.</p>';
+          statusLine.textContent = 'No matching problems found.';
+          return;
+        }
+
+        const count = sanitizeCount(countInput.value, pool.length);
+        countInput.value = String(count);
+        updatePageCopy(unit, filter, count, pool.length);
+        writeUrl(unit, filter, count);
+        renderPremiumProblemSet({
+          problems: shuffledCopy(pool).slice(0, count),
+          containerId: 'problemContainer'
+        });
+        statusLine.innerHTML = `Showing <span>${count}</span> problems from Unit <span>${unit}</span>.`;
+      } catch (error) {
+        document.getElementById('problemContainer').innerHTML = `<p class="premium-status premium-status--error">Could not load this unit bank: ${error.message}</p>`;
+        statusLine.textContent = 'The unit bank could not be loaded.';
+      }
+    }
+
+    function hydrateControlsFromUrl() {
+      unitSelect.value = sanitizeUnit(params.get('unit') || DEFAULT_UNIT);
+      filterSelect.value = sanitizeFilter(params.get('filter') || 'all');
+      countInput.value = params.get('count') || '12';
+    }
+
+    hydrateControlsFromUrl();
+    buildSetBtn.addEventListener('click', renderSet);
+    shuffleBtn.addEventListener('click', renderSet);
+    renderSet();
+  </script>
+</body>
+</html>

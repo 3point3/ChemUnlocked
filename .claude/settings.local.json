@@ -139,7 +139,10 @@
       "mcp__claude-in-chrome__navigate",
       "Bash(npm ls *)",
       "Bash(awk '/<svg class=\"bohr-emission-svg\"/,/<\\\\/svg>/' \"/Users/stillerb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - eight.5/ChemUnlocked/04_Learn_Electron_Configuration.html\")",
-      "Bash(rsvg-convert -w 1200 bohr.svg -o bohr.png)"
+      "Bash(rsvg-convert -w 1200 bohr.svg -o bohr.png)",
+      "Bash(curl -s localhost:8934/index.html)",
+      "Bash(pkill -f \"http.server 8934\")",
+      "Bash(count)"
     ]
   }
 }
