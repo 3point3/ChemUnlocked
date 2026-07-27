@@ -6,5 +6,6 @@ Disallow: /header.html
 Disallow: /*.zip
 Disallow: /nclex/
 Disallow: /mcat/
+Disallow: /noa/
 
 Sitemap: https://chemunlocked.com/sitemap.xml

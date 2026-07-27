@@ -90,7 +90,7 @@
   <main id="main-content">
   <div class="container">
   <header>
-    <div class="unit-label" id="unitLabel">General Chemistry &nbsp;&middot;&nbsp; Premium Practice</div>
+    <div class="unit-label" id="unitLabel">High School Chemistry &nbsp;&middot;&nbsp; Premium Practice</div>
     <h1 id="unitTitle">Premium Practice</h1>
     <p class="subtitle" id="unitSubtitle">Work through a set of randomized problems, check your reasoning against the full worked solutions, and find out exactly what needs another look before your next test.</p>
   </header>
@@ -126,7 +126,7 @@
     <a href="#main-content" class="btn btn-outline">Back to Top</a>
   </div>
 
-  <div class="scroll-hint" id="scrollHint">General Chemistry &middot; Premium Practice</div>
+  <div class="scroll-hint" id="scrollHint">High School Chemistry &middot; Premium Practice</div>
     <footer class="site-footer">
     <div class="footer-links">
       <a href="/#units">Chemistry Study Guides</a> &nbsp;·&nbsp;
@@ -139,7 +139,7 @@
       <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
       <a href="/terms-of-service">Terms of Service</a>
     </div>
-    © 2026 ChemUnlocked &nbsp;·&nbsp; General Chemistry - Study Guides &amp; Practice Problems
+    © 2026 ChemUnlocked &nbsp;·&nbsp; High School Chemistry - Study Guides &amp; Practice Problems
   </footer>
 </div>
   </main>
@@ -220,11 +220,11 @@ if (!unit) {
   const unitMeta = UNIT_CONFIG[unit];
   const debugLoader = UNIT_LOADERS[unit];
 
-  unitLabel.textContent = `General Chemistry · Unit ${unit} Premium Practice`;
+  unitLabel.textContent = `High School Chemistry · Unit ${unit} Premium Practice`;
   unitTitle.textContent = unitMeta.title;
   unitSubtitle.textContent = `Choose Quick Sets (3 at a time), Standard Sets (9 at a time), or Extended Sets (18 at a time) from the ${unitMeta.problemCount}-problem bank. Work the problems, then use the full worked solutions to see exactly where your thinking was right — and where it went off track.`;
   teaserLink.href = `/${unit}_practice`;
-  scrollHint.textContent = `General Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
+  scrollHint.textContent = `High School Chemistry · Unit ${unit} · ${unitMeta.title} Premium Practice`;
   document.title = `Unit ${unit}: ${unitMeta.title} | ChemUnlocked Premium`;
   setSizeSelect.value = String(initialSetSize);
   filterSelect.value = initialFilter;
