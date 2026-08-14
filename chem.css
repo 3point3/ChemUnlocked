@@ -8412,12 +8412,11 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 .stat-tile {
-  background: var(--surface);
+  background: var(--surface-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   text-align: center;
-  box-shadow: var(--shadow-sm);
 }
 
 .stat-num {
@@ -8450,7 +8449,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background: var(--surface);
+  background: var(--surface-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 1rem 1.1rem;
@@ -8515,7 +8514,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid rgba(15, 138, 122, 0.3);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.35rem;
   color: var(--text);
@@ -8616,15 +8615,19 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 .practice-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent2);
   margin-top: 0.25rem;
-  transition: color 0.18s;
+  transition: color 0.18s, gap 0.18s;
 }
 
 .practice-card:hover .practice-card-cta {
   color: var(--accent);
+  gap: 0.5rem;
 }
 
 /* Bottom CTA banner */
