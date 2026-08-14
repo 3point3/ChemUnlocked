@@ -108,7 +108,7 @@ function normalizeNotationHtml(html) {
   return template.innerHTML;
 }
 
-export async function initPremiumPractice({ unit, containerId = 'problemContainer', filter = 'all', count = 12 } = {}) {
+export async function initPremiumPractice({ unit, containerId = 'problemContainer', filter = 'all', count = 12, difficulty = 'all' } = {}) {
   const container = document.getElementById(containerId);
   if (!container) throw new Error(`Container #${containerId} not found`);
 
@@ -118,7 +118,7 @@ export async function initPremiumPractice({ unit, containerId = 'problemContaine
   try {
     const token = localStorage.getItem('cu_token') || '';
     const res = await fetch(
-      `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&count=${encodeURIComponent(count)}`,
+      `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&difficulty=${encodeURIComponent(difficulty)}&count=${encodeURIComponent(count)}`,
       {
         headers: token ? { 'x-access-token': token } : {}
       }

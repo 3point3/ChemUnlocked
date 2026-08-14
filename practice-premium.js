@@ -168,10 +168,10 @@
     }
   }
 
-  async function loadPremiumSet(unit, filter = 'all', count = 3) {
+  async function loadPremiumSet(unit, filter = 'all', count = 3, difficulty = 'all') {
     const token = localStorage.getItem('cu_token') || '';
     const res = await fetch(
-      `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&count=${encodeURIComponent(count)}`,
+      `/.netlify/functions/get-premium-problem-set?unit=${encodeURIComponent(unit)}&filter=${encodeURIComponent(filter)}&difficulty=${encodeURIComponent(difficulty)}&count=${encodeURIComponent(count)}`,
       {
         headers: token ? { 'x-access-token': token } : {}
       }

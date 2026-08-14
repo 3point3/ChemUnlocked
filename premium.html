@@ -43,7 +43,7 @@
   "url": "https://chemunlocked.com/premium"
 }
 </script>
-<link rel="stylesheet" href="chem.css?v=20260714">
+<link rel="stylesheet" href="chem.css?v=20260814">
 <meta name="theme-color" content="#0f766e">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -115,6 +115,16 @@
       </select>
     </div>
 
+    <div class="premium-control-group">
+      <label for="difficultySelect">Difficulty:</label>
+      <select id="difficultySelect">
+        <option value="all">All</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
     <button id="reloadBtn" class="btn btn-sm" type="button">Load 3 Fresh Problems</button>
     <button id="billingBtn" class="btn btn-sm btn-outline" type="button">Manage Billing</button>
     <a id="teaserLink" href="/practice" class="btn btn-sm btn-outline">Back to Free Teaser</a>
@@ -150,21 +160,21 @@
 import { renderPremiumProblemSet } from './netlify/lib/premium-practice-engine.js';
 
 const UNIT_CONFIG = {
-  '01': { title: 'Intro to Chemistry & Lab Safety', problemCount: 125 },
-  '02': { title: 'Classification of Matter', problemCount: 86 },
-  '03': { title: 'Atomic Structure', problemCount: 84 },
-  '04': { title: 'Electron Configuration', problemCount: 81 },
-  '05': { title: 'Periodic Table & Trends', problemCount: 84 },
-  '06': { title: 'Chemical Nomenclature', problemCount: 81 },
-  '07': { title: 'The Mole', problemCount: 81 },
-  '08': { title: 'Chemical Reactions', problemCount: 81 },
-  '09': { title: 'Stoichiometry', problemCount: 81 },
-  '10': { title: 'Chemical Bonding', problemCount: 81 },
-  '11': { title: 'Energy & Thermochemistry', problemCount: 84 },
-  '12': { title: 'Gas Laws', problemCount: 84 },
-  '13': { title: 'Solutions', problemCount: 82 },
-  '14': { title: 'Chemical Equilibrium', problemCount: 81 },
-  '15': { title: 'Acids & Bases', problemCount: 81 }
+  '01': { title: 'Intro to Chemistry & Lab Safety', problemCount: 215 },
+  '02': { title: 'Classification of Matter', problemCount: 179 },
+  '03': { title: 'Atomic Structure', problemCount: 174 },
+  '04': { title: 'Electron Configuration', problemCount: 171 },
+  '05': { title: 'Periodic Table & Trends', problemCount: 174 },
+  '06': { title: 'Chemical Nomenclature', problemCount: 174 },
+  '07': { title: 'The Mole', problemCount: 174 },
+  '08': { title: 'Chemical Reactions', problemCount: 174 },
+  '09': { title: 'Stoichiometry', problemCount: 174 },
+  '10': { title: 'Chemical Bonding', problemCount: 171 },
+  '11': { title: 'Energy & Thermochemistry', problemCount: 174 },
+  '12': { title: 'Gas Laws', problemCount: 174 },
+  '13': { title: 'Solutions', problemCount: 172 },
+  '14': { title: 'Chemical Equilibrium', problemCount: 171 },
+  '15': { title: 'Acids & Bases', problemCount: 171 }
 };
 
 const UNIT_LOADERS = {
@@ -195,6 +205,10 @@ const requestedFilter = (params.get('filter') || 'all').trim().toLowerCase();
 const initialFilter = ['all', 'calc', 'concept', 'multi'].includes(requestedFilter)
   ? requestedFilter
   : 'all';
+const requestedDifficulty = (params.get('difficulty') || 'all').trim().toLowerCase();
+const initialDifficulty = ['all', 'easy', 'medium', 'hard'].includes(requestedDifficulty)
+  ? requestedDifficulty
+  : 'all';
 const requestedSetSize = parseInt((params.get('count') || params.get('set') || '3').trim(), 10);
 const initialSetSize = [3, 9, 18].includes(requestedSetSize) ? requestedSetSize : 3;
 const debugRequested = params.get('debug') === '1';
@@ -207,6 +221,7 @@ if (!unit) {
 } else {
   const setSizeSelect = document.getElementById('setSizeSelect');
   const filterSelect = document.getElementById('filterSelect');
+  const difficultySelect = document.getElementById('difficultySelect');
   const reloadBtn = document.getElementById('reloadBtn');
   const billingBtn = document.getElementById('billingBtn');
   const problemContainer = document.getElementById('problemContainer');
@@ -228,6 +243,7 @@ if (!unit) {
   document.title = `Unit ${unit}: ${unitMeta.title} | ChemUnlocked Premium`;
   setSizeSelect.value = String(initialSetSize);
   filterSelect.value = initialFilter;
+  difficultySelect.value = initialDifficulty;
 
   function getSelectedSetSize() {
     const parsed = parseInt(setSizeSelect.value, 10);
@@ -251,9 +267,12 @@ if (!unit) {
     problemContainer.innerHTML = '<p class="premium-status premium-status--muted">Loading local debug set...</p>';
     try {
       const { ALL_PROBLEMS } = await debugLoader();
-      const pool = filterSelect.value === 'all'
+      let pool = filterSelect.value === 'all'
         ? ALL_PROBLEMS
         : ALL_PROBLEMS.filter(problem => problem.type === filterSelect.value);
+      if (difficultySelect.value !== 'all') {
+        pool = pool.filter(problem => problem.difficulty === difficultySelect.value);
+      }
       const drawCount = Math.min(getSelectedSetSize(), pool.length);
       renderPremiumProblemSet({
         problems: shuffle(pool).slice(0, drawCount),
@@ -298,7 +317,7 @@ if (!unit) {
   async function loadSet() {
     problemContainer.innerHTML = '<p class="premium-status premium-status--muted">Loading your problem set...</p>';
     try {
-      const data = await loadPremiumSet(unit, filterSelect.value, getSelectedSetSize());
+      const data = await loadPremiumSet(unit, filterSelect.value, getSelectedSetSize(), difficultySelect.value);
       renderPremiumProblemSet({ problems: data.problems, containerId: 'problemContainer' });
     } catch (err) {
       problemContainer.innerHTML = `<p class="premium-status premium-status--error">Could not load problems: ${err.message}</p>`;
@@ -321,6 +340,13 @@ if (!unit) {
     loadSet();
   });
   filterSelect.addEventListener('change', () => {
+    if (debugEnabled) {
+      loadDebugSet();
+      return;
+    }
+    loadSet();
+  });
+  difficultySelect.addEventListener('change', () => {
     if (debugEnabled) {
       loadDebugSet();
       return;

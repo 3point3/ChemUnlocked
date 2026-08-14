@@ -3074,9 +3074,9 @@ td {
 .learning-objectives {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 0.55rem 1.5rem;
   margin: 0 0 0.95rem;
-  padding: 0.7rem;
+  padding: 0.9rem 1rem;
   border: 1px solid rgba(217, 200, 180, 0.52);
   border-radius: calc(var(--radius-sm) + 4px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 250, 242, 0.58));
@@ -3089,10 +3089,7 @@ td {
   gap: 0.55rem;
   align-items: flex-start;
   min-height: 0;
-  padding: 0.7rem 0.82rem;
-  border: 1px solid rgba(217, 200, 180, 0.58);
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.74);
+  padding: 0.2rem 0;
   color: var(--dim);
   font-size: 0.84rem;
   font-weight: 520;
@@ -13153,4 +13150,67 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   .page-12-learn-chemistry-gas .mobile-stack-table td[data-label="Shape"] {
     padding-top: 2.5rem;
   }
+}
+
+/* Homepage FAQ accordion */
+.home-faq .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  padding: 0 1rem;
+}
+
+.faq-item + .faq-item {
+  margin-top: 0;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.9rem 1.75rem 0.9rem 0;
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent2);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-answer {
+  color: var(--dim);
+  padding: 0.85rem 0 1.05rem 0;
+  line-height: 1.55;
+}
+
+.faq-answer a {
+  color: var(--accent2);
+  font-weight: 600;
 }

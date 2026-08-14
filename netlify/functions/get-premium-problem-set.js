@@ -7,9 +7,10 @@
    No database required — Stripe is the source of truth.
 
    Expected query params:
-     unit   — e.g. "05"
-     filter — "all" | "calc" | "concept" | "multi"
-     count  — number of problems to return (default 3)
+     unit       — e.g. "05"
+     filter     — "all" | "calc" | "concept" | "multi"
+     difficulty — "all" | "easy" | "medium" | "hard"
+     count      — number of problems to return (default 3)
 
    Required headers:
      x-access-token — Stripe Customer ID (cus_xxxx) stored in localStorage
@@ -39,6 +40,7 @@ const UNIT_MODULES = {
 };
 
 const ALLOWED_FILTERS = new Set(['all', 'calc', 'concept', 'multi']);
+const ALLOWED_DIFFICULTIES = new Set(['all', 'easy', 'medium', 'hard']);
 
 function clampRequestedCount(rawCount) {
   const parsed = Number.parseInt(rawCount, 10);
@@ -84,10 +86,11 @@ exports.handler = async function (event) {
   }
 
   /* ── Validate params ── */
-  const query  = event.queryStringParameters || {};
-  const unit   = String(query.unit   || '').trim();
-  const filter = String(query.filter || 'all').trim();
-  const count  = clampRequestedCount(query.count || '3');
+  const query      = event.queryStringParameters || {};
+  const unit       = String(query.unit       || '').trim();
+  const filter     = String(query.filter     || 'all').trim();
+  const difficulty = String(query.difficulty || 'all').trim().toLowerCase();
+  const count      = clampRequestedCount(query.count || '3');
 
   if (!ALLOWED_FILTERS.has(filter)) {
     return {
@@ -95,6 +98,16 @@ exports.handler = async function (event) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         error: `Invalid filter "${filter}". Expected one of: all, calc, concept, multi.`,
+      }),
+    };
+  }
+
+  if (!ALLOWED_DIFFICULTIES.has(difficulty)) {
+    return {
+      statusCode: 400,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        error: `Invalid difficulty "${difficulty}". Expected one of: all, easy, medium, hard.`,
       }),
     };
   }
@@ -111,9 +124,13 @@ exports.handler = async function (event) {
   /* ── Load, shuffle, slice ── */
   try {
     const { ALL_PROBLEMS } = await loader();
-    const pool = filter === 'all'
+    let pool = filter === 'all'
       ? ALL_PROBLEMS
       : ALL_PROBLEMS.filter(p => p.type === filter);
+
+    if (difficulty !== 'all') {
+      pool = pool.filter(p => p.difficulty === difficulty);
+    }
 
     const shuffled = [...pool];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -126,7 +143,7 @@ exports.handler = async function (event) {
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ unit, filter, problems: shuffled.slice(0, drawCount) }),
+      body: JSON.stringify({ unit, filter, difficulty, problems: shuffled.slice(0, drawCount) }),
     };
   } catch (err) {
     console.error('[get-premium-problem-set] Error:', err.message);
