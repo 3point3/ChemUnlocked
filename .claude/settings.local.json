@@ -142,7 +142,17 @@
       "Bash(rsvg-convert -w 1200 bohr.svg -o bohr.png)",
       "Bash(curl -s localhost:8934/index.html)",
       "Bash(pkill -f \"http.server 8934\")",
-      "Bash(count)"
+      "Bash(count)",
+      "mcp__claude-in-chrome__javascript_tool",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__read_page",
+      "Bash(pkill -f \"http.server 8743\")",
+      "mcp__claude-in-chrome__tabs_close_mcp",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814c/chem.css?v=20260814d/g')",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814d/chem.css?v=20260814e/g')",
+      "mcp__claude-in-chrome__browser_batch",
+      "mcp__claude-in-chrome__get_page_text",
+      "Bash(awk '/^\\\\.container \\\\{/,/^\\\\}/' chem.css)"
     ]
   }
 }
