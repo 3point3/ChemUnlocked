@@ -152,7 +152,18 @@
       "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814d/chem.css?v=20260814e/g')",
       "mcp__claude-in-chrome__browser_batch",
       "mcp__claude-in-chrome__get_page_text",
-      "Bash(awk '/^\\\\.container \\\\{/,/^\\\\}/' chem.css)"
+      "Bash(awk '/^\\\\.container \\\\{/,/^\\\\}/' chem.css)",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814f/chem.css?v=20260814g/g')",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814g/chem.css?v=20260814h/g')",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814h/chem.css?v=20260814i/g')",
+      "Bash(sed -i '' 's/✓ 125-problem Unit 01 bank/✓ 215-problem Unit 01 bank/' 01_Learn_Intro_to_Chemistry_and_Lab_Safety.html)",
+      "Bash(sed -i '' 's/✓ 86-problem bank/✓ 179-problem bank/' 02_Learn_Chemistry_Matter.html)",
+      "Bash(sed -i '' 's/✓ 84-problem bank/✓ 174-problem bank/' 03_Learn_Atomic_Structure.html)",
+      "Bash(sed -i '' 's/✓ 81-problem bank/✓ 171-problem bank/' 04_Learn_Electron_Configuration.html)",
+      "Bash(sed -i '' 's/✓ 84-problem bank/✓ 174-problem bank/' 05_Learn_Periodic_Table_and_Trends.html)",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814i/chem.css?v=20260814j/g')",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814j/chem.css?v=20260814k/g')",
+      "Bash(xargs sed -i '' 's/chem\\\\.css?v=20260814m/chem.css?v=20260814n/g')"
     ]
   }
 }

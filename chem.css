@@ -5963,7 +5963,7 @@ h1 .unlocked { font-weight: 800; letter-spacing: -0.05em; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 1.1rem 1rem;
-  text-align: center;
+  text-align: left;
   position: relative;
 }
 
@@ -6851,17 +6851,6 @@ textarea:focus-visible {
     min-width: 0;
   }
   .approach-desc { display: none; }
-
-  /* how-it-works.html: restore full cards on mobile */
-  .approach-strip--full {
-    grid-template-columns: 1fr;
-  }
-  .approach-strip--full .approach-item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.25rem 1.15rem;
-  }
-  .approach-strip--full .approach-desc { display: block; }
 }
 
 .practice-panel {
@@ -6875,14 +6864,6 @@ textarea:focus-visible {
   padding: clamp(1.4rem, 4vw, 2.25rem);
   margin: 0 0 1.25rem;
   box-shadow: 0 16px 44px rgba(11, 111, 99, 0.2);
-}
-
-.practice-panel--promise {
-  grid-template-columns: 1fr;
-}
-
-.practice-panel--promise p {
-  max-width: 78ch;
 }
 
 .practice-panel h2,
@@ -6924,6 +6905,12 @@ textarea:focus-visible {
 .practice-panel .btn-outline {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.46);
+  color: #fff;
+}
+
+.practice-panel .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #fff;
   color: #fff;
 }
 
@@ -7565,6 +7552,23 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 .prev-post-btn:hover,
 .next-post-btn:hover { transform: translateY(-1px); text-decoration: none; color: var(--accent2); }
 
+/* ── Wrapper for showing prev + next post side by side ── */
+.post-nav-split {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.post-nav-split .prev-post,
+.post-nav-split .next-post {
+  margin-top: 0;
+  flex: 1;
+}
+@media (max-width: 640px) {
+  .post-nav-split {
+    flex-direction: column;
+  }
+}
+
 /* ── Practice-tests-page components ── */
 .effect-comparison {
   display: grid;
@@ -7870,7 +7874,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   line-height: 1.78;
   color: var(--dim);
   margin: 0 0 1rem;
-  max-width: 680px;
+  max-width: 850px;
 }
 
 .blog-intro-body p:last-child {
@@ -7883,7 +7887,7 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   line-height: 1.65;
   color: var(--muted);
   margin: 0.35rem 0 1.75rem;
-  max-width: 640px;
+  max-width: 820px;
 }
 
 /* Author / about card */
@@ -8072,79 +8076,6 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 }
 
 /* ===================== PRACTICE HUB PAGE ===================== */
-
-/* Access summary callout */
-.access-summary {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.25rem;
-  background: rgba(15, 138, 122, 0.06);
-  border: 1px solid rgba(15, 138, 122, 0.2);
-  border-left: 4px solid var(--accent);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.75rem;
-}
-
-.access-summary-text { flex: 1; }
-
-.access-summary-title {
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.3rem;
-}
-
-.access-summary-desc {
-  font-size: 0.9rem;
-  color: var(--dim);
-  line-height: 1.65;
-}
-
-.access-summary-note {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent2);
-  white-space: nowrap;
-  align-self: flex-start;
-}
-
-/* Stats strip */
-.stats-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  max-width: 760px;
-  margin: 0 auto 1.75rem;
-}
-
-.stat-tile {
-  background: var(--surface-alt);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  text-align: center;
-}
-
-.stat-num {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--accent2);
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-tile .stat-label {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-top: 0;
-}
 
 /* How-it-works steps */
 .how-it-works {
@@ -8376,9 +8307,6 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
 @media (max-width: 600px) {
   .practice-grid   { grid-template-columns: 1fr; }
   .how-it-works    { grid-template-columns: 1fr; }
-  .stats-strip     { gap: 0.5rem; }
-  .stat-num        { font-size: 1.75rem; }
-  .access-summary  { flex-direction: column; }
   .bottom-cta      { flex-direction: column; align-items: flex-start; }
   .practice-card-top {
     align-items: flex-start;
