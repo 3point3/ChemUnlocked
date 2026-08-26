@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AskBS — confidently wrong</title>
+<title>AskBS</title>
 <style>
   * { box-sizing: border-box; }
   html, body {
@@ -82,18 +82,17 @@
   @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
   .a-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 10px; flex-wrap: wrap; }
-  .badge { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; background: #3498db; padding: 4px 9px; border-radius: 6px; }
+  .badge { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: rgba(255,255,255,0.68); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); padding: 4px 9px; border-radius: 6px; }
   .conf { font-size: 11.5px; color: rgba(255,255,255,0.55); }
   .conf b { color: #6fd48c; }
 
   .a-text { font-size: 18px; font-weight: 600; line-height: 1.45; margin: 0 0 8px; }
-  .a-sub { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.72); margin: 0 0 14px; }
+  .a-sub { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.72); margin: 0 0 12px; }
 
-  .meter { width: 100%; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.14); overflow: hidden; margin-bottom: 14px; }
+  .meter { width: 100%; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.14); overflow: hidden; margin-bottom: 10px; }
   .meter-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #3498db, #6fd48c); }
 
-  .src-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
-  .src-list { margin: 0; padding: 0 0 0 16px; font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .cite { font-size: 11px; font-style: italic; color: rgba(255,255,255,0.32); }
 
   .notice {
     align-self: center;
@@ -169,13 +168,13 @@
 
   <header>
     <div class="logo">AskBS</div>
-    <div class="tagline">confidently wrong since right now</div>
+    <div class="tagline">we don't factcheck</div>
   </header>
 
   <main>
     <div class="feed" id="feed">
       <div class="empty" id="empty">
-        <p>Ask AskBS anything. It will answer with total conviction and zero accuracy.</p>
+        <p>Ask a question. Get an answer.</p>
         <div class="chips" id="chips"></div>
       </div>
     </div>
@@ -198,18 +197,58 @@
   var chipsEl = document.getElementById('chips');
   var hintEl = document.getElementById('hint');
 
-  var ENDPOINT = '/.netlify/functions/askbs-ask';  // default Netlify Functions path — no netlify.toml edit needed
-  var CLIENT_COOLDOWN_MS = 3000;   // matches the server's per-visitor cooldown
+  var CLIENT_COOLDOWN_MS = 3000;   // just paces clicks — no server involved right now
   var cooldownUntil = 0;
   var cooldownTimer = null;
 
-  var starterQuestions = [
-    "What is the largest ball?",
-    "Is a hot dog a sandwich?",
-    "Who invented the sandwich?",
-    "How many licks does it take?",
-    "Why is the sky blue?"
+  // Large question bank — a handful are shuffled in on each visit so
+  // regulars see a different mix instead of the same five chips.
+  var questionBank = [
+    "What is the largest ball?", "Is a hot dog a sandwich?", "Who invented the sandwich?",
+    "How many licks does it take to get to the center of a lollipop?", "Why is the sky blue?",
+    "What's the deepest part of the ocean?", "Who built the pyramids?", "How fast can a snail travel?",
+    "What causes hiccups?", "Why do cats purr?", "What's inside a black hole?",
+    "How many bones are in the human hand?", "Who invented pizza?", "What language do dolphins speak?",
+    "Why does popcorn pop?", "How old is the internet?", "What's the tallest mountain, really?",
+    "Do fish sleep?", "Why do we dream?", "What's the oldest joke in the world?",
+    "How many people have been to space?", "Why is Tuesday named Tuesday?", "What's the smallest country?",
+    "Do bees have feelings?", "Who really invented the wheel?", "What's the best way to boil an egg?",
+    "Why do we get brain freeze?", "How long do goldfish actually live?", "What's the loudest sound ever recorded?",
+    "Why do onions make you cry?", "Who decided time zones?", "What's the most expensive coffee in the world?",
+    "Why do we yawn?", "How many stars are in the sky?", "What's the world's oldest recipe?",
+    "Do plants feel pain?", "Why is the ocean salty?", "What was the first video game?",
+    "How do bees make honey?", "Why do we have eyebrows?", "What's the fastest land animal?",
+    "Who invented the umbrella?", "Why does time seem to fly as you get older?", "What's the origin of the handshake?",
+    "How many hearts does an octopus have?", "Why do we get goosebumps?", "What's the most common phobia?",
+    "Who invented the toothbrush?", "Why do birds fly in a V formation?", "What's the world's oldest language?",
+    "Why do we get static electricity in winter?", "What's the fastest fish in the ocean?", "Who invented the fork?",
+    "Why do onions have layers?", "What's the world's oldest currency?", "How many time zones does Russia have?",
+    "Why do we have belly buttons?", "What's the tallest building in the world, really?", "Who invented chess?",
+    "Why does the moon look bigger near the horizon?", "What's the world's spiciest pepper?", "How many muscles does it take to smile?",
+    "Why do we blush?", "What's the oldest tree in the world?", "Who invented the yo-yo?",
+    "Why do we have fingerprints?", "What's the largest desert on Earth?", "How do birds know which way to migrate?",
+    "Why does bacon smell so good?", "What's the world's most popular sport?", "Who invented the traffic light?",
+    "Why do we get earworms (songs stuck in our head)?", "What's the coldest place on Earth?", "How many taste buds does a human have?",
+    "Why do dogs tilt their heads?", "What's the world's oldest company?", "Who invented the alphabet?",
+    "Why does hair turn gray?", "What's the fastest a human has ever run?", "How deep can a submarine go?",
+    "Why do we cry when we're happy?", "What's the largest waterfall in the world?", "Who invented the calendar?",
+    "Why do cats knead with their paws?", "What's the most spoken language in the world?", "How long can a person survive without sleep?",
+    "Why do we get déjà vu?", "What's the largest snake in the world?", "Who invented the light bulb, really?",
+    "Why do leaves change color in the fall?", "What's the driest place on Earth?", "How many hairs does the average human have?",
+    "Why do we get hiccups after eating too fast?", "What's the oldest board game?", "Who invented money?",
+    "Why do zebras have stripes?", "What's the largest living organism?", "How many people can Earth actually support?",
+    "Why does the moon have phases?", "What's the world's most expensive spice?"
   ];
+  function shuffle(arr) {
+    var copy = arr.slice();
+    for (var i = copy.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+    }
+    return copy;
+  }
+  var STARTER_COUNT = 5;
+  var starterQuestions = shuffle(questionBank).slice(0, STARTER_COUNT);
   starterQuestions.forEach(function (q) {
     var chip = document.createElement('div');
     chip.className = 'chip';
@@ -219,13 +258,16 @@
   });
 
   // ------------------------------------------------------------------
-  // Offline fallback generator — used only if the live API is
-  // rate-limited or unreachable, so the site never looks broken.
+  // Answer generator — fully client-side, no API/server involved.
+  // (This started life as an offline fallback for when a live model
+  // API was rate-limited/unreachable; for now it's the only answer
+  // source. See netlify/functions/askbs-ask.js in git history if
+  // that comes back later.)
   // ------------------------------------------------------------------
   var orgs = ["the Institute of Vague Certainty", "Sunday Brunch Science Weekly", "the National Bureau of Sounding Right", "a think tank funded by nobody", "the Committee for Confident Guessing", "an unaccredited online university"];
   var experts = ["a guy at the gym", "my cousin who \u201cbasically\u201d works at NASA", "a podcast host with no credentials", "someone's uncle at Thanksgiving", "a substitute teacher, once"];
-  var sourcesPool = ["Trust Me Bro, Journal of Vibes-Based Science", "My uncle who \u201cbasically\u201d works at NASA", "A forum post from 2011, unedited since", "WebMD, the sketchy tab", "A dream I had last Tuesday", "AskBS, citing itself", "Wikipedia, before the edit war", "The group chat", "A guy at the gym", "Reddit, probably"];
-  var verdicts = ["Confirmed", "Debunked", "It's complicated", "Legally distinct", "Under review", "Common knowledge", "Extremely disputed", "Case closed"];
+  var sourcesPool = ["Journal of Applied Certainty (2019)", "Center for General Knowledge, internal report", "Quarterly Review of Common Things", "Dept. of Miscellaneous Studies", "Public Understanding Survey, 2021", "Institute for Everyday Facts", "National Archive of General Statements", "Field Notes, unpublished", "Annual Review of Assumptions", "Bulletin of General Interest, vol. 12", "Working Paper, Center for Applied Certainty", "Proceedings of the Society for Casual Findings"];
+  var verdicts = ["Confirmed", "Verified", "Established", "Widely accepted", "Under review", "Disputed", "Unconfirmed", "Preliminary finding", "Common knowledge"];
 
   function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
   function pickSeveral(arr, n) {
@@ -304,35 +346,15 @@
       subtext: pick(bodyTemplates)(),
       confidence: randInt(61, 100),
       verdict: pick(verdicts),
-      sources: pickSeveral(sourcesPool, randInt(3, 4))
+      sources: pickSeveral(sourcesPool, randInt(1, 2))
     };
   }
 
   // ------------------------------------------------------------------
-  // Live API call
+  // Answer lookup — no network call, just the local generator.
   // ------------------------------------------------------------------
   async function fetchAnswer(question) {
-    var res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: question })
-    });
-
-    if (res.status === 429) {
-      var body = await res.json().catch(function () { return {}; });
-      setHint(body.error || "Slow down a little.");
-      return generateFallback(question);
-    }
-    if (!res.ok) {
-      return generateFallback(question);
-    }
-    try {
-      var data = await res.json();
-      if (!data.headline) return generateFallback(question);
-      return data;
-    } catch {
-      return generateFallback(question);
-    }
+    return generateFallback(question);
   }
 
   function setHint(text) {
@@ -390,23 +412,15 @@
     meterFill.style.width = confidence + '%';
     meter.appendChild(meterFill);
 
-    var srcLabel = document.createElement('div');
-    srcLabel.className = 'src-label';
-    srcLabel.textContent = 'Sources';
-    var srcList = document.createElement('ul');
-    srcList.className = 'src-list';
-    (a.sources || []).forEach(function (s) {
-      var li = document.createElement('li');
-      li.textContent = s;
-      srcList.appendChild(li);
-    });
+    var cite = document.createElement('div');
+    cite.className = 'cite';
+    cite.textContent = (a.sources || []).join(' · ');
 
     card.appendChild(head);
     card.appendChild(text);
     card.appendChild(sub);
     card.appendChild(meter);
-    card.appendChild(srcLabel);
-    card.appendChild(srcList);
+    card.appendChild(cite);
     feed.appendChild(card);
     scrollDown();
   }
