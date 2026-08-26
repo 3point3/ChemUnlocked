@@ -2,6 +2,7 @@
   "name": "chemunlocked-functions",
   "version": "1.0.0",
   "dependencies": {
-    "stripe": "^22.0.2"
+    "stripe": "^22.0.2",
+    "@netlify/blobs": "^8.1.0"
   }
 }

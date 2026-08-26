@@ -12853,3 +12853,221 @@ body.post-blue .game-steps li::before { color: #1d4ed8; background: #dbeafe; }
   color: var(--accent2);
   font-weight: 600;
 }
+
+/* ===================== SCHOOL & CLASSROOM PLANS ===================== */
+.school-hero {
+  text-align: center;
+}
+
+.school-hero .subtitle {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.school-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+  max-width: 780px;
+  margin: 2rem auto 0.75rem;
+  text-align: left;
+}
+
+.school-tier-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background: var(--white-90);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem 1.5rem 1.65rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.school-tier-card:hover {
+  border-color: #5eead4;
+  transform: translateY(-2px);
+}
+
+.school-tier-card.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-18);
+}
+
+.school-tier-card input[type="radio"] {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
+}
+
+.school-tier-badge {
+  display: inline-block;
+  background: var(--accent-18);
+  color: var(--accent2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.school-tier-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.school-tier-price {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--accent2);
+  line-height: 1.1;
+}
+
+.school-tier-price span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dim);
+}
+
+.school-tier-seats {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dim);
+  margin: 0.3rem 0 0.9rem;
+}
+
+.school-tier-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.school-tier-features li {
+  font-size: 0.92rem;
+  color: var(--dim);
+  padding-left: 1.35rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.school-tier-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.school-tier-note {
+  text-align: center;
+  color: var(--dim);
+  font-size: 0.92rem;
+  margin: 0 0 2.25rem;
+}
+
+.school-form-card {
+  width: min(560px, 100%);
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.school-how-it-works {
+  width: min(680px, 100%);
+  margin: 0 auto;
+  text-align: left;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.school-how-it-works h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.school-how-it-works ol {
+  margin: 0 0 1rem;
+  padding-left: 1.3rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.school-how-it-works li {
+  color: var(--dim);
+  line-height: 1.6;
+}
+
+.school-how-it-works-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.school-login-footnote {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* School subscription success page */
+.school-code-box {
+  background: var(--surface-alt);
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 0 0 2rem;
+}
+
+.school-code-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.school-code-value {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+}
+
+.school-code-copied {
+  margin: 0.5rem 0 0;
+  color: var(--accent2);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.school-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .school-tier-card input[type="radio"] {
+    top: 1.1rem;
+    right: 1.1rem;
+  }
+}
