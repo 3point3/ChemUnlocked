@@ -264,9 +264,9 @@
   // source. See netlify/functions/askbs-ask.js in git history if
   // that comes back later.)
   // ------------------------------------------------------------------
-  var orgs = ["the Institute of Vague Certainty", "Sunday Brunch Science Weekly", "the National Bureau of Sounding Right", "a think tank funded by nobody", "the Committee for Confident Guessing", "an unaccredited online university"];
-  var experts = ["a guy at the gym", "my cousin who \u201cbasically\u201d works at NASA", "a podcast host with no credentials", "someone's uncle at Thanksgiving", "a substitute teacher, once"];
-  var sourcesPool = ["Journal of Applied Certainty (2019)", "Center for General Knowledge, internal report", "Quarterly Review of Common Things", "Dept. of Miscellaneous Studies", "Public Understanding Survey, 2021", "Institute for Everyday Facts", "National Archive of General Statements", "Field Notes, unpublished", "Annual Review of Assumptions", "Bulletin of General Interest, vol. 12", "Working Paper, Center for Applied Certainty", "Proceedings of the Society for Casual Findings"];
+  var orgs = ["the Institute for Applied Certainty", "the Center for Quantitative Confidence", "the National Laboratory of General Findings", "the Bureau of Applied Statistics", "the Institute for Empirical Consensus", "the Division of Observational Studies", "the Center for Replication Studies", "the Laboratory of Applied Inference"];
+  var evidence = ["a peer-reviewed study", "a large-scale meta-analysis", "a controlled longitudinal study", "an independent replication study", "a preliminary data analysis", "a multi-year observational study", "a randomized controlled trial", "an internal research review"];
+  var sourcesPool = ["Journal of Applied Certainty (2019)", "Center for General Knowledge, internal report", "Quarterly Review of Empirical Findings", "Dept. of Applied Statistics", "Public Understanding Survey, 2021", "Institute for Empirical Consensus", "National Archive of Observational Data", "Field Notes, unpublished", "Annual Review of Applied Research", "Bulletin of Quantitative Studies, vol. 12", "Working Paper, Center for Applied Certainty", "Proceedings of the Society for Applied Research"];
   var verdicts = ["Confirmed", "Verified", "Established", "Widely accepted", "Under review", "Disputed", "Unconfirmed", "Preliminary finding", "Common knowledge"];
 
   function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -300,33 +300,33 @@
   }
 
   var whatTemplates = [
-    function (s) { return cap(s) + " is, officially, \u201cconsiderable,\u201d though nobody's re-measured it since " + randYear() + "."; },
-    function (s) { return "According to " + pick(orgs) + ", " + s + " was settled in " + randYear() + " and hasn't been revisited since."; },
-    function (s) { return cap(s) + " lives in a small town nobody's heard of, and is, we believe, named Greg."; }
+    function (s) { return cap(s) + " is, by the most recent estimate, \u201cconsiderable,\u201d though it hasn't been re-measured since " + randYear() + "."; },
+    function (s) { return "According to " + pick(orgs) + ", " + s + " was established in " + randYear() + " and hasn't been revisited since."; },
+    function (s) { return "The best available data put " + s + " at a figure nobody has since disputed."; }
   ];
   var whoTemplates = [
-    function (s) { return cap(s) + " is almost certainly a man named Dave."; },
-    function (s) { return "Nobody agrees who " + s + " really is, but " + pick(experts) + " has a theory."; }
+    function (s) { return "The data most consistently point to a single individual, provisionally identified as Dave."; },
+    function (s) { return "Nobody agrees who " + s + " really is, but " + pick(evidence) + " points to one leading candidate."; }
   ];
   var whereTemplates = [
-    function (s) { return cap(s) + " is located exactly where you'd expect, which is somehow still surprising."; },
-    function (s) { return "Somewhere in " + pick(["Ohio", "a warehouse", "your local mall", "a basement"]) + ", allegedly."; }
+    function (s) { return cap(s) + " is located exactly where the data suggest, which is somehow still surprising."; },
+    function (s) { return "Located in " + pick(["Ohio", "an undisclosed facility", "a regional research site", "a climate-controlled warehouse"]) + ", per the most recent survey."; }
   ];
   var whenTemplates = [
-    function (s) { return cap(s) + " happened in " + randYear() + ", or possibly the following Tuesday."; }
+    function (s) { return cap(s) + " occurred in " + randYear() + ", according to the earliest reliable record."; }
   ];
   var howManyTemplates = [
-    function (s) { return "Exactly " + randInt(3, 9999) + ", according to nobody who actually counted."; }
+    function (s) { return "Exactly " + randInt(3, 9999) + ", per the most recent (uncorroborated) count."; }
   ];
   var howTemplates = [
-    function (s) { return "You just " + s + ", apparently. It's easier than people make it sound."; }
+    function (s) { return "You just " + s + " \u2014 the mechanism is simpler than most accounts suggest."; }
   ];
   var whyTemplates = [
-    function (s) { return "Because " + pick(experts) + " said so, and nobody's challenged it since."; }
+    function (s) { return "Because " + pick(evidence) + " found as much, and nobody's challenged it since."; }
   ];
   var yesNoTemplates = [
     function (s, q) { return "Yes. Full stop."; },
-    function (s, q) { return "Correct \u2014 this has been true since " + randYear() + "."; },
+    function (s, q) { return "Correct \u2014 this has held since " + randYear() + "."; },
     function (s, q) { return "\u201c" + q + "\u201d has one answer, and it's yes."; }
   ];
   var otherTemplates = [
@@ -334,8 +334,8 @@
   ];
   var templatesByType = { what: whatTemplates, who: whoTemplates, where: whereTemplates, when: whenTemplates, howmany: howManyTemplates, how: howTemplates, why: whyTemplates, yesno: yesNoTemplates, other: otherTemplates };
   var bodyTemplates = [
-    function () { return "Researchers at " + pick(orgs) + " confirmed this after " + randInt(4, 45) + " minutes of discussion."; },
-    function () { return "This tracks with what " + pick(experts) + " said, and nobody's fact-checked it since."; }
+    function () { return "Researchers at " + pick(orgs) + " reported this finding after a brief internal review."; },
+    function () { return "This is consistent with " + pick(evidence) + ", and nobody's fact-checked it since."; }
   ];
 
   function generateFallback(question) {
