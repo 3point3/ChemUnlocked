@@ -115,7 +115,6 @@
         <a href="/study_skills_blog">Chemistry Study Tips</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/contact_chemunlocked">Contact</a>
-        <a href="/schools">For Schools</a>
       </nav>
     </div>
   </header>
@@ -138,24 +137,24 @@
       </div>
 
     <div class="nav-tabs" role="tablist" aria-label="Unit 07 content sections">
-      <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
-        <span class="tab-icon">1</span>
-        <span class="tab-label">Learn</span>
-        <span class="tab-hint">Core ideas and guided notes</span>
-      </button>
-    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
-      <span class="tab-icon">2</span>
+      <button class="tab-btn tab-rich active" id="tab-tools" data-tab="tools" role="tab" aria-selected="true" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">1</span>
       <span class="tab-label">Explore</span>
       <span class="tab-hint">Interactive tools and visual models</span>
     </button>
-  <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
-    <span class="tab-icon">3</span>
+    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+    <span class="tab-icon">2</span>
     <span class="tab-label">Examples</span>
     <span class="tab-hint">Step-by-step worked problems</span>
   </button>
+  <button class="tab-btn tab-rich" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="false" aria-controls="concepts" onclick="showTab('concepts', this)">
+        <span class="tab-icon">3</span>
+        <span class="tab-label">Learn</span>
+        <span class="tab-hint">Core ideas and guided notes</span>
+      </button>
 </div>
 
-<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
+<div id="concepts" class="section" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="true">
 
   <div class="card">
     <h2 class="card-title"><span class="num">7.1</span> Start Here: What a Mole Actually Means</h2>
@@ -1049,7 +1048,8 @@
 
 </div><!-- end concepts -->
 
-<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
+<div id="tools" class="section active" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="false">
+<p class="tab-switch-hint">New to this unit? <a href="#concepts" onclick="showTab('concepts', document.getElementById('tab-concepts')); return false;">Start with the Learn guide</a> for the core ideas, then come back here.</p>
   <p class="section-intro">Use these like quick coaching checks. Start by choosing the path or setup, then reveal the reasoning. For full arithmetic practice, use the <a href="/07_practice">Unit 07 Practice page</a> before moving into <a href="/08_learn_chemical_reactions">reactions</a> and <a href="/09_learn_chemistry_stoichiometry">stoichiometry</a>.</p>
 
   <div class="card">
@@ -1479,8 +1479,7 @@
       <a href="/practice">Chemistry Practice Problems</a> &nbsp;·&nbsp;
       <a href="/study_skills_blog">Chemistry Study Tips</a> &nbsp;·&nbsp;
       <a href="/how-it-works">How It Works</a> &nbsp;·&nbsp;
-      <a href="/contact_chemunlocked">Contact</a> &nbsp;·&nbsp;
-      <a href="/schools">For Schools</a>
+      <a href="/contact_chemunlocked">Contact</a>
     </div>
     <div class="footer-links-legal">
       <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;

@@ -12,6 +12,43 @@
   to = "/mymentals/index.html"
   status = 200
 
+# For Schools — hidden pre-launch (not ready to go live). Remove this block to un-hide.
+[[redirects]]
+  from = "/schools"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/schools.html"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/school-login"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/school-login.html"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/school-subscription-success"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/school-subscription-success.html"
+  to = "/"
+  status = 302
+  force = true
+
 [[redirects]]
   from = "/index.html"
   to = "/"

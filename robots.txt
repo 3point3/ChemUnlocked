@@ -7,5 +7,8 @@ Disallow: /*.zip
 Disallow: /nclex/
 Disallow: /mcat/
 Disallow: /noa/
+Disallow: /schools
+Disallow: /school-login
+Disallow: /school-subscription-success
 
 Sitemap: https://chemunlocked.com/sitemap.xml
