@@ -138,21 +138,21 @@
       </div>
 
     <div class="nav-tabs" role="tablist" aria-label="Unit 02 content sections">
-      <button class="tab-btn tab-rich active" id="tab-tools" data-tab="tools" role="tab" aria-selected="true" aria-controls="tools" onclick="showTab('tools', this)">
-      <span class="tab-icon">1</span>
-      <span class="tab-label">Explore</span>
-      <span class="tab-hint">Interactive tools and visual models</span>
-    </button>
-    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
-    <span class="tab-icon">2</span>
-    <span class="tab-label">Examples</span>
-    <span class="tab-hint">Step-by-step worked problems</span>
-  </button>
-  <button class="tab-btn tab-rich" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="false" aria-controls="concepts" onclick="showTab('concepts', this)">
-        <span class="tab-icon">3</span>
+      <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts" onclick="showTab('concepts', this)">
+        <span class="tab-icon">1</span>
         <span class="tab-label">Learn</span>
         <span class="tab-hint">Core ideas and guided notes</span>
       </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools" onclick="showTab('tools', this)">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Interact</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+  <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples" onclick="showTab('examples', this)">
+    <span class="tab-icon">3</span>
+    <span class="tab-label">Examples</span>
+    <span class="tab-hint">Step-by-step worked problems</span>
+  </button>
 </div>
 <script>
   // Accessibility: Keyboard navigation for tab buttons
@@ -177,7 +177,7 @@
   <!-- ============================================================ -->
   <!-- TAB: CONCEPTS -->
   <!-- ============================================================ -->
-  <div id="concepts" class="section" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="true">
+  <div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
     <!-- 2.1 -->
     <div class="card">
@@ -963,8 +963,7 @@
 <!-- ============================================================ -->
 <!-- TAB: TOOLS -->
 <!-- ============================================================ -->
-<div id="tools" class="section active" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="false">
-<p class="tab-switch-hint">New to this unit? <a href="#concepts" onclick="showTab('concepts', document.getElementById('tab-concepts')); return false;">Start with the Learn guide</a> for the core ideas, then come back here.</p>
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
   <p class="section-intro">Use these like a guided class check. Commit to a classification first, then compare your reasoning. That is how you catch the usual mistakes with particle diagrams, formulas, and physical vs. chemical changes before they follow you into <a href="/03_learn_atomic_structure">atomic structure</a>. For more reps, use the <a href="/02_practice">Unit 02 Practice page</a>.</p>
 

@@ -137,27 +137,27 @@
       </div>
 
     <div class="nav-tabs" role="tablist" aria-label="Unit 05 content sections">
-      <button class="tab-btn tab-rich active" id="tab-tools" data-tab="tools" role="tab" aria-selected="true" aria-controls="tools">
-      <span class="tab-icon">1</span>
-      <span class="tab-label">Explore</span>
-      <span class="tab-hint">Classify and predict first</span>
-    </button>
-    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
-    <span class="tab-icon">2</span>
-    <span class="tab-label">Examples</span>
-    <span class="tab-hint">Step-by-step worked problems</span>
-  </button>
-  <button class="tab-btn tab-rich" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="false" aria-controls="concepts">
-        <span class="tab-icon">3</span>
+      <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts">
+        <span class="tab-icon">1</span>
         <span class="tab-label">Learn</span>
         <span class="tab-hint">Organization, valence, trends</span>
       </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Interact</span>
+      <span class="tab-hint">Classify and predict first</span>
+    </button>
+  <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
+    <span class="tab-icon">3</span>
+    <span class="tab-label">Examples</span>
+    <span class="tab-hint">Step-by-step worked problems</span>
+  </button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
 CONCEPTS TAB
 ══════════════════════════════════════════════════════════ -->
-<div id="concepts" class="section" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="true">
+<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
   <details class="concept-jump-disclosure">
     <summary class="concept-jump-summary"><span class="concept-jump-summary-text">Jump to a Concept</span></summary>
@@ -645,8 +645,7 @@ CONCEPTS TAB
 <!-- ═══════════════════════════════════════════════════════
 TOOLS TAB
 ══════════════════════════════════════════════════════════ -->
-<div id="tools" class="section active" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="false">
-<p class="tab-switch-hint">New to this unit? <a href="#concepts" onclick="showTab('concepts', document.getElementById('tab-concepts')); return false;">Start with the Learn guide</a> for the core ideas, then come back here.</p>
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
   <p class="section-intro">Use these like a guided class check. Identify the family or predict the trend before you reveal the reasoning. That is the fastest way to clean up the usual mistakes before <a href="/06_learn_chemistry_nomenclature">nomenclature</a> and <a href="/10_learn_chemistry_bonding">bonding</a> build on these patterns. For more reps, use the <a href="/05_practice">Unit 05 Practice page</a>.</p>
 

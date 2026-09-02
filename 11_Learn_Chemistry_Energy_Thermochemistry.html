@@ -137,25 +137,25 @@
       </div>
 
     <div class="nav-tabs" role="tablist" aria-label="Unit 11 content sections">
-      <button class="tab-btn tab-rich active" id="tab-tools" data-tab="tools" role="tab" aria-selected="true" aria-controls="tools">
-      <span class="tab-icon">1</span>
-      <span class="tab-label">Explore</span>
-      <span class="tab-hint">Interactive tools and visual models</span>
-    </button>
-    <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
-    <span class="tab-icon">2</span>
-    <span class="tab-label">Examples</span>
-    <span class="tab-hint">Step-by-step worked problems</span>
-  </button>
-  <button class="tab-btn tab-rich" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="false" aria-controls="concepts">
-        <span class="tab-icon">3</span>
+      <button class="tab-btn tab-rich active" id="tab-concepts" data-tab="concepts" role="tab" aria-selected="true" aria-controls="concepts">
+        <span class="tab-icon">1</span>
         <span class="tab-label">Learn</span>
         <span class="tab-hint">Core ideas and guided notes</span>
       </button>
+    <button class="tab-btn tab-rich" id="tab-tools" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools">
+      <span class="tab-icon">2</span>
+      <span class="tab-label">Interact</span>
+      <span class="tab-hint">Interactive tools and visual models</span>
+    </button>
+  <button class="tab-btn tab-rich" id="tab-examples" data-tab="examples" role="tab" aria-selected="false" aria-controls="examples">
+    <span class="tab-icon">3</span>
+    <span class="tab-label">Examples</span>
+    <span class="tab-hint">Step-by-step worked problems</span>
+  </button>
 </div>
 
 <!-- CONCEPTS -->
-<div id="concepts" class="section" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="true">
+<div id="concepts" class="section active" role="tabpanel" aria-labelledby="tab-concepts" aria-hidden="false">
 
   <div class="card">
     <h2 class="card-title"><span class="num">11.1</span>Start Here: Heat vs. Temperature</h2>
@@ -812,8 +812,7 @@
 </div><!-- end #concepts -->
 
 <!-- TOOLS -->
-<div id="tools" class="section active" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="false">
-<p class="tab-switch-hint">New to this unit? <a href="#concepts" onclick="showTab('concepts', document.getElementById('tab-concepts')); return false;">Start with the Learn guide</a> for the core ideas, then come back here.</p>
+<div id="tools" class="section" role="tabpanel" aria-labelledby="tab-tools" aria-hidden="true">
 
   <p class="section-intro">Use these like quick thermochemistry checks. Choose the equation or classify the change before you reveal the reasoning. For more reps, use the <a href="/11_practice">Unit 11 Practice page</a> before moving into <a href="/12_learn_chemistry_gas">gas laws</a>.</p>
 
