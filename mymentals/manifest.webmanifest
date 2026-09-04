@@ -1,0 +1,16 @@
+{
+  "name": "MyMentals",
+  "short_name": "MyMentals",
+  "description": "A quick, honest record of what's hard and what actually helps.",
+  "start_url": "/mymentals/",
+  "scope": "/mymentals/",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#4f46e5",
+  "lang": "en",
+  "icons": [
+    { "src": "/mymentals/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/mymentals/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/mymentals/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
