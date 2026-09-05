@@ -6,6 +6,11 @@
 [functions]
   node_bundler = "esbuild"
 
+# MyMentals check-in reminders: scans the push queue every minute and
+# sends any that are due. See netlify/functions/mymentals-push-dispatch.js.
+[functions."mymentals-push-dispatch"]
+  schedule = "* * * * *"
+
 # MyMentals SPA — serve index.html for all /mymentals/* routes so React Router can handle them
 [[redirects]]
   from = "/mymentals/*"
