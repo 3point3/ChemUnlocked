@@ -9,12 +9,14 @@
      token — the token from the emailed link
    ===================================================== */
 
-const { getStore } = require('@netlify/blobs')
+const { getStore, connectLambda } = require('@netlify/blobs')
 const {
   json, redeemMagicLink, getOrCreateAccount, createSession,
 } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
   if (event.httpMethod !== 'POST') {
     return json(405, { error: 'Method Not Allowed' })
   }

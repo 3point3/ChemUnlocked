@@ -13,7 +13,7 @@
    ===================================================== */
 
 const webpush = require('web-push')
-const { getStore } = require('@netlify/blobs')
+const { getStore, connectLambda } = require('@netlify/blobs')
 
 webpush.setVapidDetails(
   process.env.VAPID_SUBJECT,
@@ -21,7 +21,9 @@ webpush.setVapidDetails(
   process.env.VAPID_PRIVATE_KEY
 )
 
-exports.handler = async function () {
+exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
   const queueStore = getStore('mymentals-push-queue')
   const subsStore = getStore('mymentals-push-subs')
 

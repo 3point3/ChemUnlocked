@@ -16,7 +16,7 @@
    DELETE (auth) ?id=...      -> remove one entry
    ===================================================== */
 
-const { getStore } = require('@netlify/blobs')
+const { getStore, connectLambda } = require('@netlify/blobs')
 const { json, getSession } = require('./mymentals-lib/session')
 
 function looksLikeEncryptedEntry(e) {
@@ -24,6 +24,8 @@ function looksLikeEncryptedEntry(e) {
 }
 
 exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
   const session = await getSession(event)
   if (!session) return json(401, { error: 'Sign in required.' })
 

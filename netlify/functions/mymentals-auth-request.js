@@ -13,9 +13,12 @@
    ===================================================== */
 
 const { Resend } = require('resend')
+const { connectLambda } = require('@netlify/blobs')
 const { json, isValidEmail, createMagicLink } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
   if (event.httpMethod !== 'POST') {
     return json(405, { error: 'Method Not Allowed' })
   }

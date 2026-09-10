@@ -8,7 +8,7 @@
    POST (auth) body: { wrappedByPassphrase, wrappedByRecovery } -> sets/overwrites
    ===================================================== */
 
-const { getStore } = require('@netlify/blobs')
+const { getStore, connectLambda } = require('@netlify/blobs')
 const { json, getSession } = require('./mymentals-lib/session')
 
 function looksLikeWrappedBlob(w) {
@@ -16,6 +16,8 @@ function looksLikeWrappedBlob(w) {
 }
 
 exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
   const session = await getSession(event)
   if (!session) return json(401, { error: 'Sign in required.' })
 
