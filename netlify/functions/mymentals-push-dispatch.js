@@ -37,7 +37,7 @@ exports.handler = async function (event) {
 
     const subs = (await subsStore.get(item.accountId, { type: 'json' })) || []
     const payload = JSON.stringify({
-      title: 'Check-in time',
+      title: 'Follow-up time',
       body: 'How are you feeling now?',
       url: `/mymentals/log/${item.entryId}/checkin`,
     })
