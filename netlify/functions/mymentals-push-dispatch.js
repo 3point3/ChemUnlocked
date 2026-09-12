@@ -30,7 +30,8 @@
    ===================================================== */
 
 const webpush = require('web-push')
-const { getStore, connectLambda } = require('@netlify/blobs')
+const { connectLambda } = require('@netlify/blobs')
+const { mmStore } = require('./mymentals-lib/session')
 
 // A transiently-failed send is retried on the next run (this fires every
 // minute), but bounded twice over: give up after this many attempts, and
@@ -49,8 +50,8 @@ webpush.setVapidDetails(
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
 
-  const queueStore = getStore('mymentals-push-queue')
-  const subsStore = getStore('mymentals-push-subs')
+  const queueStore = mmStore('mymentals-push-queue')
+  const subsStore = mmStore('mymentals-push-subs')
 
   const { blobs } = await queueStore.list()
   const now = Date.now()

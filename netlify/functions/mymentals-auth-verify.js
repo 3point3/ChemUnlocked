@@ -11,7 +11,7 @@
 
 const { getStore, connectLambda } = require('@netlify/blobs')
 const {
-  json, redeemMagicLink, redeemSignInCode, getOrCreateAccount, createSession, createHandoff,
+  json, redeemMagicLink, redeemSignInCode, getOrCreateAccount, createSession, createHandoff, mmStore,
 } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
@@ -56,7 +56,7 @@ exports.handler = async function (event) {
   const account = await getOrCreateAccount(link.email)
   const sessionToken = await createSession(account.id, account.email)
 
-  const vaultStore = getStore('mymentals-vaults')
+  const vaultStore = mmStore('mymentals-vaults')
   const vault = await vaultStore.get(account.id, { type: 'json' })
 
   const session = {

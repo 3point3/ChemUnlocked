@@ -29,6 +29,32 @@
 const crypto = require('crypto')
 const { getStore } = require('@netlify/blobs')
 
+/**
+ * Every MyMentals store goes through here.
+ *
+ * Netlify Blobs reads are EVENTUALLY consistent by default: a read can
+ * return stale data — including "not found" for a key that was just
+ * written. Nearly everything this app stores is read back within seconds
+ * of being written, so that default is wrong here in ways that fail
+ * silently and look like unrelated bugs:
+ *
+ *   - the sign-in code attempt counter never accumulates, so the
+ *     five-try brute-force cap does nothing at all (observed in
+ *     production, which is what prompted this);
+ *   - a sign-in code typed in quickly reads as "doesn't match";
+ *   - the auth handoff written by verify isn't visible to the device
+ *     polling for it;
+ *   - a session token isn't valid on the very next request after
+ *     sign-in;
+ *   - a just-pushed entry is missing from the next sync pull.
+ *
+ * Strong reads cost some latency per call. At this app's volume that is
+ * an easy trade against any of the above.
+ */
+function mmStore(name) {
+  return getStore({ name, consistency: 'strong' })
+}
+
 const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000 // 90 days
 const MAGIC_LINK_TTL_MS = 15 * 60 * 1000 // 15 minutes
 const HANDOFF_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the magic link itself
@@ -61,7 +87,7 @@ function isValidEmail(email) {
 async function getOrCreateAccount(email) {
   const normalized = email.trim().toLowerCase()
   const accountId = hashEmail(normalized)
-  const store = getStore('mymentals-accounts')
+  const store = mmStore('mymentals-accounts')
   let account = await store.get(accountId, { type: 'json' })
   if (!account) {
     account = { id: accountId, email: normalized, createdAt: new Date().toISOString() }
@@ -81,7 +107,7 @@ async function getOrCreateAccount(email) {
 // app rather than leaving them stranded in Safari.
 async function createMagicLink(email, requestId, fromStandalone) {
   const token = randomToken()
-  const store = getStore('mymentals-magic-links')
+  const store = mmStore('mymentals-magic-links')
   await store.setJSON(token, {
     email: email.trim().toLowerCase(),
     expiresAt: Date.now() + MAGIC_LINK_TTL_MS,
@@ -93,7 +119,7 @@ async function createMagicLink(email, requestId, fromStandalone) {
 
 /** Returns { email, requestId } or null. requestId may be null if none was supplied at request time. */
 async function redeemMagicLink(token) {
-  const store = getStore('mymentals-magic-links')
+  const store = mmStore('mymentals-magic-links')
   const record = await store.get(token, { type: 'json' })
   if (!record || record.expiresAt < Date.now()) return null
   await store.delete(token)
@@ -118,7 +144,7 @@ function generateSignInCode() {
 async function createSignInCode(email, requestId, fromStandalone) {
   const code = generateSignInCode()
   const id = hashEmail(email)
-  await getStore('mymentals-signin-codes').setJSON(`${id}:${code}`, {
+  await mmStore('mymentals-signin-codes').setJSON(`${id}:${code}`, {
     email: email.trim().toLowerCase(),
     expiresAt: Date.now() + SIGNIN_CODE_TTL_MS,
     requestId: requestId || null,
@@ -126,7 +152,7 @@ async function createSignInCode(email, requestId, fromStandalone) {
   })
   // A newly requested code starts the attempt budget over, so someone who
   // fat-fingered the previous one isn't locked out of the new one.
-  await getStore('mymentals-signin-attempts').delete(id).catch(() => {})
+  await mmStore('mymentals-signin-attempts').delete(id).catch(() => {})
   return code
 }
 
@@ -137,13 +163,13 @@ async function createSignInCode(email, requestId, fromStandalone) {
  */
 async function redeemSignInCode(email, code) {
   const id = hashEmail(email)
-  const attemptsStore = getStore('mymentals-signin-attempts')
+  const attemptsStore = mmStore('mymentals-signin-attempts')
   const attempts = (await attemptsStore.get(id, { type: 'json' })) || { count: 0, resetAt: 0 }
   const windowOpen = attempts.resetAt > Date.now()
 
   if (windowOpen && attempts.count >= MAX_CODE_ATTEMPTS) return { error: 'locked' }
 
-  const store = getStore('mymentals-signin-codes')
+  const store = mmStore('mymentals-signin-codes')
   const key = `${id}:${String(code).trim()}`
   const record = await store.get(key, { type: 'json' })
 
@@ -162,13 +188,13 @@ async function redeemSignInCode(email, code) {
 
 /** Stashes a freshly-verified session under requestId so the originating device can pick it up. One-time read. */
 async function createHandoff(requestId, sessionPayload) {
-  const store = getStore('mymentals-auth-handoff')
+  const store = mmStore('mymentals-auth-handoff')
   await store.setJSON(requestId, { ...sessionPayload, expiresAt: Date.now() + HANDOFF_TTL_MS })
 }
 
 /** Reads and immediately deletes a pending handoff. Returns null if missing, expired, or already consumed. */
 async function consumeHandoff(requestId) {
-  const store = getStore('mymentals-auth-handoff')
+  const store = mmStore('mymentals-auth-handoff')
   const record = await store.get(requestId, { type: 'json' })
   if (!record) return null
   await store.delete(requestId)
@@ -179,7 +205,7 @@ async function consumeHandoff(requestId) {
 
 async function createSession(accountId, email) {
   const token = randomToken()
-  const store = getStore('mymentals-sessions')
+  const store = mmStore('mymentals-sessions')
   await store.setJSON(token, {
     accountId,
     email,
@@ -194,7 +220,7 @@ async function getSession(event) {
   const match = /^Bearer\s+(.+)$/.exec(auth)
   if (!match) return null
   const token = match[1]
-  const store = getStore('mymentals-sessions')
+  const store = mmStore('mymentals-sessions')
   const session = await store.get(token, { type: 'json' })
   if (!session || session.expiresAt < Date.now()) return null
   return session
@@ -202,6 +228,7 @@ async function getSession(event) {
 
 module.exports = {
   json,
+  mmStore,
   randomToken,
   hashEmail,
   isValidEmail,

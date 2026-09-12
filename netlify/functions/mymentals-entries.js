@@ -17,7 +17,7 @@
    ===================================================== */
 
 const { getStore, connectLambda } = require('@netlify/blobs')
-const { json, getSession } = require('./mymentals-lib/session')
+const { json, getSession, mmStore } = require('./mymentals-lib/session')
 
 function looksLikeEncryptedEntry(e) {
   return e && typeof e.id === 'string' && typeof e.iv === 'string' && typeof e.ciphertext === 'string'
@@ -29,7 +29,7 @@ exports.handler = async function (event) {
   const session = await getSession(event)
   if (!session) return json(401, { error: 'Sign in required.' })
 
-  const store = getStore('mymentals-entries')
+  const store = mmStore('mymentals-entries')
 
   if (event.httpMethod === 'GET') {
     const entries = (await store.get(session.accountId, { type: 'json' })) || []

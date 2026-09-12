@@ -10,7 +10,7 @@
    ===================================================== */
 
 const { getStore, connectLambda } = require('@netlify/blobs')
-const { json, getSession } = require('./mymentals-lib/session')
+const { json, getSession, mmStore } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
@@ -34,7 +34,7 @@ exports.handler = async function (event) {
     return json(400, { error: 'A valid push subscription is required.' })
   }
 
-  const store = getStore('mymentals-push-subs')
+  const store = mmStore('mymentals-push-subs')
   const existing = (await store.get(session.accountId, { type: 'json' })) || []
   const next = existing.filter(s => s.endpoint !== sub.endpoint)
   next.push({ endpoint: sub.endpoint, keys: sub.keys, addedAt: new Date().toISOString() })

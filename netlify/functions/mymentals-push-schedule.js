@@ -11,7 +11,7 @@
    ===================================================== */
 
 const { getStore, connectLambda } = require('@netlify/blobs')
-const { json, getSession, randomToken } = require('./mymentals-lib/session')
+const { json, getSession, randomToken, mmStore } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
@@ -36,7 +36,7 @@ exports.handler = async function (event) {
     return json(400, { error: 'entryId and a valid sendAt timestamp are required.' })
   }
 
-  const store = getStore('mymentals-push-queue')
+  const store = mmStore('mymentals-push-queue')
   const id = randomToken()
   await store.setJSON(id, { accountId: session.accountId, entryId, sendAt })
 

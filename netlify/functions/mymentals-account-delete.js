@@ -13,11 +13,11 @@
    ===================================================== */
 
 const { getStore, connectLambda } = require('@netlify/blobs')
-const { json, getSession } = require('./mymentals-lib/session')
+const { json, getSession, mmStore } = require('./mymentals-lib/session')
 
 async function deleteMatching(storeName, predicate) {
   try {
-    const store = getStore(storeName)
+    const store = mmStore(storeName)
     const { blobs } = await store.list()
     for (const { key } of blobs) {
       let value = null
@@ -42,7 +42,7 @@ exports.handler = async function (event) {
 
   // Stores keyed directly by accountId — one delete each.
   for (const name of ['mymentals-entries', 'mymentals-vaults', 'mymentals-push-subs']) {
-    try { await getStore(name).delete(accountId) } catch { /* already absent */ }
+    try { await mmStore(name).delete(accountId) } catch { /* already absent */ }
   }
 
   // Stores keyed by an opaque token/id whose value carries accountId.
@@ -50,7 +50,7 @@ exports.handler = async function (event) {
   await deleteMatching('mymentals-push-queue', v => v && v.accountId === accountId)
 
   // The account record itself.
-  try { await getStore('mymentals-accounts').delete(accountId) } catch { /* ignore */ }
+  try { await mmStore('mymentals-accounts').delete(accountId) } catch { /* ignore */ }
 
   return json(200, { deleted: true })
 }

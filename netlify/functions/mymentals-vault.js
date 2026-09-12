@@ -9,7 +9,7 @@
    ===================================================== */
 
 const { getStore, connectLambda } = require('@netlify/blobs')
-const { json, getSession } = require('./mymentals-lib/session')
+const { json, getSession, mmStore } = require('./mymentals-lib/session')
 
 function looksLikeWrappedBlob(w) {
   return w && typeof w.salt === 'string' && typeof w.iv === 'string' && typeof w.ciphertext === 'string'
@@ -21,7 +21,7 @@ exports.handler = async function (event) {
   const session = await getSession(event)
   if (!session) return json(401, { error: 'Sign in required.' })
 
-  const store = getStore('mymentals-vaults')
+  const store = mmStore('mymentals-vaults')
 
   if (event.httpMethod === 'GET') {
     const vault = await store.get(session.accountId, { type: 'json' })
