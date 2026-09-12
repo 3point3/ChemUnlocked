@@ -68,13 +68,18 @@ async function getOrCreateAccount(email) {
 // e.g. a request made from an installed iOS Home Screen app, whose magic
 // link always opens in Safari instead, a separate storage context that
 // can't just read the session Safari ends up with.
-async function createMagicLink(email, requestId) {
+// fromStandalone records that the request came from an installed Home
+// Screen app. The emailed link can only open in the browser, so the page
+// that redeems it uses this to tell the person to switch back to their
+// app rather than leaving them stranded in Safari.
+async function createMagicLink(email, requestId, fromStandalone) {
   const token = randomToken()
   const store = getStore('mymentals-magic-links')
   await store.setJSON(token, {
     email: email.trim().toLowerCase(),
     expiresAt: Date.now() + MAGIC_LINK_TTL_MS,
     requestId: requestId || null,
+    fromStandalone: !!fromStandalone,
   })
   return token
 }

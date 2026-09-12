@@ -57,5 +57,8 @@ exports.handler = async function (event) {
     await createHandoff(link.requestId, session)
   }
 
-  return json(200, session)
+  // Not part of the session — just tells the redeeming page whether this
+  // sign-in began in an installed app, so it can point the person back
+  // there instead of stranding them in the browser.
+  return json(200, { ...session, requestedFromApp: !!link.fromStandalone })
 }

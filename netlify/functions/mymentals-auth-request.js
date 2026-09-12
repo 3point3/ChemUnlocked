@@ -44,7 +44,7 @@ exports.handler = async function (event) {
   const requestId = body.requestId ? String(body.requestId) : null
 
   try {
-    const token = await createMagicLink(email, requestId)
+    const token = await createMagicLink(email, requestId, body.fromStandalone)
     const link = `https://chemunlocked.com/mymentals/auth/callback?token=${token}`
 
     const resend = new Resend(process.env.RESEND_API_KEY)
