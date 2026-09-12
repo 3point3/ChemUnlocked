@@ -13,6 +13,8 @@
      mymentals-push-subs    key = accountId       value = [ { endpoint, keys, addedAt }, ... ]
      mymentals-push-queue   key = random id       value = { accountId, entryId, sendAt }
      mymentals-auth-handoff key = requestId       value = { sessionToken, accountId, email, hasVault, expiresAt }
+     mymentals-signin-codes key = "<hash(email)>:<code>"  value = { email, expiresAt, requestId, fromStandalone }
+     mymentals-signin-attempts key = hash(email)  value = { count, resetAt }
 
    IMPORTANT: every value that could hold journal content (entries) is
    ciphertext only — { iv, ciphertext }, both base64 strings produced by
@@ -30,6 +32,11 @@ const { getStore } = require('@netlify/blobs')
 const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000 // 90 days
 const MAGIC_LINK_TTL_MS = 15 * 60 * 1000 // 15 minutes
 const HANDOFF_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the magic link itself
+const SIGNIN_CODE_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the link it's an alternative to
+// A 6-digit code is a million guesses, not the 256 bits a link token has,
+// so it is only safe with a hard cap on wrong tries. Without this, an
+// attacker who knows someone's email address could simply enumerate.
+const MAX_CODE_ATTEMPTS = 5
 
 function json(statusCode, payload) {
   return {
@@ -93,6 +100,66 @@ async function redeemMagicLink(token) {
   return record
 }
 
+/* ---- Sign-in codes ----------------------------------------------------
+   The same sign-in, without leaving the app. An emailed link can only
+   ever open in the browser, which on iOS means a Home Screen app sends
+   you to Safari and can't be returned to programmatically. A code the
+   person reads and types keeps them where they started.
+
+   Keyed by hash(email):code rather than by the code alone — six digits
+   collide constantly across accounts, and redemption always knows the
+   email because the person just typed it in.
+   ---------------------------------------------------------------------- */
+
+function generateSignInCode() {
+  return String(crypto.randomInt(0, 1000000)).padStart(6, '0')
+}
+
+async function createSignInCode(email, requestId, fromStandalone) {
+  const code = generateSignInCode()
+  const id = hashEmail(email)
+  await getStore('mymentals-signin-codes').setJSON(`${id}:${code}`, {
+    email: email.trim().toLowerCase(),
+    expiresAt: Date.now() + SIGNIN_CODE_TTL_MS,
+    requestId: requestId || null,
+    fromStandalone: !!fromStandalone,
+  })
+  // A newly requested code starts the attempt budget over, so someone who
+  // fat-fingered the previous one isn't locked out of the new one.
+  await getStore('mymentals-signin-attempts').delete(id).catch(() => {})
+  return code
+}
+
+/**
+ * Returns { record } on success, or { error: 'locked' | 'invalid' }.
+ * A wrong or expired code counts against the attempt budget; a correct
+ * one clears it.
+ */
+async function redeemSignInCode(email, code) {
+  const id = hashEmail(email)
+  const attemptsStore = getStore('mymentals-signin-attempts')
+  const attempts = (await attemptsStore.get(id, { type: 'json' })) || { count: 0, resetAt: 0 }
+  const windowOpen = attempts.resetAt > Date.now()
+
+  if (windowOpen && attempts.count >= MAX_CODE_ATTEMPTS) return { error: 'locked' }
+
+  const store = getStore('mymentals-signin-codes')
+  const key = `${id}:${String(code).trim()}`
+  const record = await store.get(key, { type: 'json' })
+
+  if (!record || record.expiresAt < Date.now()) {
+    await attemptsStore.setJSON(id, {
+      count: (windowOpen ? attempts.count : 0) + 1,
+      resetAt: windowOpen ? attempts.resetAt : Date.now() + SIGNIN_CODE_TTL_MS,
+    })
+    return { error: 'invalid' }
+  }
+
+  await store.delete(key)
+  await attemptsStore.delete(id).catch(() => {})
+  return { record }
+}
+
 /** Stashes a freshly-verified session under requestId so the originating device can pick it up. One-time read. */
 async function createHandoff(requestId, sessionPayload) {
   const store = getStore('mymentals-auth-handoff')
@@ -141,6 +208,8 @@ module.exports = {
   getOrCreateAccount,
   createMagicLink,
   redeemMagicLink,
+  createSignInCode,
+  redeemSignInCode,
   createHandoff,
   consumeHandoff,
   createSession,

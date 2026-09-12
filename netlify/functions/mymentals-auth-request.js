@@ -21,7 +21,7 @@
 
 const { Resend } = require('resend')
 const { connectLambda } = require('@netlify/blobs')
-const { json, isValidEmail, createMagicLink } = require('./mymentals-lib/session')
+const { json, isValidEmail, createMagicLink, createSignInCode } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
@@ -46,6 +46,11 @@ exports.handler = async function (event) {
   try {
     const token = await createMagicLink(email, requestId, body.fromStandalone)
     const link = `https://chemunlocked.com/mymentals/auth/callback?token=${token}`
+    // Sent alongside the link, not instead of it: tapping the link always
+    // lands in the browser, which is the wrong place when the person
+    // started in an installed Home Screen app. Typing the code lets them
+    // finish without ever leaving it.
+    const code = await createSignInCode(email, requestId, body.fromStandalone)
 
     const resend = new Resend(process.env.RESEND_API_KEY)
     await resend.emails.send({
@@ -60,20 +65,29 @@ exports.handler = async function (event) {
       text: [
         'Sign in to MyMentals',
         '',
-        `Tap this link to continue: ${link}`,
+        `Your sign-in code is: ${code}`,
         '',
-        'This link expires in 15 minutes.',
+        'Type this code into MyMentals to finish signing in. If you started in the app on your Home Screen, use the code — it keeps you in the app.',
         '',
-        "You're receiving this because someone requested a sign-in link for MyMentals with this email address. If that wasn't you, you can safely ignore it — no account is created until the link is opened.",
+        `Or tap this link instead (it opens in your browser): ${link}`,
+        '',
+        'The code and link both expire in 15 minutes.',
+        '',
+        "You're receiving this because someone requested a sign-in link for MyMentals with this email address. If that wasn't you, you can safely ignore it — no account is created until the code or link is used.",
       ].join('\n'),
       html: `
         <div style="max-width:480px;margin:0 auto;padding:32px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#292524;">
           <p style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7A9E8E;margin:0 0 16px;">MyMentals</p>
-          <p style="font-size:16px;line-height:1.5;margin:0 0 24px;">Tap the button below to sign in on this device.</p>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 16px;">Enter this code in MyMentals to sign in:</p>
+          <p style="font-size:34px;font-weight:700;letter-spacing:0.18em;color:#292524;background:#F7F5F1;border-radius:12px;padding:16px 12px;text-align:center;margin:0 0 16px;">${code}</p>
+          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 24px;">
+            If you started in the MyMentals app on your Home Screen, use the code — it keeps you in the app.
+          </p>
+          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 12px;">Or open it in your browser instead:</p>
           <p style="margin:0 0 24px;">
             <a href="${link}" style="display:inline-block;background:#7A9E8E;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 24px;border-radius:12px;">Sign in to MyMentals</a>
           </p>
-          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 8px;">This link expires in 15 minutes. If the button doesn't work, copy and paste this URL:</p>
+          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 8px;">The code and link both expire in 15 minutes. If the button doesn't work, copy and paste this URL:</p>
           <p style="font-size:12px;color:#a8a29e;word-break:break-all;margin:0 0 24px;">${link}</p>
           <p style="font-size:12px;color:#a8a29e;line-height:1.5;margin:0;">
             You're receiving this because someone requested a sign-in link for MyMentals with this email address.

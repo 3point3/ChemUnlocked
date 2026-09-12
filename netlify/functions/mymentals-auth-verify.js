@@ -11,7 +11,7 @@
 
 const { getStore, connectLambda } = require('@netlify/blobs')
 const {
-  json, redeemMagicLink, getOrCreateAccount, createSession, createHandoff,
+  json, redeemMagicLink, redeemSignInCode, getOrCreateAccount, createSession, createHandoff,
 } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
@@ -28,12 +28,29 @@ exports.handler = async function (event) {
     return json(400, { error: 'Invalid JSON body.' })
   }
 
+  // Two ways in, same outcome: the token from the emailed link, or the
+  // code from that same email typed straight into the app.
   const token = String(body.token || '')
-  if (!token) return json(400, { error: 'Token is required.' })
+  const code = String(body.code || '')
+  const codeEmail = String(body.email || '')
 
-  const link = await redeemMagicLink(token)
-  if (!link) {
-    return json(410, { error: 'This sign-in link is invalid or has expired. Request a new one.' })
+  let link
+  if (token) {
+    link = await redeemMagicLink(token)
+    if (!link) {
+      return json(410, { error: 'This sign-in link is invalid or has expired. Request a new one.' })
+    }
+  } else if (code && codeEmail) {
+    const result = await redeemSignInCode(codeEmail, code)
+    if (result.error === 'locked') {
+      return json(429, { error: 'Too many incorrect codes. Request a new one to try again.' })
+    }
+    if (result.error) {
+      return json(410, { error: "That code doesn't match, or it's expired. Check the latest email." })
+    }
+    link = result.record
+  } else {
+    return json(400, { error: 'A sign-in token, or an email and code, is required.' })
   }
 
   const account = await getOrCreateAccount(link.email)

@@ -1,7 +1,7 @@
 {
   "name": "MyMentals",
   "short_name": "MyMentals",
-  "description": "A quick, honest record of what's hard and what actually helps.",
+  "description": "A quick, private record of what's going on — and what may be helping.",
   "start_url": "/mymentals/",
   "scope": "/mymentals/",
   "display": "standalone",
