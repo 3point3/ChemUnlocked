@@ -51,6 +51,9 @@ exports.handler = async function (event) {
     // started in an installed Home Screen app. Typing the code lets them
     // finish without ever leaving it.
     const code = await createSignInCode(email, requestId, body.fromStandalone)
+    // Split in the middle purely for readability when reading it across
+    // from Mail. The app strips spaces, so typing it either way works.
+    const prettyCode = `${code.slice(0, 4)} ${code.slice(4)}`
 
     const resend = new Resend(process.env.RESEND_API_KEY)
     await resend.emails.send({
@@ -65,7 +68,7 @@ exports.handler = async function (event) {
       text: [
         'Sign in to MyMentals',
         '',
-        `Your sign-in code is: ${code}`,
+        `Your sign-in code is: ${prettyCode}`,
         '',
         'Type this code into MyMentals to finish signing in. If you started in the app on your Home Screen, use the code — it keeps you in the app.',
         '',
@@ -79,7 +82,7 @@ exports.handler = async function (event) {
         <div style="max-width:480px;margin:0 auto;padding:32px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#292524;">
           <p style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7A9E8E;margin:0 0 16px;">MyMentals</p>
           <p style="font-size:16px;line-height:1.5;margin:0 0 16px;">Enter this code in MyMentals to sign in:</p>
-          <p style="font-size:34px;font-weight:700;letter-spacing:0.18em;color:#292524;background:#F7F5F1;border-radius:12px;padding:16px 12px;text-align:center;margin:0 0 16px;">${code}</p>
+          <p style="font-size:28px;font-weight:700;letter-spacing:0.12em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#292524;background:#F7F5F1;border-radius:12px;padding:16px 12px;text-align:center;margin:0 0 16px;">${prettyCode}</p>
           <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 24px;">
             If you started in the MyMentals app on your Home Screen, use the code — it keeps you in the app.
           </p>

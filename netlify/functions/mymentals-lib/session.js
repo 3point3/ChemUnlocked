@@ -57,9 +57,10 @@ const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000 // 90 days
 const MAGIC_LINK_TTL_MS = 15 * 60 * 1000 // 15 minutes
 const HANDOFF_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the magic link itself
 const SIGNIN_CODE_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the link it's an alternative to
-// A 6-digit code is a million guesses, not the 256 bits a link token has,
-// so it is only safe with a hard cap on wrong tries. Without this, an
-// attacker who knows someone's email address could simply enumerate.
+// Defence-in-depth only — it cuts off casual hammering when the read
+// happens to be fresh. It is NOT what makes the code safe; the code's own
+// entropy is (see the sign-in codes section). Blob reads are eventually
+// consistent, so this counter cannot be relied on.
 const MAX_CODE_ATTEMPTS = 5
 
 function json(statusCode, payload) {
@@ -130,13 +131,48 @@ async function redeemMagicLink(token) {
    you to Safari and can't be returned to programmatically. A code the
    person reads and types keeps them where they started.
 
-   Keyed by hash(email):code rather than by the code alone — six digits
-   collide constantly across accounts, and redemption always knows the
-   email because the person just typed it in.
+   Keyed by hash(email):code rather than by the code alone — codes are
+   short enough to collide across accounts, and redemption always knows
+   the email because the person just typed it in.
+
+   THE CODE'S OWN STRENGTH IS THE PROTECTION, not the attempt counter.
+   This started as six digits with a five-try cap, which was wrong: blob
+   reads here are eventually consistent (see mmStore), so the counter
+   reads stale and the cap does not reliably engage. That left a million
+   guesses effectively unlimited. Eight Crockford base32 characters is
+   ~40 bits — about 1.1e12 combinations — so even with no working cap at
+   all, and an attacker guessing flat out for the whole 15-minute
+   lifetime, the odds are negligible. The cap below stays as
+   defence-in-depth; nothing depends on it.
+
+   Crockford's alphabet excludes I, L, O and U, and normalization folds
+   the look-alikes (I/L -> 1, O -> 0), so a misread character still
+   works rather than silently failing.
    ---------------------------------------------------------------------- */
 
+const CODE_ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ' // Crockford base32
+const CODE_LENGTH = 8
+
 function generateSignInCode() {
-  return String(crypto.randomInt(0, 1000000)).padStart(6, '0')
+  let out = ''
+  for (let i = 0; i < CODE_LENGTH; i++) {
+    out += CODE_ALPHABET[crypto.randomInt(0, CODE_ALPHABET.length)]
+  }
+  return out
+}
+
+/**
+ * Accepts what someone actually typed — any case, with spaces or dashes
+ * they copied from the email — and folds Crockford's look-alike
+ * characters onto the real ones. Returns '' if it isn't a plausible code.
+ */
+function normalizeSignInCode(input) {
+  const cleaned = String(input || '')
+    .toUpperCase()
+    .replace(/[^0-9A-Z]/g, '')
+    .replace(/[IL]/g, '1')
+    .replace(/O/g, '0')
+  return cleaned.length === CODE_LENGTH ? cleaned : ''
 }
 
 async function createSignInCode(email, requestId, fromStandalone) {
@@ -167,8 +203,11 @@ async function redeemSignInCode(email, code) {
 
   if (windowOpen && attempts.count >= MAX_CODE_ATTEMPTS) return { error: 'locked' }
 
+  const normalized = normalizeSignInCode(code)
+  if (!normalized) return { error: 'invalid' }
+
   const store = mmStore('mymentals-signin-codes')
-  const key = `${id}:${String(code).trim()}`
+  const key = `${id}:${normalized}`
   const record = await store.get(key, { type: 'json' })
 
   if (!record || record.expiresAt < Date.now()) {
