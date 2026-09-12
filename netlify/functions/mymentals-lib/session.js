@@ -30,29 +30,27 @@ const crypto = require('crypto')
 const { getStore } = require('@netlify/blobs')
 
 /**
- * Every MyMentals store goes through here.
+ * Every MyMentals store goes through here, so the consistency choice is
+ * made in exactly one place.
  *
- * Netlify Blobs reads are EVENTUALLY consistent by default: a read can
- * return stale data — including "not found" for a key that was just
- * written. Nearly everything this app stores is read back within seconds
- * of being written, so that default is wrong here in ways that fail
- * silently and look like unrelated bugs:
+ * Netlify Blobs reads are EVENTUALLY consistent: a read can return stale
+ * data, including "not found" for a key written moments earlier. That is
+ * a real hazard for this app, since almost everything here is read back
+ * within seconds of being written.
  *
- *   - the sign-in code attempt counter never accumulates, so the
- *     five-try brute-force cap does nothing at all (observed in
- *     production, which is what prompted this);
- *   - a sign-in code typed in quickly reads as "doesn't match";
- *   - the auth handoff written by verify isn't visible to the device
- *     polling for it;
- *   - a session token isn't valid on the very next request after
- *     sign-in;
- *   - a just-pushed entry is missing from the next sync pull.
+ * Strong consistency is NOT available to us: these are classic Lambda
+ * functions wired up with connectLambda(), and that context carries no
+ * 'uncachedEdgeURL', so requesting consistency: 'strong' throws
+ * BlobsConsistencyError on every read. Verified the hard way — it took
+ * sign-in down with 502s until reverted. Getting it would mean porting
+ * these functions to Netlify's modern handler signature; until then,
+ * nothing here may depend on read-after-write.
  *
- * Strong reads cost some latency per call. At this app's volume that is
- * an easy trade against any of the above.
+ * Anything needing read-after-write guarantees has to be designed around
+ * that, not assumed away. See redeemSignInCode for a worked example.
  */
 function mmStore(name) {
-  return getStore({ name, consistency: 'strong' })
+  return getStore(name)
 }
 
 const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000 // 90 days
