@@ -12,6 +12,7 @@
      mymentals-entries      key = "<accountId>:<entryId>"  value = { id, iv, ciphertext, updatedAt }
      mymentals-push-subs    key = accountId       value = [ { endpoint, keys, addedAt }, ... ]
      mymentals-push-queue   key = random id       value = { accountId, entryId, sendAt }
+     mymentals-auth-handoff key = requestId       value = { sessionToken, accountId, email, hasVault, expiresAt }
 
    IMPORTANT: every value that could hold journal content (entries) is
    ciphertext only — { iv, ciphertext }, both base64 strings produced by
@@ -28,6 +29,7 @@ const { getStore } = require('@netlify/blobs')
 
 const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000 // 90 days
 const MAGIC_LINK_TTL_MS = 15 * 60 * 1000 // 15 minutes
+const HANDOFF_TTL_MS = 15 * 60 * 1000 // 15 minutes — same window as the magic link itself
 
 function json(statusCode, payload) {
   return {
@@ -61,22 +63,46 @@ async function getOrCreateAccount(email) {
   return account
 }
 
-async function createMagicLink(email) {
+// requestId is optional: only present when the link was requested from a
+// device that wants a seamless handoff back (see createHandoff below) —
+// e.g. a request made from an installed iOS Home Screen app, whose magic
+// link always opens in Safari instead, a separate storage context that
+// can't just read the session Safari ends up with.
+async function createMagicLink(email, requestId) {
   const token = randomToken()
   const store = getStore('mymentals-magic-links')
   await store.setJSON(token, {
     email: email.trim().toLowerCase(),
     expiresAt: Date.now() + MAGIC_LINK_TTL_MS,
+    requestId: requestId || null,
   })
   return token
 }
 
+/** Returns { email, requestId } or null. requestId may be null if none was supplied at request time. */
 async function redeemMagicLink(token) {
   const store = getStore('mymentals-magic-links')
   const record = await store.get(token, { type: 'json' })
   if (!record || record.expiresAt < Date.now()) return null
   await store.delete(token)
-  return record.email
+  return record
+}
+
+/** Stashes a freshly-verified session under requestId so the originating device can pick it up. One-time read. */
+async function createHandoff(requestId, sessionPayload) {
+  const store = getStore('mymentals-auth-handoff')
+  await store.setJSON(requestId, { ...sessionPayload, expiresAt: Date.now() + HANDOFF_TTL_MS })
+}
+
+/** Reads and immediately deletes a pending handoff. Returns null if missing, expired, or already consumed. */
+async function consumeHandoff(requestId) {
+  const store = getStore('mymentals-auth-handoff')
+  const record = await store.get(requestId, { type: 'json' })
+  if (!record) return null
+  await store.delete(requestId)
+  if (record.expiresAt < Date.now()) return null
+  const { expiresAt, ...session } = record
+  return session
 }
 
 async function createSession(accountId, email) {
@@ -110,6 +136,8 @@ module.exports = {
   getOrCreateAccount,
   createMagicLink,
   redeemMagicLink,
+  createHandoff,
+  consumeHandoff,
   createSession,
   getSession,
 }

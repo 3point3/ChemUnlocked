@@ -11,7 +11,7 @@
 
 const { getStore, connectLambda } = require('@netlify/blobs')
 const {
-  json, redeemMagicLink, getOrCreateAccount, createSession,
+  json, redeemMagicLink, getOrCreateAccount, createSession, createHandoff,
 } = require('./mymentals-lib/session')
 
 exports.handler = async function (event) {
@@ -31,21 +31,31 @@ exports.handler = async function (event) {
   const token = String(body.token || '')
   if (!token) return json(400, { error: 'Token is required.' })
 
-  const email = await redeemMagicLink(token)
-  if (!email) {
+  const link = await redeemMagicLink(token)
+  if (!link) {
     return json(410, { error: 'This sign-in link is invalid or has expired. Request a new one.' })
   }
 
-  const account = await getOrCreateAccount(email)
+  const account = await getOrCreateAccount(link.email)
   const sessionToken = await createSession(account.id, account.email)
 
   const vaultStore = getStore('mymentals-vaults')
   const vault = await vaultStore.get(account.id, { type: 'json' })
 
-  return json(200, {
+  const session = {
     sessionToken,
     accountId: account.id,
     email: account.email,
     hasVault: !!vault,
-  })
+  }
+
+  // If the link was requested with a requestId, the requesting device
+  // (typically an installed Home Screen app, whose link always opens
+  // here in Safari instead) is polling for this — hand it the session so
+  // it can sign itself in without the user re-entering anything.
+  if (link.requestId) {
+    await createHandoff(link.requestId, session)
+  }
+
+  return json(200, session)
 }

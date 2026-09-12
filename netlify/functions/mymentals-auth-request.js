@@ -5,7 +5,14 @@
    stored — this is the entire account system.
 
    Expected POST body (JSON):
-     email — the address to send the link to
+     email     — the address to send the link to
+     requestId — optional. When present, a client is asking for a seamless
+                 handoff back once the link is opened (see
+                 mymentals-auth-handoff.js) — needed because on iOS the
+                 emailed link always opens in Safari, a separate storage
+                 context from an installed Home Screen app, so the app
+                 that requested the link can't just read the session
+                 Safari ends up with.
 
    Required environment variables:
      RESEND_API_KEY
@@ -34,9 +41,10 @@ exports.handler = async function (event) {
   if (!isValidEmail(email)) {
     return json(400, { error: 'A valid email address is required.' })
   }
+  const requestId = body.requestId ? String(body.requestId) : null
 
   try {
-    const token = await createMagicLink(email)
+    const token = await createMagicLink(email, requestId)
     const link = `https://chemunlocked.com/mymentals/auth/callback?token=${token}`
 
     const resend = new Resend(process.env.RESEND_API_KEY)
