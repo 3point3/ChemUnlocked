@@ -59,7 +59,13 @@ exports.handler = async function (event) {
     await resend.emails.send({
       from: process.env.MYMENTALS_FROM_EMAIL,
       to: email,
-      subject: 'Your MyMentals sign-in link',
+      // Code in the subject, the way every OTP email does it. Two
+      // reasons: it's the shape filters recognise as transactional rather
+      // than promotional, and — more practically — it means the code is
+      // readable from the notification or from the junk-folder list
+      // without opening the message at all, which is the difference
+      // between "went to spam" being an annoyance and a dead end.
+      subject: `${prettyCode} is your MyMentals sign-in code`,
       // A bare "here's a link" email is exactly the shape spam filters (and
       // recipients) associate with phishing — a button, an expiry note, and
       // a plain-language reason for receiving it all help, independent of
@@ -90,8 +96,7 @@ exports.handler = async function (event) {
           <p style="margin:0 0 24px;">
             <a href="${link}" style="display:inline-block;background:#7A9E8E;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 24px;border-radius:12px;">Sign in to MyMentals</a>
           </p>
-          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 8px;">The code and link both expire in 15 minutes. If the button doesn't work, copy and paste this URL:</p>
-          <p style="font-size:12px;color:#a8a29e;word-break:break-all;margin:0 0 24px;">${link}</p>
+          <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 24px;">The code and link both expire in 15 minutes.</p>
           <p style="font-size:12px;color:#a8a29e;line-height:1.5;margin:0;">
             You're receiving this because someone requested a sign-in link for MyMentals with this email address.
             If that wasn't you, you can safely ignore it — no account is created until the link is opened.
