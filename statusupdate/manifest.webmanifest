@@ -1,0 +1,16 @@
+{
+  "name": "StatusUpdate",
+  "short_name": "StatusUpdate",
+  "description": "A quick, private record of what's going on — and what may be helping.",
+  "start_url": "/statusupdate/",
+  "scope": "/statusupdate/",
+  "display": "standalone",
+  "background_color": "#F7F5F1",
+  "theme_color": "#7A9E8E",
+  "lang": "en",
+  "icons": [
+    { "src": "/statusupdate/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/statusupdate/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/statusupdate/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

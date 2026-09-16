@@ -10,5 +10,10 @@ Disallow: /noa/
 Disallow: /schools
 Disallow: /school-login
 Disallow: /school-subscription-success
+# StatusUpdate is a private personal health app, not site content. Its own
+# index.html also carries <meta name="robots" content="noindex,nofollow">;
+# this is the line crawlers actually read, since robots.txt is only
+# honoured at the domain root.
+Disallow: /statusupdate/
 
 Sitemap: https://chemunlocked.com/sitemap.xml

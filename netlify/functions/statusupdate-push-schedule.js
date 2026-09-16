@@ -1,0 +1,44 @@
+/* =====================================================
+   statusupdate-push-schedule.js — Netlify Serverless Function
+   Queues a check-in reminder push. Stores only an opaque entry id and
+   a send time — never entry content. The id is meaningless to anyone
+   without the matching (encrypted, or local-only) entry on the actual
+   device.
+
+   Expected POST body (JSON):
+     entryId — an opaque id, carried through to the dispatcher
+     sendAt  — ISO timestamp for when to send the reminder
+   ===================================================== */
+
+const { connectLambda } = require('@netlify/blobs')
+const { json, getSession, randomToken, suStore } = require('./statusupdate-lib/session')
+
+exports.handler = async function (event) {
+  connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
+
+  if (event.httpMethod !== 'POST') {
+    return json(405, { error: 'Method Not Allowed' })
+  }
+
+  const session = await getSession(event)
+  if (!session) return json(401, { error: 'Sign in required.' })
+
+  let body
+  try {
+    body = JSON.parse(event.body || '{}')
+  } catch {
+    return json(400, { error: 'Invalid JSON body.' })
+  }
+
+  const entryId = String(body.entryId || '')
+  const sendAt = Date.parse(body.sendAt)
+  if (!entryId || Number.isNaN(sendAt)) {
+    return json(400, { error: 'entryId and a valid sendAt timestamp are required.' })
+  }
+
+  const store = suStore('push-queue')
+  const id = randomToken()
+  await store.setJSON(id, { accountId: session.accountId, entryId, sendAt })
+
+  return json(200, { ok: true, id })
+}

@@ -11,10 +11,24 @@
 [functions."mymentals-push-dispatch"]
   schedule = "* * * * *"
 
+# StatusUpdate reminders: same mechanism, entirely separate queue and blob
+# stores. See netlify/functions/statusupdate-push-dispatch.js.
+[functions."statusupdate-push-dispatch"]
+  schedule = "* * * * *"
+
 # MyMentals SPA — serve index.html for all /mymentals/* routes so React Router can handle them
 [[redirects]]
   from = "/mymentals/*"
   to = "/mymentals/index.html"
+  status = 200
+
+# StatusUpdate SPA — same treatment. Its router runs with basename
+# "/statusupdate", so deep links like /statusupdate/daily/insights and the
+# /statusupdate/auth/callback sign-in link are real URLs that have to fall
+# through to index.html rather than 404.
+[[redirects]]
+  from = "/statusupdate/*"
+  to = "/statusupdate/index.html"
   status = 200
 
 # For Schools — hidden pre-launch (not ready to go live). Remove this block to un-hide.
