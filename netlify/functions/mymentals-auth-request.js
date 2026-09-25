@@ -120,6 +120,8 @@ exports.handler = async function (event) {
 
     return json(200, { sent: true })
   } catch (err) {
+    // A send that failed shouldn't cost the person their allowance.
+    if (limit.undo) await limit.undo()
     // Deliberately not logging `email` here beyond what's already in the
     // request — nothing else in this handler ever touches entry content.
     console.error('[mymentals-auth-request] failed to send magic link:', err.message)

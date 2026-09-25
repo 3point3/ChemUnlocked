@@ -23,6 +23,11 @@ function looksLikeEncryptedEntry(e) {
   return e && typeof e.id === 'string' && typeof e.iv === 'string' && typeof e.ciphertext === 'string'
 }
 
+// Caps so one account can't grow its blob without limit. An encrypted
+// entry is a few KB; these are generous ceilings, not expected sizes.
+const MAX_ENTRY_CHARS = 200000
+const MAX_ENTRIES_PER_ACCOUNT = 5000
+
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
 
@@ -47,7 +52,14 @@ exports.handler = async function (event) {
       return json(400, { error: 'Body must be an encrypted entry: { id, iv, ciphertext, updatedAt }.' })
     }
 
+    if (body.ciphertext.length > MAX_ENTRY_CHARS || body.iv.length > 200 || body.id.length > 200) {
+      return json(413, { error: 'That entry is too large to sync.' })
+    }
+
     const entries = (await store.get(session.accountId, { type: 'json' })) || []
+    if (entries.length >= MAX_ENTRIES_PER_ACCOUNT && !entries.some(e => e.id === body.id)) {
+      return json(413, { error: 'This account has reached the sync limit.' })
+    }
     const next = entries.filter(e => e.id !== body.id)
     next.push({ id: body.id, iv: body.iv, ciphertext: body.ciphertext, updatedAt: body.updatedAt || new Date().toISOString() })
     await store.setJSON(session.accountId, next)

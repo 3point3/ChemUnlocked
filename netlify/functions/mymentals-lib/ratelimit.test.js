@@ -88,3 +88,11 @@ test('clientIp prefers the Netlify header, then x-forwarded-for, then nothing', 
   assert.equal(clientIp({ headers: {} }), '')
   assert.equal(clientIp({}), '')
 })
+
+test('undo() gives the allowance back, so a failed send does not lock the person out', async () => {
+  const store = memStore()
+  const r = await checkSignInLimits(store, 'abc', '1.2.3.4', T)
+  assert.equal(r.ok, true)
+  await r.undo()
+  assert.equal((await checkSignInLimits(store, 'abc', '1.2.3.4', T + 1000)).ok, true)
+})

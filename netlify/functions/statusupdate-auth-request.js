@@ -21,7 +21,8 @@
 
 const { Resend } = require('resend')
 const { connectLambda } = require('@netlify/blobs')
-const { json, isValidEmail, createMagicLink, createSignInCode } = require('./statusupdate-lib/session')
+const { json, suStore, hashEmail, isValidEmail, createMagicLink, createSignInCode } = require('./statusupdate-lib/session')
+const { clientIp, checkSignInLimits } = require('./statusupdate-lib/ratelimit')
 
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
@@ -42,6 +43,17 @@ exports.handler = async function (event) {
     return json(400, { error: 'A valid email address is required.' })
   }
   const requestId = body.requestId ? String(body.requestId) : null
+
+  // Same limit as MyMentals: without it this endpoint emails any address it
+  // is given, unlimited. Best-effort and fail-open (see ratelimit.js).
+  const limit = await checkSignInLimits(suStore('statusupdate-ratelimits'), hashEmail(email), clientIp(event))
+  if (!limit.ok) {
+    return {
+      statusCode: 429,
+      headers: { 'Content-Type': 'application/json', 'Retry-After': String(limit.retryAfterSeconds) },
+      body: JSON.stringify({ error: limit.error, retryAfterSeconds: limit.retryAfterSeconds }),
+    }
+  }
 
   try {
     const token = await createMagicLink(email, requestId, body.fromStandalone)
@@ -111,6 +123,7 @@ exports.handler = async function (event) {
 
     return json(200, { sent: true })
   } catch (err) {
+    if (limit.undo) await limit.undo()
     // Deliberately not logging `email` here beyond what's already in the
     // request — nothing else in this handler ever touches entry content.
     console.error('[statusupdate-auth-request] failed to send magic link:', err.message)

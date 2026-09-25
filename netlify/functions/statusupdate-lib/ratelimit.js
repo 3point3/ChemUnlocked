@@ -1,7 +1,7 @@
 /* =====================================================
    Best-effort rate limiting for the sign-in email endpoint.
 
-   Why it exists: mymentals-auth-request will send a real email to any
+   Why it exists: statusupdate-auth-request will send a real email to any
    address it is given, with no account or password involved. Without a
    limit anyone can point it at a stranger's inbox in a loop (email
    bombing), run up sending costs, and drag down the sender reputation
