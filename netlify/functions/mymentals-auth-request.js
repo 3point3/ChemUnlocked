@@ -21,7 +21,8 @@
 
 const { Resend } = require('resend')
 const { connectLambda } = require('@netlify/blobs')
-const { json, isValidEmail, createMagicLink, createSignInCode } = require('./mymentals-lib/session')
+const { json, mmStore, hashEmail, isValidEmail, createMagicLink, createSignInCode } = require('./mymentals-lib/session')
+const { clientIp, checkSignInLimits } = require('./mymentals-lib/ratelimit')
 
 exports.handler = async function (event) {
   connectLambda(event) // required for getStore() to find its blobs context outside `netlify dev`
@@ -42,6 +43,18 @@ exports.handler = async function (event) {
     return json(400, { error: 'A valid email address is required.' })
   }
   const requestId = body.requestId ? String(body.requestId) : null
+
+  // Rate limit before doing anything that costs money or touches an
+  // inbox. Best-effort and fail-open — see mymentals-lib/ratelimit.js. The
+  // response says nothing about whether the address has an account.
+  const limit = await checkSignInLimits(mmStore('mymentals-ratelimits'), hashEmail(email), clientIp(event))
+  if (!limit.ok) {
+    return {
+      statusCode: 429,
+      headers: { 'Content-Type': 'application/json', 'Retry-After': String(limit.retryAfterSeconds) },
+      body: JSON.stringify({ error: limit.error, retryAfterSeconds: limit.retryAfterSeconds }),
+    }
+  }
 
   try {
     const token = await createMagicLink(email, requestId, body.fromStandalone)
@@ -86,15 +99,15 @@ exports.handler = async function (event) {
       ].join('\n'),
       html: `
         <div style="max-width:480px;margin:0 auto;padding:32px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#292524;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7A9E8E;margin:0 0 16px;">MyMentals</p>
+          <p style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#4A6A88;margin:0 0 16px;">MyMentals</p>
           <p style="font-size:16px;line-height:1.5;margin:0 0 16px;">Enter this code in MyMentals to sign in:</p>
-          <p style="font-size:28px;font-weight:700;letter-spacing:0.12em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#292524;background:#F7F5F1;border-radius:12px;padding:16px 12px;text-align:center;margin:0 0 16px;">${prettyCode}</p>
+          <p style="font-size:28px;font-weight:700;letter-spacing:0.12em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#292524;background:#F6F3EE;border-radius:12px;padding:16px 12px;text-align:center;margin:0 0 16px;">${prettyCode}</p>
           <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 24px;">
             If you started in the MyMentals app on your Home Screen, use the code — it keeps you in the app.
           </p>
           <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 12px;">Or open it in your browser instead:</p>
           <p style="margin:0 0 24px;">
-            <a href="${link}" style="display:inline-block;background:#7A9E8E;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 24px;border-radius:12px;">Sign in to MyMentals</a>
+            <a href="${link}" style="display:inline-block;background:#4A6A88;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 24px;border-radius:12px;">Sign in to MyMentals</a>
           </p>
           <p style="font-size:13px;color:#78716c;line-height:1.5;margin:0 0 24px;">The code and link both expire in 15 minutes.</p>
           <p style="font-size:12px;color:#a8a29e;line-height:1.5;margin:0;">
