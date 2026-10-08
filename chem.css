@@ -3075,7 +3075,7 @@ td {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--dim);
-  max-width: 760px;
+  max-width: 900px;
   margin: 0.5rem 0 1.5rem;
 }
 
@@ -7300,7 +7300,7 @@ textarea:focus-visible {
   color: var(--muted);
   margin-top: 1rem;
 }
-.post-body { max-width: 720px; }
+.post-body { max-width: 880px; }
 .post-body p {
   font-size: 1.02rem;
   line-height: 1.8;

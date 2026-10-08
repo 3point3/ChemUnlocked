@@ -300,7 +300,7 @@ ${staticProblems}
   </aside>
 
   <section class="skills-card home-faq topic-section" id="faq" aria-labelledby="faq-title">
-    <h2 id="faq-title">${t.name} questions students ask</h2>
+    <h2 id="faq-title">Questions you might have about ${t.name.toLowerCase()}</h2>
     <div class="faq-list">
 ${faqHtml}
     </div>
