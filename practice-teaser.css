@@ -176,3 +176,66 @@
     width: 100%;
   }
 }
+
+/* ── SEO topic pages (e.g. /stoichiometry-practice-problems) ── */
+.topic-example {
+  padding: 1.1rem 1.25rem;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-left: 4px solid var(--accent2);
+  border-radius: 12px;
+}
+
+.topic-example p {
+  margin: 0 0 0.6rem;
+  line-height: 1.6;
+}
+
+.topic-example .chem-eq {
+  margin: 0.2rem 0 0.8rem;
+  font-size: 1.05rem;
+}
+
+.topic-example .topic-example-answer {
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+.topic-cta {
+  margin-top: 2.5rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.topic-cta-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.topic-cta p {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dim);
+  line-height: 1.55;
+}
+
+.topic-cta .teaser-cta-btns {
+  margin-top: 1.1rem;
+}
+
+.topic-cta .teaser-cancel-note a {
+  color: var(--accent2);
+}
+
+@media (max-width: 560px) {
+  .topic-cta {
+    padding: 1.5rem 1rem;
+  }
+}

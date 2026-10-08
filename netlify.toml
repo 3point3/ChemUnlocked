@@ -237,6 +237,96 @@
   force = true
 
 [[redirects]]
+  from = "/stoichiometry-practice-problems.html"
+  to = "/stoichiometry-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/significant-figures-practice-problems.html"
+  to = "/significant-figures-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/classifying-matter-practice-problems.html"
+  to = "/classifying-matter-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/atomic-structure-practice-problems.html"
+  to = "/atomic-structure-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/electron-configuration-practice-problems.html"
+  to = "/electron-configuration-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/periodic-trends-practice-problems.html"
+  to = "/periodic-trends-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/naming-compounds-practice-problems.html"
+  to = "/naming-compounds-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mole-conversions-practice-problems.html"
+  to = "/mole-conversions-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/balancing-equations-practice-problems.html"
+  to = "/balancing-equations-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lewis-structures-practice-problems.html"
+  to = "/lewis-structures-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thermochemistry-practice-problems.html"
+  to = "/thermochemistry-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gas-laws-practice-problems.html"
+  to = "/gas-laws-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/molarity-practice-problems.html"
+  to = "/molarity-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/equilibrium-practice-problems.html"
+  to = "/equilibrium-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/acids-and-bases-practice-problems.html"
+  to = "/acids-and-bases-practice-problems"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/10_Learn_Chemistry_Bonding.html"
   to = "/10_learn_chemistry_bonding"
   status = 301
